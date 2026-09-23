@@ -3,8 +3,10 @@
 
 export type Img = { src: string; alt: string; w: number; h: number };
 
-export const gallery = (id: string, alt: string, w: number, h: number): Img => ({ src: `/media/gallery/${id}.webp`, alt, w, h });
-export const site = (file: string, alt: string, w: number, h: number): Img => ({ src: `/media/site/${file}`, alt, w, h });
+import dims from "./images.json";
+const size = (src: string, w: number, h: number): [number, number] => { const d = (dims as unknown as Record<string, [number, number]>)[src]; return d ? d : [w, h]; };
+export const gallery = (id: string, alt: string, w = 1000, h = 1000): Img => { const src = `/media/gallery/${id}.webp`; const [W, H] = size(src, w, h); return { src, alt, w: W, h: H }; };
+export const site = (file: string, alt: string, w = 1000, h = 1000): Img => { const src = `/media/site/${file}`; const [W, H] = size(src, w, h); return { src, alt, w: W, h: H }; };
 
 export const sections = [
   { id: "hero", label: "Top", zh: "首頁" },
