@@ -15,15 +15,17 @@ export default function PageShell({ children }: { children: ReactNode }) {
     const s = createScroller();
     scrollerRef.current = s;
     if (s && !prefersReducedMotion()) s.stop();
-    const cleanup = initAnimations(document);
-    return () => { cleanup(); s?.destroy(); };
+    return () => { s?.destroy(); };
   }, []);
 
+  // Animations are wired once the preloader is gone, so in-view entrances (hero) play in front of the user.
   useEffect(() => {
     if (!ready) return;
     document.documentElement.classList.add("is-loaded");
     document.documentElement.classList.remove("is-loading");
+    const cleanup = initAnimations(document);
     scrollerRef.current?.start();
+    return cleanup;
   }, [ready]);
 
   return (
