@@ -77,8 +77,8 @@ export default function Hero() {
       </nav>
 
       {/* Desktop portrait — bottom-aligned in the right half, mouse drift + scroll parallax. */}
-      <div data-animation="ambient-move" data-ambient-direction="x" className="hidden md:block absolute bottom-0 right-100">
-        <div data-ambient-box="" className="relative h-[640px] w-[430px]">
+      <div data-animation="ambient-move" data-ambient-direction="x" className="hidden md:block absolute bottom-0 right-[6%] laptop:right-100">
+        <div data-ambient-box="" className="relative h-[42vw] w-[28vw] laptop:h-[640px] laptop:w-[430px]">
           <div data-animation="parallax" data-scroll-speed="0.85" className="absolute -top-[10%] left-0 h-[120%] w-full">
             <Picture img={hero.image} fill sizes="430px" priority className="h-full w-full" />
           </div>

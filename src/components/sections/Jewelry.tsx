@@ -22,7 +22,7 @@ export default function Jewelry() {
               key={it.n}
               data-animation="moveUp"
               data-delay={i * 0.1}
-              className="grid grid-cols-[70px_1px_1fr_auto] gap-x-15 border-t border-ink/20 py-30 last:border-b lg:grid-cols-[110px_1px_1fr_auto] lg:gap-x-30"
+              className="grid grid-cols-[56px_1px_1fr] gap-x-15 border-t border-ink/20 py-30 last:border-b md:grid-cols-[70px_1px_1fr_auto] lg:grid-cols-[110px_1px_1fr_auto] lg:gap-x-30"
             >
               <div className="text-4xl font-bold leading-none lg:text-5xl">{it.n}</div>
               <div className="bg-ink/20" />
@@ -33,7 +33,7 @@ export default function Jewelry() {
                   {it.desc}
                 </p>
               </div>
-              <div className="relative h-[160px] w-[128px] lg:h-[200px] lg:w-[160px]">
+              <div className="relative col-span-3 mt-20 h-[220px] w-full md:col-span-1 md:mt-0 md:h-[160px] md:w-[128px] lg:h-[200px] lg:w-[160px]">
                 <Picture img={it.image} fill sizes="160px" />
               </div>
             </div>

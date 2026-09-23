@@ -77,7 +77,7 @@
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
   }
-  :lang(zh-Hant),
+  /* Chinese runs opt in with .tc (the document lang is zh-Hant, so :lang() would match everything). */
   .tc {
     font-family: var(--font-tc);
     text-transform: none;
@@ -155,6 +155,9 @@
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: currentColor; }
 
   /* Menu panels: clip-path reveal (reference: clip-path .5s cubic-bezier(.3,.86,.36,.95)). */
+  /* The ink backdrop itself is clipped shut while closed (and hidden after its panels finish leaving). */
+  .menu-root { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); visibility: hidden; transition: clip-path 0.5s var(--ease-reveal) 0.3s, visibility 0s linear 0.8s; }
+  .menu--opened .menu-root { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); visibility: visible; transition: clip-path 0.5s var(--ease-reveal), visibility 0s; }
   .menu-panel { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); transition: clip-path 0.5s var(--ease-reveal); }
   .menu--opened .menu-panel { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
   .menu-fade { opacity: 0; transition: opacity 0.35s var(--ease-reveal); }

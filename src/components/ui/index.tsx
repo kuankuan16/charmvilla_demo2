@@ -50,7 +50,7 @@ export function Picture({ img, className = "", sizes = "100vw", priority = false
   const d = (dims as unknown as Record<string, [number, number]>)[img.src];
   const w = d ? d[0] : img.w; const h = d ? d[1] : img.h;
   return (
-    <div className={`relative overflow-hidden ${className}`} data-animation={animate ? "scale" : undefined} data-from={animate ? "1.15" : undefined} data-to={animate ? "1" : undefined} data-ease={animate ? "power2.out" : undefined}>
+    <div className={`relative overflow-hidden ${fill ? "h-full w-full" : ""} ${className}`} data-animation={animate ? "scale" : undefined} data-from={animate ? "1.15" : undefined} data-to={animate ? "1" : undefined} data-ease={animate ? "power2.out" : undefined}>
       {fill ? (
         <Image src={img.src} alt={img.alt} fill sizes={sizes} priority={priority} className="object-cover" />
       ) : (

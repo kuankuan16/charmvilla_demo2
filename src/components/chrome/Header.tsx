@@ -43,7 +43,7 @@ export default function Header() {
         <a href="#hero" aria-label="CHARM VILLA — 回到頂端" className="relative z-40 block h-14 w-[73px]" onClick={() => setOpen(false)}>
           <img src={open ? brand.logo.white : brand.logo.black} alt="" className="h-full w-full" draggable={false} />
         </a>
-        <nav className="relative z-40 hidden items-center gap-30 text-xs font-bold laptop:flex" aria-label="主要">
+        <nav className={`relative z-40 hidden items-center gap-30 text-xs font-bold transition-opacity duration-300 laptop:flex ${open ? "pointer-events-none opacity-0" : ""}`} aria-label="主要">
           {navItems.slice(0, 4).map((s) => (
             <a key={s.id} href={`#${s.id}`} className={`group flex items-center gap-8 ${open ? "text-paper" : ""}`}>
               <span className="dot scale-75" /> <span className="link-underline">{s.label}</span>
@@ -65,7 +65,7 @@ export default function Header() {
         </button>
       </div>
 
-      <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label="選單" className={`absolute left-0 top-0 h-screen w-full bg-ink text-ink ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
+      <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label="選單" className={`menu-root absolute left-0 top-0 h-screen w-full bg-ink text-ink ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
         {/* stepped panels (desktop): CLOSE strip, then three offset paper panels revealed right-to-left */}
         <div className="relative h-full w-full">
           <div className="menu-panel absolute right-0 top-0 hidden h-[77%] w-2/3 bg-stone laptop:block" style={{ transitionDelay: open ? "0s" : ".2s" }}>
@@ -73,11 +73,12 @@ export default function Header() {
           </div>
           {navItems.map((s, i) => {
             const rows = navItems.length;
+            // Reference geometry: panels step down-left (tops 30%→77%, lefts 78%→0.3% for 3 items).
             const top = 30 + (i / rows) * 60;
-            const left = 100 - (i + 1) * (67 / rows);
+            const left = rows > 1 ? 70 - i * (64 / (rows - 1)) : 6;
             return (
-              <div key={s.id} className="menu-panel absolute bg-paper" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
-                <a href={`#${s.id}`} onClick={close} className="menu-fade group absolute left-30 top-40 flex items-center gap-20 text-4xl font-bold leading-none laptop:text-5xl" style={{ transitionDelay: open ? `${0.3 + i * 0.08}s` : "0s" }}>
+              <div key={s.id} className="menu-panel absolute hidden bg-paper laptop:block" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
+                <a href={`#${s.id}`} onClick={close} className="menu-fade group absolute left-30 top-40 flex items-center gap-20 whitespace-nowrap text-4xl font-bold leading-none" style={{ transitionDelay: open ? `${0.3 + i * 0.08}s` : "0s" }}>
                   <span className="link-underline">{s.label}</span>
                   <span className="tc text-base font-medium opacity-60">{s.zh}</span>
                 </a>

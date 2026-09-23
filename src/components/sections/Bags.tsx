@@ -71,7 +71,7 @@ export default function Bags() {
                   </span>
                 </div>
                 <span>
-                  {i + 1} - {bags.exhibits.length}
+                  <span className="whitespace-nowrap">{i + 1} - {bags.exhibits.length}</span>
                 </span>
               </div>
             </article>

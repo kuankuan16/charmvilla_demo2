@@ -178,11 +178,12 @@ function stack(el: HTMLElement): Cleanup {
   cards.forEach((c, i) => { c.style.zIndex = String(i + 1); c.style.position = "relative"; });
   const apply = (p: number) => {
     const holderX = -p * Math.max(0, total - window.innerWidth);
-    holder.style.transform = `translate3d(${holderX}px,0,0)`;
+    // Through gsap so a card's own moveUp tween (y/opacity) cannot overwrite the stack's x.
+    gsap.set(holder, { x: holderX });
     let active = 0;
     cards.forEach((c, i) => {
       const x = Math.max(0, -holderX - i * (cardW - gap));
-      c.style.transform = `translate3d(${x}px,0,0)`;
+      gsap.set(c, { x });
       if (x > 0 || i === 0) active = i;
     });
     cards.forEach((c, i) => c.classList.toggle("is-active", i === active));
@@ -198,7 +199,7 @@ function stack(el: HTMLElement): Cleanup {
   });
   apply(0);
   void s;
-  return () => { st.kill(); holder.style.transform = ""; cards.forEach((c) => { c.style.transform = ""; c.style.zIndex = ""; c.classList.remove("is-active"); }); };
+  return () => { st.kill(); gsap.set(holder, { clearProps: "transform" }); cards.forEach((c) => { gsap.set(c, { clearProps: "transform" }); c.style.zIndex = ""; c.classList.remove("is-active"); }); };
 }
 
 // Mouse-driven ambient drift (lerp .05, amplitude .005 × viewport width by default).
