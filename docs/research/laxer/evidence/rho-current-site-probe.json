@@ -1,0 +1,3590 @@
+{
+ "url": "https://charmvilla-rho.vercel.app/",
+ "viewport": {
+  "width": 1440,
+  "height": 900
+ },
+ "before": {
+  "doc": {
+   "scrollHeight": 11789,
+   "bodyScrollHeight": 11789,
+   "innerHeight": 900,
+   "innerWidth": 1440,
+   "bodyOverflow": "hidden",
+   "htmlOverflow": "visible",
+   "htmlClass": "marcellus_3dfbfff9-module__5Ufb9q__variable eb_garamond_12dd8e11-module__jpdwiG__variable inter_6281617f-module__qrAZ_a__variable antialiased cv-intro-pending lenis",
+   "bodyClass": "cv-body"
+  },
+  "lenis": {
+   "onWindow": [
+    "lenisVersion",
+    "lenis"
+   ],
+   "htmlLenis": true,
+   "dataLenis": false
+  },
+  "gsap": {
+   "present": false,
+   "scrollTrigger": false
+  },
+  "fonts": [
+   "Marcellus 400 normal unloaded",
+   "Marcellus 400 normal loaded",
+   "Marcellus Fallback normal normal loaded",
+   "EB Garamond 400 normal unloaded",
+   "EB Garamond 500 normal unloaded",
+   "EB Garamond Fallback normal normal unloaded",
+   "Inter 400 normal unloaded",
+   "Inter 400 normal loaded",
+   "Inter Fallback normal normal loaded",
+   "Noto Serif TC 400 normal loaded"
+  ],
+  "fixed": [
+   {
+    "tag": "A",
+    "cls": "cv-skip-link",
+    "pos": "fixed",
+    "top": "10px",
+    "z": "130",
+    "w": 122,
+    "h": 47
+   },
+   {
+    "tag": "HEADER",
+    "cls": "cv-header cv-intro-hidden",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "50",
+    "w": 1440,
+    "h": 81
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-mobile-menu",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "80",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-hero",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "61",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-about__pin-viewport",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "auto",
+    "w": 720,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-cursor-float",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "40",
+    "w": 172,
+    "h": 228
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-gallery",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "1",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "BUTTON",
+    "cls": "cv-footer-entry cv-intro-hidden",
+    "pos": "fixed",
+    "top": "889px",
+    "z": "120",
+    "w": 1,
+    "h": 1
+   },
+   {
+    "tag": "FOOTER",
+    "cls": "cv-footer",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "0",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "BUTTON",
+    "cls": "cv-cart-veil ",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "109",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-cart-drawer ",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "110",
+    "w": 480,
+    "h": 900
+   }
+  ],
+  "inlineTransforms": [
+   {
+    "tag": "SPAN",
+    "cls": "cv-dial__track",
+    "style": "transform:translateY(0px)"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-dial__track",
+    "style": "transform:translateY(-16px)"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-reveal ",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 24px); opacity: 0;"
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-reveal ",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 24px); opacity: 0;"
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-reveal ",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 24px); opacity: 0;"
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-reveal cv-features__inner",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 24px); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 110%); opacity: 0;"
+   }
+  ],
+  "colors": [
+   [
+    "rgb(17, 17, 16)",
+    665
+   ],
+   [
+    "rgb(255, 255, 255)",
+    141
+   ],
+   [
+    "rgba(0, 0, 0, 0)",
+    31
+   ],
+   [
+    "bg rgb(228, 226, 221)",
+    7
+   ],
+   [
+    "bg rgb(236, 235, 231)",
+    4
+   ],
+   [
+    "bg rgb(12, 12, 11)",
+    3
+   ],
+   [
+    "bg rgb(17, 17, 16)",
+    2
+   ],
+   [
+    "bg rgb(22, 22, 20)",
+    2
+   ],
+   [
+    "rgba(17, 17, 16, 0.74)",
+    1
+   ],
+   [
+    "bg rgba(17, 17, 16, 0.25)",
+    1
+   ],
+   [
+    "rgba(17, 17, 16, 0.62)",
+    1
+   ],
+   [
+    "bg rgba(17, 17, 16, 0.18)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.75)",
+    1
+   ],
+   [
+    "bg rgba(17, 17, 16, 0.34)",
+    1
+   ],
+   [
+    "rgb(114, 95, 73)",
+    1
+   ]
+  ],
+  "fontsUsed": [
+   [
+    "\"Noto Serif TC\" 400",
+    488
+   ],
+   [
+    "Marcellus 400",
+    327
+   ],
+   [
+    "Inter 400",
+    25
+   ],
+   [
+    "\"Noto Serif TC\" 300",
+    1
+   ]
+  ],
+  "sections": [
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-flow",
+    "top": 0,
+    "h": 5661,
+    "w": 1440,
+    "bg": "rgb(236, 235, 231)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "活動快訊 （2026 中秋限定禮盒，晶華門市與線上商店同步開放預購中） （2026 中秋限定禮盒，晶華門市與線上商店同步開放預購中） 這是金魚嗎？ CHARM VILLA Is this a goldfish? 1 2 3 4 5 Ⅱ 1 2 3 4 5 Permanent Collection 與 的 小金魚茶包 MORE DETAIL SCROLL 小金魚茶包，是什麼？ WHAT IS CHARM VILLA? 注入熱水的那一刻， 一尾金魚在杯裡醒了過來。 薄如蟬翼的魚身",
+    "media": {
+     "img": 14,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "活動快訊\n（2026 中秋限定禮盒，晶華門市與線上商店同步開放預購中）　\n（20",
+      "href": "/news"
+     },
+     {
+      "t": "MORE DETAIL",
+      "href": "/collection"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-about",
+    "top": 0,
+    "h": 4410,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "小金魚茶包，是什麼？ WHAT IS CHARM VILLA? 注入熱水的那一刻， 一尾金魚在杯裡醒了過來。 薄如蟬翼的魚身緩緩舒展， 尾鰭盪開一圈茶色的漣漪—— 有人說，這是捨不得喝的一杯茶。 但美好的事物，本來就該被慢慢享用。 一塊茶袋布，經過裁剪、摺疊、縫製， 在職人指尖折出魚鰭與尾巴， 再填入台灣山頭的茶葉—— 每一尾，都是獨一無二的手工。 金魚，諧音「金玉」與「金餘」， 是東方人心底最溫柔的祝福： 願年年有餘，願所愛之人富足安好。 從台北的小工作室游向世界， 這是一",
+    "media": {
+     "img": 4,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-features",
+    "top": 4410,
+    "h": 1251,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "小金魚茶包的三個堅持 Three Features of CHARM VILLA ( 01 ) 一針一線， 手工縫製 每一尾小金魚，都由職人以茶袋布手工剪裁、摺疊、縫製而成，魚身弧度與尾鰭姿態無法以機器複製。 目前已取得全球 34 國設計專利，並獲德國 Red Dot 與 iF 金質獎肯定。 ( 02 ) 會游泳的 一杯茶 熱水注入，魚身徐徐展開，宛如在杯中甦醒悠游；茶湯漸深，鱗色也隨之透亮。 沖泡的過程本身，就是一場值得屏息的小小演出。 ( 03 ) 純粹台灣茶， 與它的山",
+    "media": {
+     "img": 5,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-gallery",
+    "top": 0,
+    "h": 900,
+    "w": 1440,
+    "bg": "rgb(12, 12, 11)",
+    "color": "rgb(17, 17, 16)",
+    "position": "fixed",
+    "overflow": "hidden",
+    "text": "",
+    "media": {
+     "img": 54,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-gallery-stage",
+    "top": 5661,
+    "h": 990,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "",
+    "media": {
+     "img": 0,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-flow",
+    "top": 6651,
+    "h": 5139,
+    "w": 1440,
+    "bg": "rgb(236, 235, 231)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "商品一覽 Collection Reunion · Woven Paper Box 小金魚茶包｜團圓｜繽紛紙盒 Reunion · Paulownia Box 小金魚茶包｜團圓｜桐木木盒 Flowers of Prosperity · 2026 小金魚茶包｜花開富貴｜年節禮 VIEW ALL → → 不只是茶——藝術家的策展 ATELIER 「由藝術家與設計師主導，我們也策展—— 首飾、手袋、香氛與器物。 每一次發表，都是一場小小的展覽。」 EXHIBIT ( 01 ) 鱗光",
+    "media": {
+     "img": 23,
+     "video": 0,
+     "svg": 2,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "Reunion · Woven Paper Box\n\n小金魚茶包｜團圓｜繽紛紙盒",
+      "href": "/products/reunion-paper"
+     },
+     {
+      "t": "Reunion · Paulownia Box\n\n小金魚茶包｜團圓｜桐木木盒",
+      "href": "/products/reunion-paulownia"
+     },
+     {
+      "t": "Flowers of Prosperity · 2026\n\n小金魚茶包｜花開富貴",
+      "href": "/products/flower-prosperity-2026"
+     },
+     {
+      "t": "",
+      "href": "/products/kyoto-edition"
+     },
+     {
+      "t": "",
+      "href": "/products/with-love"
+     },
+     {
+      "t": "",
+      "href": "/products/rose-encounter"
+     },
+     {
+      "t": "VIEW\nALL →\n→",
+      "href": "/collection"
+     },
+     {
+      "t": "",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "進入藝廊 — ENTER ATELIER",
+      "href": "/atelier"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-collection",
+    "top": 6651,
+    "h": 1167,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "商品一覽 Collection Reunion · Woven Paper Box 小金魚茶包｜團圓｜繽紛紙盒 Reunion · Paulownia Box 小金魚茶包｜團圓｜桐木木盒 Flowers of Prosperity · 2026 小金魚茶包｜花開富貴｜年節禮 VIEW ALL → →",
+    "media": {
+     "img": 3,
+     "video": 0,
+     "svg": 2,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "Reunion · Woven Paper Box\n\n小金魚茶包｜團圓｜繽紛紙盒",
+      "href": "/products/reunion-paper"
+     },
+     {
+      "t": "Reunion · Paulownia Box\n\n小金魚茶包｜團圓｜桐木木盒",
+      "href": "/products/reunion-paulownia"
+     },
+     {
+      "t": "Flowers of Prosperity · 2026\n\n小金魚茶包｜花開富貴",
+      "href": "/products/flower-prosperity-2026"
+     },
+     {
+      "t": "",
+      "href": "/products/kyoto-edition"
+     },
+     {
+      "t": "",
+      "href": "/products/with-love"
+     },
+     {
+      "t": "",
+      "href": "/products/rose-encounter"
+     },
+     {
+      "t": "VIEW\nALL →\n→",
+      "href": "/collection"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-at-home",
+    "top": 7818,
+    "h": 1439,
+    "w": 1440,
+    "bg": "rgb(12, 12, 11)",
+    "color": "rgb(255, 255, 255)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "不只是茶——藝術家的策展 ATELIER 「由藝術家與設計師主導，我們也策展—— 首飾、手袋、香氛與器物。 每一次發表，都是一場小小的展覽。」 EXHIBIT ( 01 ) 鱗光・鑽石耳環 「把一瞬鱗光，鍛成耳畔的光。」 VIEW — EXHIBIT ( 02 ) 游・絲緹花手袋 「一道尾鰭的弧線，游過兩座城市。」 VIEW — 進入藝廊 — ENTER ATELIER",
+    "media": {
+     "img": 2,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "進入藝廊 — ENTER ATELIER",
+      "href": "/atelier"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-shops",
+    "top": 9448,
+    "h": 906,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "哪裡可以遇見小金魚 Shops CHARM VILLA 晶華門市 台北市中山區中山北路二段39巷3號 B1（麗晶精品） 線上選購小金魚 站內瀏覽商品、加入購物袋與 Shopify 安全結帳 CHARM VILLA 京都門市 京都市中京區寺町通二條・山本町442（週六・週日 11:00–18:00）",
+    "media": {
+     "img": 3,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "CHARM VILLA 晶華門市\n\n台北市中山區中山北路二段39巷3號 B1（麗",
+      "href": "https://goo.gl/maps/agJHzfM2VE82"
+     },
+     {
+      "t": "線上選購小金魚\n\n站內瀏覽商品、加入購物袋與 Shopify 安全結帳",
+      "href": "/collection"
+     },
+     {
+      "t": "CHARM VILLA 京都門市\n\n京都市中京區寺町通二條・山本町442（週六・",
+      "href": "https://www.google.com/maps/search/?api=1&query=京都市中京区寺町通二条西入る山本町442"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-news",
+    "top": 10353,
+    "h": 790,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "最新消息 NEWS 8月11日 禮盒預購 2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。 閱讀全文 → 7月28日 媒體報導 《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。 閱讀全文 → 7月2日 活動快訊 8月15日起，於誠品生活南西展開「杯中金魚」期間限定茶席。 閱讀全文 →",
+    "media": {
+     "img": 3,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "8月11日\n\n禮盒預購\n\n2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。",
+      "href": "/news/moon-2026"
+     },
+     {
+      "t": "7月28日\n\n媒體報導\n\n《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進",
+      "href": "/news/monocle"
+     },
+     {
+      "t": "7月2日\n\n活動快訊\n\n8月15日起，於誠品生活南西展開「杯中金魚」期間限定茶席",
+      "href": "/news/eslite-popup"
+     }
+    ]
+   }
+  ],
+  "media": {
+   "videos": [],
+   "images": [
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-rose.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "玫瑰與金萱的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-lychee.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "荔枝與紅玉的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-beauty.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "蜜香與東方美人的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-osmanthus.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "桂花與包種的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-roselle.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "洛神與焙香烏龍的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-01.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-02.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-03.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-04.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffeatures%2Ffeature-01-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGd",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffeatures%2Ffeature-02.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHC",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Ffeatures%2Ffeature-03.jpg&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+     "alt": "",
+     "w": 1,
+     "h": 1
+    },
+    {
+     "src": "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+     "alt": "",
+     "w": 1,
+     "h": 1
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paper-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "小金魚茶包｜團圓｜繽紛紙盒",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paulownia-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjm",
+     "alt": "小金魚茶包｜團圓｜桐木木盒",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Fflower-prosperity-2026-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCe",
+     "alt": "小金魚茶包｜花開富貴｜年節禮",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fatelier-earrings-hero-v2-gpt-image-2-medium-2k.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNG",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fatelier-bag-hero-gpt-image-2-medium-2k.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCe",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-01-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCe",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-02.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-03-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCe",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-01-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCe",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-02.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-03-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCe",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fshops%2Fshop-regent.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    }
+   ],
+   "canvases": 0
+  },
+  "transitions": [
+   [
+    "transform, opacity|0.55s, 0.45s|cubic-bezier(0.22, 1, 0.36, 1), ease",
+    17
+   ],
+   [
+    "transform|0.8s|cubic-bezier(0.22, 1, 0.36, 1)",
+    11
+   ],
+   [
+    "opacity|0.3s|ease",
+    10
+   ],
+   [
+    "border-color|0.4s|cubic-bezier(0.22, 1, 0.36, 1)",
+    9
+   ],
+   [
+    "transform|0.35s|cubic-bezier(0.22, 1, 0.36, 1)",
+    7
+   ],
+   [
+    "color, opacity|0.3s, 0.35s|ease, cubic-bezier(0.22, 1, 0.36, 1)",
+    6
+   ],
+   [
+    "color, border-color|0.3s, 0.3s|ease, ease",
+    5
+   ],
+   [
+    "translate, filter, opacity|0.9s, 0.9s, 0.55s|cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.215, 0.61, 0.355, 1)",
+    5
+   ],
+   [
+    "anim cv-kv-center-in|0.55s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    4
+   ],
+   [
+    "anim cv-char-in|0.5s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    4
+   ],
+   [
+    "color|0.3s|ease",
+    2
+   ],
+   [
+    "anim cv-fade-in|0.45s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    2
+   ],
+   [
+    "transform|0.55s|cubic-bezier(0.22, 1, 0.36, 1)",
+    2
+   ],
+   [
+    "anim cv-marquee-left|40s|linear|infinite",
+    2
+   ],
+   [
+    "background, opacity|0.3s, 0.3s|ease, ease",
+    2
+   ],
+   [
+    "opacity|0.35s|cubic-bezier(0.22, 1, 0.36, 1)",
+    2
+   ],
+   [
+    "anim cv-marquee-left|30s|linear|infinite",
+    2
+   ],
+   [
+    "background, color|0.3s, 0.3s|ease, ease",
+    2
+   ],
+   [
+    "transform|0.2s|ease",
+    1
+   ],
+   [
+    "transform, color, opacity, visibility|0.45s, 0.3s, 0.3s, 0.3s|cubic-bezier(0.22, 1, 0.36, 1), ease, ease, ease",
+    1
+   ],
+   [
+    "anim cv-header-in|0.1s|cubic-bezier(0.165, 0.84, 0.44, 1)|1",
+    1
+   ],
+   [
+    "anim cv-kv-center-in, cv-kv-blur-clear|0.55s, 0.7s|cubic-bezier(0.215, 0.61, 0.355, 1), cubic-bezier(0.215, 0.61, 0.355, 1)|1, 1",
+    1
+   ],
+   [
+    "anim cv-badge-marquee|16s|linear|infinite",
+    1
+   ],
+   [
+    "anim cv-char-in|0.65s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    1
+   ],
+   [
+    "anim cv-char-in-mark|0.65s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    1
+   ],
+   [
+    "anim cv-fade-in|1.8s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    1
+   ],
+   [
+    "anim cv-fade-in|0.8s|cubic-bezier(0.215, 0.61, 0.355, 1)|1",
+    1
+   ],
+   [
+    "opacity|0.25s|ease",
+    1
+   ],
+   [
+    "anim cv-marquee-right|40s|linear|infinite",
+    1
+   ]
+  ],
+  "cursor": {
+   "bodyCursor": "auto",
+   "customCursorEls": [
+    "cv-cursor-float",
+    "cv-cursor-float__viewport",
+    "cv-cursor-float__pane",
+    "cv-cursor-float__pane cv-cursor-float__pane--cover"
+   ]
+  },
+  "nav": [
+   {
+    "t": "",
+    "href": "/"
+   },
+   {
+    "t": "",
+    "href": "/"
+   },
+   {
+    "t": "",
+    "href": "/collection"
+   },
+   {
+    "t": "",
+    "href": "/atelier"
+   },
+   {
+    "t": "",
+    "href": "/story"
+   },
+   {
+    "t": "",
+    "href": "/news"
+   },
+   {
+    "t": "",
+    "href": "/contact"
+   },
+   {
+    "t": "",
+    "href": "/en"
+   },
+   {
+    "t": "",
+    "href": "/ja"
+   },
+   {
+    "t": "",
+    "href": "https://www.instagram.com/charmvilla/"
+   },
+   {
+    "t": "",
+    "href": "/"
+   },
+   {
+    "t": "",
+    "href": "/collection"
+   },
+   {
+    "t": "",
+    "href": "/atelier"
+   },
+   {
+    "t": "",
+    "href": "/story"
+   },
+   {
+    "t": "",
+    "href": "/news"
+   },
+   {
+    "t": "",
+    "href": "/contact"
+   },
+   {
+    "t": "",
+    "href": "/en"
+   },
+   {
+    "t": "",
+    "href": "/ja"
+   },
+   {
+    "t": "TOP",
+    "href": "/"
+   },
+   {
+    "t": "COLLECTION",
+    "href": "/collection"
+   }
+  ]
+ },
+ "after": {
+  "doc": {
+   "scrollHeight": 13589,
+   "bodyScrollHeight": 13589,
+   "innerHeight": 900,
+   "innerWidth": 1440,
+   "bodyOverflow": "clip visible",
+   "htmlOverflow": "visible",
+   "htmlClass": "marcellus_3dfbfff9-module__5Ufb9q__variable eb_garamond_12dd8e11-module__jpdwiG__variable inter_6281617f-module__qrAZ_a__variable antialiased lenis",
+   "bodyClass": "cv-body"
+  },
+  "lenis": {
+   "onWindow": [
+    "lenisVersion",
+    "lenis"
+   ],
+   "htmlLenis": true,
+   "dataLenis": false
+  },
+  "gsap": {
+   "present": false,
+   "scrollTrigger": false
+  },
+  "fonts": [
+   "Marcellus 400 normal unloaded",
+   "Marcellus 400 normal loaded",
+   "Marcellus Fallback normal normal loaded",
+   "EB Garamond 400 normal unloaded",
+   "EB Garamond 500 normal unloaded",
+   "EB Garamond Fallback normal normal unloaded",
+   "Inter 400 normal unloaded",
+   "Inter 400 normal loaded",
+   "Inter Fallback normal normal loaded",
+   "Noto Serif TC 400 normal loaded"
+  ],
+  "fixed": [
+   {
+    "tag": "A",
+    "cls": "cv-skip-link",
+    "pos": "fixed",
+    "top": "10px",
+    "z": "130",
+    "w": 122,
+    "h": 47
+   },
+   {
+    "tag": "HEADER",
+    "cls": "cv-header cv-intro-hidden is-hidden",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "50",
+    "w": 1440,
+    "h": 81
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-mobile-menu",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "80",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-about__pin-viewport",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "auto",
+    "w": 720,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-cursor-float",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "40",
+    "w": 172,
+    "h": 228
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-gallery",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "1",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "BUTTON",
+    "cls": "cv-footer-entry cv-intro-hidden",
+    "pos": "fixed",
+    "top": "889px",
+    "z": "120",
+    "w": 1,
+    "h": 1
+   },
+   {
+    "tag": "FOOTER",
+    "cls": "cv-footer",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "0",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "BUTTON",
+    "cls": "cv-cart-veil ",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "109",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "tag": "DIV",
+    "cls": "cv-cart-drawer ",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "110",
+    "w": 480,
+    "h": 900
+   }
+  ],
+  "inlineTransforms": [
+   {
+    "tag": "SPAN",
+    "cls": "cv-dial__track",
+    "style": "transform:translateY(0px)"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-dial__track",
+    "style": "transform:translateY(-16px)"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "transform: translateY(0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "cv-mchar",
+    "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+   }
+  ],
+  "colors": [
+   [
+    "rgb(17, 17, 16)",
+    666
+   ],
+   [
+    "rgb(255, 255, 255)",
+    141
+   ],
+   [
+    "rgba(0, 0, 0, 0)",
+    32
+   ],
+   [
+    "bg rgb(228, 226, 221)",
+    7
+   ],
+   [
+    "bg rgb(236, 235, 231)",
+    4
+   ],
+   [
+    "bg rgb(17, 17, 16)",
+    3
+   ],
+   [
+    "bg rgb(12, 12, 11)",
+    3
+   ],
+   [
+    "bg rgb(22, 22, 20)",
+    2
+   ],
+   [
+    "rgba(17, 17, 16, 0.74)",
+    1
+   ],
+   [
+    "bg rgba(17, 17, 16, 0.25)",
+    1
+   ],
+   [
+    "rgba(17, 17, 16, 0.62)",
+    1
+   ],
+   [
+    "bg rgba(17, 17, 16, 0.18)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.75)",
+    1
+   ],
+   [
+    "bg rgba(17, 17, 16, 0.34)",
+    1
+   ],
+   [
+    "rgb(114, 95, 73)",
+    1
+   ]
+  ],
+  "fontsUsed": [
+   [
+    "\"Noto Serif TC\" 400",
+    489
+   ],
+   [
+    "Marcellus 400",
+    328
+   ],
+   [
+    "Inter 400",
+    25
+   ],
+   [
+    "\"Noto Serif TC\" 300",
+    1
+   ]
+  ],
+  "sections": [
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-flow",
+    "top": 0,
+    "h": 6561,
+    "w": 1440,
+    "bg": "rgb(236, 235, 231)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "活動快訊 （2026 中秋限定禮盒，晶華門市與線上商店同步開放預購中） （2026 中秋限定禮盒，晶華門市與線上商店同步開放預購中） 這是金魚嗎？ CHARM VILLA Is this a goldfish? 1 2 3 4 5 Ⅱ 1 2 3 4 5 Permanent Collection 玫瑰 與 金萱 的 小金魚茶包 MORE DETAIL SCROLL 小金魚茶包，是什麼？ WHAT IS CHARM VILLA? 注入熱水的那一刻， 一尾金魚在杯裡醒了過來。 薄",
+    "media": {
+     "img": 14,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "活動快訊\n（2026 中秋限定禮盒，晶華門市與線上商店同步開放預購中）　\n（20",
+      "href": "/news"
+     },
+     {
+      "t": "MORE DETAIL",
+      "href": "/collection"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-about",
+    "top": 900,
+    "h": 4410,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "小金魚茶包，是什麼？ WHAT IS CHARM VILLA? 注入熱水的那一刻， 一尾金魚在杯裡醒了過來。 薄如蟬翼的魚身緩緩舒展， 尾鰭盪開一圈茶色的漣漪—— 有人說，這是捨不得喝的一杯茶。 但美好的事物，本來就該被慢慢享用。 一塊茶袋布，經過裁剪、摺疊、縫製， 在職人指尖折出魚鰭與尾巴， 再填入台灣山頭的茶葉—— 每一尾，都是獨一無二的手工。 金魚，諧音「金玉」與「金餘」， 是東方人心底最溫柔的祝福： 願年年有餘，願所愛之人富足安好。 從台北的小工作室游向世界， 這是一",
+    "media": {
+     "img": 4,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-features",
+    "top": 5310,
+    "h": 1251,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "小金魚茶包的三個堅持 Three Features of CHARM VILLA ( 01 ) 一針一線， 手工縫製 每一尾小金魚，都由職人以茶袋布手工剪裁、摺疊、縫製而成，魚身弧度與尾鰭姿態無法以機器複製。 目前已取得全球 34 國設計專利，並獲德國 Red Dot 與 iF 金質獎肯定。 ( 02 ) 會游泳的 一杯茶 熱水注入，魚身徐徐展開，宛如在杯中甦醒悠游；茶湯漸深，鱗色也隨之透亮。 沖泡的過程本身，就是一場值得屏息的小小演出。 ( 03 ) 純粹台灣茶， 與它的山",
+    "media": {
+     "img": 5,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-gallery",
+    "top": 11040,
+    "h": 900,
+    "w": 1440,
+    "bg": "rgb(12, 12, 11)",
+    "color": "rgb(17, 17, 16)",
+    "position": "fixed",
+    "overflow": "hidden",
+    "text": "",
+    "media": {
+     "img": 54,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-gallery-stage",
+    "top": 6561,
+    "h": 990,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "",
+    "media": {
+     "img": 0,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": []
+   },
+   {
+    "tag": "DIV",
+    "id": "",
+    "cls": "cv-flow",
+    "top": 7551,
+    "h": 5139,
+    "w": 1440,
+    "bg": "rgb(236, 235, 231)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "商品一覽 Collection Reunion · Woven Paper Box 小金魚茶包｜團圓｜繽紛紙盒 Reunion · Paulownia Box 小金魚茶包｜團圓｜桐木木盒 Flowers of Prosperity · 2026 小金魚茶包｜花開富貴｜年節禮 VIEW ALL → → 不只是茶——藝術家的策展 ATELIER 「由藝術家與設計師主導，我們也策展—— 首飾、手袋、香氛與器物。 每一次發表，都是一場小小的展覽。」 EXHIBIT ( 01 ) 鱗光",
+    "media": {
+     "img": 23,
+     "video": 0,
+     "svg": 2,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "Reunion · Woven Paper Box\n\n小金魚茶包｜團圓｜繽紛紙盒",
+      "href": "/products/reunion-paper"
+     },
+     {
+      "t": "Reunion · Paulownia Box\n\n小金魚茶包｜團圓｜桐木木盒",
+      "href": "/products/reunion-paulownia"
+     },
+     {
+      "t": "Flowers of Prosperity · 2026\n\n小金魚茶包｜花開富貴",
+      "href": "/products/flower-prosperity-2026"
+     },
+     {
+      "t": "",
+      "href": "/products/kyoto-edition"
+     },
+     {
+      "t": "",
+      "href": "/products/with-love"
+     },
+     {
+      "t": "",
+      "href": "/products/rose-encounter"
+     },
+     {
+      "t": "VIEW\nALL →\n→",
+      "href": "/collection"
+     },
+     {
+      "t": "",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "進入藝廊 — ENTER ATELIER",
+      "href": "/atelier"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-collection",
+    "top": 7551,
+    "h": 1167,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "relative",
+    "overflow": "visible",
+    "text": "商品一覽 Collection Reunion · Woven Paper Box 小金魚茶包｜團圓｜繽紛紙盒 Reunion · Paulownia Box 小金魚茶包｜團圓｜桐木木盒 Flowers of Prosperity · 2026 小金魚茶包｜花開富貴｜年節禮 VIEW ALL → →",
+    "media": {
+     "img": 3,
+     "video": 0,
+     "svg": 2,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "Reunion · Woven Paper Box\n\n小金魚茶包｜團圓｜繽紛紙盒",
+      "href": "/products/reunion-paper"
+     },
+     {
+      "t": "Reunion · Paulownia Box\n\n小金魚茶包｜團圓｜桐木木盒",
+      "href": "/products/reunion-paulownia"
+     },
+     {
+      "t": "Flowers of Prosperity · 2026\n\n小金魚茶包｜花開富貴",
+      "href": "/products/flower-prosperity-2026"
+     },
+     {
+      "t": "",
+      "href": "/products/kyoto-edition"
+     },
+     {
+      "t": "",
+      "href": "/products/with-love"
+     },
+     {
+      "t": "",
+      "href": "/products/rose-encounter"
+     },
+     {
+      "t": "VIEW\nALL →\n→",
+      "href": "/collection"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-at-home",
+    "top": 8718,
+    "h": 1439,
+    "w": 1440,
+    "bg": "rgb(12, 12, 11)",
+    "color": "rgb(255, 255, 255)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "不只是茶——藝術家的策展 ATELIER 「由藝術家與設計師主導，我們也策展—— 首飾、手袋、香氛與器物。 每一次發表，都是一場小小的展覽。」 EXHIBIT ( 01 ) 鱗光・鑽石耳環 「把一瞬鱗光，鍛成耳畔的光。」 VIEW — EXHIBIT ( 02 ) 游・絲緹花手袋 「一道尾鰭的弧線，游過兩座城市。」 VIEW — 進入藝廊 — ENTER ATELIER",
+    "media": {
+     "img": 2,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/earrings"
+     },
+     {
+      "t": "",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "VIEW —",
+      "href": "/atelier/bag"
+     },
+     {
+      "t": "進入藝廊 — ENTER ATELIER",
+      "href": "/atelier"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-shops",
+    "top": 10348,
+    "h": 906,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "哪裡可以遇見小金魚 Shops CHARM VILLA 晶華門市 台北市中山區中山北路二段39巷3號 B1（麗晶精品） 線上選購小金魚 站內瀏覽商品、加入購物袋與 Shopify 安全結帳 CHARM VILLA 京都門市 京都市中京區寺町通二條・山本町442（週六・週日 11:00–18:00）",
+    "media": {
+     "img": 3,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "CHARM VILLA 晶華門市\n\n台北市中山區中山北路二段39巷3號 B1（麗",
+      "href": "https://goo.gl/maps/agJHzfM2VE82"
+     },
+     {
+      "t": "線上選購小金魚\n\n站內瀏覽商品、加入購物袋與 Shopify 安全結帳",
+      "href": "/collection"
+     },
+     {
+      "t": "CHARM VILLA 京都門市\n\n京都市中京區寺町通二條・山本町442（週六・",
+      "href": "https://www.google.com/maps/search/?api=1&query=京都市中京区寺町通二条西入る山本町442"
+     }
+    ]
+   },
+   {
+    "tag": "SECTION",
+    "id": "",
+    "cls": "cv-news",
+    "top": 11253,
+    "h": 790,
+    "w": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 16)",
+    "position": "static",
+    "overflow": "visible",
+    "text": "最新消息 NEWS 8月11日 禮盒預購 2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。 閱讀全文 → 7月28日 媒體報導 《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。 閱讀全文 → 7月2日 活動快訊 8月15日起，於誠品生活南西展開「杯中金魚」期間限定茶席。 閱讀全文 →",
+    "media": {
+     "img": 3,
+     "video": 0,
+     "svg": 0,
+     "canvas": 0
+    },
+    "links": [
+     {
+      "t": "8月11日\n\n禮盒預購\n\n2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。",
+      "href": "/news/moon-2026"
+     },
+     {
+      "t": "7月28日\n\n媒體報導\n\n《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進",
+      "href": "/news/monocle"
+     },
+     {
+      "t": "7月2日\n\n活動快訊\n\n8月15日起，於誠品生活南西展開「杯中金魚」期間限定茶席",
+      "href": "/news/eslite-popup"
+     }
+    ]
+   }
+  ],
+  "media": {
+   "videos": [],
+   "images": [
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-rose.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "玫瑰與金萱的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-lychee.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "荔枝與紅玉的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-beauty.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "蜜香與東方美人的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-osmanthus.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "桂花與包種的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-roselle.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "洛神與焙香烏龍的小金魚茶包",
+     "w": 460,
+     "h": 305
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-01.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-02.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-03.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fabout%2Fabout-04.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCj",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffeatures%2Ffeature-01-1600w.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGd",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffeatures%2Ffeature-02.webp&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHC",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Ffeatures%2Ffeature-03.jpg&w=2560&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Ffeatures%2Ffeature-03.jpg&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 172,
+     "h": 229
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Ffeatures%2Ffeature-03.jpg&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 172,
+     "h": 229
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg",
+     "alt": "",
+     "w": 900,
+     "h": 597
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg",
+     "alt": "",
+     "w": 900,
+     "h": 597
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg",
+     "alt": "",
+     "w": 900,
+     "h": 597
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg",
+     "alt": "",
+     "w": 900,
+     "h": 597
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg",
+     "alt": "",
+     "w": 900,
+     "h": 597
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg",
+     "alt": "",
+     "w": 900,
+     "h": 597
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp",
+     "alt": "",
+     "w": 900,
+     "h": 598
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paper-1600w.webp&w=360&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "小金魚茶包｜團圓｜繽紛紙盒",
+     "w": 333,
+     "h": 257
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paulownia-1600w.webp&w=360&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "小金魚茶包｜團圓｜桐木木盒",
+     "w": 333,
+     "h": 215
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Fflower-prosperity-2026-1600w.webp&w=360&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "小金魚茶包｜花開富貴｜年節禮",
+     "w": 333,
+     "h": 257
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fatelier-earrings-hero-v2-gpt-image-2-medium-2k.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGd",
+     "alt": "",
+     "w": 574,
+     "h": 324
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fatelier-bag-hero-gpt-image-2-medium-2k.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "",
+     "w": 574,
+     "h": 324
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-01-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "",
+     "w": 187,
+     "h": 124
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-02.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 187,
+     "h": 124
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-03-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "",
+     "w": 187,
+     "h": 124
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-01-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "",
+     "w": 187,
+     "h": 124
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-02.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD",
+     "alt": "",
+     "w": 187,
+     "h": 124
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-03-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCed",
+     "alt": "",
+     "w": 187,
+     "h": 124
+    },
+    {
+     "src": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fshops%2Fshop-regent.webp&w=420&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedw",
+     "alt": "",
+     "w": 420,
+     "h": 279
+    }
+   ],
+   "canvases": 0
+  },
+  "transitions": [
+   [
+    "transform, opacity|0.55s, 0.45s|cubic-bezier(0.22, 1, 0.36, 1), ease",
+    17
+   ],
+   [
+    "transform|0.8s|cubic-bezier(0.22, 1, 0.36, 1)",
+    11
+   ],
+   [
+    "opacity|0.3s|ease",
+    10
+   ],
+   [
+    "border-color|0.4s|cubic-bezier(0.22, 1, 0.36, 1)",
+    9
+   ],
+   [
+    "transform|0.35s|cubic-bezier(0.22, 1, 0.36, 1)",
+    7
+   ],
+   [
+    "anim cv-info-drift|0.35s|cubic-bezier(0.22, 1, 0.36, 1)|1",
+    7
+   ],
+   [
+    "color, opacity|0.3s, 0.35s|ease, cubic-bezier(0.22, 1, 0.36, 1)",
+    6
+   ],
+   [
+    "color, border-color|0.3s, 0.3s|ease, ease",
+    5
+   ],
+   [
+    "translate, filter, opacity|0.9s, 0.9s, 0.55s|cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.215, 0.61, 0.355, 1)",
+    5
+   ],
+   [
+    "color|0.3s|ease",
+    2
+   ],
+   [
+    "transform|0.55s|cubic-bezier(0.22, 1, 0.36, 1)",
+    2
+   ],
+   [
+    "anim cv-marquee-left|40s|linear|infinite",
+    2
+   ],
+   [
+    "background, opacity|0.3s, 0.3s|ease, ease",
+    2
+   ],
+   [
+    "opacity|0.35s|cubic-bezier(0.22, 1, 0.36, 1)",
+    2
+   ],
+   [
+    "anim cv-marquee-left|30s|linear|infinite",
+    2
+   ],
+   [
+    "background, color|0.3s, 0.3s|ease, ease",
+    2
+   ],
+   [
+    "transform|0.2s|ease",
+    1
+   ],
+   [
+    "transform, color, opacity, visibility|0.45s, 0.3s, 0.3s, 0.3s|cubic-bezier(0.22, 1, 0.36, 1), ease, ease, ease",
+    1
+   ],
+   [
+    "anim cv-badge-marquee|16s|linear|infinite",
+    1
+   ],
+   [
+    "anim cv-season-progress|4s|linear|1",
+    1
+   ],
+   [
+    "opacity|0.25s|ease",
+    1
+   ],
+   [
+    "anim cv-marquee-right|40s|linear|infinite",
+    1
+   ]
+  ],
+  "cursor": {
+   "bodyCursor": "auto",
+   "customCursorEls": [
+    "cv-cursor-float",
+    "cv-cursor-float__viewport",
+    "cv-cursor-float__pane",
+    "cv-cursor-float__pane cv-cursor-float__pane--cover"
+   ]
+  },
+  "nav": [
+   {
+    "t": "CHARM VILLA",
+    "href": "/"
+   },
+   {
+    "t": "TOP",
+    "href": "/"
+   },
+   {
+    "t": "COLLECTION",
+    "href": "/collection"
+   },
+   {
+    "t": "ATELIER",
+    "href": "/atelier"
+   },
+   {
+    "t": "STORY",
+    "href": "/story"
+   },
+   {
+    "t": "NEWS",
+    "href": "/news"
+   },
+   {
+    "t": "CONTACT",
+    "href": "/contact"
+   },
+   {
+    "t": "EN",
+    "href": "/en"
+   },
+   {
+    "t": "日本語",
+    "href": "/ja"
+   },
+   {
+    "t": "IG",
+    "href": "https://www.instagram.com/charmvilla/"
+   },
+   {
+    "t": "",
+    "href": "/"
+   },
+   {
+    "t": "",
+    "href": "/collection"
+   },
+   {
+    "t": "",
+    "href": "/atelier"
+   },
+   {
+    "t": "",
+    "href": "/story"
+   },
+   {
+    "t": "",
+    "href": "/news"
+   },
+   {
+    "t": "",
+    "href": "/contact"
+   },
+   {
+    "t": "",
+    "href": "/en"
+   },
+   {
+    "t": "",
+    "href": "/ja"
+   },
+   {
+    "t": "TOP",
+    "href": "/"
+   },
+   {
+    "t": "COLLECTION",
+    "href": "/collection"
+   }
+  ]
+ },
+ "scrollSamples": [
+  {
+   "step": 0,
+   "y": 39,
+   "t": 1790160961807
+  },
+  {
+   "step": 6,
+   "y": 685,
+   "t": 1790160962524
+  },
+  {
+   "step": 12,
+   "y": 1397,
+   "t": 1790160964207
+  },
+  {
+   "step": 18,
+   "y": 2119,
+   "t": 1790160965655
+  },
+  {
+   "step": 24,
+   "y": 2851,
+   "t": 1790160967105
+  },
+  {
+   "step": 30,
+   "y": 3596,
+   "t": 1790160968572
+  },
+  {
+   "step": 36,
+   "y": 4359,
+   "t": 1790160970038
+  },
+  {
+   "step": 42,
+   "y": 5079,
+   "t": 1790160971422
+  },
+  {
+   "step": 48,
+   "y": 5705,
+   "t": 1790160972021
+  },
+  {
+   "step": 54,
+   "y": 6427,
+   "t": 1790160973423
+  },
+  {
+   "step": 60,
+   "y": 7151,
+   "t": 1790160974922
+  },
+  {
+   "step": 66,
+   "y": 7878,
+   "t": 1790160976304
+  },
+  {
+   "step": 72,
+   "y": 8597,
+   "t": 1790160977659
+  },
+  {
+   "step": 78,
+   "y": 9331,
+   "t": 1790160979121
+  },
+  {
+   "step": 84,
+   "y": 10075,
+   "t": 1790160980538
+  },
+  {
+   "step": 90,
+   "y": 10839,
+   "t": 1790160981937
+  }
+ ],
+ "hovers": [
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1",
+    "text": "CHARM VILLA"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1",
+    "text": "TOP"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.45",
+    "text": "COLLECTION"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.45",
+    "text": "ATELIER"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.45",
+    "text": "STORY"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.45",
+    "text": "NEWS"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.45",
+    "text": "CONTACT"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.62",
+    "text": "EN"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "0.62",
+    "text": "日本語"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "before": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1",
+    "text": "IG"
+   },
+   "after": {
+    "color": "rgb(17, 17, 16)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "transform": "none",
+    "opacity": "1"
+   }
+  },
+  {
+   "menuError": "elementHandle.click: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - attempting click"
+  }
+ ],
+ "requests": [
+  {
+   "t": "font",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/media/bd61c44353c129b5-s.p.122pnzd8zlfta.woff2"
+  },
+  {
+   "t": "font",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/media/e4505858a30c79c2-s.p.1simdcn5ouyn0.woff2"
+  },
+  {
+   "t": "font",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/media/ec2f4458eb06f74e-s.p.217u6tza6brar.woff2"
+  },
+  {
+   "t": "font",
+   "u": "https://charmvilla-rho.vercel.app/fonts/cjk/NotoSerifTC-site.woff2"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-rose.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1uu2teu63lffp.css"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1addrih-3a24f.css"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/146-kqphyygz0.css"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2wksce9xmrff5.css"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/17tuxysuvqwd2.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/20es43nb27oti.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/07f7v2wp-ql8j.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/3ib_vqlmoe9dn.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/turbopack-446axs324pnl6.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2corl6wyj4669.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/0l0cqgugg8r_k.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/3u_02xt9oidus.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/3q0sp3zim3_xq.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/0dxq3bx2kbgjg.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2b0715c0xi3rs.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1l3f1mctezss-.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/3prn-dg-9vuz1.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2s9v9va5rfa4h.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/18vcz2y1dq2pc.js"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/fonts/cjk/noto-serif-tc.css"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-lychee.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-beauty.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-osmanthus.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fkv%2Fkv-roselle.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/about/about-01.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paper-1600w.webp&w=128&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/collection?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/atelier?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/story?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/about/about-02.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/about/about-03.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/about/about-04.webp"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/0rxdqzg7o7n05.css"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/contact?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1kwyociown7r_.css"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/privacy?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2216yde1wxr9b.css"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/terms?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/shipping-returns?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/?_rsc=2cr3vbu5PgFM5KbT"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/?_rsc=ckyx7KLxDljwB19H"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/collection?_rsc=nQQpAyxUAhSQ4YiU"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1mpl61u4gdh1y.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/3j7vqkt1skkok.js"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/atelier?_rsc=LrSD4SOHIvARnavj"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1zpjv7507x75x.js"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/story?_rsc=_I0AZHMGdsokJ5I1"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news?_rsc=LgGrynH7Ado1V_Am"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/contact?_rsc=uK4fSSftmpefY6P7"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/privacy?_rsc=qo7elCJIMehmm9JP"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2d80e461i012f.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2d2m8rv5h8g-q.js"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/terms?_rsc=n8NyIVTHebYtzEyC"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/00_t-oklwwusy.js"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/shipping-returns?_rsc=7_dC9xAkdkwvnvGB"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/31q1xdk98ca-k.js"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/26rluhb1loqh4.js"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paper-1600w.webp&w=360&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Freunion-paulownia-1600w.webp&w=360&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fproducts%2Fofficial%2Fflower-prosperity-2026-1600w.webp&w=360&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-01-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-04-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-07-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-02-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-05-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-08-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/gallery/gal-03.jpg"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-06-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/images/generated/product-realism/gallery/gal-09-900w.webp"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffeatures%2Ffeature-01-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffeatures%2Ffeature-02.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Ffeatures%2Ffeature-03.jpg&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fatelier-earrings-hero-v2-gpt-image-2-medium-2k.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fatelier-bag-hero-gpt-image-2-medium-2k.webp&w=640&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-01-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-02.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fband%2Fpill-03-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/reunion-paper?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/reunion-paulownia?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/flower-prosperity-2026?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/kyoto-edition?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "stylesheet",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1n0dpj4129po2.css"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/with-love?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/rose-encounter?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/reunion-paper?_rsc=pkFtPCvHPDJ_YzLY"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/reunion-paulownia?_rsc=pkFtPCvHPDJ_YzLY"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/flower-prosperity-2026?_rsc=pkFtPCvHPDJ_YzLY"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/0vsc5-unezur5.js"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/kyoto-edition?_rsc=pkFtPCvHPDJ_YzLY"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/with-love?_rsc=pkFtPCvHPDJ_YzLY"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/products/rose-encounter?_rsc=pkFtPCvHPDJ_YzLY"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fshops%2Fshop-regent.webp&w=420&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fshops%2Fshop-online.webp&w=420&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fatelier%2Fshop-kyoto.jpg&w=420&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fnews%2Fnews-moon-1600w.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/atelier/earrings?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/atelier/bag?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/atelier/bag?_rsc=qq78tDrMI0zDmYCl"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/atelier/earrings?_rsc=Z2vOjP5fhEArwnr_"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1c1xlhvdyhaql.js"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fnews%2Fnews-monocle.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/33mzyij610u2i.js"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Fnews%2Fnews-popup.webp&w=200&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news/moon-2026?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news/moon-2026?_rsc=iTXXfEZuDNSOHlWm"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news/monocle?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "script",
+   "u": "https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/35g2satpx3twe.js"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news/monocle?_rsc=iTXXfEZuDNSOHlWm"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news/eslite-popup?_rsc=L898nmYqz1zNS-Do"
+  },
+  {
+   "t": "fetch",
+   "u": "https://charmvilla-rho.vercel.app/news/eslite-popup?_rsc=iTXXfEZuDNSOHlWm"
+  },
+  {
+   "t": "image",
+   "u": "https://charmvilla-rho.vercel.app/_next/image?url=%2Fimages%2Fgenerated%2Fproduct-realism%2Ffooter%2Ffooter-hero.webp&w=1440&q=75&dpl=dpl_U9NjGgmr2LQXNGdn8vdHCedwCjmD"
+  }
+ ],
+ "console": [
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1kwyociown7r_.css was preloaded using link preload but not used within a few second",
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/0rxdqzg7o7n05.css was preloaded using link preload but not used within a few second",
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2216yde1wxr9b.css was preloaded using link preload but not used within a few second",
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1n0dpj4129po2.css was preloaded using link preload but not used within a few second",
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/1kwyociown7r_.css was preloaded using link preload but not used within a few second",
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/0rxdqzg7o7n05.css was preloaded using link preload but not used within a few second",
+  "warning: The resource https://charmvilla-rho.vercel.app/_next/static/immutable/chunks/2216yde1wxr9b.css was preloaded using link preload but not used within a few second"
+ ]
+}

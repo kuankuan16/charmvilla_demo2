@@ -1,0 +1,194 @@
+[
+ {
+  "url": "https://davidlaxer.com/assets/fonts/6ef9bad49d388b565065.woff2",
+  "file": "fonts/6ef9bad49d388b565065.woff2",
+  "bytes": 25844,
+  "sha256": "e27b56af987033dac1614ad7aed36c00ade0bbb6c2020a02eb734c80dd708e57"
+ },
+ {
+  "url": "https://davidlaxer.com/assets/fonts/f788bae537294914b456.woff2",
+  "file": "fonts/f788bae537294914b456.woff2",
+  "bytes": 26232,
+  "sha256": "0544288b1fc2eb346648171f60b4a1ca527888c8d2cbceb316bc4bb8f08dc385"
+ },
+ {
+  "url": "https://davidlaxer.com/icons/apple-icon-180.png",
+  "file": "media/apple-icon-180.png",
+  "bytes": 881,
+  "sha256": "94e94337aa5a40743dd063124a145eeeca8157ed9dbb0240f07aaa9568efdabc"
+ },
+ {
+  "url": "https://davidlaxer.com/icons/favicon-196.png",
+  "file": "media/favicon-196.png",
+  "bytes": 948,
+  "sha256": "5c9d23fac582247808bc0659048e2b10e76a4c21306edbcb4d36e25983687a01"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/CTA_9730c64396.png",
+  "file": "media/CTA_9730c64396.png",
+  "bytes": 205990,
+  "sha256": "18f342b6cb277b53014d81d179424fe738ddeadaf279ecf4e01659dbdd97b351"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Home_01_f3d04facd9.png",
+  "file": "media/Home_01_f3d04facd9.png",
+  "bytes": 217392,
+  "sha256": "6833664d7a50072947f44502143690402026639aba82dff1aaef525b6a5d444b"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Home_02_24f0f2a6c8.jpg",
+  "file": "media/Home_02_24f0f2a6c8.jpg",
+  "bytes": 63397,
+  "sha256": "0c87aaedb9916f99261cccf4342e27e6ac6cf35dba696f68e4514db594be55e5"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_01_a495cf2995.jpg",
+  "file": "logos/Logos_01_a495cf2995.jpg",
+  "bytes": 3865,
+  "sha256": "0e6a302f5cded419e8cc93d15feeb6a1e2a8e5f0fe37e08d3124e409c5ff63f3"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_02_6a48d80683.jpg",
+  "file": "logos/Logos_02_6a48d80683.jpg",
+  "bytes": 3033,
+  "sha256": "9022cc8f46c8198bd58c9663a4281977c3dd13487dd375e6859041966a7f6e2a"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_03_1dea714399.jpg",
+  "file": "logos/Logos_03_1dea714399.jpg",
+  "bytes": 4892,
+  "sha256": "6eae7faefb7d21c125cbfe4c7a156643fa3440462c1666bb498cc1cfe6417f9b"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_04_9ff07e75b4.jpg",
+  "file": "logos/Logos_04_9ff07e75b4.jpg",
+  "bytes": 3235,
+  "sha256": "18972a5b2a0ccc43f6d3750998c4f693439c2cf28738a1d854821540fc34f8dd"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_05_65522d3f80.jpg",
+  "file": "logos/Logos_05_65522d3f80.jpg",
+  "bytes": 3765,
+  "sha256": "5bf2033421b4279eacda87264d8f7d5f01b3e2ef75c70503e1ce00f0aa4125b8"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_06_495999dfe7.jpg",
+  "file": "logos/Logos_06_495999dfe7.jpg",
+  "bytes": 2759,
+  "sha256": "eb2c8841a43f9dc610471e5439734055628d489a62802fcd332248ff825cee18"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_07_94dd0108ba.jpg",
+  "file": "logos/Logos_07_94dd0108ba.jpg",
+  "bytes": 2822,
+  "sha256": "87bcc6d9e1f5f21b4765a3470618b6827056a68a7fb7be9576356585055057d8"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_08_2f797b58ce.jpg",
+  "file": "logos/Logos_08_2f797b58ce.jpg",
+  "bytes": 4913,
+  "sha256": "7ca4d4f0a10b0a058e59786e74c54865ecfb6292e9979f726b839bd2c238f3c0"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_09_7b6407a1d4.jpg",
+  "file": "logos/Logos_09_7b6407a1d4.jpg",
+  "bytes": 4486,
+  "sha256": "6d6caed081b5244625d7f70481abe05ade71995e0025c162ed777424a7fd9822"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_10_db93fa5eaa.jpg",
+  "file": "logos/Logos_10_db93fa5eaa.jpg",
+  "bytes": 2808,
+  "sha256": "50d40b069e3ffa70ae885dbf17da3f5ec0ed5d8b8a10f615ba73c15b82158988"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_11_436de8f38a.jpg",
+  "file": "logos/Logos_11_436de8f38a.jpg",
+  "bytes": 4067,
+  "sha256": "757b73ce35c543e01c52b18a139abe4965a236cbe17e2e7bb27484192f383261"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_12_23902403bc.jpg",
+  "file": "logos/Logos_12_23902403bc.jpg",
+  "bytes": 4233,
+  "sha256": "f54f1a7d50ec6d83ed48c7320fa6844d1bc67c95d181d34eef36e17f8f80b9f9"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_13_cf630af4c6.jpg",
+  "file": "logos/Logos_13_cf630af4c6.jpg",
+  "bytes": 4747,
+  "sha256": "5c45f6fa074a8671f52e3d160bdc702a31763ee0ab4000fba00fc59acf1d11ae"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_14_682e1adb8f.jpg",
+  "file": "logos/Logos_14_682e1adb8f.jpg",
+  "bytes": 4909,
+  "sha256": "ee2899290a63b08e09a3fff3b924a7a0b64982b24b2daa384f4b3e1332166d97"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_15_e48c01d0a8.jpg",
+  "file": "logos/Logos_15_e48c01d0a8.jpg",
+  "bytes": 3542,
+  "sha256": "7dcb8a55444514743292276065e0aa1a5bd9c3e53e29f520fa5e9b386d9b37bc"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_16_a41039774f.jpg",
+  "file": "logos/Logos_16_a41039774f.jpg",
+  "bytes": 3649,
+  "sha256": "60aef830ea5480083fccf610ac35e62aa2578fb5396978ebf481880311ce5aa3"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_17_f370696219.jpg",
+  "file": "logos/Logos_17_f370696219.jpg",
+  "bytes": 3642,
+  "sha256": "8f4ec4422416dca585e9643abdbf8566bdfe3feb430c94d5af883b59404a35fe"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_18_a87764bb2f.jpg",
+  "file": "logos/Logos_18_a87764bb2f.jpg",
+  "bytes": 3658,
+  "sha256": "6b61f4ca04ae373345a6ac40b87fd23d1fb0cfb5e67705e353462cc71289f6ae"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_19_cf364bd79b.jpg",
+  "file": "logos/Logos_19_cf364bd79b.jpg",
+  "bytes": 5534,
+  "sha256": "61732015fb95696c52fe1d8d1d7004dc68e34138db94914f634485147c9ae7c3"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_20_83d298de0c.jpg",
+  "file": "logos/Logos_20_83d298de0c.jpg",
+  "bytes": 3872,
+  "sha256": "b0707559a17636b0817c132b38ad3bc276dde6a2b94da6dcb231b5496ed6727e"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/Logos_21_9967d6bfb5.jpg",
+  "file": "logos/Logos_21_9967d6bfb5.jpg",
+  "bytes": 3097,
+  "sha256": "ee1694bb392455ad51d8736e737c44c6700b38cdf89698e70a1b3efa942e805e"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/main_video_724fde0309_f600aaf2b7.mp4",
+  "file": "media/main_video_724fde0309_f600aaf2b7.mp4",
+  "bytes": 1903815,
+  "sha256": "634f3db198e1a85e57c825f308f21136b4013d044d90a4661279f5c3906e9643"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/small_CTA_9730c64396.png",
+  "file": "media/small_CTA_9730c64396.png",
+  "bytes": 351060,
+  "sha256": "cec67c351b5d2e205a296f6cb24bb5b79de7a803b3f6d4f55011e42eab90c609"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/small_Home_01_f3d04facd9.png",
+  "file": "media/small_Home_01_f3d04facd9.png",
+  "bytes": 256471,
+  "sha256": "d56c76772cf468681efc164d153db10a59b88a9ab5156eab1b3cbb1dc4e11c1b"
+ },
+ {
+  "url": "https://laxer.onrender.com/uploads/small_Home_02_24f0f2a6c8.jpg",
+  "file": "media/small_Home_02_24f0f2a6c8.jpg",
+  "bytes": 37491,
+  "sha256": "125b77c013e19eed7e39f4ab3e1b6c2f25defff59a75dad9d1c47334d9221a02"
+ }
+]

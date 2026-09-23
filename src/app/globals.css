@@ -1,1 +1,170 @@
 @import "tailwindcss";
+
+/* Design tokens — measured from the reference (see docs/research/laxer/BEHAVIORS.md §0).
+   The reference sets html to 10px and uses a px-like scale (p-25 = 25px); --spacing: 1px reproduces that. */
+@theme {
+  --spacing: 1px;
+
+  --color-ink: #1f1f1f;
+  --color-paper: #ebeae4;
+  --color-stone: #919598;
+  --color-stone-deep: #6f7275;
+  --color-field: #d8d9cf;
+  --color-gold: #ad8b46;
+  --color-gold-light: #d5bd82;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --font-display: var(--font-jost), "Jost", "Futura", "Century Gothic", sans-serif;
+  --font-tc: var(--font-noto-tc), "Noto Sans TC", "PingFang TC", sans-serif;
+
+  --text-xs: 14px;
+  --text-sm: 15px;
+  --text-base: 16px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 34px;
+  --text-4xl: 40px;
+  --text-5xl: 50px;
+  --text-7xl: 70px;
+  --text-8xl: 82px;
+  --text-10xl: 100px;
+  --text-15xl: 154px;
+  --text-19xl: 195px;
+  --text-21xl: 210px;
+  --text-hero: 12.96vw;
+  --text-hero-tablet: 12.67vw;
+  --text-hero-mobile: 18.5vw;
+
+  --leading-xxs: 0.75;
+  --leading-xs: 0.9;
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-small: 1.2;
+  --leading-base: 1.3;
+  --leading-body: 1.5;
+
+  --tracking-tightest: -0.05em;
+  --tracking-wide: 0.08em;
+
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-laptop: 1280px;
+  --breakpoint-wide: 1440px;
+
+  --ease-reveal: cubic-bezier(0.3, 0.86, 0.36, 0.95);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    overflow: hidden;
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    line-height: var(--leading-base);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+  }
+  :lang(zh-Hant),
+  .tc {
+    font-family: var(--font-tc);
+    text-transform: none;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  img, video { display: block; max-width: 100%; }
+  *, ::before, ::after { box-sizing: border-box; }
+  ::selection { background: var(--color-ink); color: var(--color-paper); }
+  :focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+  /* Reduced motion: native scrolling, no smoothing, no entrance animation (engine also checks this). */
+  @media (prefers-reduced-motion: reduce) {
+    html, body { overflow: auto; height: auto; }
+    [data-page-scroller] { overflow: visible !important; height: auto !important; }
+    [data-animation] { opacity: 1 !important; transform: none !important; clip-path: none !important; visibility: visible !important; }
+  }
+}
+
+@layer components {
+  /* Scroll wrapper — the real scroll container (reference: .page-holder [data-page-scroller]). */
+  [data-page-scroller] {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    overflow: auto;
+    overscroll-behavior: none;
+    scrollbar-width: none;
+  }
+  [data-page-scroller]::-webkit-scrollbar { display: none; }
+
+  .container-x { padding-left: 25px; padding-right: 25px; }
+  @media (min-width: 1024px) { .container-x { padding-left: 30px; padding-right: 30px; } }
+
+  /* Split-text line wrapper (overflow hidden while lines translate in). */
+  .line-w { display: block; overflow: hidden; }
+  .line-w .line { display: block; }
+
+  /* Underline link: underline sweeps in from left over .75s (reference: link keyframes). */
+  .link-underline { position: relative; display: inline-block; }
+  .link-underline::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: currentColor;
+    transform: scaleX(0); transform-origin: left center; transition: transform 0.75s var(--ease-out-expo);
+  }
+  .link-underline:hover::after, .link-underline.is-active::after, .group:hover .link-underline::after { transform: scaleX(1); }
+
+  /* Custom link: default text slides up, hover text slides in (translateY -125%). */
+  .link-swap { position: relative; display: inline-block; overflow: hidden; }
+  .link-swap > span { display: block; transition: transform 0.5s var(--ease-out-cubic); }
+  .link-swap > span + span { position: absolute; left: 0; top: 125%; }
+  .link-swap:hover > span:first-child, .group:hover .link-swap > span:first-child { transform: translateY(-125%); }
+  .link-swap:hover > span + span, .group:hover .link-swap > span + span { transform: translateY(-125%); }
+
+  /* Pill button with fill-on-hover. */
+  .btn {
+    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 12px 30px; border-radius: 999px; font-weight: 700; font-size: var(--text-xs); letter-spacing: 0.02em;
+    color: var(--color-white); isolation: isolate; overflow: hidden;
+  }
+  .btn::before { content: ""; position: absolute; inset: 0; background: var(--color-ink); z-index: -1; transition: transform 0.5s var(--ease-reveal); }
+  .btn--outline { color: var(--color-ink); box-shadow: inset 0 0 0 1px rgb(31 31 31 / 0.3); }
+  .btn--outline::before { transform: scaleX(0); transform-origin: left center; }
+  .btn--outline:hover { color: var(--color-white); }
+  .btn--outline:hover::before { transform: scaleX(1); }
+  .btn .icon { display: inline-block; }
+  .btn:hover .icon { animation: button-icon-movement 0.5s var(--ease-out-cubic); }
+  @keyframes button-icon-movement {
+    0%, 0.1% { transform: none; }
+    49.9% { transform: translateX(110%); }
+    50%, 50.1% { transform: translateX(-110%); }
+    to { transform: none; }
+  }
+
+  /* Index dot used as list bullets / markers (reference: rounded-full bg-current). */
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: currentColor; }
+
+  /* Menu panels: clip-path reveal (reference: clip-path .5s cubic-bezier(.3,.86,.36,.95)). */
+  .menu-panel { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); transition: clip-path 0.5s var(--ease-reveal); }
+  .menu--opened .menu-panel { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
+  .menu-fade { opacity: 0; transition: opacity 0.35s var(--ease-reveal); }
+  .menu--opened .menu-fade { opacity: 1; }
+
+  /* Custom cursor dot (mix-blend difference), position driven by --cursor-x/--cursor-y (0..1). */
+  .cursor-dot {
+    position: fixed; top: 0; left: 0; width: 20px; height: 20px; border-radius: 999px; background: #fff;
+    mix-blend-mode: difference; pointer-events: none; z-index: 100;
+    transform: translate(calc(var(--cursor-x, -0.5) * 100vw - 10px), calc(var(--cursor-y, -0.5) * 100vh - 10px));
+  }
+  @media (hover: none), (pointer: coarse) { .cursor-dot { display: none; } }
+}
