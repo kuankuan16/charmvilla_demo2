@@ -1,4 +1,58 @@
-// STUB — replaced by the section builder. Keeps the page compiling and the anchor present.
+import { manifesto } from "@/data/content";
+import { SectionIndex, Heading, Label, Picture, Rule } from "@/components/ui";
+
+/**
+ * Section 1: — the manifesto (reference: Laxer "1:" white section, portrait image left,
+ * sticky headline + ruled statement rows on the right).
+ */
 export default function Manifesto() {
-  return <section id="manifesto" className="container-x py-100"><p className="text-xs font-bold text-stone-deep">Manifesto — building</p></section>;
+  return (
+    <section id="manifesto" className="relative bg-white mb-100 laptop:mb-180 pt-30 pb-60">
+      {/* Top row: big index numeral + kicker label */}
+      <div className="container-x grid grid-cols-12 gap-x-16 lg:gap-x-20 items-start">
+        <div className="col-span-12 lg:col-span-6">
+          <SectionIndex n={manifesto.index} />
+        </div>
+        <div className="col-span-12 lg:col-span-6">
+          <Label>
+            <span className="tc">{manifesto.kicker}</span>
+          </Label>
+        </div>
+      </div>
+
+      {/* Body: portrait image (clip reveal) + sticky statement column */}
+      <div className="container-x grid grid-cols-12 gap-x-16 lg:gap-x-20 mt-40">
+        <div className="col-span-12 lg:col-span-6">
+          <div className="relative" data-animation="clip">
+            <div className="relative aspect-[4/5] w-full">
+              <Picture img={manifesto.image} fill sizes="(min-width:1024px) 50vw, 100vw" />
+            </div>
+            <span className="dot absolute -right-5 -bottom-5" aria-hidden="true" />
+          </div>
+        </div>
+
+        <div className="col-span-12 lg:col-span-6">
+          <div className="laptop:sticky laptop:top-50 self-start mt-40 lg:mt-0">
+            <Heading className="tc text-3xl lg:text-4xl leading-tight">{manifesto.heading}</Heading>
+            <Rule className="my-25" />
+            {manifesto.body.map((line) => (
+              <p
+                key={line}
+                className="tc text-xl lg:text-2xl font-bold leading-tight py-25 border-t border-ink/20"
+                data-animation="split"
+                data-split="lines"
+                data-delay="0.1"
+              >
+                {line}
+              </p>
+            ))}
+            <Rule />
+            <p className="tc mt-25 text-base font-bold text-stone-deep" data-animation="moveUp" data-delay="0.2">
+              {manifesto.tail}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
