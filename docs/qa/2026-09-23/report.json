@@ -1,0 +1,379 @@
+{
+  "base": "http://localhost:3123/",
+  "at": "2026-09-23T11:49:43.093Z",
+  "desktop": {
+    "loadedMs": 2786,
+    "screens": {
+      "scrollHeight": 21076,
+      "shots": [
+        "00-y0.png",
+        "01-y765.png",
+        "02-y1530.png",
+        "03-y2295.png",
+        "04-y3060.png",
+        "05-y3825.png",
+        "06-y4590.png",
+        "07-y5355.png",
+        "08-y6120.png",
+        "09-y6885.png",
+        "10-y7650.png",
+        "11-y8415.png",
+        "12-y9180.png",
+        "13-y9945.png",
+        "14-y10710.png",
+        "15-y11475.png",
+        "16-y12240.png",
+        "17-y13005.png",
+        "18-y13770.png",
+        "19-y14535.png",
+        "20-y15300.png",
+        "21-y16065.png",
+        "22-y16830.png",
+        "23-y17595.png",
+        "24-y18360.png",
+        "25-y19125.png",
+        "26-y19890.png",
+        "27-y20176.png"
+      ]
+    },
+    "probes": {
+      "sections": [
+        {
+          "id": "hero",
+          "top": 0,
+          "h": 900
+        },
+        {
+          "id": "manifesto",
+          "top": 900,
+          "h": 1126
+        },
+        {
+          "id": "bags",
+          "top": 2206,
+          "h": 7830
+        },
+        {
+          "id": "jewelry",
+          "top": 10036,
+          "h": 1493
+        },
+        {
+          "id": "interlude",
+          "top": 11530,
+          "h": 900
+        },
+        {
+          "id": "tea",
+          "top": 12430,
+          "h": 4230
+        },
+        {
+          "id": "teaware",
+          "top": 16660,
+          "h": 738
+        },
+        {
+          "id": "shown",
+          "top": 17398,
+          "h": 826
+        },
+        {
+          "id": "show-more",
+          "top": 18404,
+          "h": 695
+        },
+        {
+          "id": "visit",
+          "top": 19279,
+          "h": 1565
+        },
+        {
+          "id": "footer",
+          "top": 20844,
+          "h": 232
+        }
+      ],
+      "windowScrollYAfterWheel": null,
+      "wheel": {
+        "scrollTop": 900,
+        "windowScrollY": 0
+      },
+      "header": {
+        "top": [
+          "false",
+          "false"
+        ],
+        "y120": [
+          "true",
+          "false"
+        ],
+        "belowVh": [
+          "true",
+          "true"
+        ]
+      },
+      "split": {
+        "h1Lines": 0,
+        "lineWraps": 9,
+        "h1Text": "EVERYDAY / LUXURIES"
+      },
+      "overflow": {
+        "docScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "wrapperScrollWidth": 1440,
+        "offenders": []
+      },
+      "stackBags": {
+        "start": {
+          "holder": "matrix(1, 0, 0, 1, -4.8918, 0)",
+          "active": 0,
+          "firstCardX": "matrix(1, 0, 0, 1, 4.8918, 0)",
+          "stickyTop": 50
+        },
+        "mid": {
+          "holder": "matrix(1, 0, 0, 1, -1915.13, 0)",
+          "active": 3,
+          "firstCardX": "matrix(1, 0, 0, 1, 1915.13, 0)",
+          "stickyTop": 50
+        },
+        "end": {
+          "holder": "matrix(1, 0, 0, 1, -3390, 0)",
+          "active": 5,
+          "firstCardX": "matrix(1, 0, 0, 1, 3390, 0)",
+          "stickyTop": -67
+        }
+      },
+      "stackTea": {
+        "start": {
+          "holder": "matrix(1, 0, 0, 1, -6.036, 0)",
+          "active": 0
+        },
+        "mid": {
+          "holder": "matrix(1, 0, 0, 1, -1531.95, 0)",
+          "active": 3
+        }
+      },
+      "stickyManifesto": {
+        "at100": 116,
+        "at600": 50
+      },
+      "parallaxInterlude": {
+        "enter": "matrix(1, 0, 0, 1, 0, -59.7318)",
+        "leave": "matrix(1, 0, 0, 1, 0, 67.7682)"
+      },
+      "hiddenAfterPass": [],
+      "tabs": {
+        "afterClick": {
+          "sel": "true",
+          "onlineHidden": false,
+          "shopsHidden": true,
+          "onlineOpacity": "1"
+        },
+        "afterArrowLeft": {
+          "shopsSel": "true",
+          "focused": "tab-shops"
+        }
+      },
+      "menu": {
+        "opened": true,
+        "ariaHidden": "false",
+        "focusInside": true,
+        "closedByEscape": true
+      },
+      "anchor": {
+        "scrollTop": 12380,
+        "teaTop": 50
+      },
+      "cursor": [
+        "0.4157",
+        "0.4436"
+      ],
+      "fonts": [
+        "Jost",
+        "Jost Fallback",
+        "Noto Sans TC",
+        "Noto Sans TC Fallback"
+      ],
+      "images": {
+        "total": 31,
+        "broken": []
+      }
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  "mobile": {
+    "loadedMs": 2793,
+    "screens": {
+      "scrollHeight": 19205,
+      "shots": [
+        "00-y0.png",
+        "01-y717.png",
+        "02-y1434.png",
+        "03-y2151.png",
+        "04-y2868.png",
+        "05-y3585.png",
+        "06-y4302.png",
+        "07-y5019.png",
+        "08-y5736.png",
+        "09-y6453.png",
+        "10-y7170.png",
+        "11-y7887.png",
+        "12-y8604.png",
+        "13-y9321.png",
+        "14-y10038.png",
+        "15-y10755.png",
+        "16-y11472.png",
+        "17-y12189.png",
+        "18-y12906.png",
+        "19-y13623.png",
+        "20-y14340.png",
+        "21-y15057.png",
+        "22-y15774.png",
+        "23-y16491.png",
+        "24-y17208.png",
+        "25-y17925.png",
+        "26-y18361.png"
+      ]
+    },
+    "probes": {
+      "sections": [
+        {
+          "id": "hero",
+          "top": 50,
+          "h": 875
+        },
+        {
+          "id": "manifesto",
+          "top": 925,
+          "h": 1080
+        },
+        {
+          "id": "bags",
+          "top": 2105,
+          "h": 4948
+        },
+        {
+          "id": "jewelry",
+          "top": 7053,
+          "h": 2553
+        },
+        {
+          "id": "interlude",
+          "top": 9606,
+          "h": 506
+        },
+        {
+          "id": "tea",
+          "top": 10112,
+          "h": 3294
+        },
+        {
+          "id": "teaware",
+          "top": 13406,
+          "h": 1398
+        },
+        {
+          "id": "shown",
+          "top": 14804,
+          "h": 801
+        },
+        {
+          "id": "show-more",
+          "top": 15705,
+          "h": 1194
+        },
+        {
+          "id": "visit",
+          "top": 16999,
+          "h": 1894
+        },
+        {
+          "id": "footer",
+          "top": 18894,
+          "h": 311
+        }
+      ],
+      "windowScrollYAfterWheel": null,
+      "wheel": {
+        "scrollTop": 900,
+        "windowScrollY": 0
+      },
+      "header": {
+        "top": [
+          "false",
+          "false"
+        ],
+        "y120": [
+          "true",
+          "false"
+        ],
+        "belowVh": [
+          "true",
+          "true"
+        ]
+      },
+      "split": {
+        "h1Lines": 0,
+        "lineWraps": 9,
+        "h1Text": "EVERYDAY / LUXURIES"
+      },
+      "overflow": {
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "wrapperScrollWidth": 390,
+        "offenders": []
+      },
+      "parallaxInterlude": {
+        "enter": "matrix(1, 0, 0, 1, 0, -54.6449)",
+        "leave": "matrix(1, 0, 0, 1, 0, 63.9336)"
+      },
+      "hiddenAfterPass": [],
+      "tabs": {
+        "afterClick": {
+          "sel": "true",
+          "onlineHidden": false,
+          "shopsHidden": true,
+          "onlineOpacity": "1"
+        },
+        "afterArrowLeft": {
+          "shopsSel": "true",
+          "focused": "tab-shops"
+        }
+      },
+      "menu": {
+        "opened": true,
+        "ariaHidden": "false",
+        "focusInside": false,
+        "closedByEscape": true
+      },
+      "anchor": {
+        "scrollTop": 10062,
+        "teaTop": 50
+      },
+      "fonts": [
+        "Jost",
+        "Jost Fallback",
+        "Noto Sans TC",
+        "Noto Sans TC Fallback"
+      ],
+      "images": {
+        "total": 31,
+        "broken": []
+      }
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  "reduced": {
+    "loadedMs": 23,
+    "state": {
+      "wrapperOverflow": "visible",
+      "htmlOverflow": "auto",
+      "hiddenAnimated": 0,
+      "hasLenis": false
+    },
+    "errors": []
+  }
+}
