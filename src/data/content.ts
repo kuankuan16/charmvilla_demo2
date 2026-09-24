@@ -146,6 +146,16 @@ export const shown = {
   regent: { src: "/brand/regent-taipei.svg", alt: "Regent Taipei", w: 1094, h: 437 },
 };
 
+// Partners screen (user, 2026-09-24: one screen in the LAXER "PARTNERS:" layout). Venues = the three
+// Show more! launch hosts / stockists already listed above; contact goes to the brand Instagram.
+export const partners = {
+  label: "PARTNERS:",
+  image: gallery("CV-0423", "編織提把皮革包・藍色，肩背情境", 1792, 2240),
+  statement: "CHARM VILLA 與台北晶華酒店麗晶精品、The Scholart Selection 及京都寺町的門市夥伴合作，把小金魚茶包與真皮包，帶到台北、洛杉磯與京都。",
+  statementEn: "REGENT TAIPEI · THE SCHOLART SELECTION · CHARM VILLA KYOTO",
+  cta: { label: "WORK WITH US", zh: "合作洽詢", href: "https://www.instagram.com/charmvilla/" },
+};
+
 export const showMore = {
   index: "7:",
   heading: "SHOW MORE!",

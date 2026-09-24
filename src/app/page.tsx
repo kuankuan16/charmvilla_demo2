@@ -8,6 +8,7 @@ import Interlude from "@/components/sections/Interlude";
 import Tea from "@/components/sections/Tea";
 import Teaware from "@/components/sections/Teaware";
 import Shown from "@/components/sections/Shown";
+import Partners from "@/components/sections/Partners";
 import ShowMore from "@/components/sections/ShowMore";
 import Visit from "@/components/sections/Visit";
 import Footer from "@/components/sections/Footer";
@@ -25,6 +26,7 @@ export default function Page() {
         <Tea />
         <Teaware />
         <Shown />
+        <Partners />
         <ShowMore />
         <Visit />
       </main>
