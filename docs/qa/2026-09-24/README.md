@@ -7,3 +7,4 @@ Same harness as `../2026-09-23` (Playwright + local Chrome, production build). F
 - Header / preloader / footer use the official gold wordmark PNG (`public/brand/charmvilla-logo.png`).
 - SHOW MORE! section shows the final invitation CV-0427 (replaces CV-0425).
 - 0 console errors, 0 failed requests, no horizontal overflow at 390, all `[data-animation]` nodes visible after a full pass; Tea stack still runs (holder −6 → −1532, active card 4).
+- Visit → SHOPS: store photos replaced with the official ones from https://charmvilla.jp/#indexStore (`img_store_regent.jpg` 640×384 sha256 8a8b0553…, `img_store_kyoto.jpg` 1000×600 sha256 baab8140…; served as `public/media/site/store-regent.jpg` / `store-kyoto.jpg`); Regent hours 10:00–21:00・全年無休 and the Kyoto map link also taken from that page. Screens: `desktop-visit-stores.png`.

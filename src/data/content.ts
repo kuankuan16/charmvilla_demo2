@@ -166,8 +166,9 @@ export const visit = {
     {
       id: "shops", label: "門市", labelEn: "SHOPS",
       shops: [
-        { name: "CHARM VILLA 晶華門市", addr: "台北市中山區中山北路二段39巷3號 B1（麗晶精品）", href: "https://goo.gl/maps/agJHzfM2VE82", image: site("shop-regent.webp", "CHARM VILLA 晶華門市", 1600, 1067) },
-        { name: "CHARM VILLA 京都門市", addr: "京都市中京區寺町通二條・山本町442", hours: "週六・週日 11:00–18:00", href: "https://www.google.com/maps/search/?api=1&query=京都市中京区寺町通二条西入る山本町442", image: site("shop-kyoto.jpg", "CHARM VILLA 京都門市", 1600, 1067) },
+        // Store photos + hours: official charmvilla.jp/#indexStore (user, 2026-09-24).
+        { name: "CHARM VILLA 晶華門市", addr: "台北市中山區中山北路二段39巷3號 B1（麗晶精品）", hours: "10:00–21:00・全年無休", href: "https://goo.gl/maps/agJHzfM2VE82", image: site("store-regent.jpg", "CHARM VILLA 晶華門市（charmvilla.jp）", 640, 384) },
+        { name: "CHARM VILLA 京都門市", addr: "京都市中京區寺町通二條・山本町442", hours: "週六・週日 11:00–18:00", href: "https://goo.gl/maps/WBdsELDfMx52", image: site("store-kyoto.jpg", "CHARM VILLA 京都門市（charmvilla.jp）", 1000, 600) },
       ],
     },
     {
