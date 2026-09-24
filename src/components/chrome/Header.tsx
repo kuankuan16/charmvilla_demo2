@@ -40,8 +40,8 @@ export default function Header() {
   return (
     <header data-header="" className={`fixed left-0 top-0 z-30 h-50 w-full ${open ? "menu--opened" : ""}`}>
       <div className="container-x flex h-full items-center justify-between">
-        <a href="#hero" aria-label="CHARM VILLA — 回到頂端" className="relative z-40 block h-14 w-[73px]" onClick={() => setOpen(false)}>
-          <img src={open ? brand.logo.white : brand.logo.black} alt="" className="h-full w-full" draggable={false} />
+        <a href="#hero" aria-label="CHARM VILLA — 回到頂端" className="relative z-40 block h-12 w-[136px]" onClick={() => setOpen(false)}>
+          <img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} />
         </a>
         <nav className={`relative z-40 hidden items-center gap-30 text-xs font-bold transition-opacity duration-300 laptop:flex ${open ? "pointer-events-none opacity-0" : ""}`} aria-label="主要">
           {navItems.slice(0, 4).map((s) => (

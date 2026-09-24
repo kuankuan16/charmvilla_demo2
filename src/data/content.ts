@@ -169,6 +169,7 @@ export const visit = {
 };
 
 export const brand = {
-  logo: { gold: "/brand/charmvilla-logo-gold.svg", black: "/brand/charmvilla-logo-black.svg", white: "/brand/charmvilla-logo-white.svg", ratio: 400 / 77 },
+  // Official gold wordmark supplied by the user on 2026-09-24 (transparent PNG, never redrawn; sha256 c8e27c1a…).
+  logo: { src: "/brand/charmvilla-logo.png", w: 929, h: 82, ratio: 929 / 82 },
   name: "CHARM VILLA",
 };
