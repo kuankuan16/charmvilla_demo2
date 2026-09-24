@@ -22,7 +22,7 @@ export default function Tea() {
               {tea.cards.map((c, i) => (
                 <div key={c.code} data-stack-card="" data-animation="moveUp" data-delay={i * 0.1} className="laptop:w-690 laptop:pr-30">
                   <div className="mb-15 text-3xl font-bold leading-none">{c.code}:</div>
-                  <div className="flex min-h-[410px] flex-col border-t border-l border-ink/20 bg-white pl-25 pt-25 pb-25 transition-colors duration-300 lg:pl-30 [.is-active_&]:bg-paper">
+                  <div className="flex min-h-[410px] flex-col border-t border-l border-ink/20 bg-white pl-25 pt-25 pb-25 transition-colors duration-300 lg:pl-30 [.is-active_&]:border-ink">
                     <div className="relative mr-25 h-[240px] laptop:h-[220px]"><Picture img={c.image} fill sizes="(min-width:1280px) 660px, 100vw" /></div>
                     <h3 className="tc mt-25 text-3xl font-bold leading-none lg:text-4xl">{c.title}</h3>
                     <div className="mt-25 mr-25 grid grid-cols-2 border-t border-ink/20 pt-15 laptop:mt-auto">

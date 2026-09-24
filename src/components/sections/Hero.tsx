@@ -20,7 +20,6 @@ export default function Hero() {
       data-start-at="0"
     >
       {/* Right half — stone ground (desktop only). */}
-      <div className="hidden md:block absolute right-0 top-0 h-full w-1/2 bg-stone" aria-hidden="true" />
 
       {/* Title: two words, two lines, spanning both halves. */}
       <h1
@@ -49,7 +48,7 @@ export default function Hero() {
       </p>
 
       {/* Mobile portrait — sits in a stone block under the subtitle (<768 only). */}
-      <div className="md:hidden mt-25 bg-stone px-25 pt-30">
+      <div className="md:hidden mt-25 px-25 pt-30">
         <Picture img={hero.image} sizes="100vw" className="w-full" />
       </div>
 

@@ -5,7 +5,7 @@ import { SectionIndex, Heading, Label, Picture } from "@/components/ui";
 
 export default function Teaware() {
   return (
-    <section id="teaware" className="container-x relative bg-stone py-100">
+    <section id="teaware" className="container-x relative border-t border-ink/20 bg-white py-100">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-5">
           <SectionIndex n={teaware.index} />

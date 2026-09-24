@@ -61,7 +61,7 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    background: var(--color-paper);
+    background: #fff;
     color: var(--color-ink);
     overflow: hidden;
     height: 100%;

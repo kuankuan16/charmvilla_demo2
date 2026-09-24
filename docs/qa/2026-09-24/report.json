@@ -1,10 +1,10 @@
 {
   "base": "http://localhost:3123/",
-  "at": "2026-09-24T01:56:19.303Z",
+  "at": "2026-09-24T06:02:51.508Z",
   "desktop": {
-    "loadedMs": 2783,
+    "loadedMs": 2778,
     "screens": {
-      "scrollHeight": 14405,
+      "scrollHeight": 15261,
       "shots": [
         "00-y0.png",
         "01-y765.png",
@@ -24,7 +24,8 @@
         "15-y11475.png",
         "16-y12240.png",
         "17-y13005.png",
-        "18-y13505.png"
+        "18-y13770.png",
+        "19-y14361.png"
       ]
     },
     "probes": {
@@ -62,26 +63,31 @@
         {
           "id": "teaware",
           "top": 10011,
-          "h": 738
+          "h": 739
         },
         {
           "id": "shown",
-          "top": 10750,
+          "top": 10751,
           "h": 826
         },
         {
+          "id": "partners",
+          "top": 11757,
+          "h": 850
+        },
+        {
           "id": "show-more",
-          "top": 11756,
-          "h": 695
+          "top": 12607,
+          "h": 696
         },
         {
           "id": "visit",
-          "top": 12631,
-          "h": 1565
+          "top": 13483,
+          "h": 1569
         },
         {
           "id": "footer",
-          "top": 14196,
+          "top": 15052,
           "h": 209
         }
       ],
@@ -182,7 +188,7 @@
         "Noto Sans TC Fallback"
       ],
       "images": {
-        "total": 27,
+        "total": 28,
         "broken": []
       }
     },
@@ -190,9 +196,9 @@
     "failedRequests": []
   },
   "mobile": {
-    "loadedMs": 2786,
+    "loadedMs": 2757,
     "screens": {
-      "scrollHeight": 16472,
+      "scrollHeight": 17577,
       "shots": [
         "00-y0.png",
         "01-y717.png",
@@ -216,7 +222,9 @@
         "19-y13623.png",
         "20-y14340.png",
         "21-y15057.png",
-        "22-y15628.png"
+        "22-y15774.png",
+        "23-y16491.png",
+        "24-y16733.png"
       ]
     },
     "probes": {
@@ -254,26 +262,31 @@
         {
           "id": "teaware",
           "top": 10697,
-          "h": 1398
+          "h": 1399
         },
         {
           "id": "shown",
-          "top": 12095,
+          "top": 12096,
           "h": 801
         },
         {
+          "id": "partners",
+          "top": 12997,
+          "h": 1076
+        },
+        {
           "id": "show-more",
-          "top": 12996,
-          "h": 1194
+          "top": 14072,
+          "h": 1195
         },
         {
           "id": "visit",
-          "top": 14290,
-          "h": 1894
+          "top": 15367,
+          "h": 1921
         },
         {
           "id": "footer",
-          "top": 16184,
+          "top": 17288,
           "h": 288
         }
       ],
@@ -356,7 +369,7 @@
         "Noto Sans TC Fallback"
       ],
       "images": {
-        "total": 27,
+        "total": 28,
         "broken": []
       }
     },
@@ -364,7 +377,7 @@
     "failedRequests": []
   },
   "reduced": {
-    "loadedMs": 21,
+    "loadedMs": 18,
     "state": {
       "wrapperOverflow": "visible",
       "htmlOverflow": "auto",

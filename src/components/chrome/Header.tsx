@@ -68,7 +68,7 @@ export default function Header() {
       <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label="選單" className={`menu-root absolute left-0 top-0 h-screen w-full bg-ink text-ink ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
         {/* stepped panels (desktop): CLOSE strip, then three offset paper panels revealed right-to-left */}
         <div className="relative h-full w-full">
-          <div className="menu-panel absolute right-0 top-0 hidden h-[77%] w-2/3 bg-stone laptop:block" style={{ transitionDelay: open ? "0s" : ".2s" }}>
+          <div className="menu-panel absolute right-0 top-0 hidden h-[77%] w-2/3 bg-white laptop:block" style={{ transitionDelay: open ? "0s" : ".2s" }}>
             <button type="button" onClick={close} className="menu-fade absolute left-30 top-40 text-19xl font-bold leading-xxs tracking-tightest text-ink" style={{ transitionDelay: open ? ".25s" : "0s" }}>CLOSE</button>
           </div>
           {navItems.map((s, i) => {
@@ -77,7 +77,7 @@ export default function Header() {
             const top = 30 + (i / rows) * 60;
             const left = rows > 1 ? 70 - i * (64 / (rows - 1)) : 6;
             return (
-              <div key={s.id} className="menu-panel absolute hidden bg-paper laptop:block" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
+              <div key={s.id} className="menu-panel absolute hidden border-l border-t border-ink/15 bg-white laptop:block" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
                 <a href={`#${s.id}`} onClick={close} className="menu-fade group absolute left-30 top-40 flex items-center gap-20 whitespace-nowrap text-4xl font-bold leading-none" style={{ transitionDelay: open ? `${0.3 + i * 0.08}s` : "0s" }}>
                   <span className="link-underline">{s.label}</span>
                   <span className="tc text-base font-medium opacity-60">{s.zh}</span>

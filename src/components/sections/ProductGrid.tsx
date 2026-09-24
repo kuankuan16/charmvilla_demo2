@@ -69,7 +69,7 @@ export default function ProductGrid({ products, facts, patent, heading, detail, 
             data-delay={i * 0.1}
             data-product-card={p.id}
           >
-            <div className="relative aspect-[4/5] w-full bg-paper">
+            <div className="relative aspect-[4/5] w-full bg-white">
               <Picture img={p.views[0].image} fill sizes="(min-width:768px) 30vw, 100vw" className="transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
             </div>
             <div className="mt-20 flex items-baseline justify-between gap-15 border-t border-ink/20 pt-15">
@@ -96,7 +96,7 @@ export default function ProductGrid({ products, facts, patent, heading, detail, 
       >
         {product && current && (
           <div className="grid h-full grid-rows-[55dvh_1fr] md:grid-cols-12 md:grid-rows-1">
-            <div className="relative bg-paper md:col-span-7 md:h-dvh">
+            <div className="relative bg-white md:col-span-7 md:h-dvh md:border-r md:border-ink/15">
               <div className="absolute inset-0 p-20 lg:p-40">
                 <div className="relative h-full w-full">
                   <Picture key={current.image.src} img={current.image} fill fit="contain" animate={false} sizes="(min-width:768px) 58vw, 100vw" priority />

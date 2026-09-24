@@ -31,13 +31,13 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   }, [onComplete]);
 
   return (
-    <div ref={root} data-component="preloader" className="fixed inset-0 z-[200] grid h-screen w-full bg-stone-deep md:grid-cols-2" aria-hidden="true">
+    <div ref={root} data-component="preloader" className="fixed inset-0 z-[200] grid h-screen w-full bg-gold md:grid-cols-2" aria-hidden="true">
       <div data-preloader-part="left" className="relative grid h-full bg-white">
         <div data-preloader-logo="" className="absolute left-25 top-1/2 w-[62%] -translate-y-1/2 lg:left-30" style={{ aspectRatio: String(brand.logo.ratio) }}>
           <img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} />
         </div>
       </div>
-      <div data-preloader-part="right" className="relative hidden h-full bg-stone md:grid">
+      <div data-preloader-part="right" className="relative hidden h-full bg-gold md:grid">
         <div data-year="" className="absolute bottom-30 left-30 overflow-hidden text-15xl font-medium leading-none text-ink">
           {YEAR.split("").map((c, i) => (
             <span key={i} className="ch inline-block will-change-transform">{c}</span>

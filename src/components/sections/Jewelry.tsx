@@ -5,7 +5,7 @@ import { SectionIndex, Heading, Label, Arrow, Picture } from "@/components/ui";
 
 export default function Jewelry() {
   return (
-    <section id="jewelry" className="container-x relative bg-paper pt-30 pb-100">
+    <section id="jewelry" className="container-x relative bg-white pt-30 pb-100">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 self-start md:sticky md:top-80 md:col-span-5">
           <SectionIndex n={jewelry.index} />

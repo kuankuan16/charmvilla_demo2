@@ -4,7 +4,7 @@ import { SectionIndex, Heading, Arrow, Picture } from "@/components/ui";
 
 export default function ShowMore() {
   return (
-    <section id="show-more" className="container-x relative bg-paper pt-30 mb-100 laptop:mb-180">
+    <section id="show-more" className="container-x relative border-t border-ink/20 bg-white pt-30 mb-100 laptop:mb-180">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-7">
           <SectionIndex n={showMore.index} />

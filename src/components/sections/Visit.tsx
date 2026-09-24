@@ -46,7 +46,7 @@ export default function Visit() {
 
   return (
     <section id="visit" className="relative">
-      <div className="container-x bg-stone pt-30 pb-40">
+      <div className="container-x border-t border-ink/20 pt-30 pb-40">
         <SectionIndex n={visit.index} />
         <h2 className="text-[22vw] font-bold leading-xxs tracking-tightest laptop:text-19xl" data-animation="split" data-split="words, chars">
           VISIT
@@ -74,7 +74,7 @@ export default function Visit() {
                 onClick={() => select(t.id)}
                 onKeyDown={(e) => onKeyDown(e, i)}
                 className={`flex items-center gap-15 px-25 py-20 text-left text-2xl font-bold transition-colors duration-300 lg:px-30 lg:py-25 lg:text-4xl ${
-                  isActive ? "bg-paper text-ink" : "bg-field text-stone-deep"
+                  isActive ? "border-b-2 border-ink text-ink" : "border-b border-ink/20 text-stone-deep"
                 }`}
               >
                 <span className={`inline-block h-16 w-16 shrink-0 rounded-full border-2 border-current ${isActive ? "bg-current" : ""}`} />
@@ -85,7 +85,7 @@ export default function Visit() {
           })}
         </div>
 
-        <div className="min-h-[420px] bg-paper px-25 py-40 lg:px-30">
+        <div className="min-h-[420px] bg-white px-25 py-40 lg:px-30">
           {visit.tabs.map((t) => {
             const isActive = active === t.id;
             return (
@@ -132,7 +132,7 @@ export default function Visit() {
           })}
         </div>
 
-        <div className="grid grid-cols-12 gap-x-20 bg-stone px-25 py-40 lg:px-30">
+        <div className="grid grid-cols-12 gap-x-20 border-t border-ink/20 bg-white px-25 py-40 lg:px-30">
           <div className="col-span-12 text-xs font-bold lg:col-span-5">{visit.news.label}</div>
           <ul className="col-span-12 mt-20 lg:col-span-7 lg:mt-0">
             {visit.news.items.map((n, i) => (
