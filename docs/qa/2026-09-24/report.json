@@ -1,0 +1,376 @@
+{
+  "base": "http://localhost:3123/",
+  "at": "2026-09-24T01:56:19.303Z",
+  "desktop": {
+    "loadedMs": 2783,
+    "screens": {
+      "scrollHeight": 14405,
+      "shots": [
+        "00-y0.png",
+        "01-y765.png",
+        "02-y1530.png",
+        "03-y2295.png",
+        "04-y3060.png",
+        "05-y3825.png",
+        "06-y4590.png",
+        "07-y5355.png",
+        "08-y6120.png",
+        "09-y6885.png",
+        "10-y7650.png",
+        "11-y8415.png",
+        "12-y9180.png",
+        "13-y9945.png",
+        "14-y10710.png",
+        "15-y11475.png",
+        "16-y12240.png",
+        "17-y13005.png",
+        "18-y13505.png"
+      ]
+    },
+    "probes": {
+      "sections": [
+        {
+          "id": "hero",
+          "top": 0,
+          "h": 900
+        },
+        {
+          "id": "manifesto",
+          "top": 900,
+          "h": 1126
+        },
+        {
+          "id": "bags",
+          "top": 2206,
+          "h": 1182
+        },
+        {
+          "id": "jewelry",
+          "top": 3388,
+          "h": 1493
+        },
+        {
+          "id": "interlude",
+          "top": 4881,
+          "h": 900
+        },
+        {
+          "id": "tea",
+          "top": 5781,
+          "h": 4230
+        },
+        {
+          "id": "teaware",
+          "top": 10011,
+          "h": 738
+        },
+        {
+          "id": "shown",
+          "top": 10750,
+          "h": 826
+        },
+        {
+          "id": "show-more",
+          "top": 11756,
+          "h": 695
+        },
+        {
+          "id": "visit",
+          "top": 12631,
+          "h": 1565
+        },
+        {
+          "id": "footer",
+          "top": 14196,
+          "h": 209
+        }
+      ],
+      "windowScrollYAfterWheel": null,
+      "wheel": {
+        "scrollTop": 900,
+        "windowScrollY": 0
+      },
+      "header": {
+        "top": [
+          "false",
+          "false"
+        ],
+        "y120": [
+          "true",
+          "false"
+        ],
+        "belowVh": [
+          "true",
+          "true"
+        ]
+      },
+      "split": {
+        "h1Lines": 0,
+        "lineWraps": 9,
+        "h1Text": "EVERYDAY / LUXURIES"
+      },
+      "overflow": {
+        "docScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "wrapperScrollWidth": 1440,
+        "offenders": []
+      },
+      "productDialog": {
+        "opened": {
+          "open": true,
+          "view": "正面FRONT",
+          "img": "dia%2Fgallery%2FCV-0398.webp&w=1080&q=75"
+        },
+        "next": {
+          "view": "斜側面THREE-QUARTER",
+          "img": "dia%2Fgallery%2FCV-0400.webp&w=1080&q=75"
+        },
+        "closed": {
+          "open": false,
+          "focusOnCard": true
+        }
+      },
+      "stackTea": {
+        "start": {
+          "holder": "matrix(1, 0, 0, 1, -6.036, 0)",
+          "active": 0
+        },
+        "mid": {
+          "holder": "matrix(1, 0, 0, 1, -1531.95, 0)",
+          "active": 3
+        }
+      },
+      "stickyManifesto": {
+        "at100": 116,
+        "at600": 50
+      },
+      "parallaxInterlude": {
+        "enter": "matrix(1, 0, 0, 1, 0, -59.8091)",
+        "leave": "matrix(1, 0, 0, 1, 0, 67.6909)"
+      },
+      "hiddenAfterPass": [],
+      "tabs": {
+        "afterClick": {
+          "sel": "true",
+          "onlineHidden": false,
+          "shopsHidden": true,
+          "onlineOpacity": "1"
+        },
+        "afterArrowLeft": {
+          "shopsSel": "true",
+          "focused": "tab-shops"
+        }
+      },
+      "menu": {
+        "opened": true,
+        "ariaHidden": "false",
+        "focusInside": true,
+        "closedByEscape": true
+      },
+      "anchor": {
+        "scrollTop": 5731,
+        "teaTop": 50
+      },
+      "cursor": [
+        "0.4157",
+        "0.4436"
+      ],
+      "fonts": [
+        "Jost",
+        "Jost Fallback",
+        "Noto Sans TC",
+        "Noto Sans TC Fallback"
+      ],
+      "images": {
+        "total": 27,
+        "broken": []
+      }
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  "mobile": {
+    "loadedMs": 2786,
+    "screens": {
+      "scrollHeight": 16472,
+      "shots": [
+        "00-y0.png",
+        "01-y717.png",
+        "02-y1434.png",
+        "03-y2151.png",
+        "04-y2868.png",
+        "05-y3585.png",
+        "06-y4302.png",
+        "07-y5019.png",
+        "08-y5736.png",
+        "09-y6453.png",
+        "10-y7170.png",
+        "11-y7887.png",
+        "12-y8604.png",
+        "13-y9321.png",
+        "14-y10038.png",
+        "15-y10755.png",
+        "16-y11472.png",
+        "17-y12189.png",
+        "18-y12906.png",
+        "19-y13623.png",
+        "20-y14340.png",
+        "21-y15057.png",
+        "22-y15628.png"
+      ]
+    },
+    "probes": {
+      "sections": [
+        {
+          "id": "hero",
+          "top": 50,
+          "h": 875
+        },
+        {
+          "id": "manifesto",
+          "top": 925,
+          "h": 1080
+        },
+        {
+          "id": "bags",
+          "top": 2105,
+          "h": 2238
+        },
+        {
+          "id": "jewelry",
+          "top": 4343,
+          "h": 2553
+        },
+        {
+          "id": "interlude",
+          "top": 6896,
+          "h": 506
+        },
+        {
+          "id": "tea",
+          "top": 7403,
+          "h": 3294
+        },
+        {
+          "id": "teaware",
+          "top": 10697,
+          "h": 1398
+        },
+        {
+          "id": "shown",
+          "top": 12095,
+          "h": 801
+        },
+        {
+          "id": "show-more",
+          "top": 12996,
+          "h": 1194
+        },
+        {
+          "id": "visit",
+          "top": 14290,
+          "h": 1894
+        },
+        {
+          "id": "footer",
+          "top": 16184,
+          "h": 288
+        }
+      ],
+      "windowScrollYAfterWheel": null,
+      "wheel": {
+        "scrollTop": 900,
+        "windowScrollY": 0
+      },
+      "header": {
+        "top": [
+          "false",
+          "false"
+        ],
+        "y120": [
+          "true",
+          "false"
+        ],
+        "belowVh": [
+          "true",
+          "true"
+        ]
+      },
+      "split": {
+        "h1Lines": 0,
+        "lineWraps": 9,
+        "h1Text": "EVERYDAY / LUXURIES"
+      },
+      "overflow": {
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "wrapperScrollWidth": 390,
+        "offenders": []
+      },
+      "productDialog": {
+        "opened": {
+          "open": true,
+          "view": "正面FRONT",
+          "img": "edia%2Fgallery%2FCV-0398.webp&w=640&q=75"
+        },
+        "next": {
+          "view": "斜側面THREE-QUARTER",
+          "img": "edia%2Fgallery%2FCV-0400.webp&w=640&q=75"
+        },
+        "closed": {
+          "open": false,
+          "focusOnCard": true
+        }
+      },
+      "parallaxInterlude": {
+        "enter": "matrix(1, 0, 0, 1, 0, -54.732)",
+        "leave": "matrix(1, 0, 0, 1, 0, 63.9282)"
+      },
+      "hiddenAfterPass": [],
+      "tabs": {
+        "afterClick": {
+          "sel": "true",
+          "onlineHidden": false,
+          "shopsHidden": true,
+          "onlineOpacity": "1"
+        },
+        "afterArrowLeft": {
+          "shopsSel": "true",
+          "focused": "tab-shops"
+        }
+      },
+      "menu": {
+        "opened": true,
+        "ariaHidden": "false",
+        "focusInside": false,
+        "closedByEscape": true
+      },
+      "anchor": {
+        "scrollTop": 7353,
+        "teaTop": 50
+      },
+      "fonts": [
+        "Jost",
+        "Jost Fallback",
+        "Noto Sans TC",
+        "Noto Sans TC Fallback"
+      ],
+      "images": {
+        "total": 27,
+        "broken": []
+      }
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  "reduced": {
+    "loadedMs": 21,
+    "state": {
+      "wrapperOverflow": "visible",
+      "htmlOverflow": "auto",
+      "hiddenAnimated": 0,
+      "hasLenis": false
+    },
+    "errors": []
+  }
+}

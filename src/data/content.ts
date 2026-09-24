@@ -47,15 +47,35 @@ export const bags = {
   product: "編織提把皮革包",
   facts: ["荔枝紋真皮", "扁平三股編織肩帶", "扁銅棒五金"],
   patent: "發明專利證號 Invention Patent No. TW I728606",
-  exhibits: [
-    { code: "A", title: "白色・正面", meta: "WHITE / FRONT", image: gallery("CV-0398", "三色包款・白色正面", 1122, 1402) },
-    { code: "B", title: "藍色・正面", meta: "BLUE / FRONT", image: gallery("CV-0419", "三色包款・藍色正面", 1597, 2000) },
-    { code: "C", title: "粉紅色・正面", meta: "PINK / FRONT", image: gallery("CV-0399", "三色包款・粉紅色正面", 1122, 1402) },
-    { code: "D", title: "藍色・斜側面", meta: "BLUE / THREE-QUARTER", image: gallery("CV-0420", "編織提把皮革包・藍色斜側面", 1792, 2240) },
-    { code: "E", title: "白色・斜側面", meta: "WHITE / THREE-QUARTER", image: gallery("CV-0400", "三色包款・白色斜側面", 1122, 1402) },
-    { code: "F", title: "粉紅色・斜側面", meta: "PINK / THREE-QUARTER", image: gallery("CV-0397", "三色包款・粉紅色斜側面", 1122, 1402) },
-    { code: "G", title: "粉色・手提情境", meta: "PINK / EDITORIAL", image: gallery("CV-0424", "編織提把皮革包・粉色，硬光手提情境", 1792, 2240) },
+  // E-commerce logic (user, 2026-09-24): one product = one card; the other angles live in the detail view.
+  products: [
+    {
+      id: "white", name: "白色", en: "WHITE",
+      views: [
+        { label: "正面", en: "FRONT", image: gallery("CV-0398", "編織提把皮革包・白色正面", 1122, 1402) },
+        { label: "斜側面", en: "THREE-QUARTER", image: gallery("CV-0400", "編織提把皮革包・白色斜側面", 1122, 1402) },
+        { label: "情境", en: "EDITORIAL", image: gallery("CV-0422", "編織提把皮革包・白色，沙發手提情境", 2048, 2048) },
+        { label: "靜物", en: "STILL LIFE", image: gallery("CV-0426", "編織提把皮革包・白色與藍色，紙捲雕塑靜物", 896, 1120) },
+      ],
+    },
+    {
+      id: "blue", name: "藍色", en: "BLUE",
+      views: [
+        { label: "正面", en: "FRONT", image: gallery("CV-0419", "編織提把皮革包・藍色正面", 1597, 2000) },
+        { label: "斜側面", en: "THREE-QUARTER", image: gallery("CV-0420", "編織提把皮革包・藍色斜側面", 1792, 2240) },
+        { label: "情境", en: "EDITORIAL", image: gallery("CV-0423", "編織提把皮革包・藍色，肩背情境", 1792, 2240) },
+      ],
+    },
+    {
+      id: "pink", name: "粉紅色", en: "PINK",
+      views: [
+        { label: "正面", en: "FRONT", image: gallery("CV-0399", "編織提把皮革包・粉紅色正面", 1122, 1402) },
+        { label: "斜側面", en: "THREE-QUARTER", image: gallery("CV-0397", "編織提把皮革包・粉紅色斜側面", 1122, 1402) },
+        { label: "情境", en: "EDITORIAL", image: gallery("CV-0424", "編織提把皮革包・粉紅色，硬光手提情境", 1792, 2240) },
+      ],
+    },
   ],
+  detail: { hint: "查看細節", viewsLabel: "VIEWS:", close: "CLOSE", closeZh: "關閉" },
   cta: { label: "SHOW MORE! 新品發表", href: "#show-more" },
 };
 
@@ -135,8 +155,8 @@ export const showMore = {
     { date: "10/17", city: "USA", venue: "The Scholart Selection · San Gabriel, CA" },
     { date: "10/31", city: "JAPAN", venue: "CHARM VILLA 京都" },
   ],
-  cta: { label: "查看邀請", href: "/media/gallery/CV-0425.webp" },
-  invitation: gallery("CV-0425", "Show more! 真皮包新品發表邀請卡", 1280, 1920),
+  cta: { label: "查看邀請", href: "/media/gallery/CV-0427.webp" },
+  invitation: gallery("CV-0427", "Show more! 真皮包新品發表邀請卡（最終版）", 1280, 1963),
 };
 
 export const visit = {

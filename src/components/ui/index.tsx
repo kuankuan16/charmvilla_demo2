@@ -46,13 +46,13 @@ export function Btn({ href, children, outline = false, className = "" }: { href:
 }
 
 /** Picture with the reference's 1.15→1 scale-in; dimensions come from the generated manifest. */
-export function Picture({ img, className = "", sizes = "100vw", priority = false, animate = true, fill = false }: { img: Img; className?: string; sizes?: string; priority?: boolean; animate?: boolean; fill?: boolean }) {
+export function Picture({ img, className = "", sizes = "100vw", priority = false, animate = true, fill = false, fit = "cover" }: { img: Img; className?: string; sizes?: string; priority?: boolean; animate?: boolean; fill?: boolean; fit?: "cover" | "contain" }) {
   const d = (dims as unknown as Record<string, [number, number]>)[img.src];
   const w = d ? d[0] : img.w; const h = d ? d[1] : img.h;
   return (
     <div className={`relative overflow-hidden ${fill ? "h-full w-full" : ""} ${className}`} data-animation={animate ? "scale" : undefined} data-from={animate ? "1.15" : undefined} data-to={animate ? "1" : undefined} data-ease={animate ? "power2.out" : undefined}>
       {fill ? (
-        <Image src={img.src} alt={img.alt} fill sizes={sizes} priority={priority} className="object-cover" />
+        <Image src={img.src} alt={img.alt} fill sizes={sizes} priority={priority} className={fit === "contain" ? "object-contain" : "object-cover"} />
       ) : (
         <Image src={img.src} alt={img.alt} width={w} height={h} sizes={sizes} priority={priority} className="h-auto w-full" />
       )}
