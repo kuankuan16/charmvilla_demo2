@@ -76,7 +76,19 @@ export const bags = {
     },
   ],
   detail: { hint: "查看細節", viewsLabel: "VIEWS:", close: "CLOSE", closeZh: "關閉" },
-  cta: { label: "SHOW MORE! 新品發表", href: "#show-more" },
+  cta: { label: "SHOW MORE! 新品發表", href: "#news-show-more" },
+};
+
+export const bagCampaign = {
+  heading: "LEATHER BAG",
+  subtitle: "舞者 × 編織提把皮革包",
+  images: [
+    gallery("CV-0429", "女舞者躍起，高舉白色編織提把皮革包，白紗背景", 880, 1168),
+    gallery("CV-0431", "男舞者折身，背後提起白色編織提把皮革包，白紗背景", 880, 1168),
+    gallery("CV-0434", "女舞者伸手，以手腕掛起白色編織提把皮革包，黑色背景", 896, 1120),
+    gallery("CV-0437", "男舞者立足尖，前伸的手提起白色編織提把皮革包，暖灰棚景", 752, 1344),
+    gallery("CV-0436", "男舞者空中橫劈，雙手下方垂掛白色編織提把皮革包，白紗背景", 3312, 2480),
+  ],
 };
 
 export const jewelry = {
@@ -89,6 +101,8 @@ export const jewelry = {
     { n: "02.", title: "吐鑽小金魚耳環・包鑲", desc: "包鑲單鑽於魚嘴前，側臉輪廓。", image: gallery("CV-0370", "吐鑽小金魚耳環・包鑲", 2560, 3200) },
     { n: "03.", title: "單鑽小金魚耳環", desc: "單鑽，實心拋光平面金。", image: gallery("CV-0373", "單鑽小金魚耳環", 6144, 7680) },
     { n: "04.", title: "雙星小金魚耳環", desc: "兩尾金魚，象牙花影。", image: gallery("CV-0378", "雙星小金魚耳環", 6146, 7680) },
+    { n: "05.", title: "小金魚鑽石耳釘", desc: "金色魚形與一顆圓鑽，貼近耳畔。", image: site("goldfish-stud-sketch.webp", "小金魚鑽石耳釘，素描配戴圖", 896, 1120) },
+    { n: "06.", title: "小金魚垂鑽耳環", desc: "金魚下方，一顆圓鑽隨短鏈垂墜。", image: site("goldfish-drop-sketch.webp", "小金魚垂鑽耳環，素描配戴圖", 896, 1120) },
   ],
   craft: {
     label: "CRAFT:",
@@ -106,7 +120,6 @@ export const tea = {
   kicker: "茶包",
   heading: "小金魚茶包",
   headingEn: "GOLDFISH TEA BAG",
-  scrollHint: "SCROLL TO EXPLORE",
   cards: [
     { code: "A", title: "玫瑰與金萱", tea: "金萱", flower: "玫瑰", image: site("kv-rose.webp", "玫瑰與金萱的小金魚茶包", 1200, 1500) },
     { code: "B", title: "荔枝與紅玉", tea: "紅玉", flower: "荔枝", image: site("kv-lychee.webp", "荔枝與紅玉的小金魚茶包", 1200, 1500) },
@@ -116,6 +129,10 @@ export const tea = {
   ],
   craft: "一塊茶袋布，經過裁剪、摺疊、縫製，在職人指尖折出魚鰭與尾巴，再填入台灣山頭的茶葉。",
   honours: ["全球 34 國設計專利", "2014 德國紅點傳達設計獎 Red Dot Winner", "2015 德國 iF 設計大獎 iF Gold Award"],
+  awards: [
+    { image: { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 }, text: "2015 德國 iF 設計大獎（iF DESIGN AWARD）" },
+    { image: { src: "/brand/awards/reddot-winner-2014.svg", alt: "Red Dot Winner 2014", w: 1200, h: 847 }, text: "2014 德國紅點傳達設計獎（Red Dot Winner）" },
+  ],
 };
 
 export const teaware = {
@@ -140,8 +157,8 @@ export const shown = {
     { name: "MONOCLE", sub: "PRESS · 專訪創辦人" },
   ],
   awards: [
-    { src: "/brand/awards/reddot-winner-2014.svg", alt: "Red Dot Award 2014 Winner", w: 1200, h: 847 },
     { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 },
+    { src: "/brand/awards/reddot-winner-2014.svg", alt: "Red Dot Award 2014 Winner", w: 1200, h: 847 },
   ],
   regent: { src: "/brand/regent-taipei.svg", alt: "Regent Taipei", w: 1094, h: 437 },
 };
@@ -170,7 +187,7 @@ export const showMore = {
 };
 
 export const visit = {
-  index: "8:",
+  index: "7:",
   heading: "VISIT US:",
   tabs: [
     {

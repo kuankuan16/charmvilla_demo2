@@ -1,0 +1,22 @@
+[
+  {
+    "file": "goldfish-stud-sketch-master.png",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_33OtA8hbfnVySvkX07G0IIOrgQz/hf_20260917_080756_826ad4e4-54f7-44df-9978-eae3234eeaf6.png",
+    "sha256": "ed5d269fe47221904fa8a3066aec161be50ef6457eb4705f48ede3aa96ee048f",
+    "sourcePath": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/website-jewelry-assets-2026-09-24/goldfish-stud-sketch-master.png",
+    "publicPath": "/media/site/goldfish-stud-sketch.webp",
+    "outputSha256": "c9bab24c09c2a68c01a52f6e031d7641f10d2aa40a570e0c4ff39b4161c1e6a5",
+    "width": 896,
+    "height": 1120
+  },
+  {
+    "file": "goldfish-drop-sketch-master.png",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_33OtA8hbfnVySvkX07G0IIOrgQz/hf_20260917_081322_ca170c35-475f-4cc8-87c0-ff0be9dbf769.png",
+    "sha256": "ff5440723d71adc002953752382468e7dfecc4ef38a18bd6f2994fcfff5b1247",
+    "sourcePath": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/website-jewelry-assets-2026-09-24/goldfish-drop-sketch-master.png",
+    "publicPath": "/media/site/goldfish-drop-sketch.webp",
+    "outputSha256": "f8c842cfc38b517b0fa27dc5098375d61a3b08b90c246c6674fd9bfd7b9cca3c",
+    "width": 896,
+    "height": 1120
+  }
+]

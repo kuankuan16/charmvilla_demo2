@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-24",
+  "site": "https://charmvilla-gallery-site.vercel.app",
+  "rollbackDeployment": "dpl_8GVHypASFdXjsqJZiHddsN81Pkvs",
+  "rollbackUrl": "https://charmvilla-gallery-site-f88juqpca-tentenco.vercel.app",
+  "localBrowser": {
+    "url": "http://localhost:3124",
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "jewelryColumns": 3,
+      "teaColumns": 3,
+      "horizontalOverflow": false
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "jewelryColumns": 1,
+      "teaColumns": 1,
+      "horizontalOverflow": false
+    },
+    "jewelryProducts": 6,
+    "teaProducts": 5,
+    "campaignImages": 5,
+    "campaignImagesLoaded": true,
+    "awardImagesLoaded": true,
+    "awardOrder": [
+      "iF Gold Award 2015",
+      "Red Dot Winner 2014"
+    ],
+    "standaloneShowMoreSection": false,
+    "showMoreInNews": true,
+    "launchDates": [
+      "10/3",
+      "10/17",
+      "10/31"
+    ],
+    "bagLaunchCtaTarget": "#news-show-more",
+    "consoleErrorsObserved": [],
+    "visualChecks": [
+      "desktop jewelry new images and labels",
+      "desktop tea cards and awards",
+      "desktop dancer campaign first row",
+      "desktop latest news and invitation",
+      "mobile tea",
+      "mobile new jewelry",
+      "mobile news invitation",
+      "mobile award logos"
+    ]
+  },
+  "checks": {
+    "lint": "passed with 2 pre-existing native img warnings",
+    "typecheck": "passed",
+    "productionBuild": "passed"
+  }
+}

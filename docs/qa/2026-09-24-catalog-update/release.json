@@ -1,0 +1,93 @@
+{
+  "site": "https://charmvilla-gallery-site.vercel.app",
+  "deploymentId": "dpl_GRMDVc2g4LrTExaFfkh7EtMFreow",
+  "deploymentUrl": "https://charmvilla-gallery-site-axudufjun-tentenco.vercel.app",
+  "httpChecks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 155867,
+      "markers": {
+        "data-jewelry-product=": 6,
+        "data-tea-product=": 5,
+        "data-campaign-image=": 5,
+        "id=\"news-show-more\"": 1,
+        "id=\"show-more\"": 0
+      }
+    },
+    {
+      "path": "/media/site/goldfish-stud-sketch.webp",
+      "status": 200,
+      "bytes": 391458,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/site/goldfish-drop-sketch.webp",
+      "status": 200,
+      "bytes": 345168,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/gallery/CV-0429.webp",
+      "status": 200,
+      "bytes": 98120,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/gallery/CV-0431.webp",
+      "status": 200,
+      "bytes": 138688,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/gallery/CV-0434.webp",
+      "status": 200,
+      "bytes": 46488,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/gallery/CV-0436.webp",
+      "status": 200,
+      "bytes": 603094,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/gallery/CV-0437.webp",
+      "status": 200,
+      "bytes": 63206,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/brand/awards/if-gold-award-2015.svg",
+      "status": 200,
+      "bytes": 9560,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/brand/awards/reddot-winner-2014.svg",
+      "status": 200,
+      "bytes": 22090,
+      "sha256MatchesLocal": true
+    },
+    {
+      "path": "/media/gallery/CV-0427.webp",
+      "status": 200,
+      "bytes": 262270,
+      "sha256MatchesLocal": true
+    }
+  ],
+  "status": "Ready",
+  "target": "production",
+  "aliases": [
+    "https://charmvilla-gallery-site.vercel.app",
+    "https://charmvilla-gallery-site-tentenco.vercel.app"
+  ],
+  "productionBrowser": {
+    "jewelry": 6,
+    "tea": 5,
+    "campaign": 5,
+    "newJewelryImagesLoaded": true,
+    "showMoreInNews": true,
+    "standaloneShowMore": false
+  }
+}

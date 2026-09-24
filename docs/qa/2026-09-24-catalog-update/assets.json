@@ -1,0 +1,57 @@
+[
+  {
+    "id": "CV-0429",
+    "source": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/dancer-leather-bag-campaign-2026-09-24/v4-leap-face-swap/results/150.png",
+    "source_url": "https://charmvilla-gallery.vercel.app/#scene=SC-155&asset=CV-0429",
+    "source_sha256": "5a260e7a6159c6ff2253cc2280e3808750a419bd551d4d8ce64ef26e919069ed",
+    "output": "public/media/gallery/CV-0429.webp",
+    "width": 880,
+    "height": 1168,
+    "sha256": "f1abf0ed1f556d2e2f6c74680e3c3ce782c6ea62c0c4292469250460456846f3",
+    "bytes": 98120
+  },
+  {
+    "id": "CV-0431",
+    "source": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/dancer-leather-bag-campaign-2026-09-24/v5-male-fold-upper-hand/results/F.png",
+    "source_url": "https://charmvilla-gallery.vercel.app/#scene=SC-155&asset=CV-0431",
+    "source_sha256": "020e3bfebf6a546be70156e54373ac010b860a4e108ae4078b208b3ad7bf338d",
+    "output": "public/media/gallery/CV-0431.webp",
+    "width": 880,
+    "height": 1168,
+    "sha256": "518bc20daef2028bd8645a72570abff3924d385103ab4418a95d1c7cbbcda68c",
+    "bytes": 138688
+  },
+  {
+    "id": "CV-0434",
+    "source": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/dancer-leather-bag-campaign-2026-09-24/v6-profile-trio/results/185-v2-strap.png",
+    "source_url": "https://charmvilla-gallery.vercel.app/#scene=SC-155&asset=CV-0434",
+    "source_sha256": "0c95c11117b2956513bcd532c91276c2f6db31286374e5757f38127794fdb0f8",
+    "output": "public/media/gallery/CV-0434.webp",
+    "width": 896,
+    "height": 1120,
+    "sha256": "ef3e9e4ab93f8701f6cdd5115a27cee7e100ce84d8064bd3576ec26868832351",
+    "bytes": 46488
+  },
+  {
+    "id": "CV-0437",
+    "source": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/dancer-leather-bag-campaign-2026-09-24/v7-male-duo/results/190.png",
+    "source_url": "https://charmvilla-gallery.vercel.app/#scene=SC-155&asset=CV-0437",
+    "source_sha256": "39bc6a117fe5f3b1aa52beb8f6821541081785e7e7daaa36cba0c8365ca3793c",
+    "output": "public/media/gallery/CV-0437.webp",
+    "width": 752,
+    "height": 1344,
+    "sha256": "b8f5df5e8c93696e8fb46e741a1e0d602b0fe303adc3492dc61d8ac1927aee2b",
+    "bytes": 63206
+  },
+  {
+    "id": "CV-0436",
+    "source": "/Users/kuan/Documents/Codex/09-07-charmvilla/output/dancer-leather-bag-campaign-2026-09-24/v7-male-duo/v2-191-gauze-4k/results/191-gauze-4k.png",
+    "source_url": "https://charmvilla-gallery.vercel.app/#scene=SC-155&asset=CV-0436",
+    "source_sha256": "93c9bbf9b1db8d1eb2f972b1d1a98908605e5afadbbfd7e8d40daa4bb8ba2c9f",
+    "output": "public/media/gallery/CV-0436.webp",
+    "width": 3312,
+    "height": 2480,
+    "sha256": "a043fcd023c6469a87c7bb9184776889613e5b932af03c9ba6eb946db1bbf321",
+    "bytes": 603094
+  }
+]

@@ -1,43 +1,53 @@
-// Section 4 — Tea. Sticky "SCROLL TO EXPLORE" panel with a horizontal A:–E: card stack (desktop ≥1280px);
-// below that the engine is inert and the cards fall into a vertical grid. Server component; content from
-// @/data/content only.
 import { tea } from "@/data/content";
-import { SectionIndex, Heading, Label, Arrow, Picture } from "@/components/ui";
+import { SectionIndex, Heading, Label, Picture } from "@/components/ui";
 
 export default function Tea() {
   return (
-    <section id="tea" data-animation="stack" data-start="top top" data-end="bottom bottom" className="relative bg-white pt-30 pb-100 lg:pb-180 laptop:h-[470vh]">
-      <div className="laptop:sticky laptop:top-50 laptop:h-[calc(100vh-50px)] laptop:overflow-hidden">
-        <div className="container-x grid grid-cols-12 gap-x-16 lg:gap-x-20">
-          <div className="col-span-12 flex flex-col laptop:col-span-5 laptop:h-[531px]">
-            <SectionIndex n={tea.index} />
-            <Label className="mt-20"><span className="tc">{tea.kicker}</span></Label>
-            <Heading className="tc mt-20 text-3xl lg:text-4xl">{tea.heading}</Heading>
-            <div className="mt-10 text-xs font-bold text-stone-deep">{tea.headingEn}</div>
-            <p className="tc mt-30 max-w-350 text-base font-bold leading-body" data-animation="moveUp" data-delay="0.2">{tea.craft}</p>
-            <div className="mt-auto hidden items-center gap-10 text-xs font-bold text-stone-deep laptop:flex"><Arrow />{tea.scrollHint}</div>
-          </div>
-          <div className="col-span-12 mt-40 laptop:col-span-7 laptop:mt-0">
-            <div data-stack-cards="" className="grid gap-y-40 laptop:flex laptop:w-max">
-              {tea.cards.map((c, i) => (
-                <div key={c.code} data-stack-card="" data-animation="moveUp" data-delay={i * 0.1} className="laptop:w-690 laptop:pr-30">
-                  <div className="mb-15 text-3xl font-bold leading-none">{c.code}:</div>
-                  <div className="flex min-h-[410px] flex-col border-t border-l border-ink/20 bg-white pl-25 pt-25 pb-25 transition-colors duration-300 lg:pl-30 [.is-active_&]:border-ink">
-                    <div className="relative mr-25 h-[240px] laptop:h-[220px]"><Picture img={c.image} fill sizes="(min-width:1280px) 660px, 100vw" /></div>
-                    <h3 className="tc mt-25 text-3xl font-bold leading-none lg:text-4xl">{c.title}</h3>
-                    <div className="mt-25 mr-25 grid grid-cols-2 border-t border-ink/20 pt-15 laptop:mt-auto">
-                      <div><Label>TEA:</Label><div className="tc mt-10 text-3xl font-bold leading-tight lg:text-4xl">{c.tea}</div></div>
-                      <div className="border-l border-ink/20 pl-25"><Label>FLOWER:</Label><div className="tc mt-10 text-3xl font-bold leading-tight lg:text-4xl">{c.flower}</div></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+    <section id="tea" className="relative bg-white pt-30 pb-100 laptop:pb-180">
+      <div className="container-x grid grid-cols-12 gap-x-20">
+        <div className="col-span-12 lg:col-span-6">
+          <SectionIndex n={tea.index} />
+          <Label className="mt-20"><span className="tc">{tea.kicker}</span></Label>
         </div>
-        <ul className="container-x mt-40 flex flex-wrap gap-x-40 gap-y-10 text-xs font-bold text-stone-deep" data-animation="moveUp" data-delay="0.3">
-          {tea.honours.map((h) => <li key={h} className="tc flex items-center gap-10"><span className="dot scale-75" />{h}</li>)}
-        </ul>
+        <div className="col-span-12 mt-25 lg:col-span-6 lg:mt-0">
+          <Heading className="tc text-3xl lg:text-4xl">{tea.heading}</Heading>
+          <div className="mt-10 text-xs font-bold text-stone-deep">{tea.headingEn}</div>
+          <p className="tc mt-20 max-w-550 text-base leading-body">{tea.craft}</p>
+        </div>
+      </div>
+
+      <ul aria-label="小金魚茶包商品清單" className="container-x mt-40 grid grid-cols-1 gap-x-20 gap-y-50 md:grid-cols-2 laptop:grid-cols-3" data-tea-products="">
+        {tea.cards.map((product, i) => (
+          <li key={product.code} data-tea-product={product.code}>
+            <article>
+              <Picture img={product.image} sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw" animate={false} />
+              <div className="mt-20 flex items-baseline gap-15 border-t border-ink/20 pt-15">
+                <span className="text-xs font-bold text-stone-deep">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.title}</h3>
+              </div>
+              <dl className="tc mt-15 grid grid-cols-2 gap-20 text-xs">
+                <div><dt className="text-stone-deep">茶底</dt><dd className="mt-6 text-base font-medium">{product.tea}</dd></div>
+                <div><dt className="text-stone-deep">風味</dt><dd className="mt-6 text-base font-medium">{product.flower}</dd></div>
+              </dl>
+            </article>
+          </li>
+        ))}
+      </ul>
+
+      <div className="container-x mt-60" data-tea-awards="">
+        <div className="border-t border-ink/20 pt-30">
+          <Label><span className="tc">{tea.honours[0]}</span></Label>
+          <ul className="mt-30 grid gap-x-40 gap-y-30 md:grid-cols-2">
+            {tea.awards.map((award) => (
+              <li key={award.image.src} className="flex items-center gap-20">
+                <div className="relative h-100 w-140 shrink-0 lg:h-120 lg:w-180">
+                  <Picture img={award.image} fill fit="contain" animate={false} sizes="180px" />
+                </div>
+                <p className="tc text-xs font-medium leading-body lg:text-base">{award.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

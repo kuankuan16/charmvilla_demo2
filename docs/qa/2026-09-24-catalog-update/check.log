@@ -1,0 +1,49 @@
+
+> charmvilla-gallery-site@0.1.0 check
+> npm run lint && npm run typecheck && npm run build
+
+
+> charmvilla-gallery-site@0.1.0 lint
+> eslint
+
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-gallery-site/src/components/chrome/Header.tsx
+  44:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-gallery-site/src/components/engine/Preloader.tsx
+  37:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+> charmvilla-gallery-site@0.1.0 typecheck
+> tsc --noEmit
+
+
+> charmvilla-gallery-site@0.1.0 build
+> next build
+
+▲ Next.js 16.3.0 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 12ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 486ms
+  Running TypeScript ...
+  Finished TypeScript in 785ms ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/4) ...
+  Generating static pages using 5 workers (1/4) 
+  Generating static pages using 5 workers (2/4) 
+  Generating static pages using 5 workers (3/4) 
+✓ Generating static pages using 5 workers (4/4) in 259ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ○ /icon.svg
+
+
+○  (Static)  prerendered as static content
+
