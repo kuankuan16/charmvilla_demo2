@@ -25,6 +25,9 @@ export default function PageShell({ children }: { children: ReactNode }) {
     document.documentElement.classList.remove("is-loading");
     const cleanup = initAnimations(document);
     scrollerRef.current?.start();
+    // Cross-page links (for example /#visit) must land in the custom scroll container.
+    const hashTarget = window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
+    if (hashTarget) scrollerRef.current?.scrollTo(hashTarget, { immediate: true });
     return cleanup;
   }, [ready]);
 

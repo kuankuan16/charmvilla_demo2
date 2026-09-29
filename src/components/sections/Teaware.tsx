@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { teawareCatalog, productHref } from "@/data/catalog";
 // Section 5 — Teaware & craft. Two landscape photos over stacked bold lists on a stone ground
 // (reference: "5: Do's & Don'ts" two-column lists). Server component; content from @/data/content only.
 import { teaware } from "@/data/content";
@@ -35,7 +37,7 @@ export default function Teaware() {
                     data-delay={0.1 + i * 0.08}
                     className="tc border-t border-ink/30 py-12 text-xl font-bold leading-tight last:border-b lg:text-2xl"
                   >
-                    {it}
+                    <Link href={productHref(teawareCatalog[ci === 0 ? i : i + 2])} className="flex items-center justify-between gap-15 hover:underline"><span>{it}</span><span aria-hidden="true" className="text-base">↗</span></Link>
                   </li>
                 ))}
               </ul>
@@ -43,6 +45,7 @@ export default function Teaware() {
           ))}
         </div>
       </div>
+      <div className="mt-35 text-right"><Link href="/collections/teaware" className="tc text-xs font-bold link-underline">瀏覽全部茶器與工藝 ↗</Link></div>
     </section>
   );
 }

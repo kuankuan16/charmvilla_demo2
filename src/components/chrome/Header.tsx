@@ -2,6 +2,7 @@
 // Fixed 50px header (reference: [data-header] fixed top-0 h-50 z-30) with the stepped full-screen menu.
 // Menu panels reveal with clip-path (.5s cubic-bezier(.3,.86,.36,.95)) and staggered delays.
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { brand, sections } from "@/data/content";
 import { getScroller } from "@/lib/motion/scroller";
 
@@ -44,6 +45,7 @@ export default function Header() {
           <img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} />
         </a>
         <nav className={`relative z-40 hidden items-center gap-30 text-xs font-bold transition-opacity duration-300 laptop:flex ${open ? "pointer-events-none opacity-0" : ""}`} aria-label="主要">
+          <Link href="/collections/all" className="link-underline">ALL OBJECTS</Link>
           {navItems.slice(0, 4).map((s) => (
             <a key={s.id} href={`#${s.id}`} className={`group flex items-center gap-8 ${open ? "text-paper" : ""}`}>
               <span className="dot scale-75" /> <span className="link-underline">{s.label}</span>
@@ -87,6 +89,7 @@ export default function Header() {
           })}
           {/* mobile list */}
           <ul className="menu-fade absolute left-25 top-95 flex flex-col gap-24 laptop:hidden" style={{ transitionDelay: open ? ".2s" : "0s" }}>
+            <li><Link href="/collections/all" onClick={close} className="tc text-2xl text-paper">全部商品 ↗</Link></li>
             {navItems.map((s) => (
               <li key={s.id}><a href={`#${s.id}`} onClick={close} className="flex items-baseline gap-14 text-4xl font-bold leading-none text-paper"><span>{s.label}</span><span className="tc text-base font-medium opacity-70">{s.zh}</span></a></li>
             ))}

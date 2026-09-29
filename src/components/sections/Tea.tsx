@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { teaCatalog, productHref } from "@/data/catalog";
 import { tea } from "@/data/content";
 import { SectionIndex, Heading, Label, Picture } from "@/components/ui";
 
@@ -19,7 +21,7 @@ export default function Tea() {
       <ul aria-label="小金魚茶包商品清單" className="container-x mt-40 grid grid-cols-1 gap-x-20 gap-y-50 md:grid-cols-2 laptop:grid-cols-3" data-tea-products="">
         {tea.cards.map((product, i) => (
           <li key={product.code} data-tea-product={product.code}>
-            <article>
+            <article><Link href={productHref(teaCatalog[i])} className="group block" aria-label={`瀏覽 ${product.title}`}>
               <Picture img={product.image} sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw" animate={false} />
               <div className="mt-20 flex items-baseline gap-15 border-t border-ink/20 pt-15">
                 <span className="text-xs font-bold text-stone-deep">{String(i + 1).padStart(2, "0")}</span>
@@ -29,10 +31,11 @@ export default function Tea() {
                 <div><dt className="text-stone-deep">茶底</dt><dd className="mt-6 text-base font-medium">{product.tea}</dd></div>
                 <div><dt className="text-stone-deep">風味</dt><dd className="mt-6 text-base font-medium">{product.flower}</dd></div>
               </dl>
-            </article>
+            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">探索商品 ↗</span></Link></article>
           </li>
         ))}
       </ul>
+      <div className="container-x mt-35 text-right"><Link href="/collections/tea" className="tc text-xs font-bold link-underline">瀏覽全部茶包 ↗</Link></div>
 
       <div className="container-x mt-60" data-tea-awards="">
         <div className="border-t border-ink/20 pt-30">

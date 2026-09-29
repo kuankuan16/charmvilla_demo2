@@ -1,5 +1,5 @@
 // Section 2 — Leather bag. E-commerce logic: one card per colour with a large image; the other angles
-// open in a detail dialog (ProductGrid). White ground per the user's direction (2026-09-24).
+// are available on its product page (ProductGrid). White ground per the user's direction (2026-09-24).
 import { bags } from "@/data/content";
 import { SectionIndex, Heading, Label, Btn } from "@/components/ui";
 import ProductGrid from "@/components/sections/ProductGrid";
@@ -22,7 +22,7 @@ export default function Bags() {
         </div>
       </div>
 
-      <ProductGrid products={bags.products} facts={bags.facts} patent={bags.patent} detail={bags.detail} cta={bags.cta} heading={bags.heading} />
+      <ProductGrid />
 
       <div className="container-x mt-50 flex justify-center">
         <Btn href={bags.cta.href}><span className="tc">{bags.cta.label}</span></Btn>

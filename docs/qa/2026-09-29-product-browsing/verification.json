@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-29",
+  "site": "https://charmvilla-gallery-site.vercel.app",
+  "browseUrl": "https://charmvilla-gallery-site.vercel.app/collections/all",
+  "deploymentId": "dpl_42gg2e7a2TraKaeAuMfk7RgAfHDf",
+  "deploymentUrl": "https://charmvilla-gallery-site-f7rbfi0ed-tentenco.vercel.app",
+  "deploymentState": "READY",
+  "rollbackDeployment": "dpl_FAJrYfsy4ZF1YNw74dQYfE7ezbPg",
+  "catalog": {
+    "products": 20,
+    "categories": {
+      "bags": 3,
+      "jewelry": 6,
+      "tea": 5,
+      "teaware": 6
+    },
+    "indexPages": 5
+  },
+  "checks": {
+    "lint": "passed with 2 existing native img warnings",
+    "typecheck": "passed",
+    "productionBuild": "passed; 30 static outputs",
+    "localHttp": "26 pages and 51 images passed",
+    "productionHttp": "26 pages and 51 images passed",
+    "assetHashes": "51 of 51 local and public hashes match, ignoring Vercel dpl cache parameters",
+    "unknownRoutes": "404 and working recovery links",
+    "homepageProductDestinations": 20
+  },
+  "browser": {
+    "engine": "Chrome",
+    "viewports": [
+      "1440x1000",
+      "768x1024",
+      "390x844"
+    ],
+    "verified": [
+      "search results, empty state and reset",
+      "URL query preserved on reload and browser back",
+      "homepage to product navigation",
+      "bag color and tea flavor navigation",
+      "thumbnail and previous/next image selection",
+      "native lightbox and keyboard ArrowRight / Escape",
+      "lightbox focus restored and document scroll unlocked",
+      "mobile single-image lightbox",
+      "FAQ expansion",
+      "previous/next product and browser back",
+      "four related product links per page",
+      "return to category",
+      "cross-page homepage #visit lands at correct custom scroll position",
+      "no horizontal overflow on checked collection/product pages",
+      "404 recovery link",
+      "production search and image lightbox",
+      "production homepage has 20 product destinations and visit hash lands at 49.75px"
+    ],
+    "productionGoldToken": "#e4a038"
+  },
+  "contentScope": {
+    "source": "existing approved content.ts and asset manifest",
+    "newPricesOrInventory": false,
+    "checkout": false,
+    "purchaseEntry": "existing Instagram inquiry and physical-store information"
+  },
+  "git": {
+    "branch": "main",
+    "remoteConfigured": false
+  },
+  "limitations": [
+    "Responsive QA used Chrome viewport emulation, not physical iOS/Android devices.",
+    "No checkout, prices, inventory or unverified product specifications were invented."
+  ]
+}

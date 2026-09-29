@@ -99,14 +99,14 @@ export function createScroller(): Scroller | null {
   // In-page anchors go through the scroller (single-page navigation).
   const onClick = (e: MouseEvent) => {
     const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
-    if (!a) return;
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     const id = a.getAttribute("href")!.slice(1);
     if (!id) return;
     const el = document.getElementById(id);
     if (!el) return;
     e.preventDefault();
     scrollTo(el);
-    history.replaceState(null, "", `#${id}`);
+    history.replaceState(history.state, "", `#${id}`);
   };
   document.addEventListener("click", onClick);
 

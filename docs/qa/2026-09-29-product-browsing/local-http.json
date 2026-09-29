@@ -1,0 +1,667 @@
+{
+  "checkedAt": "2026-09-29T02:59:43.714820+00:00",
+  "base": "http://localhost:3125",
+  "passed": true,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "h1": 1,
+      "canonical": [],
+      "productLinks": 20,
+      "issues": []
+    },
+    {
+      "path": "/collections/all",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/collections/all"
+      ],
+      "productLinks": 20,
+      "issues": []
+    },
+    {
+      "path": "/collections/bags",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/collections/bags"
+      ],
+      "productLinks": 3,
+      "issues": []
+    },
+    {
+      "path": "/collections/jewelry",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/collections/jewelry"
+      ],
+      "productLinks": 6,
+      "issues": []
+    },
+    {
+      "path": "/collections/tea",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/collections/tea"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/collections/teaware",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/collections/teaware"
+      ],
+      "productLinks": 6,
+      "issues": []
+    },
+    {
+      "path": "/products/braided-leather-bag-white",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/braided-leather-bag-white"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/braided-leather-bag-blue",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/braided-leather-bag-blue"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/braided-leather-bag-pink",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/braided-leather-bag-pink"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/pearl-chain-goldfish-earrings",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/pearl-chain-goldfish-earrings"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/bezel-diamond-goldfish-earrings",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/bezel-diamond-goldfish-earrings"
+      ],
+      "productLinks": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/single-diamond-goldfish-earrings",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/single-diamond-goldfish-earrings"
+      ],
+      "productLinks": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/twin-goldfish-earrings",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/twin-goldfish-earrings"
+      ],
+      "productLinks": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-diamond-stud",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-diamond-stud"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-diamond-drop",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-diamond-drop"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-tea-rose-jinxuan",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-tea-rose-jinxuan"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-tea-lychee-ruby",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-tea-lychee-ruby"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-tea-honey-oriental-beauty",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-tea-honey-oriental-beauty"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-tea-osmanthus-baozhong",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-tea-osmanthus-baozhong"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/goldfish-tea-roselle-roasted-oolong",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/goldfish-tea-roselle-roasted-oolong"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/prosperity-dessert-stand",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/prosperity-dessert-stand"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/prosperity-stand-gift-box",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/prosperity-stand-gift-box"
+      ],
+      "productLinks": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/wooden-coaster-teaspoon",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/wooden-coaster-teaspoon"
+      ],
+      "productLinks": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/bird-chopstick-rest",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/bird-chopstick-rest"
+      ],
+      "productLinks": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/ginkgo-teaspoon-gift-box",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/ginkgo-teaspoon-gift-box"
+      ],
+      "productLinks": 5,
+      "issues": []
+    },
+    {
+      "path": "/products/wooden-chopsticks",
+      "status": 200,
+      "h1": 1,
+      "canonical": [
+        "https://charmvilla-gallery-site.vercel.app/products/wooden-chopsticks"
+      ],
+      "productLinks": 5,
+      "issues": []
+    }
+  ],
+  "homepageProductDestinations": [
+    "/products/bezel-diamond-goldfish-earrings",
+    "/products/bird-chopstick-rest",
+    "/products/braided-leather-bag-blue",
+    "/products/braided-leather-bag-pink",
+    "/products/braided-leather-bag-white",
+    "/products/ginkgo-teaspoon-gift-box",
+    "/products/goldfish-diamond-drop",
+    "/products/goldfish-diamond-stud",
+    "/products/goldfish-tea-honey-oriental-beauty",
+    "/products/goldfish-tea-lychee-ruby",
+    "/products/goldfish-tea-osmanthus-baozhong",
+    "/products/goldfish-tea-rose-jinxuan",
+    "/products/goldfish-tea-roselle-roasted-oolong",
+    "/products/pearl-chain-goldfish-earrings",
+    "/products/prosperity-dessert-stand",
+    "/products/prosperity-stand-gift-box",
+    "/products/single-diamond-goldfish-earrings",
+    "/products/twin-goldfish-earrings",
+    "/products/wooden-chopsticks",
+    "/products/wooden-coaster-teaspoon"
+  ],
+  "assets": [
+    {
+      "path": "/brand/awards/if-gold-award-2015.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 9560,
+      "sha256": "e9ef2b34bedd68d49d1d623a6bee642d967a5cb3aa96ffd57c59ac67156a5698"
+    },
+    {
+      "path": "/brand/awards/reddot-winner-2014.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 22090,
+      "sha256": "9c69cec430b8984696580a4dcbf7ec758be541390915e060daf5dfcddfe127e0"
+    },
+    {
+      "path": "/brand/charmvilla-logo.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 9330,
+      "sha256": "c8e27c1a1cff3003e24495daa4bee21bf0ab7c4bd7716c9fee56100d738b1bae"
+    },
+    {
+      "path": "/brand/regent-taipei.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 6432,
+      "sha256": "e9bbc2e233e546e170501cbe91d6cfd43d0408a1f972ef780d55281fa9a057c3"
+    },
+    {
+      "path": "/media/gallery/CV-0068.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 180484,
+      "sha256": "fd2b7614f8d4054e1ea743abcea8dd5a1ebb28df9fcee8f07a4314b184f143dd"
+    },
+    {
+      "path": "/media/gallery/CV-0074.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 140706,
+      "sha256": "f6261a30880775073f051eac71a0f92cec16b134628cc5b97587c6f5442a75f3"
+    },
+    {
+      "path": "/media/gallery/CV-0081.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 193094,
+      "sha256": "1473697a91b3dfc73c9d662baff7772aeb915f68acaf5b7cc35b645129725dfa"
+    },
+    {
+      "path": "/media/gallery/CV-0121.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 213766,
+      "sha256": "b146519f1a1553e3900386ef25ef24872fd5f90d9b6c7960068f925c7d687443"
+    },
+    {
+      "path": "/media/gallery/CV-0227.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 11624,
+      "sha256": "89b0cd3d69a7b4bc73fa24d34823e844fe77174b1ab7a50e10e7dac31805a877"
+    },
+    {
+      "path": "/media/gallery/CV-0229.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 250352,
+      "sha256": "d6721f8e3fbfbb7be2699082f75889aaabb60e82727c73438280fafc715eae04"
+    },
+    {
+      "path": "/media/gallery/CV-0231.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 404858,
+      "sha256": "0dcf33caaf6223a9ac6c8c3a8f369113cc35e7846df5a3abc77c10c34155ba1c"
+    },
+    {
+      "path": "/media/gallery/CV-0232.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 219574,
+      "sha256": "0cf8e4a3d899f684b9c2bc926b76eeb753f2154a4154d682b61e0bc52a646331"
+    },
+    {
+      "path": "/media/gallery/CV-0239.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 77872,
+      "sha256": "4dddd031a721a9bbb4bdef8b83ad50616c97516a7b982ab21b6bc481780d0535"
+    },
+    {
+      "path": "/media/gallery/CV-0248.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 354830,
+      "sha256": "b9681a15c25aa3feef70920970d3c16e06ad1e7f9c03bde91e40be2efc70d20d"
+    },
+    {
+      "path": "/media/gallery/CV-0256.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 78768,
+      "sha256": "c8706c99cde4fb9f105e2b0435eff733ff5c56456b345f2081424f561d021250"
+    },
+    {
+      "path": "/media/gallery/CV-0370.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 266044,
+      "sha256": "ee1c0059ab6c2f0cee4aacaeff52005301cecac062a6309dd29cefb056bd670a"
+    },
+    {
+      "path": "/media/gallery/CV-0371.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 261794,
+      "sha256": "fb59ffc89a39274db57796351ddc3f6e8b7fda5db23da4ac531077a5602f3d7a"
+    },
+    {
+      "path": "/media/gallery/CV-0372.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 318554,
+      "sha256": "b8384c72fbf823a035c8044fb2dfae289041a9b87cc0e4f2a4040be2c5958568"
+    },
+    {
+      "path": "/media/gallery/CV-0373.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 464480,
+      "sha256": "0c8c10c20ad1954d4d5a3065bb61f774a70816fb40388fabf8435928dc4b5af0"
+    },
+    {
+      "path": "/media/gallery/CV-0374.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 285738,
+      "sha256": "5bb65293f8ffb8976bbd9421b3998cfec2a016899b391acfc56ef7d86c66e68d"
+    },
+    {
+      "path": "/media/gallery/CV-0376.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 305382,
+      "sha256": "532dfca6121e012a0bab8bac5a4c26176d8df0e83279c4d59b57231aa2a8de3c"
+    },
+    {
+      "path": "/media/gallery/CV-0377.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 189230,
+      "sha256": "7c3188382aef1859d4ede0ba6e08b7be8fb3ce02ec1017f90763a50dd85133b2"
+    },
+    {
+      "path": "/media/gallery/CV-0378.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 230226,
+      "sha256": "6f04d010a6cdd1ae40cde2917b3c9e9ec92f9e60530d137309b6788db4802494"
+    },
+    {
+      "path": "/media/gallery/CV-0379.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 249102,
+      "sha256": "0d706387e2aef7d6a0e4ed19fbf0a0f41251b85f5e246ebb34459f10cf3468db"
+    },
+    {
+      "path": "/media/gallery/CV-0380.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 181178,
+      "sha256": "e4d8433d41d63aef4db957923de2a8693da4f0576de3116bb12327049fcb652c"
+    },
+    {
+      "path": "/media/gallery/CV-0397.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 40850,
+      "sha256": "cd15756d0441b9001eb2e5497a1648324f65faf6a062a3568767c50bd43eaca1"
+    },
+    {
+      "path": "/media/gallery/CV-0398.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 54344,
+      "sha256": "b051ff2f282d1b3c12b90eedfcaf4a92c5c9099e82fe8d08b66b1aa46fbec7c3"
+    },
+    {
+      "path": "/media/gallery/CV-0399.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 44256,
+      "sha256": "d4ae30747d1cfa3140fbb33716538601d9ccf860275a7bd5bbd5c6805d345bca"
+    },
+    {
+      "path": "/media/gallery/CV-0400.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 55964,
+      "sha256": "54edf5a0a8821c79e69446d5c3346a56229322f2cc3320840d001fcb3e0a219a"
+    },
+    {
+      "path": "/media/gallery/CV-0419.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 89320,
+      "sha256": "76bb3db9cefe1699c5256bf1f9d595ee352f832eed279156ecea88394dfcf802"
+    },
+    {
+      "path": "/media/gallery/CV-0420.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 152536,
+      "sha256": "05f992a8e35335c300dcd7c12974bdaf2e80cd279a1a08aea9b092d63edde979"
+    },
+    {
+      "path": "/media/gallery/CV-0422.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 420754,
+      "sha256": "daf2aeb40e14b189e8456ffa9fd844d892021b7dfd5d94f68cb2b38be8bb1808"
+    },
+    {
+      "path": "/media/gallery/CV-0423.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 231200,
+      "sha256": "f5834cd41996abdea0fa82599dd218be125e1dfa2f53ede90eff57c6e7ecbb9d"
+    },
+    {
+      "path": "/media/gallery/CV-0424.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 379852,
+      "sha256": "53f34f9e05514ee2d5e5e3036ad62cfa8364fa47adcb31bd98f72446313ef16e"
+    },
+    {
+      "path": "/media/gallery/CV-0426.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 91224,
+      "sha256": "e6ee26dfa56ba752781cbb3e326c42c04db2f8eca5ebfc49f3b253afca9a7572"
+    },
+    {
+      "path": "/media/gallery/CV-0427.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 262270,
+      "sha256": "8faf343958054fdde9e113aa6823045d4efc0e12d6dfb547d95cf3d77a98a60a"
+    },
+    {
+      "path": "/media/gallery/CV-0429.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 98120,
+      "sha256": "f1abf0ed1f556d2e2f6c74680e3c3ce782c6ea62c0c4292469250460456846f3"
+    },
+    {
+      "path": "/media/gallery/CV-0431.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 138688,
+      "sha256": "518bc20daef2028bd8645a72570abff3924d385103ab4418a95d1c7cbbcda68c"
+    },
+    {
+      "path": "/media/gallery/CV-0434.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 46488,
+      "sha256": "ef3e9e4ab93f8701f6cdd5115a27cee7e100ce84d8064bd3576ec26868832351"
+    },
+    {
+      "path": "/media/gallery/CV-0436.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 603094,
+      "sha256": "a043fcd023c6469a87c7bb9184776889613e5b932af03c9ba6eb946db1bbf321"
+    },
+    {
+      "path": "/media/gallery/CV-0437.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 63206,
+      "sha256": "b8f5df5e8c93696e8fb46e741a1e0d602b0fe303adc3492dc61d8ac1927aee2b"
+    },
+    {
+      "path": "/media/site/goldfish-drop-sketch.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 345168,
+      "sha256": "f8c842cfc38b517b0fa27dc5098375d61a3b08b90c246c6674fd9bfd7b9cca3c"
+    },
+    {
+      "path": "/media/site/goldfish-stud-sketch.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 391458,
+      "sha256": "c9bab24c09c2a68c01a52f6e031d7641f10d2aa40a570e0c4ff39b4161c1e6a5"
+    },
+    {
+      "path": "/media/site/kv-beauty.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 174096,
+      "sha256": "8166eb8d0a0761dc9090f132536d23e06f6b78a59242abf2b8e7215a7a79eaf9"
+    },
+    {
+      "path": "/media/site/kv-lychee.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 97332,
+      "sha256": "4ab327bb384d8cfb0ec50b22084fc5275a2c937ff174b7da6dcbd786bed94450"
+    },
+    {
+      "path": "/media/site/kv-osmanthus.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 121610,
+      "sha256": "426f6d551558c00de7cc182cf271bc11aaf486d493d39b2716c94862a01da8de"
+    },
+    {
+      "path": "/media/site/kv-rose.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 102696,
+      "sha256": "f79d05fc37ca213e7b1eaf4d64d3dc1f2d89031631a9de1323fb62f5d7ffa5b0"
+    },
+    {
+      "path": "/media/site/kv-roselle.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 170652,
+      "sha256": "d002f9f419dd415e15c6a95791bee1f8d99d609c716f39a92e081cccc15b365c"
+    },
+    {
+      "path": "/media/site/shop-online.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 151970,
+      "sha256": "304fce0dfd6aef08fef8cafc704752711590b868beac00543f1788e9ababba95"
+    },
+    {
+      "path": "/media/site/store-kyoto.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 70886,
+      "sha256": "baab8140ef3003a93ea89eda2537cbdce7919982f6ab74e86e512724f2c77a59"
+    },
+    {
+      "path": "/media/site/store-regent.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 56346,
+      "sha256": "8a8b0553d0b9874a46ae0c4fec419e1f146d69367ddf8e9f06c0f19f5dd8f170"
+    }
+  ],
+  "notFound": [
+    {
+      "path": "/products/does-not-exist",
+      "status": 404,
+      "shells": 1,
+      "recoveryLink": true
+    },
+    {
+      "path": "/collections/does-not-exist",
+      "status": 404,
+      "shells": 1,
+      "recoveryLink": true
+    },
+    {
+      "path": "/does-not-exist",
+      "status": 404,
+      "shells": 1,
+      "recoveryLink": true
+    }
+  ],
+  "failures": []
+}
