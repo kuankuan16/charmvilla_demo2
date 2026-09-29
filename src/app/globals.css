@@ -10,8 +10,9 @@
   --color-stone: #919598;
   --color-stone-deep: #6f7275;
   --color-field: #d8d9cf;
-  --color-gold: #ad8b46;
-  --color-gold-light: #d5bd82;
+  /* Exact opaque-pixel color of the approved /brand/charmvilla-logo.png. */
+  --color-gold: #e4a038;
+  --color-gold-light: var(--color-gold);
   --color-white: #ffffff;
   --color-black: #000000;
 
