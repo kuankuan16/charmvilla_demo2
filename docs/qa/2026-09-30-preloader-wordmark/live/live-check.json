@@ -1,0 +1,22 @@
+{
+  "preloader": {
+    "letters": 10,
+    "list": 0,
+    "bg": "none"
+  },
+  "/": {
+    "body": "rgb(246, 248, 250)",
+    "header": "rgb(246, 248, 250)",
+    "nav": "12.96px / 400"
+  },
+  "/collections/tea": {
+    "body": "rgb(246, 248, 250)",
+    "header": "rgb(246, 248, 250)",
+    "nav": "12.96px / 400"
+  },
+  "/products/kyoto-gift-box": {
+    "body": "rgb(246, 248, 250)",
+    "header": "rgb(246, 248, 250)",
+    "nav": "12.96px / 400"
+  }
+}

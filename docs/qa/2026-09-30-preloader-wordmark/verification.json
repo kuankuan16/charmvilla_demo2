@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-30",
+  "commit": "ad40f10",
+  "deployment": "charmvilla-gallery-site-f55k0mqzz",
+  "alias": "https://charmvilla-gallery-site.vercel.app",
+  "preloader": {
+    "letters": 10,
+    "listOrDots": 0,
+    "source": "public/brand/charmvilla-logo.png sliced by LETTER_BOUNDS"
+  },
+  "nav": "12.96px / 400 on /, /collections/tea, /products/kyoto-gift-box",
+  "ground": "rgb(246,248,250) body + header on all three pages",
+  "consoleErrors": 0,
+  "filmstrips": [
+    "local/filmstrip-desktop.png",
+    "live/filmstrip-desktop.png"
+  ]
+}
