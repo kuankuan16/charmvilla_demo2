@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-30",
+  "commits": [
+    "823f219",
+    "bff9d20"
+  ],
+  "deployments": [
+    "charmvilla-gallery-site-kambl3bm3",
+    "charmvilla-gallery-site-c6ulzi68i"
+  ],
+  "reference": "https://davidlaxer.com/about/",
+  "timeline": {
+    "desktop": {
+      "digits": "0–1.9s yPercent 150→-150 power4.out 1.5s stagger .05",
+      "wipe": "~2.0–3.0s clip-path to left edge power3.inOut 1.1s",
+      "headline": "split chars yPercent 105→0 expo.out 1.25s stagger .05, starts with wipe"
+    },
+    "mobile": {
+      "digits": "skipped",
+      "wipe": "0.2–1.4s"
+    }
+  },
+  "consoleErrors": 0,
+  "filmstrips": [
+    "local/filmstrip-desktop.png",
+    "local/filmstrip-mobile.png",
+    "live/filmstrip-desktop.png",
+    "live/filmstrip-mobile.png"
+  ],
+  "specRows": "1px #1f1f1f25 bottom line + first-row top line (user request)"
+}
