@@ -14,7 +14,7 @@ for (const file of ['content', 'tea-gifts', 'christmas-gifts', 'catalog']) {
   const source = fs.readFileSync(path.join(root, `src/data/${file}.ts`), 'utf8');
   fs.writeFileSync(path.join(tmp, `${file}.js`), ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true } }).outputText);
 }
-for (const name of ['images.json', 'gift-box-images.json', 'official-prices.json', 'shopify-map.json']) fs.copyFileSync(path.join(root, 'src/data', name), path.join(tmp, name));
+for (const name of ['images.json', 'gift-box-images.json', 'official-prices.json', 'shopify-map.json', 'studio-listing.json']) fs.copyFileSync(path.join(root, 'src/data', name), path.join(tmp, name));
 const { teaGifts } = (await import(pathToFileURL(path.join(tmp, 'tea-gifts.js')).href)).default;
 const { products, teaCatalog } = (await import(pathToFileURL(path.join(tmp, 'catalog.js')).href)).default;
 const expectedIds = [891,64,954,1053,104,692,970,183,343,196,850,582,960,88,1072,994];

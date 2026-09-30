@@ -303,6 +303,10 @@
       "label": "繽紛紙盒・12 入"
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=891",
+    "price": {
+      "amount": 1680,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 12,
       "series": "經典禮盒",
@@ -401,6 +405,10 @@
       "label": "桐木木盒・12 入"
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=64",
+    "price": {
+      "amount": 1680,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 12,
       "series": "經典禮盒",
@@ -495,6 +503,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=954",
+    "price": {
+      "amount": 3700,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 18,
       "series": "經典禮盒",
@@ -526,13 +538,21 @@
     "summary": "18 入／盒 · 綜合茶款",
     "description": "花的姿態留在織布盒蓋上，桐木盒承接十八入茶禮。欣賞盒面的構圖，也在一杯杯茶中，把相聚的日常慢慢展開。",
     "image": {
-      "src": "/media/gift-boxes/official-1053.png",
-      "w": 630,
-      "h": 486,
-      "alt": "花開富貴｜年節禮・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-blossoming-prosperity-gift-box.webp",
+      "alt": "花開富貴｜年節禮・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-blossoming-prosperity-gift-box.webp",
+          "alt": "花開富貴｜年節禮・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -581,6 +601,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=1053",
+    "price": {
+      "amount": 3700,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 18,
       "series": "經典禮盒",
@@ -612,13 +636,21 @@
     "summary": "18 入／盒 · 綜合茶款",
     "description": "金魚游過牡丹花間，花葉與魚形構成盒上的風景。四款茶盛入十八尾手作小金魚，從盒中的陳列走向杯裡的舒展。",
     "image": {
-      "src": "/media/gift-boxes/official-104.png",
-      "w": 630,
-      "h": 420,
-      "alt": "花滿富春・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-spring-blossoms-gift-box.webp",
+      "alt": "花滿富春・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-spring-blossoms-gift-box.webp",
+          "alt": "花滿富春・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -667,6 +699,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=104",
+    "price": {
+      "amount": 3500,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 18,
       "series": "經典禮盒",
@@ -761,6 +797,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=692",
+    "price": {
+      "amount": 830,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 6,
       "series": "經典禮盒",
@@ -780,13 +820,21 @@
     "summary": "2 入／盒 · 單一茶款，整盒擇一",
     "description": "把心意收進小小的紙盒。每盒兩尾同款小金魚茶包，可選玫瑰烏龍茶或玫瑰蜜香紅茶，為一次相逢留下一杯茶的邀請。",
     "image": {
-      "src": "/media/gift-boxes/official-970.png",
-      "w": 600,
-      "h": 400,
-      "alt": "心有愛禮盒・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-heart-gift-box.webp",
+      "alt": "心有愛禮盒・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-heart-gift-box.webp",
+          "alt": "心有愛禮盒・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -835,6 +883,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=970",
+    "price": {
+      "amount": 810,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 2,
       "series": "經典禮盒",
@@ -869,13 +921,21 @@
     "summary": "9 入／盒 · 單一茶款",
     "description": "九尾花果茶小金魚，在織布與紙盒之間安放。無咖啡因的花果配方，讓飲茶的片刻，多一種果香與花香交錯的選擇。",
     "image": {
-      "src": "/media/gift-boxes/official-183.png",
-      "w": 900,
-      "h": 592,
-      "alt": "花果茶禮盒・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-fruit-infusion-gift-box.webp",
+      "alt": "花果茶禮盒・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-fruit-infusion-gift-box.webp",
+          "alt": "花果茶禮盒・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -924,6 +984,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=183",
+    "price": {
+      "amount": 1380,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 9,
       "series": "經典禮盒",
@@ -943,13 +1007,21 @@
     "summary": "6 入／盒 · 綜合茶款",
     "description": "同是玫瑰，與不同茶款相遇便有不同表情。三尾玫瑰烏龍茶、三尾玫瑰蜜香紅茶，邀請兩個人從一只禮盒開始共飲。",
     "image": {
-      "src": "/media/gift-boxes/official-343.png",
-      "w": 625,
-      "h": 480,
-      "alt": "玫好相遇・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-rose-encounter-gift-box.webp",
+      "alt": "玫好相遇・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-rose-encounter-gift-box.webp",
+          "alt": "玫好相遇・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -998,6 +1070,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=343",
+    "price": {
+      "amount": 860,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 6,
       "series": "經典禮盒",
@@ -1021,13 +1097,21 @@
     "summary": "6 入／盒 · 綜合茶款",
     "description": "六款茶，各留一尾。從烏龍、紅茶到花果茶，讓同一只禮盒盛下不同的選擇，也為分享留下話題。",
     "image": {
-      "src": "/media/gift-boxes/official-196.png",
-      "w": 630,
-      "h": 486,
-      "alt": "魚你分享｜茶繽紛・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-tea-to-share-gift-box.webp",
+      "alt": "魚你分享｜茶繽紛・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-tea-to-share-gift-box.webp",
+          "alt": "魚你分享｜茶繽紛・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -1076,6 +1160,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=196",
+    "price": {
+      "amount": 930,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 6,
       "series": "經典禮盒",
@@ -1182,6 +1270,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=850",
+    "price": {
+      "amount": 3780,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 12,
       "series": "珍稀禮盒",
@@ -1283,6 +1375,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=582",
+    "price": {
+      "amount": 3780,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 12,
       "series": "珍稀禮盒",
@@ -1317,13 +1413,21 @@
     "summary": "18 入／盒 · 單一茶款",
     "description": "蘭花的姿態與織布的紋理相伴，盒中收納十八尾頭等獎獲獎玫瑰烏龍茶。讓花的形與茶的香，各自留有被欣賞的空間。",
     "image": {
-      "src": "/media/gift-boxes/official-960.png",
-      "w": 630,
-      "h": 481,
-      "alt": "蝴蝶蘭・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-orchid-gift-box.webp",
+      "alt": "蝴蝶蘭・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-orchid-gift-box.webp",
+          "alt": "蝴蝶蘭・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -1376,6 +1480,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=960",
+    "price": {
+      "amount": 4680,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 18,
       "series": "珍稀禮盒",
@@ -1395,13 +1503,21 @@
     "summary": "18 入／盒 · 單一茶款",
     "description": "端紫斑蝶的輪廓留在織布盒蓋上，細看翅面的藍紫與紋樣。十八尾貳等獎獲獎東方美人茶，將這幅風景帶到共飲的日常。",
     "image": {
-      "src": "/media/gift-boxes/official-88.png",
-      "w": 630,
-      "h": 486,
-      "alt": "紫斑蝶・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-purple-butterfly-gift-box.webp",
+      "alt": "紫斑蝶・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-purple-butterfly-gift-box.webp",
+          "alt": "紫斑蝶・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -1454,6 +1570,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=88",
+    "price": {
+      "amount": 7200,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 18,
       "series": "珍稀禮盒",
@@ -1473,13 +1593,21 @@
     "summary": "6 入／盒 · 綜合茶款",
     "description": "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
     "image": {
-      "src": "/media/gift-boxes/official-1072.png",
-      "w": 787,
-      "h": 607,
-      "alt": "小鮮月禮盒｜純茶包・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/scene-small-moon-tea-gift-box.webp",
+      "alt": "小鮮月禮盒｜純茶包・禮盒茶席情境",
+      "w": 896,
+      "h": 1120
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/scene-small-moon-tea-gift-box.webp",
+          "alt": "小鮮月禮盒｜純茶包・禮盒茶席情境",
+          "w": 896,
+          "h": 1120
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -1528,6 +1656,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=1072",
+    "price": {
+      "amount": 860,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 6,
       "series": "2026 中秋禮盒",
@@ -1618,6 +1750,10 @@
       }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=994",
+    "price": {
+      "amount": 3700,
+      "currency": "TWD"
+    },
     "giftBox": {
       "pieces": 18,
       "series": "2026 中秋禮盒",

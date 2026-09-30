@@ -1,0 +1,269 @@
+{
+  "canvas": [
+    1200,
+    1500
+  ],
+  "shift": 0.08,
+  "floor": 0.8,
+  "jewelryScale": 1.178,
+  "report": {
+    "braided-leather-bag-white": {
+      "w": 1122,
+      "h": 1402,
+      "shift": 112
+    },
+    "braided-leather-bag-blue": {
+      "w": 1597,
+      "h": 2000,
+      "shift": 160
+    },
+    "braided-leather-bag-pink": {
+      "w": 1122,
+      "h": 1402,
+      "shift": 112
+    },
+    "raw-gold-goldfish-earrings": {
+      "ow": 329,
+      "oh": 267,
+      "left": 436,
+      "top": 617,
+      "objH": 0.178,
+      "objW": 0.274,
+      "bottom": 0.589
+    },
+    "diamond-goldfish-earrings": {
+      "ow": 223,
+      "oh": 556,
+      "left": 489,
+      "top": 472,
+      "objH": 0.371,
+      "objW": 0.186,
+      "bottom": 0.685
+    },
+    "twin-goldfish-earrings": {
+      "ow": 225,
+      "oh": 815,
+      "left": 488,
+      "top": 343,
+      "objH": 0.543,
+      "objW": 0.188,
+      "bottom": 0.772
+    },
+    "pearl-chain-goldfish-earrings": {
+      "ow": 124,
+      "oh": 907,
+      "left": 538,
+      "top": 297,
+      "objH": 0.605,
+      "objW": 0.103,
+      "bottom": 0.803
+    },
+    "reunion-paulownia-gift-box": {
+      "ow": 780,
+      "oh": 370,
+      "left": 210,
+      "top": 830,
+      "objH": 0.247,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "purple-butterfly-gift-box": {
+      "ow": 780,
+      "oh": 655,
+      "left": 210,
+      "top": 545,
+      "objH": 0.437,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "spring-blossoms-gift-box": {
+      "ow": 770,
+      "oh": 660,
+      "left": 215,
+      "top": 540,
+      "objH": 0.44,
+      "objW": 0.642,
+      "bottom": 0.8
+    },
+    "fruit-infusion-gift-box": {
+      "ow": 780,
+      "oh": 357,
+      "left": 210,
+      "top": 843,
+      "objH": 0.238,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "tea-to-share-gift-box": {
+      "ow": 590,
+      "oh": 660,
+      "left": 305,
+      "top": 540,
+      "objH": 0.44,
+      "objW": 0.492,
+      "bottom": 0.8
+    },
+    "rose-encounter-gift-box": {
+      "ow": 706,
+      "oh": 660,
+      "left": 247,
+      "top": 540,
+      "objH": 0.44,
+      "objW": 0.588,
+      "bottom": 0.8
+    },
+    "winter-blossom-gift-box": {
+      "ow": 780,
+      "oh": 450,
+      "left": 210,
+      "top": 750,
+      "objH": 0.3,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "kyoto-gift-box": {
+      "ow": 780,
+      "oh": 521,
+      "left": 210,
+      "top": 679,
+      "objH": 0.347,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "spring-dawn-gift-box": {
+      "ow": 780,
+      "oh": 444,
+      "left": 210,
+      "top": 756,
+      "objH": 0.296,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "reunion-paper-gift-box": {
+      "ow": 780,
+      "oh": 351,
+      "left": 210,
+      "top": 849,
+      "objH": 0.234,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "year-of-plenty-gift-box": {
+      "ow": 780,
+      "oh": 649,
+      "left": 210,
+      "top": 551,
+      "objH": 0.433,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "orchid-gift-box": {
+      "ow": 780,
+      "oh": 655,
+      "left": 210,
+      "top": 545,
+      "objH": 0.437,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "heart-gift-box": {
+      "ow": 780,
+      "oh": 514,
+      "left": 210,
+      "top": 686,
+      "objH": 0.343,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "full-moon-tea-gift-box": {
+      "ow": 780,
+      "oh": 516,
+      "left": 210,
+      "top": 684,
+      "objH": 0.344,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "blossoming-prosperity-gift-box": {
+      "ow": 772,
+      "oh": 660,
+      "left": 214,
+      "top": 540,
+      "objH": 0.44,
+      "objW": 0.643,
+      "bottom": 0.8
+    },
+    "small-moon-tea-gift-box": {
+      "ow": 780,
+      "oh": 608,
+      "left": 210,
+      "top": 592,
+      "objH": 0.405,
+      "objW": 0.65,
+      "bottom": 0.8
+    },
+    "ginkgo-teaspoon-gift-box": {
+      "ow": 800,
+      "oh": 508,
+      "left": 200,
+      "top": 692,
+      "objH": 0.339,
+      "objW": 0.667,
+      "bottom": 0.8
+    },
+    "wooden-chopsticks": {
+      "ow": 800,
+      "oh": 231,
+      "left": 200,
+      "top": 969,
+      "objH": 0.154,
+      "objW": 0.667,
+      "bottom": 0.8
+    },
+    "bird-chopstick-rest": {
+      "ow": 720,
+      "oh": 354,
+      "left": 240,
+      "top": 846,
+      "objH": 0.236,
+      "objW": 0.6,
+      "bottom": 0.8
+    },
+    "prosperity-stand-gift-box": {
+      "ow": 820,
+      "oh": 459,
+      "left": 190,
+      "top": 741,
+      "objH": 0.306,
+      "objW": 0.683,
+      "bottom": 0.8
+    },
+    "prosperity-dessert-stand": {
+      "ow": 587,
+      "oh": 720,
+      "left": 307,
+      "top": 480,
+      "objH": 0.48,
+      "objW": 0.489,
+      "bottom": 0.8
+    },
+    "christmas-edition-stocking": {
+      "ow": 820,
+      "oh": 321,
+      "left": 190,
+      "top": 879,
+      "objH": 0.214,
+      "objW": 0.683,
+      "bottom": 0.8
+    },
+    "christmas-edition-candy-cane": {
+      "ow": 820,
+      "oh": 327,
+      "left": 190,
+      "top": 873,
+      "objH": 0.218,
+      "objW": 0.683,
+      "bottom": 0.8
+    }
+  }
+}

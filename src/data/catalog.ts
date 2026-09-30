@@ -1,6 +1,7 @@
 import { teaGiftProducts, type TeaContents } from "./tea-gifts";
 import { christmasGiftProducts } from "./christmas-gifts";
 import shopifyMap from "./shopify-map.json";
+import studioListing from "./studio-listing.json";
 import { bags, jewelry, gallery, site, type Img } from "./content";
 
 // Product facts come from the existing approved content and asset manifest.
@@ -99,7 +100,15 @@ const featuredImages: Record<string, Img> = {
   "bird-chopstick-rest": site("featured-bird-chopstick-rest.webp", "鳥形筷架・棚拍商品照"),
 };
 const withShopify = (p: Product): Product => { const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug]; const f = featuredImages[p.slug]; const q = f ? { ...p, featuredImage: f, views: p.views.some((v) => v.image.src === f.src) ? p.views : [...p.views, { label: "棚拍商品照", image: f }] } : p; return typeof m === "object" && (m.handle || m.variantId) ? { ...q, shopify: m } : q; };
-export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify);
+// 2026-09-30: every listing card sits on the white bag's warm-grey studio ground (scripts/studio-listing.mjs →
+// public/media/site/studio-*.webp, src/data/studio-listing.json). The previous listing photo stays as a product view.
+const withStudioListing = (p: Product): Product => {
+  const file = (studioListing as Record<string, string>)[p.slug]; if (!file) return p;
+  const image = site(file, `${p.name}・棚拍商品照`);
+  const views = p.views.some((v) => v.image.src === p.image.src) ? p.views : [...p.views, { label: "情境照", image: p.image }];
+  return { ...p, image, views };
+};
+export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withStudioListing);
 export const isSellable = (p: Product) => Boolean(p.price || p.shopify?.variantId);
 export const formatPrice = (amount: number, currency = "TWD") => currency === "TWD" ? `NT$ ${amount.toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
 export const productHref = (product: Product | string) => `/products/${typeof product === "string" ? product : product.slug}`;
