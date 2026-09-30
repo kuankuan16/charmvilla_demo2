@@ -2,7 +2,6 @@
 // Fixed 50px header (reference: [data-header] fixed top-0 h-50 z-30) with the stepped full-screen menu.
 // Menu panels reveal with clip-path (.5s cubic-bezier(.3,.86,.36,.95)) and staggered delays.
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { brand, cart, sections } from "@/data/content";
 import { getScroller } from "@/lib/motion/scroller";
 
@@ -41,36 +40,30 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = previousOverflow; };
   }, [open, close, innerPage]);
 
-  const navItems = sections.filter((s) => s.id !== "hero");
+  // All navigation lives in the full-screen menu; "All Objects" leads, then the sections.
+  const navItems = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero")];
 
   return (
     <header data-header="" className={`fixed left-0 top-0 z-30 h-50 w-full ${open ? "menu--opened" : ""}`}>
+      {/* Bang & Olufsen-style bar (user 2026-09-30): Menu on the left, the official wordmark centred, tools on the right. */}
       <div className="site-header-inner">
-        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className="relative z-40 block h-12 w-[136px] shrink-0" onClick={() => setOpen(false)}>
-          <img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} />
+        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "關閉選單" : "開啟選單"} className={`header-menu-btn relative z-40 ${open ? "text-paper" : "text-ink"}`} onClick={() => setOpen((v) => !v)}>
+          <span className="header-menu-lines" aria-hidden="true">
+            <span className={`transition-transform duration-300 ${open ? "translate-y-[3.25px] rotate-45" : ""}`} />
+            <span className={`transition-transform duration-300 ${open ? "-translate-y-[3.25px] -rotate-45" : ""}`} />
+          </span>
+          <span>{open ? "Close" : "Menu"}</span>
+        </button>
+        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className="header-brand relative z-40 block" onClick={() => setOpen(false)}>
+          <img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} />
         </a>
-        <nav className={`hero-nav relative z-40 hidden items-center transition-opacity duration-300 laptop:flex ${open ? "pointer-events-none opacity-0" : ""}`} aria-label="主要">
-          <Link href="/collections/all" className="link-underline">All Objects</Link>
-          {navItems.slice(0, 4).map((s) => (
-            <a key={s.id} href={sectionHref(s.id)} className="link-underline">{s.label === "Leather bag" ? "Leather Bag" : s.label}</a>
-          ))}
-          <span className="hero-nav-divider" aria-hidden="true" />
-          <a href={sectionHref("visit")} className="link-underline">Get in Touch</a>
-        </nav>
-        <div className="relative z-40 flex items-center gap-18 laptop:gap-0">
-          <a href={cart.href} target="_blank" rel="noreferrer" aria-label={cart.label} title={cart.label} className={`header-cart ${open ? "text-paper" : "text-ink"}`}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 8H6.2" /><circle cx="9.5" cy="20" r="1.2" /><circle cx="17.5" cy="20" r="1.2" /></svg>
+        <div className={`header-tools relative z-40 text-ink transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`}>
+          <a href={sectionHref("visit")} aria-label="門市資訊" title="門市資訊" onClick={() => setOpen(false)}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.4" /></svg>
           </a>
-        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "關閉選單" : "開啟選單"} className="relative z-40 flex h-24 w-26 flex-col justify-between py-3 laptop:hidden" onClick={() => setOpen((v) => !v)}>
-          <span className={`block h-3 w-full transition-transform duration-300 ${open ? "translate-y-[8.5px] rotate-45 bg-paper" : "bg-ink"}`} />
-          <span className={`block h-3 w-full transition-opacity duration-200 ${open ? "opacity-0" : "bg-ink"}`} />
-          <span className={`block h-3 w-full transition-transform duration-300 ${open ? "-translate-y-[8.5px] -rotate-45 bg-paper" : "bg-ink"}`} />
-        </button>
-        <button type="button" aria-expanded={open} aria-controls="site-menu" className="relative z-40 ml-30 hidden h-24 w-26 flex-col justify-between py-3 laptop:flex" aria-label={open ? "關閉選單" : "開啟選單"} onClick={() => setOpen((v) => !v)}>
-          <span className={`block h-3 w-full transition-transform duration-300 ${open ? "translate-y-[8.5px] rotate-45 bg-paper" : "bg-ink"}`} />
-          <span className={`block h-3 w-full transition-opacity duration-200 ${open ? "opacity-0" : "bg-ink"}`} />
-          <span className={`block h-3 w-full transition-transform duration-300 ${open ? "-translate-y-[8.5px] -rotate-45 bg-paper" : "bg-ink"}`} />
-        </button>
+          <a href={cart.href} target="_blank" rel="noreferrer" aria-label={cart.label} title={cart.label}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg>
+          </a>
         </div>
       </div>
 
@@ -96,7 +89,6 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           })}
           {/* mobile list */}
           <ul className="menu-fade absolute left-[var(--page-gutter)] top-95 flex flex-col gap-24 laptop:hidden" style={{ transitionDelay: open ? ".2s" : "0s" }}>
-            <li><Link href="/collections/all" onClick={close} className="tc text-2xl text-paper">全部商品</Link></li>
             {navItems.map((s) => (
               <li key={s.id}><a href={sectionHref(s.id)} onClick={close} className="flex items-baseline gap-14 text-4xl font-bold leading-none text-paper"><span>{s.label}</span><span className="tc text-base font-medium opacity-70">{s.zh}</span></a></li>
             ))}

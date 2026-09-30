@@ -42,7 +42,7 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
   return (
     <div ref={root} data-component="preloader" className="preloader fixed inset-0 z-[200] grid h-screen w-full overflow-hidden bg-stone-deep md:grid-cols-2" aria-hidden="true">
       <div className="absolute left-0 top-0 z-30 h-50 w-full">
-        <div className="site-header-inner"><span className="block h-12 w-[136px]"><img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} /></span></div>
+        <div className="site-header-inner"><span /><span className="header-brand block"><img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} /></span><span /></div>
       </div>
       <div data-mark="" className="preloader-mark">
         {LETTER_BOUNDS.slice(0, -1).map((x0, i) => {
