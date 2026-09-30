@@ -17,7 +17,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, view
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-Hant" className={`${outfit.variable} ${notoTC.variable}`}>
-      <body className="bg-white text-ink">{children}</body>
+      <body className="bg-page text-ink">{children}</body>
     </html>
   );
 }

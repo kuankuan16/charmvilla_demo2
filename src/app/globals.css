@@ -7,6 +7,7 @@
 
   --color-ink: #1f1f1f;
   --color-paper: #ebeae4;
+  --color-page: #f6f8fa; /* page ground on every page = the homepage hero paper (user 2026-09-30) */
   --color-stone: #919598;
   --color-stone-deep: #6f7275;
   --color-field: #d8d9cf;
@@ -63,7 +64,7 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    background: #fff;
+    background: var(--color-page);
     color: var(--color-ink);
     overflow: hidden;
     height: 100%;
@@ -174,17 +175,12 @@
 .is-loading:not(.is-revealing) .page-holder { opacity: 0; }
 .is-loading:not(.is-revealing) [data-hero-reveal] { visibility: hidden; }
 
-/* Preloader: ©2026 digits (150 px tablet / 210 px laptop, line-height .75, tracking -.05em) at the bottom-left, a
-   collections list on the white half, the gold half on the right. Digits start below their box (translateY 150%). */
-.preloader-year { position: absolute; left: 0; bottom: 0; z-index: 4; display: none; padding: 25px; margin-left: -.05em; font-family: var(--font-display); font-weight: 500; font-size: 154px; line-height: .75; letter-spacing: -.05em; text-transform: uppercase; white-space: nowrap; color: var(--color-ink); pointer-events: none; }
-.preloader-year .ch { display: inline-block; transform: translateY(150%); vertical-align: top; }
-.preloader-list { position: absolute; left: 0; bottom: 0; width: 100%; padding: 25px; }
-.preloader-list-title { margin: 0 0 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-.preloader-list-title span { opacity: .4; }
-.preloader-list p:not(.preloader-list-title) { display: flex; align-items: baseline; justify-content: space-between; margin: 0; padding: 6px 0; font-size: 12px; text-transform: uppercase; }
-.preloader-dot { display: block; width: 10px; height: 10px; border-radius: 999px; background: currentColor; flex-shrink: 0; }
-@media (min-width: 768px) { .preloader-year { display: block; } }
-@media (min-width: 1280px) { .preloader-year { font-size: 210px; padding: 30px; } .preloader-list { padding: 30px; } }
+/* Preloader: the official wordmark (sliced into ten letter spans from the same PNG, so the letterforms are exact) sits at
+   the bottom-left of the white half, sized to that half; each letter starts below its box (translateY 150%). */
+.preloader-mark { position: absolute; left: 0; bottom: 0; z-index: 4; display: none; padding: 25px; --lw: min(calc(50vw - 50px), 1000px); font-size: 0; line-height: 0; white-space: nowrap; pointer-events: none; }
+.preloader-mark .ch { display: inline-block; height: calc(var(--lw) * 0.08827); background: url("/brand/charmvilla-logo.png") no-repeat; background-size: var(--lw) auto; transform: translateY(150%); vertical-align: top; }
+@media (min-width: 768px) { .preloader-mark { display: block; } }
+@media (min-width: 1280px) { .preloader-mark { padding: 30px; --lw: min(calc(50vw - 60px), 1000px); } }
 @media (prefers-reduced-motion: reduce) {
   .is-loading [data-hero-reveal] { visibility: visible; }
 }
@@ -192,15 +188,16 @@
 /* Product browsing: native document scrolling, independent of the homepage's Lenis wrapper. */
 html:has(.catalog-shell), body:has(.catalog-shell) { height: auto; overflow: visible; }
 html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
-.catalog-shell { background: white; text-transform: none; min-height: 100vh; padding-top: 50px; }
-.catalog-shell [data-header]:not(.menu--opened) { background: #f6f8fa; }
+.catalog-shell { background: var(--color-page); text-transform: none; min-height: 100vh; padding-top: 50px; }
+/* Same ground as the homepage on every page (user 2026-09-30: 底色每一頁都跟首頁一樣). */
+.catalog-shell [data-header]:not(.menu--opened) { background: var(--color-page); }
 .catalog-shell [data-header] { z-index: 80; }
 .catalog-shell a, .catalog-shell button, .catalog-shell input, .catalog-shell summary { -webkit-tap-highlight-color: transparent; }
 .catalog-shell main:focus { outline: none; }
 .catalog-shell a, .catalog-shell button { touch-action: manipulation; }
 .catalog-skip { position: fixed; z-index: 300; top: -100px; left: 20px; background: var(--color-gold); padding: 14px 22px; }
 .catalog-skip:focus { top: 10px; }
-.catalog-header { position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 100px; margin: 0 var(--page-gutter); gap: 20px; background: rgb(255 255 255 / .97); }
+.catalog-header { position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 100px; margin: 0 var(--page-gutter); gap: 20px; background: var(--color-page); }
 .catalog-header::before { position: absolute; content: ''; inset: 0 calc(-1 * var(--page-gutter)); z-index: -1; background: inherit; }
 .catalog-brand { display: block; width: clamp(190px, 20vw, 285px); }
 .catalog-header-browse, .catalog-header-visit { font-size: 14px; }
@@ -220,7 +217,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .collection-heading-copy { max-width: 410px; justify-self: end; }
 .collection-heading-copy h2 { font-size: 24px; margin-bottom: 20px; font-weight: 500; }
 .collection-heading-copy p { font-size: 15px; line-height: 1.9; }
-.collection-categories { position: sticky; top: 50px; z-index: 30; display: flex; gap: 30px; padding: 0 var(--page-gutter); background: white; overflow-x: auto; scrollbar-width: none; }
+.collection-categories { position: sticky; top: 50px; z-index: 30; display: flex; gap: 30px; padding: 0 var(--page-gutter); background: var(--color-page); overflow-x: auto; scrollbar-width: none; }
 .collection-categories a { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding: 20px 0 18px; border-bottom: 3px solid transparent; font-size: 14px; }
 .collection-categories a[aria-current], .collection-categories a:hover { border-color: var(--color-gold); }
 .collection-categories a[aria-current] { font-weight: 700; }
@@ -268,7 +265,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .product-variants a:hover { border-color: var(--color-ink); }
 .product-detail-link { display: flex; justify-content: space-between; gap: 15px; font-size: 13px; padding-top: 20px; margin-top: 36px; }
 .product-gallery { min-width: 0; }
-.product-main-image { position: relative; display: block; width: 100%; height: min(72vw, 690px); max-height: 77vh; min-height: 400px; background: white; cursor: zoom-in; }
+.product-main-image { position: relative; display: block; width: 100%; height: min(72vw, 690px); max-height: 77vh; min-height: 400px; background: var(--color-page); cursor: zoom-in; }
 .product-zoom { position: absolute; right: 16px; bottom: 16px; display: flex; align-items: center; gap: 14px; padding: 12px 16px; font-size: 12px; background: rgb(255 255 255 / .94); }
 .product-zoom > span { font-size: 19px; }
 .product-gallery-tools { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 14px 0; font-size: 12px; }
@@ -424,15 +421,15 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 /* Share the paper and horizontal clipping across the opening sections.
    Paint is allowed to cross their vertical boundaries; photograph windows clip separately. */
 [data-page-scroller]:has(.opening-sequence) { overflow-x: hidden; }
-.opening-sequence { position: relative; isolation: isolate; display: flow-root; overflow-x: clip; overflow-y: visible; background: #f6f8fa; }
+.opening-sequence { position: relative; isolation: isolate; display: flow-root; overflow-x: clip; overflow-y: visible; background: var(--color-page); }
 /* Selected objects: a three-image orbital exhibition, inspired by PDP's hero. */
 .orbit-hero {
-  --hero-paper: #f6f8fa;
+  --hero-paper: var(--color-page);
   position: relative; isolation: isolate; height: 100svh; min-height: 650px;
   margin-top: -50px; overflow: visible; background: transparent; color: #29251e; z-index: 1;
   touch-action: pan-y;
 }
-[data-page-scroller]:has(.orbit-hero) [data-header]:not(.menu--opened) { background: #f6f8fa; }
+[data-page-scroller]:has(.orbit-hero) [data-header]:not(.menu--opened) { background: var(--color-page); }
 .orbit-stage { position: absolute; inset: 0; }
 .orbit-paints, .orbit-photographs { position: absolute; inset: 0; pointer-events: none; }
 .orbit-paints { overflow: visible; }
@@ -494,7 +491,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .site-header-inner > button { flex-shrink: 0; }
 
 /* Reference-style header: plain text, right aligned, with a quiet separator. */
-.hero-nav { margin-left: auto; gap: clamp(22px, 1.8vw, 36px); font-size: clamp(14px, 1.05vw, 18px); font-weight: 500; letter-spacing: .01em; text-transform: none; white-space: nowrap; }
+/* Header navigation: lighter and smaller (user 2026-09-30: 文字改細一點、小一點). */
+.hero-nav { margin-left: auto; gap: clamp(22px, 1.8vw, 36px); font-size: clamp(12px, .9vw, 15px); font-weight: 400; letter-spacing: .02em; text-transform: none; white-space: nowrap; }
 .hero-nav > a { display: inline-flex; align-items: center; min-height: 44px; }
 .hero-nav-divider { display: none; }
 
@@ -560,7 +558,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .ink-bloom { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 
 /* Homepage is one mixed selection; catalogue motion lives on collection pages. */
-.featured-products { padding: 70px var(--page-gutter) 110px; background: white; }
+.featured-products { padding: 70px var(--page-gutter) 110px; background: var(--color-page); }
 .featured-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 36px; margin-bottom: 48px; }
 .featured-heading h2 { margin-top: 15px; font-size: clamp(26px, 3vw, 48px); }
 .featured-heading > p { max-width: 380px; font-size: 14px; line-height: 1.9; }
@@ -584,7 +582,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 }
 
 /* Reference Cases composition: split panels, a visible next card and quiet dots. */
-.store-carousel { position: relative; overflow: hidden; isolation: isolate; background: #f6f8fa; padding: 75px 0 85px; }
+.store-carousel { position: relative; overflow: hidden; isolation: isolate; background: var(--color-page); padding: 75px 0 85px; }
 .store-brush { z-index: -1; top: -24vw; left: 35vw; width: 60vw; height: 70vw; transform: rotate(25deg); opacity: .28; mask-image: url('/media/hero/brushes/paint2_1_pc.webp'); }
 .store-heading { margin: 0 var(--page-gutter) 30px; display: flex; align-items: flex-end; justify-content: space-between; }
 .store-heading h2 { font-size: clamp(28px, 3.2vw, 54px); line-height: 1.15; }

@@ -1,6 +1,7 @@
 "use client";
 // Preloader — closely modelled on davidlaxer.com/about (user 2026-09-30):
-//   desktop  ©2026 digits rise through the bottom-left corner (yPercent 150 → -150, power4.out, 1.5 s, stagger .05),
+//   desktop  the official CHARM VILLA wordmark rises through the bottom-left corner letter by letter (yPercent 150 → -150,
+//            power4.out, 1.5 s, stagger .05). Letters are slices of the official PNG (a sprite), never typed text,
 //            then the whole overlay wipes to its left edge with a clip-path (power3.inOut, 1.1 s). The page becomes
 //            visible and the hero headline's split characters start at the same instant the wipe begins.
 //   mobile   no digits (below 768 px), only the wipe.
@@ -8,9 +9,11 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { prefersReducedMotion } from "@/lib/motion/scroller";
-import { brand, sections } from "@/data/content";
+import { brand } from "@/data/content";
 
-const YEAR = ["©", "2", "0", "2", "6"];
+// Column boundaries (px, in the 929×82 official PNG) at the midpoints of the gaps between the ten letters C H A R M V I L L A.
+const LOGO_W = 929;
+const LETTER_BOUNDS = [0, 114, 206, 323, 406, 548, 663, 692, 762, 823, LOGO_W];
 const FULL = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
 const COLLAPSED = "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)";
 
@@ -18,14 +21,13 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
   const root = useRef<HTMLDivElement>(null);
   const revealed = useRef(false);
   const done = useRef(false);
-  const collections = sections.filter((s) => s.id !== "hero" && s.id !== "visit").slice(0, 4);
 
   useEffect(() => {
     const el = root.current!;
     const reveal = () => { if (revealed.current) return; revealed.current = true; onReveal(); };
     const finish = () => { if (done.current) return; done.current = true; reveal(); onComplete(); };
     if (prefersReducedMotion()) { finish(); return; }
-    const chars = el.querySelectorAll<HTMLElement>("[data-year] .ch");
+    const chars = el.querySelectorAll<HTMLElement>("[data-mark] .ch");
     const aboveTablet = window.matchMedia("(min-width: 768px)").matches;
     const tl = gsap.timeline({ paused: true, onComplete: finish });
     if (aboveTablet) tl.fromTo(chars, { yPercent: 150 }, { yPercent: -150, duration: 1.5, ease: "power4.out", stagger: 0.05 });
@@ -42,13 +44,13 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
       <div className="absolute left-0 top-0 z-30 h-50 w-full">
         <div className="site-header-inner"><span className="block h-12 w-[136px]"><img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} /></span></div>
       </div>
-      <div data-year="" className="preloader-year">{YEAR.map((c, i) => <span key={i} className="ch">{c}</span>)}</div>
-      <div data-preloader-part="left" className="relative grid h-full bg-white">
-        <div className="preloader-list">
-          <p className="preloader-list-title"><span>Collections:</span></p>
-          <div>{collections.map((s) => <p key={s.id}><span>{s.label}</span><span className="preloader-dot" /></p>)}</div>
-        </div>
+      <div data-mark="" className="preloader-mark">
+        {LETTER_BOUNDS.slice(0, -1).map((x0, i) => {
+          const x1 = LETTER_BOUNDS[i + 1];
+          return <span key={x0} className="ch" style={{ width: `calc(var(--lw) * ${((x1 - x0) / LOGO_W).toFixed(5)})`, backgroundPosition: `calc(var(--lw) * ${(-x0 / LOGO_W).toFixed(5)}) 0` }} />;
+        })}
       </div>
+      <div data-preloader-part="left" className="relative grid h-full bg-page" />
       <div data-preloader-part="right" className="relative hidden h-full bg-gold md:grid" />
     </div>
   );
