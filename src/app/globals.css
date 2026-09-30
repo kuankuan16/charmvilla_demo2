@@ -544,7 +544,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .cart-checkout:disabled:hover { background: transparent; color: var(--color-ink); border-color: rgb(31 31 31 / 0.3); }
 .cart--open body { overflow: hidden; }
 /* Account (signed-out layout after the Bang & Olufsen login page: form left, "new here" right) */
-.account-shell--out { max-width: 1120px; }
+.account-shell.account-shell--out { max-width: 1120px; }
+.account-split .account-title { font-size: clamp(26px, 2.4vw, 36px); margin-bottom: 16px; }
 .account-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(40px, 6vw, 96px); }
 .account-col--new { border-left: 1px solid rgb(31 31 31 / 0.2); padding-left: clamp(40px, 6vw, 96px); }
 .account-sub { margin: 0 0 40px; font-size: 16px; }
