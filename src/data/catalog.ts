@@ -1,4 +1,5 @@
 import { teaGiftProducts, type TeaContents } from "./tea-gifts";
+import { christmasGiftProducts } from "./christmas-gifts";
 import { bags, jewelry, gallery, type Img } from "./content";
 
 // Product facts come from the existing approved content and asset manifest.
@@ -56,7 +57,8 @@ const jewelryProducts: Product[] = jewelry.items.map((p, i) => ({
   story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
 }));
 
-const teaProducts: Product[] = teaGiftProducts;
+// Seasonal editions lead the tea listing; the 16 official gift boxes follow.
+const teaProducts: Product[] = [...christmasGiftProducts, ...teaGiftProducts];
 
 const tablewareEntries = [
   { slug: "prosperity-dessert-stand", name: "下午茶點心架", en: "DESSERT STAND", series: "豐盛系列", ids: ["CV-0068", "CV-0074", "CV-0081"], summary: "把點心與茶，安放在同一席風景。", detail: "以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。" },

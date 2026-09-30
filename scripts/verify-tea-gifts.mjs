@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const qa = path.join(root, 'docs/qa/2026-09-29-tea-gift-boxes');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'charmvilla-tea-'));
-for (const file of ['content', 'tea-gifts', 'catalog']) {
+for (const file of ['content', 'tea-gifts', 'christmas-gifts', 'catalog']) {
   const source = fs.readFileSync(path.join(root, `src/data/${file}.ts`), 'utf8');
   fs.writeFileSync(path.join(tmp, `${file}.js`), ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true } }).outputText);
 }
@@ -20,7 +20,10 @@ const { products, teaCatalog } = (await import(pathToFileURL(path.join(tmp, 'cat
 const expectedIds = [891,64,954,1053,104,692,970,183,343,196,850,582,960,88,1072,994];
 assert.deepEqual(teaGifts.map(g => g.officialId), expectedIds);
 assert.equal(new Set(products.map(p => p.slug)).size, products.length);
-assert.equal(teaCatalog.length, 16);
+assert.equal(teaCatalog.length, 18, 'two Christmas editions + sixteen official gift boxes');
+const christmas = teaCatalog.filter(p => p.variant?.group === 'christmas-edition-2026');
+assert.deepEqual(christmas.map(p => p.slug), ['christmas-edition-stocking', 'christmas-edition-candy-cane']);
+for (const p of christmas) { assert(!p.officialUrl && !p.giftBox, `${p.slug} must not claim official listing or box contents`); assert(p.facts.some(f => f.label === '上市資訊')); for (const view of p.views) assert(fs.existsSync(path.join(root, 'public', view.image.src)), `Missing ${view.image.src}`); }
 assert(!products.some(p => p.slug.startsWith('goldfish-tea-')));
 const selectedSource = fs.readFileSync(path.join(root, 'src/components/sections/FeaturedProducts.tsx'), 'utf8');
 const selectedBlock = selectedSource.match(/const selected = \[([\s\S]+?)\]/)[1];
@@ -54,10 +57,10 @@ const sceneHashes = {
     const input = await sharp(path.join(root, 'public', p.image.src)).flatten({ background: '#fff' }).resize(240, 300, { fit: 'contain', background: '#fff' }).png().toBuffer();
     const x = (i % 4) * 270 + 15, y = Math.floor(i / 4) * 350 + 15;
     composite.push({ input, left: x, top: y });
-    const label = Buffer.from(`<svg width="240" height="35"><text x="0" y="15" font-size="11" font-family="Arial">${String(i+1).padStart(2,'0')} / ${p.english}</text><text x="0" y="30" font-size="11" font-family="Arial">${p.giftBox.pieces} tea bags / box</text></svg>`);
+    const label = Buffer.from(`<svg width="240" height="35"><text x="0" y="15" font-size="11" font-family="Arial">${String(i+1).padStart(2,'0')} / ${p.english}</text><text x="0" y="30" font-size="11" font-family="Arial">${p.giftBox ? `${p.giftBox.pieces} tea bags / box` : 'Christmas edition 2026'}</text></svg>`);
     composite.push({ input: label, left: x, top: y + 302 });
   }
-  await sharp({ create: { width: 1080, height: 1400, channels: 3, background: '#f6f8fa' } }).composite(composite).png().toFile(path.join(qa, 'catalog-contact-sheet.png'));
+  await sharp({ create: { width: 1080, height: Math.ceil(teaCatalog.length / 4) * 350 + 30, channels: 3, background: '#f6f8fa' } }).composite(composite).png().toFile(path.join(qa, 'catalog-contact-sheet.png'));
   fs.writeFileSync(path.join(qa, 'verification.json'), JSON.stringify({ checkedAt: '2026-09-29', result: 'pass', giftBoxCount: 16, aiCoverCount: 4, officialCoverCount: 12, officialReferenceCount: 16, uniqueSlugs: true, contentsCountsMatchEachBox: true, wholeBoxChoicesNotAdditive: true, featuredLinksResolve: true, oldFlavorListingsRemoved: true, galleryHashes: imageChecks, build: 'blocked: Google Fonts network access', browserRuntime: 'not verified: local listener denied by environment', deployed: false }, null, 2)+'\n');
   fs.writeFileSync(path.join(qa, 'catalog-snapshot.json'), JSON.stringify(teaCatalog, null, 2)+'\n');
   fs.rmSync(tmp, { recursive: true });

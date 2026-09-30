@@ -1,0 +1,212 @@
+[
+  {
+    "file": "/media/site/xmas-stocking-red.webp",
+    "source": "output/christmas-red-real-geometry-2026-09-16/02-christmas-red-stocking-final.png (Higgsfield gpt_image_2_5, 2K)",
+    "sourceSha256": "a776a087635a32829d024cb3a730eeed33fd69e8e00390f939c8953af04c2599",
+    "sourceDims": [
+      1792,
+      2240
+    ],
+    "webpDims": [
+      1600,
+      2000
+    ],
+    "webpBytes": 356058
+  },
+  {
+    "file": "/media/site/xmas-stocking-green.webp",
+    "source": "output/christmas-product-scenes-2026-09-16/01-forest-green-stocking-v2.png (Higgsfield gpt_image_2_5, 1K)",
+    "sourceSha256": "a5611c616ea6c95e356b8ef5fdc3bca1bcf5560b0b5aa1f826a9a7bf35a212e4",
+    "sourceDims": [
+      896,
+      1120
+    ],
+    "webpDims": [
+      896,
+      1120
+    ],
+    "webpBytes": 134278
+  },
+  {
+    "file": "/media/site/xmas-candycane-red.webp",
+    "source": "output/christmas-product-scenes-2026-09-16/02-berry-red-candy-cane-v3-perspective.png (Higgsfield gpt_image_2_5, 1K)",
+    "sourceSha256": "43fd866ddcc92c0f80a0f96967ea54af9ab06e225e74e45a02c2e48383ed9867",
+    "sourceDims": [
+      896,
+      1120
+    ],
+    "webpDims": [
+      896,
+      1120
+    ],
+    "webpBytes": 130828
+  },
+  {
+    "file": "/media/site/xmas-lid-candycane-flat.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/41-original-candycane-flat.webp",
+    "sourceSha256": "0afabb87ecbc60978fdc238834bc475add5cc1610d57ad94732fb36903a0017a",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 171152
+  },
+  {
+    "file": "/media/site/xmas-lid-candycane-mockup-detail.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/41-original-candycane-mockup-detail.webp",
+    "sourceSha256": "9e5f06b7e8912bdfab1d85b6eb0d66403ee4ecaff65b5ef88a438d28ac79528b",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 125716
+  },
+  {
+    "file": "/media/site/xmas-lid-candycane-mockup-front.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/41-original-candycane-mockup-front.webp",
+    "sourceSha256": "70430a26984ec29e2ffd717bad9eac0922fe4e6b01e9faadf66ac8aad701a1bd",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 79402
+  },
+  {
+    "file": "/media/site/xmas-lid-candycane-mockup-left.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/41-original-candycane-mockup-left.webp",
+    "sourceSha256": "d7cbf6511dd8dc0581b4075674d75f3804197ba14386781c2579ad77774f71b5",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 79480
+  },
+  {
+    "file": "/media/site/xmas-lid-candycane-mockup-top.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/41-original-candycane-mockup-top.webp",
+    "sourceSha256": "362d9582b6adae8a65e34dcf9d860a2384adf5d9a8c8a4c548b825d7bf5ae77b",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 128478
+  },
+  {
+    "file": "/media/site/xmas-lid-candycane-mockup.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/41-original-candycane-mockup.webp",
+    "sourceSha256": "8886d38acc37dd1e4cc5b65a41215e4f58eb8e89551fe27ac61399ce95b8ef57",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 111948
+  },
+  {
+    "file": "/media/site/xmas-lid-stocking-flat.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/42-original-stocking-flat.webp",
+    "sourceSha256": "5f40bbc0f50a67d42dba8800361f9fe77f8d3f6a78eba987900978c02ecac921",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 186060
+  },
+  {
+    "file": "/media/site/xmas-lid-stocking-mockup-detail.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/42-original-stocking-mockup-detail.webp",
+    "sourceSha256": "d156af27a55b1802c1a9fd3c50a90d71f73956257585060ebd92855941b1bca9",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 125134
+  },
+  {
+    "file": "/media/site/xmas-lid-stocking-mockup-front.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/42-original-stocking-mockup-front.webp",
+    "sourceSha256": "1bbf1a6af1a1d37539bd84729f500b3ee30f46e47f5ef6271f4d93a9e59f5bef",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 93642
+  },
+  {
+    "file": "/media/site/xmas-lid-stocking-mockup-left.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/42-original-stocking-mockup-left.webp",
+    "sourceSha256": "3b6f0d223c6e29452d30cb66bab296b65203118366f103ab54f4e3609514f3dc",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 84472
+  },
+  {
+    "file": "/media/site/xmas-lid-stocking-mockup-top.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/42-original-stocking-mockup-top.webp",
+    "sourceSha256": "ef8e5f65cee7645a23aaa17984a83aeb294f616fc656541d98d0f01128c2ad77",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 122474
+  },
+  {
+    "file": "/media/site/xmas-lid-stocking-mockup.webp",
+    "source": "https://charmvilla-gallery.vercel.app/packaging/assets/42-original-stocking-mockup.webp",
+    "sourceSha256": "f405b13d99746392a49f884aa5cfc2b95369d0432d169370cb92b0c95f5abe44",
+    "sourceDims": [
+      1344,
+      576
+    ],
+    "webpDims": [
+      1344,
+      576
+    ],
+    "webpBytes": 124194
+  }
+]
