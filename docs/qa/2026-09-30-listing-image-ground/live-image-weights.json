@@ -1,0 +1,53 @@
+{
+  "teaPageHtmlBytes": 115056,
+  "optimizedSamples": [
+    [
+      "/media/gift-boxes/official-104.png",
+      "1080",
+      "image/avif",
+      13286
+    ],
+    [
+      "/media/gift-boxes/official-104.png",
+      "640",
+      "image/avif",
+      13286
+    ],
+    [
+      "/media/gift-boxes/official-104.png",
+      "750",
+      "image/avif",
+      13286
+    ],
+    [
+      "/media/gift-boxes/official-1053.png",
+      "1080",
+      "image/avif",
+      21873
+    ],
+    [
+      "/media/gift-boxes/official-1053.png",
+      "640",
+      "image/avif",
+      21873
+    ],
+    [
+      "/media/gift-boxes/official-1053.png",
+      "750",
+      "image/avif",
+      21873
+    ],
+    [
+      "/media/gift-boxes/official-1072.png",
+      "1080",
+      "image/avif",
+      24286
+    ],
+    [
+      "/media/gift-boxes/official-1072.png",
+      "640",
+      "image/avif",
+      18330
+    ]
+  ]
+}

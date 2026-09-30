@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-30",
+  "commit": "914304d",
+  "deployment": "charmvilla-gallery-site-14j8ppv7k-tentenco.vercel.app",
+  "alias": "https://charmvilla-gallery-site.vercel.app",
+  "check": {
+    "lintErrors": 0,
+    "lintWarnings": 4,
+    "typecheck": true,
+    "build": true,
+    "staticPages": 41
+  },
+  "verifyTeaGifts": "PASS",
+  "sitemapRoutes": 37,
+  "non200": [],
+  "legacyRedirects": "5 × 308 → /collections/tea",
+  "playwright": {
+    "pages": 12,
+    "consoleErrors": 0,
+    "teaCards": {
+      "cutout": 12,
+      "scene": 4
+    },
+    "allCards": {
+      "cutout": 14,
+      "scene": 17
+    },
+    "ctaBackground": "transparent",
+    "ctaBorder": "1px rgba(31,31,31,.3)"
+  },
+  "cursor": "/brand/goldfish-gold.svg 3598 bytes",
+  "optimizedGiftBoxAvifBytes": "13286–24286 (samples)",
+  "visuallyInspected": [
+    "local/desktop-collections-tea.png",
+    "local/desktop-products-kyoto-gift-box.png",
+    "local/desktop-home.png",
+    "local/mobile-home.png"
+  ]
+}

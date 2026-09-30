@@ -1,0 +1,283 @@
+{
+  "base": "https://charmvilla-gallery-site.vercel.app",
+  "checkedAt": "2026-09-30T12:16:52+0800",
+  "sitemapRoutes": 37,
+  "non200": [],
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 104458,
+      "title": "CHARM VILLA — 藝術即生活"
+    },
+    {
+      "path": "/collections/all",
+      "status": 200,
+      "bytes": 186435,
+      "title": "全部商品｜CHARM VILLA"
+    },
+    {
+      "path": "/collections/bags",
+      "status": 200,
+      "bytes": 45460,
+      "title": "真皮包｜CHARM VILLA"
+    },
+    {
+      "path": "/collections/jewelry",
+      "status": 200,
+      "bytes": 58639,
+      "title": "金飾｜CHARM VILLA"
+    },
+    {
+      "path": "/collections/tea",
+      "status": 200,
+      "bytes": 115056,
+      "title": "小金魚茶包禮盒｜CHARM VILLA"
+    },
+    {
+      "path": "/collections/teaware",
+      "status": 200,
+      "bytes": 58139,
+      "title": "茶器與工藝｜CHARM VILLA"
+    },
+    {
+      "path": "/products/braided-leather-bag-white",
+      "status": 200,
+      "bytes": 63981,
+      "title": "編織提把皮革包・白色｜CHARM VILLA"
+    },
+    {
+      "path": "/products/braided-leather-bag-blue",
+      "status": 200,
+      "bytes": 63046,
+      "title": "編織提把皮革包・藍色｜CHARM VILLA"
+    },
+    {
+      "path": "/products/braided-leather-bag-pink",
+      "status": 200,
+      "bytes": 63154,
+      "title": "編織提把皮革包・粉紅色｜CHARM VILLA"
+    },
+    {
+      "path": "/products/pearl-chain-goldfish-earrings",
+      "status": 200,
+      "bytes": 61443,
+      "title": "珍珠長鏈小金魚耳環｜CHARM VILLA"
+    },
+    {
+      "path": "/products/bezel-diamond-goldfish-earrings",
+      "status": 200,
+      "bytes": 61575,
+      "title": "吐鑽小金魚耳環・包鑲｜CHARM VILLA"
+    },
+    {
+      "path": "/products/single-diamond-goldfish-earrings",
+      "status": 200,
+      "bytes": 61268,
+      "title": "單鑽小金魚耳環｜CHARM VILLA"
+    },
+    {
+      "path": "/products/twin-goldfish-earrings",
+      "status": 200,
+      "bytes": 56313,
+      "title": "雙星小金魚耳環｜CHARM VILLA"
+    },
+    {
+      "path": "/products/goldfish-diamond-stud",
+      "status": 200,
+      "bytes": 56512,
+      "title": "小金魚鑽石耳釘｜CHARM VILLA"
+    },
+    {
+      "path": "/products/goldfish-diamond-drop",
+      "status": 200,
+      "bytes": 56580,
+      "title": "小金魚垂鑽耳環｜CHARM VILLA"
+    },
+    {
+      "path": "/products/reunion-paper-gift-box",
+      "status": 200,
+      "bytes": 62846,
+      "title": "團圓｜繽紛紙盒｜CHARM VILLA"
+    },
+    {
+      "path": "/products/reunion-paulownia-gift-box",
+      "status": 200,
+      "bytes": 62834,
+      "title": "團圓｜桐木木盒｜CHARM VILLA"
+    },
+    {
+      "path": "/products/year-of-plenty-gift-box",
+      "status": 200,
+      "bytes": 61975,
+      "title": "年年有魚｜年節禮｜CHARM VILLA"
+    },
+    {
+      "path": "/products/blossoming-prosperity-gift-box",
+      "status": 200,
+      "bytes": 60422,
+      "title": "花開富貴｜年節禮｜CHARM VILLA"
+    },
+    {
+      "path": "/products/spring-blossoms-gift-box",
+      "status": 200,
+      "bytes": 60163,
+      "title": "花滿富春｜CHARM VILLA"
+    },
+    {
+      "path": "/products/kyoto-gift-box",
+      "status": 200,
+      "bytes": 59720,
+      "title": "京都版｜CHARM VILLA"
+    },
+    {
+      "path": "/products/heart-gift-box",
+      "status": 200,
+      "bytes": 60205,
+      "title": "心有愛禮盒｜CHARM VILLA"
+    },
+    {
+      "path": "/products/fruit-infusion-gift-box",
+      "status": 200,
+      "bytes": 60020,
+      "title": "花果茶禮盒｜CHARM VILLA"
+    },
+    {
+      "path": "/products/rose-encounter-gift-box",
+      "status": 200,
+      "bytes": 60042,
+      "title": "玫好相遇｜CHARM VILLA"
+    },
+    {
+      "path": "/products/tea-to-share-gift-box",
+      "status": 200,
+      "bytes": 60312,
+      "title": "魚你分享｜茶繽紛｜CHARM VILLA"
+    },
+    {
+      "path": "/products/spring-dawn-gift-box",
+      "status": 200,
+      "bytes": 60664,
+      "title": "春曉｜CHARM VILLA"
+    },
+    {
+      "path": "/products/winter-blossom-gift-box",
+      "status": 200,
+      "bytes": 60541,
+      "title": "暮雪｜CHARM VILLA"
+    },
+    {
+      "path": "/products/orchid-gift-box",
+      "status": 200,
+      "bytes": 60220,
+      "title": "蝴蝶蘭｜CHARM VILLA"
+    },
+    {
+      "path": "/products/purple-butterfly-gift-box",
+      "status": 200,
+      "bytes": 60417,
+      "title": "紫斑蝶｜CHARM VILLA"
+    },
+    {
+      "path": "/products/small-moon-tea-gift-box",
+      "status": 200,
+      "bytes": 60426,
+      "title": "小鮮月禮盒｜純茶包｜CHARM VILLA"
+    },
+    {
+      "path": "/products/full-moon-tea-gift-box",
+      "status": 200,
+      "bytes": 62560,
+      "title": "大盈月禮盒｜純茶包｜CHARM VILLA"
+    },
+    {
+      "path": "/products/prosperity-dessert-stand",
+      "status": 200,
+      "bytes": 60313,
+      "title": "下午茶點心架｜CHARM VILLA"
+    },
+    {
+      "path": "/products/prosperity-stand-gift-box",
+      "status": 200,
+      "bytes": 59428,
+      "title": "點心架與包裝禮盒｜CHARM VILLA"
+    },
+    {
+      "path": "/products/wooden-coaster-teaspoon",
+      "status": 200,
+      "bytes": 59510,
+      "title": "木質杯墊與茶匙｜CHARM VILLA"
+    },
+    {
+      "path": "/products/bird-chopstick-rest",
+      "status": 200,
+      "bytes": 60081,
+      "title": "鳥形筷架｜CHARM VILLA"
+    },
+    {
+      "path": "/products/ginkgo-teaspoon-gift-box",
+      "status": 200,
+      "bytes": 55742,
+      "title": "銀杏茶匙禮盒｜CHARM VILLA"
+    },
+    {
+      "path": "/products/wooden-chopsticks",
+      "status": 200,
+      "bytes": 55290,
+      "title": "木筷｜CHARM VILLA"
+    }
+  ],
+  "redirects": [
+    {
+      "path": "/products/goldfish-tea-rose-jinxuan",
+      "status": 308,
+      "location": "/collections/tea"
+    },
+    {
+      "path": "/products/goldfish-tea-lychee-ruby",
+      "status": 308,
+      "location": "/collections/tea"
+    },
+    {
+      "path": "/products/goldfish-tea-honey-oriental-beauty",
+      "status": 308,
+      "location": "/collections/tea"
+    },
+    {
+      "path": "/products/goldfish-tea-osmanthus-baozhong",
+      "status": 308,
+      "location": "/collections/tea"
+    },
+    {
+      "path": "/products/goldfish-tea-roselle-roasted-oolong",
+      "status": 308,
+      "location": "/collections/tea"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/brand/goldfish-gold.svg",
+      "status": 200,
+      "bytes": 3598,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/brand/charmvilla-logo.png",
+      "status": 200,
+      "bytes": 9330,
+      "type": "image/png"
+    },
+    {
+      "path": "/media/gift-boxes/official-891.png",
+      "status": 200,
+      "bytes": 264223,
+      "type": "image/png"
+    },
+    {
+      "path": "/media/gift-boxes/official-994.png",
+      "status": 200,
+      "bytes": 707181,
+      "type": "image/png"
+    }
+  ]
+}
