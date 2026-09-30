@@ -167,8 +167,24 @@
   @media (hover: none), (pointer: coarse) { .cursor-dot { display: none; } }
 }
 
-/* First-screen composition and the synchronized curtain / headline reveal. */
+/* Loading state (after davidlaxer.com): the page is invisible under the preloader and no CSS transitions run;
+   the page and the hero headline appear the instant the wipe starts (.is-revealing). */
+.is-loading body { background: var(--color-stone-deep); }
+.is-loading * { transition: none !important; }
+.is-loading:not(.is-revealing) .page-holder { opacity: 0; }
 .is-loading:not(.is-revealing) [data-hero-reveal] { visibility: hidden; }
+
+/* Preloader: ©2026 digits (150 px tablet / 210 px laptop, line-height .75, tracking -.05em) at the bottom-left, a
+   collections list on the white half, the gold half on the right. Digits start below their box (translateY 150%). */
+.preloader-year { position: absolute; left: 0; bottom: 0; z-index: 4; display: none; padding: 25px; margin-left: -.05em; font-family: var(--font-display); font-weight: 500; font-size: 154px; line-height: .75; letter-spacing: -.05em; text-transform: uppercase; white-space: nowrap; color: var(--color-ink); pointer-events: none; }
+.preloader-year .ch { display: inline-block; transform: translateY(150%); vertical-align: top; }
+.preloader-list { position: absolute; left: 0; bottom: 0; width: 100%; padding: 25px; }
+.preloader-list-title { margin: 0 0 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.preloader-list-title span { opacity: .4; }
+.preloader-list p:not(.preloader-list-title) { display: flex; align-items: baseline; justify-content: space-between; margin: 0; padding: 6px 0; font-size: 12px; text-transform: uppercase; }
+.preloader-dot { display: block; width: 10px; height: 10px; border-radius: 999px; background: currentColor; flex-shrink: 0; }
+@media (min-width: 768px) { .preloader-year { display: block; } }
+@media (min-width: 1280px) { .preloader-year { font-size: 210px; padding: 30px; } .preloader-list { padding: 30px; } }
 @media (prefers-reduced-motion: reduce) {
   .is-loading [data-hero-reveal] { visibility: visible; }
 }
@@ -436,8 +452,11 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .orbit-card--male img { height: auto; max-width: none; object-fit: initial; }
 .orbit-card--jewelry:not([data-active="true"]) img { filter: grayscale(1); }
 .orbit-title { position: absolute; z-index: 16; left: var(--page-gutter); bottom: 11.5%; margin: 0; font-family: var(--font-display); font-size: clamp(52px, 6.8vw, 148px); font-weight: 500; line-height: .9; letter-spacing: -.05em; text-transform: uppercase; pointer-events: none; }
-.orbit-title span { display: block; }
-.orbit-title span + span { margin-top: .12em; }
+.orbit-title > span { display: block; }
+.orbit-title > span + span { margin-top: .12em; }
+/* Split characters rise inside masked words, like "Hello / Laxer" on davidlaxer.com/about. */
+.orbit-title .word { display: inline-block; overflow: hidden; vertical-align: top; }
+.orbit-title .char { display: inline-block; }
 .orbit-statement { position: absolute; z-index: 16; top: 14%; right: var(--page-gutter); margin: 0; font-size: clamp(18px, 1.8vw, 40px); font-weight: 500; line-height: 1.7; letter-spacing: -.045em; text-align: right; pointer-events: none; }
 .orbit-statement span { display: block; }
 .orbit-footer { position: absolute; z-index: 20; left: var(--page-gutter); right: var(--page-gutter); bottom: 0; height: 64px; display: flex; align-items: center; justify-content: flex-end; gap: 30px; font-size: 13px; letter-spacing: .03em; }
