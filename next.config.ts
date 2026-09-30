@@ -4,8 +4,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   redirects: async () => [
     ...["rose-jinxuan", "lychee-ruby", "honey-oriental-beauty", "osmanthus-baozhong", "roselle-roasted-oolong"].map(flavor => ({ source: `/products/goldfish-tea-${flavor}`, destination: "/collections/tea", permanent: true })),
-    { source: "/products/goldfish-diamond-stud", destination: "/products/bezel-diamond-goldfish-earrings", permanent: true },
-    { source: "/products/goldfish-diamond-drop", destination: "/products/single-diamond-goldfish-earrings", permanent: true },
+    ...["goldfish-diamond-stud", "goldfish-diamond-drop", "bezel-diamond-goldfish-earrings", "single-diamond-goldfish-earrings"].map(slug => ({ source: `/products/${slug}`, destination: "/products/diamond-goldfish-earrings", permanent: true })),
   ],
   images: { formats: ["image/avif", "image/webp"] },
 };

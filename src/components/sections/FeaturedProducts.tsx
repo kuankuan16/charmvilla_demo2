@@ -10,7 +10,7 @@ const selected = [
   "ginkgo-teaspoon-gift-box",
   "reunion-paulownia-gift-box",
   "bird-chopstick-rest",
-  "bezel-diamond-goldfish-earrings",
+  "diamond-goldfish-earrings",
 ].map(slug => findProduct(slug)!);
 
 export default function FeaturedProducts() {

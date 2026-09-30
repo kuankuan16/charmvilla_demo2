@@ -42,24 +42,26 @@ const bagProducts: Product[] = bags.products.map((p) => ({
 
 // 2026-09-30: the charcoal-sketch listings (goldfish-diamond-stud / goldfish-diamond-drop) were the same products as the
 // bezel-diamond and single-diamond earrings; they are merged here as extra views and their URLs redirect (next.config.ts).
-const jewelrySlugs = ["pearl-chain-goldfish-earrings", "bezel-diamond-goldfish-earrings", "single-diamond-goldfish-earrings", "twin-goldfish-earrings"];
-const jewelryEnglish = ["PEARL CHAIN", "BEZEL DIAMOND", "SINGLE DIAMOND", "TWIN GOLDFISH"];
-const jewelryDetails = ["珍珠、長鏈與金魚", "魚嘴前的包鑲單鑽", "單鑽與金魚輪廓", "兩尾金魚", "耳畔的金魚與圓鑽", "金魚、短鏈與垂墜圓鑽"];
+// 2026-09-30 (later): the brand supplied the real product photography — four series: 珍珠長鏈、鑽石、雙魚、璞金. The earlier
+// "bezel diamond at the mouth" listing did not exist as a product; it and "single diamond" merged into 鑽石系列 (redirects in next.config.ts).
+const jewelrySlugs = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
+const jewelryEnglish = ["PEARL CHAIN", "DIAMOND", "TWIN GOLDFISH", "RAW GOLD"];
+const jewelryDetails = ["珍珠、長鏈與金魚", "金魚、短鏈與爪鑲垂墜圓鑽", "兩尾金魚以短鏈相連", "單尾小金魚、霧面金屬表面"];
 const jewelryExtra: Record<number, Img[]> = {
-  0: [gallery("CV-0379", "珍珠長鏈小金魚耳環・橄欖綠花影"), gallery("CV-0380", "珍珠長鏈小金魚耳環・米白衣領")],
-  1: [gallery("CV-0371", "吐鑽小金魚耳環・包鑲・紅棕側臉"), gallery("CV-0372", "吐鑽小金魚耳環・包鑲・珍珠灰柔光"), site("goldfish-stud-sketch.webp", "吐鑽小金魚耳環・包鑲・炭筆素描配戴圖", 896, 1120)],
-  2: [gallery("CV-0374", "單鑽小金魚耳環・深綠靜影"), gallery("CV-0376", "單鑽小金魚耳環・暖金緞光"), site("goldfish-drop-sketch.webp", "單鑽小金魚耳環・炭筆素描配戴圖", 896, 1120)],
+  0: [gallery("CV-0377", "珍珠長鏈小金魚耳環・石面光影"), gallery("CV-0379", "珍珠長鏈小金魚耳環・橄欖綠花影"), gallery("CV-0380", "珍珠長鏈小金魚耳環・米白衣領")],
+  1: [gallery("CV-0373", "小金魚耳環・鑽石系列・配戴"), gallery("CV-0374", "小金魚耳環・鑽石系列・深綠靜影"), gallery("CV-0376", "小金魚耳環・鑽石系列・暖金緞光"), site("goldfish-drop-sketch.webp", "小金魚耳環・鑽石系列・炭筆素描配戴圖", 896, 1120)],
+  2: [gallery("CV-0378", "小金魚耳環・雙魚系列・配戴")],
 };
 const jewelryEditorial = [
   { description: "珍珠與長鏈向下延伸，金魚停在鏈末。從耳畔到頸側，細長的線條把觀看的距離拉開，也讓魚形的比例更容易被看見。", title: "垂落的線，游動的形", body: "動作，讓線條有了變化。長鏈隨轉身輕移，珍珠與金魚各自接住光線；靜止時的構圖，到了配戴者身上，又是另一幅畫面。" },
-  { description: "包鑲單鑽置於魚嘴前，與金魚的側面輪廓相接。視線沿著魚形移動，最後停在這一點光上，細小的距離成為設計的重心。", title: "停在魚嘴前的光", body: "輪廓之外，還有間距。金面與鑽石的明暗不同，讓小金魚的形態更清楚；貼近側臉觀看，便能讀出各個細節之間的關係。" },
-  { description: "一顆單鑽，搭配實心拋光平面金。鑽石的亮點與金面的反光彼此呼應，讓魚形在小小的尺度裡，仍保有清楚的表情。", title: "同一束光，兩種質地", body: "金面隨角度映出明暗，單鑽則凝聚一點光。配戴時，細微的轉頭動作改變了觀看角度，也讓材質的差異自然浮現。" },
-  { description: "兩尾金魚構成相伴的形。觀看一尾的輪廓，也留意另一尾的位置；形與形之間的距離，讓耳畔有了小幅的構圖。", title: "兩尾魚之間", body: "視線可以來回。先看各自的輪廓，再看兩者如何相處，配戴的比例便從這份呼應裡慢慢清楚。" },
+  { description: "一尾小金魚停在耳畔，短鏈之下垂著一顆爪鑲圓鑽。金面與鑽石的明暗不同，隨動作各自接住光，讓魚形與那一點光之間有了距離。", title: "魚身之下的一點光", body: "輪廓之外，還有間距。金魚固定在耳畔，圓鑽隨短鏈輕移；靜與動同時存在，貼近側臉觀看，便能讀出各個細節之間的關係。" },
+  { description: "兩尾金魚以短鏈相連：一尾停在耳畔，一尾垂落。觀看一尾的輪廓，也留意另一尾的位置；形與形之間的距離，讓耳畔有了小幅的構圖。", title: "兩尾魚之間", body: "視線可以來回。先看各自的輪廓，再看兩者如何相處，配戴的比例便從這份呼應裡慢慢清楚。" },
+  { description: "單尾小金魚，霧面的金屬表面收住反光，只留下輪廓。收斂的尺度，讓魚形的轉折集中在一起，適合從近處細看。", title: "只留下輪廓", body: "少了亮面的反射，形狀便更安靜。魚身與尾鰭的每一處轉折都有被看見的空間，配戴時像一枚貼近耳畔的小印記。" },
 ];
 const jewelryProducts: Product[] = jewelry.items.map((p, i) => ({
   slug: jewelrySlugs[i], category: "jewelry", name: p.title, english: jewelryEnglish[i],
   summary: p.desc, description: jewelryEditorial[i].description,
-  image: p.image, views: [{ label: "配戴視角", image: p.image }, ...(jewelryExtra[i] || []).map((image, j) => ({ label: `情境 ${j + 1}`, image }))],
+  image: p.image, views: [{ label: "商品照", image: p.image }, ...(jewelryExtra[i] || []).map((image, j) => ({ label: `情境 ${j + 1}`, image }))],
   facts: [{ label: "系列", value: "小金魚金飾" }, { label: "款式", value: p.title }, { label: "設計細節", value: jewelryDetails[i] }],
   story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
 }));
@@ -92,11 +94,9 @@ const teawareProducts: Product[] = tablewareEntries.map((p) => ({
 
 // Homepage featured grid: studio shots generated 2026-09-30 in the white bag's language (output/featured-editorial-2026-09-30).
 const featuredImages: Record<string, Img> = {
-  "pearl-chain-goldfish-earrings": site("featured-pearl-chain-goldfish-earrings.webp", "珍珠長鏈小金魚耳環・棚拍商品照"),
   "ginkgo-teaspoon-gift-box": site("featured-ginkgo-teaspoon-gift-box.webp", "銀杏茶匙禮盒・棚拍商品照"),
   "reunion-paulownia-gift-box": site("featured-reunion-paulownia-gift-box.webp", "團圓桐木木盒・棚拍商品照"),
   "bird-chopstick-rest": site("featured-bird-chopstick-rest.webp", "鳥形筷架・棚拍商品照"),
-  "bezel-diamond-goldfish-earrings": site("featured-bezel-diamond-goldfish-earrings.webp", "吐鑽小金魚耳環・包鑲・棚拍商品照"),
 };
 const withShopify = (p: Product): Product => { const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug]; const f = featuredImages[p.slug]; const q = f ? { ...p, featuredImage: f } : p; return typeof m === "object" && (m.handle || m.variantId) ? { ...q, shopify: m } : q; };
 export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify);

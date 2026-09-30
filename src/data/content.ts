@@ -103,10 +103,11 @@ export const jewelry = {
   heading: "小金魚 金飾",
   headingEn: "GOLDFISH JEWELRY",
   items: [
-    { n: "01.", title: "珍珠長鏈小金魚耳環", desc: "沿著珍珠長鏈，一尾金魚垂落在頸側。", image: gallery("CV-0377", "珍珠長鏈小金魚耳環", 6144, 7680) },
-    { n: "02.", title: "吐鑽小金魚耳環・包鑲", desc: "魚嘴前的一顆包鑲單鑽，點亮側臉的輪廓。", image: gallery("CV-0370", "吐鑽小金魚耳環・包鑲", 2560, 3200) },
-    { n: "03.", title: "單鑽小金魚耳環", desc: "單鑽與拋光金面，在耳畔映出不同的光。", image: gallery("CV-0373", "單鑽小金魚耳環", 6144, 7680) },
-    { n: "04.", title: "雙星小金魚耳環", desc: "兩尾金魚相伴，細看輪廓之間的呼應。", image: gallery("CV-0378", "雙星小金魚耳環", 6146, 7680) },
+    // Real product photography supplied by the brand on 2026-09-30 (output/jewelry-product-photos-2026-09-30): four series.
+    { n: "01.", title: "珍珠長鏈小金魚耳環", desc: "沿著珍珠長鏈，一尾金魚垂落在頸側。", image: site("jewelry-pearl-chain.webp", "珍珠長鏈小金魚耳環・商品照", 1200, 1500) },
+    { n: "02.", title: "小金魚耳環・鑽石系列", desc: "魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", image: site("jewelry-diamond.webp", "小金魚耳環・鑽石系列・商品照", 1200, 1500) },
+    { n: "03.", title: "小金魚耳環・雙魚系列", desc: "一尾停在耳畔，一尾隨短鏈垂落。", image: site("jewelry-twin.webp", "小金魚耳環・雙魚系列・商品照", 1200, 1500) },
+    { n: "04.", title: "小金魚耳環・璞金系列", desc: "霧面金屬的一尾小金魚，貼近耳畔。", image: site("jewelry-raw-gold.webp", "小金魚耳環・璞金系列・商品照", 1200, 1500) },
   ],
   craft: {
     label: "CRAFT:",
