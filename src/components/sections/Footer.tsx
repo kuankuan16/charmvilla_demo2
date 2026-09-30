@@ -9,7 +9,7 @@ export default function Footer() {
     <footer id="footer" className="container-x bg-ink pt-60 pb-40 text-paper">
       <div className="flex flex-wrap items-start justify-between gap-30">
         <div data-animation="moveUp">
-          <Image src={brand.logo.src} alt="CHARM VILLA" width={brand.logo.w} height={brand.logo.h} className="h-auto w-[220px]" />
+          <Image src={brand.logo.src} alt="CHARM VILLA" width={brand.logo.w} height={brand.logo.h} className="h-auto w-[220px] brightness-0 invert" />
         </div>
 
         <nav aria-label="頁尾">

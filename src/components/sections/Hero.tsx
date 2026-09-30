@@ -143,7 +143,7 @@ export default function Hero() {
           ))}
         </div>
       </div>
-      <h1 className="orbit-title" data-hero-reveal=""><span data-animation="split" data-split="chars" data-ease="expo.out">EVERYDAY</span><span data-animation="split" data-split="chars" data-ease="expo.out">LUXURIES</span></h1>
+      <h1 className="orbit-title" data-hero-reveal=""><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">EVERYDAY</span><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">LUXURIES</span></h1>
       <p className="orbit-statement tc" data-hero-reveal=""><span>藝術即生活</span></p>
       <div className="orbit-footer">
         <span className="orbit-count" aria-live="off">{active + 1} / 3</span>

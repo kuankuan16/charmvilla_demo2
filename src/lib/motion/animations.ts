@@ -107,7 +107,7 @@ function split(el: HTMLElement): Cleanup {
     gsap.set(targets, { visibility: "hidden" });
     tl.to(targets, { visibility: "visible", duration: s.duration, delay: s.delay, stagger: { each: interval } });
   } else {
-    gsap.set(targets, { yPercent: 105 });
+    gsap.set(targets, { yPercent: num(el, "data-from", 105) });
     tl.call(() => targets.forEach((t) => ((t as HTMLElement).closest(".line-w") || t).classList.add("is-animated")), undefined, s.delay);
     tl.to(targets, { yPercent: 0, duration: s.duration, delay: s.delay, ease: s.ease, clearProps: "transform", stagger: { each: interval } }, 0);
   }

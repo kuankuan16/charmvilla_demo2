@@ -8,6 +8,7 @@
   --color-ink: #1f1f1f;
   --color-paper: #ebeae4;
   --color-page: #f6f8fa; /* page ground on every page = the homepage hero paper (user 2026-09-30) */
+  --header-h: 72px; /* header bar height (user 2026-09-30: 選單背景高度再高一點), everything inside is vertically centred */
   --color-stone: #919598;
   --color-stone-deep: #6f7275;
   --color-field: #d8d9cf;
@@ -187,8 +188,10 @@
 
 /* Product browsing: native document scrolling, independent of the homepage's Lenis wrapper. */
 html:has(.catalog-shell), body:has(.catalog-shell) { height: auto; overflow: visible; }
-html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
-.catalog-shell { background: var(--color-page); text-transform: none; min-height: 100vh; padding-top: 50px; }
+html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--header-h) + 60px); }
+.site-header { height: var(--header-h); }
+.site-main { padding-top: var(--header-h); }
+.catalog-shell { background: var(--color-page); text-transform: none; min-height: 100vh; padding-top: var(--header-h); }
 /* Same ground as the homepage on every page (user 2026-09-30: 底色每一頁都跟首頁一樣). */
 .catalog-shell [data-header]:not(.menu--opened) { background: var(--color-page); }
 .catalog-shell [data-header] { z-index: 80; }
@@ -217,7 +220,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .collection-heading-copy { max-width: 410px; justify-self: end; }
 .collection-heading-copy h2 { font-size: 24px; margin-bottom: 20px; font-weight: 500; }
 .collection-heading-copy p { font-size: 15px; line-height: 1.9; }
-.collection-categories { position: sticky; top: 50px; z-index: 30; display: flex; gap: 30px; padding: 0 var(--page-gutter); background: var(--color-page); overflow-x: auto; scrollbar-width: none; }
+.collection-categories { position: sticky; top: var(--header-h); z-index: 30; display: flex; gap: 30px; padding: 0 var(--page-gutter); background: var(--color-page); overflow-x: auto; scrollbar-width: none; }
 .collection-categories a { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding: 20px 0 18px; border-bottom: 3px solid transparent; font-size: 14px; }
 .collection-categories a[aria-current], .collection-categories a:hover { border-color: var(--color-gold); }
 .collection-categories a[aria-current] { font-weight: 700; }
@@ -341,7 +344,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
   .product-story--image { gap: 5vw; }
 }
 @media (max-width:767px) {
-  html:has(.catalog-shell) { scroll-padding-top: 85px; }
+  html:has(.catalog-shell) { scroll-padding-top: calc(var(--header-h) + 35px); }
   .catalog-header { min-height: 76px; margin: 0 20px; gap: 10px; grid-template-columns: 1fr auto 1fr; }
   .catalog-header::before { inset-inline: -20px; }
   .catalog-brand { width: 145px; }
@@ -353,7 +356,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
   .collection-heading-copy { justify-self: start; max-width: 440px; }
   .collection-heading-copy h2 { font-size: 21px; margin-bottom: 13px; }
   .collection-heading-copy p { font-size: 14px; }
-  .collection-categories { top: 50px; padding-inline: 20px; gap: 26px; }
+  .collection-categories { top: var(--header-h); padding-inline: 20px; gap: 26px; }
   .collection-categories a { font-size: 12px; padding-block: 16px 13px; gap: 8px; }
   .collection-results { padding: 0 20px 50px; }
   .collection-tools { flex-direction: column; align-items: stretch; gap: 14px; padding-block: 23px; }
@@ -540,6 +543,23 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .cart-checkout:disabled { opacity: .45; cursor: default; }
 .cart-checkout:disabled:hover { background: transparent; color: var(--color-ink); border-color: rgb(31 31 31 / 0.3); }
 .cart--open body { overflow: hidden; }
+/* Account (signed-out layout after the Bang & Olufsen login page: form left, "new here" right) */
+.account-shell--out { max-width: 1120px; }
+.account-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(40px, 6vw, 96px); }
+.account-col--new { border-left: 1px solid rgb(31 31 31 / 0.2); padding-left: clamp(40px, 6vw, 96px); }
+.account-sub { margin: 0 0 40px; font-size: 16px; }
+.account-req { font-weight: 400; color: var(--color-stone-deep); }
+.account-row--between { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.account-link { font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+.account-benefits { list-style: none; margin: 0 0 40px; padding: 0; display: grid; gap: 16px; font-size: 16px; line-height: 1.6; }
+.account-benefits li { position: relative; padding-left: 34px; }
+.account-benefits li::before { content: ""; position: absolute; left: 4px; top: .55em; width: 9px; height: 5px; border-left: 1.5px solid var(--color-ink); border-bottom: 1.5px solid var(--color-ink); transform: rotate(-45deg); }
+.btn-pill { display: inline-flex; align-items: center; justify-content: center; min-width: 168px; min-height: 56px; padding: 0 34px; border-radius: 999px; background: var(--color-ink); color: #fff; font-size: 16px; font-weight: 500; transition: opacity .2s; }
+.btn-pill:hover { opacity: .85; }
+.btn-pill:disabled { opacity: .45; }
+.btn-pill--outline { background: transparent; color: var(--color-ink); border: 1.5px solid var(--color-ink); }
+.btn-pill--outline:hover { background: var(--color-ink); color: #fff; opacity: 1; }
+@media (max-width: 900px) { .account-split { grid-template-columns: 1fr; gap: 48px; } .account-col--new { border-left: 0; padding-left: 0; border-top: 1px solid rgb(31 31 31 / 0.2); padding-top: 40px; } }
 /* Account */
 .account-page { min-height: 70vh; padding: 60px var(--page-gutter) 120px; }
 .account-shell { max-width: 560px; }
@@ -576,7 +596,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 @media (max-width: 767px) { .account-row { grid-template-columns: 1fr; } .cart-line { grid-template-columns: 80px 1fr; } }
 /* Footer social icons in brand gold (official accounts: Facebook / Twitter / Instagram). */
 .social-links { display: flex; align-items: center; gap: 22px; margin: 0; padding: 0; list-style: none; }
-.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; color: var(--color-gold); transition: opacity .2s; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; color: #fff; transition: opacity .2s; } /* footer elements are white (user 2026-09-30) */
 .social-links a:hover { opacity: .6; }
 @media (max-width: 767px) { .header-brand { width: 118px; } .header-menu-btn > span:last-child { display: none; } .header-tools { gap: 16px; } }
 

@@ -46,7 +46,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const navItems = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero"), { id: "account", label: "Account", zh: "會員" } as const];
 
   return (
-    <header data-header="" className={`fixed left-0 top-0 z-30 h-50 w-full ${open ? "menu--opened" : ""}`}>
+    <header data-header="" className={`site-header fixed left-0 top-0 z-30 w-full ${open ? "menu--opened" : ""}`}>
       {/* Bang & Olufsen-style bar (user 2026-09-30): Menu on the left, the official wordmark centred, tools on the right. */}
       <div className="site-header-inner">
         <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "關閉選單" : "開啟選單"} className={`header-menu-btn relative z-40 ${open ? "text-paper" : "text-ink"}`} onClick={() => setOpen((v) => !v)}>

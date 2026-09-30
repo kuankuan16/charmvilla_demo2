@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <PageShell>
       <Header />
-      <main className="pt-50">
+      <main className="site-main">
         <div className="opening-sequence">
           <Hero />
           <Manifesto />

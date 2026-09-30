@@ -34,7 +34,7 @@ export default function AccountClient() {
     e.preventDefault(); setNotice(null);
     if (!configured) { setNotice({ kind: "error", text: NOT_CONNECTED }); return; }
     const form = new FormData(e.currentTarget); const payload: Record<string, unknown> = {};
-    form.forEach((v, k) => { payload[k] = k === "acceptsMarketing" || k === "makeDefault" ? v === "on" : String(v); });
+    form.forEach((v, k) => { if (k === "remember") return; payload[k] = k === "acceptsMarketing" || k === "makeDefault" ? v === "on" : String(v); });
     setBusy(true);
     const { ok, data } = await api<{ ok?: boolean }>(path, { method, body: JSON.stringify(payload) });
     setBusy(false);
@@ -45,33 +45,62 @@ export default function AccountClient() {
   if (loading) return <div className="account-shell"><p className="catalog-eyebrow">ACCOUNT</p><p className="tc">載入中…</p></div>;
 
   if (!customer) return (
-    <div className="account-shell">
-      <p className="catalog-eyebrow">ACCOUNT</p>
-      <h1 className="tc account-title">會員</h1>
+    <div className="account-shell account-shell--out">
       {!configured && <p className="account-banner tc">{NOT_CONNECTED}</p>}
-      <div className="account-tabs" role="tablist">
-        {([["login", "登入"], ["register", "註冊"], ["recover", "忘記密碼"]] as [Tab, string][]).map(([id, label]) => <button key={id} role="tab" type="button" aria-selected={tab === id} className="tc" onClick={() => { setTab(id); setNotice(null); }}>{label}</button>)}
-      </div>
       {notice && <p className={`account-notice account-notice--${notice.kind} tc`} role="status">{notice.text}</p>}
-      {tab === "login" && <form className="account-form" onSubmit={(e) => submit(e, "/api/account/login", "POST", load)}>
-        <label className="tc">Email<input name="email" type="email" autoComplete="email" required /></label>
-        <label className="tc">密碼<input name="password" type="password" autoComplete="current-password" required minLength={8} /></label>
-        <button type="submit" className="catalog-button tc" disabled={busy}>登入</button>
-        <p className="account-hint tc">還沒有帳號？<button type="button" onClick={() => setTab("register")}>建立會員</button></p>
-      </form>}
-      {tab === "register" && <form className="account-form" onSubmit={(e) => submit(e, "/api/account/register", "POST", load)}>
-        <div className="account-row"><label className="tc">姓<input name="lastName" type="text" autoComplete="family-name" /></label><label className="tc">名<input name="firstName" type="text" autoComplete="given-name" /></label></div>
-        <label className="tc">Email<input name="email" type="email" autoComplete="email" required /></label>
-        <label className="tc">手機<input name="phone" type="tel" autoComplete="tel" placeholder="+886…" /></label>
-        <label className="tc">密碼（至少 8 個字元）<input name="password" type="password" autoComplete="new-password" required minLength={8} /></label>
-        <label className="account-check tc"><input name="acceptsMarketing" type="checkbox" /> 願意收到新品與活動通知</label>
-        <button type="submit" className="catalog-button tc" disabled={busy}>建立會員</button>
-        <p className="account-hint tc">註冊即表示同意本站服務條款與隱私權政策。</p>
-      </form>}
-      {tab === "recover" && <form className="account-form" onSubmit={(e) => submit(e, "/api/account/recover", "POST", () => setNotice({ kind: "ok", text: "已寄出重設密碼的信件，請查看信箱。" }))}>
-        <label className="tc">Email<input name="email" type="email" autoComplete="email" required /></label>
-        <button type="submit" className="catalog-button tc" disabled={busy}>寄送重設密碼信</button>
-      </form>}
+      <div className="account-split">
+        <section className="account-col" aria-labelledby="account-title">
+          {tab === "register" ? (
+            <>
+              <h1 id="account-title" className="tc account-title">建立帳號</h1>
+              <p className="tc account-sub">填寫基本資料，完成後自動登入。</p>
+              <form className="account-form" onSubmit={(e) => submit(e, "/api/account/register", "POST", load)}>
+                <div className="account-row"><label className="tc">姓<input id="reg-last" name="lastName" type="text" autoComplete="family-name" /></label><label className="tc">名<input id="reg-first" name="firstName" type="text" autoComplete="given-name" /></label></div>
+                <label className="tc">Email <span className="account-req">（必填）</span><input id="reg-email" name="email" type="email" autoComplete="email" required /></label>
+                <label className="tc">手機<input id="reg-phone" name="phone" type="tel" autoComplete="tel" placeholder="+886…" /></label>
+                <label className="tc">密碼 <span className="account-req">（必填，至少 8 個字元）</span><input id="reg-password" name="password" type="password" autoComplete="new-password" required minLength={8} /></label>
+                <label className="account-check tc"><input id="reg-marketing" name="acceptsMarketing" type="checkbox" /> 願意收到新品與活動通知</label>
+                <button type="submit" className="btn-pill tc" disabled={busy}>建立帳號</button>
+                <p className="account-hint tc">已有帳號？<button type="button" onClick={() => { setTab("login"); setNotice(null); }}>登入</button></p>
+              </form>
+            </>
+          ) : tab === "recover" ? (
+            <>
+              <h1 id="account-title" className="tc account-title">重設密碼</h1>
+              <p className="tc account-sub">輸入註冊時的 Email，我們會寄出重設密碼的連結。</p>
+              <form className="account-form" onSubmit={(e) => submit(e, "/api/account/recover", "POST", () => setNotice({ kind: "ok", text: "已寄出重設密碼的信件，請查看信箱。" }))}>
+                <label className="tc">Email <span className="account-req">（必填）</span><input id="recover-email" name="email" type="email" autoComplete="email" required /></label>
+                <button type="submit" className="btn-pill tc" disabled={busy}>寄送重設連結</button>
+                <p className="account-hint tc"><button type="button" onClick={() => { setTab("login"); setNotice(null); }}>回到登入</button></p>
+              </form>
+            </>
+          ) : (
+            <>
+              <h1 id="account-title" className="tc account-title">登入</h1>
+              <p className="tc account-sub">登入以管理您的帳號</p>
+              <form className="account-form" onSubmit={(e) => submit(e, "/api/account/login", "POST", load)}>
+                <label className="tc">Email <span className="account-req">（必填）</span><input id="login-email" name="email" type="email" autoComplete="email" required /></label>
+                <label className="tc">密碼 <span className="account-req">（必填）</span><input id="login-password" name="password" type="password" autoComplete="current-password" required minLength={8} /></label>
+                <div className="account-row--between">
+                  <label className="account-check tc"><input id="login-remember" name="remember" type="checkbox" /> 記住我</label>
+                  <button type="button" className="account-link tc" onClick={() => { setTab("recover"); setNotice(null); }}>忘記密碼？</button>
+                </div>
+                <button type="submit" className="btn-pill tc" disabled={busy}>登入</button>
+              </form>
+            </>
+          )}
+        </section>
+        <aside className="account-col account-col--new" aria-labelledby="new-title">
+          <h2 id="new-title" className="tc account-title">第一次來 CHARM VILLA？</h2>
+          <p className="tc account-sub">建立帳號後，您可以：</p>
+          <ul className="account-benefits tc">
+            <li>查看訂單狀態與購買紀錄。</li>
+            <li>管理個人資料與收件地址。</li>
+            <li>第一時間收到新品與活動通知。</li>
+          </ul>
+          <button type="button" className="btn-pill btn-pill--outline tc" onClick={() => { setTab("register"); setNotice(null); }}>建立帳號</button>
+        </aside>
+      </div>
     </div>
   );
 

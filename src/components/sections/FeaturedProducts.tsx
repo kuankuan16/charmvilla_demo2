@@ -22,7 +22,7 @@ export default function FeaturedProducts() {
     <div className="featured-grid">
       {selected.map((product) => <article key={product.slug} data-featured-product={product.slug}>
         <Link href={productHref(product)} aria-label={`欣賞 ${product.name}`}>
-          <div className={`featured-image featured-image--${product.image.cutout ? "cutout" : "scene"}`}><Picture img={product.image} fill fit={imageFit(product.image)} animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>
+          <div className={`featured-image featured-image--${(product.featuredImage ?? product.image).cutout ? "cutout" : "scene"}`}><Picture img={product.featuredImage ?? product.image} fill fit={imageFit(product.featuredImage ?? product.image)} animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>
           <div className="featured-caption"><h3 className="tc">{product.name}</h3></div>
           <p className="tc">{product.summary}</p>
         </Link>

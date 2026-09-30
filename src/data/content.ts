@@ -107,8 +107,6 @@ export const jewelry = {
     { n: "02.", title: "吐鑽小金魚耳環・包鑲", desc: "魚嘴前的一顆包鑲單鑽，點亮側臉的輪廓。", image: gallery("CV-0370", "吐鑽小金魚耳環・包鑲", 2560, 3200) },
     { n: "03.", title: "單鑽小金魚耳環", desc: "單鑽與拋光金面，在耳畔映出不同的光。", image: gallery("CV-0373", "單鑽小金魚耳環", 6144, 7680) },
     { n: "04.", title: "雙星小金魚耳環", desc: "兩尾金魚相伴，細看輪廓之間的呼應。", image: gallery("CV-0378", "雙星小金魚耳環", 6146, 7680) },
-    { n: "05.", title: "小金魚鑽石耳釘", desc: "金色魚形與一顆圓鑽，貼近耳畔。", image: site("goldfish-stud-sketch.webp", "小金魚鑽石耳釘，素描配戴圖", 896, 1120) },
-    { n: "06.", title: "小金魚垂鑽耳環", desc: "金魚下方，一顆圓鑽隨短鏈垂墜。", image: site("goldfish-drop-sketch.webp", "小金魚垂鑽耳環，素描配戴圖", 896, 1120) },
   ],
   craft: {
     label: "CRAFT:",
