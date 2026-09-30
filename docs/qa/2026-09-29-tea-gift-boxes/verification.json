@@ -34,6 +34,42 @@
       "sha256": "b65cf7a64b11c76e48a760ea2955ccf2817c941daf5a9b903eef9a6ca8081ef4",
       "status": "published",
       "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0357/webp"
+    },
+    {
+      "id": "CV-0040",
+      "sha256": "e33baa691a34eaddaed5e910096452909857f17e1f1602ef4af28bff4eb68ee6",
+      "status": "published",
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0040/webp"
+    },
+    {
+      "id": "CV-0041",
+      "sha256": "98a35e6b81ca094d92bfed1cbbc2b265fb11c08a7bbc8c1da1ad4ed9a4214cc7",
+      "status": "published",
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0041/webp"
+    },
+    {
+      "id": "CV-0231",
+      "sha256": "0dcf33caaf6223a9ac6c8c3a8f369113cc35e7846df5a3abc77c10c34155ba1c",
+      "status": "published",
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0231/webp"
+    },
+    {
+      "id": "CV-0234",
+      "sha256": "5c0915563877878bafaec4b52ee5ae8bf3946d35293a34a4931c245d1d90db8f",
+      "status": "published",
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0234/webp"
+    },
+    {
+      "id": "CV-0243",
+      "sha256": "5e039e8ab30e42f5cd4692a7d5b3e9c00b1ae48f03b3b35029369dbef04ac640",
+      "status": "published",
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0243/webp"
+    },
+    {
+      "id": "CV-0245",
+      "sha256": "f1eab080a0f52ae4c4d093f5df663e5096a4f08fce9ec68d6531ae78a252a36b",
+      "status": "published",
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0245/webp"
     }
   ],
   "build": "blocked: Google Fonts network access",

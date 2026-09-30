@@ -1115,13 +1115,21 @@
     "summary": "12 入／盒 · 單一茶款，整盒擇一",
     "description": "晨光與花鳥留在織面上，手染漸層使每只盒的色澤略有不同。盒內選用十二尾同款獲獎茶，從觀看盒面，走向細品茶湯。",
     "image": {
-      "src": "/media/gift-boxes/official-850.png",
-      "w": 680,
-      "h": 433,
-      "alt": "春曉・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/gallery/CV-0040.webp",
+      "alt": "春曉・禮盒茶席情境",
+      "w": 2400,
+      "h": 1488
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/gallery/CV-0040.webp",
+          "alt": "春曉・禮盒茶席情境",
+          "w": 2400,
+          "h": 1488
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -1208,13 +1216,21 @@
     "summary": "12 入／盒 · 單一茶款，整盒擇一",
     "description": "暮冬與初春的景色，化為盒面的花鳥構圖。十二尾同款獲獎茶藏在桐木盒中，將季節的觀看，延續到一杯茶的時間。",
     "image": {
-      "src": "/media/gift-boxes/official-582.png",
-      "w": 630,
-      "h": 420,
-      "alt": "暮雪・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/gallery/CV-0041.webp",
+      "alt": "暮雪・禮盒茶席情境",
+      "w": 1200,
+      "h": 1200
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/gallery/CV-0041.webp",
+          "alt": "暮雪・禮盒茶席情境",
+          "w": 1200,
+          "h": 1200
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
