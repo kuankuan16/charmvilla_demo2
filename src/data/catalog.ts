@@ -98,7 +98,7 @@ const featuredImages: Record<string, Img> = {
   "reunion-paulownia-gift-box": site("featured-reunion-paulownia-gift-box.webp", "團圓桐木木盒・棚拍商品照"),
   "bird-chopstick-rest": site("featured-bird-chopstick-rest.webp", "鳥形筷架・棚拍商品照"),
 };
-const withShopify = (p: Product): Product => { const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug]; const f = featuredImages[p.slug]; const q = f ? { ...p, featuredImage: f } : p; return typeof m === "object" && (m.handle || m.variantId) ? { ...q, shopify: m } : q; };
+const withShopify = (p: Product): Product => { const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug]; const f = featuredImages[p.slug]; const q = f ? { ...p, featuredImage: f, views: p.views.some((v) => v.image.src === f.src) ? p.views : [...p.views, { label: "棚拍商品照", image: f }] } : p; return typeof m === "object" && (m.handle || m.variantId) ? { ...q, shopify: m } : q; };
 export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify);
 export const isSellable = (p: Product) => Boolean(p.price || p.shopify?.variantId);
 export const formatPrice = (amount: number, currency = "TWD") => currency === "TWD" ? `NT$ ${amount.toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
