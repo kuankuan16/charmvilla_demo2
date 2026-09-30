@@ -2,12 +2,14 @@
 // Fixed 50px header (reference: [data-header] fixed top-0 h-50 z-30) with the stepped full-screen menu.
 // Menu panels reveal with clip-path (.5s cubic-bezier(.3,.86,.36,.95)) and staggered delays.
 import { useCallback, useEffect, useRef, useState } from "react";
-import { brand, cart, sections } from "@/data/content";
+import Link from "next/link";
+import { brand, sections } from "@/data/content";
+import CartButton from "@/components/cart/CartButton";
 import { getScroller } from "@/lib/motion/scroller";
 
 export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const [open, setOpen] = useState(false);
-  const sectionHref = (id: string) => id === "hero" || id === "visit" ? `${innerPage ? "/" : ""}#${id}` : `/collections/${id}`;
+  const sectionHref = (id: string) => id === "account" ? "/account" : id === "hero" || id === "visit" ? `${innerPage ? "/" : ""}#${id}` : `/collections/${id}`;
   const panelRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
   const previouslyOpen = useRef(false);
@@ -41,7 +43,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   }, [open, close, innerPage]);
 
   // All navigation lives in the full-screen menu; "All Objects" leads, then the sections.
-  const navItems = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero")];
+  const navItems = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero"), { id: "account", label: "Account", zh: "會員" } as const];
 
   return (
     <header data-header="" className={`fixed left-0 top-0 z-30 h-50 w-full ${open ? "menu--opened" : ""}`}>
@@ -61,9 +63,10 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <a href={sectionHref("visit")} aria-label="門市資訊" title="門市資訊" onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.4" /></svg>
           </a>
-          <a href={cart.href} target="_blank" rel="noreferrer" aria-label={cart.label} title={cart.label}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg>
-          </a>
+          <Link href="/account" aria-label="會員" title="會員" onClick={() => setOpen(false)}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+          </Link>
+          <CartButton />
         </div>
       </div>
 

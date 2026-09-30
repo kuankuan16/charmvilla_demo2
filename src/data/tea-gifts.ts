@@ -1,4 +1,5 @@
 import officialImages from "./gift-box-images.json";
+import officialPrices from "./official-prices.json";
 import { gallery, site, type Img } from "./content";
 import type { Product } from "./catalog";
 
@@ -82,6 +83,7 @@ export const teaGiftProducts: Product[] = teaGifts.map(gift => {
     story: { title: "一盒風景，一席茶時", body: "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。", image: journalStory },
     variant: gift.variant,
     officialUrl: `https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=${gift.officialId}`,
+    price: { amount: (officialPrices.prices as Record<string, number>)[String(gift.officialId)], currency: "TWD" },
     giftBox: { pieces: gift.pieces, series: gift.series, contents: gift.contents, choices: gift.choices },
   };
 });

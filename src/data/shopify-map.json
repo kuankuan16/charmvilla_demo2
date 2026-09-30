@@ -1,0 +1,76 @@
+{
+  "_how": "For each sellable product paste the Shopify product handle and the variant GID (Shopify admin → Products → variant → copy 'gid://shopify/ProductVariant/…'). Leave empty until the store exists; empty entries fall back to the local cart.",
+  "_currency_note": "Prices shown on the site in shopify mode come from the Storefront API (Shopify Markets decides TWD/USD/JPY); the TWD list in official-prices.json is only the local-mode fallback.",
+  "reunion-paper-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "reunion-paulownia-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "year-of-plenty-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "blossoming-prosperity-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "spring-blossoms-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "kyoto-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "heart-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "fruit-infusion-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "rose-encounter-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "tea-to-share-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "spring-dawn-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "winter-blossom-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "orchid-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "purple-butterfly-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "small-moon-tea-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "full-moon-tea-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "christmas-edition-stocking": {
+    "handle": "",
+    "variantId": ""
+  },
+  "christmas-edition-candy-cane": {
+    "handle": "",
+    "variantId": ""
+  }
+}

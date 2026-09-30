@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Picture } from "@/components/ui";
-import { getCategory, productHref, type Product } from "@/data/catalog";
+import { getCategory, productHref, formatPrice, type Product } from "@/data/catalog";
 import { imageFit } from "@/data/content";
 
 export default function ProductCard({ product, index = 0, animated = false }: { product: Product; index?: number; animated?: boolean }) {
@@ -11,6 +11,7 @@ export default function ProductCard({ product, index = 0, animated = false }: { 
         <div className="catalog-card-meta"><span>{getCategory(product.category)?.en}</span></div>
         <h3 className="tc">{product.name}</h3>
         <p className="tc">{product.summary}</p>
+        {product.price && <p className="catalog-card-price">{formatPrice(product.price.amount, product.price.currency)}</p>}
         <span className="catalog-card-link tc">{product.category === "tea" ? "查看禮盒" : "欣賞作品"}</span>
       </Link>
     </article>

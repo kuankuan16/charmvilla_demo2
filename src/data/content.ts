@@ -187,7 +187,7 @@ export const showMore = {
 
 // Header cart button (user 2026-09-30: 像電商有購物車的按鈕). This site has no checkout; the button opens the official
 // online store where orders are placed. No prices or stock are shown here.
-export const cart = { href: "https://www.charmvilla.com.tw/product.php?lang=tw&tb=1", label: "前往官方線上商店選購" };
+export const officialStore = { href: "https://www.charmvilla.com.tw/product.php?lang=tw&tb=1", label: "官方線上商店" };
 
 // Social accounts as listed in the footer of https://www.charmvilla.com.tw/product.php?lang=tw&tb=1 (2026-09-30).
 export const social = [

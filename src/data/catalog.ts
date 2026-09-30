@@ -1,5 +1,6 @@
 import { teaGiftProducts, type TeaContents } from "./tea-gifts";
 import { christmasGiftProducts } from "./christmas-gifts";
+import shopifyMap from "./shopify-map.json";
 import { bags, jewelry, gallery, type Img } from "./content";
 
 // Product facts come from the existing approved content and asset manifest.
@@ -20,6 +21,10 @@ export type Product = {
   story: { title: string; body: string; image?: Img };
   variant?: { group: string; label: string };
   officialUrl?: string;
+  /** Local-mode list price (official TWD). In shopify mode the Storefront API price wins. */
+  price?: { amount: number; currency: "TWD" };
+  /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
+  shopify?: { handle: string; variantId: string };
   giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents }[] };
 };
 
@@ -83,7 +88,10 @@ const teawareProducts: Product[] = tablewareEntries.map((p) => ({
   story: { title: tablewareStories[p.slug].title, body: tablewareStories[p.slug].body, image: p.ids[1] ? gallery(p.ids[1], p.name) : undefined },
 }));
 
-export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts];
+const withShopify = (p: Product): Product => { const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug]; return typeof m === "object" && (m.handle || m.variantId) ? { ...p, shopify: m } : p; };
+export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify);
+export const isSellable = (p: Product) => Boolean(p.price || p.shopify?.variantId);
+export const formatPrice = (amount: number, currency = "TWD") => currency === "TWD" ? `NT$ ${amount.toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
 export const productHref = (product: Product | string) => `/products/${typeof product === "string" ? product : product.slug}`;
 export const categoryHref = (category: string) => `/collections/${category}`;
 export const findProduct = (slug: string) => products.find((p) => p.slug === slug);
