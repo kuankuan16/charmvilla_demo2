@@ -1,0 +1,10 @@
+{
+  "deployment": "dpl_9hZMFvDjPB1CBWXqxSGbGXqTpBPB",
+  "status": 200,
+  "hashMatch": true,
+  "browserVerified": {
+    "bothCaptionsBelowLogo": true,
+    "flexDirection": "column",
+    "transparentLogoVisible": true
+  }
+}

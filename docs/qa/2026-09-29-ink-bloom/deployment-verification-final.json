@@ -1,0 +1,173 @@
+{
+  "url": "https://charmvilla-gallery-site.vercel.app",
+  "deploymentId": "dpl_FbqTA6RT9R46PqL6NeF87H3c6CuP",
+  "ready": true,
+  "allRoutesPass": true,
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/collections/all",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/collections/bags",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/collections/jewelry",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/collections/tea",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/collections/teaware",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/braided-leather-bag-white",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/braided-leather-bag-blue",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/braided-leather-bag-pink",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/pearl-chain-goldfish-earrings",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/bezel-diamond-goldfish-earrings",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/single-diamond-goldfish-earrings",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/twin-goldfish-earrings",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-diamond-stud",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-diamond-drop",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-tea-rose-jinxuan",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-tea-lychee-ruby",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-tea-honey-oriental-beauty",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-tea-osmanthus-baozhong",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/goldfish-tea-roselle-roasted-oolong",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/prosperity-dessert-stand",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/prosperity-stand-gift-box",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/wooden-coaster-teaspoon",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/bird-chopstick-rest",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/ginkgo-teaspoon-gift-box",
+      "status": 200,
+      "header": true
+    },
+    {
+      "route": "/products/wooden-chopsticks",
+      "status": 200,
+      "header": true
+    }
+  ],
+  "home": {
+    "featuredCount": 6,
+    "oldCategorySections": [],
+    "awardsMoved": true,
+    "storeCards": 2,
+    "fishSmall": true,
+    "fishLeft": true
+  },
+  "assets": [
+    {
+      "path": "/media/site/kv-rose-portrait.webp",
+      "status": 200,
+      "hashMatch": true
+    },
+    {
+      "path": "/media/site/kv-lychee-portrait.webp",
+      "status": 200,
+      "hashMatch": true
+    },
+    {
+      "path": "/media/site/kv-beauty-portrait.webp",
+      "status": 200,
+      "hashMatch": true
+    },
+    {
+      "path": "/media/site/kv-osmanthus-portrait.webp",
+      "status": 200,
+      "hashMatch": true
+    },
+    {
+      "path": "/media/site/kv-roselle-portrait.webp",
+      "status": 200,
+      "hashMatch": true
+    }
+  ]
+}

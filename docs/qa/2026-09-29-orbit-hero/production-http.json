@@ -1,0 +1,33 @@
+[
+  {
+    "url": "https://charmvilla-gallery-site.vercel.app/",
+    "status": 200,
+    "new_hero_present": true
+  },
+  {
+    "url": "https://charmvilla-gallery-site.vercel.app/products/braided-leather-bag-white",
+    "status": 200
+  },
+  {
+    "url": "https://charmvilla-gallery-site.vercel.app/products/pearl-chain-goldfish-earrings",
+    "status": 200
+  },
+  {
+    "url": "https://charmvilla-gallery-site.vercel.app/media/hero/dancer-male.webp",
+    "status": 200,
+    "sha256": "205437a59ea001e2a6efad4294698d2b1f1568c89b101f1d95bf585d0cb1166b",
+    "local_match": true
+  },
+  {
+    "url": "https://charmvilla-gallery-site.vercel.app/media/hero/dancer-female.webp",
+    "status": 200,
+    "sha256": "195349139a4a5702e97a0e39c9f1d07fd0ac343947c852a4ec6636d87e77aba1",
+    "local_match": true
+  },
+  {
+    "url": "https://charmvilla-gallery-site.vercel.app/media/gallery/CV-0380.webp",
+    "status": 200,
+    "sha256": "e4d8433d41d63aef4db957923de2a8693da4f0576de3116bb12327049fcb652c",
+    "local_match": true
+  }
+]

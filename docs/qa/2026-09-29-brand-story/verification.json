@@ -1,0 +1,37 @@
+{
+  "url": "https://charmvilla-gallery-site.vercel.app/",
+  "httpStatus": 200,
+  "deploymentId": "dpl_GJKLdG2u2yxJKk3ywdobygyhGWYa",
+  "copyPublished": true,
+  "galleryPublished": true,
+  "assets": [
+    {
+      "path": "media/site/about-02.webp",
+      "httpStatus": 200,
+      "sha256Match": true
+    },
+    {
+      "path": "media/gallery/CV-0347.webp",
+      "httpStatus": 200,
+      "sha256Match": true
+    },
+    {
+      "path": "media/gallery/CV-0436.webp",
+      "httpStatus": 200,
+      "sha256Match": true
+    }
+  ],
+  "check": "passed; 3 existing img warnings",
+  "browserQA": {
+    "desktop": "1440x900",
+    "mobile": "390x844",
+    "textColumnDesktop": "60.2% of viewport",
+    "newSectionOverflow": false,
+    "thumbnailSelection": "passed",
+    "arrowKeySelection": "passed",
+    "scrollRevealAndReverse": "passed",
+    "scrollScale": "1.032847 observed during scroll",
+    "reducedMotion": "all characters opacity 1; sticky position relative; gallery height 844 at viewport 844",
+    "liveAutoplay": "observed automatic change from 手作細節 to 皮革與身體 with thumbnail progress advancing"
+  }
+}

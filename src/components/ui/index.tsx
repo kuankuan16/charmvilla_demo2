@@ -4,15 +4,6 @@ import Image from "next/image";
 import type { Img } from "@/data/content";
 import dims from "@/data/images.json";
 
-/** Big "N:" section index (reference: 15.4rem / 19.5rem numerals at the top-left of a section). */
-export function SectionIndex({ n, className = "" }: { n: string; className?: string }) {
-  return (
-    <div data-animation="split" data-split="chars" className={`text-15xl font-bold leading-xxs tracking-tightest laptop:text-19xl ${className}`} aria-hidden="true">
-      {n}
-    </div>
-  );
-}
-
 /** Uppercase heading with split-lines entrance. */
 export function Heading({ as: Tag = "h2", children, className = "", delay }: { as?: "h1" | "h2" | "h3"; children: ReactNode; className?: string; delay?: number }) {
   return (

@@ -1,0 +1,20 @@
+{
+  "url": "https://charmvilla-gallery-site.vercel.app/",
+  "status": 200,
+  "deployment": "dpl_AhVnWbG9XenpbPwd5CfxYpMy2ZAF",
+  "ready": true,
+  "live_dom": {
+    "nav_dots": 0,
+    "nav_arrows": 0,
+    "top_rule_content": "none",
+    "labels": [
+      "All Objects",
+      "Leather Bag",
+      "Jewelry",
+      "Tea",
+      "Teaware",
+      "Get in Touch"
+    ]
+  },
+  "local_visual": "Chrome 1440x900 header screenshot verified"
+}

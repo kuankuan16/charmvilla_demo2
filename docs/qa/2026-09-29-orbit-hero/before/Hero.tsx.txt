@@ -1,0 +1,77 @@
+// Hero — oversized two-line title, Chinese subtitle, enlarged editorial portrait.
+// Server component: markup + data-animation attributes only; the engine in src/lib/motion drives motion.
+import { Fragment } from "react";
+import { hero } from "@/data/content";
+import { Picture } from "@/components/ui";
+
+export default function Hero() {
+  const words = hero.title.split(" ");
+
+  return (
+    <section
+      id="hero"
+      className="relative overflow-hidden md:-mt-50 md:h-screen"
+      data-animation="parallax"
+      data-scroll-speed="5"
+      data-start="top top"
+      data-end="+=110%"
+      data-start-at="0"
+    >
+      {/* Title: two words, two lines, spanning both halves. */}
+      <h1
+        className="relative md:absolute md:left-25 lg:left-30 md:top-65 z-20 px-25 pt-30 md:p-0 text-hero-mobile md:text-[13vw] laptop:text-hero font-medium leading-xs tracking-tightest uppercase"
+        data-animation="split"
+        data-hero-reveal=""
+        data-split="words, chars"
+        data-ease="expo.out"
+        data-duration="1.35"
+        data-stagger-interval="0.05"
+      >
+        {words.map((word, i) => (
+          <Fragment key={word}>
+            {i > 0 && <br />}
+            {word}
+          </Fragment>
+        ))}
+      </h1>
+
+      {/* Subtitle (Chinese) — in flow on mobile, absolute in the left half on desktop. */}
+      <p
+        className="tc md:absolute md:left-25 lg:left-30 laptop:top-[30vw] md:top-[38vw] md:max-w-[40%] px-25 mt-20 md:mt-0 md:p-0 text-2xl lg:text-3xl font-bold leading-tight"
+        data-animation="split"
+        data-hero-reveal=""
+        data-split="lines"
+        data-delay="0.2"
+      >
+        {hero.subtitle}
+      </p>
+
+      {/* Mobile portrait — larger image, preserving its intrinsic proportions. */}
+      <div className="md:hidden mt-25 px-15 pt-20">
+        <Picture img={hero.image} sizes="100vw" className="w-full" />
+      </div>
+
+      {/* Desktop portrait — generous scale with room for both headline lines. */}
+      <div data-animation="ambient-move" data-ambient-direction="x" className="hero-portrait hidden md:block">
+        <div data-ambient-box="" className="relative h-full w-full">
+          <Picture img={hero.image} fill sizes="(min-width:1744px) 680px, 39vw" priority className="h-full w-full" />
+        </div>
+      </div>
+
+      {/* Scrub-to-ink overlay as the hero leaves (laptop and up).
+          data-start="top top": the engine default ("top bottom") is already half-elapsed for a full-height
+          element at the top of the page, which would tint the hero 50% at rest. */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-30 hidden laptop:block bg-ink"
+        data-animation="fade"
+        data-from="0"
+        data-to="0.6"
+        data-scrub=""
+        data-start="top top"
+        data-end="bottom top"
+        data-repeat=""
+      />
+    </section>
+  );
+}

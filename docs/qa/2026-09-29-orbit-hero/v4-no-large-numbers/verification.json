@@ -1,0 +1,12 @@
+{
+  "url": "https://charmvilla-gallery-site.vercel.app/",
+  "deployment": "dpl_6pq8nkx87Y5ZSCFMCwGuqusB567e",
+  "http": 200,
+  "year_markup_absent": true,
+  "section_number_markup_absent": true,
+  "local_browser": {
+    "large_numeric_leaf_nodes": [],
+    "preloader_finished": true,
+    "section_layout": "visually verified"
+  }
+}

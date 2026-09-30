@@ -1,7 +1,7 @@
 // Section 2 — Leather bag. E-commerce logic: one card per colour with a large image; the other angles
 // are available on its product page (ProductGrid). White ground per the user's direction (2026-09-24).
 import { bags } from "@/data/content";
-import { SectionIndex, Heading, Label, Btn } from "@/components/ui";
+import { Heading, Label, Btn } from "@/components/ui";
 import ProductGrid from "@/components/sections/ProductGrid";
 
 export default function Bags() {
@@ -9,8 +9,7 @@ export default function Bags() {
     <section id="bags" className="relative bg-white pt-30 pb-100 laptop:pb-180">
       <div className="container-x grid grid-cols-12 items-start gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-6">
-          <SectionIndex n={bags.index} />
-          <Label className="mt-15"><span className="tc">{bags.kicker}</span></Label>
+          <Label><span className="tc">{bags.kicker}</span></Label>
         </div>
         <div className="col-span-12 mt-20 lg:col-span-6 lg:mt-0">
           <Heading className="text-3xl lg:text-4xl">{bags.heading}</Heading>

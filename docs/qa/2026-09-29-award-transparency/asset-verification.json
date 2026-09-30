@@ -1,0 +1,12 @@
+{
+  "dimensions": [
+    360,
+    254
+  ],
+  "transparentPixels": 80575,
+  "totalPixels": 91440,
+  "cornerAlpha": 0,
+  "sha256": "748c9cafc1bd74b70434c4566ee984e94cf5022c6a41c03b506392f738b5daad",
+  "originalPreserved": true,
+  "onlyRemovedPath": "white rectangular background"
+}

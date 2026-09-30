@@ -125,6 +125,7 @@ export function createScroller(): Scroller | null {
       wrapper.removeEventListener("scroll", updateState);
       lenis?.destroy();
       ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.defaults({ scroller: window });
       current = null;
     },
   };

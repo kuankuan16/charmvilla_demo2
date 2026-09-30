@@ -1,0 +1,32 @@
+{
+  "url": "https://charmvilla-gallery-site.vercel.app",
+  "deploymentId": "dpl_EbzYEF3AzQf7eL37BWZ4ds2heUE1",
+  "ready": true,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "newFishSize": true,
+      "newFishPosition": true,
+      "galleryCopy": true
+    },
+    {
+      "path": "/collections/all",
+      "status": 200
+    },
+    {
+      "path": "/products/pearl-chain-goldfish-earrings",
+      "status": 200
+    },
+    {
+      "path": "/media/hero/dancer-female-selected.webp",
+      "status": 200,
+      "assetHashMatches": true
+    },
+    {
+      "path": "/brand/goldfish-white.svg",
+      "status": 200,
+      "assetHashMatches": true
+    }
+  ]
+}

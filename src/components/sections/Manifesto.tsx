@@ -1,55 +1,138 @@
-import { manifesto } from "@/data/content";
-import { SectionIndex, Heading, Label, Picture, Rule } from "@/components/ui";
+"use client";
 
-/**
- * Section 1: — the manifesto (reference: Laxer "1:" white section, portrait image left,
- * sticky headline + ruled statement rows on the right).
- */
+import Image from "next/image";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { manifesto, tea } from "@/data/content";
+import InkBloom from "@/components/ui/InkBloom";
+import { SCROLLER_SELECTOR } from "@/lib/motion/scroller";
+
 export default function Manifesto() {
-  return (
-    <section id="manifesto" className="relative bg-white mb-100 laptop:mb-180 pt-30 pb-60">
-      {/* Top row: big index numeral + kicker label */}
-      <div className="container-x grid grid-cols-12 gap-x-16 lg:gap-x-20 items-start">
-        <div className="col-span-12 lg:col-span-6">
-          <SectionIndex n={manifesto.index} />
-        </div>
-        <div className="col-span-12 lg:col-span-6">
-          <Label>
-            <span className="tc">{manifesto.kicker}</span>
-          </Label>
-        </div>
-      </div>
+  const root = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const select = useRef<(index: number) => void>(() => {});
+  const paused = useRef(false);
+  const focused = useRef(false);
+  const touch = useRef<{ x: number; y: number } | null>(null);
 
-      {/* Body: portrait image (clip reveal) + sticky statement column */}
-      <div className="container-x grid grid-cols-12 gap-x-16 lg:gap-x-20 mt-40">
-        <div className="col-span-12 lg:col-span-6">
-          <div className="relative" data-animation="clip">
-            <div className="relative aspect-[4/5] w-full">
-              <Picture img={manifesto.image} fill sizes="(min-width:1024px) 50vw, 100vw" />
-            </div>
-            <span className="dot absolute -right-5 -bottom-5" aria-hidden="true" />
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const scroller = document.querySelector<HTMLElement>(SCROLLER_SELECTOR);
+      if (!scroller) return;
+      const chars = el.querySelectorAll<HTMLElement>(".story-char");
+      gsap.set(chars, { opacity: .2 });
+      gsap.to(chars, {
+        opacity: 1, stagger: .035, duration: .15, ease: "none",
+        scrollTrigger: { scroller, trigger: el.querySelector(".story-copy"), start: "top 80%", end: "bottom 80%", scrub: true, invalidateOnRefresh: true },
+      });
+      el.querySelectorAll<HTMLElement>(".story-brush").forEach((brush, i) => {
+        gsap.fromTo(brush, { yPercent: 12 }, { yPercent: -18, ease: "none", scrollTrigger: {
+          scroller, trigger: i ? el.querySelector(".story-gallery") : el, start: "top bottom", end: "bottom top", scrub: true,
+        } });
+      });
+      gsap.to(el.querySelector(".story-gallery-stage"), {
+        "--gallery-scale": 1.11, ease: "none",
+        scrollTrigger: { scroller, trigger: el.querySelector(".story-gallery"), start: "top top", end: "bottom bottom", scrub: true },
+      });
+    }, el);
+
+    let current = 0;
+    let progress = 0;
+    let visible = false;
+    let last = performance.now();
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const galleryEl = el.querySelector<HTMLElement>(".story-gallery")!;
+    const bars = el.querySelectorAll<HTMLElement>(".story-thumb-progress");
+    const choose = (index: number) => {
+      current = (index + manifesto.images.length) % manifesto.images.length;
+      progress = 0;
+      bars.forEach(bar => { bar.style.transform = "scaleX(0)"; });
+      setActive(current);
+    };
+    select.current = choose;
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; last = performance.now(); }, { threshold: .15 });
+    observer.observe(galleryEl);
+    const tick = () => {
+      const now = performance.now();
+      const delta = Math.min(now - last, 100);
+      last = now;
+      if (!visible || document.hidden || paused.current || focused.current || motion.matches) return;
+      progress += delta / 5000;
+      if (progress >= 1) choose(current + 1);
+      bars[current].style.transform = `scaleX(${progress})`;
+    };
+    gsap.ticker.add(tick);
+    document.fonts.ready.then(() => { if (el.isConnected) ScrollTrigger.refresh(); });
+    return () => { media.revert(); observer.disconnect(); gsap.ticker.remove(tick); select.current = () => {}; };
+  }, []);
+
+  return (
+    <section id="manifesto" ref={root} className="brand-story" aria-labelledby="story-heading">
+      <div className="story-message">
+        <div className="story-brush story-brush--message" aria-hidden="true"><InkBloom observe seed={11} /></div>
+        <div className="story-text-column">
+          <h2 id="story-heading" className="story-kicker">The Gallery</h2>
+          <div className="story-copy tc">
+            {manifesto.paragraphs.map((text, i) => <p key={text} className={i === 0 ? "story-lead" : undefined}>
+              <span className="sr-only">{text}</span>
+              <span aria-hidden="true">{Array.from(text).map((char, j) => <span key={j} className="story-char">{char}</span>)}</span>
+            </p>)}
+          </div>
+          <div className="story-honours" aria-label="小金魚茶包設計榮譽" data-brand-awards="">
+            <p className="story-honours-label tc">小金魚茶包 · {tea.honours[0]}</p>
+            <ul className="story-honours-list">
+              {tea.awards.map(award => <li key={award.image.src}>
+                <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />
+                <p className="tc">{award.text}</p>
+              </li>)}
+            </ul>
           </div>
         </div>
-
-        <div className="col-span-12 lg:col-span-6">
-          <div className="laptop:sticky laptop:top-50 self-start mt-40 lg:mt-0">
-            <Heading className="tc text-3xl lg:text-4xl leading-tight">{manifesto.heading}</Heading>
-            <Rule className="my-25" />
-            {manifesto.body.map((line) => (
-              <p
-                key={line}
-                className="tc text-xl lg:text-2xl font-bold leading-tight py-25 border-t border-ink/20"
-                data-animation="split"
-                data-split="lines"
-                data-delay="0.1"
-              >
-                {line}
-              </p>
-            ))}
-            <Rule />
-            <p className="tc mt-25 text-base font-bold text-stone-deep" data-animation="moveUp" data-delay="0.2">
-              {manifesto.tail}
-            </p>
+      </div>
+      <div className="story-gallery" aria-label="手作與日常影像" aria-roledescription="輪播"
+        onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }}
+        onFocusCapture={() => { focused.current = true; }}
+        onBlurCapture={e => { if (!e.currentTarget.contains(e.relatedTarget)) focused.current = false; }}
+        onTouchStart={e => { touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }}
+        onTouchEnd={e => {
+          if (!touch.current) return;
+          const dx = e.changedTouches[0].clientX - touch.current.x;
+          const dy = e.changedTouches[0].clientY - touch.current.y;
+          if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) select.current(active + (dx < 0 ? 1 : -1));
+          touch.current = null;
+        }}>
+        <div className="story-gallery-sticky">
+          <div className="story-gallery-window">
+          <div className="story-gallery-stage">
+            {manifesto.images.map((img, i) => {
+              const offset = (i - active + 4) % 3 - 1;
+              return <figure key={img.src} className="story-slide" data-active={active === i} aria-hidden={active !== i}
+                style={{ "--slide-offset": offset } as CSSProperties}>
+                <Image src={img.src} alt={img.alt} fill sizes="100vw" draggable={false} />
+              </figure>;
+            })}
+          </div>
+          </div>
+          <div className="story-brush story-brush--gallery" aria-hidden="true"><InkBloom observe seed={14} /></div>
+          <div className="story-thumbnails" role="group" aria-label="選擇影像">
+            {manifesto.images.map((img, i) => <button key={img.src} className="story-thumb" aria-label={`查看${img.label}`} aria-pressed={active === i}
+              onClick={() => select.current(i)} onKeyDown={e => {
+                if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+                  e.preventDefault();
+                  const next = (i + (e.key === "ArrowRight" ? 1 : 2)) % 3;
+                  select.current(next);
+                  const buttons = e.currentTarget.parentElement?.querySelectorAll("button");
+                  buttons?.[next]?.focus();
+                }
+              }}>
+              <Image src={img.src} alt="" fill sizes="90px" />
+              <span className="story-thumb-progress" />
+            </button>)}
           </div>
         </div>
       </div>

@@ -19,25 +19,27 @@ export const sections = [
 
 export const hero = {
   title: "EVERYDAY LUXURIES",
-  subtitle: "把日常的物件，當作展品。",
-  exhibitsLabel: "EXHIBITS:",
-  exhibits: [
-    { label: "LEATHER BAG", zh: "真皮包", href: "#bags" },
-    { label: "JEWELRY", zh: "金飾", href: "#jewelry" },
-    { label: "TEA", zh: "茶包", href: "#tea" },
-    { label: "TEAWARE", zh: "茶器", href: "#teaware" },
-  ],
+  subtitle: "藝術即生活",
   image: gallery("CV-0422", "白色編織提把皮革包，沙發人物情境", 2048, 2048),
-  caption: { name: "CHARM VILLA", role: "TAIPEI · KYOTO" },
+  slides: [
+    { id: "male", src: "/media/hero/dancer-male.webp", alt: "黑白男舞者，手持白色編織提把皮革包；畫面裁至腰部以上", w: 1844, h: 1896, label: "編織提把皮革包", en: "Leather bag", href: "/products/braided-leather-bag-white" },
+    { id: "female", src: "/media/hero/dancer-female-selected.webp", alt: "黑白女舞者高舉手臂，白色編織提把皮革包掛於腕間", w: 1690, h: 2294, label: "編織提把皮革包", en: "Leather bag", href: "/products/braided-leather-bag-white" },
+    { id: "jewelry", src: "/media/gallery/CV-0380.webp", alt: "側臉光影中的珍珠長鏈小金魚耳環，米白色衣領", w: 6146, h: 7680, label: "珍珠長鏈小金魚耳環", en: "Goldfish jewelry", href: "/products/pearl-chain-goldfish-earrings" },
+  ],
 };
 
 export const manifesto = {
-  index: "1:",
-  kicker: "藝廊的第一眼",
-  heading: "由藝術家與設計師主導，我們也策展。",
-  body: ["首飾、手袋、香氛與器物。", "每一次發表，都是一場小小的展覽。"],
-  image: gallery("CV-0426", "白色與藍色編織提把皮革包，紙捲雕塑靜物", 896, 1120),
-  tail: "從台北的小工作室游向世界。",
+  paragraphs: [
+    "藝術即生活",
+    "生活，是一座可以親近的藝廊。光落在皮革的細紋，隨轉身掠過耳畔的金色；一件器物被拿起、放下，材質與手的關係，也在這些微小的動作裡變得清楚。",
+    "在 CHARM VILLA，觀看從細節開始。編織的交接、金飾的輪廓、茶袋的一道摺痕，都是理解一件作品的入口。職人反覆琢磨材質與比例，讓手作的心意有了具體的形。作品走出陳列，來到肩上、耳畔與餐桌，藝術便有了日常的尺度。",
+  ],
+  awards: "小金魚茶包榮獲 2014 德國紅點傳達設計獎（Red Dot Winner）與 2015 德國 iF 設計大獎（iF DESIGN AWARD）。",
+  images: [
+    { ...site("about-02.webp", "指尖摺製小金魚茶包的手作情境", 1361, 1824), label: "手作細節" },
+    { ...gallery("CV-0347", "春日花影與玻璃杯中的小金魚茶包", 1344, 752), label: "茶香日常" },
+    { ...gallery("CV-0436", "舞者躍起，手持白色編織提把皮革包", 3312, 2480), label: "皮革與身體" },
+  ],
 };
 
 export const bags = {
@@ -97,10 +99,10 @@ export const jewelry = {
   heading: "小金魚 金飾",
   headingEn: "GOLDFISH JEWELRY",
   items: [
-    { n: "01.", title: "珍珠長鏈小金魚耳環", desc: "珍珠長鏈，金魚自鏈末垂墜。", image: gallery("CV-0377", "珍珠長鏈小金魚耳環", 6144, 7680) },
-    { n: "02.", title: "吐鑽小金魚耳環・包鑲", desc: "包鑲單鑽於魚嘴前，側臉輪廓。", image: gallery("CV-0370", "吐鑽小金魚耳環・包鑲", 2560, 3200) },
-    { n: "03.", title: "單鑽小金魚耳環", desc: "單鑽，實心拋光平面金。", image: gallery("CV-0373", "單鑽小金魚耳環", 6144, 7680) },
-    { n: "04.", title: "雙星小金魚耳環", desc: "兩尾金魚，象牙花影。", image: gallery("CV-0378", "雙星小金魚耳環", 6146, 7680) },
+    { n: "01.", title: "珍珠長鏈小金魚耳環", desc: "沿著珍珠長鏈，一尾金魚垂落在頸側。", image: gallery("CV-0377", "珍珠長鏈小金魚耳環", 6144, 7680) },
+    { n: "02.", title: "吐鑽小金魚耳環・包鑲", desc: "魚嘴前的一顆包鑲單鑽，點亮側臉的輪廓。", image: gallery("CV-0370", "吐鑽小金魚耳環・包鑲", 2560, 3200) },
+    { n: "03.", title: "單鑽小金魚耳環", desc: "單鑽與拋光金面，在耳畔映出不同的光。", image: gallery("CV-0373", "單鑽小金魚耳環", 6144, 7680) },
+    { n: "04.", title: "雙星小金魚耳環", desc: "兩尾金魚相伴，細看輪廓之間的呼應。", image: gallery("CV-0378", "雙星小金魚耳環", 6146, 7680) },
     { n: "05.", title: "小金魚鑽石耳釘", desc: "金色魚形與一顆圓鑽，貼近耳畔。", image: site("goldfish-stud-sketch.webp", "小金魚鑽石耳釘，素描配戴圖", 896, 1120) },
     { n: "06.", title: "小金魚垂鑽耳環", desc: "金魚下方，一顆圓鑽隨短鏈垂墜。", image: site("goldfish-drop-sketch.webp", "小金魚垂鑽耳環，素描配戴圖", 896, 1120) },
   ],
@@ -127,11 +129,11 @@ export const tea = {
     { code: "D", title: "桂花與包種", tea: "包種", flower: "桂花", image: site("kv-osmanthus.webp", "桂花與包種的小金魚茶包", 1200, 1500) },
     { code: "E", title: "洛神與焙香烏龍", tea: "焙香烏龍", flower: "洛神", image: site("kv-roselle.webp", "洛神與焙香烏龍的小金魚茶包", 1200, 1500) },
   ],
-  craft: "一塊茶袋布，經過裁剪、摺疊、縫製，在職人指尖折出魚鰭與尾巴，再填入台灣山頭的茶葉。",
+  craft: "形，從一雙手開始。薄透茶袋經過裁剪、摺疊與縫製，魚鰭和尾巴逐漸成形，再填入台灣茶葉。水注入杯中，原本靜止的輪廓隨之舒展，手作也有了另一種觀看方式。",
   honours: ["全球 34 國設計專利", "2014 德國紅點傳達設計獎 Red Dot Winner", "2015 德國 iF 設計大獎 iF Gold Award"],
   awards: [
     { image: { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 }, text: "2015 德國 iF 設計大獎（iF DESIGN AWARD）" },
-    { image: { src: "/brand/awards/reddot-winner-2014.svg", alt: "Red Dot Winner 2014", w: 1200, h: 847 }, text: "2014 德國紅點傳達設計獎（Red Dot Winner）" },
+    { image: { src: "/brand/awards/reddot-winner-2014-transparent.svg", alt: "Red Dot Winner 2014", w: 1200, h: 847 }, text: "2014 德國紅點傳達設計獎（Red Dot Winner）" },
   ],
 };
 
@@ -158,7 +160,7 @@ export const shown = {
   ],
   awards: [
     { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 },
-    { src: "/brand/awards/reddot-winner-2014.svg", alt: "Red Dot Award 2014 Winner", w: 1200, h: 847 },
+    { src: "/brand/awards/reddot-winner-2014-transparent.svg", alt: "Red Dot Award 2014 Winner", w: 1200, h: 847 },
   ],
   regent: { src: "/brand/regent-taipei.svg", alt: "Regent Taipei", w: 1094, h: 437 },
 };
@@ -168,7 +170,7 @@ export const shown = {
 export const partners = {
   label: "PARTNERS:",
   image: gallery("CV-0423", "編織提把皮革包・藍色，肩背情境", 1792, 2240),
-  statement: "CHARM VILLA 與台北晶華酒店麗晶精品、The Scholart Selection 及京都寺町的門市夥伴合作，把小金魚茶包與真皮包，帶到台北、洛杉磯與京都。",
+  statement: "作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The Scholart Selection，到京都寺町，CHARM VILLA 與夥伴一同呈現作品，讓遠近的觀看，回到材質與細節。",
   statementEn: "REGENT TAIPEI · THE SCHOLART SELECTION · CHARM VILLA KYOTO",
   cta: { label: "WORK WITH US", zh: "合作洽詢", href: "https://www.instagram.com/charmvilla/" },
 };
@@ -200,7 +202,7 @@ export const visit = {
     },
     {
       id: "online", label: "線上", labelEn: "ONLINE",
-      text: "線上選購小金魚——站內瀏覽商品、加入購物袋與 Shopify 安全結帳。",
+      text: "在線上，延續觀看。瀏覽小金魚茶包與禮盒，為自己的茶席，或下一次相聚，挑選一份心意。",
       href: "https://charmvilla-rho.vercel.app/collection",
       image: site("shop-online.webp", "線上選購小金魚", 1600, 1067),
     },

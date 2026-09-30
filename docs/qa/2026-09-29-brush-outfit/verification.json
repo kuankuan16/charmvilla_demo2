@@ -1,0 +1,45 @@
+{
+  "url": "https://charmvilla-gallery-site.vercel.app",
+  "deploymentId": "dpl_Hpv3dQ3bgQeMrgAHWezgMWEJ9yN5",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "outfit": true
+    },
+    {
+      "path": "/collections/all",
+      "status": 200,
+      "outfit": true
+    },
+    {
+      "path": "/products/braided-leather-bag-white",
+      "status": 200,
+      "outfit": true
+    }
+  ],
+  "liveCss": {
+    "outfit": true,
+    "openingSequence": true,
+    "scaledCopy": true
+  },
+  "browserQA": {
+    "desktopSizes": [
+      "38.304px",
+      "26.712px",
+      "10.584px"
+    ],
+    "mobileSizes": [
+      "21px",
+      "16.1px",
+      "9.1px"
+    ],
+    "font": "Outfit loaded on homepage, collections, product",
+    "brush": "visually continuous past hero bottom",
+    "openingOverflow": "clip visible",
+    "scrollerOverflowX": "hidden",
+    "mobileGalleryStickyTop": 0,
+    "photoWindowOverflow": "hidden",
+    "brushParentOverflow": "visible"
+  }
+}

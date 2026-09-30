@@ -18,7 +18,7 @@ export default function Footer() {
               .filter((s) => s.id !== "hero")
               .map((s) => (
                 <li key={s.id}>
-                  <a href={`#${s.id}`} className="link-underline">
+                  <a href={s.id === "visit" ? "#visit" : `/collections/${s.id}`} className="link-underline">
                     {s.label}
                   </a>
                   <span className="tc ml-6 font-medium opacity-70">{s.zh}</span>

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "public/media/site/about-02.webp",
+    "source": "https://charmvilla-rho.vercel.app/images/generated/product-realism/about/about-02.webp",
+    "sha256": "4a1979039bd88ecbc93867ea7f9d4944eb3c646e3841146585a692224e5db846"
+  },
+  {
+    "path": "public/media/gallery/CV-0347.webp",
+    "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0347/webp",
+    "sha256": "523173a726c9f36695abd928ac3e5cc01ba7df5f637bf817a47c93ee84d3b63f"
+  },
+  {
+    "path": "public/media/gallery/CV-0436.webp",
+    "source": "https://charmvilla-gallery.vercel.app/#scene=SC-155&asset=CV-0436",
+    "sha256": "a043fcd023c6469a87c7bb9184776889613e5b932af03c9ba6eb946db1bbf321"
+  },
+  {
+    "path": "public/media/hero/brushes/paint1_2_pc.webp",
+    "source": "https://recruit.positive.co.jp/mg/wp-content/themes/recruit-theme2026/assets/img/top/1_kv/paint1_2_pc.webp",
+    "sha256": "bc1f72ad4b1b90c575c9a27b7bc6eb76a0f128bc8f5b24e70f7255a9f4e5d7f6"
+  },
+  {
+    "path": "public/media/hero/brushes/paint2_1_pc.webp",
+    "source": "https://recruit.positive.co.jp/mg/wp-content/themes/recruit-theme2026/assets/img/top/1_kv/paint2_1_pc.webp",
+    "sha256": "0a22a7d01a915b71fabbacd185d3871563ff4b7d86c7a448ddfebf305b54f56d"
+  }
+]

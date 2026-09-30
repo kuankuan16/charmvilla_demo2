@@ -1,0 +1,35 @@
+[
+  {
+    "id": "male",
+    "source": "user attachment",
+    "source_path": "/var/folders/hq/4f0xkrz17kb5hfp7xhvh7wkr0000gn/T/codex-clipboard-6bGR2b.png",
+    "preserved_original": "docs/qa/2026-09-29-orbit-hero/references/male-original.png",
+    "original_sha256": "358e38cd74965d37ed84497d823399ca98a692de21a2515a9f6c8a8be71a7da7",
+    "output": "public/media/hero/dancer-male.webp",
+    "sha256": "205437a59ea001e2a6efad4294698d2b1f1568c89b101f1d95bf585d0cb1166b",
+    "crop": "CSS aspect-ratio 1.11, top aligned, waist-up"
+  },
+  {
+    "id": "female",
+    "source": "user attachment",
+    "source_path": "/var/folders/hq/4f0xkrz17kb5hfp7xhvh7wkr0000gn/T/codex-clipboard-JhQ44n.png",
+    "preserved_original": "docs/qa/2026-09-29-orbit-hero/references/female-original.png",
+    "original_sha256": "fe182b91f617b82db32fbbb9c8becfa3172ce519486ffa5762cbf53b6869f05a",
+    "output": "public/media/hero/dancer-female.webp",
+    "sha256": "195349139a4a5702e97a0e39c9f1d07fd0ac343947c852a4ec6636d87e77aba1",
+    "crop": "full image"
+  },
+  {
+    "id": "jewelry",
+    "source_url": "https://charmvilla-gallery.vercel.app/#asset=CV-0380",
+    "output": "public/media/gallery/CV-0380.webp",
+    "sha256": "e4d8433d41d63aef4db957923de2a8693da4f0576de3116bb12327049fcb652c"
+  },
+  {
+    "id": "logo",
+    "source": "existing approved official logo",
+    "source_url": "https://charmvilla-gallery-site.vercel.app/brand/charmvilla-logo.png",
+    "path": "public/brand/charmvilla-logo.png",
+    "sha256": "c8e27c1a1cff3003e24495daa4bee21bf0ab7c4bd7716c9fee56100d738b1bae"
+  }
+]

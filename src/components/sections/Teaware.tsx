@@ -3,17 +3,16 @@ import { teawareCatalog, productHref } from "@/data/catalog";
 // Section 5 — Teaware & craft. Two landscape photos over stacked bold lists on a stone ground
 // (reference: "5: Do's & Don'ts" two-column lists). Server component; content from @/data/content only.
 import { teaware } from "@/data/content";
-import { SectionIndex, Heading, Label, Picture } from "@/components/ui";
+import { Heading, Label, Picture } from "@/components/ui";
 
 export default function Teaware() {
   return (
     <section id="teaware" className="container-x relative border-t border-ink/20 bg-white py-100">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-5">
-          <SectionIndex n={teaware.index} />
           {/* `text-ink!`: Label defaults to text-stone-deep, which Tailwind emits later in the sheet, so a plain
               `text-ink` would lose; the important modifier makes the ink label win on the stone ground. */}
-          <Label className="mt-20 text-ink!">
+          <Label className="text-ink!">
             <span className="tc">{teaware.kicker}</span>
           </Label>
           <Heading className="tc mt-20 max-w-350 text-3xl lg:text-4xl">{teaware.heading}</Heading>

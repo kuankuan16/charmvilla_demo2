@@ -1,0 +1,163 @@
+{
+  "productCount": 20,
+  "factsPreserved": true,
+  "allRoutesPass": true,
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "header": true,
+      "title": "CHARM VILLA — 藝術即生活"
+    },
+    {
+      "route": "/collections/all",
+      "status": 200,
+      "header": true,
+      "title": "全部商品｜CHARM VILLA"
+    },
+    {
+      "route": "/collections/bags",
+      "status": 200,
+      "header": true,
+      "title": "真皮包｜CHARM VILLA"
+    },
+    {
+      "route": "/collections/jewelry",
+      "status": 200,
+      "header": true,
+      "title": "金飾｜CHARM VILLA"
+    },
+    {
+      "route": "/collections/tea",
+      "status": 200,
+      "header": true,
+      "title": "小金魚茶包｜CHARM VILLA"
+    },
+    {
+      "route": "/collections/teaware",
+      "status": 200,
+      "header": true,
+      "title": "茶器與工藝｜CHARM VILLA"
+    },
+    {
+      "route": "/products/braided-leather-bag-white",
+      "status": 200,
+      "header": true,
+      "title": "編織提把皮革包・白色｜CHARM VILLA"
+    },
+    {
+      "route": "/products/braided-leather-bag-blue",
+      "status": 200,
+      "header": true,
+      "title": "編織提把皮革包・藍色｜CHARM VILLA"
+    },
+    {
+      "route": "/products/braided-leather-bag-pink",
+      "status": 200,
+      "header": true,
+      "title": "編織提把皮革包・粉紅色｜CHARM VILLA"
+    },
+    {
+      "route": "/products/pearl-chain-goldfish-earrings",
+      "status": 200,
+      "header": true,
+      "title": "珍珠長鏈小金魚耳環｜CHARM VILLA"
+    },
+    {
+      "route": "/products/bezel-diamond-goldfish-earrings",
+      "status": 200,
+      "header": true,
+      "title": "吐鑽小金魚耳環・包鑲｜CHARM VILLA"
+    },
+    {
+      "route": "/products/single-diamond-goldfish-earrings",
+      "status": 200,
+      "header": true,
+      "title": "單鑽小金魚耳環｜CHARM VILLA"
+    },
+    {
+      "route": "/products/twin-goldfish-earrings",
+      "status": 200,
+      "header": true,
+      "title": "雙星小金魚耳環｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-diamond-stud",
+      "status": 200,
+      "header": true,
+      "title": "小金魚鑽石耳釘｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-diamond-drop",
+      "status": 200,
+      "header": true,
+      "title": "小金魚垂鑽耳環｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-tea-rose-jinxuan",
+      "status": 200,
+      "header": true,
+      "title": "玫瑰與金萱｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-tea-lychee-ruby",
+      "status": 200,
+      "header": true,
+      "title": "荔枝與紅玉｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-tea-honey-oriental-beauty",
+      "status": 200,
+      "header": true,
+      "title": "蜜香與東方美人｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-tea-osmanthus-baozhong",
+      "status": 200,
+      "header": true,
+      "title": "桂花與包種｜CHARM VILLA"
+    },
+    {
+      "route": "/products/goldfish-tea-roselle-roasted-oolong",
+      "status": 200,
+      "header": true,
+      "title": "洛神與焙香烏龍｜CHARM VILLA"
+    },
+    {
+      "route": "/products/prosperity-dessert-stand",
+      "status": 200,
+      "header": true,
+      "title": "下午茶點心架｜CHARM VILLA"
+    },
+    {
+      "route": "/products/prosperity-stand-gift-box",
+      "status": 200,
+      "header": true,
+      "title": "點心架與包裝禮盒｜CHARM VILLA"
+    },
+    {
+      "route": "/products/wooden-coaster-teaspoon",
+      "status": 200,
+      "header": true,
+      "title": "木質杯墊與茶匙｜CHARM VILLA"
+    },
+    {
+      "route": "/products/bird-chopstick-rest",
+      "status": 200,
+      "header": true,
+      "title": "鳥形筷架｜CHARM VILLA"
+    },
+    {
+      "route": "/products/ginkgo-teaspoon-gift-box",
+      "status": 200,
+      "header": true,
+      "title": "銀杏茶匙禮盒｜CHARM VILLA"
+    },
+    {
+      "route": "/products/wooden-chopsticks",
+      "status": 200,
+      "header": true,
+      "title": "木筷｜CHARM VILLA"
+    }
+  ]
+}

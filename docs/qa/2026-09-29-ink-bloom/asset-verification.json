@@ -1,0 +1,26 @@
+{
+  "sources": {
+    "female": "user attachment codex-clipboard-DDOrQn.png",
+    "fish": "user attachment codex-clipboard-ZUqBMe.png"
+  },
+  "vectorMethod": "Potrace silhouette trace, white fill, original 1184:988 viewBox",
+  "silhouetteIoU": 0.9980471304681108,
+  "files": [
+    {
+      "path": "docs/qa/2026-09-29-ink-bloom/dancer-female-selected-original.png",
+      "sha256": "2e661a1d6c8ffb69b0d08996e8f25f682ee17067ef1b700cdebd80e507750593"
+    },
+    {
+      "path": "docs/qa/2026-09-29-ink-bloom/goldfish-supplied-original.png",
+      "sha256": "33c62cd5d9d821073105a262f425dce0e65395f909d6b9d8467efb88f95d496b"
+    },
+    {
+      "path": "public/media/hero/dancer-female-selected.webp",
+      "sha256": "d3d45d3746a8fb4aef10190b6600fd9d47230249af4bf3bc71c2329a05ce8171"
+    },
+    {
+      "path": "public/brand/goldfish-white.svg",
+      "sha256": "d872966d6c4a2357d6467ed124cee7f5dcccc467e639ef7a335aa47d3deaa10e"
+    }
+  ]
+}

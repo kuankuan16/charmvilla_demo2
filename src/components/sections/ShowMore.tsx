@@ -1,13 +1,13 @@
 // 7: SHOW MORE! — leather-bag launch dates + invitation card (reference: the "LET'S TALK ABOUT YOU" CTA block).
 import { showMore } from "@/data/content";
-import { SectionIndex, Heading, Arrow, Picture } from "@/components/ui";
+import { Heading, Arrow, Picture } from "@/components/ui";
 
 export default function ShowMore() {
   return (
     <section id="show-more" className="container-x relative border-t border-ink/20 bg-white pt-30 mb-100 laptop:mb-180">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-7">
-          <SectionIndex n={showMore.index} />
+
           <Heading className="mt-20 text-5xl leading-none lg:text-8xl">{showMore.heading}</Heading>
           <div className="tc mt-15 text-2xl font-bold" data-animation="moveUp" data-delay="0.1">
             {showMore.sub}

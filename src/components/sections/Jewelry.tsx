@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { jewelryCatalog, productHref } from "@/data/catalog";
 import { jewelry } from "@/data/content";
-import { SectionIndex, Heading, Label, Picture } from "@/components/ui";
+import { Heading, Label, Picture } from "@/components/ui";
 
 export default function Jewelry() {
   return (
     <section id="jewelry" className="container-x relative bg-white pt-30 pb-100 laptop:pb-180">
       <div className="grid grid-cols-12 gap-x-20">
         <div className="col-span-12 lg:col-span-6">
-          <SectionIndex n={jewelry.index} />
-          <Label className="mt-20"><span className="tc">{jewelry.kicker}</span></Label>
+          <Label><span className="tc">{jewelry.kicker}</span></Label>
         </div>
         <div className="col-span-12 mt-25 lg:col-span-6 lg:mt-0">
           <Heading className="tc text-3xl lg:text-4xl">{jewelry.heading}</Heading>
@@ -27,7 +26,7 @@ export default function Jewelry() {
                 <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.title}</h3>
               </div>
               <p className="tc mt-12 text-sm leading-body text-ink/70">{product.desc}</p>
-            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">探索商品 ↗</span></Link></article>
+            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品 ↗</span></Link></article>
           </li>
         ))}
       </ul>

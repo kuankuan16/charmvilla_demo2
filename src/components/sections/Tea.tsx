@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { teaCatalog, productHref } from "@/data/catalog";
 import { tea } from "@/data/content";
-import { SectionIndex, Heading, Label, Picture } from "@/components/ui";
+import { Heading, Label, Picture } from "@/components/ui";
 
 export default function Tea() {
   return (
     <section id="tea" className="relative bg-white pt-30 pb-100 laptop:pb-180">
       <div className="container-x grid grid-cols-12 gap-x-20">
         <div className="col-span-12 lg:col-span-6">
-          <SectionIndex n={tea.index} />
-          <Label className="mt-20"><span className="tc">{tea.kicker}</span></Label>
+          <Label><span className="tc">{tea.kicker}</span></Label>
         </div>
         <div className="col-span-12 mt-25 lg:col-span-6 lg:mt-0">
           <Heading className="tc text-3xl lg:text-4xl">{tea.heading}</Heading>
@@ -31,27 +30,12 @@ export default function Tea() {
                 <div><dt className="text-stone-deep">茶底</dt><dd className="mt-6 text-base font-medium">{product.tea}</dd></div>
                 <div><dt className="text-stone-deep">風味</dt><dd className="mt-6 text-base font-medium">{product.flower}</dd></div>
               </dl>
-            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">探索商品 ↗</span></Link></article>
+            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品 ↗</span></Link></article>
           </li>
         ))}
       </ul>
       <div className="container-x mt-35 text-right"><Link href="/collections/tea" className="tc text-xs font-bold link-underline">瀏覽全部茶包 ↗</Link></div>
 
-      <div className="container-x mt-60" data-tea-awards="">
-        <div className="border-t border-ink/20 pt-30">
-          <Label><span className="tc">{tea.honours[0]}</span></Label>
-          <ul className="mt-30 grid gap-x-40 gap-y-30 md:grid-cols-2">
-            {tea.awards.map((award) => (
-              <li key={award.image.src} className="flex items-center gap-20">
-                <div className="relative h-100 w-140 shrink-0 lg:h-120 lg:w-180">
-                  <Picture img={award.image} fill fit="contain" animate={false} sizes="180px" />
-                </div>
-                <p className="tc text-xs font-medium leading-body lg:text-base">{award.text}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
     </section>
   );
 }

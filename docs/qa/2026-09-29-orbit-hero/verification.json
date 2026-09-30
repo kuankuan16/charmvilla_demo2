@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-29",
+  "local_url": "http://localhost:3131",
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "visual_checks": [
+    "male waist-up, complete white bag",
+    "female complete supplied image",
+    "jewelry CV-0380, earring unobscured",
+    "headline and product separate",
+    "no document-level horizontal overflow"
+  ],
+  "browser_controls": [
+    "autoplay changes active image",
+    "previous and next change image and product link",
+    "pause persists",
+    "reduced motion disables autoplay and still permits manual navigation"
+  ],
+  "font": "Cormorant Garamond loaded, confirmed via browser FontFaceSet",
+  "build": "npm run check passed, 3 native-img warnings, zero errors",
+  "console_errors": [],
+  "limitations": [
+    "mobile viewport emulation, not physical device",
+    "CSS transforms reproduce reference interaction, not original Three.js renderer",
+    "touch swipe implemented; not yet tested on a physical touchscreen"
+  ],
+  "publication": {
+    "url": "https://charmvilla-gallery-site.vercel.app",
+    "deployment": "dpl_FJhmLqx9gK7C65PfPXgknPQHs1TD",
+    "readyState": "READY",
+    "http_and_asset_hashes": "production-http.json",
+    "browser": "Live hero visually checked; all three images loaded; previous control changed 03 to 02; product href matched current image."
+  }
+}
