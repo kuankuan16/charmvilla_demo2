@@ -65,8 +65,8 @@ const tablewareEntries = [
   { slug: "prosperity-stand-gift-box", name: "點心架與包裝禮盒", en: "DESSERT STAND / GIFT BOX", series: "豐盛系列", ids: ["CV-0121", "CV-0068"], summary: "一份關於茶席，也關於相聚的心意。", detail: "從點心架到包裝，完整觀看豐盛系列的贈禮形式。" },
   { slug: "wooden-coaster-teaspoon", name: "木質杯墊與茶匙", en: "COASTER & TEASPOON", series: "木質餐具", ids: ["CV-0232", "CV-0231"], summary: "一杯茶的旁邊，木紋靜靜相伴。", detail: "杯墊與茶匙，把木質的紋理帶到茶杯旁。近看表面，也觀察每一件物件的輪廓。" },
   { slug: "bird-chopstick-rest", name: "鳥形筷架", en: "BIRD CHOPSTICK REST", series: "茶席器物", ids: ["CV-0256", "CV-0248", "CV-0239"], summary: "讓一雙筷子，有一處停歇。", detail: "以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。" },
-  { slug: "ginkgo-teaspoon-gift-box", name: "銀杏茶匙禮盒", en: "GINKGO TEASPOON", series: "木質餐具", ids: ["CV-0229"], summary: "把一片葉子的形，留在茶席上。", detail: "銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。" },
-  { slug: "wooden-chopsticks", name: "木筷", en: "WOODEN CHOPSTICKS", series: "木質餐具", ids: ["CV-0227"], summary: "從一雙木筷，開始日常的一餐。", detail: "沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。" },
+  { slug: "ginkgo-teaspoon-gift-box", name: "銀杏茶匙禮盒", en: "GINKGO TEASPOON", series: "木質餐具", ids: ["CV-0231", "CV-0234", "CV-0229"], summary: "把一片葉子的形，留在茶席上。", detail: "銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。" },
+  { slug: "wooden-chopsticks", name: "木筷", en: "WOODEN CHOPSTICKS", series: "木質餐具", ids: ["CV-0243", "CV-0245", "CV-0227"], summary: "從一雙木筷，開始日常的一餐。", detail: "沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。" },
 ];
 const tablewareStories: Record<string, { title: string; body: string }> = {
   "prosperity-dessert-stand": { title: "餐桌上的高與低", body: "擺放，也是一種構圖。點心有了不同的高度，杯與盤之間便多了可觀看的層次；每次相聚，都能重新安排這一席景致。" },
