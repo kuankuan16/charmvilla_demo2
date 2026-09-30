@@ -501,7 +501,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .story-message { position: relative; overflow: visible; padding: clamp(80px, 9vw, 160px) 0 clamp(80px, 8vw, 150px); }
 .story-text-column { position: relative; z-index: 2; width: 60.2%; margin-left: var(--page-gutter); }
 .story-kicker { margin: 0 0 42px; font-size: clamp(18.2px, 2.66vw, 44.8px); font-weight: 400; line-height: 1.1; text-transform: none; }
-.story-copy { font-size: clamp(18.2px, 1.855vw, 37.8px); font-weight: 500; line-height: 1.85; letter-spacing: .04em; overflow-wrap: anywhere; }
+/* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
+.story-copy { font-size: clamp(15px, 1.4vw, 28px); font-weight: 500; line-height: 1.85; letter-spacing: .04em; overflow-wrap: anywhere; }
 .story-copy p { margin: 0 0 1em; }
 .story-copy p:last-child { margin-bottom: 0; }
 .story-copy .story-lead { font-weight: 600; }
@@ -532,7 +533,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 @media (max-width: 767px) {
   .story-text-column { width: calc(100% - 2 * var(--page-gutter)); margin-inline: var(--page-gutter); }
   .story-kicker { margin-bottom: 30px; font-size: 21px; }
-  .story-copy { font-size: 16.1px; line-height: 1.85; letter-spacing: .025em; }
+  .story-copy { font-size: 13.5px; line-height: 1.85; letter-spacing: .025em; }
   .story-honours { margin-top: 30px; }
   .story-honours-label { font-size: 10px; }
   .story-honours-list { flex-direction: column; gap: 40px; margin-top: 20px; }
