@@ -1,11 +1,12 @@
-import { bags, jewelry, tea, gallery, type Img } from "./content";
+import { teaGiftProducts, type TeaContents } from "./tea-gifts";
+import { bags, jewelry, gallery, type Img } from "./content";
 
 // Product facts come from the existing approved content and asset manifest.
 // No inferred prices, stock, metal purity, gemstone grades, sizes or tea brewing times.
 export const categories = [
   { id: "bags", name: "真皮包", en: "LEATHER BAGS", intro: "從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。" },
   { id: "jewelry", name: "金飾", en: "GOLDFISH JEWELRY", intro: "金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。" },
-  { id: "tea", name: "小金魚茶包", en: "GOLDFISH TEA", intro: "手工摺製的魚形，盛著台灣茶葉。從乾燥的摺痕到水中的舒展，一杯茶也可以是一段觀看作品的時間。" },
+  { id: "tea", name: "小金魚茶包禮盒", en: "GOLDFISH TEA GIFTS", intro: "從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。" },
   { id: "teaware", name: "茶器與工藝", en: "TEAWARE & CRAFT", intro: "餐桌上的陳列，隨每次使用而改變。點心架的高低、茶匙的弧線與木紋，讓日常器物有了值得停留的細節。" },
 ] as const;
 
@@ -17,6 +18,8 @@ export type Product = {
   facts: { label: string; value: string }[];
   story: { title: string; body: string; image?: Img };
   variant?: { group: string; label: string };
+  officialUrl?: string;
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents }[] };
 };
 
 const bagProducts: Product[] = bags.products.map((p) => ({
@@ -53,17 +56,7 @@ const jewelryProducts: Product[] = jewelry.items.map((p, i) => ({
   story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
 }));
 
-const teaSlugs = ["rose-jinxuan", "lychee-ruby", "honey-oriental-beauty", "osmanthus-baozhong", "roselle-roasted-oolong"];
-const teaEnglish = ["ROSE / JINXUAN", "LYCHEE / RUBY BLACK TEA", "HONEY / ORIENTAL BEAUTY", "OSMANTHUS / BAOZHONG", "ROSELLE / ROASTED OOLONG"];
-const teaProducts: Product[] = tea.cards.map((p, i) => ({
-  slug: `goldfish-tea-${teaSlugs[i]}`, category: "tea", name: p.title, english: teaEnglish[i],
-  summary: `${p.tea}茶底，${p.flower}風味。由手作成形，在杯中舒展。`,
-  description: `${p.title}，是小金魚茶包的五款風味之一。薄透茶袋以手工裁剪、摺疊與縫製，包裹台灣茶葉，讓魚形的設計與飲茶的日常相遇。`,
-  image: { ...p.image, src: p.image.src.replace(".webp", "-portrait.webp"), w: 896, h: 1120 }, views: [{ label: "茶包細節", image: p.image }],
-  facts: [{ label: "系列", value: "小金魚茶包" }, { label: "茶底", value: p.tea }, { label: "風味", value: p.flower }, { label: "製作", value: "手工裁剪、摺疊、縫製" }, { label: "茶葉", value: "台灣茶葉" }],
-  story: { title: "金魚入盞，茶成一景。", body: "一尾魚，從摺痕開始。魚鰭與尾巴的形態，來自指尖對薄透茶袋的裁剪與摺疊；注入熱水後，茶葉漸漸舒展，手作的輪廓也隨水呈現新的姿態。" },
-  variant: { group: "goldfish-tea", label: p.title },
-}));
+const teaProducts: Product[] = teaGiftProducts;
 
 const tablewareEntries = [
   { slug: "prosperity-dessert-stand", name: "下午茶點心架", en: "DESSERT STAND", series: "豐盛系列", ids: ["CV-0068", "CV-0074", "CV-0081"], summary: "把點心與茶，安放在同一席風景。", detail: "以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。" },

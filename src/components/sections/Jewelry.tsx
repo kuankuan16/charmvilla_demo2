@@ -26,11 +26,11 @@ export default function Jewelry() {
                 <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.title}</h3>
               </div>
               <p className="tc mt-12 text-sm leading-body text-ink/70">{product.desc}</p>
-            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品 ↗</span></Link></article>
+            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品</span></Link></article>
           </li>
         ))}
       </ul>
-      <div className="mt-35 text-right"><Link href="/collections/jewelry" className="tc text-xs font-bold link-underline">瀏覽全部金飾 ↗</Link></div>
+      <div className="mt-35 text-right"><Link href="/collections/jewelry" className="tc text-xs font-bold link-underline">瀏覽全部金飾</Link></div>
 
       <div className="mt-60 border-t border-ink/20 pt-30">
         <div className="text-xs font-bold text-gold">{jewelry.craft.label}</div>

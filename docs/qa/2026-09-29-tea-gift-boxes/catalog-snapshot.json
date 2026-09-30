@@ -1,0 +1,1295 @@
+[
+  {
+    "slug": "reunion-paper-gift-box",
+    "category": "tea",
+    "name": "團圓｜繽紛紙盒",
+    "english": "REUNION / PAPER BOX",
+    "summary": "12 入／盒 · 綜合茶款",
+    "description": "經緯紗線交織成盒蓋，繽紛紙盒收攏四款台灣茶。從打開禮盒到金魚入盞，把相聚的時間留給細看與分享。",
+    "image": {
+      "src": "/media/gallery/CV-0348.webp",
+      "alt": "團圓｜繽紛紙盒・禮盒茶席情境",
+      "w": 880,
+      "h": 1168
+    },
+    "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/gallery/CV-0348.webp",
+          "alt": "團圓｜繽紛紙盒・禮盒茶席情境",
+          "w": 880,
+          "h": 1168
+        }
+      },
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-891.png",
+          "w": 630,
+          "h": 486,
+          "alt": "團圓｜繽紛紙盒・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 12 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 3 入、台灣玫瑰蜜香紅茶 3 入、台灣紅玉紅茶 3 入、台灣東方美人茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "織布盒蓋、繽紛紙盒（日本製）"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28.6 × 11.7 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "variant": {
+      "group": "reunion-gift-box",
+      "label": "繽紛紙盒・12 入"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=891",
+    "giftBox": {
+      "pieces": 12,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 3
+        },
+        {
+          "name": "台灣玫瑰蜜香紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "reunion-paulownia-gift-box",
+    "category": "tea",
+    "name": "團圓｜桐木木盒",
+    "english": "REUNION / PAULOWNIA BOX",
+    "summary": "12 入／盒 · 綜合茶款",
+    "description": "織布的經緯與桐木的紋理，在一只盒上相接。四款台灣茶各自成形，讓一份茶禮，也成為值得收藏的日常物件。",
+    "image": {
+      "src": "/media/gallery/CV-0350.webp",
+      "alt": "團圓｜桐木木盒・禮盒茶席情境",
+      "w": 1122,
+      "h": 1402
+    },
+    "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/gallery/CV-0350.webp",
+          "alt": "團圓｜桐木木盒・禮盒茶席情境",
+          "w": 1122,
+          "h": 1402
+        }
+      },
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-64.png",
+          "w": 790,
+          "h": 512,
+          "alt": "團圓｜桐木木盒・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 12 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 3 入、台灣玫瑰蜜香紅茶 3 入、台灣紅玉紅茶 3 入、台灣東方美人茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28.6 × 11.7 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "variant": {
+      "group": "reunion-gift-box",
+      "label": "桐木木盒・12 入"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=64",
+    "giftBox": {
+      "pieces": 12,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 3
+        },
+        {
+          "name": "台灣玫瑰蜜香紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "year-of-plenty-gift-box",
+    "category": "tea",
+    "name": "年年有魚｜年節禮",
+    "english": "YEAR OF PLENTY",
+    "summary": "18 入／盒 · 綜合茶款",
+    "description": "紅色織面上，魚形與紋樣相互呼應。十八尾小金魚收在桐木盒中，把年節的祝福帶到下一次共飲的茶席。",
+    "image": {
+      "src": "/media/gallery/CV-0356.webp",
+      "alt": "年年有魚｜年節禮・禮盒茶席情境",
+      "w": 1089,
+      "h": 1445
+    },
+    "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/gallery/CV-0356.webp",
+          "alt": "年年有魚｜年節禮・禮盒茶席情境",
+          "w": 1089,
+          "h": 1445
+        }
+      },
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-954.png",
+          "w": 630,
+          "h": 486,
+          "alt": "年年有魚｜年節禮・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 18 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 9 入、台灣紅玉紅茶 3 入、台灣金萱茶 3 入、台灣東方美人茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28 × 19 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=954",
+    "giftBox": {
+      "pieces": 18,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 9
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣金萱茶",
+          "count": 3
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "blossoming-prosperity-gift-box",
+    "category": "tea",
+    "name": "花開富貴｜年節禮",
+    "english": "BLOSSOMING PROSPERITY",
+    "summary": "18 入／盒 · 綜合茶款",
+    "description": "花的姿態留在織布盒蓋上，桐木盒承接十八入茶禮。欣賞盒面的構圖，也在一杯杯茶中，把相聚的日常慢慢展開。",
+    "image": {
+      "src": "/media/gift-boxes/official-1053.png",
+      "w": 630,
+      "h": 486,
+      "alt": "花開富貴｜年節禮・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-1053.png",
+          "w": 630,
+          "h": 486,
+          "alt": "花開富貴｜年節禮・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 18 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 9 入、台灣紅玉紅茶 3 入、台灣金萱茶 3 入、台灣東方美人茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28 × 19 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=1053",
+    "giftBox": {
+      "pieces": 18,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 9
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣金萱茶",
+          "count": 3
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "spring-blossoms-gift-box",
+    "category": "tea",
+    "name": "花滿富春",
+    "english": "SPRING BLOSSOMS",
+    "summary": "18 入／盒 · 綜合茶款",
+    "description": "金魚游過牡丹花間，花葉與魚形構成盒上的風景。四款茶盛入十八尾手作小金魚，從盒中的陳列走向杯裡的舒展。",
+    "image": {
+      "src": "/media/gift-boxes/official-104.png",
+      "w": 630,
+      "h": 420,
+      "alt": "花滿富春・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-104.png",
+          "w": 630,
+          "h": 420,
+          "alt": "花滿富春・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 18 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 9 入、台灣紅玉紅茶 3 入、台灣金萱茶 3 入、台灣東方美人茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "27.7 × 19.1 × 9.6 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=104",
+    "giftBox": {
+      "pieces": 18,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 9
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣金萱茶",
+          "count": 3
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kyoto-gift-box",
+    "category": "tea",
+    "name": "京都版",
+    "english": "KYOTO EDITION",
+    "summary": "6 入／盒 · 單一茶款",
+    "description": "六尾玫瑰蜜香紅茶小金魚，收在京都版紙盒中。從盒面的形，到水中的姿態，邀請收禮的人留一段時間給茶。",
+    "image": {
+      "src": "/media/gift-boxes/official-692.png",
+      "w": 600,
+      "h": 445,
+      "alt": "京都版・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-692.png",
+          "w": 600,
+          "h": 445,
+          "alt": "京都版・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 6 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰蜜香紅茶 6 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "紙盒"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "20.5 × 18.5 × 6.9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=692",
+    "giftBox": {
+      "pieces": 6,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰蜜香紅茶",
+          "count": 6
+        }
+      ]
+    }
+  },
+  {
+    "slug": "heart-gift-box",
+    "category": "tea",
+    "name": "心有愛禮盒",
+    "english": "WITH LOVE",
+    "summary": "2 入／盒 · 單一茶款，整盒擇一",
+    "description": "把心意收進小小的紙盒。每盒兩尾同款小金魚茶包，可選玫瑰烏龍茶或玫瑰蜜香紅茶，為一次相逢留下一杯茶的邀請。",
+    "image": {
+      "src": "/media/gift-boxes/official-970.png",
+      "w": 600,
+      "h": 400,
+      "alt": "心有愛禮盒・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-970.png",
+          "w": 600,
+          "h": 400,
+          "alt": "心有愛禮盒・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 2 入"
+      },
+      {
+        "label": "茶款選擇（每盒擇一）",
+        "value": "台灣玫瑰烏龍茶 2 入；或 台灣玫瑰蜜香紅茶 2 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "紙盒"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "10 × 6.5 × 7.5 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=970",
+    "giftBox": {
+      "pieces": 2,
+      "series": "經典禮盒",
+      "contents": [],
+      "choices": [
+        {
+          "label": "台灣玫瑰烏龍茶",
+          "contents": [
+            {
+              "name": "台灣玫瑰烏龍茶",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "台灣玫瑰蜜香紅茶",
+          "contents": [
+            {
+              "name": "台灣玫瑰蜜香紅茶",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "fruit-infusion-gift-box",
+    "category": "tea",
+    "name": "花果茶禮盒",
+    "english": "FRUIT INFUSION",
+    "summary": "9 入／盒 · 單一茶款",
+    "description": "九尾花果茶小金魚，在織布與紙盒之間安放。無咖啡因的花果配方，讓飲茶的片刻，多一種果香與花香交錯的選擇。",
+    "image": {
+      "src": "/media/gift-boxes/official-183.png",
+      "w": 900,
+      "h": 592,
+      "alt": "花果茶禮盒・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-183.png",
+          "w": 900,
+          "h": 592,
+          "alt": "花果茶禮盒・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 9 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "花果茶 9 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "繽紛紙盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28.6 × 11.7 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=183",
+    "giftBox": {
+      "pieces": 9,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "花果茶",
+          "count": 9
+        }
+      ]
+    }
+  },
+  {
+    "slug": "rose-encounter-gift-box",
+    "category": "tea",
+    "name": "玫好相遇",
+    "english": "A ROSE ENCOUNTER",
+    "summary": "6 入／盒 · 綜合茶款",
+    "description": "同是玫瑰，與不同茶款相遇便有不同表情。三尾玫瑰烏龍茶、三尾玫瑰蜜香紅茶，邀請兩個人從一只禮盒開始共飲。",
+    "image": {
+      "src": "/media/gift-boxes/official-343.png",
+      "w": 625,
+      "h": 480,
+      "alt": "玫好相遇・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-343.png",
+          "w": 625,
+          "h": 480,
+          "alt": "玫好相遇・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 6 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 3 入、台灣玫瑰蜜香紅茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "紙盒"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "20.5 × 18.5 × 6.9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=343",
+    "giftBox": {
+      "pieces": 6,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 3
+        },
+        {
+          "name": "台灣玫瑰蜜香紅茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "tea-to-share-gift-box",
+    "category": "tea",
+    "name": "魚你分享｜茶繽紛",
+    "english": "TEA TO SHARE",
+    "summary": "6 入／盒 · 綜合茶款",
+    "description": "六款茶，各留一尾。從烏龍、紅茶到花果茶，讓同一只禮盒盛下不同的選擇，也為分享留下話題。",
+    "image": {
+      "src": "/media/gift-boxes/official-196.png",
+      "w": 630,
+      "h": 486,
+      "alt": "魚你分享｜茶繽紛・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-196.png",
+          "w": 630,
+          "h": 486,
+          "alt": "魚你分享｜茶繽紛・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "經典禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 6 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 1 入、台灣紅玉紅茶 1 入、台灣金萱茶 1 入、台灣東方美人茶 1 入、台灣玫瑰蜜香紅茶 1 入、花果茶 1 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "紙盒"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "13 × 11.4 × 11.4 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=196",
+    "giftBox": {
+      "pieces": 6,
+      "series": "經典禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 1
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 1
+        },
+        {
+          "name": "台灣金萱茶",
+          "count": 1
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 1
+        },
+        {
+          "name": "台灣玫瑰蜜香紅茶",
+          "count": 1
+        },
+        {
+          "name": "花果茶",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "slug": "spring-dawn-gift-box",
+    "category": "tea",
+    "name": "春曉",
+    "english": "SPRING DAWN",
+    "summary": "12 入／盒 · 單一茶款，整盒擇一",
+    "description": "晨光與花鳥留在織面上，手染漸層使每只盒的色澤略有不同。盒內選用十二尾同款獲獎茶，從觀看盒面，走向細品茶湯。",
+    "image": {
+      "src": "/media/gift-boxes/official-850.png",
+      "w": 680,
+      "h": 433,
+      "alt": "春曉・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-850.png",
+          "w": 680,
+          "h": 433,
+          "alt": "春曉・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "珍稀禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 12 入"
+      },
+      {
+        "label": "茶款選擇（每盒擇一）",
+        "value": "頭等獎獲獎玫瑰烏龍茶 12 入；或 參等獎獲獎東方美人茶 12 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28.6 × 11.7 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      },
+      {
+        "label": "選購說明",
+        "value": "整盒茶款擇一；手染布面漸層依每盒而異。獲獎茶售價與供應依官方商品頁為準。"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=850",
+    "giftBox": {
+      "pieces": 12,
+      "series": "珍稀禮盒",
+      "contents": [],
+      "choices": [
+        {
+          "label": "頭等獎獲獎玫瑰烏龍茶",
+          "contents": [
+            {
+              "name": "頭等獎獲獎玫瑰烏龍茶",
+              "count": 12
+            }
+          ]
+        },
+        {
+          "label": "參等獎獲獎東方美人茶",
+          "contents": [
+            {
+              "name": "參等獎獲獎東方美人茶",
+              "count": 12
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "winter-blossom-gift-box",
+    "category": "tea",
+    "name": "暮雪",
+    "english": "WINTER BLOSSOM",
+    "summary": "12 入／盒 · 單一茶款，整盒擇一",
+    "description": "暮冬與初春的景色，化為盒面的花鳥構圖。十二尾同款獲獎茶藏在桐木盒中，將季節的觀看，延續到一杯茶的時間。",
+    "image": {
+      "src": "/media/gift-boxes/official-582.png",
+      "w": 630,
+      "h": 420,
+      "alt": "暮雪・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-582.png",
+          "w": 630,
+          "h": 420,
+          "alt": "暮雪・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "珍稀禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 12 入"
+      },
+      {
+        "label": "茶款選擇（每盒擇一）",
+        "value": "頭等獎獲獎玫瑰烏龍茶 12 入；或 參等獎獲獎東方美人茶 12 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28.6 × 11.7 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      },
+      {
+        "label": "選購說明",
+        "value": "整盒茶款擇一；獲獎茶售價與供應依官方商品頁為準。"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=582",
+    "giftBox": {
+      "pieces": 12,
+      "series": "珍稀禮盒",
+      "contents": [],
+      "choices": [
+        {
+          "label": "頭等獎獲獎玫瑰烏龍茶",
+          "contents": [
+            {
+              "name": "頭等獎獲獎玫瑰烏龍茶",
+              "count": 12
+            }
+          ]
+        },
+        {
+          "label": "參等獎獲獎東方美人茶",
+          "contents": [
+            {
+              "name": "參等獎獲獎東方美人茶",
+              "count": 12
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "orchid-gift-box",
+    "category": "tea",
+    "name": "蝴蝶蘭",
+    "english": "ORCHID",
+    "summary": "18 入／盒 · 單一茶款",
+    "description": "蘭花的姿態與織布的紋理相伴，盒中收納十八尾頭等獎獲獎玫瑰烏龍茶。讓花的形與茶的香，各自留有被欣賞的空間。",
+    "image": {
+      "src": "/media/gift-boxes/official-960.png",
+      "w": 630,
+      "h": 481,
+      "alt": "蝴蝶蘭・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-960.png",
+          "w": 630,
+          "h": 481,
+          "alt": "蝴蝶蘭・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "珍稀禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 18 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "頭等獎獲獎玫瑰烏龍茶 18 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "27.7 × 19.1 × 9.6 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "2 年"
+      },
+      {
+        "label": "選購說明",
+        "value": "獲獎茶售價與供應依官方商品頁為準。"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=960",
+    "giftBox": {
+      "pieces": 18,
+      "series": "珍稀禮盒",
+      "contents": [
+        {
+          "name": "頭等獎獲獎玫瑰烏龍茶",
+          "count": 18
+        }
+      ]
+    }
+  },
+  {
+    "slug": "purple-butterfly-gift-box",
+    "category": "tea",
+    "name": "紫斑蝶",
+    "english": "PURPLE BUTTERFLY",
+    "summary": "18 入／盒 · 單一茶款",
+    "description": "端紫斑蝶的輪廓留在織布盒蓋上，細看翅面的藍紫與紋樣。十八尾貳等獎獲獎東方美人茶，將這幅風景帶到共飲的日常。",
+    "image": {
+      "src": "/media/gift-boxes/official-88.png",
+      "w": 630,
+      "h": 486,
+      "alt": "紫斑蝶・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-88.png",
+          "w": 630,
+          "h": 486,
+          "alt": "紫斑蝶・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "珍稀禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 18 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "貳等獎獲獎東方美人茶 18 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "27.7 × 19.1 × 9.6 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "2 年"
+      },
+      {
+        "label": "選購說明",
+        "value": "珍稀商品採預訂後製作；預訂方式、供應與售價請洽官方商店。"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=88",
+    "giftBox": {
+      "pieces": 18,
+      "series": "珍稀禮盒",
+      "contents": [
+        {
+          "name": "貳等獎獲獎東方美人茶",
+          "count": 18
+        }
+      ]
+    }
+  },
+  {
+    "slug": "small-moon-tea-gift-box",
+    "category": "tea",
+    "name": "小鮮月禮盒｜純茶包",
+    "english": "SMALL MOON / TEA",
+    "summary": "6 入／盒 · 綜合茶款",
+    "description": "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
+    "image": {
+      "src": "/media/gift-boxes/official-1072.png",
+      "w": 787,
+      "h": 607,
+      "alt": "小鮮月禮盒｜純茶包・官方禮盒商品圖",
+      "cutout": true
+    },
+    "views": [
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-1072.png",
+          "w": 787,
+          "h": 607,
+          "alt": "小鮮月禮盒｜純茶包・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "2026 中秋禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 6 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 3 入、台灣玫瑰蜜香紅茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "紙盒"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "20.5 × 18.5 × 6.9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=1072",
+    "giftBox": {
+      "pieces": 6,
+      "series": "2026 中秋禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 3
+        },
+        {
+          "name": "台灣玫瑰蜜香紅茶",
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "slug": "full-moon-tea-gift-box",
+    "category": "tea",
+    "name": "大盈月禮盒｜純茶包",
+    "english": "FULL MOON / TEA",
+    "summary": "18 入／盒 · 綜合茶款",
+    "description": "花鳥與枝葉鋪展在織布盒蓋上，桐木盒收藏十八尾小金魚。從盒上的一幅風景，到杯中的一段茶時，讓團聚與欣賞一同發生。",
+    "image": {
+      "src": "/media/gallery/CV-0357.webp",
+      "alt": "大盈月禮盒｜純茶包・禮盒茶席情境",
+      "w": 1122,
+      "h": 1402
+    },
+    "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/gallery/CV-0357.webp",
+          "alt": "大盈月禮盒｜純茶包・禮盒茶席情境",
+          "w": 1122,
+          "h": 1402
+        }
+      },
+      {
+        "label": "官方商品圖",
+        "image": {
+          "src": "/media/gift-boxes/official-994.png",
+          "w": 787,
+          "h": 607,
+          "alt": "大盈月禮盒｜純茶包・官方禮盒商品圖",
+          "cutout": true
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "2026 中秋禮盒"
+      },
+      {
+        "label": "販售單位",
+        "value": "1 盒／小金魚茶包 18 入"
+      },
+      {
+        "label": "盒內茶款",
+        "value": "台灣玫瑰烏龍茶 9 入、台灣紅玉紅茶 3 入、台灣金萱茶 3 入、台灣東方美人茶 3 入"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "外盒尺寸（長 × 寬 × 高）",
+        "value": "28 × 19 × 9 cm"
+      },
+      {
+        "label": "保存期限",
+        "value": "1 年"
+      },
+      {
+        "label": "選購說明",
+        "value": "本款為純茶包禮盒，不含茶點與茶具；緞帶顏色隨機出貨。"
+      }
+    ],
+    "story": {
+      "title": "一盒風景，一席茶時",
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+    },
+    "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=994",
+    "giftBox": {
+      "pieces": 18,
+      "series": "2026 中秋禮盒",
+      "contents": [
+        {
+          "name": "台灣玫瑰烏龍茶",
+          "count": 9
+        },
+        {
+          "name": "台灣紅玉紅茶",
+          "count": 3
+        },
+        {
+          "name": "台灣金萱茶",
+          "count": 3
+        },
+        {
+          "name": "台灣東方美人茶",
+          "count": 3
+        }
+      ]
+    }
+  }
+]

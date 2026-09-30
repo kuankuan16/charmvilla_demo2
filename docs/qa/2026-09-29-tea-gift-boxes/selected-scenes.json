@@ -1,0 +1,78 @@
+{
+  "selected": [
+    {
+      "id": "CV-0348",
+      "title": "林影・團圓繽紛紙盒與雙杯茶席",
+      "product": "小金魚茶包｜團圓｜繽紛紙盒",
+      "status": "published",
+      "group": {
+        "id": "SC-110",
+        "title": "林影茶席・團圓繽紛紙盒",
+        "version": 3,
+        "collection": "ai"
+      },
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0348/webp",
+      "sha256": "dd19e7772c2ae7d92124230ff7a655c9e21e2462f5d6102a716e922c5d8ea7a2"
+    },
+    {
+      "id": "CV-0350",
+      "title": "柔和窗光・團圓桐木木盒茶席",
+      "product": "小金魚茶包｜團圓｜桐木木盒",
+      "status": "published",
+      "group": {
+        "id": "SC-111",
+        "title": "柔光窗邊・團圓桐木木盒",
+        "version": 2,
+        "collection": "ai"
+      },
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0350/webp",
+      "sha256": "8902e20cc6fbd5a14d05264bbe864c4cc44952493e8e9ec13c2c97f77d51d4de"
+    },
+    {
+      "id": "CV-0356",
+      "title": "金色竹影・年年有魚禮盒｜刺繡與緞帶花校正版",
+      "product": "小金魚茶包｜年年有魚｜新年禮盒",
+      "status": "published",
+      "group": {
+        "id": "SC-115",
+        "title": "金色竹影・年年有魚新年茶席",
+        "version": 2,
+        "collection": "ai"
+      },
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0356/webp",
+      "sha256": "85127f9a50d337ea600cdcb7e51b00a21d99dfbf04d2ea13eebaf917db4e89b0"
+    },
+    {
+      "id": "CV-0357",
+      "title": "香檳金桂影・中秋花鳥刺繡禮盒｜首版",
+      "product": "小金魚茶包｜花鳥刺繡桐木禮盒｜中秋茶禮",
+      "status": "published",
+      "group": {
+        "id": "SC-116",
+        "title": "香檳金桂影・中秋花鳥刺繡茶席",
+        "version": 2,
+        "collection": "ai"
+      },
+      "source": "https://charmvilla-gallery.vercel.app/api/media/CV-0357/webp",
+      "sha256": "b65cf7a64b11c76e48a760ea2955ccf2817c941daf5a9b903eef9a6ca8081ef4"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "CV-0136",
+      "reason": "待品牌確認標記，圖像盒色與現行官方主圖不同；採官方圖"
+    },
+    {
+      "id": "CV-0352",
+      "reason": "archived"
+    },
+    {
+      "id": "CV-0353",
+      "reason": "archived"
+    },
+    {
+      "id": "CV-0359",
+      "reason": "archived"
+    }
+  ]
+}

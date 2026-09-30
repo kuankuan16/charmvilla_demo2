@@ -1,0 +1,38 @@
+{
+  "changedFiles": [
+    "src/app/not-found.tsx",
+    "src/app/(catalog)/products/[slug]/page.tsx",
+    "src/app/(catalog)/collections/[category]/page.tsx",
+    "src/components/ui/index.tsx",
+    "src/components/sections/Shown.tsx",
+    "src/components/sections/StoreCarousel.tsx",
+    "src/components/sections/ProductGrid.tsx",
+    "src/components/sections/Hero.tsx",
+    "src/components/sections/FeaturedProducts.tsx",
+    "src/components/sections/Jewelry.tsx",
+    "src/components/sections/Teaware.tsx",
+    "src/components/sections/Partners.tsx",
+    "src/components/sections/Footer.tsx",
+    "src/components/sections/ShowMore.tsx",
+    "src/components/sections/Visit.tsx",
+    "src/components/sections/Tea.tsx",
+    "src/components/catalog/CatalogShell.tsx",
+    "src/components/catalog/CollectionBrowser.tsx",
+    "src/components/catalog/ProductCard.tsx",
+    "src/components/chrome/Header.tsx",
+    "src/app/globals.css"
+  ],
+  "linkDestinationsUnchanged": true,
+  "decorativeLinkArrowsRemaining": 0,
+  "preservedControls": [
+    "image previous/next",
+    "product previous/next",
+    "return link",
+    "scroll down",
+    "FAQ expand/collapse"
+  ],
+  "published": false,
+  "browserVerified": false,
+  "typecheck": "passed",
+  "lint": "passed with 4 existing img warnings"
+}

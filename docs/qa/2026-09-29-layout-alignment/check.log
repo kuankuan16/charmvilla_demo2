@@ -1,0 +1,61 @@
+
+> charmvilla-gallery-site@0.1.0 check
+> npm run lint && npm run typecheck && npm run build
+
+
+> charmvilla-gallery-site@0.1.0 lint
+> eslint
+
+
+/Users/kuan/Documents/Codex/09-07-charmvilla/site-work/charmvilla-gallery-site/src/components/chrome/Header.tsx
+  50:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-07-charmvilla/site-work/charmvilla-gallery-site/src/components/engine/Preloader.tsx
+  33:9   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  37:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-07-charmvilla/site-work/charmvilla-gallery-site/src/components/sections/Hero.tsx
+  140:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 4 problems (0 errors, 4 warnings)
+
+
+> charmvilla-gallery-site@0.1.0 typecheck
+> tsc --noEmit
+
+
+> charmvilla-gallery-site@0.1.0 build
+> next build
+
+▲ Next.js 16.3.0 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 1704ms
+
+  Creating an optimized production build ...
+Turbopack build encountered 2 warnings:
+[next]/internal/font/google/noto_sans_tc_da993e76.module.css
+Warning: Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap
+
+
+[next]/internal/font/google/outfit_9f4f9187.module.css
+Warning: Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+[next]/internal/font/google/noto_sans_tc_da993e76.module.css
+Error: next/font: error:
+Failed to fetch Noto Sans TC from Google Fonts.
+If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+
+
+[next]/internal/font/google/outfit_9f4f9187.module.css
+Error: next/font: error:
+Failed to fetch Outfit from Google Fonts.
+If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+
+
+    at ignore-listed frames

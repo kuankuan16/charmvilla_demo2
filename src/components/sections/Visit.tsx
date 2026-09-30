@@ -1,6 +1,6 @@
 "use client";
 import { visit, showMore } from "@/data/content";
-import { Arrow, Picture } from "@/components/ui";
+import { Picture } from "@/components/ui";
 import StoreCarousel from "./StoreCarousel";
 
 export default function Visit() {
@@ -8,9 +8,9 @@ export default function Visit() {
   return (
     <section id="visit" className="relative">
       <StoreCarousel />
-      <div className="store-online"><p className="catalog-eyebrow">ONLINE SHOP</p><p className="tc">{online.text}</p><a href={online.href} target="_blank" rel="noreferrer" className="link-underline tc">前往線上商店 ↗</a></div>
+      <div className="store-online"><p className="catalog-eyebrow">ONLINE SHOP</p><p className="tc">{online.text}</p><a href={online.href} target="_blank" rel="noreferrer" className="link-underline tc">前往線上商店</a></div>
       <div className="container-x">
-        <section id="news" aria-labelledby="news-heading" className="grid grid-cols-12 gap-x-20 border-t border-ink/20 bg-white px-25 py-40 lg:px-30">
+        <section id="news" aria-labelledby="news-heading" className="grid grid-cols-12 gap-x-20 border-t border-ink/20 bg-white py-40">
           <h2 id="news-heading" className="col-span-12 text-xs font-bold lg:col-span-5">{visit.news.label}<span className="tc ml-10">最新消息</span></h2>
           <ul className="col-span-12 mt-20 lg:col-span-7 lg:mt-0">
             <li id="news-show-more" className="border-y border-ink/30 py-25">
@@ -28,7 +28,7 @@ export default function Visit() {
                     ))}
                   </ul>
                   <a className="link-underline mt-20 inline-flex items-center gap-8 text-xs font-bold" href={showMore.cta.href} target="_blank" rel="noreferrer">
-                    <span className="tc">{showMore.cta.label}</span><Arrow />
+                    <span className="tc">{showMore.cta.label}</span>
                   </a>
                 </div>
                 <a href={showMore.cta.href} target="_blank" rel="noreferrer" aria-label="查看 SHOW MORE! 新品發表邀請卡" className="block w-160 max-w-full sm:w-full">
@@ -50,7 +50,7 @@ export default function Visit() {
             ))}
           </ul>
           <a href={visit.instagram} target="_blank" rel="noreferrer" className="link-underline col-span-12 mt-30 w-max text-xs font-bold">
-            INSTAGRAM ↳
+            INSTAGRAM
           </a>
         </section>
       </div>

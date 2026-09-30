@@ -12,7 +12,7 @@ export const sections = [
   { id: "hero", label: "Top", zh: "首頁" },
   { id: "bags", label: "Leather bag", zh: "真皮包" },
   { id: "jewelry", label: "Jewelry", zh: "金飾" },
-  { id: "tea", label: "Tea", zh: "茶包" },
+  { id: "tea", label: "Tea", zh: "茶包禮盒" },
   { id: "teaware", label: "Teaware", zh: "茶器" },
   { id: "visit", label: "Visit", zh: "門市" },
 ] as const;
@@ -119,16 +119,9 @@ export const interlude = {
 
 export const tea = {
   index: "4:",
-  kicker: "茶包",
-  heading: "小金魚茶包",
-  headingEn: "GOLDFISH TEA BAG",
-  cards: [
-    { code: "A", title: "玫瑰與金萱", tea: "金萱", flower: "玫瑰", image: site("kv-rose.webp", "玫瑰與金萱的小金魚茶包", 1200, 1500) },
-    { code: "B", title: "荔枝與紅玉", tea: "紅玉", flower: "荔枝", image: site("kv-lychee.webp", "荔枝與紅玉的小金魚茶包", 1200, 1500) },
-    { code: "C", title: "蜜香與東方美人", tea: "東方美人", flower: "蜜香", image: site("kv-beauty.webp", "蜜香與東方美人的小金魚茶包", 1200, 1500) },
-    { code: "D", title: "桂花與包種", tea: "包種", flower: "桂花", image: site("kv-osmanthus.webp", "桂花與包種的小金魚茶包", 1200, 1500) },
-    { code: "E", title: "洛神與焙香烏龍", tea: "焙香烏龍", flower: "洛神", image: site("kv-roselle.webp", "洛神與焙香烏龍的小金魚茶包", 1200, 1500) },
-  ],
+  kicker: "茶包禮盒",
+  heading: "小金魚茶包禮盒",
+  headingEn: "GOLDFISH TEA GIFTS",
   craft: "形，從一雙手開始。薄透茶袋經過裁剪、摺疊與縫製，魚鰭和尾巴逐漸成形，再填入台灣茶葉。水注入杯中，原本靜止的輪廓隨之舒展，手作也有了另一種觀看方式。",
   honours: ["全球 34 國設計專利", "2014 德國紅點傳達設計獎 Red Dot Winner", "2015 德國 iF 設計大獎 iF Gold Award"],
   awards: [

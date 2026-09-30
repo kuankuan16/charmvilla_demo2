@@ -1,6 +1,6 @@
 // 7: SHOW MORE! — leather-bag launch dates + invitation card (reference: the "LET'S TALK ABOUT YOU" CTA block).
 import { showMore } from "@/data/content";
-import { Heading, Arrow, Picture } from "@/components/ui";
+import { Heading, Picture } from "@/components/ui";
 
 export default function ShowMore() {
   return (
@@ -31,7 +31,6 @@ export default function ShowMore() {
           <div className="mt-30">
             <a className="btn btn--outline" href={showMore.cta.href} target="_blank" rel="noreferrer">
               <span className="tc">{showMore.cta.label}</span>
-              <Arrow />
             </a>
           </div>
         </div>

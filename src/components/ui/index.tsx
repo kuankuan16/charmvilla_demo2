@@ -18,20 +18,11 @@ export function Label({ children, className = "" }: { children: ReactNode; class
   return <div className={`flex items-center gap-10 text-xs font-bold text-stone-deep ${className}`}><span className="dot scale-75" />{children}</div>;
 }
 
-export function Arrow({ className = "" }: { className?: string }) {
-  return (
-    <svg className={`icon inline-block h-[0.9em] w-[1.1em] ${className}`} viewBox="0 0 22 18" fill="none" aria-hidden="true">
-      <path d="M1 2v10h16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square" />
-      <path d="M13 7l5 5-5 5" stroke="currentColor" strokeWidth="2.2" />
-    </svg>
-  );
-}
-
+/** Text-only CTA: link decoration never adds directional icons. */
 export function Btn({ href, children, outline = false, className = "" }: { href: string; children: ReactNode; outline?: boolean; className?: string }) {
   return (
     <a href={href} className={`btn ${outline ? "btn--outline" : ""} ${className}`}>
       <span>{children}</span>
-      <Arrow />
     </a>
   );
 }

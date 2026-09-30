@@ -17,24 +17,21 @@ export default function Tea() {
         </div>
       </div>
 
-      <ul aria-label="小金魚茶包商品清單" className="container-x mt-40 grid grid-cols-1 gap-x-20 gap-y-50 md:grid-cols-2 laptop:grid-cols-3" data-tea-products="">
-        {tea.cards.map((product, i) => (
-          <li key={product.code} data-tea-product={product.code}>
-            <article><Link href={productHref(teaCatalog[i])} className="group block" aria-label={`瀏覽 ${product.title}`}>
+      <ul aria-label="小金魚茶包禮盒清單" className="container-x mt-40 grid grid-cols-1 gap-x-20 gap-y-50 md:grid-cols-2 laptop:grid-cols-3" data-tea-products="">
+        {teaCatalog.map((product, i) => (
+          <li key={product.slug} data-tea-product={product.slug}>
+            <article><Link href={productHref(product)} className="group block" aria-label={`瀏覽 ${product.name}`}>
               <Picture img={product.image} sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw" animate={false} />
               <div className="mt-20 flex items-baseline gap-15 border-t border-ink/20 pt-15">
                 <span className="text-xs font-bold text-stone-deep">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.title}</h3>
+                <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.name}</h3>
               </div>
-              <dl className="tc mt-15 grid grid-cols-2 gap-20 text-xs">
-                <div><dt className="text-stone-deep">茶底</dt><dd className="mt-6 text-base font-medium">{product.tea}</dd></div>
-                <div><dt className="text-stone-deep">風味</dt><dd className="mt-6 text-base font-medium">{product.flower}</dd></div>
-              </dl>
-            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品 ↗</span></Link></article>
+              <p className="tc mt-15 text-base">{product.summary}</p>
+            <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品</span></Link></article>
           </li>
         ))}
       </ul>
-      <div className="container-x mt-35 text-right"><Link href="/collections/tea" className="tc text-xs font-bold link-underline">瀏覽全部茶包 ↗</Link></div>
+      <div className="container-x mt-35 text-right"><Link href="/collections/tea" className="tc text-xs font-bold link-underline">瀏覽全部茶包禮盒</Link></div>
 
     </section>
   );

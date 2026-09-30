@@ -35,7 +35,7 @@ export default function StoreCarousel() {
       onPointerUp={e=>{if(!drag.current)return;drag.current=null;delete e.currentTarget.dataset.dragging;choose(active);}}
       onPointerCancel={e=>{drag.current=null;delete e.currentTarget.dataset.dragging;}}>
       {shops.map((shop,i)=><article className="store-card" key={shop.name} aria-label={shop.name}>
-        <div className="store-copy"><p className="store-city">{introductions[i].city} <span>{i+1} / {shops.length}</span></p><p className="store-name tc">{shop.name}</p><h3 className="tc">{introductions[i].heading}</h3><p className="store-description tc">{introductions[i].body}</p><div className="store-information tc"><p>{shop.addr}</p><p>{shop.hours}</p></div><a href={shop.href} target="_blank" rel="noreferrer" className="store-map tc">查看地圖 <span aria-hidden="true">→</span></a></div>
+        <div className="store-copy"><p className="store-city">{introductions[i].city} <span>{i+1} / {shops.length}</span></p><p className="store-name tc">{shop.name}</p><h3 className="tc">{introductions[i].heading}</h3><p className="store-description tc">{introductions[i].body}</p><div className="store-information tc"><p>{shop.addr}</p><p>{shop.hours}</p></div><a href={shop.href} target="_blank" rel="noreferrer" className="store-map tc">查看地圖</a></div>
         <div className="store-photo"><Picture img={shop.image} fill animate={false} sizes="(min-width:768px) 42vw,86vw"/></div>
       </article>)}
     </div>

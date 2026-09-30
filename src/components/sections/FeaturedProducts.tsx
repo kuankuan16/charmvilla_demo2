@@ -7,7 +7,7 @@ const selected = [
   "braided-leather-bag-white",
   "pearl-chain-goldfish-earrings",
   "ginkgo-teaspoon-gift-box",
-  "goldfish-tea-rose-jinxuan",
+  "reunion-paulownia-gift-box",
   "bird-chopstick-rest",
   "bezel-diamond-goldfish-earrings",
 ].map(slug => findProduct(slug)!);
@@ -27,6 +27,6 @@ export default function FeaturedProducts() {
         </Link>
       </article>)}
     </div>
-    <div className="featured-more"><Link href="/collections/all" className="tc link-underline">欣賞全部作品 ↗</Link></div>
+    <div className="featured-more"><Link href="/collections/all" className="tc link-underline">欣賞全部作品</Link></div>
   </section>;
 }

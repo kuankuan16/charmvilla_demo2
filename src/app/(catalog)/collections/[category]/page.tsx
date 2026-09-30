@@ -27,7 +27,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ cat
       <header className="collection-heading"><div><p className="catalog-eyebrow">ART IN EVERYDAY LIFE</p><h1>{info?.en || "ALL OBJECTS"}<sup>{String(list.length).padStart(2, "0")}</sup></h1></div><div className="collection-heading-copy"><h2 className="tc">{info?.name || "藝術即生活"}</h2><p className="tc">{info?.intro || "從皮革的編織到金飾的輪廓，沿著材質走進作品。每一次配戴、每一回取用，都讓觀看與生活靠得更近。"}</p></div></header>
       <nav className="collection-categories" aria-label="商品分類"><Link href="/collections/all" aria-current={category === "all" ? "page" : undefined} className="tc">全部 <span>{products.length}</span></Link>{categories.map((c) => <Link key={c.id} href={categoryHref(c.id)} aria-current={category === c.id ? "page" : undefined} className="tc">{c.name} <span>{getCategoryProducts(c.id).length}</span></Link>)}</nav>
       <Suspense fallback={<div className="collection-results"><div className="catalog-grid">{list.map((p, i) => <ProductCard key={p.slug} product={p} index={i} />)}</div></div>}><CollectionBrowser key={category} products={list} /></Suspense>
-      <div className="collection-visit"><p className="catalog-eyebrow">MEET THE OBJECTS</p><h2 className="tc">走近，細看。</h2><p className="tc">走進台北與京都門市，在不同角度的光線下，親自感受作品的比例與質地。</p><Link href="/#visit" className="catalog-button tc">尋找門市 ↗</Link></div>
+      <div className="collection-visit"><p className="catalog-eyebrow">MEET THE OBJECTS</p><h2 className="tc">走近，細看。</h2><p className="tc">走進台北與京都門市，在不同角度的光線下，親自感受作品的比例與質地。</p><Link href="/#visit" className="catalog-button tc">尋找門市</Link></div>
     </div>
   );
 }

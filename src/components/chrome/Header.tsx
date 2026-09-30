@@ -45,8 +45,8 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
 
   return (
     <header data-header="" className={`fixed left-0 top-0 z-30 h-50 w-full ${open ? "menu--opened" : ""}`}>
-      <div className="container-x flex h-full items-center justify-between">
-        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className="relative z-40 block h-12 w-[136px]" onClick={() => setOpen(false)}>
+      <div className="site-header-inner">
+        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className="relative z-40 block h-12 w-[136px] shrink-0" onClick={() => setOpen(false)}>
           <img src={brand.logo.src} alt="" className="h-full w-full" draggable={false} />
         </a>
         <nav className={`hero-nav relative z-40 hidden items-center transition-opacity duration-300 laptop:flex ${open ? "pointer-events-none opacity-0" : ""}`} aria-label="主要">
@@ -90,7 +90,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
             );
           })}
           {/* mobile list */}
-          <ul className="menu-fade absolute left-25 top-95 flex flex-col gap-24 laptop:hidden" style={{ transitionDelay: open ? ".2s" : "0s" }}>
+          <ul className="menu-fade absolute left-[var(--page-gutter)] top-95 flex flex-col gap-24 laptop:hidden" style={{ transitionDelay: open ? ".2s" : "0s" }}>
             <li><Link href="/collections/all" onClick={close} className="tc text-2xl text-paper">全部商品</Link></li>
             {navItems.map((s) => (
               <li key={s.id}><a href={sectionHref(s.id)} onClick={close} className="flex items-baseline gap-14 text-4xl font-bold leading-none text-paper"><span>{s.label}</span><span className="tc text-base font-medium opacity-70">{s.zh}</span></a></li>

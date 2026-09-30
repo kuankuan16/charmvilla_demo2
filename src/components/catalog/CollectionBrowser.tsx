@@ -29,12 +29,13 @@ export default function CollectionBrowser({ products }: { products: Product[] })
     // Passing its internal history state would bypass that synchronization.
     window.history.replaceState(null, "", pathname + (suffix ? `?${suffix}` : ""));
   };
+  const teaOnly = products.length > 0 && products.every(p => p.category === "tea");
   const words = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-  const visible = products.filter((p) => words.every((word) => `${p.name} ${p.english} ${p.summary} ${p.description}`.toLocaleLowerCase().includes(word)));
+  const visible = products.filter((p) => words.every((word) => `${p.name} ${p.english} ${p.summary} ${p.description} ${p.facts.map(f => f.value).join(" ")}`.toLocaleLowerCase().includes(word)));
   return (
     <div ref={root} className="collection-results">
-      <div className="collection-tools"><p className="tc" role="status" aria-live="polite">{query ? "搜尋結果" : "作品一覽"} <span>{String(visible.length).padStart(2, "0")}</span></p><div className="collection-search"><label htmlFor="product-search" className="tc">搜尋商品</label><input id="product-search" type="search" value={query} onChange={(e) => updateQuery(e.target.value)} placeholder="名稱、風味或材質" className="tc" />{query && <button type="button" onClick={() => updateQuery("")} className="tc">清除</button>}</div></div>
-      {visible.length ? <div className="catalog-grid">{visible.map((p, i) => <ProductCard key={p.slug} product={p} index={i} animated />)}</div> : <div className="collection-empty"><p className="catalog-eyebrow">KEEP EXPLORING</p><h2 className="tc">還沒找到這件物件。</h2><p className="tc">試試不同的名稱、風味或材質，或回到這個系列的完整清單。</p><button className="catalog-button tc" onClick={() => updateQuery("")}>顯示全部商品 ↗</button></div>}
+      <div className="collection-tools"><p className="tc" role="status" aria-live="polite">{query ? "搜尋結果" : teaOnly ? "禮盒一覽" : "作品一覽"} <span>{String(visible.length).padStart(2, "0")}</span></p><div className="collection-search"><label htmlFor="product-search" className="tc">搜尋商品</label><input id="product-search" type="search" value={query} onChange={(e) => updateQuery(e.target.value)} placeholder={teaOnly ? "禮盒名稱、入數或茶款" : "名稱、風味或材質"} className="tc" />{query && <button type="button" onClick={() => updateQuery("")} className="tc">清除</button>}</div></div>
+      {visible.length ? <div className="catalog-grid">{visible.map((p, i) => <ProductCard key={p.slug} product={p} index={i} animated />)}</div> : <div className="collection-empty"><p className="catalog-eyebrow">KEEP EXPLORING</p><h2 className="tc">還沒找到這件物件。</h2><p className="tc">試試不同的名稱、風味或材質，或回到這個系列的完整清單。</p><button className="catalog-button tc" onClick={() => updateQuery("")}>顯示全部商品</button></div>}
     </div>
   );
 }
