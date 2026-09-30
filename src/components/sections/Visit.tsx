@@ -10,10 +10,10 @@ export default function Visit() {
       <StoreCarousel />
       <div className="store-online"><p className="catalog-eyebrow">ONLINE SHOP</p><p className="tc">{online.text}</p><a href={online.href} target="_blank" rel="noreferrer" className="link-underline tc">前往線上商店</a></div>
       <div className="container-x">
-        <section id="news" aria-labelledby="news-heading" className="grid grid-cols-12 gap-x-20 border-t border-ink/20 bg-white py-40">
+        <section id="news" aria-labelledby="news-heading" className="grid grid-cols-12 gap-x-20 bg-white py-40">
           <h2 id="news-heading" className="col-span-12 text-xs font-bold lg:col-span-5">{visit.news.label}<span className="tc ml-10">最新消息</span></h2>
           <ul className="col-span-12 mt-20 lg:col-span-7 lg:mt-0">
-            <li id="news-show-more" className="border-y border-ink/30 py-25">
+            <li id="news-show-more" className="py-25">
               <article className="grid gap-25 sm:grid-cols-[1fr_150px]" aria-labelledby="launch-news-heading">
                 <div>
                   <div className="tc text-xs font-medium text-stone-deep">2026 · 新品發表</div>
@@ -41,7 +41,7 @@ export default function Visit() {
                 key={n.text}
                 data-animation="moveUp"
                 data-delay={i * 0.1}
-                className="grid grid-cols-[70px_80px_1fr] gap-x-15 border-t border-ink/30 py-15 last:border-b lg:grid-cols-[90px_90px_1fr]"
+                className="grid grid-cols-[70px_80px_1fr] gap-x-15 py-15 lg:grid-cols-[90px_90px_1fr]"
               >
                 <span className="tc text-xs font-bold">{n.date}</span>
                 <span className="tc text-xs font-bold text-ink/60">{n.tag}</span>

@@ -8,7 +8,7 @@ export default function BagCampaign() {
 
   return (
     <section id="bag-campaign" aria-labelledby="bag-campaign-heading" className="bg-white pb-100 laptop:pb-180">
-      <div className="container-x mb-25 flex flex-wrap items-baseline justify-between gap-12 border-t border-ink/20 pt-20">
+      <div className="container-x mb-25 flex flex-wrap items-baseline justify-between gap-12 pt-20">
         <h2 id="bag-campaign-heading" className="text-xs font-bold">{bagCampaign.heading}</h2>
         <p className="tc text-xs font-medium">{bagCampaign.subtitle}</p>
       </div>

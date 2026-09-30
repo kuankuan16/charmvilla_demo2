@@ -13,7 +13,7 @@ export default function Partners() {
         </div>
       </div>
 
-      <div className="partners-copy flex min-w-0 flex-col px-25 pb-40 pt-30 laptop:border-l laptop:border-ink/20 laptop:px-40 laptop:pt-45">
+      <div className="partners-copy flex min-w-0 flex-col px-25 pb-40 pt-30 laptop:px-40 laptop:pt-45">
         <div className="text-xs font-bold" data-animation="moveUp">{partners.label}</div>
 
         <div className="my-auto py-40">

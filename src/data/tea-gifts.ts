@@ -56,7 +56,7 @@ export const teaGifts: TeaGift[] = [
 
 const describeContents = (contents: TeaContents) => contents.map(c => `${c.name} ${c.count} 入`).join("、");
 export const teaGiftProducts: Product[] = teaGifts.map(gift => {
-  const official = { ...officialImages[String(gift.officialId) as keyof typeof officialImages], alt: `${gift.name}・官方禮盒商品圖` } satisfies Img;
+  const official = { ...officialImages[String(gift.officialId) as keyof typeof officialImages], alt: `${gift.name}・官方禮盒商品圖`, cutout: true } satisfies Img;
   const image = gift.scene ? gallery(gift.scene, `${gift.name}・禮盒茶席情境`) : official;
   const contents = gift.choices
     ? gift.choices.map(c => describeContents(c.contents)).join("；或 ")

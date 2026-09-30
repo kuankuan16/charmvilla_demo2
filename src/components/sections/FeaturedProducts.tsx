@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { findProduct, productHref } from "@/data/catalog";
 import { Heading, Picture } from "@/components/ui";
+import { imageFit } from "@/data/content";
 
 // A single cross-category selection; full collections live on their own pages.
 const selected = [
@@ -21,7 +22,7 @@ export default function FeaturedProducts() {
     <div className="featured-grid">
       {selected.map((product,i) => <article key={product.slug} data-featured-product={product.slug}>
         <Link href={productHref(product)} aria-label={`欣賞 ${product.name}`}>
-          <div className="featured-image"><Picture img={product.image} fill fit="contain" animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>
+          <div className={`featured-image featured-image--${product.image.cutout ? "cutout" : "scene"}`}><Picture img={product.image} fill fit={imageFit(product.image)} animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>
           <div className="featured-caption"><span>{String(i+1).padStart(2,"0")}</span><h3 className="tc">{product.name}</h3></div>
           <p className="tc">{product.summary}</p>
         </Link>

@@ -44,7 +44,7 @@ export default function Shown() {
                 key={p.name}
                 data-animation="moveUp"
                 data-delay={i * 0.05}
-                className="group flex items-baseline justify-between gap-20 border-t border-ink/20 py-10 last:border-b"
+                className="group flex items-baseline justify-between gap-20 py-10"
               >
                 <span className="tc text-2xl font-bold leading-none lg:text-4xl">
                   <span className="link-underline">{p.name}</span>

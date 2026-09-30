@@ -7,7 +7,7 @@ import { Heading, Label, Picture } from "@/components/ui";
 
 export default function Teaware() {
   return (
-    <section id="teaware" className="container-x relative border-t border-ink/20 bg-white py-100">
+    <section id="teaware" className="container-x relative bg-white py-100">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-5">
           {/* `text-ink!`: Label defaults to text-stone-deep, which Tailwind emits later in the sheet, so a plain
@@ -34,7 +34,7 @@ export default function Teaware() {
                     key={it}
                     data-animation="moveUp"
                     data-delay={0.1 + i * 0.08}
-                    className="tc border-t border-ink/30 py-12 text-xl font-bold leading-tight last:border-b lg:text-2xl"
+                    className="tc py-12 text-xl font-bold leading-tight lg:text-2xl"
                   >
                     <Link href={productHref(teawareCatalog[ci === 0 ? i : i + 2])} className="flex items-center justify-between gap-15 hover:underline"><span>{it}</span></Link>
                   </li>

@@ -4,7 +4,7 @@ import { Heading, Picture } from "@/components/ui";
 
 export default function ShowMore() {
   return (
-    <section id="show-more" className="container-x relative border-t border-ink/20 bg-white pt-30 mb-100 laptop:mb-180">
+    <section id="show-more" className="container-x relative bg-white pt-30 mb-100 laptop:mb-180">
       <div className="grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-7">
 
@@ -13,13 +13,13 @@ export default function ShowMore() {
             {showMore.sub}
           </div>
 
-          <ul className="mt-40 border-t border-ink/20">
+          <ul className="mt-40">
             {showMore.events.map((e, i) => (
               <li
                 key={e.date}
                 data-animation="moveUp"
                 data-delay={0.15 + i * 0.1}
-                className="grid grid-cols-[90px_90px_1fr] items-baseline gap-x-15 border-b border-ink/20 py-15 lg:grid-cols-[130px_120px_1fr] lg:gap-x-20"
+                className="grid grid-cols-[90px_90px_1fr] items-baseline gap-x-15 py-15 lg:grid-cols-[130px_120px_1fr] lg:gap-x-20"
               >
                 <span className="text-3xl font-bold leading-none lg:text-5xl">{e.date}</span>
                 <span className="text-xs font-bold">{e.city}</span>

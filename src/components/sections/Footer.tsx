@@ -28,7 +28,7 @@ export default function Footer() {
         </nav>
       </div>
 
-      <div className="mt-50 flex flex-wrap justify-between gap-10 border-t border-paper/20 pt-20 text-xs font-bold">
+      <div className="mt-50 flex flex-wrap justify-between gap-10 pt-20 text-xs font-bold">
         <span>© 2026 CHARM VILLA</span>
         <a href={visit.instagram} target="_blank" rel="noreferrer" className="link-underline">
           INSTAGRAM

@@ -81,7 +81,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
             const top = 30 + (i / rows) * 60;
             const left = rows > 1 ? 70 - i * (64 / (rows - 1)) : 6;
             return (
-              <div key={s.id} className="menu-panel absolute hidden border-l border-t border-ink/15 bg-white laptop:block" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
+              <div key={s.id} className="menu-panel absolute hidden bg-white laptop:block" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
                 <a href={sectionHref(s.id)} onClick={close} className="menu-fade group absolute left-30 top-40 flex items-center gap-20 whitespace-nowrap text-4xl font-bold leading-none" style={{ transitionDelay: open ? `${0.3 + i * 0.08}s` : "0s" }}>
                   <span className="link-underline">{s.label}</span>
                   <span className="tc text-base font-medium opacity-60">{s.zh}</span>

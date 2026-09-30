@@ -22,7 +22,7 @@ export default function Tea() {
           <li key={product.slug} data-tea-product={product.slug}>
             <article><Link href={productHref(product)} className="group block" aria-label={`瀏覽 ${product.name}`}>
               <Picture img={product.image} sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw" animate={false} />
-              <div className="mt-20 flex items-baseline gap-15 border-t border-ink/20 pt-15">
+              <div className="mt-20 flex items-baseline gap-15 pt-15">
                 <span className="text-xs font-bold text-stone-deep">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.name}</h3>
               </div>

@@ -1,6 +1,6 @@
 "use client";
-// Cursor dot — position lerps toward the pointer at 0.2 per frame and is written to CSS variables
-// (--cursor-x / --cursor-y in 0..1), exactly the reference's mechanism. Hidden on touch devices via CSS.
+// Cursor mark (gold vector goldfish, see .cursor-dot) — position lerps toward the pointer at 0.2 per frame and is
+// written to CSS variables (--cursor-x / --cursor-y in 0..1), the reference's mechanism. Hidden on touch devices via CSS.
 import { useEffect } from "react";
 import { gsap } from "gsap";
 

@@ -21,7 +21,7 @@ export default function Jewelry() {
           <li key={product.n} data-jewelry-product={product.n}>
             <article><Link href={productHref(jewelryCatalog[i])} className="group block" aria-label={`瀏覽 ${product.title}`}>
               <Picture img={product.image} sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw" animate={false} />
-              <div className="mt-20 flex items-baseline gap-15 border-t border-ink/20 pt-15">
+              <div className="mt-20 flex items-baseline gap-15 pt-15">
                 <span className="text-xs font-bold text-stone-deep">{product.n}</span>
                 <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.title}</h3>
               </div>
@@ -32,7 +32,7 @@ export default function Jewelry() {
       </ul>
       <div className="mt-35 text-right"><Link href="/collections/jewelry" className="tc text-xs font-bold link-underline">瀏覽全部金飾</Link></div>
 
-      <div className="mt-60 border-t border-ink/20 pt-30">
+      <div className="mt-60 pt-30">
         <div className="text-xs font-bold text-gold">{jewelry.craft.label}</div>
         <div className="tc mt-15 text-2xl font-bold">{jewelry.craft.heading}</div>
         <ul className="tc mt-20 flex flex-wrap gap-x-40 gap-y-10 text-sm">
