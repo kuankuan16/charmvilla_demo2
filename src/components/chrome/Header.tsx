@@ -3,7 +3,7 @@
 // Menu panels reveal with clip-path (.5s cubic-bezier(.3,.86,.36,.95)) and staggered delays.
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { brand, sections } from "@/data/content";
+import { brand, cart, sections } from "@/data/content";
 import { getScroller } from "@/lib/motion/scroller";
 
 export default function Header({ innerPage = false }: { innerPage?: boolean }) {
@@ -57,6 +57,10 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <span className="hero-nav-divider" aria-hidden="true" />
           <a href={sectionHref("visit")} className="link-underline">Get in Touch</a>
         </nav>
+        <div className="relative z-40 flex items-center gap-18 laptop:gap-0">
+          <a href={cart.href} target="_blank" rel="noreferrer" aria-label={cart.label} title={cart.label} className={`header-cart ${open ? "text-paper" : "text-ink"}`}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 8H6.2" /><circle cx="9.5" cy="20" r="1.2" /><circle cx="17.5" cy="20" r="1.2" /></svg>
+          </a>
         <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "關閉選單" : "開啟選單"} className="relative z-40 flex h-24 w-26 flex-col justify-between py-3 laptop:hidden" onClick={() => setOpen((v) => !v)}>
           <span className={`block h-3 w-full transition-transform duration-300 ${open ? "translate-y-[8.5px] rotate-45 bg-paper" : "bg-ink"}`} />
           <span className={`block h-3 w-full transition-opacity duration-200 ${open ? "opacity-0" : "bg-ink"}`} />
@@ -67,6 +71,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <span className={`block h-3 w-full transition-opacity duration-200 ${open ? "opacity-0" : "bg-ink"}`} />
           <span className={`block h-3 w-full transition-transform duration-300 ${open ? "-translate-y-[8.5px] -rotate-45 bg-paper" : "bg-ink"}`} />
         </button>
+        </div>
       </div>
 
       <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label="選單" className={`menu-root absolute left-0 top-0 h-screen w-full bg-ink text-ink ${open ? "" : "pointer-events-none"}`} aria-hidden={!open} inert={!open}>

@@ -495,6 +495,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 .hero-nav { margin-left: auto; gap: clamp(22px, 1.8vw, 36px); font-size: clamp(12px, .9vw, 15px); font-weight: 400; letter-spacing: .02em; text-transform: none; white-space: nowrap; }
 .hero-nav > a { display: inline-flex; align-items: center; min-height: 44px; }
 .hero-nav-divider { display: none; }
+/* Cart button next to the menu opener; links to the official online store (no on-site checkout). */
+.header-cart { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; transition: opacity .2s; }
+.header-cart:hover { opacity: .6; }
 
 /* Brand story: reference-width × 2/3, scroll reading and a pinned image gallery. */
 .brand-story { position: relative; background: transparent; }
@@ -625,9 +628,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: 110px; }
 }
 
 /* Shared outer edge for every page; card interiors retain their own spacing. */
-:root { --page-gutter: clamp(24px, 4.86vw, 96px); }
+/* Side gutters widened (user 2026-09-30: 左右的 padding 再多一點). */
+:root { --page-gutter: clamp(32px, 6.5vw, 130px); }
 @media (max-width: 767px) {
-  :root { --page-gutter: 20px; }
+  :root { --page-gutter: 24px; }
 }
 .partners-image { padding-left: 0; }
 .partners-copy { padding-right: 0; }

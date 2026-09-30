@@ -185,6 +185,10 @@ export const showMore = {
   invitation: gallery("CV-0427", "Show more! 真皮包新品發表邀請卡（最終版）", 1280, 1963),
 };
 
+// Header cart button (user 2026-09-30: 像電商有購物車的按鈕). This site has no checkout; the button opens the official
+// online store where orders are placed. No prices or stock are shown here.
+export const cart = { href: "https://www.charmvilla.com.tw/product.php?lang=tw&tb=1", label: "前往官方線上商店選購" };
+
 export const visit = {
   index: "7:",
   heading: "VISIT US:",
