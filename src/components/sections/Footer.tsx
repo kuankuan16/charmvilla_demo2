@@ -1,7 +1,8 @@
 import Link from "next/link";
 // Footer — white logo, section nav, copyright + Instagram (reference: the LAXER logo / address-list footer, inverted to ink).
 import Image from "next/image";
-import { visit, brand, sections } from "@/data/content";
+import { brand, sections } from "@/data/content";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function Footer() {
   return (
@@ -30,9 +31,7 @@ export default function Footer() {
 
       <div className="mt-50 flex flex-wrap justify-between gap-10 pt-20 text-xs font-bold">
         <span>© 2026 CHARM VILLA</span>
-        <a href={visit.instagram} target="_blank" rel="noreferrer" className="link-underline">
-          INSTAGRAM
-        </a>
+        <SocialLinks />
       </div>
     </footer>
   );

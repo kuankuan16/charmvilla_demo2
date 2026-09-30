@@ -1,0 +1,61 @@
+
+> charmvilla-gallery-site@0.1.0 check
+> npm run lint && npm run typecheck && npm run build
+
+
+> charmvilla-gallery-site@0.1.0 lint
+> eslint
+
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-gallery-site/src/components/chrome/Header.tsx
+  58:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-gallery-site/src/components/sections/Hero.tsx
+  140:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+> charmvilla-gallery-site@0.1.0 typecheck
+> tsc --noEmit
+
+
+> charmvilla-gallery-site@0.1.0 build
+> next build
+
+▲ Next.js 16.3.0 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 14ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 377ms
+  Running TypeScript ...
+  Finished TypeScript in 948ms ...
+  Collecting page data using 8 workers ...
+  Generating static pages using 8 workers (0/43) ...
+  Generating static pages using 8 workers (10/43) 
+  Generating static pages using 8 workers (21/43) 
+  Generating static pages using 8 workers (32/43) 
+✓ Generating static pages using 8 workers (43/43) in 511ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /collections/[category]
+│ ├ ● /collections/all
+│ ├ ● /collections/bags
+│ ├ ● /collections/jewelry
+│ └ ● [+2 more paths]
+├ ○ /icon.svg
+├   /products/[slug]
+│ ├ ● /products/braided-leather-bag-white
+│ ├ ● /products/braided-leather-bag-blue
+│ ├ ● /products/braided-leather-bag-pink
+│ └ ● [+30 more paths]
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

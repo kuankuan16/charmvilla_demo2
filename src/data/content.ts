@@ -189,6 +189,13 @@ export const showMore = {
 // online store where orders are placed. No prices or stock are shown here.
 export const cart = { href: "https://www.charmvilla.com.tw/product.php?lang=tw&tb=1", label: "前往官方線上商店選購" };
 
+// Social accounts as listed in the footer of https://www.charmvilla.com.tw/product.php?lang=tw&tb=1 (2026-09-30).
+export const social = [
+  { id: "facebook", label: "Facebook", href: "https://www.facebook.com/CHARMVILLA8/" },
+  { id: "twitter", label: "Twitter", href: "https://twitter.com/charmvilla8" },
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/charmvilla/" },
+] as const;
+
 export const visit = {
   index: "7:",
   heading: "VISIT US:",

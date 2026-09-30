@@ -5,11 +5,11 @@
 //            then the whole overlay wipes to its left edge with a clip-path (power3.inOut, 1.1 s). The page becomes
 //            visible and the hero headline's split characters start at the same instant the wipe begins.
 //   mobile   no digits (below 768 px), only the wipe.
+// No header/logo replica at the top (user 2026-09-30); the wordmark only appears as the rising letters.
 // Scrolling stays locked until the wipe has finished. Reduced motion skips everything.
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { prefersReducedMotion } from "@/lib/motion/scroller";
-import { brand } from "@/data/content";
 
 // Column boundaries (px, in the 929×82 official PNG) at the midpoints of the gaps between the ten letters C H A R M V I L L A.
 const LOGO_W = 929;
@@ -41,9 +41,6 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
 
   return (
     <div ref={root} data-component="preloader" className="preloader fixed inset-0 z-[200] grid h-screen w-full overflow-hidden bg-stone-deep md:grid-cols-2" aria-hidden="true">
-      <div className="absolute left-0 top-0 z-30 h-50 w-full">
-        <div className="site-header-inner"><span /><span className="header-brand block"><img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} /></span><span /></div>
-      </div>
       <div data-mark="" className="preloader-mark">
         {LETTER_BOUNDS.slice(0, -1).map((x0, i) => {
           const x1 = LETTER_BOUNDS[i + 1];
