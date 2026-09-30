@@ -56,9 +56,9 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           </span>
           <span>{open ? "Close" : "Menu"}</span>
         </button>
-        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className={`header-brand relative z-40 block transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`} onClick={() => setOpen(false)}>
+        <Link href={innerPage ? "/" : "#hero"} aria-label="CHARM VILLA — 回到首頁" className={`header-brand relative z-40 block transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`} onClick={() => { setOpen(false); if (innerPage) { try { sessionStorage.setItem("cv-skip-preloader", "1"); } catch { /* ignore */ } } }}>
           <img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} />
-        </a>
+        </Link>
         <div className={`header-tools relative z-40 text-ink transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`}>
           <a href={sectionHref("visit")} aria-label="門市資訊" title="門市資訊" onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.4" /></svg>

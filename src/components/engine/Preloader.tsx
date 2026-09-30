@@ -7,7 +7,7 @@
 //   mobile   no digits (below 768 px), only the wipe.
 // No header/logo replica at the top (user 2026-09-30); the wordmark only appears as the rising letters.
 // Scrolling stays locked until the wipe has finished. Reduced motion skips everything.
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { prefersReducedMotion } from "@/lib/motion/scroller";
 
@@ -21,11 +21,24 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
   const root = useRef<HTMLDivElement>(null);
   const revealed = useRef(false);
   const done = useRef(false);
+  const skipped = useRef(false);
+  const reveal = useCallback(() => { if (revealed.current) return; revealed.current = true; onReveal(); }, [onReveal]);
+  const finish = useCallback(() => { if (done.current) return; done.current = true; reveal(); onComplete(); }, [reveal, onComplete]);
+
+  // Returning home via the header wordmark sets a one-shot flag: hide the overlay before first paint and finish at once
+  // (user 2026-09-30: 點 logo 回首頁不用再 loading). A fresh visit still gets the full sequence.
+  useLayoutEffect(() => {
+    let skip = false;
+    try { if (sessionStorage.getItem("cv-skip-preloader")) { sessionStorage.removeItem("cv-skip-preloader"); skip = true; } } catch { /* storage unavailable */ }
+    if (!skip) return;
+    skipped.current = true;
+    if (root.current) root.current.style.display = "none";
+    finish();
+  }, [finish]);
 
   useEffect(() => {
     const el = root.current!;
-    const reveal = () => { if (revealed.current) return; revealed.current = true; onReveal(); };
-    const finish = () => { if (done.current) return; done.current = true; reveal(); onComplete(); };
+    if (skipped.current) return;
     if (prefersReducedMotion()) { finish(); return; }
     const chars = el.querySelectorAll<HTMLElement>("[data-mark] .ch");
     const aboveTablet = window.matchMedia("(min-width: 768px)").matches;
@@ -37,7 +50,7 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
     tl.play();
     const safety = window.setTimeout(finish, 6000);
     return () => { window.clearTimeout(safety); tl.kill(); };
-  }, [onReveal, onComplete]);
+  }, [reveal, finish]);
 
   return (
     <div ref={root} data-component="preloader" className="preloader fixed inset-0 z-[200] grid h-screen w-full overflow-hidden bg-stone-deep md:grid-cols-2" aria-hidden="true">
