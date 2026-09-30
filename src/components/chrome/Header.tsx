@@ -54,7 +54,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           </span>
           <span>{open ? "Close" : "Menu"}</span>
         </button>
-        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className="header-brand relative z-40 block" onClick={() => setOpen(false)}>
+        <a href={sectionHref("hero")} aria-label="CHARM VILLA — 回到首頁" className={`header-brand relative z-40 block transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`} onClick={() => setOpen(false)}>
           <img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} />
         </a>
         <div className={`header-tools relative z-40 text-ink transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`}>
