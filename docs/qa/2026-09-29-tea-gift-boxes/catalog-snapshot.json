@@ -1,5 +1,234 @@
 [
   {
+    "slug": "christmas-edition-stocking",
+    "category": "tea",
+    "name": "聖誕特別版｜聖誕襪款",
+    "english": "CHRISTMAS EDITION / STOCKING",
+    "summary": "聖誕限定・桐木盒與刺繡織布盒蓋",
+    "description": "紅色聖誕襪上繡著一棵小小的樹，襪口留白，金色吊飾垂在一旁。靠近看得見燙金與繡線的兩種質感，一只桐木盒把節日留在盒蓋上。",
+    "image": {
+      "src": "/media/site/xmas-stocking-red.webp",
+      "alt": "聖誕特別版聖誕襪款：深紅桌布、暖白蠟燭與松枝之間的桐木禮盒",
+      "w": 1600,
+      "h": 2000
+    },
+    "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/xmas-stocking-red.webp",
+          "alt": "聖誕特別版聖誕襪款：深紅桌布、暖白蠟燭與松枝之間的桐木禮盒",
+          "w": 1600,
+          "h": 2000
+        }
+      },
+      {
+        "label": "燭光情境",
+        "image": {
+          "src": "/media/site/xmas-stocking-green.webp",
+          "alt": "聖誕特別版聖誕襪款：深綠絲絨、紅色蠟燭與古金色飾物旁的桐木禮盒",
+          "w": 896,
+          "h": 1120
+        }
+      },
+      {
+        "label": "盒蓋設計",
+        "image": {
+          "src": "/media/site/xmas-lid-stocking-mockup.webp",
+          "alt": "聖誕特別版聖誕襪款：盒蓋設計示意",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "正面視角",
+        "image": {
+          "src": "/media/site/xmas-lid-stocking-mockup-front.webp",
+          "alt": "聖誕特別版聖誕襪款：盒蓋正面視角",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "上方視角",
+        "image": {
+          "src": "/media/site/xmas-lid-stocking-mockup-top.webp",
+          "alt": "聖誕特別版聖誕襪款：盒蓋上方視角",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "材質特寫",
+        "image": {
+          "src": "/media/site/xmas-lid-stocking-mockup-detail.webp",
+          "alt": "聖誕特別版聖誕襪款：燙金與刺繡的近距離材質檢視",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "平面原稿",
+        "image": {
+          "src": "/media/site/xmas-lid-stocking-flat.webp",
+          "alt": "聖誕特別版聖誕襪款：盒蓋平面原稿",
+          "w": 1344,
+          "h": 576
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "2026 聖誕特別版"
+      },
+      {
+        "label": "盒蓋圖案",
+        "value": "紅色聖誕襪（綠色樹紋、白色襪口）、金色吊飾、小金魚與 CHARM VILLA 字樣"
+      },
+      {
+        "label": "工藝",
+        "value": "燙金：黑色裝飾線以微凹壓印／彩色圖案與 CHARM VILLA 字樣：刺繡"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "配色",
+        "value": "米金布底 × 燙金 × 金線 Logo × 紅綠白刺繡"
+      },
+      {
+        "label": "上市資訊",
+        "value": "聖誕新品；入數、售價與供應日期以官方公告為準，歡迎洽詢。"
+      }
+    ],
+    "story": {
+      "title": "把聖誕留一點下來",
+      "body": "聖誕裝飾收起來的時候，總有一兩樣還想多留幾天。淺色木框配著刺繡布面，放在架上，旁邊擺幾本書，就算松枝收掉了，也還是喜歡。",
+      "image": {
+        "src": "/media/site/xmas-stocking-green.webp",
+        "alt": "聖誕特別版聖誕襪款：深綠絲絨與燭光中的桐木禮盒",
+        "w": 896,
+        "h": 1120
+      }
+    },
+    "variant": {
+      "group": "christmas-edition-2026",
+      "label": "聖誕襪款"
+    }
+  },
+  {
+    "slug": "christmas-edition-candy-cane",
+    "category": "tea",
+    "name": "聖誕特別版｜拐杖糖款",
+    "english": "CHRISTMAS EDITION / CANDY CANE",
+    "summary": "聖誕限定・桐木盒與刺繡織布盒蓋",
+    "description": "紅白拐杖糖繫上綠色緞結，金色吊飾垂在米金布面上。燙金微微壓入布裡，繡線留著厚度，聖誕的顏色被一只桐木盒收得安靜。",
+    "image": {
+      "src": "/media/site/xmas-candycane-red.webp",
+      "alt": "聖誕特別版拐杖糖款：莓紅布景、暖金燈光與虛化聖誕樹前的桐木禮盒",
+      "w": 896,
+      "h": 1120
+    },
+    "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/xmas-candycane-red.webp",
+          "alt": "聖誕特別版拐杖糖款：莓紅布景、暖金燈光與虛化聖誕樹前的桐木禮盒",
+          "w": 896,
+          "h": 1120
+        }
+      },
+      {
+        "label": "盒蓋設計",
+        "image": {
+          "src": "/media/site/xmas-lid-candycane-mockup.webp",
+          "alt": "聖誕特別版拐杖糖款：盒蓋設計示意",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "正面視角",
+        "image": {
+          "src": "/media/site/xmas-lid-candycane-mockup-front.webp",
+          "alt": "聖誕特別版拐杖糖款：盒蓋正面視角",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "上方視角",
+        "image": {
+          "src": "/media/site/xmas-lid-candycane-mockup-top.webp",
+          "alt": "聖誕特別版拐杖糖款：盒蓋上方視角",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "材質特寫",
+        "image": {
+          "src": "/media/site/xmas-lid-candycane-mockup-detail.webp",
+          "alt": "聖誕特別版拐杖糖款：燙金與刺繡的近距離材質檢視",
+          "w": 1344,
+          "h": 576
+        }
+      },
+      {
+        "label": "平面原稿",
+        "image": {
+          "src": "/media/site/xmas-lid-candycane-flat.webp",
+          "alt": "聖誕特別版拐杖糖款：盒蓋平面原稿",
+          "w": 1344,
+          "h": 576
+        }
+      }
+    ],
+    "facts": [
+      {
+        "label": "系列",
+        "value": "2026 聖誕特別版"
+      },
+      {
+        "label": "盒蓋圖案",
+        "value": "紅白拐杖糖與綠色緞結、金色吊飾、小金魚與 CHARM VILLA 字樣"
+      },
+      {
+        "label": "工藝",
+        "value": "燙金：黑色裝飾線以微凹壓印／彩色圖案與 CHARM VILLA 字樣：刺繡"
+      },
+      {
+        "label": "盒型與材質",
+        "value": "桐木盒、織布盒蓋"
+      },
+      {
+        "label": "配色",
+        "value": "米金布底 × 燙金 × 金線 Logo × 紅綠白刺繡"
+      },
+      {
+        "label": "上市資訊",
+        "value": "聖誕新品；入數、售價與供應日期以官方公告為準，歡迎洽詢。"
+      }
+    ],
+    "story": {
+      "title": "把聖誕留一點下來",
+      "body": "聖誕裝飾收起來的時候，總有一兩樣還想多留幾天。淺色木框配著刺繡布面，放在架上，旁邊擺幾本書，就算松枝收掉了，也還是喜歡。",
+      "image": {
+        "src": "/media/site/xmas-lid-candycane-mockup-detail.webp",
+        "alt": "聖誕特別版拐杖糖款：盒蓋燙金與刺繡的近距離材質檢視",
+        "w": 1344,
+        "h": 576
+      }
+    },
+    "variant": {
+      "group": "christmas-edition-2026",
+      "label": "拐杖糖款"
+    }
+  },
+  {
     "slug": "reunion-paper-gift-box",
     "category": "tea",
     "name": "團圓｜繽紛紙盒",
@@ -61,7 +290,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-301.webp",
+        "alt": "團圓｜繽紛紙盒・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "variant": {
       "group": "reunion-gift-box",
@@ -153,7 +388,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-308.webp",
+        "alt": "團圓｜桐木木盒・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "variant": {
       "group": "reunion-gift-box",
@@ -245,7 +486,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-319.webp",
+        "alt": "年年有魚｜年節禮・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=954",
     "giftBox": {
@@ -325,7 +572,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-329.webp",
+        "alt": "花開富貴｜年節禮・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=1053",
     "giftBox": {
@@ -405,7 +658,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-325.webp",
+        "alt": "花滿富春・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=104",
     "giftBox": {
@@ -439,13 +698,21 @@
     "summary": "6 入／盒 · 單一茶款",
     "description": "六尾玫瑰蜜香紅茶小金魚，收在京都版紙盒中。從盒面的形，到水中的姿態，邀請收禮的人留一段時間給茶。",
     "image": {
-      "src": "/media/gift-boxes/official-692.png",
-      "w": 600,
-      "h": 445,
-      "alt": "京都版・官方禮盒商品圖",
-      "cutout": true
+      "src": "/media/site/journal-320.webp",
+      "alt": "京都版・日常茶時情境（tea journal）",
+      "w": 1080,
+      "h": 1350
     },
     "views": [
+      {
+        "label": "禮盒情境",
+        "image": {
+          "src": "/media/site/journal-320.webp",
+          "alt": "京都版・日常茶時情境（tea journal）",
+          "w": 1080,
+          "h": 1350
+        }
+      },
       {
         "label": "官方商品圖",
         "image": {
@@ -485,7 +752,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-309.webp",
+        "alt": "京都版・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=692",
     "giftBox": {
@@ -553,7 +826,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-305.webp",
+        "alt": "心有愛禮盒・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=970",
     "giftBox": {
@@ -636,7 +915,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-330.webp",
+        "alt": "花果茶禮盒・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=183",
     "giftBox": {
@@ -704,7 +989,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-323.webp",
+        "alt": "玫好相遇・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=343",
     "giftBox": {
@@ -776,7 +1067,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-311.webp",
+        "alt": "魚你分享｜茶繽紛・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=196",
     "giftBox": {
@@ -868,7 +1165,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-307.webp",
+        "alt": "春曉・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=850",
     "giftBox": {
@@ -955,7 +1258,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-303.webp",
+        "alt": "暮雪・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=582",
     "giftBox": {
@@ -1042,7 +1351,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-313.webp",
+        "alt": "蝴蝶蘭・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=960",
     "giftBox": {
@@ -1114,7 +1429,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-315.webp",
+        "alt": "紫斑蝶・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=88",
     "giftBox": {
@@ -1182,7 +1503,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-326.webp",
+        "alt": "小鮮月禮盒｜純茶包・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=1072",
     "giftBox": {
@@ -1266,7 +1593,13 @@
     ],
     "story": {
       "title": "一盒風景，一席茶時",
-      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。"
+      "body": "先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
+      "image": {
+        "src": "/media/site/journal-301.webp",
+        "alt": "大盈月禮盒｜純茶包・日常茶時情境（tea journal）",
+        "w": 1080,
+        "h": 1350
+      }
     },
     "officialUrl": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=994",
     "giftBox": {

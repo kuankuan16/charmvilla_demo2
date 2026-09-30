@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30",
+  "commits": {
+    "teaJournal": "361b473",
+    "christmasEdition": "da735fb"
+  },
+  "deployment": "charmvilla-gallery-site-qx6go7w7y-tentenco.vercel.app",
+  "alias": "https://charmvilla-gallery-site.vercel.app",
+  "check": {
+    "lintErrors": 0,
+    "lintWarnings": 4,
+    "typecheck": true,
+    "build": true
+  },
+  "verifyTeaGifts": "PASS (18 tea listings)",
+  "sitemapRoutes": 39,
+  "non200": [],
+  "playwright": {
+    "pages": 12,
+    "consoleErrors": 0,
+    "teaCards": {
+      "cutout": 11,
+      "scene": 7
+    },
+    "allCards": 33
+  },
+  "christmasPage": {
+    "variantSwitch": true,
+    "ctaInquiry": true,
+    "officialShopLink": false
+  },
+  "journalScenesUsed": 16,
+  "journalScenesRejectedForPeople": 14,
+  "visuallyInspected": [
+    "local/desktop-products-christmas-edition-stocking.png",
+    "local/desktop-collections-tea.png"
+  ]
+}

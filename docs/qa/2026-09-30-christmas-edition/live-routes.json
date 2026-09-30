@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-09-30T12:34:44+0800",
+  "sitemapRoutes": 39,
+  "non200": [],
+  "christmasRoutes": [
+    "/products/christmas-edition-stocking",
+    "/products/christmas-edition-candy-cane"
+  ],
+  "assets": [
+    [
+      "/media/site/journal-320.webp",
+      200
+    ],
+    [
+      "/media/site/journal-301.webp",
+      200
+    ],
+    [
+      "/media/site/xmas-stocking-red.webp",
+      200
+    ],
+    [
+      "/media/site/xmas-candycane-red.webp",
+      200
+    ],
+    [
+      "/media/site/xmas-lid-stocking-mockup-detail.webp",
+      200
+    ]
+  ],
+  "teaListingChristmasFirst": true,
+  "christmasPage": {
+    "status": 200,
+    "hasVariantSwitch": true,
+    "ctaInquiry": true,
+    "noOfficialShop": true,
+    "views": 18
+  }
+}
