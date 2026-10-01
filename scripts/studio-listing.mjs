@@ -175,7 +175,7 @@ async function main() {
   }
   // flat-ground photos matted: bird on white, dessert stand set on near-white, Christmas lid mock-ups on light grey
   const flat = [
-    ['media/gallery/CV-0256.webp', 'bird-chopstick-rest', [255, 255, 255], { w: 720, h: 600 }, null],
+    ['media/gallery/CV-0256.webp', 'bird-chopstick-rest', [255, 255, 255], { w: 500, h: 420 }, null], // small object: ~42% of the frame (user 2026-10-01: 這張商品要小一點)
     ['media/gallery/CV-0121.webp', 'prosperity-stand-gift-box', [246, 247, 249], { w: 820, h: 700 }, null],
     ['media/gallery/CV-0121.webp', 'prosperity-dessert-stand', [246, 247, 249], { w: 700, h: 720 }, { left: 1340, top: 0, width: 1060, height: 1600 }],
     ['media/site/xmas-lid-stocking-mockup-front.webp', 'christmas-edition-stocking', [13, 46], { w: 820, h: 600 }, null],
@@ -188,7 +188,10 @@ async function main() {
     const obj = matte(img, fitPlate(img), lo, hi);
     const file = `studio-${slug}.webp`; emit(slug, file, await compose(bg, obj, { fit, anchor: 'floor' }, path.join(outDir, file)));
   }
-  fs.writeFileSync(path.join(root, 'src/data/studio-listing.json'), JSON.stringify(manifest, null, 2) + '\n');
+  // keep entries made outside this script (e.g. the generated wooden-coaster-teaspoon listing)
+  const manifestPath = path.join(root, 'src/data/studio-listing.json');
+  const existing = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : {};
+  fs.writeFileSync(manifestPath, JSON.stringify({ ...existing, ...manifest }, null, 2) + '\n');
   // dims manifest
   const dimsPath = path.join(root, 'src/data/images.json'); const dims = JSON.parse(fs.readFileSync(dimsPath, 'utf8'));
   for (const file of Object.values(manifest)) { const m = await sharp(path.join(outDir, file)).metadata(); dims[`/media/site/${file}`] = [m.width, m.height]; }

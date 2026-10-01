@@ -221,12 +221,12 @@
       "bottom": 0.8
     },
     "bird-chopstick-rest": {
-      "ow": 720,
-      "oh": 354,
-      "left": 240,
-      "top": 846,
-      "objH": 0.236,
-      "objW": 0.6,
+      "ow": 500,
+      "oh": 246,
+      "left": 350,
+      "top": 954,
+      "objH": 0.164,
+      "objW": 0.417,
       "bottom": 0.8
     },
     "prosperity-stand-gift-box": {
