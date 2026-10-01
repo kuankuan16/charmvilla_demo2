@@ -193,7 +193,13 @@ const buildCatalog = (lang: Locale) => {
   };
   // 2026-10-01 (user: 「這幾張圖都上官網」): the white bag in the air on ink green (gallery CV-0450) follows the cover scene.
   const sceneAfterLead: Record<string, Img[]> = {
-    "braided-leather-bag-white": [site("scene-white-bag-floating-ink-green.webp", t("編織提把皮革包・白色，在墨綠背景前懸空，肩帶向上飄起", "Braided Leather Bag in white, in mid-air against an ink-green backdrop, its strap drifting upward"))],
+    "braided-leather-bag-white": [site("scene-white-bag-floating-ink-green.webp", t("編織提把皮革包・白色，在墨綠背景前懸空，肩帶向上飄起", "Braided Leather Bag in white, in mid-air against an ink-green backdrop, its strap drifting upward")),
+      // second version: the strap follows the user's reference curve, Morandi sage backdrop (output/white-bag-floating-ink-green-2026-10-01/v2-strap-curve-morandi)
+      site("scene-white-bag-floating-morandi.webp", t("編織提把皮革包・白色，在莫蘭迪灰綠背景前懸空，肩帶畫出長弧", "Braided Leather Bag in white, in mid-air against a Morandi sage backdrop, its strap drawing a long arc"))],
+  };
+  // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
+  const sceneExtra: Record<string, Img[]> = {
+    "braided-leather-bag-pink": [site("scene-pink-bag-armchair.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅的座墊上，背後是一幅藍色筆觸的畫", "Braided Leather Bag in pink on the seat of a beige leather armchair, a blue brush painting behind"))],
   };
   // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
   // they lead the scenes of the pieces they show.
@@ -201,6 +207,8 @@ const buildCatalog = (lang: Locale) => {
   const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a bird-shaped rest beside a cloud-shaped coaster, close view of a black tray table"));
   const woodenOttomans = site("scene-wooden-ottomans.webp", t("兩片雲朵杯墊與兩支銀杏茶匙，放在芥末黃織布圓凳上", "Two cloud-shaped coasters and two ginkgo teaspoons on a mustard woven ottoman"));
   const sceneLead: Record<string, Img[]> = {
+    // the only scene of the Raw Gold earring (output/raw-gold-earring-scene-2026-10-01), so its listing card has a hover image too
+    "raw-gold-goldfish-earrings": [site("scene-raw-gold-earring-worn.webp", t("璞金小金魚耳環配戴在耳垂上，窗邊柔光", "Raw Gold goldfish earring worn on the earlobe in soft window light"))],
     "wooden-coaster-teaspoon": [woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa],
     "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
   };
@@ -228,7 +236,7 @@ const buildCatalog = (lang: Locale) => {
       : p.views.slice(0, 1);
     const shown = new Set(views.map((v) => v.image.src));
     // the bird rest keeps its own photograph first; the new interior follows it
-    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] : [])]
+    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] : []), ...(sceneExtra[p.slug] ?? [])]
       .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && list.findIndex((x) => x.src === img.src) === i);
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };
