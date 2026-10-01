@@ -1,0 +1,10 @@
+{
+  "implemented": true,
+  "local_build": "passed with cached real fonts and webpack",
+  "typecheck": "passed",
+  "lint_errors": 0,
+  "browser_qa": "blocked by browser launch",
+  "deployment": "failed before upload: could not load user, fetch failed",
+  "production_verified": false,
+  "github_pushed": false
+}

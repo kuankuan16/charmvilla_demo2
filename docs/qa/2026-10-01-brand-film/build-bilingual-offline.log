@@ -1,0 +1,57 @@
+
+> charmvilla-gallery-site@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.0 (webpack)
+✓ Running next.config.ts took 14ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 1907ms ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/90) ...
+  Generating static pages using 9 workers (22/90) 
+  Generating static pages using 9 workers (44/90) 
+  Generating static pages using 9 workers (67/90) 
+✓ Generating static pages using 9 workers (90/90) in 611ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /_not-found
+├   /[lang]
+│ ├ ● /zh
+│ └ ● /en
+├ ƒ /[lang]/[...rest]
+├   /[lang]/account
+│ ├ ● /zh/account
+│ └ ● /en/account
+├   /[lang]/collections/[category]
+│ ├ ● /zh/collections/all
+│ ├ ● /zh/collections/bags
+│ ├ ● /zh/collections/jewelry
+│ └ ● [+7 more paths]
+├   /[lang]/products/[slug]
+│ ├ ● /zh/products/braided-leather-bag-white
+│ ├ ● /zh/products/braided-leather-bag-blue
+│ ├ ● /zh/products/braided-leather-bag-pink
+│ └ ● [+61 more paths]
+├ ƒ /api/account/addresses
+├ ƒ /api/account/login
+├ ƒ /api/account/logout
+├ ƒ /api/account/me
+├ ƒ /api/account/profile
+├ ƒ /api/account/recover
+├ ƒ /api/account/register
+├ ƒ /api/cart
+├ ○ /icon.svg
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

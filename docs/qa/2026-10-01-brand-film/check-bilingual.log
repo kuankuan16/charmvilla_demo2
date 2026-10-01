@@ -1,0 +1,48 @@
+
+> charmvilla-gallery-site@0.1.0 check
+> npm run lint && npm run typecheck && npm run build --webpack
+
+
+> charmvilla-gallery-site@0.1.0 lint
+> eslint
+
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-film-release/scripts/tmp/sheet2.mjs
+  4:103  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-film-release/src/components/account/AccountClient.tsx
+  165:123  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-film-release/src/components/cart/CartDrawer.tsx
+  27:64  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-film-release/src/components/chrome/Header.tsx
+  71:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/09-23-charmvilla-film-release/src/components/sections/Hero.tsx
+  144:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 5 problems (0 errors, 5 warnings)
+
+
+> charmvilla-gallery-site@0.1.0 typecheck
+> tsc --noEmit
+
+.next/types/app/(catalog)/account/page.ts(2,24): error TS2307: Cannot find module '../../../../../src/app/(catalog)/account/page.js' or its corresponding type declarations.
+.next/types/app/(catalog)/account/page.ts(7,29): error TS2307: Cannot find module '../../../../../src/app/(catalog)/account/page.js' or its corresponding type declarations.
+.next/types/app/(catalog)/collections/[category]/page.ts(2,24): error TS2307: Cannot find module '../../../../../../src/app/(catalog)/collections/[category]/page.js' or its corresponding type declarations.
+.next/types/app/(catalog)/collections/[category]/page.ts(7,29): error TS2307: Cannot find module '../../../../../../src/app/(catalog)/collections/[category]/page.js' or its corresponding type declarations.
+.next/types/app/(catalog)/layout.ts(2,24): error TS2307: Cannot find module '../../../../src/app/(catalog)/layout.js' or its corresponding type declarations.
+.next/types/app/(catalog)/layout.ts(7,29): error TS2307: Cannot find module '../../../../src/app/(catalog)/layout.js' or its corresponding type declarations.
+.next/types/app/(catalog)/products/[slug]/page.ts(2,24): error TS2307: Cannot find module '../../../../../../src/app/(catalog)/products/[slug]/page.js' or its corresponding type declarations.
+.next/types/app/(catalog)/products/[slug]/page.ts(7,29): error TS2307: Cannot find module '../../../../../../src/app/(catalog)/products/[slug]/page.js' or its corresponding type declarations.
+.next/types/app/layout.ts(2,24): error TS2307: Cannot find module '../../../src/app/layout.js' or its corresponding type declarations.
+.next/types/app/layout.ts(7,29): error TS2307: Cannot find module '../../../src/app/layout.js' or its corresponding type declarations.
+.next/types/app/page.ts(2,24): error TS2307: Cannot find module '../../../src/app/page.js' or its corresponding type declarations.
+.next/types/app/page.ts(7,29): error TS2307: Cannot find module '../../../src/app/page.js' or its corresponding type declarations.
+.next/types/validator.ts(53,39): error TS2307: Cannot find module '../../src/app/(catalog)/account/page.js' or its corresponding type declarations.
+.next/types/validator.ts(62,39): error TS2307: Cannot find module '../../src/app/(catalog)/collections/[category]/page.js' or its corresponding type declarations.
+.next/types/validator.ts(71,39): error TS2307: Cannot find module '../../src/app/(catalog)/products/[slug]/page.js' or its corresponding type declarations.
+.next/types/validator.ts(80,39): error TS2307: Cannot find module '../../src/app/page.js' or its corresponding type declarations.
+.next/types/validator.ts(165,39): error TS2307: Cannot find module '../../src/app/(catalog)/layout.js' or its corresponding type declarations.
+.next/types/validator.ts(174,39): error TS2307: Cannot find module '../../src/app/layout.js' or its corresponding type declarations.

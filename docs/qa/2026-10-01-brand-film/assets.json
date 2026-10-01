@@ -1,0 +1,27 @@
+{
+  "source_batch": "/Users/kuan/Documents/Codex/09-07-charmvilla/hero",
+  "source_edit": "hero_earring_pan_right_v2_1080p",
+  "duration_seconds": 15.233333,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "audio": false,
+  "new_generation_count": 0,
+  "assets": [
+    {
+      "file": "public/media/hero/film/earring-to-tea-v2-poster.jpg",
+      "bytes": 123400,
+      "sha256": "47ed661dca3c613c692295b4e85e4c68774224cf1a24f5b46f942a76a26497ee"
+    },
+    {
+      "file": "public/media/hero/film/earring-to-tea-v2.mp4",
+      "bytes": 4148691,
+      "sha256": "f4d6ae7a2b5b5f77e9a3441da7dc50b17a1ea78036bb04ca32ba94f05bfb6678"
+    },
+    {
+      "file": "public/media/hero/film/earring-to-tea-v2.webm",
+      "bytes": 1940833,
+      "sha256": "73184a6f61a38d63781c2a9687a37039b18b9b827cf50a278e8ae32cbb567ba9"
+    }
+  ]
+}

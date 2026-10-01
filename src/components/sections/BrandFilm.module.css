@@ -1,0 +1,18 @@
+.section {
+  padding: clamp(24px, 4vw, 64px) var(--page-gutter);
+  background: var(--color-page);
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--color-page);
+}
+
+.video:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 6px;
+}
