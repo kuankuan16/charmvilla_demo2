@@ -66,6 +66,15 @@
 - `featured-hover.mjs`：六張精選卡 hover 前不透明度 0、hover 後 1，情境照都有載入（白色包→莫蘭迪懸空、珍珠長鏈→CV-0377、銀杏茶匙禮盒→圓凳情境、團圓桐木盒→CV-0350、鳥形筷架→CV-0248、鑽石垂墜→CV-0372）。結果 `featured-hover-local.json`。
 - 首頁進場回歸 `docs/qa/2026-10-01-reveal-fix/repro.mjs`（本機，改版後）：中英文十二個情境全部 0。
 
+## 上線後（正式站 https://charmvilla-gallery-site.vercel.app ，commit `e041b0a`，部署 `charmvilla-gallery-site-n5syf54yb`，18:35）
+
+- `craft.mjs live`（中英 × 1440／390）：數字與本機相同；截圖 `live-*.jpg`。
+- `spread.mjs live`（128 頁）：問題 0；鑽石垂墜的跨頁與 7 頁三張版型的位置、固定都與本機相同。結果 `spread-live.json`。
+- `featured-hover.mjs live`：六張卡 hover 0 → 1，情境照載入；截圖 `live-featured-hover.jpg`。
+- 首頁進場回歸 `repro.mjs`（正式站）：中英文十二個情境全部 0（`docs/qa/2026-10-01-reveal-fix/report-craft-magazine-live.json`）。
+- 兩個移除的檔案在正式站回 404；`scene-white-bag-floating-morandi.webp` 與珍珠長鏈 `-lustre` 檔回 200。
+- 商品頁整頁截圖 `live-pdp-*.jpg`（白色包、鑽石垂墜、杯墊茶匙）。
+
 ## 已知限制
 
 - 第一版手機樣式少了 `align-items: stretch`，跨頁三張照片寬度變 0；已修（`spread.mjs` 就是為了抓這種情況寫的），390 寬的截圖是修正後重拍的。
