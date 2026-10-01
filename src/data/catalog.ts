@@ -45,17 +45,21 @@ const bagProducts: Product[] = bags.products.map((p) => ({
 // bezel-diamond and single-diamond earrings; they are merged here as extra views and their URLs redirect (next.config.ts).
 // 2026-09-30 (later): the brand supplied the real product photography — four series: 珍珠長鏈、鑽石、雙魚、璞金. The earlier
 // "bezel diamond at the mouth" listing did not exist as a product; it and "single diamond" merged into 鑽石系列 (redirects in next.config.ts).
-const jewelrySlugs = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
-const jewelryEnglish = ["PEARL CHAIN", "DIAMOND", "TWIN GOLDFISH", "RAW GOLD"];
-const jewelryDetails = ["珍珠、長鏈與金魚", "金魚、短鏈與爪鑲垂墜圓鑽", "兩尾金魚以短鏈相連", "單尾小金魚、霧面金屬表面"];
+// 2026-10-01 (user): 鑽石系列 has two styles — 垂墜 (fish + short chain + claw-set drop) and 耳釘 (stud, no drop). Scene photos are
+// sorted by which style they show: drop = CV-0370/0371/0372 + drop sketch; stud = CV-0376/0374/0373 + stud sketch.
+const jewelrySlugs = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "diamond-goldfish-stud-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
+const jewelryEnglish = ["PEARL CHAIN", "DIAMOND DROP", "DIAMOND STUD", "TWIN GOLDFISH", "RAW GOLD"];
+const jewelryDetails = ["珍珠、長鏈與金魚", "金魚、短鏈與爪鑲垂墜圓鑽", "單尾金魚耳釘、魚口圓鑽、無垂墜", "兩尾金魚以短鏈相連", "單尾小金魚、霧面金屬表面"];
 const jewelryExtra: Record<number, Img[]> = {
   0: [gallery("CV-0377", "珍珠長鏈小金魚耳環・石面光影"), gallery("CV-0379", "珍珠長鏈小金魚耳環・橄欖綠花影"), gallery("CV-0380", "珍珠長鏈小金魚耳環・米白衣領")],
-  1: [gallery("CV-0373", "小金魚耳環・鑽石系列・配戴"), gallery("CV-0374", "小金魚耳環・鑽石系列・深綠靜影"), gallery("CV-0376", "小金魚耳環・鑽石系列・暖金緞光"), site("goldfish-drop-sketch.webp", "小金魚耳環・鑽石系列・炭筆素描配戴圖", 896, 1120)],
-  2: [gallery("CV-0378", "小金魚耳環・雙魚系列・配戴")],
+  1: [gallery("CV-0372", "小金魚耳環・鑽石系列・垂墜・配戴"), gallery("CV-0370", "小金魚耳環・鑽石系列・垂墜・暗調肖像"), gallery("CV-0371", "小金魚耳環・鑽石系列・垂墜・側臉"), site("goldfish-drop-sketch.webp", "小金魚耳環・鑽石系列・垂墜・炭筆素描配戴圖", 896, 1120)],
+  2: [gallery("CV-0374", "小金魚耳環・鑽石系列・耳釘・深綠靜影"), gallery("CV-0373", "小金魚耳環・鑽石系列・耳釘・配戴"), site("goldfish-stud-sketch.webp", "小金魚耳環・鑽石系列・耳釘・炭筆素描配戴圖", 896, 1120)],
+  3: [gallery("CV-0378", "小金魚耳環・雙魚系列・配戴")],
 };
 const jewelryEditorial = [
   { description: "珍珠與長鏈向下延伸，金魚停在鏈末。從耳畔到頸側，細長的線條把觀看的距離拉開，也讓魚形的比例更容易被看見。", title: "垂落的線，游動的形", body: "動作，讓線條有了變化。長鏈隨轉身輕移，珍珠與金魚各自接住光線；靜止時的構圖，到了配戴者身上，又是另一幅畫面。" },
   { description: "一尾小金魚停在耳畔，短鏈之下垂著一顆爪鑲圓鑽。金面與鑽石的明暗不同，隨動作各自接住光，讓魚形與那一點光之間有了距離。", title: "魚身之下的一點光", body: "輪廓之外，還有間距。金魚固定在耳畔，圓鑽隨短鏈輕移；靜與動同時存在，貼近側臉觀看，便能讀出各個細節之間的關係。" },
+  { description: "單尾小金魚耳釘，魚口嵌著一顆圓鑽，沒有垂墜。光集中在耳畔的一點，轉頭時魚形與鑽石一起接住光。", title: "耳畔的一點光", body: "貼近看，才看見魚口那顆鑽。輪廓收斂，光也收斂；配戴時像一枚安靜的印記，只在轉身的瞬間亮一下。" },
   { description: "兩尾金魚以短鏈相連：一尾停在耳畔，一尾垂落。觀看一尾的輪廓，也留意另一尾的位置；形與形之間的距離，讓耳畔有了小幅的構圖。", title: "兩尾魚之間", body: "視線可以來回。先看各自的輪廓，再看兩者如何相處，配戴的比例便從這份呼應裡慢慢清楚。" },
   { description: "單尾小金魚，霧面的金屬表面收住反光，只留下輪廓。收斂的尺度，讓魚形的轉折集中在一起，適合從近處細看。", title: "只留下輪廓", body: "少了亮面的反射，形狀便更安靜。魚身與尾鰭的每一處轉折都有被看見的空間，配戴時像一枚貼近耳畔的小印記。" },
 ];
@@ -100,15 +104,25 @@ const featuredImages: Record<string, Img> = {
   "bird-chopstick-rest": site("featured-bird-chopstick-rest.webp", "鳥形筷架・棚拍商品照"),
 };
 const withShopify = (p: Product): Product => { const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug]; const f = featuredImages[p.slug]; const q = f ? { ...p, featuredImage: f, views: p.views.some((v) => v.image.src === f.src) ? p.views : [...p.views, { label: "棚拍商品照", image: f }] } : p; return typeof m === "object" && (m.handle || m.variantId) ? { ...q, shopify: m } : q; };
-// 2026-09-30: every listing card sits on the white bag's warm-grey studio ground (scripts/studio-listing.mjs →
-// public/media/site/studio-*.webp, src/data/studio-listing.json). The previous listing photo stays as a product view.
-const withStudioListing = (p: Product): Product => {
-  const file = (studioListing as Record<string, string>)[p.slug]; if (!file) return p;
-  const image = site(file, `${p.name}・棚拍商品照`);
-  const views = p.views.some((v) => v.image.src === p.image.src) ? p.views : [...p.views, { label: "情境照", image: p.image }];
+// 2026-10-01 (user): listing covers on /collections/* are scene photography again (「這頁的改以情境照當封面」). The warm-grey
+// studio renders from scripts/studio-listing.mjs stay as a 「棚拍商品照」 product view. Products whose own image is not a scene
+// (bags, earrings, the bird cut-out) take a gallery scene from this map; the rest keep their scene image.
+const listingScene: Record<string, string> = {
+  "braided-leather-bag-white": "CV-0422", "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
+  "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376", "twin-goldfish-earrings": "CV-0378",
+  "bird-chopstick-rest": "CV-0248",
+};
+const withListing = (p: Product): Product => {
+  const file = (studioListing as Record<string, string>)[p.slug];
+  const studio = file ? site(file, `${p.name}・棚拍商品照`) : undefined;
+  const sceneId = listingScene[p.slug];
+  const image = sceneId ? gallery(sceneId, `${p.name}・情境照`) : (p.category === "jewelry" && studio ? studio : p.image);
+  let views = p.views;
+  if (!views.some((v) => v.image.src === image.src)) views = [{ label: "情境照", image }, ...views];
+  if (studio && !views.some((v) => v.image.src === studio.src)) views = [...views, { label: "棚拍商品照", image: studio }];
   return { ...p, image, views };
 };
-export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withStudioListing);
+export const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
 export const isSellable = (p: Product) => Boolean(p.price || p.shopify?.variantId);
 export const formatPrice = (amount: number, currency = "TWD") => currency === "TWD" ? `NT$ ${amount.toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
 export const productHref = (product: Product | string) => `/products/${typeof product === "string" ? product : product.slug}`;

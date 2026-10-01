@@ -1,0 +1,185 @@
+{
+  "errors": [],
+  "listing": [
+    {
+      "slug": "braided-leather-bag-white",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "braided-leather-bag-blue",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "braided-leather-bag-pink",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "pearl-chain-goldfish-earrings",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "diamond-goldfish-earrings",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "diamond-goldfish-stud-earrings",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "twin-goldfish-earrings",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "raw-gold-goldfish-earrings",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "christmas-edition-stocking",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "christmas-edition-candy-cane",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "reunion-paper-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "reunion-paulownia-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "year-of-plenty-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "blossoming-prosperity-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "spring-blossoms-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "kyoto-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "heart-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "fruit-infusion-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "rose-encounter-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "tea-to-share-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "spring-dawn-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "winter-blossom-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "orchid-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "purple-butterfly-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "small-moon-tea-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "full-moon-tea-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "prosperity-dessert-stand",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "prosperity-stand-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "wooden-coaster-teaspoon",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "bird-chopstick-rest",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "ginkgo-teaspoon-gift-box",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    },
+    {
+      "slug": "wooden-chopsticks",
+      "src": "http://localhost:3114/_next/image",
+      "loaded": true
+    }
+  ],
+  "shown": [
+    "台北晶華酒店 麗晶精品REGENT TAIPEI · B1",
+    "CHARM VILLA 京都KYOTO · TERAMACHI",
+    "THE SCHOLART SELECTIONSAN GABRIEL, CA"
+  ],
+  "storeOnline": "absent",
+  "regent": {
+    "src": "alhost:3114/brand/regent-taipei-dark.svg",
+    "parentBg": "rgba(0, 0, 0, 0)"
+  },
+  "diamond-goldfish-earrings": {
+    "status": 200,
+    "title": "小金魚耳環・鑽石系列・垂墜｜CHARM VILLA",
+    "views": 6
+  },
+  "diamond-goldfish-stud-earrings": {
+    "status": 200,
+    "title": "小金魚耳環・鑽石系列・耳釘｜CHARM VILLA",
+    "views": 4
+  }
+}

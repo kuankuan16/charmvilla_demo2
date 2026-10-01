@@ -105,7 +105,10 @@ export const jewelry = {
   items: [
     // Real product photography supplied by the brand on 2026-09-30 (output/jewelry-product-photos-2026-09-30): four series.
     { n: "01.", title: "珍珠長鏈小金魚耳環", desc: "沿著珍珠長鏈，一尾金魚垂落在頸側。", image: site("jewelry-pearl-chain.webp", "珍珠長鏈小金魚耳環・商品照", 1200, 1500) },
-    { n: "02.", title: "小金魚耳環・鑽石系列", desc: "魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", image: site("jewelry-diamond.webp", "小金魚耳環・鑽石系列・商品照", 1200, 1500) },
+    { n: "02.", title: "小金魚耳環・鑽石系列・垂墜", desc: "魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", image: site("jewelry-diamond.webp", "小金魚耳環・鑽石系列・垂墜・商品照", 1200, 1500) },
+    // 2026-10-01 (user): the diamond series has two styles — the drop above and a stud without the drop. Split listings; the stud's
+    // product shot is the satin close-up until the brand supplies a studio photo of it.
+    { n: "02b.", title: "小金魚耳環・鑽石系列・耳釘", desc: "一尾小金魚停在耳畔，魚口一點圓鑽的光。", image: gallery("CV-0376", "小金魚耳環・鑽石系列・耳釘・暖金緞光", 1920, 2400) },
     { n: "03.", title: "小金魚耳環・雙魚系列", desc: "一尾停在耳畔，一尾隨短鏈垂落。", image: site("jewelry-twin.webp", "小金魚耳環・雙魚系列・商品照", 1200, 1500) },
     { n: "04.", title: "小金魚耳環・璞金系列", desc: "霧面金屬的一尾小金魚，貼近耳畔。", image: site("jewelry-raw-gold.webp", "小金魚耳環・璞金系列・商品照", 1200, 1500) },
   ],
@@ -151,14 +154,14 @@ export const shown = {
     { name: "台北晶華酒店 麗晶精品", sub: "REGENT TAIPEI · B1" },
     { name: "CHARM VILLA 京都", sub: "KYOTO · TERAMACHI" },
     { name: "THE SCHOLART SELECTION", sub: "SAN GABRIEL, CA" },
-    { name: "誠品生活南西", sub: "POP-UP · 期間限定茶席" },
-    { name: "MONOCLE", sub: "PRESS · 專訪創辦人" },
+    // 2026-10-01 (user): 誠品生活南西 pop-up and MONOCLE press rows removed.
   ],
   awards: [
     { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 },
     { src: "/brand/awards/reddot-winner-2014-transparent.svg", alt: "Red Dot Award 2014 Winner", w: 1200, h: 847 },
   ],
-  regent: { src: "/brand/regent-taipei.svg", alt: "Regent Taipei", w: 1094, h: 437 },
+  // 2026-10-01 (user): transparent version — the official dark wordmark on the page ground, no black tile.
+  regent: { src: "/brand/regent-taipei-dark.svg", alt: "Regent Taipei", w: 1094, h: 437 },
 };
 
 // Partners screen (user, 2026-09-24: one screen in the LAXER "PARTNERS:" layout). Venues = the three

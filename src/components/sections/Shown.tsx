@@ -57,9 +57,8 @@ export default function Shown() {
             {shown.awards.map((a) => (
               <Image key={a.src} src={a.src} alt={a.alt} width={a.w} height={a.h} className="h-60 w-auto" />
             ))}
-            <span className="inline-flex items-center bg-ink px-15 py-10">
-              <Image src={shown.regent.src} alt={shown.regent.alt} width={shown.regent.w} height={shown.regent.h} className="h-24 w-auto" />
-            </span>
+            {/* 2026-10-01 (user): transparent Regent wordmark, no black tile */}
+            <Image src={shown.regent.src} alt={shown.regent.alt} width={shown.regent.w} height={shown.regent.h} className="h-32 w-auto" />
           </div>
         </div>
       </div>

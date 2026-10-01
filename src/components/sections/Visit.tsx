@@ -4,11 +4,10 @@ import { Picture } from "@/components/ui";
 import StoreCarousel from "./StoreCarousel";
 
 export default function Visit() {
-  const online = visit.tabs.find(tab => tab.id === "online")!;
+  // 2026-10-01 (user): the ONLINE SHOP / 前往線上商店 block after the store carousel was removed (the site is the shop).
   return (
     <section id="visit" className="relative">
       <StoreCarousel />
-      <div className="store-online"><p className="catalog-eyebrow">ONLINE SHOP</p><p className="tc">{online.text}</p><a href={online.href} target="_blank" rel="noreferrer" className="link-underline tc">前往線上商店</a></div>
       <div className="container-x">
         <section id="news" aria-labelledby="news-heading" className="grid grid-cols-12 gap-x-20 bg-white py-40">
           <h2 id="news-heading" className="col-span-12 text-xs font-bold lg:col-span-5">{visit.news.label}<span className="tc ml-10">最新消息</span></h2>
