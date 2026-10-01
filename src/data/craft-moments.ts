@@ -26,7 +26,7 @@ export const craftMoments = {
       craft: "製革職人 · 編織提把皮革包",
       quote: ["裁皮的人，", "落刀前先用手讀過整張皮。"],
       ctas: [{ label: "看真皮包", href: "/collections/bags" }],
-      image: site("craft-02-leather-cutting.webp", "職人雙手沿鋼尺以裁刀從整張米白荔枝紋皮革裁下皮條，桌上有藍、粉皮捲與工具"),
+      image: site("craft-02-leather-ridge.webp", "暗場暖光下的皮件工坊靜物：捲起的米白荔枝紋皮革、攤平的皮面與裁刀、錐子、修邊器、剪刀"),
     },
     {
       id: "jewelry",
