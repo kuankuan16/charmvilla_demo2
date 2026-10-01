@@ -174,7 +174,7 @@
    {
     "slug": "ginkgo-teaspoon-gift-box",
     "cover": "studio-ginkgo-teaspoon-gift-box-hd.webp",
-    "hover": "scene-wooden-tray-table-sofa.webp"
+    "hover": "scene-wooden-ottomans.webp"
    },
    {
     "slug": "wooden-chopsticks",
@@ -220,7 +220,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     616,
     192
@@ -1443,12 +1443,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     616,
     192,
-    404,
-    828
+    828,
+    298
    ],
    "stageBottom": 801,
    "hasBuy": true,
@@ -1532,10 +1532,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     616,
-    404
+    192,
+    404,
+    828
    ],
    "stageBottom": 801,
    "hasBuy": true,
@@ -1621,7 +1623,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     616,
     192
@@ -2844,12 +2846,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     616,
     192,
-    404,
-    828
+    828,
+    298
    ],
    "stageBottom": 801,
    "hasBuy": true,
@@ -2933,10 +2935,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     616,
-    404
+    192,
+    404,
+    828
    ],
    "stageBottom": 801,
    "hasBuy": true,
@@ -3022,7 +3026,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     548,
     171
@@ -4243,12 +4247,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     548,
     171,
-    359,
-    736
+    736,
+    265
    ],
    "stageBottom": 641,
    "hasBuy": true,
@@ -4332,10 +4336,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     548,
-    359
+    171,
+    359,
+    736
    ],
    "stageBottom": 641,
    "hasBuy": true,
@@ -4421,7 +4427,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     823,
     258
@@ -5642,12 +5648,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     823,
     258,
-    541,
-    1106
+    1106,
+    400
    ],
    "stageBottom": 961,
    "hasBuy": true,
@@ -5731,10 +5737,12 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 3,
+   "scenes": 4,
    "sceneWidths": [
     823,
-    541
+    258,
+    541,
+    1106
    ],
    "stageBottom": 961,
    "hasBuy": true,
