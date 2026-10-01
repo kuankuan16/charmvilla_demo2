@@ -170,7 +170,7 @@ const buildCatalog = (lang: Locale) => {
   const featuredFiles: Record<string, string> = {
     "ginkgo-teaspoon-gift-box": "featured-ginkgo-teaspoon-gift-box.webp",
     "reunion-paulownia-gift-box": "featured-reunion-paulownia-gift-box.webp",
-    "bird-chopstick-rest": "featured-bird-chopstick-rest.webp",
+    "bird-chopstick-rest": "featured-bird-chopstick-rest-70.webp", // the piece at 70 % of the first version (user 2026-10-01: 「這個商品圖還是沒有縮小」)
   };
   const withShopify = (p: Product): Product => {
     const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug];
