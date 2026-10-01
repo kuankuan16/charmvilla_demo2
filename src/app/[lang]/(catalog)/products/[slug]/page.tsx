@@ -43,8 +43,11 @@ export default async function ProductPage({ params }: Props) {
   // in rows on the same 12 columns (a portrait takes 4 columns, a landscape 6). The column takes one to three, as few as leave full rows.
   const spanOf = (img: Img) => (shapeOf(img) === "tall" ? 4 : 6);
   const fullRows = (list: Img[]) => { let row = 0; for (const img of list) { row += spanOf(img); if (row > 12) return false; if (row === 12) row = 0; } return row === 0; };
-  const inColumn = scenes.length <= 3 ? scenes.length : [1, 2, 3].find((n) => fullRows(scenes.slice(n))) ?? 2;
-  const columnScenes = scenes.slice(0, inColumn), rowScenes = scenes.slice(inColumn);
+  // Exactly three scenes follow …/products/liam instead (user 2026-10-01: 「版型參考 liam」): one in the column, then a large one
+  // under the product image with a small one at the left of the information column, which stays in view beside it.
+  const pair = scenes.length === 3 ? scenes.slice(1) : null;
+  const inColumn = pair ? 1 : scenes.length <= 3 ? scenes.length : [1, 2, 3].find((n) => fullRows(scenes.slice(n))) ?? 2;
+  const columnScenes = scenes.slice(0, inColumn), rowScenes = pair ? [] : scenes.slice(inColumn);
   const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2><p className="tc">{product.story.body}</p>{product.giftBox && <p className="product-image-note tc">{t("以禮盒販售；情境圖中的茶具、茶點與佈置物不包含在商品內。盒色與供應款式請以官方商店選項為準。", "Sold as a gift box. The teaware, sweets and props shown in scene photographs are not included. Box colour and available styles follow the options in the official store.")}</p>}{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
   const related = [...siblings.filter((p) => p.slug !== slug), ...all.filter((p) => p.category !== product.category)].slice(0, 4);
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}` };
@@ -72,6 +75,10 @@ export default async function ProductPage({ params }: Props) {
         {storyText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery>
+      {pair && <section className="product-pair" aria-label={t("情境照", "In use")}>
+        <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
+        <div className="product-pair-side"><figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
+      </section>}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
         {rowScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes={shapeOf(img) === "tall" ? "(min-width:768px) 31vw, 100vw" : "(min-width:768px) 46vw, 100vw"} /></figure>)}
       </section>}

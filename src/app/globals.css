@@ -328,6 +328,13 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-scenes { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
 .product-scenes .scene-fig { grid-column: span 6; }
 .product-scenes .scene-fig[data-shape=tall] { grid-column: span 4; }
+/* Three scenes, after jakobsencopenhagen.com/en/products/liam (user 2026-10-01): under the stage a large photograph as wide as the
+   product image and, at the left edge of the information column, a small one of half that column, which stays under the
+   header while the large one passes and ends level with its foot. */
+.product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
+.product-pair-large { grid-column: 1 / span 6; align-self: start; }
+.product-pair-side { grid-column: 9 / span 2; min-width: 0; }
+.product-pair-side .scene-fig { position: sticky; top: calc(var(--header-h) + var(--pdp-gap)); }
 .product-story-text { min-width: 0; }
 .product-story-text h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; text-wrap: balance; }
 .product-story-text p { margin-top: 12px; font-size: 13px; line-height: 2.05; }
@@ -336,6 +343,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-related h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .product-column, .product-more { grid-column: 8 / span 5; }
+  .product-pair-side { grid-column: 8 / span 2; }
 }
 @media (max-width: 767px) {
   .product-hero { display: block; padding: 0 0 14px; }
@@ -350,6 +358,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-stage { position: static; }
   .product-more { padding: 48px 20px 0; gap: 14px; }
   .product-scenes { display: flex; flex-direction: column; align-items: stretch; gap: 14px; padding: 0 20px 64px; }
+  .product-pair { display: flex; flex-direction: column; gap: 14px; padding: 0 20px 64px; }
+  .product-pair-large { align-self: stretch; }
+  .product-pair-side .scene-fig { position: relative; top: auto; }
 }
 .product-edition { color: var(--color-stone-deep); margin-left: 20px; white-space: nowrap; }
 .product-variants { margin-top: var(--i-opt); border: 0; min-width: 0; }
