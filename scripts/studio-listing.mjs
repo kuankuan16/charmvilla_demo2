@@ -22,7 +22,9 @@ const rgba = async (file) => { const { data, info } = await sharp(file).ensureAl
 const toPng = (img) => sharp(img.data, { raw: { width: img.w, height: img.h, channels: 4 } }).png().toBuffer();
 
 // ---------- backdrop -----------------------------------------------------------------------------------------------
-async function backdrop() {
+// plain = only the wall of the bag photograph, with no floor line and no floor shadow: pieces shown straight on and
+// hanging in the air (the earrings) have no surface to stand on (user 2026-10-01: 「商品平視的時候，並不需要出現像包包一樣有個底座的陰影」).
+async function backdrop(plain = false) {
   const src = await rgba(pub('media/gallery/CV-0398.webp'));
   const band = 30, shift = Math.round(src.h * SHIFT);
   const rowMean = (y, fromRight) => { const s = [0, 0, 0]; for (let x = 0; x < band; x++) { const i = (y * src.w + (fromRight ? src.w - 1 - x : x)) * 4; s[0] += src.data[i]; s[1] += src.data[i + 1]; s[2] += src.data[i + 2]; } return s.map((v) => v / band); };
@@ -36,7 +38,7 @@ async function backdrop() {
   let seed = 7;
   const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
   for (let y = 0; y < H; y++) {
-    const sy = Math.min(src.h - 1, (y / (H - 1)) * (src.h - 1)); const y0 = Math.floor(sy), y1 = Math.min(src.h - 1, y0 + 1), f = sy - y0;
+    const sy = Math.min(src.h - 1, (plain ? 0.06 + 0.3 * (y / (H - 1)) : y / (H - 1)) * (src.h - 1)); const y0 = Math.floor(sy), y1 = Math.min(src.h - 1, y0 + 1), f = sy - y0;
     for (let x = 0; x < W; x++) {
       const t = x / (W - 1); const n = (rnd() + rnd() - 1) * 1.6; // ±~1 level of luminance grain, colour-neutral
       const i = (y * W + x) * 4;
@@ -167,6 +169,7 @@ const jewelryBoxes = { 'raw-gold-goldfish-earrings': [147, 197, 420, 419], 'diam
 async function main() {
   fs.mkdirSync(outDir, { recursive: true });
   const bg = await backdrop();
+  const wall = await backdrop(true);   // for the earrings
   await sharp(bg.data, { raw: { width: W, height: H, channels: 4 } }).webp({ quality: 84 }).toFile(path.join(outDir, 'studio-backdrop.webp'));
   const manifest = {}; const report = {};
   const emit = (slug, file, r) => { manifest[slug] = file; report[slug] = r; console.log(slug.padEnd(34), file.padEnd(46), JSON.stringify(r)); };
@@ -187,7 +190,7 @@ async function main() {
     if (slug === 'raw-gold-goldfish-earrings') continue; // drawn from the brand's vector outline below
     const m = 16; const crop = await sharp(jewelrySrc).extract({ left: x0 - m, top: y0 - m, width: x1 - x0 + 2 * m, height: y1 - y0 + 2 * m }).png().toBuffer();
     const obj = matte(await rgba(crop), [240, 240, 240], 8, 36);
-    const file = `studio-${slug}-hd.webp`; emit(slug, file, await compose(bg, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
+    const file = `studio-${slug}-wall.webp`; emit(slug, file, await compose(wall, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
   }
   // Raw Gold (user 2026-10-01: 「直接用剛剛給的向量小金魚，算出清單頁的淺色背景照，用霧面金屬呈現」): the outline is the brand's own vector
   // goldfish, the matte gold surface was generated on that exact outline and cut out through it
@@ -196,9 +199,9 @@ async function main() {
   {
     const slug = 'raw-gold-goldfish-earrings', obj = await rgba(path.join(srcDir, 'raw-gold-matte-cutout.png'));
     const [bx0, by0, bx1, by1] = jewelryBoxes[slug], s = (Math.hypot(bx1 - bx0, by1 - by0) * scale) / Math.hypot(obj.w, obj.h);
-    const file = `studio-${slug}-matte.webp`; emit(slug, file, await compose(bg, obj, { fit: { scale: s }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
+    const file = `studio-${slug}-matte.webp`; emit(slug, file, await compose(wall, obj, { fit: { scale: s }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
     const close = `studio-${slug}-matte-close.webp`; angles[`${slug}-close`] = close;
-    console.log(slug.padEnd(34), close.padEnd(46), JSON.stringify(await compose(bg, obj, { fit: { w: 700, h: 760 }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, close))));
+    console.log(slug.padEnd(34), close.padEnd(46), JSON.stringify(await compose(wall, obj, { fit: { w: 700, h: 760 }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, close))));
   }
   // official gift-box cut-outs
   for (const [id, slug] of Object.entries(giftBoxes)) {
