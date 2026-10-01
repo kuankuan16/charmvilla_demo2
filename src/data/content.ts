@@ -184,7 +184,7 @@ const buildContent = (lang: Locale) => {
   const partners = {
     label: "PARTNERS:",
     // 2026-10-01 (user): the male dancer replaces the blue-bag portrait here; the frame ends a little below the elbow (user: 「再露出多一點點的褲子」), short of the hem, so the shorts do not read as boxer shorts.
-    image: site("partners-male-dancer-b.webp", t("黑白男舞者側身俯首，一手提著白色編織提把皮革包", "Black-and-white photograph of a male dancer bowing in profile, the white Braided Leather Bag hanging from one hand"), 1869, 1896),
+    image: site("partners-male-dancer-c.webp", t("黑白男舞者側身俯首，一手提著白色編織提把皮革包", "Black-and-white photograph of a male dancer bowing in profile, the white Braided Leather Bag hanging from one hand"), 1869, 1952),
     statement: t("作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The Scholart Selection，到京都寺町，CHARM VILLA 與夥伴一同呈現作品，讓遠近的觀看，回到材質與細節。",
       "For a piece to meet a person, it needs a place. From Regent Galleria at Regent Taipei and The Scholart Selection to Teramachi in Kyoto, CHARM VILLA presents its work together with its partners, so that looking, from near or far, comes back to material and detail."),
     cta: { label: "WORK WITH US", zh: t("合作洽詢", ""), href: "https://www.instagram.com/charmvilla/" },

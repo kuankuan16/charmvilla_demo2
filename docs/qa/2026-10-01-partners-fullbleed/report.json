@@ -1,0 +1,57 @@
+{
+ "base": "http://localhost:3140",
+ "desktopHeaderWhileLoading": "rgb(246, 248, 250)",
+ "desktop": {
+  "section": [
+   0,
+   1440,
+   828
+  ],
+  "image": [
+   0,
+   110,
+   720,
+   752
+  ],
+  "button": false,
+  "store": "rgb(250, 248, 244)",
+  "headerLoaded": "rgba(246, 248, 250, 0.8)",
+  "overflowX": false
+ },
+ "wideHeaderWhileLoading": "rgb(246, 248, 250)",
+ "wide": {
+  "section": [
+   0,
+   2000,
+   1069
+  ],
+  "image": [
+   0,
+   85,
+   1000,
+   1044
+  ],
+  "button": false,
+  "store": "rgb(250, 248, 244)",
+  "headerLoaded": "rgba(246, 248, 250, 0.8)",
+  "overflowX": false
+ },
+ "mobileHeaderWhileLoading": "rgb(246, 248, 250)",
+ "mobile": {
+  "section": [
+   0,
+   390,
+   693
+  ],
+  "image": [
+   0,
+   72,
+   390,
+   407
+  ],
+  "button": false,
+  "store": "rgb(250, 248, 244)",
+  "headerLoaded": "rgba(246, 248, 250, 0.8)",
+  "overflowX": false
+ }
+}

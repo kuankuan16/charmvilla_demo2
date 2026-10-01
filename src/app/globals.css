@@ -16,7 +16,7 @@
   --color-gold: #e4a038;
   --color-gold-light: var(--color-gold);
   --color-white: #ffffff;
-  --color-sand: #d9cdb9; /* light warm beige behind the store information, taken from the wall of the reference product photograph (jakobsencopenhagen.com, measured #bbac9b–#cbc4b8) and lightened (user 2026-10-01: 金色改成淺米黃) */
+  --color-sand: #faf8f4; /* warm paper behind the store information: the page background of jakobsencopenhagen.com, rgb(250 248 244) (user 2026-10-01: 「門市想要這個背景色」; before that gold, then #d9cdb9) */
   --color-ground: #f6f2e9; /* shared ground behind cut-out product shots (brand cream) */
   --color-black: #000000;
 
@@ -173,6 +173,8 @@
 /* Loading state (after davidlaxer.com): the page is invisible under the preloader and no CSS transitions run;
    the page and the hero headline appear the instant the wipe starts (.is-revealing). */
 .is-loading body { background: var(--color-stone-deep); }
+/* the header bar is 80 % page colour; over the dark loading ground that read as grey, so it is opaque until the page is loaded (user 2026-10-01) */
+.is-loading [data-header]:not(.menu--opened) { background: var(--color-page) !important; }
 .is-loading * { transition: none !important; }
 .is-loading:not(.is-revealing) .page-holder { opacity: 0; }
 .is-loading:not(.is-revealing) [data-hero-reveal] { visibility: hidden; }
@@ -748,11 +750,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* The statement is set at the same level as the craft quotes (user 2026-10-01: 「文字大小層級跟這個標題一樣」). */
 .partners-statement { font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
 .partners-statement:lang(en) { letter-spacing: -.025em; }
-.partners-image { padding-left: 0; }
-.partners-copy { padding-right: 0; }
-@media (max-width: 1279px) {
-  .partners-image { padding-right: 0; }
-  .partners-copy { padding-left: 0; }
+.partners-screen { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: calc(100svh - var(--header-h)); background: var(--color-page); }
+.partners-image { min-width: 0; }
+.partners-copy { min-width: 0; padding: 40px var(--page-gutter) 40px clamp(32px, 5vw, 96px); }
+@media (max-width: 1023px) {
+  .partners-screen { grid-template-columns: 1fr; min-height: 0; }
+  .partners-copy { padding: 36px var(--page-gutter) 56px; }
 }
 
 .product-image-note { font-size: 12px; line-height: 1.9; color: var(--color-stone-deep); margin-top: 18px; }
@@ -764,7 +767,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    --------------------------------------------------------------------------------------------------------------- */
 /* The cards change with the scroll (user 2026-10-01): .craft-pin is held in place (position: sticky) while the page
    scrolls through .craft-track; CraftMoments.tsx turns the distance travelled into the active card and sets --craft-top. */
-.craft-moments { position: relative; z-index: 2; background: var(--color-page); outline: none; }
+.craft-moments { position: relative; z-index: 2; outline: none; } /* no ground of its own: the brush of the brand story above runs on behind it instead of being cut at the boundary (user 2026-10-01: 「不要裁切」) */
 .craft-pin { position: sticky; top: var(--craft-top, 0px); isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); overflow: hidden; }
 .craft-track { height: calc((var(--craft-count, 4) - 1) * 30svh); } /* short on purpose: a long hold makes the page feel stuck (user 2026-10-01) */
 .craft-header { position: relative; z-index: 2; }
