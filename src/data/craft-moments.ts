@@ -33,7 +33,7 @@ export const craftMoments = {
       craft: "金工職人 · 小金魚耳環",
       quote: ["金工的人，", "磨到只剩輪廓才肯停手。"],
       ctas: [{ label: "看金飾", href: "/collections/jewelry" }],
-      image: site("craft-03-goldsmith-sunlight.webp", "晨光斜射進金工坊的窗：工作檯、工具牆與塵埃光束，職人只在畫面邊緣露出背影"),
+      image: site("craft-03-goldsmith-atelier.webp", "晨光斜射進專業金工坊：半圓缺口的金工檯、皮兜與銼台上的小金魚，周圍是顯微鏡、吊鑽、壓延機與成排的鉗子"),
     },
     {
       id: "teaware",
