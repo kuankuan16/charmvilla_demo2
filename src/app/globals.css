@@ -713,14 +713,14 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .store-track[data-dragging] { scroll-snap-type: none; cursor: grabbing; user-select: none; }
 .store-track img { pointer-events: none; }
 .store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: var(--color-page); scroll-snap-align: start; } /* one ground colour on the homepage (user 2026-10-01) */
-.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; }
+.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; background: var(--color-gold); color: var(--color-ink); } /* gold ground behind the store information (user 2026-10-01: 地址資訊背景色改金色); text on it is ink, never gold or grey */
 .store-city { font-size: clamp(26px, 2.5vw, 42px); line-height: 1.2; }
-.store-city span { font-size: 13px; margin-left: 8px; color: #777; }
-.store-name { margin-top: 18px; font-size: 12px; color: #857044; }
+.store-city span { font-size: 13px; margin-left: 8px; color: rgb(31 31 31 / .72); }
+.store-name { margin-top: 18px; font-size: 12px; color: rgb(31 31 31 / .82); }
 .store-copy h3 { font-size: clamp(21px, 2vw, 32px); line-height: 1.6; margin-top: 22px; font-weight: 500; }
 .store-description { margin-top: 22px; font-size: 14px; line-height: 1.95; }
-.store-information { margin-top: 28px; font-size: 12px; line-height: 1.9; color: #676767; }
-.store-map { display: inline-flex; align-items: center; gap: 32px; padding: 14px 22px; border: 1px solid #29251e80; margin-top: 28px; font-size: 13px; }
+.store-information { margin-top: 28px; font-size: 12px; line-height: 1.9; color: rgb(31 31 31 / .82); }
+.store-map { display: inline-flex; align-items: center; gap: 32px; padding: 14px 22px; border: 1px solid rgb(31 31 31 / .6); margin-top: 28px; font-size: 13px; }
 .store-map:hover { background: var(--color-ink); color: white; border-color: var(--color-ink); }
 .store-photo { position: relative; min-width: 0; overflow: hidden; }
 .store-online { display: flex; align-items: center; gap: 30px; padding: 45px var(--page-gutter); }

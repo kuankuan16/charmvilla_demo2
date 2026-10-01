@@ -1,0 +1,41 @@
+{
+ "base": "http://localhost:3140",
+ "report": [
+  {
+   "name": "rgba(31, 31, 31, 0.82)",
+   "panelBackground": "rgb(228, 160, 56)",
+   "information": "rgba(31, 31, 31, 0.82)",
+   "heading": "rgb(31, 31, 31)",
+   "mapBorder": "rgba(31, 31, 31, 0.6)",
+   "panel": [
+    605,
+    580
+   ],
+   "overflowX": false
+  },
+  {
+   "name": "rgba(31, 31, 31, 0.82)",
+   "panelBackground": "rgb(228, 160, 56)",
+   "information": "rgba(31, 31, 31, 0.82)",
+   "heading": "rgb(31, 31, 31)",
+   "mapBorder": "rgba(31, 31, 31, 0.6)",
+   "panel": [
+    605,
+    580
+   ],
+   "overflowX": false
+  },
+  {
+   "name": "rgba(31, 31, 31, 0.82)",
+   "panelBackground": "rgb(228, 160, 56)",
+   "information": "rgba(31, 31, 31, 0.82)",
+   "heading": "rgb(31, 31, 31)",
+   "mapBorder": "rgba(31, 31, 31, 0.6)",
+   "panel": [
+    342,
+    413
+   ],
+   "overflowX": false
+  }
+ ]
+}
