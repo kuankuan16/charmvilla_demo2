@@ -791,7 +791,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .craft-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 .craft-cta { gap: 16px; min-height: 46px; padding: 12px 22px; font-size: 13px; }
 .craft-cta--quiet { border-color: rgb(31 31 31 / .14); color: var(--color-stone-deep); }
-.craft-controls { position: relative; z-index: 3; display: flex; justify-content: space-between; align-items: center; margin-top: clamp(16px, 2vw, 32px); }
+.craft-controls { position: relative; z-index: 3; display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center; margin-top: clamp(16px, 2vw, 32px); } /* user 2026-10-01: buttons right, dots left */
 .craft-buttons { display: flex; gap: 10px; }
 .craft-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgb(31 31 31 / .3); border-radius: 50%; background: transparent; color: var(--color-ink); font-size: 15px; transition: background .2s, color .2s, border-color .2s; }
 .craft-btn:hover, .craft-btn:focus-visible { background: var(--color-ink); color: #fff; border-color: var(--color-ink); outline: none; }
