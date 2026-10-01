@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { manifesto, tea } from "@/data/content";
+import { getContent } from "@/data/content";
+import { useLocale } from "@/i18n/LocaleProvider";
 import InkBloom from "@/components/ui/InkBloom";
 import { SCROLLER_SELECTOR } from "@/lib/motion/scroller";
 
 // Brand story text screen. The image gallery that used to follow it became the "以手成形" carousel (CraftMoments, 2026-10-01).
 export default function Manifesto() {
+  const { manifesto, tea } = getContent(useLocale());
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -45,8 +47,8 @@ export default function Manifesto() {
               <span aria-hidden="true">{Array.from(text).map((char, j) => <span key={j} className="story-char">{char}</span>)}</span>
             </p>)}
           </div>
-          <div className="story-honours" aria-label="小金魚茶包設計榮譽" data-brand-awards="">
-            <p className="story-honours-label tc">小金魚茶包 · {tea.honours[0]}</p>
+          <div className="story-honours" aria-label={tea.honoursAria} data-brand-awards="">
+            <p className="story-honours-label tc">{tea.honoursLabel} · {tea.honours[0]}</p>
             <ul className="story-honours-list">
               {tea.awards.map(award => <li key={award.image.src}>
                 <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />

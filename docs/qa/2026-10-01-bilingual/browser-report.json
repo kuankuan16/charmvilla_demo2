@@ -1,0 +1,328 @@
+{
+ "base": "http://localhost:3120",
+ "checkedAt": "2026-10-01T06:54:44.905Z",
+ "samplePages": 24,
+ "failures": [],
+ "cjkOnEnglish": {},
+ "allowedCjkOnEnglish": [
+  "中文",
+  "切換為中文"
+ ],
+ "notFound": [
+  {
+   "url": "/nope",
+   "status": 404,
+   "lang": "zh-Hant",
+   "h1": "找不到這個頁面。",
+   "title": "找不到這個頁面｜CHARM VILLA"
+  },
+  {
+   "url": "/en/nope",
+   "status": 404,
+   "lang": "en",
+   "h1": "This page could not be found.",
+   "title": "Page not found | CHARM VILLA"
+  },
+  {
+   "url": "/products/nope",
+   "status": 404,
+   "lang": "zh-Hant",
+   "h1": "找不到這個頁面。",
+   "title": "找不到這個頁面｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/nope",
+   "status": 404,
+   "lang": "en",
+   "h1": "This page could not be found.",
+   "title": "Page not found | CHARM VILLA"
+  }
+ ],
+ "screenshots": [
+  "zh-home-header-desktop.jpg",
+  "en-home-header-desktop.jpg",
+  "en-home-hero.jpg",
+  "en-home-story.jpg",
+  "en-home-craft.jpg",
+  "en-home-featured.jpg",
+  "en-home-partners.jpg",
+  "en-home-stores.jpg",
+  "en-home-news.jpg",
+  "en-collection-tea.jpg",
+  "en-product-tea-gift.jpg",
+  "en-product-tea-gift-details.jpg",
+  "en-account.jpg",
+  "zh-product-tea-gift.jpg",
+  "en-bag-drawer.jpg",
+  "zh-mobile-menu.jpg",
+  "en-mobile-top.jpg",
+  "en-mobile-menu.jpg",
+  "en-mobile-product-top.jpg"
+ ],
+ "pages": [
+  {
+   "url": "/",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "CHARM VILLA — 藝術即生活",
+   "switch": {
+    "landed": "/en",
+    "returned": "/"
+   }
+  },
+  {
+   "url": "/en",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "CHARM VILLA | Art as Life",
+   "switch": {
+    "landed": "/",
+    "returned": "/en"
+   }
+  },
+  {
+   "url": "/collections/all",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "全部商品｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/collections/all",
+    "returned": "/collections/all"
+   }
+  },
+  {
+   "url": "/en/collections/all",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "All pieces | CHARM VILLA",
+   "switch": {
+    "landed": "/collections/all",
+    "returned": "/en/collections/all"
+   }
+  },
+  {
+   "url": "/collections/bags",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "真皮包｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/collections/bags",
+    "returned": "/collections/bags"
+   }
+  },
+  {
+   "url": "/en/collections/bags",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Leather Bags | CHARM VILLA",
+   "switch": {
+    "landed": "/collections/bags",
+    "returned": "/en/collections/bags"
+   }
+  },
+  {
+   "url": "/collections/jewelry",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "金飾｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/collections/jewelry",
+    "returned": "/collections/jewelry"
+   }
+  },
+  {
+   "url": "/en/collections/jewelry",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Jewelry | CHARM VILLA",
+   "switch": {
+    "landed": "/collections/jewelry",
+    "returned": "/en/collections/jewelry"
+   }
+  },
+  {
+   "url": "/collections/tea",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚茶包禮盒｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/collections/tea",
+    "returned": "/collections/tea"
+   }
+  },
+  {
+   "url": "/en/collections/tea",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Tea Gifts | CHARM VILLA",
+   "switch": {
+    "landed": "/collections/tea",
+    "returned": "/en/collections/tea"
+   }
+  },
+  {
+   "url": "/collections/teaware",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "茶器與工藝｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/collections/teaware",
+    "returned": "/collections/teaware"
+   }
+  },
+  {
+   "url": "/en/collections/teaware",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Teaware & Craft | CHARM VILLA",
+   "switch": {
+    "landed": "/collections/teaware",
+    "returned": "/en/collections/teaware"
+   }
+  },
+  {
+   "url": "/products/reunion-paper-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "團圓｜繽紛紙盒｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/products/reunion-paper-gift-box",
+    "returned": "/products/reunion-paper-gift-box"
+   }
+  },
+  {
+   "url": "/en/products/reunion-paper-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Reunion | Paper Box | CHARM VILLA",
+   "switch": {
+    "landed": "/products/reunion-paper-gift-box",
+    "returned": "/en/products/reunion-paper-gift-box"
+   }
+  },
+  {
+   "url": "/products/braided-leather-bag-white",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "編織提把皮革包・白色｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/products/braided-leather-bag-white",
+    "returned": "/products/braided-leather-bag-white"
+   }
+  },
+  {
+   "url": "/en/products/braided-leather-bag-white",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Braided Leather Bag · White | CHARM VILLA",
+   "switch": {
+    "landed": "/products/braided-leather-bag-white",
+    "returned": "/en/products/braided-leather-bag-white"
+   }
+  },
+  {
+   "url": "/products/diamond-goldfish-earrings",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚耳環・鑽石系列・垂墜｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/products/diamond-goldfish-earrings",
+    "returned": "/products/diamond-goldfish-earrings"
+   }
+  },
+  {
+   "url": "/en/products/diamond-goldfish-earrings",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Earrings · Diamond Series · Drop | CHARM VILLA",
+   "switch": {
+    "landed": "/products/diamond-goldfish-earrings",
+    "returned": "/en/products/diamond-goldfish-earrings"
+   }
+  },
+  {
+   "url": "/products/ginkgo-teaspoon-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "銀杏茶匙禮盒｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/products/ginkgo-teaspoon-gift-box",
+    "returned": "/products/ginkgo-teaspoon-gift-box"
+   }
+  },
+  {
+   "url": "/en/products/ginkgo-teaspoon-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Ginkgo Teaspoon Gift Box | CHARM VILLA",
+   "switch": {
+    "landed": "/products/ginkgo-teaspoon-gift-box",
+    "returned": "/en/products/ginkgo-teaspoon-gift-box"
+   }
+  },
+  {
+   "url": "/products/christmas-edition-stocking",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "聖誕特別版｜聖誕襪款｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/products/christmas-edition-stocking",
+    "returned": "/products/christmas-edition-stocking"
+   }
+  },
+  {
+   "url": "/en/products/christmas-edition-stocking",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Christmas Edition | Stocking | CHARM VILLA",
+   "switch": {
+    "landed": "/products/christmas-edition-stocking",
+    "returned": "/en/products/christmas-edition-stocking"
+   }
+  },
+  {
+   "url": "/account",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "會員｜CHARM VILLA",
+   "switch": {
+    "landed": "/en/account",
+    "returned": "/account"
+   }
+  },
+  {
+   "url": "/en/account",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Account | CHARM VILLA",
+   "switch": {
+    "landed": "/account",
+    "returned": "/en/account"
+   }
+  }
+ ]
+}

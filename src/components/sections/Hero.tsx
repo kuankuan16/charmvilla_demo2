@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-import { hero } from "@/data/content";
+import { getContent } from "@/data/content";
+import { useT } from "@/i18n/LocaleProvider";
+import { localeHref } from "@/i18n/config";
 import InkBloom from "@/components/ui/InkBloom";
 
 const brushGroups = [
@@ -15,6 +17,8 @@ const brushGroups = [
 // Three photographs travel around an ellipse. Paint, photographs and type occupy
 // separate depth planes; the image files themselves are never distorted or edited.
 export default function Hero() {
+  const { lang, t } = useT();
+  const { hero } = getContent(lang);
   const root = useRef<HTMLElement>(null);
   const advance = useRef<(direction: number) => void>(() => {});
   const pointer = useRef({ x: 0, y: 0 });
@@ -99,7 +103,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={root} id="hero" className="orbit-hero" aria-label="日常物件，三件展品" aria-roledescription="輪播"
+    <section ref={root} id="hero" className="orbit-hero" aria-label={t("日常物件，三件展品", "Everyday objects, three pieces on show")} aria-roledescription={t("輪播", "carousel")}
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse") return;
         const r = e.currentTarget.getBoundingClientRect();
@@ -136,7 +140,7 @@ export default function Hero() {
         <div className="orbit-photographs">
           {hero.slides.map((slide, i) => (
             <div key={slide.id} data-orbit-card="" data-active={active === i} className={`orbit-card orbit-card--${slide.id}`} aria-hidden={active !== i}>
-              <Link href={slide.href} tabIndex={active === i ? 0 : -1} aria-label={`探索${slide.label}`} className="orbit-photo-link" onPointerEnter={() => { hoverRef.current = true; }} onPointerLeave={() => { hoverRef.current = false; }}>
+              <Link href={localeHref(lang, slide.href)} tabIndex={active === i ? 0 : -1} aria-label={t(`探索${slide.label}`, `Explore the ${slide.label}`)} className="orbit-photo-link" onPointerEnter={() => { hoverRef.current = true; }} onPointerLeave={() => { hoverRef.current = false; }}>
                 <img src={slide.src} alt={slide.alt} width={slide.w} height={slide.h} fetchPriority={i === 0 ? "high" : "auto"} loading="eager" draggable={false} />
               </Link>
             </div>
@@ -144,7 +148,7 @@ export default function Hero() {
         </div>
       </div>
       <h1 className="orbit-title" data-hero-reveal=""><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">EVERYDAY</span><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">LUXURIES</span></h1>
-      <p className="orbit-statement tc" data-hero-reveal=""><span>藝術即生活</span></p>
+      <p className="orbit-statement tc" data-hero-reveal=""><span>{hero.subtitle}</span></p>
       <div className="orbit-footer">
         <span className="orbit-count" aria-live="off">{active + 1} / 3</span>
         <span className="orbit-footer-divider" aria-hidden="true" />

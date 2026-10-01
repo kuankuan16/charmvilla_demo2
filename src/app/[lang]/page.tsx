@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import PageShell from "@/components/engine/PageShell";
 import Header from "@/components/chrome/Header";
 import Hero from "@/components/sections/Hero";
@@ -8,8 +10,16 @@ import Shown from "@/components/sections/Shown";
 import Partners from "@/components/sections/Partners";
 import Visit from "@/components/sections/Visit";
 import Footer from "@/components/sections/Footer";
+import { alternatesFor, defaultLocale, isLocale } from "@/i18n/config";
 
-export default function Page() {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return { alternates: alternatesFor(isLocale(lang) ? lang : defaultLocale, "/") };
+}
+
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
   return (
     <PageShell>
       <Header />
@@ -19,12 +29,12 @@ export default function Page() {
           <Manifesto />
           <CraftMoments />
         </div>
-        <FeaturedProducts />
-        <Shown />
-        <Partners />
+        <FeaturedProducts lang={lang} />
+        <Shown lang={lang} />
+        <Partners lang={lang} />
         <Visit />
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </PageShell>
   );
 }

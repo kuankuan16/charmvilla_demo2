@@ -10,13 +10,25 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const qa = path.join(root, 'docs/qa/2026-09-29-tea-gift-boxes');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'charmvilla-tea-'));
-for (const file of ['content', 'tea-gifts', 'christmas-gifts', 'catalog']) {
-  const source = fs.readFileSync(path.join(root, `src/data/${file}.ts`), 'utf8');
+// The data files import ../i18n/config, so the transpiled copies keep the src/ layout (data/ next to i18n/).
+for (const file of ['data/content', 'data/tea-gifts', 'data/christmas-gifts', 'data/catalog', 'i18n/config']) {
+  const source = fs.readFileSync(path.join(root, `src/${file}.ts`), 'utf8');
+  fs.mkdirSync(path.dirname(path.join(tmp, file)), { recursive: true });
   fs.writeFileSync(path.join(tmp, `${file}.js`), ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true } }).outputText);
 }
-for (const name of ['images.json', 'gift-box-images.json', 'official-prices.json', 'shopify-map.json', 'studio-listing.json']) fs.copyFileSync(path.join(root, 'src/data', name), path.join(tmp, name));
-const { teaGifts } = (await import(pathToFileURL(path.join(tmp, 'tea-gifts.js')).href)).default;
-const { products, teaCatalog } = (await import(pathToFileURL(path.join(tmp, 'catalog.js')).href)).default;
+for (const name of ['images.json', 'gift-box-images.json', 'official-prices.json', 'shopify-map.json', 'studio-listing.json']) fs.copyFileSync(path.join(root, 'src/data', name), path.join(tmp, 'data', name));
+const { teaGifts } = (await import(pathToFileURL(path.join(tmp, 'data/tea-gifts.js')).href)).default;
+const { products, teaCatalog, getCatalog } = (await import(pathToFileURL(path.join(tmp, 'data/catalog.js')).href)).default;
+// English catalogue (2026-10-01): same slugs, prices and images as the Chinese one, and no Chinese left in any visible string.
+const english = getCatalog('en');
+assert.deepEqual(english.products.map(p => p.slug), products.map(p => p.slug));
+for (const [i, p] of english.products.entries()) {
+  const zh = products[i];
+  assert.deepEqual([p.price, p.image.src, p.views.map(v => v.image.src), p.officialUrl], [zh.price, zh.image.src, zh.views.map(v => v.image.src), zh.officialUrl], `${p.slug}: English listing differs in facts`);
+  const visible = JSON.stringify([p.name, p.summary, p.description, p.facts, p.story.title, p.story.body, p.variant, p.views.map(v => [v.label, v.image.alt]), p.image.alt, p.giftBox?.series]);
+  assert(!/[\u3400-\u9fff]/.test(visible), `${p.slug}: Chinese text in the English listing`);
+}
+for (const p of english.teaProducts.filter(p => p.variant?.group === 'christmas-edition-2026')) assert(!p.officialUrl && !p.giftBox && p.facts.some(f => f.label === 'Release'), `${p.slug} (English) must not claim official listing or box contents`);
 const expectedIds = [891,64,954,1053,104,692,970,183,343,196,850,582,960,88,1072,994];
 assert.deepEqual(teaGifts.map(g => g.officialId), expectedIds);
 assert.equal(new Set(products.map(p => p.slug)).size, products.length);
@@ -26,7 +38,7 @@ assert.deepEqual(christmas.map(p => p.slug), ['christmas-edition-stocking', 'chr
 for (const p of christmas) { assert(!p.officialUrl && !p.giftBox, `${p.slug} must not claim official listing or box contents`); assert(p.facts.some(f => f.label === '上市資訊')); for (const view of p.views) assert(fs.existsSync(path.join(root, 'public', view.image.src)), `Missing ${view.image.src}`); }
 assert(!products.some(p => p.slug.startsWith('goldfish-tea-')));
 const selectedSource = fs.readFileSync(path.join(root, 'src/components/sections/FeaturedProducts.tsx'), 'utf8');
-const selectedBlock = selectedSource.match(/const selected = \[([\s\S]+?)\]/)[1];
+const selectedBlock = selectedSource.match(/const slugs = \[([\s\S]+?)\]/)[1];
 for (const slug of selectedBlock.matchAll(/"([^"]+)"/g)) assert(products.some(p => p.slug === slug[1]), `Missing featured ${slug[1]}`);
 for (const gift of teaGifts) {
   const options = gift.choices ? gift.choices.map(c => c.contents) : [gift.contents];
@@ -70,5 +82,5 @@ const sceneHashes = {
   fs.writeFileSync(path.join(qa, 'verification.json'), JSON.stringify({ checkedAt: '2026-09-29', result: 'pass', giftBoxCount: 16, aiCoverCount: 4, officialCoverCount: 12, officialReferenceCount: 16, uniqueSlugs: true, contentsCountsMatchEachBox: true, wholeBoxChoicesNotAdditive: true, featuredLinksResolve: true, oldFlavorListingsRemoved: true, galleryHashes: imageChecks, build: 'blocked: Google Fonts network access', browserRuntime: 'not verified: local listener denied by environment', deployed: false }, null, 2)+'\n');
   fs.writeFileSync(path.join(qa, 'catalog-snapshot.json'), JSON.stringify(teaCatalog, null, 2)+'\n');
   fs.rmSync(tmp, { recursive: true });
-  console.log('PASS: 16 gift boxes, contents/choices totals, image hashes, unique routes and featured links.');
+  console.log('PASS: 16 gift boxes, contents/choices totals, image hashes, unique routes, featured links and the English catalogue.');
 })();

@@ -3,9 +3,11 @@
 // Server component; content from @/data/content only. The SVG logos use next/image directly.
 import { Fragment } from "react";
 import Image from "next/image";
-import { shown } from "@/data/content";
+import { getContent } from "@/data/content";
+import type { Locale } from "@/i18n/config";
 
-export default function Shown() {
+export default function Shown({ lang }: { lang: Locale }) {
+  const { shown } = getContent(lang);
   // "SHOWN AT:" → one word per line, as the reference stacks its heading.
   const headingLines = shown.heading.split(" ");
 

@@ -1,0 +1,628 @@
+{
+ "base": "http://localhost:3120",
+ "production": "https://charmvilla-gallery-site.vercel.app",
+ "checkedAt": "2026-10-01T06:52:31.127Z",
+ "routes": 39,
+ "pagesChecked": 78,
+ "failures": [],
+ "cjkOnEnglish": {},
+ "allowedCjkOnEnglish": [
+  "/^中文$/",
+  "/^切換為中文$/"
+ ],
+ "redirects": [
+  {
+   "from": "/zh",
+   "status": 308,
+   "location": "/"
+  },
+  {
+   "from": "/zh/collections/tea",
+   "status": 308,
+   "location": "/collections/tea"
+  },
+  {
+   "from": "/zh/products/reunion-paper-gift-box",
+   "status": 308,
+   "location": "/products/reunion-paper-gift-box"
+  },
+  {
+   "from": "/products/goldfish-diamond-stud",
+   "status": 308,
+   "location": "/products/diamond-goldfish-stud-earrings"
+  },
+  {
+   "from": "/en/products/goldfish-diamond-stud",
+   "status": 308,
+   "location": "/en/products/diamond-goldfish-stud-earrings"
+  },
+  {
+   "from": "/products/goldfish-tea-rose-jinxuan",
+   "status": 308,
+   "location": "/collections/tea"
+  },
+  {
+   "from": "/en/products/goldfish-tea-rose-jinxuan",
+   "status": 308,
+   "location": "/en/collections/tea"
+  }
+ ],
+ "notFound": [
+  {
+   "path": "/nope",
+   "status": 404
+  },
+  {
+   "path": "/en/nope",
+   "status": 404
+  },
+  {
+   "path": "/products/nope",
+   "status": 404
+  },
+  {
+   "path": "/en/products/nope",
+   "status": 404
+  },
+  {
+   "path": "/collections/nope",
+   "status": 404
+  },
+  {
+   "path": "/en/collections/nope",
+   "status": 404
+  }
+ ],
+ "parity": {
+  "same": 39,
+  "different": []
+ },
+ "pages": [
+  {
+   "url": "/",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "CHARM VILLA — 藝術即生活"
+  },
+  {
+   "url": "/en",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "CHARM VILLA | Art as Life"
+  },
+  {
+   "url": "/collections/all",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "全部商品｜CHARM VILLA"
+  },
+  {
+   "url": "/en/collections/all",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "All pieces | CHARM VILLA"
+  },
+  {
+   "url": "/collections/bags",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "真皮包｜CHARM VILLA"
+  },
+  {
+   "url": "/en/collections/bags",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Leather Bags | CHARM VILLA"
+  },
+  {
+   "url": "/collections/jewelry",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "金飾｜CHARM VILLA"
+  },
+  {
+   "url": "/en/collections/jewelry",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Jewelry | CHARM VILLA"
+  },
+  {
+   "url": "/collections/tea",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚茶包禮盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/collections/tea",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Tea Gifts | CHARM VILLA"
+  },
+  {
+   "url": "/collections/teaware",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "茶器與工藝｜CHARM VILLA"
+  },
+  {
+   "url": "/en/collections/teaware",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Teaware & Craft | CHARM VILLA"
+  },
+  {
+   "url": "/products/braided-leather-bag-white",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "編織提把皮革包・白色｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/braided-leather-bag-white",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Braided Leather Bag · White | CHARM VILLA"
+  },
+  {
+   "url": "/products/braided-leather-bag-blue",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "編織提把皮革包・藍色｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/braided-leather-bag-blue",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Braided Leather Bag · Blue | CHARM VILLA"
+  },
+  {
+   "url": "/products/braided-leather-bag-pink",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "編織提把皮革包・粉紅色｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/braided-leather-bag-pink",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Braided Leather Bag · Pink | CHARM VILLA"
+  },
+  {
+   "url": "/products/pearl-chain-goldfish-earrings",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "珍珠長鏈小金魚耳環｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/pearl-chain-goldfish-earrings",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Pearl Chain Goldfish Earrings | CHARM VILLA"
+  },
+  {
+   "url": "/products/diamond-goldfish-earrings",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚耳環・鑽石系列・垂墜｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/diamond-goldfish-earrings",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Earrings · Diamond Series · Drop | CHARM VILLA"
+  },
+  {
+   "url": "/products/diamond-goldfish-stud-earrings",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚耳環・鑽石系列・耳釘｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/diamond-goldfish-stud-earrings",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Earrings · Diamond Series · Stud | CHARM VILLA"
+  },
+  {
+   "url": "/products/twin-goldfish-earrings",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚耳環・雙魚系列｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/twin-goldfish-earrings",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Earrings · Twin Series | CHARM VILLA"
+  },
+  {
+   "url": "/products/raw-gold-goldfish-earrings",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小金魚耳環・璞金系列｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/raw-gold-goldfish-earrings",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Goldfish Earrings · Raw Gold Series | CHARM VILLA"
+  },
+  {
+   "url": "/products/christmas-edition-stocking",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "聖誕特別版｜聖誕襪款｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/christmas-edition-stocking",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Christmas Edition | Stocking | CHARM VILLA"
+  },
+  {
+   "url": "/products/christmas-edition-candy-cane",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "聖誕特別版｜拐杖糖款｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/christmas-edition-candy-cane",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Christmas Edition | Candy Cane | CHARM VILLA"
+  },
+  {
+   "url": "/products/reunion-paper-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "團圓｜繽紛紙盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/reunion-paper-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Reunion | Paper Box | CHARM VILLA"
+  },
+  {
+   "url": "/products/reunion-paulownia-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "團圓｜桐木木盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/reunion-paulownia-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Reunion | Paulownia Box | CHARM VILLA"
+  },
+  {
+   "url": "/products/year-of-plenty-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "年年有魚｜年節禮｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/year-of-plenty-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Year of Plenty | Lunar New Year Gift | CHARM VILLA"
+  },
+  {
+   "url": "/products/blossoming-prosperity-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "花開富貴｜年節禮｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/blossoming-prosperity-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Blossoming Prosperity | Lunar New Year Gift | CHARM VILLA"
+  },
+  {
+   "url": "/products/spring-blossoms-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "花滿富春｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/spring-blossoms-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Spring Blossoms | CHARM VILLA"
+  },
+  {
+   "url": "/products/kyoto-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "京都版｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/kyoto-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Kyoto Edition | CHARM VILLA"
+  },
+  {
+   "url": "/products/heart-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "心有愛禮盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/heart-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "With Love Gift Box | CHARM VILLA"
+  },
+  {
+   "url": "/products/fruit-infusion-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "花果茶禮盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/fruit-infusion-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Fruit Infusion Gift Box | CHARM VILLA"
+  },
+  {
+   "url": "/products/rose-encounter-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "玫好相遇｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/rose-encounter-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "A Rose Encounter | CHARM VILLA"
+  },
+  {
+   "url": "/products/tea-to-share-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "魚你分享｜茶繽紛｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/tea-to-share-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Tea to Share | Assorted Teas | CHARM VILLA"
+  },
+  {
+   "url": "/products/spring-dawn-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "春曉｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/spring-dawn-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Spring Dawn | CHARM VILLA"
+  },
+  {
+   "url": "/products/winter-blossom-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "暮雪｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/winter-blossom-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Winter Blossom | CHARM VILLA"
+  },
+  {
+   "url": "/products/orchid-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "蝴蝶蘭｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/orchid-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Orchid | CHARM VILLA"
+  },
+  {
+   "url": "/products/purple-butterfly-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "紫斑蝶｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/purple-butterfly-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Purple Butterfly | CHARM VILLA"
+  },
+  {
+   "url": "/products/small-moon-tea-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "小鮮月禮盒｜純茶包｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/small-moon-tea-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Small Moon Gift Box | Tea Only | CHARM VILLA"
+  },
+  {
+   "url": "/products/full-moon-tea-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "大盈月禮盒｜純茶包｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/full-moon-tea-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Full Moon Gift Box | Tea Only | CHARM VILLA"
+  },
+  {
+   "url": "/products/prosperity-dessert-stand",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "下午茶點心架｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/prosperity-dessert-stand",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Afternoon Tea Dessert Stand | CHARM VILLA"
+  },
+  {
+   "url": "/products/prosperity-stand-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "點心架與包裝禮盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/prosperity-stand-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Dessert Stand with Gift Box | CHARM VILLA"
+  },
+  {
+   "url": "/products/wooden-coaster-teaspoon",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "木質杯墊與茶匙｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/wooden-coaster-teaspoon",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Wooden Coaster and Teaspoon | CHARM VILLA"
+  },
+  {
+   "url": "/products/bird-chopstick-rest",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "鳥形筷架｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/bird-chopstick-rest",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Bird Chopstick Rest | CHARM VILLA"
+  },
+  {
+   "url": "/products/ginkgo-teaspoon-gift-box",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "銀杏茶匙禮盒｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/ginkgo-teaspoon-gift-box",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Ginkgo Teaspoon Gift Box | CHARM VILLA"
+  },
+  {
+   "url": "/products/wooden-chopsticks",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "木筷｜CHARM VILLA"
+  },
+  {
+   "url": "/en/products/wooden-chopsticks",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Wooden Chopsticks | CHARM VILLA"
+  },
+  {
+   "url": "/account",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "會員｜CHARM VILLA"
+  },
+  {
+   "url": "/en/account",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "Account | CHARM VILLA"
+  }
+ ]
+}

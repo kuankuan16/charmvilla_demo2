@@ -3,13 +3,24 @@
 // Menu panels reveal with clip-path (.5s cubic-bezier(.3,.86,.36,.95)) and staggered delays.
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { brand, sections } from "@/data/content";
+import { useT } from "@/i18n/LocaleProvider";
+import { localeHref, switchLocalePath, htmlLang, type Locale } from "@/i18n/config";
 import CartButton from "@/components/cart/CartButton";
 import { getScroller } from "@/lib/motion/scroller";
 
 export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const [open, setOpen] = useState(false);
-  const sectionHref = (id: string) => id === "account" ? "/account" : id === "hero" || id === "visit" ? `${innerPage ? "/" : ""}#${id}` : `/collections/${id}`;
+  const { lang, t } = useT();
+  const zh = lang === "zh";
+  const sectionHref = (id: string) => id === "account" ? localeHref(lang, "/account") : id === "hero" || id === "visit" ? (innerPage ? localeHref(lang, `/#${id}`) : `#${id}`) : localeHref(lang, `/collections/${id}`);
+  // Language switch: the same page in the other language. A plain link (full load) so <html lang> and the page copy change together;
+  // on the homepage the one-shot flag keeps the preloader from replaying.
+  const other: Locale = zh ? "en" : "zh";
+  const switchHref = switchLocalePath(usePathname(), other);
+  const switchProps = { href: switchHref, hrefLang: htmlLang[other], lang: htmlLang[other], "data-locale-switch": other, onClick: () => { if (!innerPage) { try { sessionStorage.setItem("cv-skip-preloader", "1"); } catch { /* ignore */ } } } };
+  const switchName = zh ? "English" : "中文";
   const panelRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
   const previouslyOpen = useRef(false);
@@ -49,28 +60,29 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     <header data-header="" className={`site-header fixed left-0 top-0 z-30 w-full ${open ? "menu--opened" : ""}`}>
       {/* Bang & Olufsen-style bar (user 2026-09-30): Menu on the left, the official wordmark centred, tools on the right. */}
       <div className="site-header-inner">
-        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "關閉選單" : "開啟選單"} className={`header-menu-btn relative z-40 ${open ? "text-paper" : "text-ink"}`} onClick={() => setOpen((v) => !v)}>
+        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t("關閉選單", "Close menu") : t("開啟選單", "Open menu")} className={`header-menu-btn relative z-40 ${open ? "text-paper" : "text-ink"}`} onClick={() => setOpen((v) => !v)}>
           <span className="header-menu-lines" aria-hidden="true">
             <span className={`transition-transform duration-300 ${open ? "translate-y-[3.25px] rotate-45" : ""}`} />
             <span className={`transition-transform duration-300 ${open ? "-translate-y-[3.25px] -rotate-45" : ""}`} />
           </span>
           <span>{open ? "Close" : "Menu"}</span>
         </button>
-        <Link href={innerPage ? "/" : "#hero"} aria-label="CHARM VILLA — 回到首頁" className={`header-brand relative z-40 block transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`} onClick={() => { setOpen(false); if (innerPage) { try { sessionStorage.setItem("cv-skip-preloader", "1"); } catch { /* ignore */ } } }}>
+        <Link href={innerPage ? localeHref(lang, "/") : "#hero"} aria-label={t("CHARM VILLA — 回到首頁", "CHARM VILLA, back to home")} className={`header-brand relative z-40 block transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`} onClick={() => { setOpen(false); if (innerPage) { try { sessionStorage.setItem("cv-skip-preloader", "1"); } catch { /* ignore */ } } }}>
           <img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} />
         </Link>
         <div className={`header-tools relative z-40 text-ink transition-opacity duration-300 ${open ? "pointer-events-none opacity-0" : ""}`}>
-          <a href={sectionHref("visit")} aria-label="門市資訊" title="門市資訊" onClick={() => setOpen(false)}>
+          <a {...switchProps} className="header-lang tc" aria-label={zh ? "Switch to English" : "切換為中文"}>{zh ? "EN" : "中文"}</a>
+          <a href={sectionHref("visit")} aria-label={t("門市資訊", "Store information")} title={t("門市資訊", "Store information")} onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.4" /></svg>
           </a>
-          <Link href="/account" aria-label="會員" title="會員" onClick={() => setOpen(false)}>
+          <Link href={localeHref(lang, "/account")} aria-label={t("會員", "Account")} title={t("會員", "Account")} onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
           </Link>
           <CartButton />
         </div>
       </div>
 
-      <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label="選單" className={`menu-root absolute left-0 top-0 h-screen w-full bg-ink text-ink ${open ? "" : "pointer-events-none"}`} aria-hidden={!open} inert={!open}>
+      <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label={t("選單", "Menu")} className={`menu-root absolute left-0 top-0 h-screen w-full bg-ink text-ink ${open ? "" : "pointer-events-none"}`} aria-hidden={!open} inert={!open}>
         {/* stepped panels (desktop): CLOSE strip, then three offset paper panels revealed right-to-left */}
         <div className="relative h-full w-full">
           <div className="menu-panel absolute right-0 top-0 hidden h-[77%] w-2/3 bg-white laptop:block" style={{ transitionDelay: open ? "0s" : ".2s" }}>
@@ -85,7 +97,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
               <div key={s.id} className="menu-panel absolute hidden bg-white laptop:block" style={{ top: `${top}%`, left: `${left}%`, right: 0, height: `${100 - top}%`, transitionDelay: open ? `${0.1 + i * 0.08}s` : `${(rows - i) * 0.05}s` }}>
                 <a href={sectionHref(s.id)} onClick={close} className="menu-fade group absolute left-30 top-40 flex items-center gap-20 whitespace-nowrap text-4xl font-bold leading-none" style={{ transitionDelay: open ? `${0.3 + i * 0.08}s` : "0s" }}>
                   <span className="link-underline">{s.label}</span>
-                  <span className="tc text-base font-medium opacity-60">{s.zh}</span>
+                  {zh && <span className="tc text-base font-medium opacity-60">{s.zh}</span>}
                 </a>
               </div>
             );
@@ -93,8 +105,10 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           {/* mobile list */}
           <ul className="menu-fade absolute left-[var(--page-gutter)] top-95 flex flex-col gap-24 laptop:hidden" style={{ transitionDelay: open ? ".2s" : "0s" }}>
             {navItems.map((s) => (
-              <li key={s.id}><a href={sectionHref(s.id)} onClick={close} className="flex items-baseline gap-14 text-4xl font-bold leading-none text-paper"><span>{s.label}</span><span className="tc text-base font-medium opacity-70">{s.zh}</span></a></li>
+              <li key={s.id}><a href={sectionHref(s.id)} onClick={close} className="flex items-baseline gap-14 text-4xl font-bold leading-none text-paper"><span>{s.label}</span>{zh && <span className="tc text-base font-medium opacity-70">{s.zh}</span>}</a></li>
             ))}
+            {/* The bar has no room for the language switch on a phone, so it closes the list here. */}
+            <li className="mt-16"><a {...switchProps} className="tc text-base font-medium text-paper opacity-70">{switchName}</a></li>
           </ul>
         </div>
       </div>

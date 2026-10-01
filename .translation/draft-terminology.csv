@@ -1,0 +1,25 @@
+source,target,scope,status,rationale
+璞金系列,Raw Gold Series,jewelry series,draft,existing internal label "RAW GOLD"; not confirmed by the brand
+雙魚系列,Twin Series,jewelry series,draft,existing internal label "TWIN GOLDFISH"
+豐盛系列,Prosperity Series,teaware series,draft,follows the existing slug "prosperity-*"
+頭等獎獲獎玫瑰烏龍茶,First-Prize Rose Oolong Tea,tea,draft,competition and year are not stated in the source
+貳等獎獲獎東方美人茶,Second-Prize Oriental Beauty Tea,tea,draft,same
+參等獎獲獎東方美人茶,Third-Prize Oriental Beauty Tea,tea,draft,same
+蘇靜媚,Su Jingmei,person (founder),draft,romanisation as printed by Taiwan Panorama; confirm the founder's preferred spelling
+誠品生活南西,eslite spectrum Nanxi,venue,draft,venue's own English name
+杯中金魚,Goldfish in a Cup,event title,draft,matches the LA event title GOLDFISH IN A CUP
+端紫斑蝶,purple crow butterfly,motif,draft,common name; product English name is PURPLE BUTTERFLY
+聖誕襪款／拐杖糖款,Stocking / Candy Cane,edition,draft,follows the existing English labels
+CHARM VILLA 晶華門市,CHARM VILLA Regent Taipei,store name,draft,
+CHARM VILLA 京都門市,CHARM VILLA Kyoto,store name,draft,
+京都市中京區寺町通二條・山本町442,"442 Yamamoto-cho, Teramachi-dori Nijo, Nakagyo-ku, Kyoto",address,draft,transliterated from the Chinese listing; confirm against the store's official English address
+摺紙職人,Paper-folding artisan,craft role (homepage carousel),draft,
+製革職人,Leather artisan,craft role (homepage carousel),draft,the card shows cutting and plaiting rather than tanning
+金工職人,Goldsmith,craft role (homepage carousel),draft,
+木作職人,Woodworker,craft role (homepage carousel),draft,
+年節禮,Lunar New Year Gift,product name suffix,draft,"New Year Gift" would read as 1 January
+推薦商品精選,Featured pieces,homepage heading,draft,the eyebrow above it already says SELECTED OBJECTS
+全部商品,All pieces,UI (breadcrumb / footer / buttons),draft,the menu label stays "All Objects" (existing)
+會員,Account,UI,draft,existing menu label
+12 入（盒型選項）,12 tea bags,UI (box-variant chip),draft,"12 per box" is used in the summary line
+爪鑲,claw-set,jewelry,draft,British usage; US usage is "prong-set"

@@ -1,0 +1,39 @@
+import type { Metadata, Viewport } from "next";
+import { Outfit, Noto_Sans_TC } from "next/font/google";
+import "../globals.css";
+import { CartProvider } from "@/components/cart/CartProvider";
+import CartDrawer from "@/components/cart/CartDrawer";
+import { LocaleProvider } from "@/i18n/LocaleProvider";
+import { locales, defaultLocale, isLocale, htmlLang, siteUrl, translator } from "@/i18n/config";
+
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
+const notoTC = Noto_Sans_TC({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-noto-tc", display: "swap" });
+
+type Props = { params: Promise<{ lang: string }> };
+export const generateStaticParams = () => locales.map((lang) => ({ lang }));
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang: raw } = await params;
+  const t = translator(isLocale(raw) ? raw : defaultLocale);
+  const title = t("CHARM VILLA — 藝術即生活", "CHARM VILLA | Art as Life");
+  return {
+    metadataBase: new URL(siteUrl),
+    title,
+    description: t("藝術即生活。走進 CHARM VILLA 的日常藝廊，從皮革、金飾到茶與器物，細看材質、手作與生活的關係。",
+      "Art as Life. Step into CHARM VILLA's everyday gallery: from leather and gold to tea and objects for the table, look closely at how material, handwork and daily life relate."),
+    openGraph: { title, images: ["/media/gallery/CV-0422.webp"], locale: t("zh_TW", "en") },
+  };
+}
+
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#ebeae4" };
+
+export default async function RootLayout({ children, params }: Props & { children: React.ReactNode }) {
+  const { lang: raw } = await params;
+  // The proxy only ever sends "zh" or "en" here; a stray value (a file-like URL) falls back to the default and its page answers 404.
+  const lang = isLocale(raw) ? raw : defaultLocale;
+  return (
+    <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`}>
+      <body className="bg-page text-ink"><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /></CartProvider></LocaleProvider></body>
+    </html>
+  );
+}

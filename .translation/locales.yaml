@@ -1,0 +1,9 @@
+source: zh-Hant-TW
+targets:
+  - locale: en
+    url_prefix: /en
+    html_lang: en
+default:
+  locale: zh-Hant-TW
+  url_prefix: ""
+  html_lang: zh-Hant

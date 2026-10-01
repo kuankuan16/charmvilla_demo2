@@ -2,18 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/chrome/Header";
 import { brand } from "@/data/content";
-import { categories, categoryHref } from "@/data/catalog";
+import { getCategories, categoryHref } from "@/data/catalog";
 import SocialLinks from "@/components/ui/SocialLinks";
+import { localeHref, translator, type Locale } from "@/i18n/config";
 
-export default function CatalogShell({ children }: { children: React.ReactNode }) {
+export default function CatalogShell({ children, lang }: { children: React.ReactNode; lang: Locale }) {
+  const t = translator(lang);
   return (
     <div className="catalog-shell">
-      <a href="#catalog-main" className="catalog-skip">跳至商品內容</a>
+      <a href="#catalog-main" className="catalog-skip">{t("跳至商品內容", "Skip to content")}</a>
       <Header innerPage />
       <main id="catalog-main" tabIndex={-1}>{children}</main>
       <footer className="catalog-footer">
-        <div className="catalog-footer-top"><p className="catalog-footer-statement tc">藝術即生活</p><div><p className="catalog-eyebrow">EXPLORE THE GALLERY</p><nav aria-label="商品頁尾導覽"><Link href="/collections/all" className="tc">全部商品</Link>{categories.map((c) => <Link key={c.id} href={categoryHref(c.id)} className="tc">{c.name}</Link>)}</nav></div></div>
-        <div className="catalog-footer-bottom"><Link href="/" aria-label="CHARM VILLA 首頁"><Image src={brand.logo.src} alt="CHARM VILLA" width={brand.logo.w} height={brand.logo.h} className="brightness-0 invert" /></Link><span>© 2026 CHARM VILLA</span><SocialLinks /></div>
+        <div className="catalog-footer-top"><p className="catalog-footer-statement tc">{t("藝術即生活", "Art as Life")}</p><div><p className="catalog-eyebrow">EXPLORE THE GALLERY</p><nav aria-label={t("商品頁尾導覽", "Catalogue footer navigation")}><Link href={categoryHref("all", lang)} className="tc">{t("全部商品", "All pieces")}</Link>{getCategories(lang).map((c) => <Link key={c.id} href={categoryHref(c.id, lang)} className="tc">{c.name}</Link>)}</nav></div></div>
+        <div className="catalog-footer-bottom"><Link href={localeHref(lang, "/")} aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}><Image src={brand.logo.src} alt="CHARM VILLA" width={brand.logo.w} height={brand.logo.h} className="brightness-0 invert" /></Link><span>© 2026 CHARM VILLA</span><SocialLinks lang={lang} /></div>
       </footer>
     </div>
   );

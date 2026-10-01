@@ -3,8 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { brand, sections } from "@/data/content";
 import SocialLinks from "@/components/ui/SocialLinks";
+import { localeHref, translator, type Locale } from "@/i18n/config";
 
-export default function Footer() {
+export default function Footer({ lang }: { lang: Locale }) {
+  const t = translator(lang);
+  const zh = lang === "zh";
   return (
     <footer id="footer" className="container-x bg-ink pt-60 pb-40 text-paper">
       <div className="flex flex-wrap items-start justify-between gap-30">
@@ -12,17 +15,17 @@ export default function Footer() {
           <Image src={brand.logo.src} alt="CHARM VILLA" width={brand.logo.w} height={brand.logo.h} className="h-auto w-[220px] brightness-0 invert" />
         </div>
 
-        <nav aria-label="頁尾">
+        <nav aria-label={t("頁尾", "Footer")}>
           <ul className="flex flex-wrap gap-x-30 gap-y-10 text-xs font-bold">
-            <li><Link href="/collections/all" className="link-underline">ALL OBJECTS</Link><span className="tc ml-6 font-medium opacity-70">全部商品</span></li>
+            <li><Link href={localeHref(lang, "/collections/all")} className="link-underline">ALL OBJECTS</Link>{zh && <span className="tc ml-6 font-medium opacity-70">全部商品</span>}</li>
             {sections
               .filter((s) => s.id !== "hero")
               .map((s) => (
                 <li key={s.id}>
-                  <a href={s.id === "visit" ? "#visit" : `/collections/${s.id}`} className="link-underline">
+                  <a href={s.id === "visit" ? "#visit" : localeHref(lang, `/collections/${s.id}`)} className="link-underline">
                     {s.label}
                   </a>
-                  <span className="tc ml-6 font-medium opacity-70">{s.zh}</span>
+                  {zh && <span className="tc ml-6 font-medium opacity-70">{s.zh}</span>}
                 </li>
               ))}
           </ul>
@@ -31,7 +34,7 @@ export default function Footer() {
 
       <div className="mt-50 flex flex-wrap justify-between gap-10 pt-20 text-xs font-bold">
         <span>© 2026 CHARM VILLA</span>
-        <SocialLinks />
+        <SocialLinks lang={lang} />
       </div>
     </footer>
   );

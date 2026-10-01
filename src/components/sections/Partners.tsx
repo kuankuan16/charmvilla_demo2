@@ -1,9 +1,11 @@
 // Partners screen — one viewport, split layout (reference: LAXER "PARTNERS:" block — image left,
 // label top-right, statement centred, outline pill bottom). Server component; content from @/data/content.
-import { partners } from "@/data/content";
+import { getContent } from "@/data/content";
 import { Picture } from "@/components/ui";
+import type { Locale } from "@/i18n/config";
 
-export default function Partners() {
+export default function Partners({ lang }: { lang: Locale }) {
+  const { partners } = getContent(lang);
   // One screen below the fixed 50px header (so the CTA row is on-screen when the section is anchored).
   return (
     <section id="partners" className="container-x relative grid bg-page laptop:h-[calc(100vh-50px)] laptop:grid-cols-2">
@@ -18,9 +20,9 @@ export default function Partners() {
 
         <div className="my-auto py-40">
           {/* Whole-block rise (not split lines): CJK subsets load after the preloader, so line splitting can reflow.
-              Latin brand names stay on one line. */}
-          <p className="tc text-3xl font-bold leading-tight lg:text-4xl" data-animation="moveUp" data-delay="0.1">
-            {partners.statement.split(/([A-Za-z][A-Za-z .]*[A-Za-z])/).map((run, i) =>
+              In the Chinese statement, Latin brand names stay on one line; the English statement wraps as ordinary prose. */}
+          <p className={`tc font-bold leading-tight ${lang === "en" ? "text-2xl lg:text-3xl" : "text-3xl lg:text-4xl"}`} data-animation="moveUp" data-delay="0.1">
+            {lang === "en" ? partners.statement : partners.statement.split(/([A-Za-z][A-Za-z .]*[A-Za-z])/).map((run, i) =>
               /^[A-Za-z]/.test(run) ? <span key={i} className="md:whitespace-nowrap">{run}</span> : run,
             )}
           </p>
@@ -29,7 +31,7 @@ export default function Partners() {
 
         <div data-animation="moveUp" data-delay="0.3">
           <a className="btn btn--outline" href={partners.cta.href} target="_blank" rel="noreferrer">
-            <span>{partners.cta.label}<span className="tc ml-10 font-medium">{partners.cta.zh}</span></span>
+            <span>{partners.cta.label}{partners.cta.zh && <span className="tc ml-10 font-medium">{partners.cta.zh}</span>}</span>
           </a>
         </div>
       </div>

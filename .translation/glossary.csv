@@ -1,0 +1,33 @@
+source,target,scope,status,note
+藝術即生活,Art as Life,brand statement,approved,existing brand line "Tea as Art, Art as Life"
+小金魚茶包,Goldfish Tea Bag,product,approved,official English name
+小金魚,goldfish,product (count noun for a tea bag),approved,"six goldfish", not "six fishes"
+小金魚茶包禮盒,Goldfish Tea Gifts,category,approved,existing site label
+真皮包,Leather Bags,category,approved,existing site label
+金飾,Goldfish Jewelry,category,approved,existing site label (US spelling kept)
+茶器與工藝,Teaware & Craft,category,approved,existing site label
+編織提把皮革包,Braided Leather Bag,product,approved,existing site label
+荔枝紋真皮,lychee-grain leather,material,approved,
+扁平三股編織肩帶,flat three-strand plaited strap,material,approved,
+扁銅棒五金,flat brass bar,material,approved,
+桐木盒,paulownia wood box,material,approved,
+織布盒蓋,woven-fabric lid,material,approved,
+繽紛紙盒,patterned paper box,material,approved,
+經典禮盒,Classic Gift Boxes,series,approved,
+珍稀禮盒,Rare Gift Boxes,series,approved,
+2026 中秋禮盒,2026 Mid-Autumn Gift Boxes,series,approved,
+2026 聖誕特別版,2026 Christmas Edition,series,approved,
+台灣玫瑰烏龍茶,Taiwan Rose Oolong Tea,tea,approved,
+台灣玫瑰蜜香紅茶,Taiwan Rose Honey Black Tea,tea,approved,
+台灣紅玉紅茶,Taiwan Ruby Black Tea,tea,approved,
+台灣東方美人茶,Taiwan Oriental Beauty Tea,tea,approved,
+台灣金萱茶,Taiwan Jin Xuan Tea,tea,approved,
+花果茶,Fruit Infusion,tea,approved,caffeine-free per source
+德國紅點傳達設計獎,Red Dot Award: Communication Design,award,approved,official award name
+德國 iF 設計大獎,iF DESIGN AWARD,award,approved,official award name
+全球 34 國設計專利,design patents in 34 countries,claim,approved,number is an invariant
+麗晶精品,Regent Galleria,venue,approved,official English name
+台北晶華酒店,Regent Taipei,venue,approved,official English name
+購物車,bag,UI,approved,
+門市,store,UI,approved,
+作品,piece,UI,approved,also "object" in display labels (ALL OBJECTS)

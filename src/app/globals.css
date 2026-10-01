@@ -824,3 +824,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .craft-card { transition: none; --rot: 0deg !important; }
   .craft-text { animation: none; }
 }
+
+/* Language switch (2026-10-01): plain text in the header tools, same weight and size as the Menu label. On a phone the bar
+   has no room for it, so it lives at the end of the full-screen menu list instead. */
+.header-tools a.header-lang { width: auto; height: 24px; font-size: 13px; font-weight: 400; letter-spacing: .02em; white-space: nowrap; }
+@media (max-width: 767px) { .header-tools a.header-lang { display: none; } }

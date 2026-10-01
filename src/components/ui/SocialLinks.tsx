@@ -1,6 +1,7 @@
 // Social icons (inline SVG, brand gold) linking to the accounts listed in the footer of charmvilla.com.tw
 // (Facebook, Twitter, Instagram — fetched 2026-09-30). Icons follow the official site's set, including the Twitter bird.
 import { social } from "@/data/content";
+import { translator, type Locale } from "@/i18n/config";
 
 const icons: Record<string, React.ReactNode> = {
   facebook: <path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3Z" />,
@@ -8,9 +9,10 @@ const icons: Record<string, React.ReactNode> = {
   instagram: <><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" /><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.8" /><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" /></>,
 };
 
-export default function SocialLinks({ className = "" }: { className?: string }) {
+export default function SocialLinks({ className = "", lang }: { className?: string; lang: Locale }) {
+  const t = translator(lang);
   return (
-    <ul className={`social-links ${className}`} aria-label="社群媒體">
+    <ul className={`social-links ${className}`} aria-label={t("社群媒體", "Social media")}>
       {social.map((s) => (
         <li key={s.id}>
           <a href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label}>

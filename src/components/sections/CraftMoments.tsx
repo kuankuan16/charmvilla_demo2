@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from "react";
 import { gsap } from "gsap";
-import { craftMoments } from "@/data/craft-moments";
+import { getCraftMoments } from "@/data/craft-moments";
+import { useT } from "@/i18n/LocaleProvider";
+import { localeHref } from "@/i18n/config";
 
 const AUTOPLAY_MS = 6000;
 const DRAG_THRESHOLD = 60;
@@ -13,6 +15,8 @@ const DRAG_THRESHOLD = 60;
 // a tilted active card with side peeks, quote + outlined CTA at the right, prev/next/pause bottom-left, dots bottom-right,
 // a "drag" pill that follows the pointer over the stage. Autoplay 6 s; pauses on hover, focus, drag, hidden tab or reduced motion.
 export default function CraftMoments() {
+  const { lang, t } = useT();
+  const craftMoments = getCraftMoments(lang);
   const items = craftMoments.items;
   const count = items.length;
   const root = useRef<HTMLElement>(null);
@@ -92,7 +96,7 @@ export default function CraftMoments() {
       </header>
 
       <div className="craft-body">
-        <div ref={stage} className={`craft-stage${drag ? " is-dragging" : ""}`} aria-roledescription="輪播" aria-label="藝匠的四個片刻"
+        <div ref={stage} className={`craft-stage${drag ? " is-dragging" : ""}`} aria-roledescription={t("輪播", "carousel")} aria-label={t("藝匠的四個片刻", "Four moments of the artisans")}
           onMouseEnter={() => { hover.current = true; }} onMouseLeave={() => { hover.current = false; }}
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp}
           style={{ "--drag": `${drag * .6}px` } as CSSProperties}>
@@ -106,28 +110,28 @@ export default function CraftMoments() {
               <figcaption className="sr-only">{item.craft}</figcaption>
             </figure>;
           })}
-          <div ref={pill} className="craft-drag-pill" aria-hidden="true"><span>←</span>拖曳<span>→</span></div>
+          <div ref={pill} className="craft-drag-pill" aria-hidden="true"><span>←</span>{t("拖曳", "Drag")}<span>→</span></div>
         </div>
 
         <div className="craft-text" key={current.id} aria-live="polite">
           <p className="craft-craft tc">{current.craft}</p>
           <p className="craft-quote tc">{current.quote[0]}<br />{current.quote[1]}</p>
           <div className="craft-ctas">
-            {current.ctas.map((cta, i) => <Link key={cta.href + cta.label} href={cta.href} className={`catalog-button craft-cta${i ? " craft-cta--quiet" : ""}`}>{cta.label}<span aria-hidden="true">→</span></Link>)}
+            {current.ctas.map((cta, i) => <Link key={cta.href + cta.label} href={localeHref(lang, cta.href)} className={`catalog-button craft-cta${i ? " craft-cta--quiet" : ""}`}>{cta.label}<span aria-hidden="true">→</span></Link>)}
           </div>
         </div>
       </div>
 
       <div className="craft-controls">
-        <div className="craft-buttons" role="group" aria-label="輪播控制">
-          <button type="button" className="craft-btn" aria-label="上一張" onClick={() => go(active - 1)}>←</button>
-          <button type="button" className="craft-btn" aria-label="下一張" onClick={() => go(active + 1)}>→</button>
-          <button type="button" className="craft-btn craft-btn--pause" aria-label={paused ? "播放" : "暫停"} aria-pressed={paused} onClick={() => setPaused(p => !p)}>
+        <div className="craft-buttons" role="group" aria-label={t("輪播控制", "Carousel controls")}>
+          <button type="button" className="craft-btn" aria-label={t("上一張", "Previous")} onClick={() => go(active - 1)}>←</button>
+          <button type="button" className="craft-btn" aria-label={t("下一張", "Next")} onClick={() => go(active + 1)}>→</button>
+          <button type="button" className="craft-btn craft-btn--pause" aria-label={paused ? t("播放", "Play") : t("暫停", "Pause")} aria-pressed={paused} onClick={() => setPaused(p => !p)}>
             {paused ? <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="currentColor" /></svg>
               : <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1h2.6v10H1zM6.4 1H9v10H6.4z" fill="currentColor" /></svg>}
           </button>
         </div>
-        <div className="craft-dots" role="tablist" aria-label="片刻">
+        <div className="craft-dots" role="tablist" aria-label={t("片刻", "Moments")}>
           {items.map((item, i) => <button key={item.id} type="button" role="tab" className="craft-dot" aria-selected={i === active} aria-label={item.craft} onClick={() => go(i)} />)}
         </div>
       </div>
