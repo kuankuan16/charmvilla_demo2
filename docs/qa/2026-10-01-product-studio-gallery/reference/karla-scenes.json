@@ -1,0 +1,453 @@
+{
+ "height": 4983,
+ "sections": [
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out pt-14 opacity-100",
+   "y": 1674,
+   "h": 869
+  },
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out opacity-100",
+   "y": 2543,
+   "h": 881
+  },
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out opacity-100",
+   "y": 3425,
+   "h": 802
+  }
+ ],
+ "imgs": [
+  {
+   "x": 963,
+   "y": 1079,
+   "w": 447,
+   "h": 596,
+   "colStart": 9,
+   "colEnd": 12,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "relative overflow-hidden aspect-3/4"
+  },
+  {
+   "x": 30,
+   "y": 1841,
+   "w": 447,
+   "h": 596,
+   "colStart": 1,
+   "colEnd": 4,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "w-full overflow-clip flex-1 aspect-3/4"
+  },
+  {
+   "x": 497,
+   "y": 1841,
+   "w": 447,
+   "h": 596,
+   "colStart": 5,
+   "colEnd": 8,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "w-full overflow-clip flex-1 aspect-3/4"
+  },
+  {
+   "x": 963,
+   "y": 1841,
+   "w": 447,
+   "h": 596,
+   "colStart": 9,
+   "colEnd": 12,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "w-full overflow-clip flex-1 aspect-3/4"
+  },
+  {
+   "x": 1430,
+   "y": 1841,
+   "w": 447,
+   "h": 596,
+   "colStart": 13,
+   "colEnd": 16,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "w-full overflow-clip flex-1 aspect-3/4"
+  },
+  {
+   "x": 30,
+   "y": 2713,
+   "w": 442,
+   "h": 589,
+   "colStart": 1,
+   "colEnd": 3.96,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-100"
+  },
+  {
+   "x": 30,
+   "y": 2713,
+   "w": 442,
+   "h": 589,
+   "colStart": 1,
+   "colEnd": 3.96,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-0"
+  },
+  {
+   "x": 492,
+   "y": 2713,
+   "w": 442,
+   "h": 589,
+   "colStart": 4.96,
+   "colEnd": 7.91,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-100"
+  },
+  {
+   "x": 492,
+   "y": 2713,
+   "w": 442,
+   "h": 589,
+   "colStart": 4.96,
+   "colEnd": 7.91,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-0"
+  },
+  {
+   "x": 953,
+   "y": 2713,
+   "w": 442,
+   "h": 589,
+   "colStart": 8.91,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-100"
+  },
+  {
+   "x": 953,
+   "y": 2713,
+   "w": 442,
+   "h": 589,
+   "colStart": 8.91,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-0"
+  },
+  {
+   "x": -57,
+   "y": 2704,
+   "w": 1539,
+   "h": 1212,
+   "colStart": 0.25,
+   "colEnd": 12.62,
+   "ratio": 1.27,
+   "section": "",
+   "cls": "absolute top-[-20%] bottom-[-20%] inset-x-0"
+  },
+  {
+   "x": 948,
+   "y": 4286,
+   "w": 447,
+   "h": 596,
+   "colStart": 8.87,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 ease-in-out transition-opacity duration-700 opacity-0"
+  },
+  {
+   "x": 948,
+   "y": 4286,
+   "w": 447,
+   "h": 596,
+   "colStart": 8.87,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 ease-in-out transition-opacity duration-700 opacity-0"
+  },
+  {
+   "x": 948,
+   "y": 4286,
+   "w": 447,
+   "h": 596,
+   "colStart": 8.87,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 ease-in-out transition-opacity duration-700 opacity-100"
+  }
+ ],
+ "texts": [
+  {
+   "tag": "P",
+   "x": 50,
+   "y": 808,
+   "w": 273,
+   "size": "16px",
+   "text": "Frame / Oyster White"
+  },
+  {
+   "tag": "P",
+   "x": 50,
+   "y": 829,
+   "w": 273,
+   "size": "16px",
+   "text": "Armrest / Natural Lacquered hardwood"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1014,
+   "w": 394,
+   "size": "13px",
+   "text": "ARM WIDTH [A]"
+  },
+  {
+   "tag": "P",
+   "x": 1378,
+   "y": 1014,
+   "w": 32,
+   "size": "13px",
+   "text": "4 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1050,
+   "w": 389,
+   "size": "13px",
+   "text": "ARM HEIGHT [D]"
+  },
+  {
+   "tag": "P",
+   "x": 1372,
+   "y": 1050,
+   "w": 38,
+   "size": "13px",
+   "text": "57 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1086,
+   "w": 387,
+   "size": "13px",
+   "text": "SEAT HEIGHT [B]"
+  },
+  {
+   "tag": "P",
+   "x": 1370,
+   "y": 1086,
+   "w": 40,
+   "size": "13px",
+   "text": "49 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1122,
+   "w": 389,
+   "size": "13px",
+   "text": "SEAT DEPTH [C]"
+  },
+  {
+   "tag": "P",
+   "x": 1372,
+   "y": 1122,
+   "w": 38,
+   "size": "13px",
+   "text": "55 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1158,
+   "w": 387,
+   "size": "13px",
+   "text": "OVERALL HEIGHT [H]"
+  },
+  {
+   "tag": "P",
+   "x": 1370,
+   "y": 1158,
+   "w": 40,
+   "size": "13px",
+   "text": "80 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1194,
+   "w": 388,
+   "size": "13px",
+   "text": "OVERALL WIDTH [W]"
+  },
+  {
+   "tag": "P",
+   "x": 1372,
+   "y": 1194,
+   "w": 38,
+   "size": "13px",
+   "text": "70 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1230,
+   "w": 388,
+   "size": "13px",
+   "text": "OVERALL LENGTH [L]"
+  },
+  {
+   "tag": "P",
+   "x": 1371,
+   "y": 1230,
+   "w": 39,
+   "size": "13px",
+   "text": "82 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1284,
+   "w": 447,
+   "size": "16px",
+   "text": "Measurements tolerance ±3%"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1047,
+   "w": 447,
+   "size": "16px",
+   "text": "Choose from a curated selection of fabrics and lea"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1207,
+   "w": 447,
+   "size": "16px",
+   "text": "Popular Combinations"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 1790,
+   "w": 1365,
+   "size": "16px",
+   "text": "KARLA"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 2447,
+   "w": 447,
+   "size": "16px",
+   "text": "Gear 209 Powder, Natural Lacquered hardwood, Oyste"
+  },
+  {
+   "tag": "P",
+   "x": 497,
+   "y": 2447,
+   "w": 447,
+   "size": "16px",
+   "text": "Gear 209 Powder, Natural Lacquered hardwood, Oyste"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 2447,
+   "w": 447,
+   "size": "16px",
+   "text": "Gear 209 Powder, Natural Lacquered hardwood, Oyste"
+  },
+  {
+   "tag": "P",
+   "x": 1430,
+   "y": 2447,
+   "w": 447,
+   "size": "16px",
+   "text": "Gear 209 Powder, Natural Lacquered hardwood, Oyste"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 2603,
+   "w": 242,
+   "size": "30px",
+   "text": "Our latest products"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 3314,
+   "w": 442,
+   "size": "24px",
+   "text": "STINA / Corner Sitting Island + 3 Seater"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 3344,
+   "w": 442,
+   "size": "16px",
+   "text": "Sofas"
+  },
+  {
+   "tag": "P",
+   "x": 492,
+   "y": 3314,
+   "w": 442,
+   "size": "24px",
+   "text": "KALLE"
+  },
+  {
+   "tag": "P",
+   "x": 492,
+   "y": 3344,
+   "w": 442,
+   "size": "16px",
+   "text": "Footstools"
+  },
+  {
+   "tag": "P",
+   "x": 953,
+   "y": 3314,
+   "w": 442,
+   "size": "24px",
+   "text": "ROUND FOOTSTOOLS"
+  },
+  {
+   "tag": "P",
+   "x": 953,
+   "y": 3344,
+   "w": 442,
+   "size": "16px",
+   "text": "Footstools"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 3457,
+   "w": 913,
+   "size": "16px",
+   "text": "Design by Tradition.\nCopenhagen by Heart."
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 3457,
+   "w": 398,
+   "size": "16px",
+   "text": "Inspired by the creative pulse of Copenhagen, we b"
+  }
+ ]
+}
