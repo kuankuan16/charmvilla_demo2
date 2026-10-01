@@ -88,12 +88,7 @@ export default function CraftMoments() {
       {/* 2026-10-01 (user): no brush texture in this section */}
 
       <header className="craft-header">
-        <div>
-          <p className="craft-kicker">{craftMoments.kicker}</p>
-          <h2 id="craft-heading" className="craft-heading tc">{craftMoments.heading[0]}<br />{craftMoments.heading[1]}</h2>
-          <p className="craft-sub tc">{craftMoments.sub}</p>
-        </div>
-        <p className="craft-intro tc">{craftMoments.intro}</p>
+        <h2 id="craft-heading" className="craft-heading tc">{craftMoments.heading[0]}<br />{craftMoments.heading[1]}</h2>
       </header>
 
       <div className="craft-body">
@@ -108,17 +103,15 @@ export default function CraftMoments() {
               style={{ "--tilt": `${i % 2 ? 4 : -4}deg` } as CSSProperties}
               onClick={() => { if (pos !== 0 && !pointer.current?.moved) go(i); }}>
               <Image src={item.image.src} alt={item.image.alt} fill sizes="(min-width:768px) 36vw, 80vw" draggable={false} priority={i === 0} />
-              <figcaption className="sr-only">{item.name}</figcaption>
+              <figcaption className="sr-only">{item.craft}</figcaption>
             </figure>;
           })}
           <div ref={pill} className="craft-drag-pill" aria-hidden="true"><span>←</span>拖曳<span>→</span></div>
         </div>
 
         <div className="craft-text" key={current.id} aria-live="polite">
+          <p className="craft-craft tc">{current.craft}</p>
           <p className="craft-quote tc">{current.quote[0]}<br />{current.quote[1]}</p>
-          <p className="craft-name tc">{current.name}<span>{current.en}</span></p>
-          <p className="craft-role tc">{current.role}</p>
-          <p className="craft-copy tc">{current.body}</p>
           <div className="craft-ctas">
             {current.ctas.map((cta, i) => <Link key={cta.href + cta.label} href={cta.href} className={`catalog-button craft-cta${i ? " craft-cta--quiet" : ""}`}>{cta.label}<span aria-hidden="true">→</span></Link>)}
           </div>
@@ -135,7 +128,7 @@ export default function CraftMoments() {
           </button>
         </div>
         <div className="craft-dots" role="tablist" aria-label="片刻">
-          {items.map((item, i) => <button key={item.id} type="button" role="tab" className="craft-dot" aria-selected={i === active} aria-label={item.name} onClick={() => go(i)} />)}
+          {items.map((item, i) => <button key={item.id} type="button" role="tab" className="craft-dot" aria-selected={i === active} aria-label={item.craft} onClick={() => go(i)} />)}
         </div>
       </div>
     </section>

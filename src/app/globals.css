@@ -761,7 +761,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    that follows the pointer. Page ground stays --color-page; the gold brush is the hero's brush texture (InkBloom).
    --------------------------------------------------------------------------------------------------------------- */
 .craft-moments { position: relative; z-index: 2; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); background: var(--color-page); overflow: hidden; outline: none; }
-.craft-header { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px clamp(40px, 6vw, 120px); align-items: end; }
+.craft-header { position: relative; z-index: 2; }
 .craft-kicker { margin: 0 0 14px; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
 .craft-heading { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 500; line-height: 1.25; letter-spacing: .02em; }
 .craft-sub { margin: 14px 0 0; font-size: 13px; color: var(--color-stone-deep); }
@@ -782,7 +782,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .craft-text { position: absolute; left: 56%; right: 14%; top: 50%; transform: translateY(-50%); z-index: 4; animation: craft-in .9s var(--ease-out-expo) both; pointer-events: none; }
 .craft-text > *, .craft-text .craft-ctas a { pointer-events: auto; }
 @keyframes craft-in { from { opacity: 0; transform: translateY(calc(-50% + 24px)); } to { opacity: 1; transform: translateY(-50%); } }
-.craft-quote { margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 36px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
+.craft-craft { margin: 0 0 14px; font-size: 12px; letter-spacing: .08em; color: var(--color-stone-deep); }
+.craft-quote { margin: 0 0 26px; font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
 .craft-name { margin: 0; font-size: 16px; font-weight: 700; }
 .craft-name span { margin-left: 10px; font-size: 11px; font-weight: 500; letter-spacing: .12em; color: var(--color-stone-deep); }
 .craft-role { margin: 8px 0 16px; font-size: 12.5px; color: var(--color-stone-deep); }
@@ -806,8 +807,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 }
 @media (max-width: 767px) {
   .craft-moments { min-height: 0; padding: calc(var(--header-h) + 28px) var(--page-gutter) 44px; }
-    .craft-header { grid-template-columns: 1fr; gap: 18px; }
-  .craft-intro { justify-self: start; font-size: 13px; line-height: 1.9; }
+    .craft-intro { justify-self: start; font-size: 13px; line-height: 1.9; }
   .craft-body { margin-top: 28px; }
   .craft-stage { height: calc(78vw * 1.25 + 24px); }
   .craft-card { width: 78vw; --rot: 0deg !important; }
