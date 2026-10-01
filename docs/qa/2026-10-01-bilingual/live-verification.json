@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-01",
+  "base": "https://charmvilla-gallery-site.vercel.app",
+  "deployment": "charmvilla-gallery-site-mqji1h0kk-tentenco.vercel.app (dpl_NDi91URz34Y1vJgH5CweqW6M1skx)",
+  "commit": "46a1e2f",
+  "http_check": { "script": "http-check.mjs", "routes": 39, "pagesChecked": 78, "failures": 0, "englishPagesWithCjk": 0,
+    "note": "the parity column compares against production, which after the deploy is the same site, so it is not meaningful here; the pre-deploy comparison (39/39 identical) is in http-report.json" },
+  "browser_check": { "script": "browser-check.mjs", "samplePages": 24, "failures": 0,
+    "notFound": ["/nope 404 zh-Hant", "/en/nope 404 en", "/products/nope 404 zh-Hant", "/en/products/nope 404 en"] },
+  "spot_checks": { "/": "200 lang=zh-Hant", "/en": "200 lang=en", "/zh/collections/tea": "308 -> /collections/tea", "/sitemap.xml": "200" },
+  "reports_in_this_folder": "http-report.json, browser-report.json and the screenshots are from the local pre-deploy run"
+}
