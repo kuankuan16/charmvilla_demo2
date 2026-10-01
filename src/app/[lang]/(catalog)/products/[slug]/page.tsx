@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { products, getProducts, findProduct, getCategory, getCategoryProducts, productHref, categoryHref, formatPrice } from "@/data/catalog";
+import { products, getProducts, findProduct, getCategory, getCategoryProducts, productHref, formatPrice } from "@/data/catalog";
 import AddToCart from "@/components/cart/AddToCart";
 import { getContent, type Img } from "@/data/content";
 import { Picture } from "@/components/ui";

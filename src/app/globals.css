@@ -465,7 +465,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .orbit-photo-link { display: block; width: 100%; height: 100%; overflow: hidden; pointer-events: auto; }
 .orbit-card[aria-hidden="true"] .orbit-photo-link { pointer-events: none; }
 .orbit-photo-link img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: filter 1.2s; }
-.orbit-card--jewelry:not([data-active="true"]) img { filter: grayscale(1); }
 .orbit-title { position: absolute; z-index: 16; left: var(--page-gutter); bottom: 11.5%; margin: 0; font-family: var(--font-display); font-size: clamp(52px, 6.8vw, 148px); font-weight: 500; line-height: .9; letter-spacing: -.05em; text-transform: uppercase; pointer-events: none; }
 .orbit-title > span { display: block; }
 .orbit-title > span + span { margin-top: .12em; }

@@ -1,0 +1,13 @@
+{
+ "source": "public/media/gallery/CV-0380.webp",
+ "sourceSha256": "e4d8433d41d63aef4db957923de2a8693da4f0576de3116bb12327049fcb652c",
+ "output": "public/media/hero/pearl-earring-profile-bw.webp",
+ "outputSha256": "726fd6d2143194a1925daa8791f0e3e90431fd7b5e08f005d87889d23c950f8e",
+ "width": 1921,
+ "height": 2400,
+ "channels": 3,
+ "bytes": 152122,
+ "mean": 86,
+ "max": 255,
+ "min": 0
+}
