@@ -92,7 +92,7 @@ export default function CraftMoments() {
       </header>
 
       <div className="craft-body">
-        <div ref={stage} className={`craft-stage${drag ? " is-dragging" : ""}`} aria-roledescription="輪播" aria-label="藝匠的五個片刻"
+        <div ref={stage} className={`craft-stage${drag ? " is-dragging" : ""}`} aria-roledescription="輪播" aria-label="藝匠的四個片刻"
           onMouseEnter={() => { hover.current = true; }} onMouseLeave={() => { hover.current = false; }}
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp}
           style={{ "--drag": `${drag * .6}px` } as CSSProperties}>

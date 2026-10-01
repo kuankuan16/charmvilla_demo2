@@ -112,13 +112,23 @@ const listingScene: Record<string, string> = {
   "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376", "twin-goldfish-earrings": "CV-0378",
   "bird-chopstick-rest": "CV-0248",
 };
+// 2026-10-01 (user): the white bag's cover is the over-shoulder ink-green portrait (a site file, not a gallery asset);
+// the previous cover CV-0422 follows it as the second product view.
+const listingSceneSite: Record<string, Img> = {
+  "braided-leather-bag-white": site("scene-white-bag-over-shoulder-ink-green.webp", "編織提把皮革包・白色，肩背回眸情境，墨綠背景"),
+};
 const withListing = (p: Product): Product => {
   const file = (studioListing as Record<string, string>)[p.slug];
   const studio = file ? site(file, `${p.name}・棚拍商品照`) : undefined;
   const sceneId = listingScene[p.slug];
-  const image = sceneId ? gallery(sceneId, `${p.name}・情境照`) : (p.category === "jewelry" && studio ? studio : p.image);
+  const siteScene = listingSceneSite[p.slug];
+  const image = siteScene ?? (sceneId ? gallery(sceneId, `${p.name}・情境照`) : (p.category === "jewelry" && studio ? studio : p.image));
   let views = p.views;
   if (!views.some((v) => v.image.src === image.src)) views = [{ label: "情境照", image }, ...views];
+  if (siteScene && sceneId) {
+    const prev = `/media/gallery/${sceneId}.webp`;
+    views = [views[0], ...views.filter((v) => v.image.src === prev), ...views.slice(1).filter((v) => v.image.src !== prev)];
+  }
   if (studio && !views.some((v) => v.image.src === studio.src)) views = [...views, { label: "棚拍商品照", image: studio }];
   return { ...p, image, views };
 };

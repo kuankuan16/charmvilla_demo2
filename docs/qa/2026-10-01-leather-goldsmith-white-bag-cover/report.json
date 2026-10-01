@@ -1,0 +1,70 @@
+{
+  "base": "https://charmvilla-gallery-site.vercel.app",
+  "errors": [],
+  "craft": [
+    {
+      "name": "leather",
+      "active": {
+        "src": "craft-02-leather-cream-rolls.webp",
+        "ok": true
+      },
+      "text": "製革職人 · 編織提把皮革包 | 裁皮的人， | 落刀前先用手讀過整張皮。 | 看真皮包 | →"
+    },
+    {
+      "name": "goldsmith",
+      "active": {
+        "src": "craft-03-goldsmith-atelier.webp",
+        "ok": true
+      },
+      "text": "金工職人 · 小金魚耳環 | 金工的人， | 磨到只剩輪廓才肯停手。 | 看金飾 | →"
+    }
+  ],
+  "listing": [
+    {
+      "src": "scene-white-bag-over-shoulder-ink-green.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0423.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0424.webp",
+      "ok": true
+    }
+  ],
+  "product": [
+    {
+      "src": "scene-white-bag-over-shoulder-ink-green.webp",
+      "ok": true
+    },
+    {
+      "src": "scene-white-bag-over-shoulder-ink-green.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0422.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0398.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0400.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0426.webp",
+      "ok": true
+    },
+    {
+      "src": "studio-braided-leather-bag-white.webp",
+      "ok": true
+    },
+    {
+      "src": "CV-0422.webp",
+      "ok": true
+    }
+  ]
+}
