@@ -1,9 +1,9 @@
 {
- "base": "http://localhost:3120",
- "production": "https://charmvilla-gallery-site.vercel.app",
- "checkedAt": "2026-10-01T06:52:31.127Z",
- "routes": 39,
- "pagesChecked": 78,
+ "base": "https://charmvilla-gallery-site.vercel.app",
+ "production": null,
+ "checkedAt": "2026-10-01T08:35:42.625Z",
+ "routes": 40,
+ "pagesChecked": 80,
  "failures": [],
  "cjkOnEnglish": {},
  "allowedCjkOnEnglish": [
@@ -73,10 +73,7 @@
    "status": 404
   }
  ],
- "parity": {
-  "same": 39,
-  "different": []
- },
+ "parity": null,
  "pages": [
   {
    "url": "/",
@@ -91,6 +88,20 @@
    "status": 200,
    "htmlLang": "en",
    "title": "CHARM VILLA | Art as Life"
+  },
+  {
+   "url": "/about",
+   "lang": "zh",
+   "status": 200,
+   "htmlLang": "zh-Hant",
+   "title": "關於｜CHARM VILLA"
+  },
+  {
+   "url": "/en/about",
+   "lang": "en",
+   "status": 200,
+   "htmlLang": "en",
+   "title": "About | CHARM VILLA"
   },
   {
    "url": "/collections/all",
