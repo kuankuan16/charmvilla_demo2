@@ -184,9 +184,21 @@ async function main() {
   const chainH = jewelryBoxes['pearl-chain-goldfish-earrings'][3] - jewelryBoxes['pearl-chain-goldfish-earrings'][1];
   const scale = (0.60 * H) / chainH;
   for (const [slug, [x0, y0, x1, y1]] of Object.entries(jewelryBoxes)) {
+    if (slug === 'raw-gold-goldfish-earrings') continue; // drawn from the brand's vector outline below
     const m = 16; const crop = await sharp(jewelrySrc).extract({ left: x0 - m, top: y0 - m, width: x1 - x0 + 2 * m, height: y1 - y0 + 2 * m }).png().toBuffer();
     const obj = matte(await rgba(crop), [240, 240, 240], 8, 36);
     const file = `studio-${slug}-hd.webp`; emit(slug, file, await compose(bg, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
+  }
+  // Raw Gold (user 2026-10-01: 「直接用剛剛給的向量小金魚，算出清單頁的淺色背景照，用霧面金屬呈現」): the outline is the brand's own vector
+  // goldfish, the matte gold surface was generated on that exact outline and cut out through it
+  // (output/raw-gold-studio-matte-2026-10-01 → assets-src/studio/raw-gold-matte-cutout.png). The photograph's piece is not used:
+  // its bevel highlights read as part of the outline. Same true size as before (the diagonal of its box in the photograph).
+  {
+    const slug = 'raw-gold-goldfish-earrings', obj = await rgba(path.join(srcDir, 'raw-gold-matte-cutout.png'));
+    const [bx0, by0, bx1, by1] = jewelryBoxes[slug], s = (Math.hypot(bx1 - bx0, by1 - by0) * scale) / Math.hypot(obj.w, obj.h);
+    const file = `studio-${slug}-matte.webp`; emit(slug, file, await compose(bg, obj, { fit: { scale: s }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
+    const close = `studio-${slug}-matte-close.webp`; angles[`${slug}-close`] = close;
+    console.log(slug.padEnd(34), close.padEnd(46), JSON.stringify(await compose(bg, obj, { fit: { w: 700, h: 760 }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, close))));
   }
   // official gift-box cut-outs
   for (const [id, slug] of Object.entries(giftBoxes)) {

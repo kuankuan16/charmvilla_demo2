@@ -731,10 +731,6 @@
     1800,
     2249
   ],
-  "/media/site/studio-raw-gold-goldfish-earrings-hd.webp": [
-    2000,
-    2500
-  ],
   "/media/site/studio-diamond-goldfish-earrings-hd.webp": [
     2000,
     2500
@@ -886,5 +882,13 @@
   "/media/site/scene-raw-gold-earring-model.webp": [
     896,
     1120
+  ],
+  "/media/site/studio-raw-gold-goldfish-earrings-matte.webp": [
+    2000,
+    2500
+  ],
+  "/media/site/studio-raw-gold-goldfish-earrings-matte-close.webp": [
+    2000,
+    2500
   ]
 }

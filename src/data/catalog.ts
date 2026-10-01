@@ -222,7 +222,7 @@ const buildCatalog = (lang: Locale) => {
     "pearl-chain-goldfish-earrings": [{ file: "jewelry-pearl-chain.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
     "diamond-goldfish-earrings": [{ file: "jewelry-diamond.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
     "twin-goldfish-earrings": [{ file: "jewelry-twin.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
-    "raw-gold-goldfish-earrings": [{ file: "jewelry-raw-gold.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
+    "raw-gold-goldfish-earrings": [{ file: "studio-raw-gold-goldfish-earrings-matte-close.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
   };
   // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
   const studioSources = new Set(["CV-0398", "CV-0400", "CV-0419", "CV-0420", "CV-0399", "CV-0397", "CV-0256"].map((id) => `/media/gallery/${id}.webp`));
