@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import PageShell from "@/components/engine/PageShell";
 import Header from "@/components/chrome/Header";
 import Hero from "@/components/sections/Hero";
+import BrandFilm from "@/components/sections/BrandFilm";
 import Manifesto from "@/components/sections/Manifesto";
 import CraftMoments from "@/components/sections/CraftMoments";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
@@ -26,6 +27,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <main className="site-main">
         <div className="opening-sequence">
           <Hero />
+          <BrandFilm lang={lang} />
           <Manifesto />
           <CraftMoments />
         </div>

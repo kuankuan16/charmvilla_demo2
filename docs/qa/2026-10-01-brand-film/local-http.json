@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 104420,
+    "hasFilm": true,
+    "controls": true,
+    "mediaPath": true
+  },
+  {
+    "path": "/en",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 118729,
+    "hasFilm": true,
+    "controls": true,
+    "mediaPath": true
+  },
+  {
+    "path": "/media/hero/film/earring-to-tea-v2.mp4",
+    "status": 200,
+    "type": "video/mp4",
+    "bytes": 4148691
+  },
+  {
+    "path": "/media/hero/film/earring-to-tea-v2.webm",
+    "status": 200,
+    "type": "video/webm",
+    "bytes": 1940833
+  },
+  {
+    "path": "/media/hero/film/earring-to-tea-v2-poster.jpg",
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 123400
+  }
+]
