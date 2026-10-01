@@ -1,0 +1,44 @@
+{
+ "base": "https://charmvilla-gallery-site.vercel.app",
+ "report": [
+  {
+   "name": "zh-desktop",
+   "panelBackground": "rgb(228, 160, 56)",
+   "storeName": "rgba(31, 31, 31, 0.82)",
+   "information": "rgba(31, 31, 31, 0.82)",
+   "heading": "rgb(31, 31, 31)",
+   "mapBorder": "rgba(31, 31, 31, 0.6)",
+   "panel": [
+    605,
+    580
+   ],
+   "overflowX": false
+  },
+  {
+   "name": "en-desktop",
+   "panelBackground": "rgb(228, 160, 56)",
+   "storeName": "rgba(31, 31, 31, 0.82)",
+   "information": "rgba(31, 31, 31, 0.82)",
+   "heading": "rgb(31, 31, 31)",
+   "mapBorder": "rgba(31, 31, 31, 0.6)",
+   "panel": [
+    605,
+    580
+   ],
+   "overflowX": false
+  },
+  {
+   "name": "zh-mobile",
+   "panelBackground": "rgb(228, 160, 56)",
+   "storeName": "rgba(31, 31, 31, 0.82)",
+   "information": "rgba(31, 31, 31, 0.82)",
+   "heading": "rgb(31, 31, 31)",
+   "mapBorder": "rgba(31, 31, 31, 0.6)",
+   "panel": [
+    342,
+    413
+   ],
+   "overflowX": false
+  }
+ ]
+}
