@@ -1,0 +1,77 @@
+{
+ "base": "http://localhost:3140",
+ "report": [
+  {
+   "path": "/en",
+   "scenario": "scroll down from the top",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "open with #visit, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "store icon in the header, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "language switch on the homepage, then scroll down",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "wordmark from a product page back to home, then scroll down",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "jump to the bottom, resize the window, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "scroll down from the top",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "open with #visit, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "store icon in the header, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "language switch on the homepage, then scroll down",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "wordmark from a product page back to home, then scroll down",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "jump to the bottom, resize the window, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  }
+ ]
+}

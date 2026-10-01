@@ -28,6 +28,7 @@ export default function Footer({ lang }: { lang: Locale }) {
                   {zh && <span className="tc ml-6 font-medium opacity-70">{s.zh}</span>}
                 </li>
               ))}
+            <li><Link href={localeHref(lang, "/about")} className="link-underline">ABOUT</Link>{zh && <span className="tc ml-6 font-medium opacity-70">關於</span>}</li>
           </ul>
         </nav>
       </div>

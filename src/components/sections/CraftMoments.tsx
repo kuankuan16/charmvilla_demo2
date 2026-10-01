@@ -13,7 +13,7 @@ const DRAG_THRESHOLD = 60;
 
 // "以手成形" — five lifestyle moments, one drag carousel. Presentation after recruit.positive.co.jp (Interview):
 // a tilted active card with side peeks, quote + outlined CTA at the right, prev/next/pause bottom-left, dots bottom-right,
-// a "drag" pill that follows the pointer over the stage. Autoplay 6 s; pauses on hover, focus, drag, hidden tab or reduced motion.
+// no drag hint (removed 2026-10-01 with the other decorative labels). Autoplay 6 s; pauses on hover, focus, drag, hidden tab or reduced motion.
 export default function CraftMoments() {
   const { lang, t } = useT();
   const craftMoments = getCraftMoments(lang);
@@ -21,7 +21,6 @@ export default function CraftMoments() {
   const count = items.length;
   const root = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
-  const pill = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [drag, setDrag] = useState(0);
@@ -55,18 +54,12 @@ export default function CraftMoments() {
     return () => { observer.disconnect(); gsap.ticker.remove(tick); };
   }, [count, paused]);
 
-  const movePill = (e: ReactPointerEvent) => {
-    const box = stage.current?.getBoundingClientRect();
-    if (!box || !pill.current) return;
-    pill.current.style.transform = `translate(${e.clientX - box.left + 22}px, ${e.clientY - box.top + 26}px)`;
-  };
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (e.pointerType === "mouse" && e.button !== 0) return;
     pointer.current = { x: e.clientX, y: e.clientY, moved: false };
     e.currentTarget.setPointerCapture(e.pointerId);
   };
   const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
-    movePill(e);
     const p = pointer.current;
     if (!p) return;
     const dx = e.clientX - p.x;
@@ -110,7 +103,6 @@ export default function CraftMoments() {
               <figcaption className="sr-only">{item.craft}</figcaption>
             </figure>;
           })}
-          <div ref={pill} className="craft-drag-pill" aria-hidden="true"><span>←</span>{t("拖曳", "Drag")}<span>→</span></div>
         </div>
 
         <div className="craft-text" key={current.id} aria-live="polite">

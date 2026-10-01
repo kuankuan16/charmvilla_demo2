@@ -12,20 +12,31 @@ export default function PageShell({ children }: { children: ReactNode }) {
   const scrollerRef = useRef<ReturnType<typeof createScroller>>(null);
   const animationCleanup = useRef<ReturnType<typeof initAnimations> | null>(null);
 
+  const scrollerReady = useRef(false);
+  const revealed = useRef(false);
+  const startAnimations = () => { if (!animationCleanup.current) animationCleanup.current = initAnimations(document); };
+  // When the preloader is skipped (language switch, wordmark back to home) it calls this from its own layout effect,
+  // which runs before this component's: the scroller does not exist yet. ScrollTriggers created at that moment watch
+  // the window, which never scrolls here, so every reveal below the first screen stayed hidden (the blank sections
+  // reported on 2026-10-01). The animations are therefore created only once the scroller exists.
   const reveal = useCallback(() => {
-    if (!animationCleanup.current) animationCleanup.current = initAnimations(document);
+    revealed.current = true;
     document.documentElement.classList.add("is-revealing");
+    if (scrollerReady.current) startAnimations();
   }, []);
   const complete = useCallback(() => setReady(true), []);
 
   useLayoutEffect(() => {
     const s = createScroller();
     scrollerRef.current = s;
+    scrollerReady.current = true;
+    if (revealed.current) startAnimations();
     document.documentElement.classList.add("is-loading");
     if (s && !prefersReducedMotion()) s.stop();
     return () => {
       animationCleanup.current?.();
       animationCleanup.current = null;
+      scrollerReady.current = false; revealed.current = false;
       s?.destroy();
       document.documentElement.classList.remove("is-loading", "is-revealing", "is-loaded");
     };

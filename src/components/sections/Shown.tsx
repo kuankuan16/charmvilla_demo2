@@ -36,10 +36,6 @@ export default function Shown({ lang }: { lang: Locale }) {
 
       <div className="container-x mt-40 grid grid-cols-12 gap-x-16 lg:gap-x-20">
         <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-          <div className="grid grid-cols-2 py-10 text-xs font-bold">
-            <span>{shown.label}</span>
-            <span>{shown.years}</span>
-          </div>
           <ul>
             {shown.places.map((p, i) => (
               <li

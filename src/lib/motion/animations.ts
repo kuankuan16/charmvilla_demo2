@@ -54,8 +54,11 @@ function trigger(el: HTMLElement, tl: gsap.core.Timeline, s: ReturnType<typeof b
       el.classList.add("is-shown");
       if (!s.scrub) tl.play();
     },
+    // Reached from below without onEnter ever having fired (ScrollTrigger skips callbacks for triggers that are already
+    // behind the scroll position when it refreshes): show it now instead of leaving it hidden.
     onEnterBack: () => {
-      if (s.repeat && !s.scrub) tl.play();
+      if (s.scrub) return;
+      if (s.repeat || !el.classList.contains("is-shown")) { el.classList.add("is-shown"); tl.play(); }
     },
     onLeaveBack: () => {
       if (s.repeat && !s.scrub) tl.reverse();

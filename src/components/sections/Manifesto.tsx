@@ -40,7 +40,7 @@ export default function Manifesto() {
       <div className="story-message">
         <div className="story-brush story-brush--message" aria-hidden="true"><InkBloom observe seed={11} /></div>
         <div className="story-text-column">
-          <h2 id="story-heading" className="story-kicker">The Gallery</h2>
+          <h2 id="story-heading" className="sr-only">The Gallery</h2>
           <div className="story-copy tc">
             {manifesto.paragraphs.map((text, i) => <p key={text} className={i === 0 ? "story-lead" : undefined}>
               <span className="sr-only">{text}</span>

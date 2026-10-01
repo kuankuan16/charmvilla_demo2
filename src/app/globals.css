@@ -16,6 +16,7 @@
   --color-gold: #e4a038;
   --color-gold-light: var(--color-gold);
   --color-white: #ffffff;
+  --color-sand: #d9cdb9; /* light warm beige behind the store information, taken from the wall of the reference product photograph (jakobsencopenhagen.com, measured #bbac9b–#cbc4b8) and lightened (user 2026-10-01: 金色改成淺米黃) */
   --color-ground: #f6f2e9; /* shared ground behind cut-out product shots (brand cream) */
   --color-black: #000000;
 
@@ -240,18 +241,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .catalog-card-image--scene { background: var(--color-ground); padding: 0; }     /* scene photography runs full-bleed */
 .catalog-card-image > div { transition: transform .7s cubic-bezier(.2,.65,.3,1); }
 .catalog-card a:hover .catalog-card-image > div { transform: scale(1.025); }
-.catalog-card-meta { display: flex; justify-content: space-between; gap: 10px; font-size: 10px; letter-spacing: .035em; padding-top: 15px; margin-top: 18px; color: var(--color-stone-deep); }
 .catalog-card h3 { font-size: clamp(17px,1.4vw,23px); font-weight: 700; line-height: 1.5; margin-top: 13px; }
 .catalog-card p { font-size: 13px; line-height: 1.85; margin-top: 10px; color: #1f1f1fbf; }
-.catalog-card-link { display: flex; align-items: center; justify-content: space-between; font-size: 12px; margin-top: 20px; }
-.catalog-card a:hover .catalog-card-link { text-decoration: underline; text-underline-offset: 5px; }
 .collection-empty { padding: 100px 25px; text-align: center; }
 .collection-empty h1, .collection-empty h2 { font-size: clamp(28px,4vw,48px); margin: 25px 0; line-height: 1.5; }
 .collection-empty p:not(.catalog-eyebrow) { line-height: 1.9; font-size: 15px; margin-bottom: 30px; }
 .catalog-not-found { min-height: 65vh; }
-.collection-visit { text-align: center; margin: 20px var(--page-gutter) 0; padding: 100px 0 120px; }
-.collection-visit h2 { font-size: clamp(32px,4vw,60px); line-height: 1.3; margin: 20px 0 25px; }
-.collection-visit p:not(.catalog-eyebrow) { line-height: 1.9; margin-bottom: 30px; }
 /* Product page — layout after jakobsencopenhagen.com product pages (user 2026-10-01: 像雜誌排版；情境圖縮圖極簡統一，無贅字；
    上下幅的介紹精簡). One 12-column grid: a tall image holds columns 1–6 and stays in place while columns 8–12 scroll.
    The right column opens with small uniform thumbnails (images only); name, text and button sit at the foot of the first
@@ -300,6 +295,24 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-story--3 .product-story-image--2 { grid-column: 6 / span 7; grid-row: 2; }
 .product-story--3 .product-story-image--3 { grid-column: 1 / span 2; grid-row: 2; }
 .product-story--3 .product-story-text { grid-column: 1 / span 4; grid-row: 2; align-self: end; }
+/* About page: the product-page grid with the film on the left (held in place) and the brand story on the right. */
+.about-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); align-items: start; padding: 18px var(--page-gutter) clamp(80px, 9vw, 140px); }
+.about-film { grid-column: 1 / span 7; position: sticky; top: calc(var(--header-h) + 18px); min-width: 0; }
+.about-copy { grid-column: 9 / span 4; min-width: 0; }
+.about-copy h1 { font-size: clamp(22px, 1.8vw, 31px); font-weight: 500; line-height: 1.5; text-wrap: balance; }
+.about-sub { margin-top: 8px; font-family: var(--font-display); font-size: 13px; letter-spacing: .04em; line-height: 1.7; color: var(--color-stone-deep); }
+.about-story { margin-top: 28px; font-size: 13.5px; line-height: 2.05; }
+.about-story p + p { margin-top: 1em; }
+.about-awards { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 36px; }
+.about-awards li { flex: 1 1 150px; max-width: 210px; }
+.about-awards img { width: 86px; height: 58px; object-fit: contain; object-position: left center; }
+.about-awards p { margin-top: 10px; font-size: 11.5px; line-height: 1.8; color: var(--color-stone-deep); }
+@media (max-width: 1023px) and (min-width: 768px) { .about-film { grid-column: 1 / span 7; } .about-copy { grid-column: 8 / span 5; padding-left: 8px; } }
+@media (max-width: 767px) {
+  .about-page { display: block; padding: 0 0 64px; }
+  .about-film { position: static; }
+  .about-copy { padding: 26px 20px 0; }
+}
 .product-related h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; }
 @media (max-width: 1023px) and (min-width: 768px) {
   .product-stage { grid-column: 1 / span 6; }
@@ -392,13 +405,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .collection-search input { min-width: 0; width: auto; flex: 1; font-size: 16px; }
   .collection-search button { flex-shrink: 0; font-size: 12px; }
   .catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px 15px; }
-  .catalog-card-meta { font-size: 8px; gap: 6px; padding-top: 12px; margin-top: 12px; }
-  .catalog-card-meta > span:last-child { text-align: right; max-width: 80%; }
   .catalog-card h3 { font-size: 16px; margin-top: 10px; }
   .catalog-card p { font-size: 12px; line-height: 1.8; }
-  .catalog-card-link { font-size: 11px; margin-top: 15px; }
-  .collection-visit { margin: 0 20px; padding: 65px 0 80px; }
-  .collection-visit p:not(.catalog-eyebrow) { font-size: 14px; }
   .product-visit { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; scroll-margin-top: 90px; }
   .product-visit > div > p:not(.catalog-eyebrow) { font-size: 14px; }
   .product-faq summary { font-size: 14px; }
@@ -433,14 +441,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   touch-action: pan-y;
 }
 [data-page-scroller]:has(.orbit-hero) [data-header]:not(.menu--opened) { background: rgb(246 248 250 / .8); }
-/* Film stage (user 2026-10-01, after the Strategy boards of recruit.positive.co.jp): the hero stays pinned while the film
-   card (BrandFilm) rises over it; as the card comes to rest the hero shrinks a little and takes a tint, like the board
-   underneath in the reference. --film-p (0 → 1) is written by BrandFilm.tsx. The offset equals the hero's own start
-   position (header height minus its 50px pull-up), so nothing moves when the pinning begins. */
-.film-stage { position: relative; --film-p: 0; }
-.film-stage > .orbit-hero { position: sticky; top: calc(var(--header-h) - 50px); transform-origin: 50% 0; transform: scale(calc(1 - .06 * var(--film-p))); }
-.film-stage > .orbit-hero::after { content: ""; position: absolute; inset: -50px 0 0; z-index: 40; background: var(--color-ink); opacity: calc(.34 * var(--film-p)); pointer-events: none; }
-@media (prefers-reduced-motion: reduce) { .film-stage > .orbit-hero { transform: none; } }
 .orbit-stage { position: absolute; inset: 0; }
 .orbit-paints, .orbit-photographs { position: absolute; inset: 0; pointer-events: none; }
 .orbit-paints { overflow: visible; }
@@ -450,16 +450,14 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    and transparent grain; the only replacement is the approved logo gold. */
 .orbit-brush { position: absolute; display: block; left: calc(var(--brush-x) * var(--brush-unit)); top: calc(var(--brush-y) * var(--brush-unit)); width: calc(var(--brush-w) * var(--brush-unit)); height: calc(var(--brush-h) * var(--brush-unit)); transform: translate(-50%, -50%); mask-image: var(--brush-pc); mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha; }
 .orbit-card { position: absolute; left: 51%; top: 49%; width: min(31vw, 49vh); aspect-ratio: 4 / 5; transform: translate(-50%, -50%) rotate(-4deg); will-change: transform; }
-/* The supplied male photograph is shown only through the waist, by viewport crop.
-   Original pixels and the complete handbag remain intact. No stretch or retouch. */
-.orbit-card--male { width: min(43vw, 68vh); aspect-ratio: 1.11; }
+/* The male photograph is a landscape frame (3:2) and is shown whole. */
+.orbit-card--male { width: min(54vw, 84vh); aspect-ratio: 3 / 2; }
 .orbit-card--female { aspect-ratio: 1918 / 2364; }
 .orbit-card--jewelry { aspect-ratio: 4 / 5; }
 .orbit-card:not([data-active="true"]) { pointer-events: none; }
 .orbit-photo-link { display: block; width: 100%; height: 100%; overflow: hidden; pointer-events: auto; }
 .orbit-card[aria-hidden="true"] .orbit-photo-link { pointer-events: none; }
 .orbit-photo-link img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: filter 1.2s; }
-.orbit-card--male img { height: auto; max-width: none; object-fit: initial; }
 .orbit-card--jewelry:not([data-active="true"]) img { filter: grayscale(1); }
 .orbit-title { position: absolute; z-index: 16; left: var(--page-gutter); bottom: 11.5%; margin: 0; font-family: var(--font-display); font-size: clamp(52px, 6.8vw, 148px); font-weight: 500; line-height: .9; letter-spacing: -.05em; text-transform: uppercase; pointer-events: none; }
 .orbit-title > span { display: block; }
@@ -469,29 +467,23 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .orbit-title .char { display: inline-block; }
 .orbit-statement { position: absolute; z-index: 16; top: 14%; right: var(--page-gutter); margin: 0; font-size: clamp(18px, 1.8vw, 40px); font-weight: 500; line-height: 1.7; letter-spacing: -.045em; text-align: right; pointer-events: none; }
 .orbit-statement span { display: block; }
-.orbit-footer { position: absolute; z-index: 20; left: var(--page-gutter); right: var(--page-gutter); bottom: 0; height: 64px; display: flex; align-items: center; justify-content: flex-end; gap: 30px; font-size: 13px; letter-spacing: .03em; }
-.orbit-count { font-variant-numeric: tabular-nums; white-space: nowrap; }
-.orbit-footer-divider { display: none; }
-.orbit-scroll { min-height: 44px; display: flex; align-items: center; gap: 10px; text-transform: none; }
 .orbit-hero .orbit-photo-link:focus-visible { outline-offset: 6px; }
 .is-loading:not(.is-revealing) .orbit-stage { opacity: 0; transform: scale(.76); }
 .is-revealing .orbit-stage, .is-loaded .orbit-stage { opacity: 1; transform: scale(1); transition: opacity 1.3s, transform 1.7s cubic-bezier(.16,1,.3,1); }
 @media (max-width: 1023px) and (min-width: 768px) {
   .orbit-card { width: 38vw; }
-  .orbit-card--male { width: 49vw; }
+  .orbit-card--male { width: 58vw; }
   .orbit-title { font-size: 7.2vw; bottom: 16%; }
   .orbit-statement { font-size: 2.3vw; }
 }
 @media (max-width: 767px) {
   .orbit-hero { min-height: 700px; max-height: 1000px; }
   .orbit-card { left: 50%; top: 44%; width: min(60vw, 340px); }
-  .orbit-card--male { width: min(82vw, 460px); }
+  .orbit-card--male { width: min(90vw, 480px); }
   .orbit-paint { left: 50%; top: 47%; }
   .orbit-brush { mask-image: var(--brush-sp); }
   .orbit-statement { right: var(--page-gutter); top: 11%; font-size: clamp(16px, 4.1vw, 24px); line-height: 1.5; }
   .orbit-title { left: var(--page-gutter); bottom: 21%; font-size: 12.4vw; line-height: .9; }
-  .orbit-footer { left: 20px; right: 20px; height: 60px; gap: 24px; font-size: 12px; }
-  .orbit-scroll { gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .orbit-stage, .orbit-photo-link img { transition: none !important; }
@@ -623,7 +615,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .brand-story { position: relative; background: transparent; }
 .story-message { position: relative; overflow: visible; padding: clamp(80px, 9vw, 160px) 0 clamp(80px, 8vw, 150px); }
 .story-text-column { position: relative; z-index: 2; width: 60.2%; margin-left: var(--page-gutter); }
-.story-kicker { margin: 0 0 42px; font-size: clamp(18.2px, 2.66vw, 44.8px); font-weight: 400; line-height: 1.1; text-transform: none; }
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
 .story-copy { font-size: clamp(15px, 1.4vw, 28px); font-weight: 500; line-height: 1.85; letter-spacing: .04em; overflow-wrap: anywhere; }
 .story-copy p { margin: 0 0 1em; }
@@ -655,7 +646,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .story-thumb:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 5px; }
 @media (max-width: 767px) {
   .story-text-column { width: calc(100% - 2 * var(--page-gutter)); margin-inline: var(--page-gutter); }
-  .story-kicker { margin-bottom: 30px; font-size: 21px; }
   .story-copy { font-size: 13.5px; line-height: 1.85; letter-spacing: .025em; }
   .story-honours { margin-top: 30px; }
   .story-honours-label { font-size: 10px; }
@@ -684,8 +674,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Homepage is one mixed selection; catalogue motion lives on collection pages. */
 .featured-products { padding: 70px var(--page-gutter) 110px; background: var(--color-page); }
 .featured-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 36px; margin-bottom: 48px; }
-.featured-heading h2 { margin-top: 15px; font-size: clamp(26px, 3vw, 48px); }
-.featured-heading > p { max-width: 380px; font-size: 14px; line-height: 1.9; }
+.featured-heading h2 { font-size: clamp(26px, 3vw, 48px); }
 .featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 55px 28px; }
 .featured-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
 .featured-image--cutout { background: var(--color-ground); padding: 9%; }
@@ -700,7 +689,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 @media (max-width: 767px) {
   .featured-products { padding: 55px var(--page-gutter) 70px; }
   .featured-heading { display: block; margin-bottom: 30px; }
-  .featured-heading > p { margin-top: 20px; }
   .featured-grid { grid-template-columns: 1fr; gap: 38px; }
   .collection-results .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -720,7 +708,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .store-track[data-dragging] { scroll-snap-type: none; cursor: grabbing; user-select: none; }
 .store-track img { pointer-events: none; }
 .store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: var(--color-page); scroll-snap-align: start; } /* one ground colour on the homepage (user 2026-10-01) */
-.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; background: var(--color-gold); color: var(--color-ink); } /* gold ground behind the store information (user 2026-10-01: 地址資訊背景色改金色); text on it is ink, never gold or grey */
+.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; background: var(--color-sand); color: var(--color-ink); } /* light beige ground behind the store information (user 2026-10-01: first gold, then 淺米黃); text on it is ink */
 .store-city { font-size: clamp(26px, 2.5vw, 42px); line-height: 1.2; }
 .store-city span { font-size: 13px; margin-left: 8px; color: rgb(31 31 31 / .72); }
 .store-name { margin-top: 18px; font-size: 12px; color: rgb(31 31 31 / .82); }
@@ -784,8 +772,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .craft-card[data-pos="-2"] { --cx: -40%; --s: .7; --o: 0; z-index: 1; pointer-events: none; }
 .craft-card[data-pos="2"] { --cx: 146%; --s: .7; --o: 0; z-index: 1; pointer-events: none; }
 .craft-stage.is-dragging .craft-card { transition: opacity .7s; }
-.craft-drag-pill { position: absolute; left: 0; top: 0; z-index: 5; display: none; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: #fff; color: var(--color-ink); font-size: 12px; font-weight: 500; letter-spacing: .06em; box-shadow: 0 6px 20px rgb(31 31 31 / .18); pointer-events: none; opacity: 0; transition: opacity .25s; }
-@media (hover: hover) and (pointer: fine) { .craft-drag-pill { display: inline-flex; } .craft-stage:hover .craft-drag-pill { opacity: 1; } }
 .craft-text { position: absolute; left: 56%; right: 14%; top: 50%; transform: translateY(-50%); z-index: 4; animation: craft-in .9s var(--ease-out-expo) both; pointer-events: none; }
 .craft-text > *, .craft-text .craft-ctas a { pointer-events: auto; }
 @keyframes craft-in { from { opacity: 0; transform: translateY(calc(-50% + 24px)); } to { opacity: 1; transform: translateY(-50%); } }

@@ -1,0 +1,154 @@
+{
+ "base": "https://charmvilla-gallery-site.vercel.app",
+ "report": [
+  {
+   "path": "/en",
+   "scenario": "scroll down from the top",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "open with #visit, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "store icon in the header, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/en",
+   "scenario": "language switch on the homepage, then scroll down",
+   "stillHidden": 18,
+   "items": [
+    "y=2738: featured · split · Featured pieces",
+    "y=4480: shown · moveUp · Regent Galleria, Regent Taipei",
+    "y=4480: shown · moveUp · CHARM VILLA Kyoto\nKYOTO · TERA",
+    "y=4480: shown · moveUp · THE SCHOLART SELECTION\nSAN GAB",
+    "y=4480: shown · moveUp · iF Gold Award 2015",
+    "y=5344: partners · clip · Braided Leather Bag in blue, w",
+    "y=5344: partners · moveUp · PARTNERS:",
+    "y=5344: partners · moveUp · For a piece to meet a person, ",
+    "y=5344: partners · moveUp · REGENT TAIPEI · THE SCHOLART S",
+    "y=6206: partners · clip · Braided Leather Bag in blue, w",
+    "y=6206: partners · moveUp · WORK WITH US",
+    "y=7035: news · moveUp · Aug 11\nPre-order\nPre-orders op",
+    "y=7035: news · moveUp · Jul 28\nPress\nMonocle interview",
+    "y=7035: news · moveUp · Jul 2\nEvents\nFrom August 15, a",
+    "y=7691: news · moveUp · Aug 11\nPre-order\nPre-orders op",
+    "y=7691: news · moveUp · Jul 28\nPress\nMonocle interview",
+    "y=7691: news · moveUp · Jul 2\nEvents\nFrom August 15, a",
+    "y=7691: footer · moveUp · CHARM VILLA"
+   ],
+   "shot": "partners-blank-before.jpg"
+  },
+  {
+   "path": "/en",
+   "scenario": "wordmark from a product page back to home, then scroll down",
+   "stillHidden": 18,
+   "items": [
+    "y=2738: featured · split · Featured pieces",
+    "y=4480: shown · moveUp · Regent Galleria, Regent Taipei",
+    "y=4480: shown · moveUp · CHARM VILLA Kyoto\nKYOTO · TERA",
+    "y=4480: shown · moveUp · THE SCHOLART SELECTION\nSAN GAB",
+    "y=4480: shown · moveUp · iF Gold Award 2015",
+    "y=5344: partners · clip · Braided Leather Bag in blue, w",
+    "y=5344: partners · moveUp · PARTNERS:",
+    "y=5344: partners · moveUp · For a piece to meet a person, ",
+    "y=5344: partners · moveUp · REGENT TAIPEI · THE SCHOLART S",
+    "y=6206: partners · clip · Braided Leather Bag in blue, w",
+    "y=6206: partners · moveUp · WORK WITH US",
+    "y=7035: news · moveUp · Aug 11\nPre-order\nPre-orders op",
+    "y=7035: news · moveUp · Jul 28\nPress\nMonocle interview",
+    "y=7035: news · moveUp · Jul 2\nEvents\nFrom August 15, a",
+    "y=7691: news · moveUp · Aug 11\nPre-order\nPre-orders op",
+    "y=7691: news · moveUp · Jul 28\nPress\nMonocle interview",
+    "y=7691: news · moveUp · Jul 2\nEvents\nFrom August 15, a",
+    "y=7691: footer · moveUp · CHARM VILLA"
+   ]
+  },
+  {
+   "path": "/en",
+   "scenario": "jump to the bottom, resize the window, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "scroll down from the top",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "open with #visit, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "store icon in the header, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  },
+  {
+   "path": "/",
+   "scenario": "language switch on the homepage, then scroll down",
+   "stillHidden": 18,
+   "items": [
+    "y=2614: featured · split · 推薦商品精選",
+    "y=4356: shown · moveUp · 台北晶華酒店 麗晶精品\nREGENT TAIPEI · B1",
+    "y=4356: shown · moveUp · CHARM VILLA 京都\nKYOTO · TERAMAC",
+    "y=4356: shown · moveUp · THE SCHOLART SELECTION\nSAN GAB",
+    "y=4356: shown · moveUp · iF Gold Award 2015",
+    "y=5220: partners · clip · 編織提把皮革包・藍色，肩背情境",
+    "y=5220: partners · moveUp · PARTNERS:",
+    "y=5220: partners · moveUp · 作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The",
+    "y=5220: partners · moveUp · REGENT TAIPEI · THE SCHOLART S",
+    "y=6082: partners · moveUp · WORK WITH US合作洽詢",
+    "y=6939: news · moveUp · 8月11日\n禮盒預購\n2026 中秋限定禮盒開放預購，燙金魚",
+    "y=6939: news · moveUp · 7月28日\n媒體報導\n《Monocle》專訪創辦人蘇靜媚：一",
+    "y=6939: news · moveUp · 7月2日\n活動快訊\n8月15日起，於誠品生活南西展開「杯中金",
+    "y=6939: footer · moveUp · CHARM VILLA",
+    "y=7523: news · moveUp · 8月11日\n禮盒預購\n2026 中秋限定禮盒開放預購，燙金魚",
+    "y=7523: news · moveUp · 7月28日\n媒體報導\n《Monocle》專訪創辦人蘇靜媚：一",
+    "y=7523: news · moveUp · 7月2日\n活動快訊\n8月15日起，於誠品生活南西展開「杯中金",
+    "y=7523: footer · moveUp · CHARM VILLA"
+   ]
+  },
+  {
+   "path": "/",
+   "scenario": "wordmark from a product page back to home, then scroll down",
+   "stillHidden": 18,
+   "items": [
+    "y=2614: featured · split · 推薦商品精選",
+    "y=4356: shown · moveUp · 台北晶華酒店 麗晶精品\nREGENT TAIPEI · B1",
+    "y=4356: shown · moveUp · CHARM VILLA 京都\nKYOTO · TERAMAC",
+    "y=4356: shown · moveUp · THE SCHOLART SELECTION\nSAN GAB",
+    "y=4356: shown · moveUp · iF Gold Award 2015",
+    "y=5220: partners · clip · 編織提把皮革包・藍色，肩背情境",
+    "y=5220: partners · moveUp · PARTNERS:",
+    "y=5220: partners · moveUp · 作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The",
+    "y=5220: partners · moveUp · REGENT TAIPEI · THE SCHOLART S",
+    "y=6082: partners · moveUp · WORK WITH US合作洽詢",
+    "y=6939: news · moveUp · 8月11日\n禮盒預購\n2026 中秋限定禮盒開放預購，燙金魚",
+    "y=6939: news · moveUp · 7月28日\n媒體報導\n《Monocle》專訪創辦人蘇靜媚：一",
+    "y=6939: news · moveUp · 7月2日\n活動快訊\n8月15日起，於誠品生活南西展開「杯中金",
+    "y=6939: footer · moveUp · CHARM VILLA",
+    "y=7523: news · moveUp · 8月11日\n禮盒預購\n2026 中秋限定禮盒開放預購，燙金魚",
+    "y=7523: news · moveUp · 7月28日\n媒體報導\n《Monocle》專訪創辦人蘇靜媚：一",
+    "y=7523: news · moveUp · 7月2日\n活動快訊\n8月15日起，於誠品生活南西展開「杯中金",
+    "y=7523: footer · moveUp · CHARM VILLA"
+   ]
+  },
+  {
+   "path": "/",
+   "scenario": "jump to the bottom, resize the window, then scroll up",
+   "stillHidden": 0,
+   "items": []
+  }
+ ]
+}

@@ -16,7 +16,6 @@ export default function Partners({ lang }: { lang: Locale }) {
       </div>
 
       <div className="partners-copy flex min-w-0 flex-col px-25 pb-40 pt-30 laptop:px-40 laptop:pt-45">
-        <div className="text-xs font-bold" data-animation="moveUp">{partners.label}</div>
 
         <div className="my-auto py-40">
           {/* Whole-block rise (not split lines): CJK subsets load after the preloader, so line splitting can reflow.
@@ -26,7 +25,6 @@ export default function Partners({ lang }: { lang: Locale }) {
               /^[A-Za-z]/.test(run) ? <span key={i} className="md:whitespace-nowrap">{run}</span> : run,
             )}
           </p>
-          <div className="mt-25 text-xs font-bold text-stone-deep" data-animation="moveUp" data-delay="0.2">{partners.statementEn}</div>
         </div>
 
         <div data-animation="moveUp" data-delay="0.3">

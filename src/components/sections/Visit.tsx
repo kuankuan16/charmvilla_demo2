@@ -50,9 +50,6 @@ export default function Visit() {
               </li>
             ))}
           </ul>
-          <a href={visit.instagram} target="_blank" rel="noreferrer" className="link-underline col-span-12 mt-30 w-max text-xs font-bold">
-            INSTAGRAM
-          </a>
         </section>
       </div>
     </section>

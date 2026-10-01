@@ -149,11 +149,6 @@ export default function Hero() {
       </div>
       <h1 className="orbit-title" data-hero-reveal=""><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">EVERYDAY</span><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">LUXURIES</span></h1>
       <p className="orbit-statement tc" data-hero-reveal=""><span>{hero.subtitle}</span></p>
-      <div className="orbit-footer">
-        <span className="orbit-count" aria-live="off">{active + 1} / 3</span>
-        <span className="orbit-footer-divider" aria-hidden="true" />
-        <a className="orbit-scroll" href="#manifesto">Scroll <span aria-hidden="true">↓</span></a>
-      </div>
     </section>
   );
 }

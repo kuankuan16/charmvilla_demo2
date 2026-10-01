@@ -14,7 +14,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const [open, setOpen] = useState(false);
   const { lang, t } = useT();
   const zh = lang === "zh";
-  const sectionHref = (id: string) => id === "account" ? localeHref(lang, "/account") : id === "hero" || id === "visit" ? (innerPage ? localeHref(lang, `/#${id}`) : `#${id}`) : localeHref(lang, `/collections/${id}`);
+  const sectionHref = (id: string) => id === "account" ? localeHref(lang, "/account") : id === "about" ? localeHref(lang, "/about") : id === "hero" || id === "visit" ? (innerPage ? localeHref(lang, `/#${id}`) : `#${id}`) : localeHref(lang, `/collections/${id}`);
   // Language switch: the same page in the other language. A plain link (full load) so <html lang> and the page copy change together;
   // on the homepage the one-shot flag keeps the preloader from replaying.
   const other: Locale = zh ? "en" : "zh";
@@ -54,7 +54,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   }, [open, close, innerPage]);
 
   // All navigation lives in the full-screen menu; "All Objects" leads, then the sections.
-  const navItems = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero"), { id: "account", label: "Account", zh: "會員" } as const];
+  const navItems = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero"), { id: "about", label: "About", zh: "關於" } as const, { id: "account", label: "Account", zh: "會員" } as const];
 
   return (
     <header data-header="" className={`site-header fixed left-0 top-0 z-30 w-full ${open ? "menu--opened" : ""}`}>
