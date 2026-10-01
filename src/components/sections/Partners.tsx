@@ -21,7 +21,7 @@ export default function Partners({ lang }: { lang: Locale }) {
         <div className="my-auto py-40">
           {/* Whole-block rise (not split lines): CJK subsets load after the preloader, so line splitting can reflow.
               In the Chinese statement, Latin brand names stay on one line; the English statement wraps as ordinary prose. */}
-          <p className={`tc font-bold leading-tight ${lang === "en" ? "text-2xl lg:text-3xl" : "text-3xl lg:text-4xl"}`} data-animation="moveUp" data-delay="0.1">
+          <p className="partners-statement tc" data-animation="moveUp" data-delay="0.1">
             {lang === "en" ? partners.statement : partners.statement.split(/([A-Za-z][A-Za-z .]*[A-Za-z])/).map((run, i) =>
               /^[A-Za-z]/.test(run) ? <span key={i} className="md:whitespace-nowrap">{run}</span> : run,
             )}

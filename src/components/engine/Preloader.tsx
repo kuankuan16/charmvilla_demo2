@@ -6,6 +6,7 @@
 //            visible and the hero headline's split characters start at the same instant the wipe begins.
 //   mobile   no digits (below 768 px), only the wipe.
 // No header/logo replica at the top (user 2026-09-30); the wordmark only appears as the rising letters.
+// The gold half carries the white vector goldfish (user 2026-10-01).
 // Scrolling stays locked until the wipe has finished. Reduced motion skips everything.
 import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -61,7 +62,10 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
         })}
       </div>
       <div data-preloader-part="left" className="relative grid h-full bg-page" />
-      <div data-preloader-part="right" className="relative hidden h-full bg-gold md:grid" />
+      <div data-preloader-part="right" className="relative hidden h-full bg-gold md:grid">
+        {/* the vector goldfish, white on the gold half (user 2026-10-01: 「右邊加回向量的小金魚」; it was here until 09-30) */}
+        <img src="/brand/goldfish-white.svg" alt="" className="absolute left-[38%] top-1/2 h-auto w-[28%] -translate-x-1/2 -translate-y-1/2" draggable={false} />
+      </div>
     </div>
   );
 }

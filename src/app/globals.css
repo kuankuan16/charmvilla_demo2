@@ -159,13 +159,13 @@
   .menu-fade { opacity: 0; transition: opacity 0.35s var(--ease-reveal); }
   .menu--opened .menu-fade { opacity: 1; }
 
-  /* Custom cursor: the gold vector goldfish (user 2026-09-30), position driven by --cursor-x/--cursor-y (0..1).
-     One fixed element, transform-only updates, no blend mode: composited on the GPU, no layout cost. */
+  /* Custom cursor: the gold vector goldfish (user 2026-09-30). One fixed element; Cursor.tsx writes its transform
+     directly (no CSS variables on <html>), so moving it costs no style recalculation outside this element. */
   .cursor-dot {
     position: fixed; top: 0; left: 0; width: 30px; height: 25px;
     background: url("/brand/goldfish-gold.svg") center / contain no-repeat;
     pointer-events: none; z-index: 100; will-change: transform;
-    transform: translate(calc(var(--cursor-x, -0.5) * 100vw - 15px), calc(var(--cursor-y, -0.5) * 100vh - 12px));
+    transform: translate3d(-60px, -60px, 0); /* off screen until the pointer first moves */
   }
   @media (hover: none), (pointer: coarse) { .cursor-dot { display: none; } }
 }
@@ -759,6 +759,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 @media (max-width: 767px) {
   :root { --page-gutter: 24px; }
 }
+/* The statement is set at the same level as the craft quotes (user 2026-10-01: 「文字大小層級跟這個標題一樣」). */
+.partners-statement { font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
+.partners-statement:lang(en) { letter-spacing: -.025em; }
 .partners-image { padding-left: 0; }
 .partners-copy { padding-right: 0; }
 @media (max-width: 1279px) {
@@ -777,7 +780,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    scrolls through .craft-track; CraftMoments.tsx turns the distance travelled into the active card and sets --craft-top. */
 .craft-moments { position: relative; z-index: 2; background: var(--color-page); outline: none; }
 .craft-pin { position: sticky; top: var(--craft-top, 0px); isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); overflow: hidden; }
-.craft-track { height: calc((var(--craft-count, 4) - 1) * 55svh); }
+.craft-track { height: calc((var(--craft-count, 4) - 1) * 30svh); } /* short on purpose: a long hold makes the page feel stuck (user 2026-10-01) */
 .craft-header { position: relative; z-index: 2; }
 .craft-kicker { margin: 0 0 14px; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
 .craft-heading { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 500; line-height: 1.25; letter-spacing: .02em; }
@@ -815,11 +818,11 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .craft-card { width: min(40vw, 50vh); }
   .craft-card[data-pos="0"] { --cx: 34%; }
   .craft-text { left: 58%; right: 8%; }
-  .craft-quote { font-size: clamp(20px, 2.6vw, 30px); }
+  .craft-quote, .partners-statement { font-size: clamp(20px, 2.6vw, 30px); }
 }
 @media (max-width: 767px) {
   .craft-pin { padding: calc(var(--header-h) + 28px) var(--page-gutter) 44px; }
-  .craft-track { height: calc((var(--craft-count, 4) - 1) * 45svh); }
+  .craft-track { height: calc((var(--craft-count, 4) - 1) * 28svh); }
     .craft-intro { justify-self: start; font-size: 13px; line-height: 1.9; }
   .craft-body { margin-top: 28px; }
   .craft-stage { height: calc(78vw * 1.25 + 24px); }
@@ -830,6 +833,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .craft-text { position: relative; left: auto; right: auto; top: auto; transform: none; margin-top: 26px; }
   @keyframes craft-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
   .craft-quote { font-size: 24px; margin-bottom: 16px; }
+  .partners-statement { font-size: 24px; }
   .craft-copy { font-size: 13.5px; line-height: 1.9; }
   .craft-controls { margin-top: 28px; }
 }

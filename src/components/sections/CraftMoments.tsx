@@ -22,44 +22,55 @@ export default function CraftMoments() {
   const pin = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
-  // Where the panel is held (0, or a negative offset when it is taller than the viewport, so that its foot stays in view),
-  // and how far the page travels while it is held.
+  // Sizes are read only when the layout changes, never per frame: where the panel is held (0, or a negative offset when it
+  // is taller than the viewport, so that its foot stays in view) and how far the page travels while it is held.
+  const box = useRef({ top: 0, travel: 0 });
   const measure = useCallback(() => {
     const el = root.current, panel = pin.current;
-    if (!el || !panel) return null;
+    if (!el || !panel) return;
     const top = Math.min(0, window.innerHeight - panel.offsetHeight);
-    el.style.setProperty("--craft-top", `${top}px`);
-    return { top, travel: el.offsetHeight - panel.offsetHeight, rect: el.getBoundingClientRect() };
+    if (top !== box.current.top || !el.style.getPropertyValue("--craft-top")) el.style.setProperty("--craft-top", `${top}px`);
+    box.current = { top, travel: el.offsetHeight - panel.offsetHeight };
   }, []);
 
+  // The active card follows the scroll position. It is worked out on scroll events only (one read per frame at most).
   useEffect(() => {
-    const el = root.current;
-    if (!el) return;
-    let raf = 0, near = false, last = -1;
-    const frame = () => {
-      raf = requestAnimationFrame(frame);
-      if (!near) return;
-      const m = measure();
-      if (!m || m.travel <= 0) return;
-      const progress = Math.min(1, Math.max(0, (m.top - m.rect.top) / m.travel));
+    const el = root.current, panel = pin.current;
+    if (!el || !panel) return;
+    let queued = 0, last = -1;
+    const update = () => {
+      queued = 0;
+      const { top, travel } = box.current;
+      if (travel <= 0) return;
+      const progress = Math.min(1, Math.max(0, (top - el.getBoundingClientRect().top) / travel));
       const index = Math.min(count - 1, Math.floor(progress * count));
       if (index !== last) { last = index; setActive(index); }
     };
-    const observer = new IntersectionObserver(([entry]) => { near = entry.isIntersecting; });
-    observer.observe(el);
-    measure();
-    raf = requestAnimationFrame(frame);
-    return () => { cancelAnimationFrame(raf); observer.disconnect(); };
+    const onScroll = () => { if (!queued) queued = requestAnimationFrame(update); };
+    const onResize = () => { measure(); onScroll(); };
+    const resize = new ResizeObserver(onResize);
+    resize.observe(panel);
+    const wrapper = getScroller()?.wrapper ?? document.querySelector<HTMLElement>("[data-page-scroller]");
+    wrapper?.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    measure(); update();
+    return () => {
+      cancelAnimationFrame(queued); resize.disconnect();
+      wrapper?.removeEventListener("scroll", onScroll); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onResize);
+    };
   }, [count, measure]);
 
   // Scroll to the middle of a card's share of the track.
   const go = useCallback((index: number) => {
-    const m = measure();
-    if (!m) return;
+    const el = root.current;
+    if (!el) return;
+    measure();
+    const { top, travel } = box.current;
     const i = Math.min(count - 1, Math.max(0, index));
     const scroller = getScroller();
     const from = scroller ? scroller.wrapper.scrollTop : window.scrollY;
-    const y = from + m.rect.top - m.top + ((i + .5) / count) * m.travel;
+    const y = from + el.getBoundingClientRect().top - top + ((i + .5) / count) * travel;
     if (scroller) scroller.scrollTo(y); else window.scrollTo({ top: y, behavior: "smooth" });
   }, [count, measure]);
 
