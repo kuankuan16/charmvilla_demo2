@@ -1,0 +1,59 @@
+{
+ "base": "http://localhost:3160",
+ "rows": [
+  {
+   "slug": "braided-leather-bag-white",
+   "has": true,
+   "opacity": 1,
+   "loaded": true,
+   "cover": "studio-braided-leather-bag-white-hd.webp",
+   "scene": "scene-white-bag-floating-morandi.webp",
+   "opacityBefore": 0
+  },
+  {
+   "slug": "pearl-chain-goldfish-earrings",
+   "has": true,
+   "opacity": 1,
+   "loaded": true,
+   "cover": "studio-pearl-chain-goldfish-earrings-lustre.webp",
+   "scene": "CV-0377.webp",
+   "opacityBefore": 0
+  },
+  {
+   "slug": "ginkgo-teaspoon-gift-box",
+   "has": true,
+   "opacity": 1,
+   "loaded": true,
+   "cover": "featured-ginkgo-teaspoon-gift-box.webp",
+   "scene": "scene-wooden-ottomans.webp",
+   "opacityBefore": 0
+  },
+  {
+   "slug": "reunion-paulownia-gift-box",
+   "has": true,
+   "opacity": 1,
+   "loaded": true,
+   "cover": "featured-reunion-paulownia-gift-box.webp",
+   "scene": "CV-0350.webp",
+   "opacityBefore": 0
+  },
+  {
+   "slug": "bird-chopstick-rest",
+   "has": true,
+   "opacity": 1,
+   "loaded": true,
+   "cover": "featured-bird-chopstick-rest-70.webp",
+   "scene": "CV-0248.webp",
+   "opacityBefore": 0
+  },
+  {
+   "slug": "diamond-goldfish-earrings",
+   "has": true,
+   "opacity": 1,
+   "loaded": true,
+   "cover": "studio-diamond-goldfish-earrings-wall.webp",
+   "scene": "CV-0372.webp",
+   "opacityBefore": 0
+  }
+ ]
+}

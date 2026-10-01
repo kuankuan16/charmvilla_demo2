@@ -245,8 +245,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .catalog-card a:hover .catalog-card-image > div { transform: scale(1.025); }
 /* user 2026-10-01: the studio photograph is the cover; the scene fades in only while the card is hovered or focused */
 .catalog-card-hover { position: absolute; inset: 0; opacity: 0; transition: opacity .45s ease, transform .7s cubic-bezier(.2,.65,.3,1) !important; }
-@media (hover: hover) { .catalog-card a:hover .catalog-card-hover { opacity: 1; } }
-.catalog-card a:focus-visible .catalog-card-hover { opacity: 1; }
+@media (hover: hover) { .catalog-card a:hover .catalog-card-hover, .featured-grid a:hover .catalog-card-hover { opacity: 1; } }
+.catalog-card a:focus-visible .catalog-card-hover, .featured-grid a:focus-visible .catalog-card-hover { opacity: 1; }
 .catalog-card h3 { font-size: clamp(17px,1.4vw,23px); font-weight: 700; line-height: 1.5; margin-top: 13px; }
 .catalog-card p { font-size: 13px; line-height: 1.85; margin-top: 10px; color: #1f1f1fbf; }
 .collection-empty { padding: 100px 25px; text-align: center; }
@@ -328,13 +328,25 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-scenes { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
 .product-scenes .scene-fig { grid-column: span 6; }
 .product-scenes .scene-fig[data-shape=tall] { grid-column: span 4; }
-/* Three scenes, after jakobsencopenhagen.com/en/products/liam (user 2026-10-01): under the stage a large photograph as wide as the
-   product image and, at the left edge of the information column, a small one of half that column, which stays under the
-   header while the large one passes and ends level with its foot. */
+/* Three scenes, after jakobsencopenhagen.com/en/products/liam and …/joana-longchair-xl-2-seater (user 2026-10-01: 「情境照３張的版型」):
+   under the stage a large photograph as wide as the product image; beside it, from the left edge of the information column,
+   the story text set a little down from the photograph's top (153px at 1440 on the reference) and, 70px under the text, a small
+   photograph two columns wide, which stays under the header while the large one passes. */
 .product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
 .product-pair-large { grid-column: 1 / span 6; align-self: start; }
-.product-pair-side { grid-column: 9 / span 2; min-width: 0; }
-.product-pair-side .scene-fig { position: sticky; top: calc(var(--header-h) + var(--pdp-gap)); }
+.product-pair-side { --side-cols: 4; grid-column: 9 / span 4; min-width: 0; padding-top: clamp(56px, 10.6vw, 153px); }
+.product-pair[data-large=wide] .product-pair-side { padding-top: 0; } /* a landscape photograph is too low for the offset */
+.product-pair-side .product-story-text { width: calc((100% - (var(--side-cols) - 1) * var(--pdp-gap)) / var(--side-cols) * 3 + 2 * var(--pdp-gap)); margin-bottom: clamp(36px, 4.9vw, 70px); }
+.product-pair-side .product-story-text p { color: var(--color-stone-deep); }
+.product-pair-side .scene-fig { width: calc((100% - (var(--side-cols) - 1) * var(--pdp-gap)) / var(--side-cols) * 2 + var(--pdp-gap)); position: sticky; top: calc(var(--header-h) + var(--pdp-gap)); }
+/* Three portraits left for the foot of the page make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
+   homepage (user 2026-10-01: 「商品內頁如果有多圖的情況也是用相同的邏輯處理」): two small ones on columns 1–2 and 3–4 stay under
+   the header while the large one on columns 7–12 passes. */
+.product-spread { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
+.product-spread:has(+ .product-spread) { padding-bottom: clamp(48px, 6vw, 96px); }
+.product-spread-smalls { grid-column: 1 / span 6; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--pdp-gap); min-width: 0; position: sticky; top: calc(var(--header-h) + var(--pdp-gap)); }
+.product-spread-smalls .scene-fig { grid-column: span 2; }
+.product-spread-large { grid-column: 7 / span 6; }
 .product-story-text { min-width: 0; }
 .product-story-text h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; text-wrap: balance; }
 .product-story-text p { margin-top: 12px; font-size: 13px; line-height: 2.05; }
@@ -343,7 +355,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-related h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .product-column, .product-more { grid-column: 8 / span 5; }
-  .product-pair-side { grid-column: 8 / span 2; }
+  .product-pair-side { --side-cols: 5; grid-column: 8 / span 5; }
 }
 @media (max-width: 767px) {
   .product-hero { display: block; padding: 0 0 14px; }
@@ -360,7 +372,13 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-scenes { display: flex; flex-direction: column; align-items: stretch; gap: 14px; padding: 0 20px 64px; }
   .product-pair { display: flex; flex-direction: column; gap: 14px; padding: 0 20px 64px; }
   .product-pair-large { align-self: stretch; }
-  .product-pair-side .scene-fig { position: relative; top: auto; }
+  .product-spread { display: flex; flex-direction: column; align-items: stretch; row-gap: 14px; padding: 0 20px 64px; }
+  .product-spread:has(+ .product-spread) { padding-bottom: 14px; }
+  .product-spread-smalls { display: contents; }
+  .product-spread-large { order: -1; }
+  .product-pair-side { padding-top: 22px; }
+  .product-pair-side .product-story-text { width: auto; margin-bottom: 26px; }
+  .product-pair-side .scene-fig { position: relative; top: auto; width: auto; }
 }
 .product-edition { color: var(--color-stone-deep); margin-left: 20px; white-space: nowrap; }
 .product-variants { margin-top: var(--i-opt); border: 0; min-width: 0; }
@@ -759,7 +777,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 @media (max-width: 767px) {
   :root { --page-gutter: 24px; }
 }
-/* The statement is set at the same level as the craft quotes (user 2026-10-01: 「文字大小層級跟這個標題一樣」). */
+/* The statement is set at the same level as the craft section's heading (user 2026-10-01: 「文字大小層級跟這個標題一樣」, said of the craft quotes, which were that size then). */
 .partners-statement { font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
 .partners-statement:lang(en) { letter-spacing: -.025em; }
 .partners-screen { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: calc(100svh - var(--header-h)); background: var(--color-page); }
@@ -773,74 +791,53 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-image-note { font-size: 12px; line-height: 1.9; color: var(--color-stone-deep); margin-top: 18px; }
 
 /* ---------------------------------------------------------------------------------------------------------------
-   以手成形 · craft moments carousel (2026-10-01). Presentation after recruit.positive.co.jp "Interview": one big tilted
-   card with side peeks, quote + outlined CTA at the right, prev/next/pause bottom-left, dots bottom-right, a drag pill
-   that follows the pointer. Page ground stays --color-page; the gold brush is the hero's brush texture (InkBloom).
+   以手成形 · the four crafts as a magazine spread, after the jakobsencopenhagen.com/en/ homepage (its "gallery" and
+   "text-media" sections; user 2026-10-01: 「像雜誌的排版，有左邊兩張小圖」). Reference at 1440: 12 columns, 20px apart;
+   two small photographs on columns 1–2 and 3–4 that stay under the header while the large one on columns 7–12 passes;
+   120px on, the text — a heading at the left edge, the body two columns in and three wide, an underlined link — beside a
+   second large photograph on columns 7–12 that stays in place while the text passes. Each row fades in over 0.7s.
+   Here the same columns sit inside the page gutter, the photographs keep the site's 4:5, and the type is the site's.
+   No ground of its own: the brush of the brand story above runs on behind it (user 2026-10-01: 「不要裁切」).
    --------------------------------------------------------------------------------------------------------------- */
-/* The cards change with the scroll (user 2026-10-01): .craft-pin is held in place (position: sticky) while the page
-   scrolls through .craft-track; CraftMoments.tsx turns the distance travelled into the active card and sets --craft-top. */
-.craft-moments { position: relative; z-index: 2; outline: none; } /* no ground of its own: the brush of the brand story above runs on behind it instead of being cut at the boundary (user 2026-10-01: 「不要裁切」) */
-.craft-pin { position: sticky; top: var(--craft-top, 0px); isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); overflow: hidden; }
-.craft-track { height: calc((var(--craft-count, 4) - 1) * 30svh); } /* short on purpose: a long hold makes the page feel stuck (user 2026-10-01) */
-.craft-header { position: relative; z-index: 2; }
-.craft-kicker { margin: 0 0 14px; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
-.craft-heading { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 500; line-height: 1.25; letter-spacing: .02em; }
-.craft-sub { margin: 14px 0 0; font-size: 13px; color: var(--color-stone-deep); }
-.craft-intro { margin: 0; max-width: 34em; font-size: clamp(13px, 1vw, 15px); line-height: 2; justify-self: end; }
-.craft-body { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr; align-items: center; margin-top: clamp(12px, 2vw, 28px); }
-.craft-stage { position: relative; height: clamp(380px, 56vh, 680px); }
-.craft-card { position: absolute; top: 50%; left: var(--cx, 36%); width: min(30vw, 46vh); aspect-ratio: 4 / 5; margin: 0; overflow: hidden; background: var(--color-ground); box-shadow: 0 30px 60px -30px rgb(31 31 31 / .35); transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(var(--s, 1)); opacity: var(--o, 1); transition: left .95s var(--ease-out-expo), transform .95s var(--ease-out-expo), opacity .7s; will-change: transform, left; }
-.craft-card img { object-fit: cover; pointer-events: none; }
-.craft-card[data-pos="0"] { --cx: 34%; --rot: var(--tilt); z-index: 3; }
-.craft-card[data-pos="-1"] { --cx: -3%; --s: .78; --o: .5; z-index: 2; cursor: pointer; }
-.craft-card[data-pos="1"] { --cx: 109%; --s: .78; --o: .5; z-index: 2; cursor: pointer; }
-.craft-card[data-pos="-2"] { --cx: -40%; --s: .7; --o: 0; z-index: 1; pointer-events: none; }
-.craft-card[data-pos="2"] { --cx: 146%; --s: .7; --o: 0; z-index: 1; pointer-events: none; }
-.craft-text { position: absolute; left: 56%; right: 14%; top: 50%; transform: translateY(-50%); z-index: 4; animation: craft-in .9s var(--ease-out-expo) both; pointer-events: none; }
-.craft-text > *, .craft-text .craft-ctas a { pointer-events: auto; }
-@keyframes craft-in { from { opacity: 0; transform: translateY(calc(-50% + 24px)); } to { opacity: 1; transform: translateY(-50%); } }
-.craft-craft { margin: 0 0 14px; font-size: 12px; letter-spacing: .08em; color: var(--color-stone-deep); }
-.craft-quote { margin: 0 0 26px; font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
+.craft-moments { --craft-gap: clamp(12px, 1.4vw, 24px); --craft-top: calc(var(--header-h) + var(--craft-gap)); position: relative; z-index: 2; padding: clamp(40px, 4.2vw, 60px) var(--page-gutter) clamp(60px, 7vw, 110px); }
+.craft-spread, .craft-story { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--craft-gap); align-items: start; }
+.craft-story { margin-top: clamp(72px, 8.4vw, 120px); }
+.craft-smalls, .craft-words { grid-column: 1 / span 6; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--craft-gap); min-width: 0; }
+.craft-smalls { position: sticky; top: var(--craft-top); }
+.craft-fig { position: relative; margin: 0; min-width: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-ground); }
+.craft-fig img { object-fit: cover; }
+.craft-smalls .craft-fig { grid-column: span 2; }
+.craft-large { grid-column: 7 / span 6; }
+.craft-story .craft-large { position: sticky; top: var(--craft-top); }
+/* the text ends well below its last line, so the photograph beside it is held for a moment before the row leaves */
+.craft-words { padding: clamp(36px, 4.2vw, 60px) 0 clamp(90px, 13vw, 220px); }
+.craft-heading { grid-column: 1 / -1; margin: 0; font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
+.craft-list { grid-column: 3 / span 3; display: grid; row-gap: clamp(30px, 3vw, 46px); margin: clamp(40px, 4.2vw, 60px) 0 0; padding: 0; list-style: none; }
+.craft-craft { margin: 0 0 8px; font-size: 12px; line-height: 1.6; letter-spacing: .08em; color: var(--color-stone-deep); }
+.craft-quote { margin: 0; font-size: clamp(15px, 1.2vw, 19px); font-weight: 500; line-height: 1.75; letter-spacing: .02em; }
 /* user 2026-10-01: 「英文標題字距再密一點」 — Latin headings are set tighter than the Chinese ones */
-.craft-quote:lang(en), .craft-heading:lang(en) { letter-spacing: -.025em; }
-.craft-name { margin: 0; font-size: 16px; font-weight: 700; }
-.craft-name span { margin-left: 10px; font-size: 11px; font-weight: 500; letter-spacing: .12em; color: var(--color-stone-deep); }
-.craft-role { margin: 8px 0 16px; font-size: 12.5px; color: var(--color-stone-deep); }
-.craft-copy { margin: 0 0 22px; max-width: 30em; font-size: 13.5px; line-height: 1.95; }
-.craft-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.craft-cta { gap: 16px; min-height: 46px; padding: 12px 22px; font-size: 13px; }
-.craft-cta--quiet { border-color: rgb(31 31 31 / .14); color: var(--color-stone-deep); }
-.craft-controls { position: relative; z-index: 3; display: flex; align-items: center; margin-top: clamp(16px, 2vw, 32px); }
-.craft-dots { display: flex; gap: 12px; }
-.craft-dot { width: 8px; height: 8px; border-radius: 50%; background: rgb(31 31 31 / .28); transition: background .2s, transform .2s; }
-.craft-dot[aria-selected="true"] { background: var(--color-gold); transform: scale(1.3); }
-.craft-dot:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
+.craft-heading:lang(en) { letter-spacing: -.025em; }
+.craft-quote:lang(en) { letter-spacing: -.01em; line-height: 1.5; }
+.craft-link { display: inline-block; margin-top: 12px; padding-bottom: 2px; border-bottom: 1px solid currentColor; font-size: 13px; line-height: 1.5; transition: opacity .3s; }
+.craft-link:hover { opacity: .55; }
+.craft-link:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
 @media (max-width: 1023px) {
-  .craft-card { width: min(40vw, 50vh); }
-  .craft-card[data-pos="0"] { --cx: 34%; }
-  .craft-text { left: 58%; right: 8%; }
-  .craft-quote, .partners-statement { font-size: clamp(20px, 2.6vw, 30px); }
+  .craft-list { grid-column: 2 / span 5; }
+  .partners-statement { font-size: clamp(20px, 2.6vw, 30px); }
 }
 @media (max-width: 767px) {
-  .craft-pin { padding: calc(var(--header-h) + 28px) var(--page-gutter) 44px; }
-  .craft-track { height: calc((var(--craft-count, 4) - 1) * 28svh); }
-    .craft-intro { justify-self: start; font-size: 13px; line-height: 1.9; }
-  .craft-body { margin-top: 28px; }
-  .craft-stage { height: calc(78vw * 1.25 + 24px); }
-  .craft-card { width: 78vw; --rot: 0deg !important; }
-  .craft-card[data-pos="0"] { --cx: 50%; }
-  .craft-card[data-pos="-1"] { --cx: -40%; }
-  .craft-card[data-pos="1"] { --cx: 140%; }
-  .craft-text { position: relative; left: auto; right: auto; top: auto; transform: none; margin-top: 26px; }
-  @keyframes craft-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-  .craft-quote { font-size: 24px; margin-bottom: 16px; }
+  /* one column: the two small photographs side by side, the large one, then the second photograph above its text */
+  .craft-moments { padding: 28px var(--page-gutter) 56px; }
+  .craft-spread, .craft-story { display: flex; flex-direction: column; align-items: stretch; row-gap: 12px; }
+  .craft-story { margin-top: 12px; }
+  .craft-smalls { position: static; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+  .craft-smalls .craft-fig { grid-column: auto; }
+  .craft-story .craft-large { position: relative; top: auto; order: -1; }
+  .craft-words { display: block; padding: 36px 0 0; }
+  .craft-heading { font-size: 24px; }
+  .craft-list { margin-top: 32px; row-gap: 28px; }
+  .craft-quote { font-size: 15px; }
   .partners-statement { font-size: 24px; }
-  .craft-copy { font-size: 13.5px; line-height: 1.9; }
-  .craft-controls { margin-top: 28px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .craft-card { transition: none; --rot: 0deg !important; }
-  .craft-text { animation: none; }
 }
 
 /* Language switch (2026-10-01): plain text in the header tools, same weight and size as the Menu label. On a phone the bar

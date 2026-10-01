@@ -26,7 +26,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="opening-sequence">
           <Hero />
           <Manifesto />
-          <CraftMoments />
+          <CraftMoments lang={lang} />
         </div>
         <FeaturedProducts lang={lang} />
         {/* 2026-10-01 (user: 「刪掉這屏」): the SHOWN AT screen is off the homepage; the component and its copy stay in the repo. */}

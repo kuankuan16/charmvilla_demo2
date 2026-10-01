@@ -4,7 +4,8 @@ import { Heading, Picture } from "@/components/ui";
 import { imageFit } from "@/data/content";
 import { localeHref, translator, type Locale } from "@/i18n/config";
 
-// A single cross-category selection; full collections live on their own pages.
+// A single cross-category selection; full collections live on their own pages. As on the listing cards, the scene photograph
+// appears while a card is hovered (user 2026-10-01: 「首頁清單 hover 時也要換情境照」).
 const slugs = [
   "braided-leather-bag-white",
   "pearl-chain-goldfish-earrings",
@@ -24,7 +25,7 @@ export default function FeaturedProducts({ lang }: { lang: Locale }) {
     <div className="featured-grid">
       {selected.map((product) => <article key={product.slug} data-featured-product={product.slug}>
         <Link href={productHref(product, lang)} aria-label={t(`欣賞 ${product.name}`, `View ${product.name}`)}>
-          <div className={`featured-image featured-image--${(product.featuredImage ?? product.image).cutout ? "cutout" : "scene"}`}><Picture img={product.featuredImage ?? product.image} fill fit={imageFit(product.featuredImage ?? product.image)} animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>
+          <div className={`featured-image featured-image--${(product.featuredImage ?? product.image).cutout ? "cutout" : "scene"}`}><Picture img={product.featuredImage ?? product.image} fill fit={imageFit(product.featuredImage ?? product.image)} animate={false} sizes="(min-width:768px) 30vw, 90vw" />{product.hoverImage && <div className="catalog-card-hover" aria-hidden="true"><Picture img={product.hoverImage} fill fit="cover" animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>}</div>
           <div className="featured-caption"><h3 className="tc">{product.name}</h3></div>
           <p className="tc">{product.summary}</p>
         </Link>

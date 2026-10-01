@@ -188,13 +188,13 @@ const buildCatalog = (lang: Locale) => {
     "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376", "twin-goldfish-earrings": "CV-0378",
     "bird-chopstick-rest": "CV-0248",
   };
-  const listingSceneSite: Record<string, Img> = {
-    "braided-leather-bag-white": site("scene-white-bag-over-shoulder-ink-green.webp", t("編織提把皮革包・白色，肩背回眸情境，墨綠背景", "Braided Leather Bag in white, worn on the shoulder by a figure looking back, ink-green backdrop")),
-  };
-  // 2026-10-01 (user: 「這幾張圖都上官網」): the white bag in the air on ink green (gallery CV-0450) follows the cover scene.
+  const listingSceneSite: Record<string, Img> = {};
+  // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
+  // (scene-white-bag-over-shoulder-ink-green) and the bag in the air on ink green (gallery CV-0450) — are off the site; the files
+  // are in the git history. The white bag's scenes now lead with the bag in the air on Morandi sage.
   const sceneAfterLead: Record<string, Img[]> = {
-    "braided-leather-bag-white": [site("scene-white-bag-floating-ink-green.webp", t("編織提把皮革包・白色，在墨綠背景前懸空，肩帶向上飄起", "Braided Leather Bag in white, in mid-air against an ink-green backdrop, its strap drifting upward")),
-      // second version: the strap follows the user's reference curve, Morandi sage backdrop (output/white-bag-floating-ink-green-2026-10-01/v2-strap-curve-morandi)
+    "braided-leather-bag-white": [
+      // the strap follows the user's reference curve, Morandi sage backdrop (output/white-bag-floating-ink-green-2026-10-01/v2-strap-curve-morandi)
       site("scene-white-bag-floating-morandi.webp", t("編織提把皮革包・白色，在莫蘭迪灰綠背景前懸空，肩帶畫出長弧", "Braided Leather Bag in white, in mid-air against a Morandi sage backdrop, its strap drawing a long arc"))],
   };
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.

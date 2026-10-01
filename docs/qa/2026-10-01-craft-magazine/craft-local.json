@@ -1,0 +1,1165 @@
+{
+ "base": "http://localhost:3160",
+ "report": [
+  {
+   "lang": "zh",
+   "width": 1440,
+   "stops": [
+    {
+     "y": 1558,
+     "smallsTop": 140,
+     "large0Top": 140,
+     "large1Top": 1030,
+     "headingTop": 1090,
+     "opacity": [
+      1,
+      0
+     ]
+    },
+    {
+     "y": 1848,
+     "smallsTop": 92,
+     "large0Top": -150,
+     "large1Top": 740,
+     "headingTop": 800,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2468,
+     "smallsTop": -240,
+     "large0Top": -770,
+     "large1Top": 120,
+     "headingTop": 180,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2911,
+     "smallsTop": -683,
+     "large0Top": -1213,
+     "large1Top": -71,
+     "headingTop": -263,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2952,
+     "smallsTop": -724,
+     "large0Top": -1254,
+     "large1Top": -112,
+     "headingTop": -304,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1638,
+    "w": 1440,
+    "h": 2074,
+    "top": -1314
+   },
+   "smalls": [
+    {
+     "x": 94,
+     "y": 2228,
+     "w": 192,
+     "h": 240,
+     "top": -724
+    },
+    {
+     "x": 306,
+     "y": 2228,
+     "w": 192,
+     "h": 240,
+     "top": -724
+    }
+   ],
+   "larges": [
+    {
+     "x": 730,
+     "y": 1698,
+     "w": 616,
+     "h": 770,
+     "top": -1254
+    },
+    {
+     "x": 730,
+     "y": 2840,
+     "w": 616,
+     "h": 770,
+     "top": -112
+    }
+   ],
+   "heading": {
+    "x": 94,
+    "y": 2648,
+    "w": 616,
+    "h": 97,
+    "top": -304
+   },
+   "list": {
+    "x": 306,
+    "y": 2805,
+    "w": 298,
+    "h": 618,
+    "top": -147
+   },
+   "words": {
+    "x": 94,
+    "y": 2588,
+    "w": 616,
+    "h": 1023,
+    "top": -364
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 216,
+     "shown": 192
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 216,
+     "shown": 192
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 662,
+     "shown": 616
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 662,
+     "shown": 616
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "zh",
+   "width": 1920,
+   "stops": [
+    {
+     "y": 1711,
+     "smallsTop": 140,
+     "large0Top": 140,
+     "large1Top": 1289,
+     "headingTop": 1349,
+     "opacity": [
+      1,
+      0
+     ]
+    },
+    {
+     "y": 2260,
+     "smallsTop": 96,
+     "large0Top": -409,
+     "large1Top": 740,
+     "headingTop": 800,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2880,
+     "smallsTop": -323,
+     "large0Top": -1029,
+     "large1Top": 120,
+     "headingTop": 180,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3404,
+     "smallsTop": -847,
+     "large0Top": -1553,
+     "large1Top": -329,
+     "headingTop": -344,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3454,
+     "smallsTop": -897,
+     "large0Top": -1603,
+     "large1Top": -379,
+     "headingTop": -394,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1791,
+    "w": 1920,
+    "h": 2423,
+    "top": -1663
+   },
+   "smalls": [
+    {
+     "x": 125,
+     "y": 2557,
+     "w": 258,
+     "h": 323,
+     "top": -897
+    },
+    {
+     "x": 407,
+     "y": 2557,
+     "w": 258,
+     "h": 323,
+     "top": -897
+    }
+   ],
+   "larges": [
+    {
+     "x": 972,
+     "y": 1851,
+     "w": 823,
+     "h": 1029,
+     "top": -1603
+    },
+    {
+     "x": 972,
+     "y": 3075,
+     "w": 823,
+     "h": 1029,
+     "top": -379
+    }
+   ],
+   "heading": {
+    "x": 125,
+    "y": 3060,
+    "w": 823,
+    "h": 113,
+    "top": -394
+   },
+   "list": {
+    "x": 407,
+    "y": 3233,
+    "w": 400,
+    "h": 651,
+    "top": -221
+   },
+   "words": {
+    "x": 125,
+    "y": 3000,
+    "w": 823,
+    "h": 1104,
+    "top": -454
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 288,
+     "shown": 258
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 288,
+     "shown": 258
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 883,
+     "shown": 823
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 732,
+     "shown": 823
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "zh",
+   "width": 1100,
+   "stops": [
+    {
+     "y": 1438,
+     "smallsTop": 126,
+     "large0Top": 126,
+     "large1Top": 807,
+     "headingTop": 853,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 1533,
+     "smallsTop": 87,
+     "large0Top": 31,
+     "large1Top": 712,
+     "headingTop": 758,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2125,
+     "smallsTop": -156,
+     "large0Top": -561,
+     "large1Top": 120,
+     "headingTop": 166,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2410,
+     "smallsTop": -441,
+     "large0Top": -846,
+     "large1Top": 87,
+     "headingTop": -119,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2427,
+     "smallsTop": -458,
+     "large0Top": -863,
+     "large1Top": 87,
+     "headingTop": -136,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1518,
+    "w": 1100,
+    "h": 1669,
+    "top": -909
+   },
+   "smalls": [
+    {
+     "x": 72,
+     "y": 1969,
+     "w": 147,
+     "h": 183,
+     "top": -458
+    },
+    {
+     "x": 234,
+     "y": 1969,
+     "w": 147,
+     "h": 183,
+     "top": -458
+    }
+   ],
+   "larges": [
+    {
+     "x": 558,
+     "y": 1564,
+     "w": 471,
+     "h": 589,
+     "top": -863
+    },
+    {
+     "x": 558,
+     "y": 2514,
+     "w": 471,
+     "h": 589,
+     "top": 87
+    }
+   ],
+   "heading": {
+    "x": 72,
+    "y": 2291,
+    "w": 471,
+    "h": 74,
+    "top": -136
+   },
+   "list": {
+    "x": 234,
+    "y": 2411,
+    "w": 228,
+    "h": 556,
+    "top": -16
+   },
+   "words": {
+    "x": 72,
+    "y": 2245,
+    "w": 471,
+    "h": 865,
+    "top": -182
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 165,
+     "shown": 147
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 165,
+     "shown": 147
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 506,
+     "shown": 471
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 506,
+     "shown": 471
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "zh",
+   "width": 390,
+   "stops": [
+    {
+     "y": 1498,
+     "smallsTop": 108,
+     "large0Top": 327,
+     "large1Top": 766,
+     "headingTop": 1242,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 1633,
+     "smallsTop": -27,
+     "large0Top": 192,
+     "large1Top": 631,
+     "headingTop": 1107,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2584,
+     "smallsTop": -978,
+     "large0Top": -759,
+     "large1Top": -320,
+     "headingTop": 156,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2678,
+     "smallsTop": -1072,
+     "large0Top": -853,
+     "large1Top": -414,
+     "headingTop": 62,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2673,
+     "smallsTop": -1067,
+     "large0Top": -848,
+     "large1Top": -409,
+     "headingTop": 67,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1578,
+    "w": 390,
+    "h": 1855,
+    "top": -1095
+   },
+   "smalls": [
+    {
+     "x": 24,
+     "y": 1606,
+     "w": 165,
+     "h": 206,
+     "top": -1067
+    },
+    {
+     "x": 201,
+     "y": 1606,
+     "w": 165,
+     "h": 206,
+     "top": -1067
+    }
+   ],
+   "larges": [
+    {
+     "x": 24,
+     "y": 1825,
+     "w": 342,
+     "h": 428,
+     "top": -848
+    },
+    {
+     "x": 24,
+     "y": 2264,
+     "w": 342,
+     "h": 428,
+     "top": -409
+    }
+   ],
+   "heading": {
+    "x": 24,
+    "y": 2740,
+    "w": 342,
+    "h": 65,
+    "top": 67
+   },
+   "list": {
+    "x": 24,
+    "y": 2836,
+    "w": 342,
+    "h": 541,
+    "top": 163
+   },
+   "words": {
+    "x": 24,
+    "y": 2704,
+    "w": 342,
+    "h": 674,
+    "top": 31
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 195,
+     "shown": 165
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 195,
+     "shown": 165
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 390,
+     "shown": 342
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 390,
+     "shown": 342
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "en",
+   "width": 1440,
+   "stops": [
+    {
+     "y": 1669,
+     "smallsTop": 140,
+     "large0Top": 140,
+     "large1Top": 1031,
+     "headingTop": 1091,
+     "opacity": [
+      1,
+      0
+     ]
+    },
+    {
+     "y": 1959,
+     "smallsTop": 92,
+     "large0Top": -150,
+     "large1Top": 741,
+     "headingTop": 801,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2580,
+     "smallsTop": -240,
+     "large0Top": -771,
+     "large1Top": 120,
+     "headingTop": 180,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3092,
+     "smallsTop": -752,
+     "large0Top": -1283,
+     "large1Top": -71,
+     "headingTop": -332,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3132,
+     "smallsTop": -792,
+     "large0Top": -1323,
+     "large1Top": -111,
+     "headingTop": -372,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1749,
+    "w": 1440,
+    "h": 2143,
+    "top": -1383
+   },
+   "smalls": [
+    {
+     "x": 94,
+     "y": 2340,
+     "w": 192,
+     "h": 240,
+     "top": -792
+    },
+    {
+     "x": 306,
+     "y": 2340,
+     "w": 192,
+     "h": 240,
+     "top": -792
+    }
+   ],
+   "larges": [
+    {
+     "x": 730,
+     "y": 1809,
+     "w": 616,
+     "h": 770,
+     "top": -1323
+    },
+    {
+     "x": 730,
+     "y": 3021,
+     "w": 616,
+     "h": 770,
+     "top": -111
+    }
+   ],
+   "heading": {
+    "x": 94,
+    "y": 2760,
+    "w": 616,
+    "h": 97,
+    "top": -372
+   },
+   "list": {
+    "x": 306,
+    "y": 2917,
+    "w": 298,
+    "h": 687,
+    "top": -215
+   },
+   "words": {
+    "x": 94,
+    "y": 2700,
+    "w": 616,
+    "h": 1092,
+    "top": -432
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 216,
+     "shown": 192
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 216,
+     "shown": 192
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 662,
+     "shown": 616
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 662,
+     "shown": 616
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "en",
+   "width": 1920,
+   "stops": [
+    {
+     "y": 1860,
+     "smallsTop": 140,
+     "large0Top": 140,
+     "large1Top": 1289,
+     "headingTop": 1349,
+     "opacity": [
+      1,
+      0
+     ]
+    },
+    {
+     "y": 2409,
+     "smallsTop": 96,
+     "large0Top": -409,
+     "large1Top": 740,
+     "headingTop": 800,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3029,
+     "smallsTop": -323,
+     "large0Top": -1029,
+     "large1Top": 120,
+     "headingTop": 180,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3572,
+     "smallsTop": -866,
+     "large0Top": -1572,
+     "large1Top": -329,
+     "headingTop": -363,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 3622,
+     "smallsTop": -916,
+     "large0Top": -1622,
+     "large1Top": -379,
+     "headingTop": -413,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1940,
+    "w": 1920,
+    "h": 2442,
+    "top": -1682
+   },
+   "smalls": [
+    {
+     "x": 125,
+     "y": 2706,
+     "w": 258,
+     "h": 323,
+     "top": -916
+    },
+    {
+     "x": 407,
+     "y": 2706,
+     "w": 258,
+     "h": 323,
+     "top": -916
+    }
+   ],
+   "larges": [
+    {
+     "x": 972,
+     "y": 2000,
+     "w": 823,
+     "h": 1029,
+     "top": -1622
+    },
+    {
+     "x": 972,
+     "y": 3243,
+     "w": 823,
+     "h": 1029,
+     "top": -379
+    }
+   ],
+   "heading": {
+    "x": 125,
+    "y": 3209,
+    "w": 823,
+    "h": 113,
+    "top": -413
+   },
+   "list": {
+    "x": 407,
+    "y": 3382,
+    "w": 400,
+    "h": 670,
+    "top": -240
+   },
+   "words": {
+    "x": 125,
+    "y": 3149,
+    "w": 823,
+    "h": 1123,
+    "top": -473
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 288,
+     "shown": 258
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 288,
+     "shown": 258
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 883,
+     "shown": 823
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 732,
+     "shown": 823
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "en",
+   "width": 1100,
+   "stops": [
+    {
+     "y": 1523,
+     "smallsTop": 126,
+     "large0Top": 126,
+     "large1Top": 807,
+     "headingTop": 853,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 1618,
+     "smallsTop": 87,
+     "large0Top": 31,
+     "large1Top": 712,
+     "headingTop": 758,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2210,
+     "smallsTop": -156,
+     "large0Top": -561,
+     "large1Top": 120,
+     "headingTop": 166,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2613,
+     "smallsTop": -559,
+     "large0Top": -964,
+     "large1Top": 87,
+     "headingTop": -237,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2630,
+     "smallsTop": -576,
+     "large0Top": -981,
+     "large1Top": 87,
+     "headingTop": -254,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1603,
+    "w": 1100,
+    "h": 1787,
+    "top": -1027
+   },
+   "smalls": [
+    {
+     "x": 72,
+     "y": 2054,
+     "w": 147,
+     "h": 183,
+     "top": -576
+    },
+    {
+     "x": 234,
+     "y": 2054,
+     "w": 147,
+     "h": 183,
+     "top": -576
+    }
+   ],
+   "larges": [
+    {
+     "x": 558,
+     "y": 1649,
+     "w": 471,
+     "h": 589,
+     "top": -981
+    },
+    {
+     "x": 558,
+     "y": 2717,
+     "w": 471,
+     "h": 589,
+     "top": 87
+    }
+   ],
+   "heading": {
+    "x": 72,
+    "y": 2376,
+    "w": 471,
+    "h": 74,
+    "top": -254
+   },
+   "list": {
+    "x": 234,
+    "y": 2497,
+    "w": 228,
+    "h": 673,
+    "top": -133
+   },
+   "words": {
+    "x": 72,
+    "y": 2330,
+    "w": 471,
+    "h": 983,
+    "top": -300
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 165,
+     "shown": 147
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 165,
+     "shown": 147
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 506,
+     "shown": 471
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 506,
+     "shown": 471
+    }
+   ],
+   "overflowX": false
+  },
+  {
+   "lang": "en",
+   "width": 390,
+   "stops": [
+    {
+     "y": 1644,
+     "smallsTop": 108,
+     "large0Top": 326,
+     "large1Top": 765,
+     "headingTop": 1241,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 1778,
+     "smallsTop": -26,
+     "large0Top": 192,
+     "large1Top": 631,
+     "headingTop": 1107,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2729,
+     "smallsTop": -977,
+     "large0Top": -759,
+     "large1Top": -320,
+     "headingTop": 156,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2815,
+     "smallsTop": -1063,
+     "large0Top": -845,
+     "large1Top": -406,
+     "headingTop": 70,
+     "opacity": [
+      1,
+      1
+     ]
+    },
+    {
+     "y": 2811,
+     "smallsTop": -1059,
+     "large0Top": -841,
+     "large1Top": -402,
+     "headingTop": 74,
+     "opacity": [
+      1,
+      1
+     ]
+    }
+   ],
+   "section": {
+    "x": 0,
+    "y": 1724,
+    "w": 390,
+    "h": 1847,
+    "top": -1087
+   },
+   "smalls": [
+    {
+     "x": 24,
+     "y": 1752,
+     "w": 165,
+     "h": 206,
+     "top": -1059
+    },
+    {
+     "x": 201,
+     "y": 1752,
+     "w": 165,
+     "h": 206,
+     "top": -1059
+    }
+   ],
+   "larges": [
+    {
+     "x": 24,
+     "y": 1970,
+     "w": 342,
+     "h": 428,
+     "top": -841
+    },
+    {
+     "x": 24,
+     "y": 2409,
+     "w": 342,
+     "h": 428,
+     "top": -402
+    }
+   ],
+   "heading": {
+    "x": 24,
+    "y": 2885,
+    "w": 342,
+    "h": 65,
+    "top": 74
+   },
+   "list": {
+    "x": 24,
+    "y": 2982,
+    "w": 342,
+    "h": 533,
+    "top": 171
+   },
+   "words": {
+    "x": 24,
+    "y": 2849,
+    "w": 342,
+    "h": 666,
+    "top": 38
+   },
+   "links": 4,
+   "images": [
+    {
+     "src": "craft-02-leather-cream-rolls.webp",
+     "natural": 195,
+     "shown": 165
+    },
+    {
+     "src": "craft-03-goldsmith-atelier.webp",
+     "natural": 195,
+     "shown": 165
+    },
+    {
+     "src": "craft-01-blossom-cup.webp",
+     "natural": 390,
+     "shown": 342
+    },
+    {
+     "src": "craft-04-breakfast-table.webp",
+     "natural": 390,
+     "shown": 342
+    }
+   ],
+   "overflowX": false
+  }
+ ]
+}
