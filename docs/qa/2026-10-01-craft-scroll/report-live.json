@@ -1,0 +1,521 @@
+{
+ "base": "https://charmvilla-gallery-site.vercel.app",
+ "report": [
+  {
+   "name": "zh-desktop",
+   "travel": 1485,
+   "errors": [],
+   "steps": [
+    {
+     "y": 1490,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 148,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1638,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1787,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1935,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2084,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 1,
+     "quote": "裁皮的人， 落刀前先用手讀過整張皮。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2232,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 1,
+     "quote": "裁皮的人， 落刀前先用手讀過整張皮。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2381,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2529,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2678,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2826,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2975,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 3123,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 3272,
+     "sectionTop": 1638,
+     "sectionHeight": 2385,
+     "pinTop": -149,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    }
+   ],
+   "afterDot": {
+    "y": 2516,
+    "sectionTop": 1638,
+    "sectionHeight": 2385,
+    "pinTop": 0,
+    "pinHeight": 900,
+    "active": 2,
+    "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+    "buttons": 0,
+    "overflowX": false
+   },
+   "afterDrag": {
+    "y": 2516,
+    "sectionTop": 1638,
+    "sectionHeight": 2385,
+    "pinTop": 0,
+    "pinHeight": 900,
+    "active": 2,
+    "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+    "buttons": 0,
+    "overflowX": false
+   }
+  },
+  {
+   "name": "en-desktop",
+   "travel": 1485,
+   "errors": [],
+   "steps": [
+    {
+     "y": 1601,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 148,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "The hands that fold turn",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1749,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "The hands that fold turn",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1898,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "The hands that fold turn",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2046,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 0,
+     "quote": "The hands that fold turn",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2195,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 1,
+     "quote": "The one who cuts the lea",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2343,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 1,
+     "quote": "The one who cuts the lea",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2492,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "The goldsmith will not s",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2640,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "The goldsmith will not s",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2789,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "The goldsmith will not s",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2937,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 3086,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 3234,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 3383,
+     "sectionTop": 1749,
+     "sectionHeight": 2385,
+     "pinTop": -149,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
+     "buttons": 0,
+     "overflowX": false
+    }
+   ],
+   "afterDot": {
+    "y": 2628,
+    "sectionTop": 1749,
+    "sectionHeight": 2385,
+    "pinTop": 0,
+    "pinHeight": 900,
+    "active": 2,
+    "quote": "The goldsmith will not s",
+    "buttons": 0,
+    "overflowX": false
+   },
+   "afterDrag": {
+    "y": 2628,
+    "sectionTop": 1749,
+    "sectionHeight": 2385,
+    "pinTop": 0,
+    "pinHeight": 900,
+    "active": 2,
+    "quote": "The goldsmith will not s",
+    "buttons": 0,
+    "overflowX": false
+   }
+  },
+  {
+   "name": "zh-mobile",
+   "travel": 1139,
+   "errors": [],
+   "steps": [
+    {
+     "y": 1464,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": 114,
+     "pinHeight": 870,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1578,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": 0,
+     "pinHeight": 870,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1692,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1806,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 0,
+     "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 1920,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 1,
+     "quote": "裁皮的人， 落刀前先用手讀過整張皮。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2034,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 1,
+     "quote": "裁皮的人， 落刀前先用手讀過整張皮。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2148,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 1,
+     "quote": "裁皮的人， 落刀前先用手讀過整張皮。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2261,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2375,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2489,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2603,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2717,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -26,
+     "pinHeight": 870,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2831,
+     "sectionTop": 1578,
+     "sectionHeight": 2009,
+     "pinTop": -113,
+     "pinHeight": 870,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    }
+   ],
+   "afterDot": {
+    "y": 2266,
+    "sectionTop": 1578,
+    "sectionHeight": 2009,
+    "pinTop": -26,
+    "pinHeight": 870,
+    "active": 2,
+    "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+    "buttons": 0,
+    "overflowX": false
+   },
+   "afterDrag": {
+    "y": 2266,
+    "sectionTop": 1578,
+    "sectionHeight": 2009,
+    "pinTop": -26,
+    "pinHeight": 870,
+    "active": 2,
+    "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+    "buttons": 0,
+    "overflowX": false
+   }
+  }
+ ]
+}
