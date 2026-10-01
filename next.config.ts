@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
     ...["goldfish-diamond-drop", "single-diamond-goldfish-earrings"].map(slug => ({ source: `${prefix}/products/${slug}`, destination: `${prefix}/products/diamond-goldfish-earrings`, permanent: true })),
     ...["goldfish-diamond-stud", "bezel-diamond-goldfish-earrings"].map(slug => ({ source: `${prefix}/products/${slug}`, destination: `${prefix}/products/diamond-goldfish-stud-earrings`, permanent: true })),
   ]),
-  images: { formats: ["image/avif", "image/webp"] },
+  // 90 is used by the tall product-page image, which must stay crisp (user 2026-10-01)
+  images: { formats: ["image/avif", "image/webp"], qualities: [75, 90] },
 };
 
 export default nextConfig;

@@ -15,7 +15,15 @@ export type Category = { id: CategoryId; name: string; en: string; intro: string
 export type ProductView = { label: string; image: Img };
 export type Product = {
   slug: string; category: CategoryId; name: string; english: string;
-  summary: string; description: string; image: Img; views: ProductView[];
+  summary: string; description: string;
+  /** Listing cover and first gallery view: the studio photograph on the light ground (user 2026-10-01). */
+  image: Img;
+  /** Scene shown on a listing card while it is hovered. */
+  hoverImage?: Img;
+  /** Product-page gallery: studio views on the light ground only, all 4:5. */
+  views: ProductView[];
+  /** Scene photography, laid out below the gallery like a magazine spread. */
+  scenes?: Img[];
   facts: { label: string; value: string }[];
   story: { title: string; body: string; image?: Img };
   variant?: { group: string; label: string };
@@ -170,33 +178,45 @@ const buildCatalog = (lang: Locale) => {
     const q = f ? { ...p, featuredImage: f, views: p.views.some((v) => v.image.src === f.src) ? p.views : [...p.views, { label: studioLabel, image: f }] } : p;
     return typeof m === "object" && (m.handle || m.variantId) ? { ...q, shopify: m } : q;
   };
-  // 2026-10-01 (user): listing covers on /collections/* are scene photography again (「這頁的改以情境照當封面」). The warm-grey
-  // studio renders from scripts/studio-listing.mjs stay as a 「棚拍商品照」 product view. Products whose own image is not a scene
-  // (bags, earrings, the bird cut-out) take a gallery scene from this map; the rest keep their scene image.
+  // 2026-10-01 (user, later the same day): 「所有的商品清單都用淺色背景那張為封面，hover 時才出現情境照」 and, on the product page,
+  // 「這區塊統一用淺色背景那張放不同視角的圖，其他情境照都用雜誌排版風格在下面」. So every product is split in two:
+  //   views  = studio photographs on the light warm-grey ground (scripts/studio-listing.mjs), all 4:5 — the gallery and the cover;
+  //   scenes = everything photographed in a setting — the hover image of the card and the magazine spread under the gallery.
+  // The scene that used to be the cover leads the scenes.
   const listingScene: Record<string, string> = {
     "braided-leather-bag-white": "CV-0422", "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
     "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376", "twin-goldfish-earrings": "CV-0378",
     "bird-chopstick-rest": "CV-0248",
   };
-  // 2026-10-01 (user): the white bag's cover is the over-shoulder ink-green portrait (a site file, not a gallery asset);
-  // the previous cover CV-0422 follows it as the second product view.
   const listingSceneSite: Record<string, Img> = {
     "braided-leather-bag-white": site("scene-white-bag-over-shoulder-ink-green.webp", t("編織提把皮革包・白色，肩背回眸情境，墨綠背景", "Braided Leather Bag in white, worn on the shoulder by a figure looking back, ink-green backdrop")),
   };
+  // Further studio views beside the front view: the bags' three-quarter view, the earrings' close photograph.
+  const studioExtra: Record<string, { file: string; zh: string; en: string }[]> = {
+    "braided-leather-bag-white": [{ file: "studio-braided-leather-bag-white-angle.webp", zh: "斜側面", en: "Three-quarter view" }],
+    "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle.webp", zh: "斜側面", en: "Three-quarter view" }],
+    "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle.webp", zh: "斜側面", en: "Three-quarter view" }],
+    "pearl-chain-goldfish-earrings": [{ file: "jewelry-pearl-chain.webp", zh: "近照", en: "Close view" }],
+    "diamond-goldfish-earrings": [{ file: "jewelry-diamond.webp", zh: "近照", en: "Close view" }],
+    "twin-goldfish-earrings": [{ file: "jewelry-twin.webp", zh: "近照", en: "Close view" }],
+    "raw-gold-goldfish-earrings": [{ file: "jewelry-raw-gold.webp", zh: "近照", en: "Close view" }],
+  };
+  // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
+  const studioSources = new Set(["CV-0398", "CV-0400", "CV-0419", "CV-0420", "CV-0399", "CV-0397", "CV-0256"].map((id) => `/media/gallery/${id}.webp`));
+  const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {
     const file = (studioListing as Record<string, string>)[p.slug];
     const studio = file ? site(file, studioAlt(p.name)) : undefined;
     const sceneId = listingScene[p.slug];
-    const siteScene = listingSceneSite[p.slug];
-    const image = siteScene ?? (sceneId ? gallery(sceneId, t(`${p.name}・情境照`, `${p.name}, in context`)) : (p.category === "jewelry" && studio ? studio : p.image));
-    let views = p.views;
-    if (!views.some((v) => v.image.src === image.src)) views = [{ label: t("情境照", "In context"), image }, ...views];
-    if (siteScene && sceneId) {
-      const prev = `/media/gallery/${sceneId}.webp`;
-      views = [views[0], ...views.filter((v) => v.image.src === prev), ...views.slice(1).filter((v) => v.image.src !== prev)];
-    }
-    if (studio && !views.some((v) => v.image.src === studio.src)) views = [...views, { label: studioLabel, image: studio }];
-    return { ...p, image, views };
+    const lead = [listingSceneSite[p.slug], sceneId ? gallery(sceneId, t(`${p.name}・情境照`, `${p.name}, in context`)) : undefined].filter((x): x is Img => Boolean(x));
+    // A product without a studio photograph yet (the diamond stud) keeps its own first image as cover and only view.
+    const views: ProductView[] = studio
+      ? [{ label: t("正面", "Front view"), image: studio }, ...(studioExtra[p.slug] ?? []).map((v) => ({ label: t(v.zh, v.en), image: site(v.file, t(`${p.name}・${v.zh}`, `${p.name}, ${v.en.toLowerCase()}`)) }))]
+      : p.views.slice(0, 1);
+    const shown = new Set(views.map((v) => v.image.src));
+    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : [])]
+      .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && list.findIndex((x) => x.src === img.src) === i);
+    return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };
   const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   return { categories, products, bagProducts, jewelryProducts, teaProducts, teawareProducts };

@@ -1,15 +1,11 @@
 "use client";
-import { useState } from "react";
 import { useCart } from "./CartProvider";
 import type { Product } from "@/data/catalog";
 import { useT } from "@/i18n/LocaleProvider";
 
-export default function AddToCart({ product, compact = false }: { product: Product; compact?: boolean }) {
-  const cart = useCart(); const [qty, setQty] = useState(1); const { t } = useT();
-  return (
-    <div className={`add-to-cart ${compact ? "add-to-cart--compact" : ""}`}>
-      {!compact && <div className="cart-qty" role="group" aria-label={t("數量", "Quantity")}><button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))} aria-label={t("減少數量", "Decrease quantity")}>−</button><span>{qty}</span><button type="button" onClick={() => setQty((q) => q + 1)} aria-label={t("增加數量", "Increase quantity")}>+</button></div>}
-      <button type="button" className="catalog-button tc" onClick={() => cart.add(product, compact ? 1 : qty)} disabled={cart.busy}>{t("加入購物車", "Add to bag")}</button>
-    </div>
-  );
+// One full-width ink button, after the reference's FIND RETAILERS (user 2026-10-01: 「做成加入購物車的按鈕，原本的相同功能的設計
+// 拿掉」). The quantity stepper and the bar docked to the page bottom are gone; quantity is set in the bag drawer.
+export default function AddToCart({ product }: { product: Product }) {
+  const cart = useCart(); const { t } = useT();
+  return <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1)} disabled={cart.busy}>{t("加入購物車", "Add to bag")}</button>;
 }

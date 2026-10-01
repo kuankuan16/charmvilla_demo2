@@ -155,6 +155,11 @@ async function main() {
   for (const [id, slug] of [['CV-0398', 'braided-leather-bag-white'], ['CV-0419', 'braided-leather-bag-blue'], ['CV-0399', 'braided-leather-bag-pink']]) {
     const file = `studio-${slug}.webp`; emit(slug, file, await shiftBag(id, path.join(outDir, file)));
   }
+  // three-quarter views of the bags, shifted the same way, for the product-page gallery (2026-10-01: the gallery shows studio views only)
+  const angles = {};
+  for (const [id, slug] of [['CV-0400', 'braided-leather-bag-white'], ['CV-0420', 'braided-leather-bag-blue'], ['CV-0397', 'braided-leather-bag-pink']]) {
+    const file = `studio-${slug}-angle.webp`; angles[slug] = file; console.log(slug.padEnd(34), file.padEnd(46), JSON.stringify(await shiftBag(id, path.join(outDir, file))));
+  }
   // jewelry: one shared true scale (the four series were photographed together); pearl chain = 60% of the frame height
   const chainH = jewelryBoxes['pearl-chain-goldfish-earrings'][3] - jewelryBoxes['pearl-chain-goldfish-earrings'][1];
   const scale = (0.60 * H) / chainH;
@@ -194,7 +199,7 @@ async function main() {
   fs.writeFileSync(manifestPath, JSON.stringify({ ...existing, ...manifest }, null, 2) + '\n');
   // dims manifest
   const dimsPath = path.join(root, 'src/data/images.json'); const dims = JSON.parse(fs.readFileSync(dimsPath, 'utf8'));
-  for (const file of Object.values(manifest)) { const m = await sharp(path.join(outDir, file)).metadata(); dims[`/media/site/${file}`] = [m.width, m.height]; }
+  for (const file of [...Object.values(manifest), ...Object.values(angles)]) { const m = await sharp(path.join(outDir, file)).metadata(); dims[`/media/site/${file}`] = [m.width, m.height]; }
   dims['/media/site/studio-backdrop.webp'] = [W, H];
   fs.writeFileSync(dimsPath, JSON.stringify(dims, null, 2) + '\n');
   fs.writeFileSync(path.join(root, 'docs/qa/2026-09-30-studio-listing.json'), JSON.stringify({ canvas: [W, H], shift: SHIFT, floor: FLOOR, jewelryScale: +scale.toFixed(4), report }, null, 2) + '\n');

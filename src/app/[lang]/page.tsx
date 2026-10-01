@@ -6,7 +6,6 @@ import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
 import CraftMoments from "@/components/sections/CraftMoments";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
-import Shown from "@/components/sections/Shown";
 import Partners from "@/components/sections/Partners";
 import Visit from "@/components/sections/Visit";
 import Footer from "@/components/sections/Footer";
@@ -30,7 +29,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <CraftMoments />
         </div>
         <FeaturedProducts lang={lang} />
-        <Shown lang={lang} />
+        {/* 2026-10-01 (user: 「刪掉這屏」): the SHOWN AT screen is off the homepage; the component and its copy stay in the repo. */}
         <Partners lang={lang} />
         <Visit />
       </main>

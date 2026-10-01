@@ -1,0 +1,1035 @@
+{
+  "1440x900": {
+    "thumbs": [
+      [
+        963,
+        128,
+        80,
+        96
+      ],
+      [
+        1051,
+        128,
+        80,
+        96
+      ],
+      [
+        1139,
+        128,
+        80,
+        96
+      ],
+      [
+        1227,
+        128,
+        80,
+        96
+      ]
+    ],
+    "thumbGap": "8px",
+    "thumbImgFit": {
+      "objectFit": "cover",
+      "objectPosition": "50% 50%"
+    },
+    "big": {
+      "box": [
+        30,
+        56,
+        680,
+        814
+      ],
+      "natural": [
+        1440,
+        1440
+      ],
+      "src": "ae0dda3498579dc27e9ee2bbb67df0c5c176a4a7-3000x3000.jpg?w=1600&fm=webp&q=85&fit=crop",
+      "fit": "cover"
+    },
+    "h1": {
+      "box": [
+        963,
+        477,
+        447,
+        28
+      ],
+      "fontSize": "24px",
+      "lineHeight": "27.84px",
+      "fontWeight": "300",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "body": {
+      "backgroundColor": "rgb(250, 248, 244)",
+      "color": "rgb(22, 22, 20)",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "textEls": [
+      {
+        "tag": "H1",
+        "text": "HOLGER / 1,5 Seater",
+        "box": [
+          963,
+          477,
+          447,
+          28
+        ],
+        "fontSize": "24px",
+        "lineHeight": "27.84px",
+        "fontWeight": "300",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "The HOLGER 1.5 Seater brings sculpted el",
+        "box": [
+          963,
+          525,
+          447,
+          83
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED SEAT",
+        "box": [
+          963,
+          639,
+          71,
+          15
+        ],
+        "fontSize": "13px",
+        "lineHeight": "15.08px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED BACK",
+        "box": [
+          963,
+          676,
+          75,
+          15
+        ],
+        "fontSize": "13px",
+        "lineHeight": "15.08px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "Handcrafted in Europe.",
+        "box": [
+          963,
+          722,
+          447,
+          21
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "A",
+        "text": "FIND RETAILERS",
+        "box": [
+          963,
+          782,
+          447,
+          41
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(250, 248, 244)",
+        "backgroundColor": "rgb(22, 22, 20)",
+        "borderTopColor": "rgb(250, 248, 244)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "A",
+        "text": "DOWNLOAD PRODUCT SHEET",
+        "box": [
+          963,
+          833,
+          447,
+          43
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "1px",
+        "textTransform": "uppercase"
+      }
+    ],
+    "activeIndicator": [
+      {
+        "cls": "hidden lg:flex absolute pointer-events-none w-20 h-24 after:absolute after:-inset-1 after:border after:translate-x-(--active-position-x) after:translate-y-(--active-position-y) after:transition-transform after:ease-custom-in-out",
+        "box": [
+          963,
+          128,
+          80,
+          96
+        ],
+        "after": {
+          "w": "88px",
+          "h": "104px",
+          "border": "1px solid rgb(22, 22, 20)",
+          "outline": "rgb(22, 22, 20) none 3px",
+          "inset": "-4px",
+          "transform": "none"
+        }
+      }
+    ]
+  },
+  "1778x1005": {
+    "thumbs": [
+      [
+        1189,
+        140,
+        88,
+        105
+      ],
+      [
+        1285,
+        140,
+        88,
+        105
+      ],
+      [
+        1381,
+        140,
+        88,
+        105
+      ],
+      [
+        1478,
+        140,
+        88,
+        105
+      ]
+    ],
+    "thumbGap": "8.75111px",
+    "thumbImgFit": {
+      "objectFit": "cover",
+      "objectPosition": "50% 50%"
+    },
+    "big": {
+      "box": [
+        33,
+        61,
+        845,
+        911
+      ],
+      "natural": [
+        1778,
+        1778
+      ],
+      "src": "ae0dda3498579dc27e9ee2bbb67df0c5c176a4a7-3000x3000.jpg?w=2400&fm=webp&q=85&fit=crop",
+      "fit": "cover"
+    },
+    "h1": {
+      "box": [
+        1189,
+        543,
+        556,
+        30
+      ],
+      "fontSize": "26.2533px",
+      "lineHeight": "30.4539px",
+      "fontWeight": "300",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "body": {
+      "backgroundColor": "rgb(250, 248, 244)",
+      "color": "rgb(22, 22, 20)",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "textEls": [
+      {
+        "tag": "H1",
+        "text": "HOLGER / 1,5 Seater",
+        "box": [
+          1189,
+          543,
+          556,
+          30
+        ],
+        "fontSize": "26.2533px",
+        "lineHeight": "30.4539px",
+        "fontWeight": "300",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "The HOLGER 1.5 Seater brings sculpted el",
+        "box": [
+          1189,
+          596,
+          556,
+          91
+        ],
+        "fontSize": "17.5022px",
+        "lineHeight": "22.7529px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED SEAT",
+        "box": [
+          1189,
+          720,
+          78,
+          16
+        ],
+        "fontSize": "14.2206px",
+        "lineHeight": "16.4958px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED BACK",
+        "box": [
+          1189,
+          760,
+          82,
+          16
+        ],
+        "fontSize": "14.2206px",
+        "lineHeight": "16.4958px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "Handcrafted in Europe.",
+        "box": [
+          1189,
+          810,
+          556,
+          23
+        ],
+        "fontSize": "17.5022px",
+        "lineHeight": "22.7529px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "A",
+        "text": "FIND RETAILERS",
+        "box": [
+          1189,
+          877,
+          556,
+          45
+        ],
+        "fontSize": "17.5022px",
+        "lineHeight": "22.7529px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(250, 248, 244)",
+        "backgroundColor": "rgb(22, 22, 20)",
+        "borderTopColor": "rgb(250, 248, 244)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "A",
+        "text": "DOWNLOAD PRODUCT SHEET",
+        "box": [
+          1189,
+          932,
+          556,
+          47
+        ],
+        "fontSize": "17.5022px",
+        "lineHeight": "22.7529px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "1px",
+        "textTransform": "uppercase"
+      }
+    ],
+    "activeIndicator": [
+      {
+        "cls": "hidden lg:flex absolute pointer-events-none w-20 h-24 after:absolute after:-inset-1 after:border after:translate-x-(--active-position-x) after:translate-y-(--active-position-y) after:transition-transform after:ease-custom-in-out",
+        "box": [
+          1189,
+          140,
+          88,
+          105
+        ],
+        "after": {
+          "w": "96.25px",
+          "h": "113.75px",
+          "border": "1px solid rgb(22, 22, 20)",
+          "outline": "rgb(22, 22, 20) none 3px",
+          "inset": "-4.37556px",
+          "transform": "none"
+        }
+      }
+    ]
+  },
+  "1920x1080": {
+    "thumbs": [
+      [
+        1284,
+        145,
+        91,
+        109
+      ],
+      [
+        1383,
+        145,
+        91,
+        109
+      ],
+      [
+        1483,
+        145,
+        91,
+        109
+      ],
+      [
+        1583,
+        145,
+        91,
+        109
+      ]
+    ],
+    "thumbGap": "9.06667px",
+    "thumbImgFit": {
+      "objectFit": "cover",
+      "objectPosition": "50% 50%"
+    },
+    "big": {
+      "box": [
+        34,
+        63,
+        915,
+        983
+      ],
+      "natural": [
+        1920,
+        1920
+      ],
+      "src": "ae0dda3498579dc27e9ee2bbb67df0c5c176a4a7-3000x3000.jpg?w=2400&fm=webp&q=85&fit=crop",
+      "fit": "cover"
+    },
+    "h1": {
+      "box": [
+        1284,
+        602,
+        602,
+        32
+      ],
+      "fontSize": "27.2px",
+      "lineHeight": "31.552px",
+      "fontWeight": "300",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "body": {
+      "backgroundColor": "rgb(250, 248, 244)",
+      "color": "rgb(22, 22, 20)",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "textEls": [
+      {
+        "tag": "H1",
+        "text": "HOLGER / 1,5 Seater",
+        "box": [
+          1284,
+          602,
+          602,
+          32
+        ],
+        "fontSize": "27.2px",
+        "lineHeight": "31.552px",
+        "fontWeight": "300",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "The HOLGER 1.5 Seater brings sculpted el",
+        "box": [
+          1284,
+          656,
+          602,
+          94
+        ],
+        "fontSize": "18.1333px",
+        "lineHeight": "23.5733px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED SEAT",
+        "box": [
+          1284,
+          785,
+          81,
+          17
+        ],
+        "fontSize": "14.7333px",
+        "lineHeight": "17.0907px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED BACK",
+        "box": [
+          1284,
+          826,
+          85,
+          17
+        ],
+        "fontSize": "14.7333px",
+        "lineHeight": "17.0907px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "Handcrafted in Europe.",
+        "box": [
+          1284,
+          878,
+          602,
+          24
+        ],
+        "fontSize": "18.1333px",
+        "lineHeight": "23.5733px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "A",
+        "text": "FIND RETAILERS",
+        "box": [
+          1284,
+          947,
+          602,
+          46
+        ],
+        "fontSize": "18.1333px",
+        "lineHeight": "23.5733px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(250, 248, 244)",
+        "backgroundColor": "rgb(22, 22, 20)",
+        "borderTopColor": "rgb(250, 248, 244)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "A",
+        "text": "DOWNLOAD PRODUCT SHEET",
+        "box": [
+          1284,
+          1005,
+          602,
+          48
+        ],
+        "fontSize": "18.1333px",
+        "lineHeight": "23.5733px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "1px",
+        "textTransform": "uppercase"
+      }
+    ],
+    "activeIndicator": [
+      {
+        "cls": "hidden lg:flex absolute pointer-events-none w-20 h-24 after:absolute after:-inset-1 after:border after:translate-x-(--active-position-x) after:translate-y-(--active-position-y) after:transition-transform after:ease-custom-in-out",
+        "box": [
+          1284,
+          145,
+          91,
+          109
+        ],
+        "after": {
+          "w": "99.7188px",
+          "h": "117.859px",
+          "border": "1px solid rgb(22, 22, 20)",
+          "outline": "rgb(22, 22, 20) none 3px",
+          "inset": "-4.53333px",
+          "transform": "none"
+        }
+      }
+    ]
+  },
+  "1280x720": {
+    "thumbs": [
+      [
+        857,
+        128,
+        80,
+        96
+      ],
+      [
+        945,
+        128,
+        80,
+        96
+      ],
+      [
+        1033,
+        128,
+        80,
+        96
+      ],
+      [
+        1121,
+        128,
+        80,
+        96
+      ]
+    ],
+    "thumbGap": "8px",
+    "thumbImgFit": {
+      "objectFit": "cover",
+      "objectPosition": "50% 50%"
+    },
+    "big": {
+      "box": [
+        30,
+        56,
+        600,
+        634
+      ],
+      "natural": [
+        1280,
+        1280
+      ],
+      "src": "ae0dda3498579dc27e9ee2bbb67df0c5c176a4a7-3000x3000.jpg?w=1600&fm=webp&q=85&fit=crop",
+      "fit": "cover"
+    },
+    "h1": {
+      "box": [
+        857,
+        277,
+        393,
+        28
+      ],
+      "fontSize": "24px",
+      "lineHeight": "27.84px",
+      "fontWeight": "300",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "body": {
+      "backgroundColor": "rgb(250, 248, 244)",
+      "color": "rgb(22, 22, 20)",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "textEls": [
+      {
+        "tag": "H1",
+        "text": "HOLGER / 1,5 Seater",
+        "box": [
+          857,
+          277,
+          393,
+          28
+        ],
+        "fontSize": "24px",
+        "lineHeight": "27.84px",
+        "fontWeight": "300",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "The HOLGER 1.5 Seater brings sculpted el",
+        "box": [
+          857,
+          324,
+          393,
+          104
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED SEAT",
+        "box": [
+          857,
+          459,
+          71,
+          15
+        ],
+        "fontSize": "13px",
+        "lineHeight": "15.08px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED BACK",
+        "box": [
+          857,
+          496,
+          75,
+          15
+        ],
+        "fontSize": "13px",
+        "lineHeight": "15.08px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "Handcrafted in Europe.",
+        "box": [
+          857,
+          542,
+          393,
+          21
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "A",
+        "text": "FIND RETAILERS",
+        "box": [
+          857,
+          602,
+          393,
+          41
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(250, 248, 244)",
+        "backgroundColor": "rgb(22, 22, 20)",
+        "borderTopColor": "rgb(250, 248, 244)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "A",
+        "text": "DOWNLOAD PRODUCT SHEET",
+        "box": [
+          857,
+          653,
+          393,
+          43
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "1px",
+        "textTransform": "uppercase"
+      }
+    ],
+    "activeIndicator": [
+      {
+        "cls": "hidden lg:flex absolute pointer-events-none w-20 h-24 after:absolute after:-inset-1 after:border after:translate-x-(--active-position-x) after:translate-y-(--active-position-y) after:transition-transform after:ease-custom-in-out",
+        "box": [
+          857,
+          128,
+          80,
+          96
+        ],
+        "after": {
+          "w": "88px",
+          "h": "104px",
+          "border": "1px solid rgb(22, 22, 20)",
+          "outline": "rgb(22, 22, 20) none 3px",
+          "inset": "-4px",
+          "transform": "none"
+        }
+      }
+    ]
+  },
+  "390x844": {
+    "thumbs": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "thumbGap": "8px",
+    "thumbImgFit": {
+      "objectFit": "cover",
+      "objectPosition": "50% 50%"
+    },
+    "big": {
+      "box": [
+        20,
+        56,
+        335,
+        482
+      ],
+      "natural": [
+        390,
+        390
+      ],
+      "src": "ae0dda3498579dc27e9ee2bbb67df0c5c176a4a7-3000x3000.jpg?w=800&fm=webp&q=85&fit=crop",
+      "fit": "cover"
+    },
+    "h1": {
+      "box": [
+        20,
+        578,
+        335,
+        28
+      ],
+      "fontSize": "24px",
+      "lineHeight": "27.84px",
+      "fontWeight": "300",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "body": {
+      "backgroundColor": "rgb(250, 248, 244)",
+      "color": "rgb(22, 22, 20)",
+      "fontFamily": "\"ABC Arizona Flare\", serif"
+    },
+    "textEls": [
+      {
+        "tag": "H1",
+        "text": "HOLGER / 1,5 Seater",
+        "box": [
+          20,
+          578,
+          335,
+          28
+        ],
+        "fontSize": "24px",
+        "lineHeight": "27.84px",
+        "fontWeight": "300",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "The HOLGER 1.5 Seater brings sculpted el",
+        "box": [
+          20,
+          626,
+          335,
+          125
+        ],
+        "fontSize": "16px",
+        "lineHeight": "20.8px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "none"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED SEAT",
+        "box": [
+          20,
+          782,
+          71,
+          15
+        ],
+        "fontSize": "13px",
+        "lineHeight": "15.08px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      },
+      {
+        "tag": "P",
+        "text": "FIXED BACK",
+        "box": [
+          20,
+          818,
+          75,
+          15
+        ],
+        "fontSize": "13px",
+        "lineHeight": "15.08px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "color": "rgb(22, 22, 20)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(22, 22, 20)",
+        "borderTopWidth": "0px",
+        "textTransform": "uppercase"
+      }
+    ],
+    "activeIndicator": [
+      {
+        "cls": "hidden lg:flex absolute pointer-events-none w-20 h-24 after:absolute after:-inset-1 after:border after:translate-x-(--active-position-x) after:translate-y-(--active-position-y) after:transition-transform after:ease-custom-in-out",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "after": {
+          "w": "auto",
+          "h": "auto",
+          "border": "1px solid rgb(22, 22, 20)",
+          "outline": "rgb(22, 22, 20) none 3px",
+          "inset": "-4px",
+          "transform": "none"
+        }
+      }
+    ]
+  }
+}
