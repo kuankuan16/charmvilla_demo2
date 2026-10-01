@@ -191,15 +191,23 @@ const buildCatalog = (lang: Locale) => {
   const listingSceneSite: Record<string, Img> = {
     "braided-leather-bag-white": site("scene-white-bag-over-shoulder-ink-green.webp", t("編織提把皮革包・白色，肩背回眸情境，墨綠背景", "Braided Leather Bag in white, worn on the shoulder by a figure looking back, ink-green backdrop")),
   };
+  // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
+  // they lead the scenes of the pieces they show.
+  const woodenSofa = site("scene-wooden-tray-table-sofa.webp", t("梅花形木盒、雲朵杯墊與銀杏茶匙，放在沙發旁的黑色托盤邊几上", "A plum-blossom wooden box, a cloud-shaped coaster and a ginkgo teaspoon on a black tray table beside a sofa"));
+  const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a bird-shaped rest beside a cloud-shaped coaster, close view of a black tray table"));
+  const sceneLead: Record<string, Img[]> = {
+    "wooden-coaster-teaspoon": [woodenSofa, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenSofa],
+    "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
+  };
   // Further studio views beside the front view: the bags' three-quarter view, the earrings' close photograph.
-  const studioExtra: Record<string, { file: string; zh: string; en: string }[]> = {
-    "braided-leather-bag-white": [{ file: "studio-braided-leather-bag-white-angle.webp", zh: "斜側面", en: "Three-quarter view" }],
-    "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle.webp", zh: "斜側面", en: "Three-quarter view" }],
-    "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle.webp", zh: "斜側面", en: "Three-quarter view" }],
-    "pearl-chain-goldfish-earrings": [{ file: "jewelry-pearl-chain.webp", zh: "近照", en: "Close view" }],
-    "diamond-goldfish-earrings": [{ file: "jewelry-diamond.webp", zh: "近照", en: "Close view" }],
-    "twin-goldfish-earrings": [{ file: "jewelry-twin.webp", zh: "近照", en: "Close view" }],
-    "raw-gold-goldfish-earrings": [{ file: "jewelry-raw-gold.webp", zh: "近照", en: "Close view" }],
+  const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string }[]> = {
+    "braided-leather-bag-white": [{ file: "studio-braided-leather-bag-white-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
+    "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
+    "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
+    "pearl-chain-goldfish-earrings": [{ file: "jewelry-pearl-chain.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
+    "diamond-goldfish-earrings": [{ file: "jewelry-diamond.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
+    "twin-goldfish-earrings": [{ file: "jewelry-twin.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
+    "raw-gold-goldfish-earrings": [{ file: "jewelry-raw-gold.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
   };
   // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
   const studioSources = new Set(["CV-0398", "CV-0400", "CV-0419", "CV-0420", "CV-0399", "CV-0397", "CV-0256"].map((id) => `/media/gallery/${id}.webp`));
@@ -208,13 +216,14 @@ const buildCatalog = (lang: Locale) => {
     const file = (studioListing as Record<string, string>)[p.slug];
     const studio = file ? site(file, studioAlt(p.name)) : undefined;
     const sceneId = listingScene[p.slug];
-    const lead = [listingSceneSite[p.slug], sceneId ? gallery(sceneId, t(`${p.name}・情境照`, `${p.name}, in context`)) : undefined].filter((x): x is Img => Boolean(x));
+    const lead = [...(p.slug === "bird-chopstick-rest" ? [] : sceneLead[p.slug] ?? []), listingSceneSite[p.slug], sceneId ? gallery(sceneId, t(`${p.name}・情境照`, `${p.name}, in context`)) : undefined].filter((x): x is Img => Boolean(x));
     // A product without a studio photograph yet (the diamond stud) keeps its own first image as cover and only view.
     const views: ProductView[] = studio
-      ? [{ label: t("正面", "Front view"), image: studio }, ...(studioExtra[p.slug] ?? []).map((v) => ({ label: t(v.zh, v.en), image: site(v.file, t(`${p.name}・${v.zh}`, `${p.name}, ${v.en.toLowerCase()}`)) }))]
+      ? [{ label: t("正面", "Front view"), image: studio }, ...(studioExtra[p.slug] ?? []).map((v) => ({ label: t(v.zh, v.en), image: site(v.file, `${p.name}${t("・", ", ")}${t(v.zh, v.enAlt)}`) }))]
       : p.views.slice(0, 1);
     const shown = new Set(views.map((v) => v.image.src));
-    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : [])]
+    // the bird rest keeps its own photograph first; the new interior follows it
+    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] : [])]
       .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && list.findIndex((x) => x.src === img.src) === i);
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };

@@ -27,7 +27,7 @@ export default function CartDrawer() {
                   <div className="cart-line-image">{l.image && <img src={l.image.src} alt={l.image.alt} />}</div>
                   <div className="cart-line-body">
                     <p className="tc cart-line-name">{l.slug ? <Link href={productHref(l.slug, lang)} onClick={() => cart.setOpen(false)}>{l.name}</Link> : l.name}</p>
-                    <p className="cart-line-price">{cart.formatPrice(l.unitAmount, l.currency)}</p>
+                    <p className="cart-line-price">{l.onRequest ? t("價格洽詢", "Price on request") : cart.formatPrice(l.unitAmount, l.currency)}</p>
                     <div className="cart-line-tools">
                       <div className="cart-qty" role="group" aria-label={t("數量", "Quantity")}>
                         <button type="button" onClick={() => cart.update(l.key, l.quantity - 1)} disabled={cart.busy || l.quantity <= 1} aria-label={t("減少數量", "Decrease quantity")}>−</button>

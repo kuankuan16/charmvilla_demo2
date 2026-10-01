@@ -5,45 +5,45 @@
   "failures": 0,
   "stageSizes": {
    "1440x900": [
-    "616x798@94,72"
+    "616x729@94,72"
    ],
    "1280x720": [
-    "548x618@83,72"
+    "548x569@83,72"
    ],
    "1920x1080": [
-    "823x978@125,72"
+    "823x889@125,72"
    ]
   },
   "thumbSizes": [
    "1440x900:80x96",
-   "1280x720:60x72",
+   "1280x720:56x67",
    "1920x1080:100x120"
   ],
   "errors": [],
   "cards": [
    {
     "slug": "braided-leather-bag-white",
-    "cover": "studio-braided-leather-bag-white.webp",
+    "cover": "studio-braided-leather-bag-white-hd.webp",
     "hover": "scene-white-bag-over-shoulder-ink-green.webp"
    },
    {
     "slug": "braided-leather-bag-blue",
-    "cover": "studio-braided-leather-bag-blue.webp",
+    "cover": "studio-braided-leather-bag-blue-hd.webp",
     "hover": "CV-0423.webp"
    },
    {
     "slug": "braided-leather-bag-pink",
-    "cover": "studio-braided-leather-bag-pink.webp",
+    "cover": "studio-braided-leather-bag-pink-hd.webp",
     "hover": "CV-0424.webp"
    },
    {
     "slug": "pearl-chain-goldfish-earrings",
-    "cover": "studio-pearl-chain-goldfish-earrings.webp",
+    "cover": "studio-pearl-chain-goldfish-earrings-hd.webp",
     "hover": "CV-0377.webp"
    },
    {
     "slug": "diamond-goldfish-earrings",
-    "cover": "studio-diamond-goldfish-earrings.webp",
+    "cover": "studio-diamond-goldfish-earrings-hd.webp",
     "hover": "CV-0372.webp"
    },
    {
@@ -53,133 +53,133 @@
    },
    {
     "slug": "twin-goldfish-earrings",
-    "cover": "studio-twin-goldfish-earrings.webp",
+    "cover": "studio-twin-goldfish-earrings-hd.webp",
     "hover": "CV-0378.webp"
    },
    {
     "slug": "raw-gold-goldfish-earrings",
-    "cover": "studio-raw-gold-goldfish-earrings.webp",
+    "cover": "studio-raw-gold-goldfish-earrings-hd.webp",
     "hover": null
    },
    {
     "slug": "christmas-edition-stocking",
-    "cover": "studio-christmas-edition-stocking.webp",
+    "cover": "studio-christmas-edition-stocking-hd.webp",
     "hover": "xmas-stocking-red.webp"
    },
    {
     "slug": "christmas-edition-candy-cane",
-    "cover": "studio-christmas-edition-candy-cane.webp",
+    "cover": "studio-christmas-edition-candy-cane-hd.webp",
     "hover": "xmas-candycane-red.webp"
    },
    {
     "slug": "reunion-paper-gift-box",
-    "cover": "studio-reunion-paper-gift-box.webp",
+    "cover": "studio-reunion-paper-gift-box-hd.webp",
     "hover": "CV-0348.webp"
    },
    {
     "slug": "reunion-paulownia-gift-box",
-    "cover": "studio-reunion-paulownia-gift-box.webp",
+    "cover": "studio-reunion-paulownia-gift-box-hd.webp",
     "hover": "CV-0350.webp"
    },
    {
     "slug": "year-of-plenty-gift-box",
-    "cover": "studio-year-of-plenty-gift-box.webp",
+    "cover": "studio-year-of-plenty-gift-box-hd.webp",
     "hover": "CV-0356.webp"
    },
    {
     "slug": "blossoming-prosperity-gift-box",
-    "cover": "studio-blossoming-prosperity-gift-box.webp",
+    "cover": "studio-blossoming-prosperity-gift-box-hd.webp",
     "hover": "scene-blossoming-prosperity-gift-box.webp"
    },
    {
     "slug": "spring-blossoms-gift-box",
-    "cover": "studio-spring-blossoms-gift-box.webp",
+    "cover": "studio-spring-blossoms-gift-box-hd.webp",
     "hover": "scene-spring-blossoms-gift-box.webp"
    },
    {
     "slug": "kyoto-gift-box",
-    "cover": "studio-kyoto-gift-box.webp",
+    "cover": "studio-kyoto-gift-box-hd.webp",
     "hover": "journal-320.webp"
    },
    {
     "slug": "heart-gift-box",
-    "cover": "studio-heart-gift-box.webp",
+    "cover": "studio-heart-gift-box-hd.webp",
     "hover": "scene-heart-gift-box.webp"
    },
    {
     "slug": "fruit-infusion-gift-box",
-    "cover": "studio-fruit-infusion-gift-box.webp",
+    "cover": "studio-fruit-infusion-gift-box-hd.webp",
     "hover": "scene-fruit-infusion-gift-box.webp"
    },
    {
     "slug": "rose-encounter-gift-box",
-    "cover": "studio-rose-encounter-gift-box.webp",
+    "cover": "studio-rose-encounter-gift-box-hd.webp",
     "hover": "scene-rose-encounter-gift-box.webp"
    },
    {
     "slug": "tea-to-share-gift-box",
-    "cover": "studio-tea-to-share-gift-box.webp",
+    "cover": "studio-tea-to-share-gift-box-hd.webp",
     "hover": "scene-tea-to-share-gift-box.webp"
    },
    {
     "slug": "spring-dawn-gift-box",
-    "cover": "studio-spring-dawn-gift-box.webp",
+    "cover": "studio-spring-dawn-gift-box-hd.webp",
     "hover": "CV-0040.webp"
    },
    {
     "slug": "winter-blossom-gift-box",
-    "cover": "studio-winter-blossom-gift-box.webp",
+    "cover": "studio-winter-blossom-gift-box-hd.webp",
     "hover": "CV-0041.webp"
    },
    {
     "slug": "orchid-gift-box",
-    "cover": "studio-orchid-gift-box.webp",
+    "cover": "studio-orchid-gift-box-hd.webp",
     "hover": "scene-orchid-gift-box.webp"
    },
    {
     "slug": "purple-butterfly-gift-box",
-    "cover": "studio-purple-butterfly-gift-box.webp",
+    "cover": "studio-purple-butterfly-gift-box-hd.webp",
     "hover": "scene-purple-butterfly-gift-box.webp"
    },
    {
     "slug": "small-moon-tea-gift-box",
-    "cover": "studio-small-moon-tea-gift-box.webp",
+    "cover": "studio-small-moon-tea-gift-box-hd.webp",
     "hover": "scene-small-moon-tea-gift-box.webp"
    },
    {
     "slug": "full-moon-tea-gift-box",
-    "cover": "studio-full-moon-tea-gift-box.webp",
+    "cover": "studio-full-moon-tea-gift-box-hd.webp",
     "hover": "CV-0357.webp"
    },
    {
     "slug": "prosperity-dessert-stand",
-    "cover": "studio-prosperity-dessert-stand.webp",
+    "cover": "studio-prosperity-dessert-stand-hd.webp",
     "hover": "CV-0068.webp"
    },
    {
     "slug": "prosperity-stand-gift-box",
-    "cover": "studio-prosperity-stand-gift-box.webp",
+    "cover": "studio-prosperity-stand-gift-box-hd.webp",
     "hover": "CV-0121.webp"
    },
    {
     "slug": "wooden-coaster-teaspoon",
     "cover": "studio-wooden-coaster-teaspoon.webp",
-    "hover": "CV-0232.webp"
+    "hover": "scene-wooden-tray-table-sofa.webp"
    },
    {
     "slug": "bird-chopstick-rest",
-    "cover": "studio-bird-chopstick-rest.webp",
+    "cover": "studio-bird-chopstick-rest-hd.webp",
     "hover": "CV-0248.webp"
    },
    {
     "slug": "ginkgo-teaspoon-gift-box",
-    "cover": "studio-ginkgo-teaspoon-gift-box.webp",
-    "hover": "CV-0231.webp"
+    "cover": "studio-ginkgo-teaspoon-gift-box-hd.webp",
+    "hover": "scene-wooden-tray-table-sofa.webp"
    },
    {
     "slug": "wooden-chopsticks",
-    "cover": "studio-wooden-chopsticks.webp",
-    "hover": "CV-0243.webp"
+    "cover": "studio-wooden-chopsticks-hd.webp",
+    "hover": "scene-wooden-tray-table-closeup.webp"
    }
   ]
  },
@@ -193,13 +193,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     899
    ],
-   "src": "studio-braided-leather-bag-white.webp",
+   "src": "studio-braided-leather-bag-white-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -209,13 +209,24 @@
     942,
     72,
     404,
-    966
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -228,13 +239,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     901
    ],
-   "src": "studio-braided-leather-bag-blue.webp",
+   "src": "studio-braided-leather-bag-blue-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -244,13 +255,23 @@
     942,
     72,
     404,
-    966
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -263,13 +284,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     899
    ],
-   "src": "studio-braided-leather-bag-pink.webp",
+   "src": "studio-braided-leather-bag-pink-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -279,13 +300,23 @@
     942,
     72,
     404,
-    966
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -298,13 +329,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-pearl-chain-goldfish-earrings.webp",
+   "src": "studio-pearl-chain-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -314,13 +345,24 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -333,13 +375,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-diamond-goldfish-earrings.webp",
+   "src": "studio-diamond-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -349,13 +391,24 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 4,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -368,7 +421,7 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
@@ -381,13 +434,24 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -400,13 +464,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-twin-goldfish-earrings.webp",
+   "src": "studio-twin-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -416,13 +480,23 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -435,13 +509,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-raw-gold-goldfish-earrings.webp",
+   "src": "studio-raw-gold-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -451,13 +525,21 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 0,
+   "sceneWidths": [],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -470,26 +552,41 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-christmas-edition-stocking.webp",
+   "src": "studio-christmas-edition-stocking-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1036
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 7,
+   "sceneWidths": [
+    616,
+    192,
+    404,
+    828,
+    298,
+    829
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -502,26 +599,40 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-christmas-edition-candy-cane.webp",
+   "src": "studio-christmas-edition-candy-cane-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1036
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 6,
+   "sceneWidths": [
+    616,
+    404,
+    828,
+    298,
+    829
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -534,31 +645,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-reunion-paper-gift-box.webp",
+   "src": "studio-reunion-paper-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -571,31 +688,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-reunion-paulownia-gift-box.webp",
+   "src": "studio-reunion-paulownia-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -608,31 +731,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-year-of-plenty-gift-box.webp",
+   "src": "studio-year-of-plenty-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -645,31 +774,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-blossoming-prosperity-gift-box.webp",
+   "src": "studio-blossoming-prosperity-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -682,31 +817,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-spring-blossoms-gift-box.webp",
+   "src": "studio-spring-blossoms-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -719,31 +860,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-kyoto-gift-box.webp",
+   "src": "studio-kyoto-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -756,31 +903,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-heart-gift-box.webp",
+   "src": "studio-heart-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -793,31 +946,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-fruit-infusion-gift-box.webp",
+   "src": "studio-fruit-infusion-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -830,31 +989,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-rose-encounter-gift-box.webp",
+   "src": "studio-rose-encounter-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -867,31 +1032,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-tea-to-share-gift-box.webp",
+   "src": "studio-tea-to-share-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -904,31 +1075,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-spring-dawn-gift-box.webp",
+   "src": "studio-spring-dawn-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1171
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    829,
+    139
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -941,31 +1118,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-winter-blossom-gift-box.webp",
+   "src": "studio-winter-blossom-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1171
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -978,31 +1161,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-orchid-gift-box.webp",
+   "src": "studio-orchid-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1148
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1015,31 +1204,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-purple-butterfly-gift-box.webp",
+   "src": "studio-purple-butterfly-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1171
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1052,31 +1247,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-small-moon-tea-gift-box.webp",
+   "src": "studio-small-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1100
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1089,31 +1290,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-full-moon-tea-gift-box.webp",
+   "src": "studio-full-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1171
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1126,26 +1333,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-prosperity-dessert-stand.webp",
+   "src": "studio-prosperity-dessert-stand-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    829,
+    139
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1158,26 +1376,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-prosperity-stand-gift-box.webp",
+   "src": "studio-prosperity-stand-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    829,
+    298
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1190,7 +1419,7 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
@@ -1203,13 +1432,26 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 4,
+   "sceneWidths": [
+    616,
+    192,
+    404,
+    828
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1222,26 +1464,38 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-bird-chopstick-rest.webp",
+   "src": "studio-bird-chopstick-rest-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    616,
+    404,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1254,26 +1508,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-ginkgo-teaspoon-gift-box.webp",
+   "src": "studio-ginkgo-teaspoon-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    616,
+    404
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1286,26 +1551,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-wooden-chopsticks.webp",
+   "src": "studio-wooden-chopsticks-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1318,13 +1594,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     899
    ],
-   "src": "studio-braided-leather-bag-white.webp",
+   "src": "studio-braided-leather-bag-white-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1334,13 +1610,24 @@
     942,
     72,
     404,
-    966
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1353,13 +1640,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     901
    ],
-   "src": "studio-braided-leather-bag-blue.webp",
+   "src": "studio-braided-leather-bag-blue-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1369,13 +1656,23 @@
     942,
     72,
     404,
-    966
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1388,13 +1685,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     899
    ],
-   "src": "studio-braided-leather-bag-pink.webp",
+   "src": "studio-braided-leather-bag-pink-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1404,13 +1701,23 @@
     942,
     72,
     404,
-    966
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1423,13 +1730,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-pearl-chain-goldfish-earrings.webp",
+   "src": "studio-pearl-chain-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1439,13 +1746,24 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1458,13 +1776,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-diamond-goldfish-earrings.webp",
+   "src": "studio-diamond-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1474,13 +1792,24 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 4,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1493,7 +1822,7 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
@@ -1506,13 +1835,24 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1525,13 +1865,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-twin-goldfish-earrings.webp",
+   "src": "studio-twin-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1541,13 +1881,23 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1560,13 +1910,13 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-raw-gold-goldfish-earrings.webp",
+   "src": "studio-raw-gold-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     80,
@@ -1576,13 +1926,21 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 0,
+   "sceneWidths": [],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1595,26 +1953,41 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-christmas-edition-stocking.webp",
+   "src": "studio-christmas-edition-stocking-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1082
+    792
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 864,
+   "buy": [
+    942,
+    822,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 7,
+   "sceneWidths": [
+    616,
+    192,
+    404,
+    828,
+    298,
+    829
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1627,26 +2000,40 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-christmas-edition-candy-cane.webp",
+   "src": "studio-christmas-edition-candy-cane-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1082
+    812
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 884,
+   "buy": [
+    942,
+    842,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 6,
+   "sceneWidths": [
+    616,
+    404,
+    828,
+    298,
+    829
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1659,31 +2046,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-reunion-paper-gift-box.webp",
+   "src": "studio-reunion-paper-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1696,31 +2089,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-reunion-paulownia-gift-box.webp",
+   "src": "studio-reunion-paulownia-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1733,31 +2132,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-year-of-plenty-gift-box.webp",
+   "src": "studio-year-of-plenty-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1770,31 +2175,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-blossoming-prosperity-gift-box.webp",
+   "src": "studio-blossoming-prosperity-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1807,31 +2218,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-spring-blossoms-gift-box.webp",
+   "src": "studio-spring-blossoms-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1844,31 +2261,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-kyoto-gift-box.webp",
+   "src": "studio-kyoto-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1881,31 +2304,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-heart-gift-box.webp",
+   "src": "studio-heart-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1918,31 +2347,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-fruit-infusion-gift-box.webp",
+   "src": "studio-fruit-infusion-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1955,31 +2390,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-rose-encounter-gift-box.webp",
+   "src": "studio-rose-encounter-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -1992,31 +2433,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-tea-to-share-gift-box.webp",
+   "src": "studio-tea-to-share-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2029,31 +2476,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-spring-dawn-gift-box.webp",
+   "src": "studio-spring-dawn-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1239
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    829,
+    139
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2066,31 +2519,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-winter-blossom-gift-box.webp",
+   "src": "studio-winter-blossom-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1216
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2103,31 +2562,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-orchid-gift-box.webp",
+   "src": "studio-orchid-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1193
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2140,31 +2605,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-purple-butterfly-gift-box.webp",
+   "src": "studio-purple-butterfly-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1216
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2177,31 +2648,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-small-moon-tea-gift-box.webp",
+   "src": "studio-small-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1123
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2214,31 +2691,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-full-moon-tea-gift-box.webp",
+   "src": "studio-full-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    1216
+    729
    ],
-   "introBottom": 870,
+   "introBottom": 801,
    "buy": [
     942,
-    828,
+    759,
     404,
     42
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2251,26 +2734,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-prosperity-dessert-stand.webp",
+   "src": "studio-prosperity-dessert-stand-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    829,
+    139
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2283,26 +2777,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-prosperity-stand-gift-box.webp",
+   "src": "studio-prosperity-stand-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    829,
+    298
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2315,7 +2820,7 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
@@ -2328,13 +2833,26 @@
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 4,
+   "sceneWidths": [
+    616,
+    192,
+    404,
+    828
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2347,26 +2865,38 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-bird-chopstick-rest.webp",
+   "src": "studio-bird-chopstick-rest-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    616,
+    404,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2379,26 +2909,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-ginkgo-teaspoon-gift-box.webp",
+   "src": "studio-ginkgo-teaspoon-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    616,
+    404
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2411,26 +2952,37 @@
     94,
     72,
     616,
-    798
+    729
    ],
    "natural": [
     720,
     900
    ],
-   "src": "studio-wooden-chopsticks.webp",
+   "src": "studio-wooden-chopsticks-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     942,
     72,
     404,
-    798
+    729
    ],
-   "introBottom": 870,
-   "buy": null,
+   "introBottom": 801,
+   "buy": [
+    942,
+    759,
+    404,
+    42
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    616,
+    192
+   ],
+   "stageBottom": 801,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2443,29 +2995,40 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-braided-leather-bag-white.webp",
+   "src": "studio-braided-leather-bag-white-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    776
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2478,29 +3041,39 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
-    802
+    801
    ],
-   "src": "studio-braided-leather-bag-blue.webp",
+   "src": "studio-braided-leather-bag-blue-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    776
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    548
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2513,29 +3086,39 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-braided-leather-bag-pink.webp",
+   "src": "studio-braided-leather-bag-pink-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    776
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    548
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2548,29 +3131,40 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-pearl-chain-goldfish-earrings.webp",
+   "src": "studio-pearl-chain-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2583,29 +3177,40 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-diamond-goldfish-earrings.webp",
+   "src": "studio-diamond-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 4,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2618,7 +3223,7 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
@@ -2631,13 +3236,24 @@
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2650,29 +3266,39 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-twin-goldfish-earrings.webp",
+   "src": "studio-twin-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    548
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2685,29 +3311,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-raw-gold-goldfish-earrings.webp",
+   "src": "studio-raw-gold-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
-    60,
-    72
+    56,
+    67
    ],
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 0,
+   "sceneWidths": [],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2720,26 +3354,40 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-christmas-edition-stocking.webp",
+   "src": "studio-christmas-edition-stocking-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    870
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 7,
+   "sceneWidths": [
+    548,
+    171,
+    359,
+    736,
+    265
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2752,26 +3400,39 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-christmas-edition-candy-cane.webp",
+   "src": "studio-christmas-edition-candy-cane-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    870
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 6,
+   "sceneWidths": [
+    548,
+    359,
+    736,
+    265
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2784,31 +3445,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-reunion-paper-gift-box.webp",
+   "src": "studio-reunion-paper-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2821,31 +3488,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-reunion-paulownia-gift-box.webp",
+   "src": "studio-reunion-paulownia-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2858,31 +3531,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-year-of-plenty-gift-box.webp",
+   "src": "studio-year-of-plenty-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2895,31 +3574,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-blossoming-prosperity-gift-box.webp",
+   "src": "studio-blossoming-prosperity-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2932,31 +3617,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-spring-blossoms-gift-box.webp",
+   "src": "studio-spring-blossoms-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -2969,31 +3660,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-kyoto-gift-box.webp",
+   "src": "studio-kyoto-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3006,31 +3703,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-heart-gift-box.webp",
+   "src": "studio-heart-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3043,31 +3746,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-fruit-infusion-gift-box.webp",
+   "src": "studio-fruit-infusion-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3080,31 +3789,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-rose-encounter-gift-box.webp",
+   "src": "studio-rose-encounter-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3117,31 +3832,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-tea-to-share-gift-box.webp",
+   "src": "studio-tea-to-share-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3154,31 +3875,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-spring-dawn-gift-box.webp",
+   "src": "studio-spring-dawn-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    1004
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    736,
+    124
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3191,31 +3918,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-winter-blossom-gift-box.webp",
+   "src": "studio-winter-blossom-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    981
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3228,31 +3961,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-orchid-gift-box.webp",
+   "src": "studio-orchid-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    958
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3265,31 +4004,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-purple-butterfly-gift-box.webp",
+   "src": "studio-purple-butterfly-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    981
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3302,31 +4047,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-small-moon-tea-gift-box.webp",
+   "src": "studio-small-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    910
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3339,31 +4090,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-full-moon-tea-gift-box.webp",
+   "src": "studio-full-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    981
+    569
    ],
-   "introBottom": 690,
+   "introBottom": 641,
    "buy": [
     838,
-    648,
+    601,
     359,
-    42
+    40
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3376,26 +4133,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-prosperity-dessert-stand.webp",
+   "src": "studio-prosperity-dessert-stand-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    736,
+    124
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3408,26 +4176,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-prosperity-stand-gift-box.webp",
+   "src": "studio-prosperity-stand-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    736,
+    265
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3440,7 +4219,7 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
@@ -3453,13 +4232,26 @@
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 4,
+   "sceneWidths": [
+    548,
+    171,
+    359,
+    736
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3472,26 +4264,38 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-bird-chopstick-rest.webp",
+   "src": "studio-bird-chopstick-rest-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    548,
+    359,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3504,26 +4308,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-ginkgo-teaspoon-gift-box.webp",
+   "src": "studio-ginkgo-teaspoon-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    548,
+    359
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3536,26 +4351,37 @@
     83,
     72,
     548,
-    618
+    569
    ],
    "natural": [
     640,
     800
    ],
-   "src": "studio-wooden-chopsticks.webp",
+   "src": "studio-wooden-chopsticks-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     838,
     72,
     359,
-    618
+    569
    ],
-   "introBottom": 690,
-   "buy": null,
+   "introBottom": 641,
+   "buy": [
+    838,
+    601,
+    359,
+    40
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    548,
+    171
+   ],
+   "stageBottom": 641,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3568,13 +4394,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
-    1200
+    1199
    ],
-   "src": "studio-braided-leather-bag-white.webp",
+   "src": "studio-braided-leather-bag-white-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3584,13 +4410,24 @@
     1254,
     72,
     541,
-    1150
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3603,13 +4440,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
-    1202
+    1201
    ],
-   "src": "studio-braided-leather-bag-blue.webp",
+   "src": "studio-braided-leather-bag-blue-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3619,13 +4456,23 @@
     1254,
     72,
     541,
-    1150
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    823
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3638,13 +4485,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
-    1200
+    1199
    ],
-   "src": "studio-braided-leather-bag-pink.webp",
+   "src": "studio-braided-leather-bag-pink-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3654,13 +4501,23 @@
     1254,
     72,
     541,
-    1150
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    823
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3673,13 +4530,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-pearl-chain-goldfish-earrings.webp",
+   "src": "studio-pearl-chain-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3689,13 +4546,24 @@
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3708,13 +4576,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-diamond-goldfish-earrings.webp",
+   "src": "studio-diamond-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3724,13 +4592,24 @@
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 4,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3743,7 +4622,7 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
@@ -3756,13 +4635,24 @@
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3775,13 +4665,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-twin-goldfish-earrings.webp",
+   "src": "studio-twin-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3791,13 +4681,23 @@
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 1,
+   "sceneWidths": [
+    823
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3810,13 +4710,13 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-raw-gold-goldfish-earrings.webp",
+   "src": "studio-raw-gold-goldfish-earrings-hd.webp",
    "thumbs": 2,
    "thumbSize": [
     100,
@@ -3826,13 +4726,21 @@
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 0,
+   "sceneWidths": [],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3845,26 +4753,40 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-christmas-edition-stocking.webp",
+   "src": "studio-christmas-edition-stocking-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1220
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 7,
+   "sceneWidths": [
+    823,
+    258,
+    541,
+    1106,
+    400
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3877,26 +4799,39 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-christmas-edition-candy-cane.webp",
+   "src": "studio-christmas-edition-candy-cane-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1220
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 6,
+   "sceneWidths": [
+    823,
+    541,
+    1106,
+    400
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3909,31 +4844,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-reunion-paper-gift-box.webp",
+   "src": "studio-reunion-paper-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3946,31 +4887,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-reunion-paulownia-gift-box.webp",
+   "src": "studio-reunion-paulownia-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -3983,31 +4930,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-year-of-plenty-gift-box.webp",
+   "src": "studio-year-of-plenty-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4020,31 +4973,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-blossoming-prosperity-gift-box.webp",
+   "src": "studio-blossoming-prosperity-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4057,31 +5016,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-spring-blossoms-gift-box.webp",
+   "src": "studio-spring-blossoms-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4094,31 +5059,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-kyoto-gift-box.webp",
+   "src": "studio-kyoto-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4131,31 +5102,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-heart-gift-box.webp",
+   "src": "studio-heart-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4168,31 +5145,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-fruit-infusion-gift-box.webp",
+   "src": "studio-fruit-infusion-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4205,31 +5188,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-rose-encounter-gift-box.webp",
+   "src": "studio-rose-encounter-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4242,31 +5231,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-tea-to-share-gift-box.webp",
+   "src": "studio-tea-to-share-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4279,31 +5274,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-spring-dawn-gift-box.webp",
+   "src": "studio-spring-dawn-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1331
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    1106,
+    188
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4316,31 +5317,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-winter-blossom-gift-box.webp",
+   "src": "studio-winter-blossom-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1309
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4353,31 +5360,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-orchid-gift-box.webp",
+   "src": "studio-orchid-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1309
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4390,31 +5403,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-purple-butterfly-gift-box.webp",
+   "src": "studio-purple-butterfly-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1331
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4427,31 +5446,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-small-moon-tea-gift-box.webp",
+   "src": "studio-small-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1261
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4464,31 +5489,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-full-moon-tea-gift-box.webp",
+   "src": "studio-full-moon-tea-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    1309
+    889
    ],
-   "introBottom": 1050,
+   "introBottom": 961,
    "buy": [
     1254,
-    1000,
+    911,
     541,
     50
    ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4501,26 +5532,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-prosperity-dessert-stand.webp",
+   "src": "studio-prosperity-dessert-stand-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 3,
+   "sceneWidths": [
+    1106,
+    188
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4533,26 +5575,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-prosperity-stand-gift-box.webp",
+   "src": "studio-prosperity-stand-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
    "scenes": 2,
+   "sceneWidths": [
+    1106,
+    400
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4565,7 +5618,7 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     796,
@@ -4578,13 +5631,26 @@
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 4,
+   "sceneWidths": [
+    823,
+    258,
+    541,
+    1106
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4597,26 +5663,38 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-bird-chopstick-rest.webp",
+   "src": "studio-bird-chopstick-rest-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    823,
+    541,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4629,26 +5707,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-ginkgo-teaspoon-gift-box.webp",
+   "src": "studio-ginkgo-teaspoon-gift-box-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    823,
+    541
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },
@@ -4661,26 +5750,37 @@
     125,
     72,
     823,
-    978
+    889
    ],
    "natural": [
     960,
     1200
    ],
-   "src": "studio-wooden-chopsticks.webp",
+   "src": "studio-wooden-chopsticks-hd.webp",
    "thumbs": 0,
    "thumbSize": null,
    "column": [
     1254,
     72,
     541,
-    978
+    889
    ],
-   "introBottom": 1050,
-   "buy": null,
+   "introBottom": 961,
+   "buy": [
+    1254,
+    911,
+    541,
+    50
+   ],
    "fits": true,
    "overflowX": false,
-   "scenes": 2,
+   "scenes": 3,
+   "sceneWidths": [
+    823,
+    258
+   ],
+   "stageBottom": 961,
+   "hasBuy": true,
    "dock": false,
    "qty": false
   },

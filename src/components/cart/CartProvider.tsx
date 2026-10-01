@@ -11,7 +11,7 @@ import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
 import type { Locale } from "@/i18n/config";
 
-export type CartLine = { key: string; slug: string | null; name: string; image: { src: string; alt: string } | null; quantity: number; unitAmount: number; currency: string; variantId?: string };
+export type CartLine = { key: string; slug: string | null; name: string; image: { src: string; alt: string } | null; quantity: number; unitAmount: number; currency: string; variantId?: string; /** no list price yet: shown as "price on request", left out of the subtotal */ onRequest?: boolean };
 type Ctx = {
   mode: "local" | "shopify"; ready: boolean; open: boolean; busy: boolean; error: string | null;
   lines: CartLine[]; count: number; subtotal: number; currency: string; checkoutUrl: string | null;
@@ -76,7 +76,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => ls.filter((l) => l.slug !== key));
   }, [call]);
 
-  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); return p && p.price ? [{ key: p.slug, slug: p.slug, name: p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: p.price.amount, currency: p.price.currency }] : []; }), [localLines, shopifyCart, lang]);
+  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); return p ? [{ key: p.slug, slug: p.slug, name: p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   const subtotal = lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = lines[0]?.currency ?? "TWD";
