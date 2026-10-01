@@ -30,11 +30,11 @@ export const craftMoments = {
     },
     {
       id: "on-the-shoulder", en: "ON THE SHOULDER", name: "出門的肩上",
-      quote: ["三股扁平的皮條，", "編成肩上的線。"],
-      role: "編織提把皮革包 ／ 荔枝紋真皮、扁銅棒、麂皮切邊",
-      body: "皮條裁成兩指寬，一股壓過一股，切邊露出灰藍的肉面。編到盡頭繞銅棒一圈打結，柔軟的包身便有了可以提起的骨。",
+      quote: ["裁刀落下之前，", "先用手讀過整張皮。"],
+      role: "編織提把皮革包 ／ 整張荔枝紋真皮、裁刀與鋼尺、扁銅棒",
+      body: "整張皮攤在檯上，先看紋理的走向，再沿鋼尺落刀。切口露出淺色的肉面，一條條裁成兩指寬，之後才有肩上那段編織。",
       ctas: [{ label: "看真皮包", href: "/collections/bags" }],
-      image: site("craft-02-plaiting-documentary.webp", "職人雙手在工作檯上編三股扁平皮條，後方是白色編織提把皮革包"),
+      image: site("craft-02-leather-cutting.webp", "職人雙手沿鋼尺以裁刀從整張米白荔枝紋皮革裁下皮條，桌上有藍、粉皮捲與工具"),
     },
     {
       id: "light-at-the-ear", en: "A LIGHT AT THE EAR", name: "耳畔的光",
