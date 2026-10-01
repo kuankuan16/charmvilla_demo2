@@ -59,7 +59,7 @@
    {
     "slug": "raw-gold-goldfish-earrings",
     "cover": "studio-raw-gold-goldfish-earrings-hd.webp",
-    "hover": null
+    "hover": "scene-raw-gold-earring-worn.webp"
    },
    {
     "slug": "christmas-edition-stocking",
@@ -220,7 +220,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     616,
     192
@@ -311,9 +311,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 1,
+   "scenes": 2,
    "sceneWidths": [
-    616
+    616,
+    192
    ],
    "stageBottom": 801,
    "hasBuy": true,
@@ -536,8 +537,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 0,
-   "sceneWidths": [],
+   "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
    "stageBottom": 801,
    "hasBuy": true,
    "dock": false,
@@ -1623,7 +1626,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     616,
     192
@@ -1714,9 +1717,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 1,
+   "scenes": 2,
    "sceneWidths": [
-    616
+    616,
+    192
    ],
    "stageBottom": 801,
    "hasBuy": true,
@@ -1939,8 +1943,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 0,
-   "sceneWidths": [],
+   "scenes": 1,
+   "sceneWidths": [
+    616
+   ],
    "stageBottom": 801,
    "hasBuy": true,
    "dock": false,
@@ -3026,7 +3032,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     548,
     171
@@ -3117,9 +3123,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 1,
+   "scenes": 2,
    "sceneWidths": [
-    548
+    548,
+    171
    ],
    "stageBottom": 641,
    "hasBuy": true,
@@ -3342,8 +3349,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 0,
-   "sceneWidths": [],
+   "scenes": 1,
+   "sceneWidths": [
+    548
+   ],
    "stageBottom": 641,
    "hasBuy": true,
    "dock": false,
@@ -4427,7 +4436,7 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 4,
+   "scenes": 5,
    "sceneWidths": [
     823,
     258
@@ -4518,9 +4527,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 1,
+   "scenes": 2,
    "sceneWidths": [
-    823
+    823,
+    258
    ],
    "stageBottom": 961,
    "hasBuy": true,
@@ -4743,8 +4753,10 @@
    ],
    "fits": true,
    "overflowX": false,
-   "scenes": 0,
-   "sceneWidths": [],
+   "scenes": 1,
+   "sceneWidths": [
+    823
+   ],
    "stageBottom": 961,
    "hasBuy": true,
    "dock": false,
