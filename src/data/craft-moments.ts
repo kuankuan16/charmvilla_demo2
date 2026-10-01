@@ -19,7 +19,7 @@ export const craftMoments = {
       craft: "摺紙職人 · 小金魚茶包禮盒",
       quote: ["摺紙的手，", "把一張濾紙摺成會游的形。"],
       ctas: [{ label: "選一盒茶", href: "/collections/tea" }],
-      image: site("craft-01-morning-cup.webp", "俯視玻璃杯中泡開的小金魚茶包，木桌上有銀杏葉杯墊（品牌實拍 CV-0023）"),
+      image: site("craft-01-blossom-cup.webp", "木桌上的玻璃杯裡泡開一尾小金魚茶包，棉線掛過杯緣、金色茶標落在桌面，背景是櫻花的散景"),
     },
     {
       id: "leather",
