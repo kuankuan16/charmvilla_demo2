@@ -1,0 +1,637 @@
+{
+ "base": "http://localhost:3140",
+ "report": [
+  {
+   "w": 1440,
+   "lang": "zh",
+   "footer": {
+    "footers": 1,
+    "size": [
+     1440,
+     405
+    ],
+    "bg": "rgb(31, 31, 31)",
+    "items": [
+     {
+      "text": "藝術即生活",
+      "href": null,
+      "box": [
+       94,
+       75,
+       601,
+       73
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 48.96px | 500 | 73.44px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "全部商品",
+      "href": "/collections/all",
+      "box": [
+       745,
+       105,
+       56,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "真皮包",
+      "href": "/collections/bags",
+      "box": [
+       831,
+       105,
+       42,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "金飾",
+      "href": "/collections/jewelry",
+      "box": [
+       903,
+       105,
+       28,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "小金魚茶包禮盒",
+      "href": "/collections/tea",
+      "box": [
+       961,
+       105,
+       98,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "茶器與工藝",
+      "href": "/collections/teaware",
+      "box": [
+       1089,
+       105,
+       70,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "關於",
+      "href": "/about",
+      "box": [
+       1189,
+       105,
+       28,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "CHARM VILLA 首頁",
+      "href": "/",
+      "box": [
+       94,
+       252,
+       220,
+       19
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "© 2026 CHARM VILLA",
+      "href": null,
+      "box": [
+       717,
+       254,
+       110,
+       14
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "社群媒體",
+      "href": null,
+      "box": [
+       1230,
+       248,
+       116,
+       26
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/CHARMVILLA8/",
+      "box": [
+       1230,
+       248,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Twitter",
+      "href": "https://twitter.com/charmvilla8",
+      "box": [
+       1276,
+       248,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/charmvilla/",
+      "box": [
+       1322,
+       248,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "homeIdentical": true
+  },
+  {
+   "w": 1440,
+   "lang": "en",
+   "footer": {
+    "footers": 1,
+    "size": [
+     1440,
+     418
+    ],
+    "bg": "rgb(31, 31, 31)",
+    "items": [
+     {
+      "text": "Art as Life",
+      "href": null,
+      "box": [
+       94,
+       75,
+       601,
+       86
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 48.96px | 500 | 73.44px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "All pieces",
+      "href": "/en/collections/all",
+      "box": [
+       745,
+       105,
+       58,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Leather Bags",
+      "href": "/en/collections/bags",
+      "box": [
+       833,
+       105,
+       83,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Goldfish Jewelry",
+      "href": "/en/collections/jewelry",
+      "box": [
+       946,
+       105,
+       103,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Goldfish Tea Gifts",
+      "href": "/en/collections/tea",
+      "box": [
+       1079,
+       105,
+       110,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Teaware & Craft",
+      "href": "/en/collections/teaware",
+      "box": [
+       1220,
+       105,
+       102,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "About",
+      "href": "/en/about",
+      "box": [
+       745,
+       143,
+       38,
+       18
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 14px | 500 | 18.2px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "CHARM VILLA home",
+      "href": "/en",
+      "box": [
+       94,
+       265,
+       220,
+       19
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "© 2026 CHARM VILLA",
+      "href": null,
+      "box": [
+       717,
+       267,
+       110,
+       14
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Social media",
+      "href": null,
+      "box": [
+       1230,
+       261,
+       116,
+       26
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/CHARMVILLA8/",
+      "box": [
+       1230,
+       261,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Twitter",
+      "href": "https://twitter.com/charmvilla8",
+      "box": [
+       1276,
+       261,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/charmvilla/",
+      "box": [
+       1322,
+       261,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "homeIdentical": true
+  },
+  {
+   "w": 390,
+   "lang": "zh",
+   "footer": {
+    "footers": 1,
+    "size": [
+     390,
+     472
+    ],
+    "bg": "rgb(31, 31, 31)",
+    "items": [
+     {
+      "text": "藝術即生活",
+      "href": null,
+      "box": [
+       20,
+       55,
+       350,
+       42
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 28px | 500 | 42px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "全部商品",
+      "href": "/collections/all",
+      "box": [
+       20,
+       164,
+       52,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "真皮包",
+      "href": "/collections/bags",
+      "box": [
+       97,
+       164,
+       39,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "金飾",
+      "href": "/collections/jewelry",
+      "box": [
+       161,
+       164,
+       26,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "小金魚茶包禮盒",
+      "href": "/collections/tea",
+      "box": [
+       212,
+       164,
+       91,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "茶器與工藝",
+      "href": "/collections/teaware",
+      "box": [
+       20,
+       199,
+       65,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "關於",
+      "href": "/about",
+      "box": [
+       110,
+       199,
+       26,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "CHARM VILLA 首頁",
+      "href": "/",
+      "box": [
+       20,
+       296,
+       170,
+       15
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "© 2026 CHARM VILLA",
+      "href": null,
+      "box": [
+       260,
+       296,
+       110,
+       14
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "社群媒體",
+      "href": null,
+      "box": [
+       20,
+       336,
+       116,
+       26
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/CHARMVILLA8/",
+      "box": [
+       20,
+       336,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Twitter",
+      "href": "https://twitter.com/charmvilla8",
+      "box": [
+       66,
+       336,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/charmvilla/",
+      "box": [
+       112,
+       336,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "homeIdentical": true
+  },
+  {
+   "w": 390,
+   "lang": "en",
+   "footer": {
+    "footers": 1,
+    "size": [
+     390,
+     472
+    ],
+    "bg": "rgb(31, 31, 31)",
+    "items": [
+     {
+      "text": "Art as Life",
+      "href": null,
+      "box": [
+       20,
+       55,
+       350,
+       42
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 28px | 500 | 42px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "All pieces",
+      "href": "/en/collections/all",
+      "box": [
+       20,
+       164,
+       54,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Leather Bags",
+      "href": "/en/collections/bags",
+      "box": [
+       99,
+       164,
+       77,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Goldfish Jewelry",
+      "href": "/en/collections/jewelry",
+      "box": [
+       201,
+       164,
+       95,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Goldfish Tea Gifts",
+      "href": "/en/collections/tea",
+      "box": [
+       20,
+       199,
+       103,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Teaware & Craft",
+      "href": "/en/collections/teaware",
+      "box": [
+       148,
+       199,
+       95,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "About",
+      "href": "/en/about",
+      "box": [
+       267,
+       199,
+       36,
+       17
+      ],
+      "font": "Outfit, \"Outfit Fallback\", \"No | 13px | 500 | 16.9px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "CHARM VILLA home",
+      "href": "/en",
+      "box": [
+       20,
+       296,
+       170,
+       15
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "© 2026 CHARM VILLA",
+      "href": null,
+      "box": [
+       260,
+       296,
+       110,
+       14
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Social media",
+      "href": null,
+      "box": [
+       20,
+       336,
+       116,
+       26
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/CHARMVILLA8/",
+      "box": [
+       20,
+       336,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Twitter",
+      "href": "https://twitter.com/charmvilla8",
+      "box": [
+       66,
+       336,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     },
+     {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/charmvilla/",
+      "box": [
+       112,
+       336,
+       24,
+       24
+      ],
+      "font": "Outfit, \"Outfit Fallback\", Out | 11px | 500 | 14.3px | normal | none | rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "homeIdentical": true
+  }
+ ]
+}

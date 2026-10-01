@@ -8,7 +8,7 @@ import CraftMoments from "@/components/sections/CraftMoments";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
 import Partners from "@/components/sections/Partners";
 import Visit from "@/components/sections/Visit";
-import Footer from "@/components/sections/Footer";
+import SiteFooter from "@/components/chrome/SiteFooter";
 import { alternatesFor, defaultLocale, isLocale } from "@/i18n/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -33,7 +33,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <Partners lang={lang} />
         <Visit />
       </main>
-      <Footer lang={lang} />
+      <SiteFooter lang={lang} />
     </PageShell>
   );
 }

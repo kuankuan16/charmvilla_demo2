@@ -373,7 +373,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-lightbox-controls { display: flex; justify-content: center; align-items: center; gap: 30px; font-size: 13px; }
 .product-lightbox-controls button { min-width: 50px; min-height: 44px; font-size: 24px; }
 .product-lightbox-controls button:disabled { opacity: .25; cursor: default; }
-.catalog-footer { padding: 75px var(--page-gutter) 130px; background: var(--color-ink); color: white; }
+/* One footer for the homepage and the inner pages (user 2026-10-01: 「footer 我想要用內頁的版型，首頁請跟進」): components/chrome/SiteFooter.tsx */
+.catalog-footer { padding: 75px var(--page-gutter) 130px; background: var(--color-ink); color: white; text-transform: none; }
 .catalog-footer-top { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding-bottom: 70px; }
 .catalog-footer-statement { font-size: clamp(28px,3.4vw,52px); line-height: 1.5; }
 .catalog-footer nav { display: flex; flex-wrap: wrap; gap: 20px 30px; margin-top: 30px; font-size: 14px; }
