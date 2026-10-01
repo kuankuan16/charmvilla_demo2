@@ -18,10 +18,10 @@ for (const [w, h] of [[1440, 900], [1280, 720], [1920, 1080]]) {
     await page.waitForTimeout(350);
     const m = await page.evaluate(() => {
       const q = (s) => document.querySelector(s); const box = (e) => { const b = e.getBoundingClientRect(); return [Math.round(b.left), Math.round(b.top), Math.round(b.width), Math.round(b.height)]; };
-      const stage = q(".product-main-image"), img = q(".product-main-image img"), intro = q(".product-intro"), buy = q(".product-buy"), thumbs = [...document.querySelectorAll(".product-thumbnails button")];
+      const stage = q(".product-main-image"), img = q(".product-slide[data-active=true] img"), intro = q(".product-intro"), buy = q(".product-buy"), thumbs = [...document.querySelectorAll(".product-thumbnails button")];
       const last = intro.lastElementChild.getBoundingClientRect();
       return { stage: box(stage), natural: [img.naturalWidth, img.naturalHeight], src: decodeURIComponent((img.currentSrc.match(/url=([^&]+)/) || [, img.currentSrc])[1]).split("/").pop(), thumbs: thumbs.length, thumbSize: thumbs[0] ? box(thumbs[0]).slice(2) : null,
-        column: box(q(".product-column")), introBottom: Math.round(last.bottom), buy: buy ? box(buy) : null, fits: last.bottom <= innerHeight + 1, overflowX: document.documentElement.scrollWidth > innerWidth, scenes: document.querySelectorAll(".product-story-image").length, dock: !!q(".product-dock"), qty: !!q(".product-intro .cart-qty") };
+        column: box(q(".product-column")), introBottom: Math.round(last.bottom), buy: buy ? box(buy) : null, fits: last.bottom <= innerHeight + 1, overflowX: document.documentElement.scrollWidth > innerWidth, scenes: document.querySelectorAll(".story-fig").length, sceneWidths: [...new Set([...document.querySelectorAll(".story-fig")].map((f) => Math.round(f.getBoundingClientRect().width)))], stageBottom: Math.round(stage.getBoundingClientRect().bottom), hasBuy: !!buy, dock: !!q(".product-dock"), qty: !!q(".product-intro .cart-qty") };
     });
     rows.push({ vp: `${w}x${h}`, lang: lang || "/zh", slug, status: res.status(), ...m });
     if (sample.includes(slug) && !lang) {
@@ -43,10 +43,11 @@ await page.close();
 const mob = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
 for (const slug of sample.slice(0, 2)) { await mob.goto(`${base}/products/${slug}`, { waitUntil: "load" }); await mob.waitForTimeout(400); await mob.screenshot({ path: `${out}390-${slug}-first${suffix}.jpg`, quality: 80 }); rows.push({ vp: "390x844", lang: "/zh", slug, overflowX: await mob.evaluate(() => document.documentElement.scrollWidth > innerWidth) }); }
 await browser.close();
-const bad = rows.filter((r) => r.status && (r.status !== 200 || !r.fits || r.overflowX || r.dock || r.qty));
+const bad = rows.filter((r) => r.status && (r.status !== 200 || !r.fits || r.overflowX || r.dock || r.qty || !r.hasBuy));
 const stageSizes = {}; for (const r of rows) if (r.stage) (stageSizes[r.vp] ??= new Set()).add(`${r.stage[2]}x${r.stage[3]}@${r.stage[0]},${r.stage[1]}`);
 const summary = { base, pages: rows.length, failures: bad.length, stageSizes: Object.fromEntries(Object.entries(stageSizes).map(([k, v]) => [k, [...v]])), thumbSizes: [...new Set(rows.filter((r) => r.thumbSize).map((r) => `${r.vp}:${r.thumbSize.join("x")}`))], errors, cards };
 writeFileSync(new URL(`./report${suffix}.json`, import.meta.url).pathname, JSON.stringify({ summary, rows }, null, 1));
 console.log(JSON.stringify({ ...summary, cards: cards.length, cardsWithoutHover: cards.filter((c) => !c.hover).map((c) => c.slug), nonStudioCovers: cards.filter((c) => !/^studio-/.test(c.cover || "")).map((c) => `${c.slug}:${c.cover}`) }, null, 1));
-for (const r of bad) console.log("FAIL", r.vp, r.lang, r.slug, "introBottom", r.introBottom, "fits", r.fits, "overflowX", r.overflowX);
+for (const r of bad) console.log("FAIL", r.vp, r.lang, r.slug, "introBottom", r.introBottom, "stageBottom", r.stageBottom, "fits", r.fits, "overflowX", r.overflowX, "buy", r.hasBuy);
+console.log("column below image by (px), worst per viewport:", JSON.stringify(Object.fromEntries(["1440x900", "1280x720", "1920x1080"].map((vp) => [vp, Math.max(...rows.filter((r) => r.vp === vp && r.stage).map((r) => r.introBottom - r.stageBottom))]))));
 const lowres = rows.filter((r) => r.vp === "1440x900" && r.lang === "/zh").map((r) => `${r.slug}: ${r.src} ${r.natural?.join("x")} thumbs ${r.thumbs} scenes ${r.scenes}`); console.log(lowres.join("\n"));

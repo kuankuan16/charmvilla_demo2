@@ -1,8 +1,11 @@
 // Studio listing images (2026-09-30): every card on /collections/all sits on the same warm-grey seamless as the white
 // bag (CV-0398). The backdrop is modelled from CV-0398 itself (per-row left/right edge tones, shifted up 8% like the
 // bags), objects are cut-outs or flat-ground mattes composited with a soft contact shadow, and the three bag photos are
-// shifted up 8% (bottom extended by mirroring their own backdrop). Output: public/media/site/studio-<slug>.webp (1200×1500)
+// shifted up 8% (bottom extended by mirroring their own backdrop). Output: public/media/site/studio-<slug>-hd.webp
 // + src/data/studio-listing.json (slug → file). Run: npx --yes --package=node@24 -c 'node scripts/studio-listing.mjs'
+// 2026-10-01 (user: the tall product-page image must be crisp): the canvas is 2000×2500 (was 1200×1500), the bags are
+// built from the original PNGs instead of the gallery's compressed WebP exports, and the gift boxes use the official
+// site's 1440px files where they exist — all in assets-src/studio/. Files carry the -hd suffix because their pixels changed.
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -10,7 +13,9 @@ import sharp from 'sharp';
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const pub = (p) => path.join(root, 'public', p);
 const outDir = pub('media/site');
-const W = 1200, H = 1500;               // 4:5 listing canvas
+const W = 2000, H = 2500;               // 4:5 canvas
+const K = W / 1200;                     // the layout numbers below were set on a 1200-wide canvas
+const srcDir = path.join(root, 'assets-src/studio');
 const SHIFT = 0.08;                     // bags (and the modelled backdrop) move up by 8% of the height
 const FLOOR = 0.80;                     // objects standing on the floor share the bags' base line (0.884 − 0.08)
 const rgba = async (file) => { const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true }); return { data, w: info.width, h: info.height }; };
@@ -113,7 +118,7 @@ async function compose(bg, obj, { fit, anchor, floorY = FLOOR, centreY = 0.5, sh
   const b = bbox(obj); const cropped = await cropToBox(obj, b);
   let ow, oh;
   if (fit.scale) { ow = Math.round(cropped.w * fit.scale); oh = Math.round(cropped.h * fit.scale); }
-  else { const s = Math.min(fit.w / cropped.w, fit.h / cropped.h); ow = Math.round(cropped.w * s); oh = Math.round(cropped.h * s); }
+  else { const s = Math.min(fit.w * K / cropped.w, fit.h * K / cropped.h); ow = Math.round(cropped.w * s); oh = Math.round(cropped.h * s); }
   const objPng = await sharp(await toPng(cropped)).resize(ow, oh, { kernel: 'lanczos3', fit: 'fill' }).png().toBuffer();
   const left = Math.round((W - ow) / 2);
   const top = anchor === 'floor' ? Math.round(floorY * H - oh) : Math.round(centreY * H - oh / 2);
@@ -123,20 +128,35 @@ async function compose(bg, obj, { fit, anchor, floorY = FLOOR, centreY = 0.5, sh
     layers.push(await ellipseShadow(cx, cy + ow * 0.02, ow * 0.55, ow * 0.075, ow * 0.075, 0.16)); // ambient spread
     layers.push(await ellipseShadow(cx, cy, ow * 0.47, ow * 0.03, ow * 0.028, 0.34));               // contact
   } else if (shadow === 'drop') {
-    layers.push(await dropShadow(objPng, left, top, Math.round(ow * 0.04), Math.round(oh * 0.025), 14, 0.2));
+    layers.push(await dropShadow(objPng, left, top, Math.round(ow * 0.04), Math.round(oh * 0.025), 14 * K, 0.2));
   }
   layers.push({ input: objPng, left, top });
-  await sharp(bg.data, { raw: { width: W, height: H, channels: 4 } }).composite(layers).webp({ quality: 84 }).toFile(outFile);
-  return { ow, oh, left, top, objH: +(oh / H).toFixed(3), objW: +(ow / W).toFixed(3), bottom: +((top + oh) / H).toFixed(3) };
+  await sharp(bg.data, { raw: { width: W, height: H, channels: 4 } }).composite(layers).webp({ quality: 90 }).toFile(outFile);
+  return { srcScale: +(ow / cropped.w).toFixed(2), ow, oh, left, top, objH: +(oh / H).toFixed(3), objW: +(ow / W).toFixed(3), bottom: +((top + oh) / H).toFixed(3) };
 }
 
 // ---------- bags: shift up, mirror-extend the bottom -------------------------------------------------------------
-async function shiftBag(id, outFile) {
-  const img = await rgba(pub(`media/gallery/${id}.webp`)); const shift = Math.round(img.h * SHIFT);
+async function shiftBag(name, outFile) {
+  // original PNG; photographs narrower than 1800px are enlarged with Lanczos and lightly sharpened (no new detail is invented)
+  let src = sharp(path.join(srcDir, `${name}.png`)); const meta = await src.metadata();
+  if (meta.width < 1800) src = src.resize({ width: 1800, kernel: 'lanczos3' }).sharpen({ sigma: 0.8 });
+  const img = await rgba(await src.png().toBuffer()); const shift = Math.round(img.h * SHIFT);
+  // Rows below the original bottom are new backdrop, not a mirror image: the three-quarter views sit low in the frame, and
+  // mirroring repeated the bag's base along the bottom edge (user 2026-10-01: 「包包的商品圖都有破綻」). The floor is continued from
+  // the last rows of the photograph — their per-column mean, smoothed sideways — with the same fine luminance grain.
+  const band = 24, floor = new Float64Array(img.w * 3);
+  for (let x = 0; x < img.w; x++) for (let c = 0; c < 3; c++) { let v = 0; for (let k = 0; k < band; k++) v += img.data[((img.h - 1 - k) * img.w + x) * 4 + c]; floor[x * 3 + c] = v / band; }
+  const smooth = new Float64Array(img.w * 3), R = Math.round(img.w * 0.03);
+  for (let x = 0; x < img.w; x++) for (let c = 0; c < 3; c++) { let v = 0, n = 0; for (let k = -R; k <= R; k++) { const xx = Math.min(img.w - 1, Math.max(0, x + k)); v += floor[xx * 3 + c]; n++; } smooth[x * 3 + c] = v / n; }
+  let seed = 11; const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
   const out = Buffer.alloc(img.w * img.h * 4);
-  for (let y = 0; y < img.h; y++) { const r = y + shift; const sy = r < img.h ? r : img.h - 1 - (r - img.h + 1); img.data.copy(out, y * img.w * 4, sy * img.w * 4, (sy + 1) * img.w * 4); }
-  await sharp(out, { raw: { width: img.w, height: img.h, channels: 4 } }).webp({ quality: 88 }).toFile(outFile);
-  return { w: img.w, h: img.h, shift };
+  for (let y = 0; y < img.h; y++) {
+    const r = y + shift;
+    if (r < img.h) { img.data.copy(out, y * img.w * 4, r * img.w * 4, (r + 1) * img.w * 4); continue; }
+    for (let x = 0; x < img.w; x++) { const n = (rnd() + rnd() - 1) * 1.6, o = (y * img.w + x) * 4; for (let c = 0; c < 3; c++) out[o + c] = Math.max(0, Math.min(255, Math.round(smooth[x * 3 + c] + n))); out[o + 3] = 255; }
+  }
+  await sharp(out, { raw: { width: img.w, height: img.h, channels: 4 } }).webp({ quality: 92 }).toFile(outFile);
+  return { w: img.w, h: img.h, shift, source: [meta.width, meta.height] };
 }
 
 // ---------- jobs -----------------------------------------------------------------------------------------------------
@@ -152,13 +172,13 @@ async function main() {
   const emit = (slug, file, r) => { manifest[slug] = file; report[slug] = r; console.log(slug.padEnd(34), file.padEnd(46), JSON.stringify(r)); };
 
   // bags
-  for (const [id, slug] of [['CV-0398', 'braided-leather-bag-white'], ['CV-0419', 'braided-leather-bag-blue'], ['CV-0399', 'braided-leather-bag-pink']]) {
-    const file = `studio-${slug}.webp`; emit(slug, file, await shiftBag(id, path.join(outDir, file)));
+  for (const [id, slug] of [['bag-white-front', 'braided-leather-bag-white'], ['bag-blue-front', 'braided-leather-bag-blue'], ['bag-pink-front', 'braided-leather-bag-pink']]) {
+    const file = `studio-${slug}-hd.webp`; emit(slug, file, await shiftBag(id, path.join(outDir, file)));
   }
   // three-quarter views of the bags, shifted the same way, for the product-page gallery (2026-10-01: the gallery shows studio views only)
   const angles = {};
-  for (const [id, slug] of [['CV-0400', 'braided-leather-bag-white'], ['CV-0420', 'braided-leather-bag-blue'], ['CV-0397', 'braided-leather-bag-pink']]) {
-    const file = `studio-${slug}-angle.webp`; angles[slug] = file; console.log(slug.padEnd(34), file.padEnd(46), JSON.stringify(await shiftBag(id, path.join(outDir, file))));
+  for (const [id, slug] of [['bag-white-angle', 'braided-leather-bag-white'], ['bag-blue-angle', 'braided-leather-bag-blue'], ['bag-pink-angle', 'braided-leather-bag-pink']]) {
+    const file = `studio-${slug}-angle-hd.webp`; angles[slug] = file; console.log(slug.padEnd(34), file.padEnd(46), JSON.stringify(await shiftBag(id, path.join(outDir, file))));
   }
   // jewelry: one shared true scale (the four series were photographed together); pearl chain = 60% of the frame height
   const chainH = jewelryBoxes['pearl-chain-goldfish-earrings'][3] - jewelryBoxes['pearl-chain-goldfish-earrings'][1];
@@ -166,17 +186,18 @@ async function main() {
   for (const [slug, [x0, y0, x1, y1]] of Object.entries(jewelryBoxes)) {
     const m = 16; const crop = await sharp(jewelrySrc).extract({ left: x0 - m, top: y0 - m, width: x1 - x0 + 2 * m, height: y1 - y0 + 2 * m }).png().toBuffer();
     const obj = matte(await rgba(crop), [240, 240, 240], 8, 36);
-    const file = `studio-${slug}.webp`; emit(slug, file, await compose(bg, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
+    const file = `studio-${slug}-hd.webp`; emit(slug, file, await compose(bg, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
   }
   // official gift-box cut-outs
   for (const [id, slug] of Object.entries(giftBoxes)) {
-    const obj = defringeWhite(await rgba(pub(`media/gift-boxes/official-${id}.png`)));
-    const file = `studio-${slug}.webp`; emit(slug, file, await compose(bg, obj, { fit: { w: 780, h: 660 }, anchor: 'floor' }, path.join(outDir, file)));
+    const hi = path.join(srcDir, `official-${id}.png`); // the official site's 1440px file where one exists
+    const obj = defringeWhite(await rgba(fs.existsSync(hi) ? hi : pub(`media/gift-boxes/official-${id}.png`)));
+    const file = `studio-${slug}-hd.webp`; emit(slug, file, await compose(bg, obj, { fit: { w: 780, h: 660 }, anchor: 'floor' }, path.join(outDir, file)));
   }
   // transparent craft photos
   for (const [id, slug, fit] of [['CV-0229', 'ginkgo-teaspoon-gift-box', { w: 800, h: 660 }], ['CV-0227', 'wooden-chopsticks', { w: 800, h: 500 }]]) {
     const obj = await rgba(pub(`media/gallery/${id}.webp`));
-    const file = `studio-${slug}.webp`; emit(slug, file, await compose(bg, obj, { fit, anchor: 'floor' }, path.join(outDir, file)));
+    const file = `studio-${slug}-hd.webp`; emit(slug, file, await compose(bg, obj, { fit, anchor: 'floor' }, path.join(outDir, file)));
   }
   // flat-ground photos matted: bird on white, dessert stand set on near-white, Christmas lid mock-ups on light grey
   const flat = [
@@ -191,7 +212,7 @@ async function main() {
     const img = await rgba(await src.png().toBuffer());
     const [lo, hi] = thr.length === 2 ? thr : [9, 40]; // mock-up renders keep a faint floor reflection: matte them a touch harder
     const obj = matte(img, fitPlate(img), lo, hi);
-    const file = `studio-${slug}.webp`; emit(slug, file, await compose(bg, obj, { fit, anchor: 'floor' }, path.join(outDir, file)));
+    const file = `studio-${slug}-hd.webp`; emit(slug, file, await compose(bg, obj, { fit, anchor: 'floor' }, path.join(outDir, file)));
   }
   // keep entries made outside this script (e.g. the generated wooden-coaster-teaspoon listing)
   const manifestPath = path.join(root, 'src/data/studio-listing.json');

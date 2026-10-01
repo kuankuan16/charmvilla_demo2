@@ -1,0 +1,461 @@
+{
+ "height": 6198,
+ "sections": [
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out pt-14 opacity-100",
+   "y": 1669,
+   "h": 1073
+  },
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out opacity-100",
+   "y": 2742,
+   "h": 1017
+  },
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out opacity-100",
+   "y": 3758,
+   "h": 881
+  },
+  {
+   "cls": "relative transition-all duration-700 ease-custom-in-out opacity-100",
+   "y": 4640,
+   "h": 802
+  }
+ ],
+ "imgs": [
+  {
+   "x": 963,
+   "y": 1074,
+   "w": 447,
+   "h": 596,
+   "colStart": 9,
+   "colEnd": 12,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "relative overflow-hidden aspect-3/4"
+  },
+  {
+   "x": 30,
+   "y": 1785,
+   "w": 213,
+   "h": 284,
+   "colStart": 1,
+   "colEnd": 2,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "aspect-3/4 overflow-hidden flex-1 lg:flex-none lg:w-cols-2 shrink-0"
+  },
+  {
+   "x": 263,
+   "y": 1785,
+   "w": 213,
+   "h": 284,
+   "colStart": 3,
+   "colEnd": 4,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "aspect-3/4 overflow-hidden flex-1 lg:flex-none lg:w-cols-2 shrink-0"
+  },
+  {
+   "x": 723,
+   "y": 1785,
+   "w": 673,
+   "h": 897,
+   "colStart": 6.94,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "aspect-3/4 overflow-hidden order-last"
+  },
+  {
+   "x": 30,
+   "y": 2802,
+   "w": 673,
+   "h": 897,
+   "colStart": 1,
+   "colEnd": 5.94,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "aspect-3/4 overflow-hidden"
+  },
+  {
+   "x": 953,
+   "y": 3219,
+   "w": 213,
+   "h": 284,
+   "colStart": 8.91,
+   "colEnd": 9.91,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "aspect-3/4 overflow-hidden w-cols-3 lg:w-cols-2 shrink-0 max-lg:ml-auto"
+  },
+  {
+   "x": 30,
+   "y": 3928,
+   "w": 442,
+   "h": 589,
+   "colStart": 1,
+   "colEnd": 3.96,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-100"
+  },
+  {
+   "x": 30,
+   "y": 3928,
+   "w": 442,
+   "h": 589,
+   "colStart": 1,
+   "colEnd": 3.96,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-0"
+  },
+  {
+   "x": 492,
+   "y": 3928,
+   "w": 442,
+   "h": 589,
+   "colStart": 4.96,
+   "colEnd": 7.91,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-100"
+  },
+  {
+   "x": 492,
+   "y": 3928,
+   "w": 442,
+   "h": 589,
+   "colStart": 4.96,
+   "colEnd": 7.91,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-0"
+  },
+  {
+   "x": 953,
+   "y": 3928,
+   "w": 442,
+   "h": 589,
+   "colStart": 8.91,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-100"
+  },
+  {
+   "x": 953,
+   "y": 3928,
+   "w": 442,
+   "h": 589,
+   "colStart": 8.91,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 transition-opacity duration-500 opacity-0"
+  },
+  {
+   "x": -57,
+   "y": 3725,
+   "w": 1539,
+   "h": 1212,
+   "colStart": 0.25,
+   "colEnd": 12.62,
+   "ratio": 1.27,
+   "section": "",
+   "cls": "absolute top-[-20%] bottom-[-20%] inset-x-0"
+  },
+  {
+   "x": 948,
+   "y": 5501,
+   "w": 447,
+   "h": 596,
+   "colStart": 8.87,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 ease-in-out transition-opacity duration-700 opacity-0"
+  },
+  {
+   "x": 948,
+   "y": 5501,
+   "w": 447,
+   "h": 596,
+   "colStart": 8.87,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 ease-in-out transition-opacity duration-700 opacity-0"
+  },
+  {
+   "x": 948,
+   "y": 5501,
+   "w": 447,
+   "h": 596,
+   "colStart": 8.87,
+   "colEnd": 11.87,
+   "ratio": 0.75,
+   "section": "",
+   "cls": "absolute inset-0 ease-in-out transition-opacity duration-700 opacity-100"
+  }
+ ],
+ "texts": [
+  {
+   "tag": "P",
+   "x": 50,
+   "y": 808,
+   "w": 249,
+   "size": "16px",
+   "text": "Fabric / Lodge 216 Curry"
+  },
+  {
+   "tag": "P",
+   "x": 50,
+   "y": 829,
+   "w": 249,
+   "size": "16px",
+   "text": "Legs / Natural Lacquered hardwood"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1009,
+   "w": 380,
+   "size": "13px",
+   "text": "TOTAL WIDTH [W]"
+  },
+  {
+   "tag": "P",
+   "x": 1364,
+   "y": 1009,
+   "w": 46,
+   "size": "13px",
+   "text": "290 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1045,
+   "w": 380,
+   "size": "13px",
+   "text": "TOTAL DEPTH [L]"
+  },
+  {
+   "tag": "P",
+   "x": 1364,
+   "y": 1045,
+   "w": 46,
+   "size": "13px",
+   "text": "206 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1081,
+   "w": 387,
+   "size": "13px",
+   "text": "TOTAL HEIGHT [H]"
+  },
+  {
+   "tag": "P",
+   "x": 1370,
+   "y": 1081,
+   "w": 40,
+   "size": "13px",
+   "text": "84 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1117,
+   "w": 388,
+   "size": "13px",
+   "text": "ARMRESTS [A]"
+  },
+  {
+   "tag": "P",
+   "x": 1371,
+   "y": 1117,
+   "w": 39,
+   "size": "13px",
+   "text": "20 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1153,
+   "w": 387,
+   "size": "13px",
+   "text": "SEAT HEIGHT [B]"
+  },
+  {
+   "tag": "P",
+   "x": 1371,
+   "y": 1153,
+   "w": 39,
+   "size": "13px",
+   "text": "43 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1189,
+   "w": 388,
+   "size": "13px",
+   "text": "SEAT DEPTH [C]"
+  },
+  {
+   "tag": "P",
+   "x": 1371,
+   "y": 1189,
+   "w": 39,
+   "size": "13px",
+   "text": "56 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1225,
+   "w": 388,
+   "size": "13px",
+   "text": "LEG HEIGHT [E]"
+  },
+  {
+   "tag": "P",
+   "x": 1371,
+   "y": 1225,
+   "w": 39,
+   "size": "13px",
+   "text": "20 CM"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1279,
+   "w": 447,
+   "size": "16px",
+   "text": "Measurement tolerance ±3%"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1042,
+   "w": 447,
+   "size": "16px",
+   "text": "Choose from a curated selection of fabrics and fin"
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 1181,
+   "w": 447,
+   "size": "16px",
+   "text": "Suggested Finishes:"
+  },
+  {
+   "tag": "P",
+   "x": 723,
+   "y": 2862,
+   "w": 673,
+   "size": "16px",
+   "text": "STINA / Footstool A"
+  },
+  {
+   "tag": "P",
+   "x": 723,
+   "y": 2885,
+   "w": 673,
+   "size": "16px",
+   "text": "/ Footstool"
+  },
+  {
+   "tag": "P",
+   "x": 953,
+   "y": 2945,
+   "w": 442,
+   "size": "24px",
+   "text": "Part of the\nsame collection"
+  },
+  {
+   "tag": "P",
+   "x": 953,
+   "y": 3032,
+   "w": 442,
+   "size": "16px",
+   "text": "Sharing the same fabric,\nproportions, and warm\nDan"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 3818,
+   "w": 242,
+   "size": "30px",
+   "text": "Our latest products"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 4529,
+   "w": 442,
+   "size": "24px",
+   "text": "STINA / Corner Sitting Island + 3 Seater"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 4559,
+   "w": 442,
+   "size": "16px",
+   "text": "Sofas"
+  },
+  {
+   "tag": "P",
+   "x": 492,
+   "y": 4529,
+   "w": 442,
+   "size": "24px",
+   "text": "KALLE"
+  },
+  {
+   "tag": "P",
+   "x": 492,
+   "y": 4559,
+   "w": 442,
+   "size": "16px",
+   "text": "Footstools"
+  },
+  {
+   "tag": "P",
+   "x": 953,
+   "y": 4529,
+   "w": 442,
+   "size": "24px",
+   "text": "ROUND FOOTSTOOLS"
+  },
+  {
+   "tag": "P",
+   "x": 953,
+   "y": 4559,
+   "w": 442,
+   "size": "16px",
+   "text": "Footstools"
+  },
+  {
+   "tag": "P",
+   "x": 30,
+   "y": 4672,
+   "w": 913,
+   "size": "16px",
+   "text": "Design by Tradition.\nCopenhagen by Heart."
+  },
+  {
+   "tag": "P",
+   "x": 963,
+   "y": 4672,
+   "w": 398,
+   "size": "16px",
+   "text": "Inspired by the creative pulse of Copenhagen, we b"
+  }
+ ]
+}
