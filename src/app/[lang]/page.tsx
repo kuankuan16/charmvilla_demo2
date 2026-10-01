@@ -13,6 +13,11 @@ import Visit from "@/components/sections/Visit";
 import Footer from "@/components/sections/Footer";
 import { alternatesFor, defaultLocale, isLocale } from "@/i18n/config";
 
+// The film card is switched on per deployment with NEXT_PUBLIC_SHOW_FILM=1. The hands in the film are being redone
+// (user 2026-10-01: 「等一下，手的細節有問題」), so production stays without the card until the new cut is approved;
+// preview deployments set the variable to show the layout.
+const SHOW_FILM = process.env.NEXT_PUBLIC_SHOW_FILM === "1";
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   return { alternates: alternatesFor(isLocale(lang) ? lang : defaultLocale, "/") };
@@ -26,8 +31,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <Header />
       <main className="site-main">
         <div className="opening-sequence">
-          <Hero />
-          <BrandFilm lang={lang} />
+          {/* the hero stays pinned behind the film card that rises over it (.film-stage in globals.css) */}
+          {SHOW_FILM ? <div className="film-stage"><Hero /><BrandFilm /></div> : <Hero />}
           <Manifesto />
           <CraftMoments />
         </div>

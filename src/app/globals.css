@@ -434,6 +434,14 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   touch-action: pan-y;
 }
 [data-page-scroller]:has(.orbit-hero) [data-header]:not(.menu--opened) { background: rgb(246 248 250 / .8); }
+/* Film stage (user 2026-10-01, after the Strategy boards of recruit.positive.co.jp): the hero stays pinned while the film
+   card (BrandFilm) rises over it; as the card comes to rest the hero shrinks a little and takes a tint, like the board
+   underneath in the reference. --film-p (0 → 1) is written by BrandFilm.tsx. The offset equals the hero's own start
+   position (header height minus its 50px pull-up), so nothing moves when the pinning begins. */
+.film-stage { position: relative; --film-p: 0; }
+.film-stage > .orbit-hero { position: sticky; top: calc(var(--header-h) - 50px); transform-origin: 50% 0; transform: scale(calc(1 - .06 * var(--film-p))); }
+.film-stage > .orbit-hero::after { content: ""; position: absolute; inset: -50px 0 0; z-index: 40; background: var(--color-ink); opacity: calc(.34 * var(--film-p)); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .film-stage > .orbit-hero { transform: none; } }
 .orbit-stage { position: absolute; inset: 0; }
 .orbit-paints, .orbit-photographs { position: absolute; inset: 0; pointer-events: none; }
 .orbit-paints { overflow: visible; }
