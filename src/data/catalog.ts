@@ -207,8 +207,10 @@ const buildCatalog = (lang: Locale) => {
   const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a bird-shaped rest beside a cloud-shaped coaster, close view of a black tray table"));
   const woodenOttomans = site("scene-wooden-ottomans.webp", t("兩片雲朵杯墊與兩支銀杏茶匙，放在芥末黃織布圓凳上", "Two cloud-shaped coasters and two ginkgo teaspoons on a mustard woven ottoman"));
   const sceneLead: Record<string, Img[]> = {
-    // the only scene of the Raw Gold earring (output/raw-gold-earring-scene-2026-10-01), so its listing card has a hover image too
-    "raw-gold-goldfish-earrings": [site("scene-raw-gold-earring-worn.webp", t("璞金小金魚耳環配戴在耳垂上，窗邊柔光", "Raw Gold goldfish earring worn on the earlobe in soft window light"))],
+    // the only scene of the Raw Gold earring, so its listing card has a hover image too. The user's chosen model (dark green
+    // satin), the goldfish outline taken from the brand's own silhouette, matte gold generated
+    // (output/raw-gold-earring-scene-2026-10-01/v4-official-outline, approved 2026-10-01).
+    "raw-gold-goldfish-earrings": [site("scene-raw-gold-earring-model.webp", t("璞金小金魚耳環配戴在耳垂上，霧面金，墨綠緞面", "Raw Gold goldfish earring worn on the earlobe, matte gold, against dark green satin"))],
     "wooden-coaster-teaspoon": [woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa],
     "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
   };
