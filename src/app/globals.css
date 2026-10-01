@@ -262,7 +262,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    Views cross-fade in 300ms; thin arrows appear at the image's edges while the pointer is over it. Every gallery image is
    a 4:5 studio photograph shown with object-fit: cover, so this image has the same size and height on every product page. */
 .product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(380px, calc(100svh - var(--header-h) - clamp(64px, 11svh, 140px))); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
-.product-stage { grid-column: 1 / span 6; align-self: start; min-width: 0; }
+.product-stage-size { grid-column: 1 / span 6; grid-row: 1; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
+.product-stage { grid-column: 1 / span 6; grid-row: 1 / span 2; align-self: start; min-width: 0; position: sticky; top: var(--header-h); }
 .product-main-image { position: relative; width: 100%; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); overflow: hidden; background: var(--color-page); }
 .product-slide { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; cursor: zoom-in; transition: opacity .3s; }
 .product-slide[data-active=true] { opacity: 1; pointer-events: auto; }
@@ -272,7 +273,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-main-image:hover .product-arrow, .product-arrow:focus-visible { opacity: 1; }
 .product-arrow:focus-visible { outline: 2px solid var(--color-ink); }
 @media (hover: none) { .product-arrow { opacity: 1; } }
-.product-column { grid-column: 9 / span 4; min-width: 0; display: flex; }
+.product-column { grid-column: 9 / span 4; grid-row: 1; min-width: 0; display: flex; }
 .product-first { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .product-first-lead { flex: 0 1 clamp(28px, 5vw, 72px); }
 .product-first-gap { flex: 1 1 22px; min-height: 16px; }
@@ -307,27 +308,17 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-variants { margin-top: 12px; } .product-variants legend { margin-bottom: 8px; } .product-variants a { min-height: 34px; padding: 7px 13px; }
   .product-buy { margin-top: 14px; min-height: 40px; }
 }
-/* Scenes below the first screen, after jakobsencopenhagen.com/en/products/stina-corner-sitting-island-3-seater (user 2026-10-01:
-   「像雜誌的版型」「圖片有大有小，不要都一樣大」): every row is the same 12 columns. Row a = a large image on columns 7–12 and,
-   at the far left, up to two small ones of 2 columns each with the story text under them; row b = a large image on columns
-   1–6 and one small image low on the right (columns 9–10). Landscape photographs take 8 columns as the large image. */
-.product-story { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; row-gap: clamp(56px, 8vw, 130px); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
-.story-row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; }
-.story-fig { position: relative; min-width: 0; overflow: hidden; background: var(--color-ground); }
-.story-fig--large { align-self: start; }
-.story-side { display: flex; flex-direction: column; min-width: 0; }
-.story-smalls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--pdp-gap); align-items: start; }
-.story-smalls .story-fig:not([data-shape=tall]) { grid-column: 1 / -1; }
-.story-row--a .story-fig--large { grid-column: 7 / span 6; grid-row: 1; }
-.story-row--a .story-fig--large:not([data-shape=tall]) { grid-column: 5 / span 8; }
-.story-row--a .story-side { grid-column: 1 / span 4; grid-row: 1; }
-.story-row--a .story-fig--large:not([data-shape=tall]) + .story-side { grid-column: 1 / span 3; }
-.story-row--a .product-story-text { margin-top: auto; padding-top: 40px; }
-.story-row--b .story-fig--large { grid-column: 1 / span 6; grid-row: 1; }
-.story-row--b .story-fig--large:not([data-shape=tall]) { grid-column: 1 / span 8; }
-.story-row--b .story-side { grid-column: 9 / span 4; grid-row: 1; justify-content: flex-end; }
-.story-row--b .story-fig--large:not([data-shape=tall]) + .story-side { grid-column: 10 / span 3; }
-.story-row--text .product-story-text { grid-column: 9 / span 4; }
+/* Under the first screen, after jakobsencopenhagen.com/en/products/karla (user 2026-10-01: 「右側的情境照應該要對齊上面資訊欄的欄位，
+   左邊商品圖會暫時固定」): the information column goes on with the story text and the first scene photographs, each as wide as the
+   column, and the product image stays under the header until the column has passed (their bottom edges then meet). Scenes
+   the column does not take close the page in rows on the same 12 columns: portraits on 4 columns, so the third one sits
+   under the information column; landscapes on 6. */
+.product-more { grid-column: 9 / span 4; grid-row: 2; min-width: 0; display: flex; flex-direction: column; gap: var(--pdp-gap); padding-top: clamp(48px, 5vw, 84px); }
+.product-more .product-story-text { margin-bottom: clamp(16px, 1.6vw, 28px); }
+.scene-fig { position: relative; min-width: 0; overflow: hidden; background: var(--color-ground); }
+.product-scenes { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
+.product-scenes .scene-fig { grid-column: span 6; }
+.product-scenes .scene-fig[data-shape=tall] { grid-column: span 4; }
 .product-story-text { min-width: 0; }
 .product-story-text h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; text-wrap: balance; }
 .product-story-text p { margin-top: 12px; font-size: 13px; line-height: 2.05; }
@@ -335,10 +326,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-awards img { width: 78px; height: 48px; object-fit: contain; }
 .product-related h2 { font-size: clamp(20px, 1.6vw, 27px); font-weight: 500; line-height: 1.5; }
 @media (max-width: 1279px) and (min-width: 768px) {
-  .product-column { grid-column: 8 / span 5; }
+  .product-column, .product-more { grid-column: 8 / span 5; }
 }
 @media (max-width: 767px) {
-  .product-hero { display: block; padding: 0 0 56px; }
+  .product-hero { display: block; padding: 0 0 14px; }
   .product-main-image { max-height: none; }
   .product-column { display: block; padding: 0 20px; }
   .product-first { min-height: 0; }
@@ -346,9 +337,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-first-gap { flex: 0 0 26px; }
   .product-thumbnails { --thumb: 56px; margin-top: 12px; }
   .product-intro h1 { font-size: 24px; }
-  .product-story { row-gap: 14px; padding: 0 20px 64px; }
-  .story-row { display: flex; flex-direction: column; gap: 14px; }
-  .story-row--a .product-story-text { padding-top: 14px; margin-bottom: 18px; }
+  .product-stage-size { display: none; }
+  .product-stage { position: static; }
+  .product-more { padding: 48px 20px 0; gap: 14px; }
+  .product-scenes { display: flex; flex-direction: column; align-items: stretch; gap: 14px; padding: 0 20px 64px; }
 }
 .product-edition { color: var(--color-stone-deep); margin-left: 20px; white-space: nowrap; }
 .product-variants { margin-top: 16px; border: 0; min-width: 0; }
