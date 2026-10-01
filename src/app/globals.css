@@ -761,7 +761,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    that follows the pointer. Page ground stays --color-page; the gold brush is the hero's brush texture (InkBloom).
    --------------------------------------------------------------------------------------------------------------- */
 .craft-moments { position: relative; z-index: 2; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); background: var(--color-page); overflow: hidden; outline: none; }
-.craft-brush { z-index: 0; left: 14vw; top: -62%; width: 46vw; height: 118vw; opacity: .8; transform: rotate(-64deg); mask-image: url('/media/hero/brushes/paint1_1a_pc.webp'); }
 .craft-header { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px clamp(40px, 6vw, 120px); align-items: end; }
 .craft-kicker { margin: 0 0 14px; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
 .craft-heading { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 500; line-height: 1.25; letter-spacing: .02em; }
@@ -807,8 +806,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 }
 @media (max-width: 767px) {
   .craft-moments { min-height: 0; padding: calc(var(--header-h) + 28px) var(--page-gutter) 44px; }
-  .craft-brush { left: -30vw; top: 4%; width: 110vw; height: 150vw; opacity: .5; }
-  .craft-header { grid-template-columns: 1fr; gap: 18px; }
+    .craft-header { grid-template-columns: 1fr; gap: 18px; }
   .craft-intro { justify-self: start; font-size: 13px; line-height: 1.9; }
   .craft-body { margin-top: 28px; }
   .craft-stage { height: calc(78vw * 1.25 + 24px); }

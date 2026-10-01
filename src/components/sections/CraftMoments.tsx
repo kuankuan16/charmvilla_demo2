@@ -4,10 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { craftMoments } from "@/data/craft-moments";
-import InkBloom from "@/components/ui/InkBloom";
-import { SCROLLER_SELECTOR } from "@/lib/motion/scroller";
 
 const AUTOPLAY_MS = 6000;
 const DRAG_THRESHOLD = 60;
@@ -38,7 +35,6 @@ export default function CraftMoments() {
   useEffect(() => {
     const el = root.current;
     if (!el) return;
-    gsap.registerPlugin(ScrollTrigger);
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const observer = new IntersectionObserver(([entry]) => { visible.current = entry.isIntersecting; }, { threshold: .3 });
     observer.observe(el);
@@ -52,13 +48,7 @@ export default function CraftMoments() {
       if (elapsed.current >= AUTOPLAY_MS) { elapsed.current = 0; setActive(a => (a + 1) % count); }
     };
     gsap.ticker.add(tick);
-    const ctx = gsap.context(() => {
-      const scroller = document.querySelector<HTMLElement>(SCROLLER_SELECTOR);
-      const brush = el.querySelector(".craft-brush");
-      if (!scroller || !brush || motion.matches) return;
-      gsap.fromTo(brush, { yPercent: 8 }, { yPercent: -12, ease: "none", scrollTrigger: { scroller, trigger: el, start: "top bottom", end: "bottom top", scrub: true, invalidateOnRefresh: true } });
-    }, el);
-    return () => { observer.disconnect(); gsap.ticker.remove(tick); ctx.revert(); };
+    return () => { observer.disconnect(); gsap.ticker.remove(tick); };
   }, [count, paused]);
 
   const movePill = (e: ReactPointerEvent) => {
@@ -95,7 +85,7 @@ export default function CraftMoments() {
       onKeyDown={e => { if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); } if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); } }}
       onFocusCapture={() => { focus.current = true; }}
       onBlurCapture={e => { if (!e.currentTarget.contains(e.relatedTarget)) focus.current = false; }}>
-      <div className="story-brush craft-brush" aria-hidden="true"><InkBloom observe seed={17} /></div>
+      {/* 2026-10-01 (user): no brush texture in this section */}
 
       <header className="craft-header">
         <div>
