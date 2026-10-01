@@ -3,14 +3,14 @@
  "report": [
   {
    "name": "zh-desktop",
-   "travel": 1485,
+   "travel": 810,
    "errors": [],
    "steps": [
     {
-     "y": 1490,
+     "y": 1557,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": 148,
+     "sectionHeight": 1710,
+     "pinTop": 81,
      "pinHeight": 900,
      "active": 0,
      "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
@@ -20,7 +20,7 @@
     {
      "y": 1638,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 0,
@@ -29,9 +29,9 @@
      "overflowX": false
     },
     {
-     "y": 1787,
+     "y": 1719,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 0,
@@ -40,9 +40,9 @@
      "overflowX": false
     },
     {
-     "y": 1935,
+     "y": 1800,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 0,
@@ -51,9 +51,9 @@
      "overflowX": false
     },
     {
-     "y": 2084,
+     "y": 1881,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 1,
@@ -62,9 +62,9 @@
      "overflowX": false
     },
     {
-     "y": 2232,
+     "y": 1962,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 1,
@@ -73,76 +73,76 @@
      "overflowX": false
     },
     {
-     "y": 2381,
+     "y": 2043,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 2,
      "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2124,
+     "sectionTop": 1638,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2205,
+     "sectionTop": 1638,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2286,
+     "sectionTop": 1638,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2367,
+     "sectionTop": 1638,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2448,
+     "sectionTop": 1638,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
      "buttons": 0,
      "overflowX": false
     },
     {
      "y": 2529,
      "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 2,
-     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 2678,
-     "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 2,
-     "quote": "金工的人， 磨到只剩輪廓才肯停手。",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 2826,
-     "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 3,
-     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 2975,
-     "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 3,
-     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 3123,
-     "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 3,
-     "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 3272,
-     "sectionTop": 1638,
-     "sectionHeight": 2385,
-     "pinTop": -149,
+     "sectionHeight": 1710,
+     "pinTop": -81,
      "pinHeight": 900,
      "active": 3,
      "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
@@ -151,9 +151,9 @@
     }
    ],
    "afterDot": {
-    "y": 2516,
+    "y": 2094,
     "sectionTop": 1638,
-    "sectionHeight": 2385,
+    "sectionHeight": 1710,
     "pinTop": 0,
     "pinHeight": 900,
     "active": 2,
@@ -162,9 +162,9 @@
     "overflowX": false
    },
    "afterDrag": {
-    "y": 2516,
+    "y": 2094,
     "sectionTop": 1638,
-    "sectionHeight": 2385,
+    "sectionHeight": 1710,
     "pinTop": 0,
     "pinHeight": 900,
     "active": 2,
@@ -175,14 +175,14 @@
   },
   {
    "name": "en-desktop",
-   "travel": 1485,
+   "travel": 810,
    "errors": [],
    "steps": [
     {
-     "y": 1601,
+     "y": 1668,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": 148,
+     "sectionHeight": 1710,
+     "pinTop": 81,
      "pinHeight": 900,
      "active": 0,
      "quote": "The hands that fold turn",
@@ -192,7 +192,7 @@
     {
      "y": 1749,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 0,
@@ -201,9 +201,9 @@
      "overflowX": false
     },
     {
-     "y": 1898,
+     "y": 1830,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 0,
@@ -212,9 +212,9 @@
      "overflowX": false
     },
     {
-     "y": 2046,
+     "y": 1911,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 0,
@@ -223,9 +223,9 @@
      "overflowX": false
     },
     {
-     "y": 2195,
+     "y": 1992,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 1,
@@ -234,9 +234,9 @@
      "overflowX": false
     },
     {
-     "y": 2343,
+     "y": 2073,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 1,
@@ -245,76 +245,76 @@
      "overflowX": false
     },
     {
-     "y": 2492,
+     "y": 2154,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 1,
+     "quote": "The one who cuts the lea",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2235,
+     "sectionTop": 1749,
+     "sectionHeight": 1710,
      "pinTop": 0,
      "pinHeight": 900,
      "active": 2,
      "quote": "The goldsmith will not s",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2316,
+     "sectionTop": 1749,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 2,
+     "quote": "The goldsmith will not s",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2397,
+     "sectionTop": 1749,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2478,
+     "sectionTop": 1749,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
+     "buttons": 0,
+     "overflowX": false
+    },
+    {
+     "y": 2559,
+     "sectionTop": 1749,
+     "sectionHeight": 1710,
+     "pinTop": 0,
+     "pinHeight": 900,
+     "active": 3,
+     "quote": "The woodworker saws a le",
      "buttons": 0,
      "overflowX": false
     },
     {
      "y": 2640,
      "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 2,
-     "quote": "The goldsmith will not s",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 2789,
-     "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 2,
-     "quote": "The goldsmith will not s",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 2937,
-     "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 3,
-     "quote": "The woodworker saws a le",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 3086,
-     "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 3,
-     "quote": "The woodworker saws a le",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 3234,
-     "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": 0,
-     "pinHeight": 900,
-     "active": 3,
-     "quote": "The woodworker saws a le",
-     "buttons": 0,
-     "overflowX": false
-    },
-    {
-     "y": 3383,
-     "sectionTop": 1749,
-     "sectionHeight": 2385,
-     "pinTop": -149,
+     "sectionHeight": 1710,
+     "pinTop": -81,
      "pinHeight": 900,
      "active": 3,
      "quote": "The woodworker saws a le",
@@ -323,9 +323,9 @@
     }
    ],
    "afterDot": {
-    "y": 2628,
+    "y": 2206,
     "sectionTop": 1749,
-    "sectionHeight": 2385,
+    "sectionHeight": 1710,
     "pinTop": 0,
     "pinHeight": 900,
     "active": 2,
@@ -334,9 +334,9 @@
     "overflowX": false
    },
    "afterDrag": {
-    "y": 2628,
+    "y": 2206,
     "sectionTop": 1749,
-    "sectionHeight": 2385,
+    "sectionHeight": 1710,
     "pinTop": 0,
     "pinHeight": 900,
     "active": 2,
@@ -347,14 +347,14 @@
   },
   {
    "name": "zh-mobile",
-   "travel": 1139,
+   "travel": 709,
    "errors": [],
    "steps": [
     {
-     "y": 1464,
+     "y": 1507,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
-     "pinTop": 114,
+     "sectionHeight": 1579,
+     "pinTop": 71,
      "pinHeight": 870,
      "active": 0,
      "quote": "摺紙的手， 把一張濾紙摺成會游的形。",
@@ -364,7 +364,7 @@
     {
      "y": 1578,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": 0,
      "pinHeight": 870,
      "active": 0,
@@ -373,9 +373,9 @@
      "overflowX": false
     },
     {
-     "y": 1692,
+     "y": 1649,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 0,
@@ -384,9 +384,9 @@
      "overflowX": false
     },
     {
-     "y": 1806,
+     "y": 1720,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 0,
@@ -395,9 +395,9 @@
      "overflowX": false
     },
     {
-     "y": 1920,
+     "y": 1791,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 1,
@@ -406,9 +406,9 @@
      "overflowX": false
     },
     {
-     "y": 2034,
+     "y": 1862,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 1,
@@ -417,9 +417,9 @@
      "overflowX": false
     },
     {
-     "y": 2148,
+     "y": 1933,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 1,
@@ -428,9 +428,9 @@
      "overflowX": false
     },
     {
-     "y": 2261,
+     "y": 2003,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 2,
@@ -439,9 +439,9 @@
      "overflowX": false
     },
     {
-     "y": 2375,
+     "y": 2074,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 2,
@@ -450,9 +450,9 @@
      "overflowX": false
     },
     {
-     "y": 2489,
+     "y": 2145,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 3,
@@ -461,9 +461,9 @@
      "overflowX": false
     },
     {
-     "y": 2603,
+     "y": 2216,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 3,
@@ -472,9 +472,9 @@
      "overflowX": false
     },
     {
-     "y": 2717,
+     "y": 2287,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
+     "sectionHeight": 1579,
      "pinTop": -26,
      "pinHeight": 870,
      "active": 3,
@@ -483,10 +483,10 @@
      "overflowX": false
     },
     {
-     "y": 2831,
+     "y": 2358,
      "sectionTop": 1578,
-     "sectionHeight": 2009,
-     "pinTop": -113,
+     "sectionHeight": 1579,
+     "pinTop": -71,
      "pinHeight": 870,
      "active": 3,
      "quote": "做木的人， 順著木紋把一片葉子鋸出來。",
@@ -495,9 +495,9 @@
     }
    ],
    "afterDot": {
-    "y": 2266,
+    "y": 1998,
     "sectionTop": 1578,
-    "sectionHeight": 2009,
+    "sectionHeight": 1579,
     "pinTop": -26,
     "pinHeight": 870,
     "active": 2,
@@ -506,9 +506,9 @@
     "overflowX": false
    },
    "afterDrag": {
-    "y": 2266,
+    "y": 1998,
     "sectionTop": 1578,
-    "sectionHeight": 2009,
+    "sectionHeight": 1579,
     "pinTop": -26,
     "pinHeight": 870,
     "active": 2,

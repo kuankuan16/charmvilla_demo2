@@ -1,0 +1,35 @@
+{
+ "base": "https://charmvilla-gallery-site.vercel.app",
+ "zhPreloader": {
+  "src": "/brand/goldfish-white.svg",
+  "box": [
+   893,
+   366,
+   202,
+   168
+  ],
+  "loaded": true
+ },
+ "zh": {
+  "statement": "36px / 500 / 48.6px / 0.72px",
+  "craftQuote": "36px / 500 / 48.6px / 0.72px",
+  "preloaderGone": true,
+  "overflowX": false
+ },
+ "enPreloader": {
+  "src": "/brand/goldfish-white.svg",
+  "box": [
+   893,
+   366,
+   202,
+   168
+  ],
+  "loaded": true
+ },
+ "en": {
+  "statement": "36px / 500 / 48.6px / -0.9px",
+  "craftQuote": "36px / 500 / 48.6px / -0.9px",
+  "preloaderGone": true,
+  "overflowX": false
+ }
+}
