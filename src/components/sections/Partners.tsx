@@ -6,7 +6,7 @@ import { Picture } from "@/components/ui";
 export default function Partners() {
   // One screen below the fixed 50px header (so the CTA row is on-screen when the section is anchored).
   return (
-    <section id="partners" className="container-x relative grid bg-white laptop:h-[calc(100vh-50px)] laptop:grid-cols-2">
+    <section id="partners" className="container-x relative grid bg-page laptop:h-[calc(100vh-50px)] laptop:grid-cols-2">
       <div className="partners-image relative p-10 pt-30 laptop:pb-40 laptop:pt-40">
         <div className="relative aspect-[4/5] w-full laptop:aspect-auto laptop:h-full" data-animation="clip">
           <Picture img={partners.image} fill sizes="(min-width:1280px) 48vw, 100vw" className="h-full w-full" />

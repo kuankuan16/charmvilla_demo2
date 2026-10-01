@@ -712,7 +712,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .store-track::-webkit-scrollbar { display: none; }
 .store-track[data-dragging] { scroll-snap-type: none; cursor: grabbing; user-select: none; }
 .store-track img { pointer-events: none; }
-.store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: white; scroll-snap-align: start; }
+.store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: var(--color-page); scroll-snap-align: start; } /* one ground colour on the homepage (user 2026-10-01) */
 .store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; }
 .store-city { font-size: clamp(26px, 2.5vw, 42px); line-height: 1.2; }
 .store-city span { font-size: 13px; margin-left: 8px; color: #777; }

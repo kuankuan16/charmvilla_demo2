@@ -10,7 +10,7 @@ export default function Shown() {
   const headingLines = shown.heading.split(" ");
 
   return (
-    <section id="shown" className="relative bg-white pt-30 mb-100 lg:mb-180">
+    <section id="shown" className="relative bg-page pt-30 mb-100 lg:mb-180">
       <div className="relative">
         <div
           aria-hidden="true"

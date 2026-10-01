@@ -1,0 +1,57 @@
+[
+  {
+    "sel": "main.site-main section[id]",
+    "id": "hero",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "manifesto",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "craft",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "featured",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "shown",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "partners",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "visit",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "main.site-main section[id]",
+    "id": "news",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": ".store-card",
+    "id": "store-card",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": ".store-card",
+    "id": "store-card",
+    "background": "rgb(246, 248, 250)"
+  },
+  {
+    "sel": "body",
+    "id": "bg-page",
+    "background": "rgb(246, 248, 250)"
+  }
+]
