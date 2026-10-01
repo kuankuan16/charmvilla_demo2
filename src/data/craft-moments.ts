@@ -42,7 +42,7 @@ export const craftMoments = {
       role: "小金魚耳環 ／ 實心金、珍珠、圓鑽",
       body: "魚形先在紙上，再到金屬上。鋸、銼、磨，去掉多餘的，留下不對稱的一尾。頭接鍊，尾自由垂墜，轉身時各自接住光。",
       ctas: [{ label: "看金飾", href: "/collections/jewelry" }],
-      image: site("craft-03-goldsmith-workshop.webp", "金工坊的廣角一景：窗邊工作檯、工具牆，職人只在畫面邊緣露出背影"),
+      image: site("craft-03-goldsmith-sunlight.webp", "晨光斜射進金工坊的窗：工作檯、工具牆與塵埃光束，職人只在畫面邊緣露出背影"),
     },
     {
       id: "at-the-table", en: "AT THE TABLE", name: "餐桌的木紋",
