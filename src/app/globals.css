@@ -773,23 +773,25 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    card with side peeks, quote + outlined CTA at the right, prev/next/pause bottom-left, dots bottom-right, a drag pill
    that follows the pointer. Page ground stays --color-page; the gold brush is the hero's brush texture (InkBloom).
    --------------------------------------------------------------------------------------------------------------- */
-.craft-moments { position: relative; z-index: 2; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); background: var(--color-page); overflow: hidden; outline: none; }
+/* The cards change with the scroll (user 2026-10-01): .craft-pin is held in place (position: sticky) while the page
+   scrolls through .craft-track; CraftMoments.tsx turns the distance travelled into the active card and sets --craft-top. */
+.craft-moments { position: relative; z-index: 2; background: var(--color-page); outline: none; }
+.craft-pin { position: sticky; top: var(--craft-top, 0px); isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--page-gutter) clamp(32px, 4vw, 56px); overflow: hidden; }
+.craft-track { height: calc((var(--craft-count, 4) - 1) * 55svh); }
 .craft-header { position: relative; z-index: 2; }
 .craft-kicker { margin: 0 0 14px; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
 .craft-heading { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 500; line-height: 1.25; letter-spacing: .02em; }
 .craft-sub { margin: 14px 0 0; font-size: 13px; color: var(--color-stone-deep); }
 .craft-intro { margin: 0; max-width: 34em; font-size: clamp(13px, 1vw, 15px); line-height: 2; justify-self: end; }
 .craft-body { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr; align-items: center; margin-top: clamp(12px, 2vw, 28px); }
-.craft-stage { position: relative; height: clamp(380px, 56vh, 680px); cursor: grab; user-select: none; -webkit-user-select: none; touch-action: pan-y; }
-.craft-stage.is-dragging { cursor: grabbing; }
-.craft-card { position: absolute; top: 50%; left: var(--cx, 36%); width: min(30vw, 46vh); aspect-ratio: 4 / 5; margin: 0; overflow: hidden; background: var(--color-ground); box-shadow: 0 30px 60px -30px rgb(31 31 31 / .35); transform: translate(-50%, -50%) translateX(var(--drag, 0px)) rotate(var(--rot, 0deg)) scale(var(--s, 1)); opacity: var(--o, 1); transition: left .95s var(--ease-out-expo), transform .95s var(--ease-out-expo), opacity .7s; will-change: transform, left; }
+.craft-stage { position: relative; height: clamp(380px, 56vh, 680px); }
+.craft-card { position: absolute; top: 50%; left: var(--cx, 36%); width: min(30vw, 46vh); aspect-ratio: 4 / 5; margin: 0; overflow: hidden; background: var(--color-ground); box-shadow: 0 30px 60px -30px rgb(31 31 31 / .35); transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(var(--s, 1)); opacity: var(--o, 1); transition: left .95s var(--ease-out-expo), transform .95s var(--ease-out-expo), opacity .7s; will-change: transform, left; }
 .craft-card img { object-fit: cover; pointer-events: none; }
 .craft-card[data-pos="0"] { --cx: 34%; --rot: var(--tilt); z-index: 3; }
 .craft-card[data-pos="-1"] { --cx: -3%; --s: .78; --o: .5; z-index: 2; cursor: pointer; }
 .craft-card[data-pos="1"] { --cx: 109%; --s: .78; --o: .5; z-index: 2; cursor: pointer; }
 .craft-card[data-pos="-2"] { --cx: -40%; --s: .7; --o: 0; z-index: 1; pointer-events: none; }
 .craft-card[data-pos="2"] { --cx: 146%; --s: .7; --o: 0; z-index: 1; pointer-events: none; }
-.craft-stage.is-dragging .craft-card { transition: opacity .7s; }
 .craft-text { position: absolute; left: 56%; right: 14%; top: 50%; transform: translateY(-50%); z-index: 4; animation: craft-in .9s var(--ease-out-expo) both; pointer-events: none; }
 .craft-text > *, .craft-text .craft-ctas a { pointer-events: auto; }
 @keyframes craft-in { from { opacity: 0; transform: translateY(calc(-50% + 24px)); } to { opacity: 1; transform: translateY(-50%); } }
@@ -804,10 +806,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .craft-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 .craft-cta { gap: 16px; min-height: 46px; padding: 12px 22px; font-size: 13px; }
 .craft-cta--quiet { border-color: rgb(31 31 31 / .14); color: var(--color-stone-deep); }
-.craft-controls { position: relative; z-index: 3; display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center; margin-top: clamp(16px, 2vw, 32px); } /* user 2026-10-01: buttons right, dots left */
-.craft-buttons { display: flex; gap: 10px; }
-.craft-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgb(31 31 31 / .3); border-radius: 50%; background: transparent; color: var(--color-ink); font-size: 15px; transition: background .2s, color .2s, border-color .2s; }
-.craft-btn:hover, .craft-btn:focus-visible { background: var(--color-ink); color: #fff; border-color: var(--color-ink); outline: none; }
+.craft-controls { position: relative; z-index: 3; display: flex; align-items: center; margin-top: clamp(16px, 2vw, 32px); }
 .craft-dots { display: flex; gap: 12px; }
 .craft-dot { width: 8px; height: 8px; border-radius: 50%; background: rgb(31 31 31 / .28); transition: background .2s, transform .2s; }
 .craft-dot[aria-selected="true"] { background: var(--color-gold); transform: scale(1.3); }
@@ -819,7 +818,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .craft-quote { font-size: clamp(20px, 2.6vw, 30px); }
 }
 @media (max-width: 767px) {
-  .craft-moments { min-height: 0; padding: calc(var(--header-h) + 28px) var(--page-gutter) 44px; }
+  .craft-pin { padding: calc(var(--header-h) + 28px) var(--page-gutter) 44px; }
+  .craft-track { height: calc((var(--craft-count, 4) - 1) * 45svh); }
     .craft-intro { justify-self: start; font-size: 13px; line-height: 1.9; }
   .craft-body { margin-top: 28px; }
   .craft-stage { height: calc(78vw * 1.25 + 24px); }

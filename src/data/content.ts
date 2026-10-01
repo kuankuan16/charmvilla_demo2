@@ -35,7 +35,7 @@ const buildContent = (lang: Locale) => {
     subtitle: t("藝術即生活", "Art as Life"),
     image: gallery("CV-0422", t("白色編織提把皮革包，沙發人物情境", "Braided Leather Bag in white, held by a seated figure on a sofa"), 2048, 2048),
     slides: [
-      { id: "male", src: "/media/hero/male-embracing-white-bag.webp", alt: t("黑白照片：男子抬起手臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man with one arm raised over his head, the white Braided Leather Bag hanging from his fingers"), w: 1536, h: 1024, label: t("編織提把皮革包", "Braided Leather Bag"), en: "Leather bag", href: "/products/braided-leather-bag-white" },
+      { id: "male", src: "/media/hero/male-embracing-white-bag-v2.webp", alt: t("黑白照片：男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man with both arms folded over his head, the white Braided Leather Bag hanging from his fingers"), w: 1024, h: 688, label: t("編織提把皮革包", "Braided Leather Bag"), en: "Leather bag", href: "/products/braided-leather-bag-white" },
       { id: "female", src: "/media/hero/dancer-female-selected.webp", alt: t("黑白女舞者高舉手臂，白色編織提把皮革包掛於腕間", "Black-and-white photograph of a female dancer with one arm raised, the white Braided Leather Bag hanging from her wrist"), w: 1690, h: 2294, label: t("編織提把皮革包", "Braided Leather Bag"), en: "Leather bag", href: "/products/braided-leather-bag-white" },
       { id: "jewelry", src: "/media/gallery/CV-0380.webp", alt: t("側臉光影中的珍珠長鏈小金魚耳環，米白色衣領", "Pearl Chain Goldfish Earrings seen in profile light against a cream collar"), w: 6146, h: 7680, label: t("珍珠長鏈小金魚耳環", "Pearl Chain Goldfish Earrings"), en: "Goldfish jewelry", href: "/products/pearl-chain-goldfish-earrings" },
     ],
@@ -183,7 +183,8 @@ const buildContent = (lang: Locale) => {
   // Show more! launch hosts / stockists already listed above; contact goes to the brand Instagram.
   const partners = {
     label: "PARTNERS:",
-    image: gallery("CV-0423", t("編織提把皮革包・藍色，肩背情境", "Braided Leather Bag in blue, worn on the shoulder"), 1792, 2240),
+    // 2026-10-01 (user): the male dancer replaces the blue-bag portrait here; the frame ends below the elbow so the shorts read as a waistband only.
+    image: site("partners-male-dancer.webp", t("黑白男舞者側身俯首，一手提著白色編織提把皮革包", "Black-and-white photograph of a male dancer bowing in profile, the white Braided Leather Bag hanging from one hand"), 1869, 1826),
     statement: t("作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The Scholart Selection，到京都寺町，CHARM VILLA 與夥伴一同呈現作品，讓遠近的觀看，回到材質與細節。",
       "For a piece to meet a person, it needs a place. From Regent Galleria at Regent Taipei and The Scholart Selection to Teramachi in Kyoto, CHARM VILLA presents its work together with its partners, so that looking, from near or far, comes back to material and detail."),
     cta: { label: "WORK WITH US", zh: t("合作洽詢", ""), href: "https://www.instagram.com/charmvilla/" },
