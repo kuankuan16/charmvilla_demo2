@@ -1,0 +1,2007 @@
+{
+ "base": "http://localhost:3140",
+ "products": 32,
+ "pages": 64,
+ "failures": 0,
+ "errors": [],
+ "mobile": [
+  {
+   "slug": "reunion-paper-gift-box",
+   "overflowX": false
+  },
+  {
+   "slug": "braided-leather-bag-white",
+   "overflowX": false
+  },
+  {
+   "slug": "bird-chopstick-rest",
+   "overflowX": false
+  }
+ ],
+ "rows": [
+  {
+   "lang": "zh",
+   "slug": "braided-leather-bag-white",
+   "status": 200,
+   "thumbs": 6,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    617,
+    510,
+    265
+   ],
+   "buttonBottom": null,
+   "specs": 5,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "編織提把皮革包・白色",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -51
+  },
+  {
+   "lang": "zh",
+   "slug": "braided-leather-bag-blue",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    617,
+    510,
+    265
+   ],
+   "buttonBottom": null,
+   "specs": 5,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "編織提把皮革包・藍色",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -51
+  },
+  {
+   "lang": "zh",
+   "slug": "braided-leather-bag-pink",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    617,
+    510,
+    265
+   ],
+   "buttonBottom": null,
+   "specs": 5,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "編織提把皮革包・粉紅色",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -51
+  },
+  {
+   "lang": "zh",
+   "slug": "pearl-chain-goldfish-earrings",
+   "status": 200,
+   "thumbs": 5,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    715,
+    510,
+    167
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "珍珠長鏈小金魚耳環",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "diamond-goldfish-earrings",
+   "status": 200,
+   "thumbs": 6,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    715,
+    510,
+    167
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "小金魚耳環・鑽石系列・垂墜",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "diamond-goldfish-stud-earrings",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    715,
+    510,
+    167
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "小金魚耳環・鑽石系列・耳釘",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "twin-goldfish-earrings",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    715,
+    510,
+    167
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "小金魚耳環・雙魚系列",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "raw-gold-goldfish-earrings",
+   "status": 200,
+   "thumbs": 2,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    715,
+    510,
+    167
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--1",
+   "scenes": 1,
+   "h1": "小金魚耳環・璞金系列",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "christmas-edition-stocking",
+   "status": 200,
+   "thumbs": 8,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    617,
+    510,
+    265
+   ],
+   "buttonBottom": null,
+   "specs": 6,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "聖誕特別版｜聖誕襪款",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 65
+  },
+  {
+   "lang": "zh",
+   "slug": "christmas-edition-candy-cane",
+   "status": 200,
+   "thumbs": 7,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    617,
+    510,
+    265
+   ],
+   "buttonBottom": null,
+   "specs": 6,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "聖誕特別版｜拐杖糖款",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 65
+  },
+  {
+   "lang": "zh",
+   "slug": "reunion-paper-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    511,
+    510,
+    371
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "團圓｜繽紛紙盒",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "zh",
+   "slug": "reunion-paulownia-gift-box",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    511,
+    510,
+    371
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "團圓｜桐木木盒",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "zh",
+   "slug": "year-of-plenty-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "年年有魚｜年節禮",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "zh",
+   "slug": "blossoming-prosperity-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "花開富貴｜年節禮",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "zh",
+   "slug": "spring-blossoms-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "花滿富春",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "zh",
+   "slug": "kyoto-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "京都版",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "zh",
+   "slug": "heart-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "心有愛禮盒",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "zh",
+   "slug": "fruit-infusion-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "花果茶禮盒",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "zh",
+   "slug": "rose-encounter-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "玫好相遇",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "zh",
+   "slug": "tea-to-share-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "魚你分享｜茶繽紛",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "zh",
+   "slug": "spring-dawn-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "春曉",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "zh",
+   "slug": "winter-blossom-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "暮雪",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "zh",
+   "slug": "orchid-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "蝴蝶蘭",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "zh",
+   "slug": "purple-butterfly-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "紫斑蝶",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "zh",
+   "slug": "small-moon-tea-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "小鮮月禮盒｜純茶包",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "zh",
+   "slug": "full-moon-tea-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    610,
+    510,
+    272
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "大盈月禮盒｜純茶包",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "zh",
+   "slug": "prosperity-dessert-stand",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    741,
+    510,
+    141
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "下午茶點心架",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "prosperity-stand-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    741,
+    510,
+    141
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "點心架與包裝禮盒",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "wooden-coaster-teaspoon",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    741,
+    510,
+    141
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "木質杯墊與茶匙",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "bird-chopstick-rest",
+   "status": 200,
+   "thumbs": 5,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    741,
+    510,
+    141
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "鳥形筷架",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "ginkgo-teaspoon-gift-box",
+   "status": 200,
+   "thumbs": 5,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    715,
+    510,
+    167
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "銀杏茶匙禮盒",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "zh",
+   "slug": "wooden-chopsticks",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    741,
+    510,
+    141
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "木筷",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "braided-leather-bag-white",
+   "status": 200,
+   "thumbs": 6,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    608,
+    510,
+    274
+   ],
+   "buttonBottom": null,
+   "specs": 5,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Braided Leather Bag · White",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -51
+  },
+  {
+   "lang": "en",
+   "slug": "braided-leather-bag-blue",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    608,
+    510,
+    274
+   ],
+   "buttonBottom": null,
+   "specs": 5,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "Braided Leather Bag · Blue",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -51
+  },
+  {
+   "lang": "en",
+   "slug": "braided-leather-bag-pink",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    608,
+    510,
+    274
+   ],
+   "buttonBottom": null,
+   "specs": 5,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "Braided Leather Bag · Pink",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -51
+  },
+  {
+   "lang": "en",
+   "slug": "pearl-chain-goldfish-earrings",
+   "status": 200,
+   "thumbs": 5,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    707,
+    510,
+    175
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Pearl Chain Goldfish Earrings",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "diamond-goldfish-earrings",
+   "status": 200,
+   "thumbs": 6,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    707,
+    510,
+    175
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Goldfish Earrings · Diamond Series · Drop",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "diamond-goldfish-stud-earrings",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    733,
+    510,
+    149
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "Goldfish Earrings · Diamond Series · Stud",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "twin-goldfish-earrings",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    707,
+    510,
+    175
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Goldfish Earrings · Twin Series",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "raw-gold-goldfish-earrings",
+   "status": 200,
+   "thumbs": 2,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    707,
+    510,
+    175
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--1",
+   "scenes": 1,
+   "h1": "Goldfish Earrings · Raw Gold Series",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "christmas-edition-stocking",
+   "status": 200,
+   "thumbs": 8,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    608,
+    510,
+    274
+   ],
+   "buttonBottom": null,
+   "specs": 6,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Christmas Edition | Stocking",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "christmas-edition-candy-cane",
+   "status": 200,
+   "thumbs": 7,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    608,
+    510,
+    274
+   ],
+   "buttonBottom": null,
+   "specs": 6,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Christmas Edition | Candy Cane",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "reunion-paper-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    503,
+    510,
+    379
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Reunion | Paper Box",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "reunion-paulownia-gift-box",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    529,
+    510,
+    353
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "Reunion | Paulownia Box",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "year-of-plenty-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    628,
+    510,
+    254
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Year of Plenty | Lunar New Year Gift",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "en",
+   "slug": "blossoming-prosperity-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Blossoming Prosperity | Lunar New Year Gift",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "en",
+   "slug": "spring-blossoms-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Spring Blossoms",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "en",
+   "slug": "kyoto-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Kyoto Edition",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "en",
+   "slug": "heart-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "With Love Gift Box",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "en",
+   "slug": "fruit-infusion-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Fruit Infusion Gift Box",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 60
+  },
+  {
+   "lang": "en",
+   "slug": "rose-encounter-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "A Rose Encounter",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "en",
+   "slug": "tea-to-share-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    628,
+    510,
+    254
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Tea to Share | Assorted Teas",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "spring-dawn-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Spring Dawn",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "winter-blossom-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Winter Blossom",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "orchid-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Orchid",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "purple-butterfly-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Purple Butterfly",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "small-moon-tea-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 6,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Small Moon Gift Box | Tea Only",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 83
+  },
+  {
+   "lang": "en",
+   "slug": "full-moon-tea-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    602,
+    510,
+    280
+   ],
+   "buttonBottom": 882,
+   "specs": 7,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Full Moon Gift Box | Tea Only",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": 90
+  },
+  {
+   "lang": "en",
+   "slug": "prosperity-dessert-stand",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    733,
+    510,
+    149
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "Afternoon Tea Dessert Stand",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "prosperity-stand-gift-box",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    759,
+    510,
+    123
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Dessert Stand with Gift Box",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "wooden-coaster-teaspoon",
+   "status": 200,
+   "thumbs": 3,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    733,
+    510,
+    149
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--2",
+   "scenes": 2,
+   "h1": "Wooden Coaster and Teaspoon",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "bird-chopstick-rest",
+   "status": 200,
+   "thumbs": 5,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    733,
+    510,
+    149
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Bird Chopstick Rest",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "ginkgo-teaspoon-gift-box",
+   "status": 200,
+   "thumbs": 5,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "contain",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    733,
+    510,
+    149
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 4,
+   "h1": "Ginkgo Teaspoon Gift Box",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  },
+  {
+   "lang": "en",
+   "slug": "wooden-chopsticks",
+   "status": 200,
+   "thumbs": 4,
+   "thumbSizes": [
+    "56x68"
+   ],
+   "thumbText": "",
+   "fit": "cover",
+   "stage": [
+    94,
+    90,
+    616,
+    792
+   ],
+   "intro": [
+    836,
+    733,
+    510,
+    149
+   ],
+   "buttonBottom": null,
+   "specs": 3,
+   "story": "product-story--3",
+   "scenes": 3,
+   "h1": "Wooden Chopsticks",
+   "dockHiddenAtTop": true,
+   "overflowX": false,
+   "stageTopAfterScroll": -147
+  }
+ ]
+}
