@@ -116,7 +116,9 @@ async function dropShadow(objPng, left, top, dx, dy, sigma, strength) {
 
 // ---------- compose ------------------------------------------------------------------------------------------------
 // fit: {w,h} max box in canvas px, or {scale} = canvas px per source px (shared true scale across the jewelry)
-async function compose(bg, obj, { fit, anchor, floorY = FLOOR, centreY = 0.5, shadow = 'floor' }, outFile) {
+// overlay: {file, disc, cx, cy, r} = a round RGBA cut-out (disc radius `disc` in its own px) laid over the object at canvas
+// centre (cx, cy) with radius r; what the object had inside that circle is removed first, except gold (the chain's top link).
+async function compose(bg, obj, { fit, anchor, floorY = FLOOR, centreY = 0.5, shadow = 'floor', overlay = null }, outFile) {
   const b = bbox(obj); const cropped = await cropToBox(obj, b);
   let ow, oh;
   if (fit.scale) { ow = Math.round(cropped.w * fit.scale); oh = Math.round(cropped.h * fit.scale); }
@@ -124,15 +126,27 @@ async function compose(bg, obj, { fit, anchor, floorY = FLOOR, centreY = 0.5, sh
   const objPng = await sharp(await toPng(cropped)).resize(ow, oh, { kernel: 'lanczos3', fit: 'fill' }).png().toBuffer();
   const left = Math.round((W - ow) / 2);
   const top = anchor === 'floor' ? Math.round(floorY * H - oh) : Math.round(centreY * H - oh / 2);
+  let objLayer = { input: objPng, left, top };
+  if (overlay) {
+    const base = await sharp({ create: { width: W, height: H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } }).composite([{ input: objPng, left, top }]).raw().toBuffer();
+    const R = overlay.r + 2.5;
+    for (let y = Math.floor(overlay.cy - R); y <= Math.ceil(overlay.cy + R); y++) for (let x = Math.floor(overlay.cx - R); x <= Math.ceil(overlay.cx + R); x++) {
+      const i = (y * W + x) * 4; if (Math.hypot(x + 0.5 - overlay.cx, y + 0.5 - overlay.cy) <= R && base[i] - base[i + 2] < 60) base[i + 3] = 0;
+    }
+    const size = Math.round((await sharp(overlay.file).metadata()).width * (overlay.r / overlay.disc));
+    const disc = await sharp(overlay.file).resize(size, size, { kernel: 'lanczos3' }).png().toBuffer();
+    const full = await sharp(base, { raw: { width: W, height: H, channels: 4 } }).composite([{ input: disc, left: Math.round(overlay.cx - size / 2), top: Math.round(overlay.cy - size / 2) }]).png().toBuffer();
+    objLayer = { input: full, left: 0, top: 0 };
+  }
   const layers = [];
   if (shadow === 'floor') {
     const cx = left + ow / 2, cy = top + oh - 3;
     layers.push(await ellipseShadow(cx, cy + ow * 0.02, ow * 0.55, ow * 0.075, ow * 0.075, 0.16)); // ambient spread
     layers.push(await ellipseShadow(cx, cy, ow * 0.47, ow * 0.03, ow * 0.028, 0.34));               // contact
   } else if (shadow === 'drop') {
-    layers.push(await dropShadow(objPng, left, top, Math.round(ow * 0.04), Math.round(oh * 0.025), 14 * K, 0.2));
+    layers.push(await dropShadow(objLayer.input, objLayer.left, objLayer.top, Math.round(ow * 0.04), Math.round(oh * 0.025), 14 * K, 0.2));
   }
-  layers.push({ input: objPng, left, top });
+  layers.push(objLayer);
   await sharp(bg.data, { raw: { width: W, height: H, channels: 4 } }).composite(layers).webp({ quality: 90 }).toFile(outFile);
   return { srcScale: +(ow / cropped.w).toFixed(2), ow, oh, left, top, objH: +(oh / H).toFixed(3), objW: +(ow / W).toFixed(3), bottom: +((top + oh) / H).toFixed(3) };
 }
@@ -190,7 +204,12 @@ async function main() {
     if (slug === 'raw-gold-goldfish-earrings') continue; // drawn from the brand's vector outline below
     const m = 16; const crop = await sharp(jewelrySrc).extract({ left: x0 - m, top: y0 - m, width: x1 - x0 + 2 * m, height: y1 - y0 + 2 * m }).png().toBuffer();
     const obj = matte(await rgba(crop), [240, 240, 240], 8, 36);
-    const file = `studio-${slug}-wall.webp`; emit(slug, file, await compose(wall, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, file)));
+    // Pearl Chain (user 2026-10-01: 「珍珠的部分參考… 光澤要圓潤，重新再出一張」): the matte takes the white pearl's upper left for
+    // background, so the pearl alone is a generated one — whole, round, soft lustre after the user's reference — cut through a
+    // circle and laid on at the photographed pearl's centre and radius (canvas px, valid for this scale and centred placement).
+    // Chain and goldfish stay the brand's photograph. Source: output/pearl-chain-studio-lustre-2026-10-01 in the assets project.
+    const pearl = slug === 'pearl-chain-goldfish-earrings' ? { file: path.join(srcDir, 'pearl-lustre-cutout.png'), disc: 139.5, cx: 994.8, cy: 591.2, r: 90.2 } : null;
+    const file = `studio-${slug}-${pearl ? 'lustre' : 'wall'}.webp`; emit(slug, file, await compose(wall, obj, { fit: { scale }, anchor: 'centre', centreY: 0.5, shadow: 'drop', overlay: pearl }, path.join(outDir, file)));
   }
   // Raw Gold (user 2026-10-01: 「直接用剛剛給的向量小金魚，算出清單頁的淺色背景照，用霧面金屬呈現」): the outline is the brand's own vector
   // goldfish, the matte gold surface was generated on that exact outline and cut out through it

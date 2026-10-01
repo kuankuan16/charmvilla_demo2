@@ -34,16 +34,6 @@
         1402
       ]
     },
-    "raw-gold-goldfish-earrings": {
-      "srcScale": 1.96,
-      "ow": 548,
-      "oh": 446,
-      "left": 726,
-      "top": 1027,
-      "objH": 0.178,
-      "objW": 0.274,
-      "bottom": 0.589
-    },
     "diamond-goldfish-earrings": {
       "srcScale": 1.96,
       "ow": 371,
@@ -73,6 +63,16 @@
       "objH": 0.605,
       "objW": 0.103,
       "bottom": 0.802
+    },
+    "raw-gold-goldfish-earrings": {
+      "srcScale": 0.29,
+      "ow": 495,
+      "oh": 482,
+      "left": 753,
+      "top": 1009,
+      "objH": 0.193,
+      "objW": 0.247,
+      "bottom": 0.596
     },
     "reunion-paulownia-gift-box": {
       "srcScale": 2.1,
