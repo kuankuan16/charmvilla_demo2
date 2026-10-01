@@ -1,0 +1,59 @@
+{
+ "base": "https://charmvilla-gallery-site.vercel.app",
+ "home": {
+  "heroImage": "/media/hero/male-embracing-white-bag.webp",
+  "heroFooter": false,
+  "film": false,
+  "eyebrows": [],
+  "kickerVisible": false
+ },
+ "storePanel": "rgb(217, 205, 185)",
+ "about-zh": {
+  "status": 200,
+  "h1": "淬鍊日常的詩意：當工藝遇上生活儀式",
+  "paused": false,
+  "t": 2.21,
+  "film": [
+   722,
+   406
+  ],
+  "lang": "zh-Hant",
+  "overflowX": false
+ },
+ "about-zhStatus": 200,
+ "about-en": {
+  "status": 200,
+  "h1": "Crafting Everyday Poetics",
+  "paused": false,
+  "t": 2.16,
+  "film": [
+   722,
+   406
+  ],
+  "lang": "en",
+  "overflowX": false
+ },
+ "about-enStatus": 200,
+ "about-zh-mobile": {
+  "status": 200,
+  "h1": "淬鍊日常的詩意：當工藝遇上生活儀式",
+  "paused": false,
+  "t": 2.18,
+  "film": [
+   390,
+   219
+  ],
+  "lang": "zh-Hant",
+  "overflowX": false
+ },
+ "about-zh-mobileStatus": 200,
+ "collection": {
+  "eyebrows": 0,
+  "cardLinks": 0,
+  "promo": false,
+  "cards": 18
+ },
+ "collection-teaStatus": 200,
+ "home-hero-mobileStatus": 200,
+ "errors": []
+}
