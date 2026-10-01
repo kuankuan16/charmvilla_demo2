@@ -1,20 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { manifesto, tea } from "@/data/content";
 import InkBloom from "@/components/ui/InkBloom";
 import { SCROLLER_SELECTOR } from "@/lib/motion/scroller";
 
+// Brand story text screen. The image gallery that used to follow it became the "以手成形" carousel (CraftMoments, 2026-10-01).
 export default function Manifesto() {
   const root = useRef<HTMLElement>(null);
-  const [active, setActive] = useState(0);
-  const select = useRef<(index: number) => void>(() => {});
-  const paused = useRef(false);
-  const focused = useRef(false);
-  const touch = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const el = root.current;
@@ -30,45 +26,11 @@ export default function Manifesto() {
         opacity: 1, stagger: .035, duration: .15, ease: "none",
         scrollTrigger: { scroller, trigger: el.querySelector(".story-copy"), start: "top 80%", end: "bottom 80%", scrub: true, invalidateOnRefresh: true },
       });
-      el.querySelectorAll<HTMLElement>(".story-brush").forEach((brush, i) => {
-        gsap.fromTo(brush, { yPercent: 12 }, { yPercent: -18, ease: "none", scrollTrigger: {
-          scroller, trigger: i ? el.querySelector(".story-gallery") : el, start: "top bottom", end: "bottom top", scrub: true,
-        } });
-      });
-      gsap.to(el.querySelector(".story-gallery-stage"), {
-        "--gallery-scale": 1.11, ease: "none",
-        scrollTrigger: { scroller, trigger: el.querySelector(".story-gallery"), start: "top top", end: "bottom bottom", scrub: true },
-      });
+      const brush = el.querySelector(".story-brush");
+      if (brush) gsap.fromTo(brush, { yPercent: 12 }, { yPercent: -18, ease: "none", scrollTrigger: { scroller, trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
     }, el);
-
-    let current = 0;
-    let progress = 0;
-    let visible = false;
-    let last = performance.now();
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const galleryEl = el.querySelector<HTMLElement>(".story-gallery")!;
-    const bars = el.querySelectorAll<HTMLElement>(".story-thumb-progress");
-    const choose = (index: number) => {
-      current = (index + manifesto.images.length) % manifesto.images.length;
-      progress = 0;
-      bars.forEach(bar => { bar.style.transform = "scaleX(0)"; });
-      setActive(current);
-    };
-    select.current = choose;
-    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; last = performance.now(); }, { threshold: .15 });
-    observer.observe(galleryEl);
-    const tick = () => {
-      const now = performance.now();
-      const delta = Math.min(now - last, 100);
-      last = now;
-      if (!visible || document.hidden || paused.current || focused.current || motion.matches) return;
-      progress += delta / 5000;
-      if (progress >= 1) choose(current + 1);
-      bars[current].style.transform = `scaleX(${progress})`;
-    };
-    gsap.ticker.add(tick);
     document.fonts.ready.then(() => { if (el.isConnected) ScrollTrigger.refresh(); });
-    return () => { media.revert(); observer.disconnect(); gsap.ticker.remove(tick); select.current = () => {}; };
+    return () => { media.revert(); };
   }, []);
 
   return (
@@ -91,48 +53,6 @@ export default function Manifesto() {
                 <p className="tc">{award.text}</p>
               </li>)}
             </ul>
-          </div>
-        </div>
-      </div>
-      <div className="story-gallery" aria-label="手作與日常影像" aria-roledescription="輪播"
-        onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }}
-        onFocusCapture={() => { focused.current = true; }}
-        onBlurCapture={e => { if (!e.currentTarget.contains(e.relatedTarget)) focused.current = false; }}
-        onTouchStart={e => { touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }}
-        onTouchEnd={e => {
-          if (!touch.current) return;
-          const dx = e.changedTouches[0].clientX - touch.current.x;
-          const dy = e.changedTouches[0].clientY - touch.current.y;
-          if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) select.current(active + (dx < 0 ? 1 : -1));
-          touch.current = null;
-        }}>
-        <div className="story-gallery-sticky">
-          <div className="story-gallery-window">
-          <div className="story-gallery-stage">
-            {manifesto.images.map((img, i) => {
-              const offset = (i - active + 4) % 3 - 1;
-              return <figure key={img.src} className="story-slide" data-active={active === i} aria-hidden={active !== i}
-                style={{ "--slide-offset": offset } as CSSProperties}>
-                <Image src={img.src} alt={img.alt} fill sizes="100vw" draggable={false} />
-              </figure>;
-            })}
-          </div>
-          </div>
-          <div className="story-brush story-brush--gallery" aria-hidden="true"><InkBloom observe seed={14} /></div>
-          <div className="story-thumbnails" role="group" aria-label="選擇影像">
-            {manifesto.images.map((img, i) => <button key={img.src} className="story-thumb" aria-label={`查看${img.label}`} aria-pressed={active === i}
-              onClick={() => select.current(i)} onKeyDown={e => {
-                if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-                  e.preventDefault();
-                  const next = (i + (e.key === "ArrowRight" ? 1 : 2)) % 3;
-                  select.current(next);
-                  const buttons = e.currentTarget.parentElement?.querySelectorAll("button");
-                  buttons?.[next]?.focus();
-                }
-              }}>
-              <Image src={img.src} alt="" fill sizes="90px" />
-              <span className="story-thumb-progress" />
-            </button>)}
           </div>
         </div>
       </div>

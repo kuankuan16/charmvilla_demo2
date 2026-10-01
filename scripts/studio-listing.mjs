@@ -156,7 +156,6 @@ async function main() {
     const file = `studio-${slug}.webp`; emit(slug, file, await shiftBag(id, path.join(outDir, file)));
   }
   // jewelry: one shared true scale (the four series were photographed together); pearl chain = 60% of the frame height
-  const jw = await rgba(jewelrySrc);
   const chainH = jewelryBoxes['pearl-chain-goldfish-earrings'][3] - jewelryBoxes['pearl-chain-goldfish-earrings'][1];
   const scale = (0.60 * H) / chainH;
   for (const [slug, [x0, y0, x1, y1]] of Object.entries(jewelryBoxes)) {

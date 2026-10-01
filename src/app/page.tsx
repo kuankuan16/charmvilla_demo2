@@ -2,6 +2,7 @@ import PageShell from "@/components/engine/PageShell";
 import Header from "@/components/chrome/Header";
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
+import CraftMoments from "@/components/sections/CraftMoments";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
 import Shown from "@/components/sections/Shown";
 import Partners from "@/components/sections/Partners";
@@ -16,6 +17,7 @@ export default function Page() {
         <div className="opening-sequence">
           <Hero />
           <Manifesto />
+          <CraftMoments />
         </div>
         <FeaturedProducts />
         <Shown />

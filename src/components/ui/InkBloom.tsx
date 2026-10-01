@@ -64,7 +64,7 @@ export default function InkBloom({ active = true, observe = false, seed = 1 }: {
       svg.dataset.inkState = "waiting";
       if (observe) {
         // Observe the visible section, not the oversized brush which extends off screen.
-        const target = svg.closest('.story-gallery, .story-message') ?? svg;
+        const target = svg.closest('.story-gallery, .story-message, .craft-moments') ?? svg;
         observer = new IntersectionObserver(([entry]) => {
           if (entry.isIntersecting) { observer?.disconnect(); ready(); }
         }, { threshold: .12 });
