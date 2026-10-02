@@ -32,10 +32,10 @@ const build = (lang: Locale) => {
         craft: t("摺紙職人 · 小金魚茶包禮盒", "Paper-folding artisan · Goldfish Tea Gifts"),
         quote: [t("摺紙的手，", "The hands that fold"), t("把一張濾紙摺成會游的形。", "turn a sheet of filter paper into a form that swims.")],
         cta: { label: t("選一盒茶", "Choose a box of tea"), href: "/collections/tea" },
-        // user 2026-10-02: the blossom glass cup 換 the tea glass on the ottoman tray (the user's interior photograph; only the tray's
-        // contents generated, from the real tea bag in craft-01-blossom-cup.webp)
-        image: site("ottoman-tray-tea-glass.webp", t("米色布面方凳上的木托盤裡，一只玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色抽象畫",
-          "On a wooden tray on a pale upholstered ottoman, a Goldfish Tea Bag unfurls in a glass, its gold tag reading CHARM VILLA; an ochre abstract painting leans against the wall"), 1507, 1980),
+        // user 2026-10-02: the blossom glass cup 換 a Goldfish Tea Bag on the ottoman tray; second round (「靠近玻璃杯一點」, a round clear
+        // cup like a coffee cup, a painting unlike the example, the ottoman in another colour): a new generated interior
+        image: site("ottoman-tray-tea-cup.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
+          "On a wooden tray on a moss-green bouclé ottoman, a Goldfish Tea Bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
       },
       {
         id: "leather",
