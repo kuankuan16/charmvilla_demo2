@@ -45,13 +45,14 @@ const buildCatalog = (lang: Locale) => {
 
   // Category names and order from the user's Google Doc (2026-10-02): 全部作品 All Pieces · 小金魚茶包 Goldfish Tea Bags · 香氛 Scents
   // (slogan 「香味，是喜悅的記憶。」, the official store's 香味是喜悅的記憶 category: the hinoki pieces) · 金飾 Jewelry · 豐盛系列
-  // Abundance Collection · 柴燒系列 Wood-Fired Collection (the chopstick rest) · 門市 Our Stores. 真皮包 kept (user's choice).
+  // Abundance Collection · 柴燒系列 Wood-Fired Collection (the chopstick rest) · 門市 Our Stores. The leather bags were kept
+  // (user's choice) and renamed 交織系列 Interwoven Collection after their braided handles, in the series naming of the others.
   // The former 茶器與工藝 is split into 香氛, 豐盛系列 and 柴燒系列 (/collections/teaware redirects to /collections/scents).
   const categories: Category[] = [
     { id: "tea", name: t("小金魚茶包", "Goldfish Tea Bags"), en: "GOLDFISH TEA BAGS", intro: t("從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。", "From the warp and weft of the fabric to the grain of paulownia wood, a box of tea holds scenery worth a closer look. Each gift box keeps a set of handmade goldfish. Choose by box, count and tea for a gesture that finds its way into daily life.") },
     { id: "scents", name: t("香氛", "Scents"), en: "SCENTS", intro: t("香味，是喜悅的記憶。", "Scent is a memory of joy.") },
     { id: "jewelry", name: t("金飾", "Jewelry"), en: "JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Scaled down to the ear, the goldfish outline brings its lustre close to the skin. As you turn, the gold surface, the pearl and the diamond each show a different expression.") },
-    { id: "bags", name: t("真皮包", "Leather Bags"), en: "LEATHER BAGS", intro: t("從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。", "Follow the plaited handle down to the body: grain and line each keep their own order. To pick up a leather bag is to bring an eye for material into the everyday.") },
+    { id: "bags", name: t("交織系列", "Interwoven Collection"), en: "INTERWOVEN COLLECTION", intro: t("從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。", "Follow the plaited handle down to the body: grain and line each keep their own order. To pick up a leather bag is to bring an eye for material into the everyday.") },
     { id: "abundance", name: t("豐盛系列", "Abundance Collection"), en: "ABUNDANCE COLLECTION", intro: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A dessert stand brings height and layers to the tea table. From arranging to serving, afternoon tea finds its own rhythm.") },
     { id: "wood-fired", name: t("柴燒系列", "Wood-Fired Collection"), en: "WOOD-FIRED COLLECTION", intro: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A chopstick rest drawn from the outline of a bird. A small thing that leaves a shaped pause between tableware and table.") },
   ];

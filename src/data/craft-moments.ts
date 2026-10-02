@@ -51,7 +51,7 @@ const build = (lang: Locale) => {
         id: "leather",
         craft: t("製革職人 · 編織提把皮革包", "Leather artisan · Braided Leather Bag"),
         quote: [t("裁皮的人，", "The one who cuts the leather"), t("落刀前先用手讀過整張皮。", "reads the whole hide by hand before the blade comes down.")],
-        cta: { label: t("看真皮包", "View leather bags"), href: "/collections/bags" },
+        cta: { label: t("看交織系列", "View the Interwoven Collection"), href: "/collections/bags" },
         image: site("craft-02-leather-cream-rolls.webp", t("俯視的皮件工坊平鋪：木槌、皮繩、半月裁皮刀、削薄刀與木尺在左，兩捲米白荔枝紋皮料在右，暖光斜掃深色木桌",
           "A leather workshop flat lay seen from above: mallet, leather cord, half-moon knife, skiving knife and wooden rule on the left, two rolls of cream lychee-grain leather on the right, warm light raking across a dark wooden table")),
       },

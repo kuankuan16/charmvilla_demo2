@@ -11,6 +11,9 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: 
 const notoTC = Noto_Sans_TC({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-noto-tc", display: "swap" });
 
 type Props = { params: Promise<{ lang: string }> };
+// Hides the preloader before first paint once it has played in this tab (key: INTRO_SEEN in components/engine/Preloader.tsx).
+const introSeenScript = `try{if(sessionStorage.getItem("cv-intro-seen"))document.documentElement.classList.add("intro-seen")}catch(e){}`;
+
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -38,8 +41,8 @@ export default async function RootLayout({ children, params }: Props & { childre
     email: company.email, telephone: "+886-2-2542-0303", address: { "@type": "PostalAddress", streetAddress: company.address, addressCountry: "TW" },
     sameAs: ["https://www.charmvilla.com.tw/", "https://www.facebook.com/CHARMVILLA8/", "https://www.instagram.com/charmvilla/"] };
   return (
-    <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`}>
-      <body className="bg-page text-ink"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} /><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /></CartProvider></LocaleProvider></body>
+    <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`} suppressHydrationWarning>
+      <body className="bg-page text-ink"><script dangerouslySetInnerHTML={{ __html: introSeenScript }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} /><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /></CartProvider></LocaleProvider></body>
     </html>
   );
 }

@@ -17,6 +17,8 @@ const LOGO_W = 929;
 const LETTER_BOUNDS = [0, 114, 206, 323, 406, 548, 663, 692, 762, 823, LOGO_W];
 const FULL = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
 const COLLAPSED = "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)";
+// sessionStorage key; the same name is read by the inline script in src/app/[lang]/layout.tsx
+export const INTRO_SEEN = "cv-intro-seen";
 
 export default function Preloader({ onReveal, onComplete }: { onReveal: () => void; onComplete: () => void }) {
   const root = useRef<HTMLDivElement>(null);
@@ -24,13 +26,22 @@ export default function Preloader({ onReveal, onComplete }: { onReveal: () => vo
   const done = useRef(false);
   const skipped = useRef(false);
   const reveal = useCallback(() => { if (revealed.current) return; revealed.current = true; onReveal(); }, [onReveal]);
-  const finish = useCallback(() => { if (done.current) return; done.current = true; reveal(); onComplete(); }, [reveal, onComplete]);
+  const finish = useCallback(() => {
+    if (done.current) return; done.current = true;
+    try { sessionStorage.setItem(INTRO_SEEN, "1"); } catch { /* storage unavailable */ }
+    reveal(); onComplete();
+  }, [reveal, onComplete]);
 
-  // Returning home via the header wordmark sets a one-shot flag: hide the overlay before first paint and finish at once
-  // (user 2026-09-30: 點 logo 回首頁不用再 loading). A fresh visit still gets the full sequence.
+  // The sequence plays once per visit (browser tab session): coming back to the homepage, or reloading it, hides the overlay
+  // before first paint and finishes at once (user 2026-10-02: 「每一次點進來，不要一直重新出現…只要一開始 loading 有出現就好」;
+  // earlier, 2026-09-30, only the wordmark link skipped it). On a full page load the inline script in the layout has already
+  // hidden the overlay through html.intro-seen, so the server-rendered overlay never flashes.
   useLayoutEffect(() => {
     let skip = false;
-    try { if (sessionStorage.getItem("cv-skip-preloader")) { sessionStorage.removeItem("cv-skip-preloader"); skip = true; } } catch { /* storage unavailable */ }
+    try {
+      skip = !!sessionStorage.getItem(INTRO_SEEN) || !!sessionStorage.getItem("cv-skip-preloader");
+      sessionStorage.removeItem("cv-skip-preloader");
+    } catch { /* storage unavailable: play it */ }
     if (!skip) return;
     skipped.current = true;
     if (root.current) root.current.style.display = "none";

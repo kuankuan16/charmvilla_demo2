@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = translator(lang);
   const info = getCategory(category, lang);
   const title = t(`${info?.name || "全部作品"}｜CHARM VILLA`, `${info?.name || "All Pieces"} | CHARM VILLA`);
-  const description = info?.intro || t("走進 CHARM VILLA 的日常藝廊，欣賞真皮包、金飾、小金魚茶包與茶器，從細節讀懂每件作品。",
-    "Step into CHARM VILLA's everyday gallery of leather bags, goldfish jewelry, Goldfish Tea Bags and teaware, and read each piece through its details.");
+  const description = info?.intro || t("走進 CHARM VILLA 的日常藝廊，欣賞小金魚茶包、香氛器物、金飾與交織系列皮革包，從細節讀懂每件作品。",
+    "Step into CHARM VILLA's everyday gallery of Goldfish Tea Bags, scented hinoki pieces, jewelry and the Interwoven Collection's leather bags, and read each piece through its details.");
   return { title, description, alternates: alternatesFor(lang, categoryHref(category)), openGraph: { title, images: [getCategoryProducts(category, lang)[0]?.image.src || "/media/gallery/CV-0398.webp"] } };
 }
 

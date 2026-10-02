@@ -1,0 +1,63 @@
+// News & announcements (2026-10-02, after verin-template.webflow.io/news; user: 「做出 news 的版型，並拿掉首頁 news 的區塊」).
+// Only facts already on the site: the four homepage news lines and the SHOW MORE! launch. Each entry has a list card and a
+// short article; nothing is added beyond those facts.
+import { site, type Img } from "./content";
+import { translator, type Locale } from "../i18n/config";
+
+export type NewsBlock = string | { list: string[] } | { links: { label: string; href: string }[] };
+export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; hero: Img; body: NewsBlock[] };
+
+const build = (lang: Locale): NewsEntry[] => {
+  const t = translator(lang);
+  return [
+    {
+      slug: "show-more-leather-bag-launch", date: "2026-10-03", dateLabel: t("2026 年 10 月", "October 2026"),
+      tag: t("新品發表", "New launch"), title: t("SHOW MORE! 真皮包新品發表會", "SHOW MORE! The leather bag launch"),
+      summary: t("編織提把皮革包巡迴發表：台北、洛杉磯、京都三場。", "The Braided Leather Bag on tour: Taipei, Los Angeles and Kyoto."),
+      card: site("partners-male-dancer-c.webp", t("黑白男舞者側身俯首，一手提著白色編織提把皮革包", "Black-and-white photograph of a male dancer bowing in profile, the white Braided Leather Bag hanging from one hand"), 1869, 1952),
+      hero: site("banner-bag-dancer-dark.webp", t("深色漸層前，男舞者俯身，一手提著白色編織提把皮革包", "Against a dark gradient, a male dancer bends forward, the white Braided Leather Bag hanging from one hand"), 2560, 1080),
+      body: [
+        t("編織提把皮革包的新品發表，分三場舉行：", "The Braided Leather Bag is presented in three events:"),
+        { list: [t("10 月 3 日・台北晶華酒店 麗晶精品 B1", "October 3 · Regent Galleria B1, Regent Taipei"), t("10 月 17 日・The Scholart Selection・San Gabriel, CA", "October 17 · The Scholart Selection · San Gabriel, CA"), t("10 月 31 日・CHARM VILLA 京都", "October 31 · CHARM VILLA Kyoto")] },
+        { links: [{ label: t("查看邀請卡", "View the invitation"), href: "/media/gallery/CV-0427.webp" }, { label: t("選購交織系列", "Shop the Interwoven Collection"), href: "/collections/bags" }] },
+      ],
+    },
+    {
+      slug: "mid-autumn-2026-pre-order", date: "2026-08-11", dateLabel: t("2026 年 8 月 11 日", "August 11, 2026"),
+      tag: t("禮盒預購", "Pre-order"), title: t("2026 中秋限定禮盒開放預購", "2026 Mid-Autumn gift boxes: pre-orders open"),
+      summary: t("燙金魚鱗紙盒限量登場。", "A limited paper box in gold-foil fish scales."),
+      card: site("scene-small-moon-tea-gift-box.webp", t("小鮮月禮盒的茶席情境", "The Small Moon gift box at a tea table")),
+      hero: site("scene-small-moon-tea-gift-box.webp", t("小鮮月禮盒的茶席情境", "The Small Moon gift box at a tea table")),
+      body: [
+        t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders are open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales."),
+        { links: [{ label: t("小鮮月禮盒｜純茶包", "Small Moon Gift Box | Tea Only"), href: "/products/small-moon-tea-gift-box" }, { label: t("大盈月禮盒｜純茶包", "Full Moon Gift Box | Tea Only"), href: "/products/full-moon-tea-gift-box" }] },
+      ],
+    },
+    {
+      slug: "monocle-interview", date: "2026-07-28", dateLabel: t("2026 年 7 月 28 日", "July 28, 2026"),
+      tag: t("媒體報導", "Press"), title: t("《Monocle》專訪創辦人蘇靜媚", "Monocle interviews founder Su Jingmei"),
+      summary: t("一尾金魚，如何游進世界的茶杯。", "How one goldfish swam into the world's teacups."),
+      card: site("craft-01-blossom-cup.webp", t("玻璃杯裡泡開一尾小金魚茶包", "A Goldfish Tea Bag unfurled in a glass cup")),
+      hero: site("craft-01-blossom-cup.webp", t("玻璃杯裡泡開一尾小金魚茶包", "A Goldfish Tea Bag unfurled in a glass cup")),
+      body: [
+        t("《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。", "Monocle interviews founder Su Jingmei: how one goldfish swam into the world's teacups."),
+        { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },
+      ],
+    },
+    {
+      slug: "goldfish-in-a-cup-eslite-nanxi", date: "2026-07-02", dateLabel: t("2026 年 7 月 2 日", "July 2, 2026"),
+      tag: t("活動快訊", "Events"), title: t("「杯中金魚」期間限定茶席", "Goldfish in a Cup: a limited-time tea table"),
+      summary: t("8 月 15 日起，於誠品生活南西。", "From August 15 at eslite spectrum Nanxi."),
+      card: site("ottoman-tray-tea-cup-v4.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
+      hero: site("ottoman-tray-tea-cup-v4.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
+      body: [
+        t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi."),
+        { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },
+      ],
+    },
+  ];
+};
+
+const built: Partial<Record<Locale, NewsEntry[]>> = {};
+export const getNews = (lang: Locale) => (built[lang] ??= build(lang));
+export const findNews = (slug: string, lang: Locale) => getNews(lang).find((n) => n.slug === slug);

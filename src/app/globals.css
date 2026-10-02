@@ -165,6 +165,11 @@
 /* Loading state (after davidlaxer.com): the page is invisible under the preloader and no CSS transitions run;
    the page and the hero headline appear the instant the wipe starts (.is-revealing). */
 .is-loading body { background: var(--color-stone-deep); }
+/* the intro already played in this tab: no overlay, no dark ground, the page shows at once */
+.intro-seen .preloader { display: none !important; }
+.intro-seen.is-loading body { background: var(--color-page); }
+.intro-seen.is-loading .page-holder { opacity: 1; }
+.intro-seen.is-loading [data-hero-reveal] { visibility: visible; }
 /* the header bar is 80 % page colour; over the dark loading ground that read as grey, so it is opaque until the page is loaded (user 2026-10-01) */
 .is-loading [data-header]:not(.menu--opened) { background: var(--color-page) !important; }
 .is-loading * { transition: none !important; }
@@ -581,9 +586,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .menu--opened .menu-scrim { opacity: 1; visibility: visible; transition: opacity .4s; }
 .menu-root { text-transform: none; position: fixed; z-index: 2; top: var(--header-h); left: 0; width: 100%; max-height: calc(100svh - var(--header-h)); overflow-y: auto; background: var(--color-page); color: var(--color-ink); clip-path: inset(0 0 100% 0); visibility: hidden; transition: clip-path .3s cubic-bezier(.55, 0, .75, .4), visibility 0s linear .3s; overscroll-behavior: contain; }
 .menu--opened .menu-root { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path .42s cubic-bezier(.22, .8, .3, 1), visibility 0s; }
-.menu-top, .menu-info { opacity: 0; transform: translateY(10px); transition: opacity .2s, transform .2s; }
+.menu-top { opacity: 0; transform: translateY(10px); transition: opacity .2s, transform .2s; }
 .menu--opened .menu-top { opacity: 1; transform: none; transition: opacity .45s .12s, transform .6s .12s cubic-bezier(.22, .8, .3, 1); }
-.menu--opened .menu-info { opacity: 1; transform: none; transition: opacity .45s .2s, transform .6s .2s cubic-bezier(.22, .8, .3, 1); }
 .menu-top { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); padding: clamp(40px, 5vw, 70px) var(--page-gutter) clamp(36px, 3.6vw, 52px); }
 .menu-nav { grid-column: 1 / span 6; }
 .menu-primary { display: flex; flex-wrap: wrap; gap: 6px clamp(22px, 2.2vw, 34px); }
@@ -609,18 +613,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .menu-card-circle { position: absolute; top: clamp(16px, 1.6vw, 24px); right: clamp(16px, 1.6vw, 24px); display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--color-page); transition: background .3s, color .3s; }
 .menu-card--story:hover .menu-card-circle { background: var(--color-ink); color: var(--color-page); }
 .menu-card-big { font-size: clamp(30px, 2.8vw, 44px); line-height: 1.2; letter-spacing: .02em; }
-.menu-info { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px clamp(16px, 2vw, 32px); align-items: center; margin: 0 var(--page-gutter); padding: clamp(28px, 2.8vw, 40px) 0 clamp(32px, 3.2vw, 44px); border-top: 1px solid rgb(31 31 31 / .14); font-size: 13px; line-height: 1.75; color: var(--color-stone-deep); }
-.menu-info-heading { margin-bottom: 6px; font-size: 15px; color: var(--color-ink); }
-.menu-info a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
-.menu-social { justify-self: end; display: flex; gap: 10px; }
-.menu-root .menu-social a { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid rgb(31 31 31 / .16); border-radius: 50%; color: var(--color-ink); transition: background .3s, color .3s; }
-.menu-root .menu-social a:hover { background: var(--color-ink); color: var(--color-page); }
 @media (max-width: 1023px) {
   .menu-top { grid-template-columns: 1fr 1fr; row-gap: 32px; }
   .menu-nav { grid-column: 1 / -1; }
   .menu-card--feature { grid-column: 1; } .menu-card--story { grid-column: 2; }
-  .menu-info { grid-template-columns: 1fr 1fr; }
-  .menu-social { justify-self: start; }
 }
 @media (max-width: 767px) {
   .menu-root { height: calc(100svh - var(--header-h)); }
@@ -628,10 +624,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .menu-primary { flex-direction: column; gap: 2px; }
   .menu-link { font-size: 30px; }
   .menu-card { display: none; }
-  .menu-info { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .menu-root, .menu--opened .menu-root, .menu-top, .menu-info, .menu--opened .menu-top, .menu--opened .menu-info, .menu-icon span, .menu-label span { transition: none !important; }
+  .menu-root, .menu--opened .menu-root, .menu-top, .menu--opened .menu-top, .menu-icon span, .menu-label span { transition: none !important; }
 }
 .header-brand { justify-self: center; width: 150px; }
 .header-tools { justify-self: end; display: flex; align-items: center; gap: 22px; }
@@ -955,3 +950,63 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    has no room for it, so it lives at the end of the full-screen menu list instead. */
 .header-tools a.header-lang { width: auto; height: 24px; font-size: 13px; font-weight: 400; letter-spacing: .02em; white-space: nowrap; }
 @media (max-width: 767px) { .header-tools a.header-lang { display: none; } }
+
+
+/* ---------- Footer after verin-template.webflow.io (user 2026-10-02) ------------------------------------------------
+   Measured at 1440: four 185 px link columns (12 px mono caps labels at 64 %, 16 px links), the newsletter 448 px at the
+   right; a rule 120 px lower, the copyright and social row; then the wordmark across the full content width. */
+.site-footer-v2 { padding: clamp(64px, 6vw, 80px) var(--page-gutter) 0; background: #111; color: rgb(247 246 244 / .88); overflow: hidden; }
+.footer-top { display: flex; justify-content: space-between; gap: 48px; }
+.site-footer-v2 .footer-columns { display: grid; grid-template-columns: repeat(4, minmax(120px, 185px)); gap: 16px; margin: 0; font-size: 15px; }
+.footer-label { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgb(247 246 244 / .56); }
+.footer-columns ul { display: grid; gap: 9px; margin-top: 20px; }
+.footer-columns a { color: rgb(247 246 244 / .88); transition: color .25s; }
+.footer-columns a:hover, .footer-columns a:focus-visible { color: var(--color-gold); text-decoration: none; }
+.footer-news { width: min(448px, 100%); }
+.footer-news-title { font-size: 24px; line-height: 1.2; color: #f7f6f4; }
+.footer-news-text { margin-top: 10px; font-size: 14px; line-height: 1.6; color: rgb(247 246 244 / .64); }
+.footer-news-form { position: relative; display: flex; margin-top: 18px; border: 1px solid rgb(247 246 244 / .22); background: rgb(247 246 244 / .06); }
+.footer-news-form input { flex: 1; min-width: 0; height: 50px; padding: 0 16px; border: 0; background: transparent; color: #f7f6f4; font-size: 15px; }
+.footer-news-form input::placeholder { color: rgb(247 246 244 / .48); }
+.footer-news-form button { margin: 6px; padding: 0 16px; background: #f7f6f4; color: #111; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; transition: background .25s; }
+.footer-news-form button:hover { background: var(--color-gold); }
+.footer-news-status { position: absolute; left: 0; top: calc(100% + 8px); font-size: 12px; color: var(--color-gold); }
+.footer-news-note { margin-top: 12px; font-size: 10px; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(72px, 8vw, 120px); padding-top: 26px; border-top: 1px solid rgb(247 246 244 / .16); font-size: 13px; color: rgb(247 246 244 / .72); }
+.footer-social { display: flex; gap: 18px; }
+.site-footer-v2 .footer-social a { color: rgb(247 246 244 / .88); }
+.site-footer-v2 .footer-social a:hover { color: var(--color-gold); }
+.footer-wordmark { display: block; margin-top: clamp(28px, 3vw, 40px); color: #f7f6f4; }
+.footer-wordmark img { display: block; width: 100%; height: auto; filter: invert(1) brightness(.97); transform: translateY(8%); }
+@media (max-width: 1023px) { .footer-top { flex-direction: column; } .site-footer-v2 .footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; } }
+@media (max-width: 767px) { .footer-bottom { flex-direction: column; align-items: flex-start; } }
+
+/* ---------- News after verin-template.webflow.io/news (user 2026-10-02) ---------------------------------------------
+   Heading 60 px, a 448 px line under it; three columns 4 px apart, rows 32 px apart; photo 456×350, the category on a
+   small light label at its top right; title 24 px, one 14 px line at 64 %. */
+.news-page { padding: clamp(48px, 6vw, 88px) var(--page-gutter) clamp(80px, 9vw, 130px); }
+.news-head h1 { font-size: clamp(36px, 4.2vw, 60px); font-weight: 400; line-height: 1.1; letter-spacing: .01em; }
+.news-head p { max-width: 448px; margin-top: 14px; font-size: 15px; line-height: 1.7; color: rgb(31 31 31 / .64); }
+.news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 4px; margin-top: clamp(32px, 3.4vw, 48px); }
+.news-card { display: flex; flex-direction: column; gap: 6px; }
+.news-card-image { position: relative; display: block; aspect-ratio: 456 / 350; overflow: hidden; margin-bottom: 10px; background: #e9e8e4; }
+.news-card-image img { transition: transform .9s cubic-bezier(.22, .8, .3, 1); }
+.news-card:hover .news-card-image img { transform: scale(1.04); }
+.news-card-tag { position: absolute; top: 12px; right: 12px; padding: 4px 8px; background: rgb(247 246 244 / .92); font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-ink); }
+.news-card-title { font-size: clamp(19px, 1.7vw, 24px); line-height: 1.3; }
+.news-card-summary { font-size: 14px; line-height: 1.6; color: rgb(31 31 31 / .64); }
+@media (max-width: 1023px) { .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .news-grid { grid-template-columns: 1fr; } }
+.news-article { padding: clamp(40px, 5vw, 72px) var(--page-gutter) clamp(80px, 9vw, 130px); }
+.news-crumbs { display: flex; gap: 8px; max-width: 1028px; margin: 0 auto; font-size: 14px; color: rgb(31 31 31 / .64); }
+.news-crumbs a { color: var(--color-ink); }
+.news-crumbs a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.news-article h1 { max-width: 1028px; margin: 16px auto 0; font-size: clamp(32px, 4.2vw, 60px); font-weight: 400; line-height: 1.15; }
+.news-article-hero { position: relative; aspect-ratio: 1254 / 549; margin: clamp(28px, 3vw, 40px) auto 0; max-width: 1254px; overflow: hidden; background: #e9e8e4; }
+.news-article-meta { display: flex; justify-content: space-between; max-width: 1028px; margin: 24px auto 0; padding-bottom: 24px; border-bottom: 1px solid rgb(31 31 31 / .14); font-size: 14px; color: rgb(31 31 31 / .64); }
+.news-article-body { max-width: 1028px; margin: 40px auto 0; font-size: 16px; line-height: 1.9; }
+.news-article-body p + p, .news-article-body ul, .news-article-body ul + p { margin-top: 16px; }
+.news-article-body ul { list-style: disc; padding-left: 1.3em; }
+.news-article-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px !important; }
+.news-article-links a { padding: 12px 20px; border: 1px solid var(--color-ink); font-size: 14px; transition: background .25s, color .25s; }
+.news-article-links a:hover { background: var(--color-ink); color: var(--color-page); }

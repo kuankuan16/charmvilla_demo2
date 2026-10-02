@@ -2,15 +2,12 @@
 // Fixed header bar with the menu after solena-template.webflow.io (user 2026-10-02: 「漢堡選單…高度模仿並推理成我們適合用的」):
 // the bar stays in place; a page-coloured panel drops down from under it (clip-path, ~0.4 s), the rest of the page dims and
 // closes the menu on click. Panel: large category links in a row with secondary links under them, two cards at the right
-// (the Goldfish Tea Gifts with their awards, and the brand story), then a ruled row of the two stores, customer service and
-// the social icons. The button is a thin circle with two offset lines that cross into an X, its label rolling Menu → Close.
+// (the Goldfish Tea Gifts with their awards, and the brand story), (the bottom row of stores and contacts was removed at the user's request, 2026-10-02). The button is a thin circle with two offset lines that cross into an X, its label rolling Menu → Close.
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { brand, sections, getContent, site } from "@/data/content";
-import { getCommerce } from "@/data/commerce";
-import SocialLinks from "@/components/ui/SocialLinks";
+import { brand, sections, site } from "@/data/content";
 import { useT } from "@/i18n/LocaleProvider";
 import { localeHref, switchLocalePath, htmlLang, type Locale } from "@/i18n/config";
 import CartButton from "@/components/cart/CartButton";
@@ -63,13 +60,11 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const primary = [{ id: "all", label: "All Pieces", zh: "全部作品" } as const, ...sections.filter((s) => s.id !== "hero" && s.id !== "visit")];
   const secondary = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
+    { href: localeHref(lang, "/news"), label: t("最新消息", "News") },
     { href: sectionHref("visit"), label: t("門市資訊", "Our stores") },
     { href: sectionHref("account"), label: t("會員", "Account") },
     { href: localeHref(lang, "/shopping-guide"), label: t("購物須知", "Shopping guide") },
   ];
-  const { visit } = getContent(lang);
-  const shops = visit.tabs.find((tab) => tab.id === "shops")?.shops ?? [];
-  const { company } = getCommerce(lang);
   const teaCard = site("ottoman-tray-tea-cup-v4.webp", t("木托盤上一杯小金魚茶，金色茶標寫著 CHARM VILLA", "A cup of goldfish tea on a wooden tray, its gold tag reading CHARM VILLA"), 1792, 2240);
 
   return (
@@ -119,21 +114,6 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
             <span className="menu-card-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"><path d="M7 17 17 7M9 7h8v8" /></svg></span>
             <span className="menu-card-big tc">{zh ? <>品牌<br />故事</> : <>Our<br />story</>}</span>
           </Link>
-        </div>
-        <div className="menu-info">
-          {shops.map((shop) => (
-            <div key={shop.name}>
-              <p className="menu-info-heading tc">{shop.name}</p>
-              <p className="tc">{shop.addr}</p>
-              <p className="tc">{shop.hours}{shop.phone && <> · <a href={`tel:${shop.phone.tel}`}>{shop.phone.label}</a></>}</p>
-            </div>
-          ))}
-          <div>
-            <p className="menu-info-heading tc">{t("客服", "Customer service")}</p>
-            <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
-            <p className="tc">{company.phone}（{company.hours}）</p>
-          </div>
-          <SocialLinks lang={lang} className="menu-social" />
         </div>
       </div>
     </header>

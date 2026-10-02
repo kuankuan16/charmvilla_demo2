@@ -1,23 +1,53 @@
-// The one footer of the site (user 2026-10-01: 「footer 我想要用內頁的版型，首頁請跟進」): the statement, the category links and About,
-// then the white wordmark, the copyright line and the social icons. The homepage and every inner page render this component.
-import Image from "next/image";
+// The one footer of the site, after the footer of verin-template.webflow.io (user 2026-10-02: 「footer 也高度學習」): on an
+// ink ground, four link columns under small spaced capitals at the left, the newsletter at the right; a rule, then the
+// copyright line and the social icons; and across the full width at the foot, the CHARM VILLA wordmark (traced to SVG from the
+// official PNG so it stays sharp at this size). The homepage and every inner page render this component.
 import Link from "next/link";
-import { brand } from "@/data/content";
-import { getCommerce } from "@/data/commerce";
 import { getCategories, categoryHref } from "@/data/catalog";
 import SocialLinks from "@/components/ui/SocialLinks";
+import NewsletterForm from "./NewsletterForm";
 import { localeHref, translator, type Locale } from "@/i18n/config";
 
 export default function SiteFooter({ lang }: { lang: Locale }) {
   const t = translator(lang);
-  const { footer } = getCommerce(lang);
+  const columns = [
+    { label: t("作品", "Collections"), links: [{ href: categoryHref("all", lang), label: t("全部作品", "All Pieces") }, ...getCategories(lang).map((c) => ({ href: categoryHref(c.id, lang), label: c.name }))] },
+    { label: t("品牌", "Company"), links: [
+      { href: localeHref(lang, "/"), label: t("首頁", "Home") }, { href: localeHref(lang, "/about"), label: t("關於", "About") },
+      { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: localeHref(lang, "/#visit"), label: t("門市", "Our Stores") },
+      { href: localeHref(lang, "/account"), label: t("會員", "Account") }] },
+    { label: t("購物說明", "Help"), links: [
+      { href: localeHref(lang, "/shopping-guide"), label: t("購物須知", "Shopping guide") }, { href: localeHref(lang, "/shopping-guide#shipping"), label: t("運送", "Delivery") },
+      { href: localeHref(lang, "/shopping-guide#returns"), label: t("退換貨", "Returns") }, { href: localeHref(lang, "/shopping-guide#service"), label: t("客服", "Customer service") }] },
+    { label: t("條款", "Legal"), links: [
+      { href: localeHref(lang, "/privacy"), label: t("隱私權政策", "Privacy policy") }, { href: localeHref(lang, "/shopping-guide#payment"), label: t("服務條款", "Terms of sale") }] },
+  ];
   return (
-    <footer className="catalog-footer">
-      <div className="catalog-footer-top"><p className="catalog-footer-statement tc">{t("藝術即生活", "Art as Life")}</p><div><nav aria-label={t("頁尾導覽", "Footer navigation")}><Link href={categoryHref("all", lang)} className="tc">{t("全部作品", "All Pieces")}</Link>{getCategories(lang).map((c) => <Link key={c.id} href={categoryHref(c.id, lang)} className="tc">{c.name}</Link>)}<Link href={localeHref(lang, "/about")} className="tc">{t("關於", "About")}</Link></nav></div></div>
-      {/* The shopping rules on every page (2026-10-02). The seller's identity line was removed from the footer at the user's request
-          (「刪」); it stays in full on the shopping guide's 賣家資訊 section (消保法 §18). */}
-      <div className="catalog-footer-legal"><nav aria-label={t("購物說明", "Shopping information")}>{footer.links.map((l) => <Link key={l.href} href={localeHref(lang, l.href)} className="tc">{l.label}</Link>)}</nav></div>
-      <div className="catalog-footer-bottom"><Link href={localeHref(lang, "/")} aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}><Image src={brand.logo.src} alt="CHARM VILLA" width={brand.logo.w} height={brand.logo.h} className="brightness-0 invert" /></Link><span>© 2026 CHARM VILLA</span><SocialLinks lang={lang} /></div>
+    <footer className="catalog-footer site-footer-v2">
+      <div className="footer-top">
+        <nav className="footer-columns" aria-label={t("頁尾導覽", "Footer navigation")}>
+          {columns.map((col) => (
+            <div key={col.label}>
+              <p className="footer-label">{col.label}</p>
+              <ul>{col.links.map((l) => <li key={l.href + l.label}><Link href={l.href} className="tc">{l.label}</Link></li>)}</ul>
+            </div>
+          ))}
+        </nav>
+        <div className="footer-news">
+          <p className="footer-news-title tc">{t("訂閱電子報", "Stay in the loop")}</p>
+          <p className="footer-news-text tc">{t("新品、限定禮盒與活動消息，第一時間寄給你。", "New pieces, limited gift boxes and events, straight to your inbox.")}</p>
+          <NewsletterForm />
+          <p className="footer-label footer-news-note">{t("不寄垃圾信，只有新品與活動消息。", "No spam. Only new pieces and events.")}</p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p className="tc">© 2026 CHARM VILLA. {t("版權所有。", "All rights reserved.")}</p>
+        <SocialLinks lang={lang} className="footer-social" />
+      </div>
+      <Link href={localeHref(lang, "/")} className="footer-wordmark" aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}>
+        {/* eslint-disable-next-line @next/next/no-img-element -- an SVG wordmark, no optimisation needed */}
+        <img src="/brand/charmvilla-wordmark.svg" alt="" width={3716} height={328} />
+      </Link>
     </footer>
   );
 }

@@ -20,11 +20,11 @@ export const site = (file: string, alt: string, w = 1000, h = 1000): Img => { co
 // `label` is the English navigation label, `zh` the Chinese one. Chinese pages show both; English pages show `label` only.
 export const sections = [
   { id: "hero", label: "Top", zh: "首頁" },
-  // order and names from the user's Google Doc (2026-10-02); 真皮包 kept
+  // order and names from the user's Google Doc (2026-10-02); the leather bags kept as 交織系列 (user: 「用目前的商品分類邏輯優化一個比較有文學味的名稱」)
   { id: "tea", label: "Goldfish Tea Bags", zh: "小金魚茶包" },
   { id: "scents", label: "Scents", zh: "香氛" },
   { id: "jewelry", label: "Jewelry", zh: "金飾" },
-  { id: "bags", label: "Leather Bags", zh: "真皮包" },
+  { id: "bags", label: "Interwoven Collection", zh: "交織系列" },
   { id: "abundance", label: "Abundance Collection", zh: "豐盛系列" },
   { id: "wood-fired", label: "Wood-Fired Collection", zh: "柴燒系列" },
   { id: "visit", label: "Our Stores", zh: "門市" },
@@ -69,7 +69,7 @@ const buildContent = (lang: Locale) => {
 
   const bags = {
     index: "2:",
-    kicker: t("真皮包", "Leather Bags"),
+    kicker: t("交織系列", "Interwoven Collection"),
     heading: "LEATHER BAG",
     product: t("編織提把皮革包", "Braided Leather Bag"),
     facts: ["荔枝紋真皮", "扁平三股編織肩帶", "扁銅棒五金"],
@@ -202,7 +202,7 @@ const buildContent = (lang: Locale) => {
       image: site("banner-bag-dancer-dark.webp", t("黑白照片：深色漸層背景前，男舞者俯身，一手提著白色編織提把皮革包", "Black-and-white photograph: against a dark gradient, a male dancer bends forward, the white Braided Leather Bag hanging from one hand"), 2560, 1080),
       title: t("編織提把皮革包", "The Braided Leather Bag"),
       line: t("交織的提把，連起手與皮革。", "A plaited handle that joins hand and leather."),
-      cta: { label: t("選購真皮包", "Shop the bags"), href: "/collections/bags" },
+      cta: { label: t("選購交織系列", "Shop the Interwoven Collection"), href: "/collections/bags" },
     },
   };
 
