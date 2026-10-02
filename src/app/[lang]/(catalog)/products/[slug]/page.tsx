@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
           {/* On Chinese pages the English name sits above the Chinese one; on English pages the name itself is English. */}
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
-          {product.price && <p className="product-price">{formatPrice(product.price.amount, product.price.currency)}</p>}
+          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}</p>}
           <p className="product-description tc">{product.description}</p>
           <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.value}</dd></div>)}</dl>
           <p className="product-summary tc">{product.summary}</p>

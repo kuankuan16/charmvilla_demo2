@@ -34,7 +34,7 @@ export type Product = {
   price?: { amount: number; currency: "TWD" };
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents }[] };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number }[] };
 };
 
 const buildCatalog = (lang: Locale) => {

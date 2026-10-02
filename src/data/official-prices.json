@@ -1,22 +1,22 @@
 {
-  "_source": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=<officialId> (embedded item JSON, read 2026-09-30)",
+  "_source": "https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=<officialId> (embedded item JSON and the page's option list, read 2026-10-02; 2026-09-30 before)",
   "_currency": "TWD",
   "prices": {
-    "891": 1680,
-    "64": 1680,
-    "954": 3700,
-    "1053": 3700,
+    "891": 1870,
+    "64": 1870,
+    "954": 3870,
+    "1053": 3870,
     "104": 3500,
     "692": 830,
     "970": 810,
     "183": 1380,
     "343": 860,
     "196": 930,
-    "850": 3780,
-    "582": 3780,
-    "960": 4680,
-    "88": 7200,
+    "850": 3880,
+    "582": 3880,
+    "960": 4780,
+    "88": 8700,
     "1072": 860,
-    "994": 3700
+    "994": 3870
   }
 }

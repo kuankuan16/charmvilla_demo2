@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useCart } from "./CartProvider";
-import type { Product } from "@/data/catalog";
+import { formatPrice, type Product } from "@/data/catalog";
 import { useT } from "@/i18n/LocaleProvider";
 
 // One full-width ink button, after the reference's FIND RETAILERS (user 2026-10-01: 「做成加入購物車的按鈕，原本的相同功能的設計
@@ -14,7 +14,7 @@ export default function AddToCart({ product }: { product: Product }) {
   const missing = Boolean(choices) && option === undefined;
   return <>
     {choices && <fieldset className="product-variants product-choices"><legend className="tc">{t("選擇茶款（每盒擇一）", "Choose the tea (one per box)")}</legend>
-      <div>{choices.map((c, i) => <label key={c.label} className="tc"><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}</label>)}</div>
+      <div>{choices.map((c, i) => <label key={c.label} className="tc"><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{c.price && c.price !== product.price?.amount ? `・${formatPrice(c.price)}` : ""}</label>)}</div>
     </fieldset>}
     <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1, option)} disabled={cart.busy || missing}>{missing ? t("請先選擇茶款", "Choose a tea first") : t("加入購物車", "Add to bag")}</button>
   </>;

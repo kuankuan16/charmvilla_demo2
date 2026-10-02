@@ -78,7 +78,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => ls.filter((l) => lineKey(l) !== key));
   }, [call]);
 
-  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; return p ? [{ key: lineKey(l), slug: p.slug, name: choice ? `${p.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
+  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; return p ? [{ key: lineKey(l), slug: p.slug, name: choice ? `${p.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   const subtotal = lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = lines[0]?.currency ?? "TWD";
