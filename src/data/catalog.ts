@@ -264,7 +264,13 @@ const buildCatalog = (lang: Locale) => {
     // the only scene of the Raw Gold earring, so its listing card has a hover image too. The user's chosen model (dark green
     // satin), the goldfish outline taken from the brand's own silhouette, matte gold generated
     // (output/raw-gold-earring-scene-2026-10-01/v4-official-outline, approved 2026-10-01).
-    "raw-gold-goldfish-earrings": [site("scene-raw-gold-earring-model.webp", t("璞金小金魚耳環配戴在耳垂上，霧面金，墨綠緞面", "Raw Gold goldfish earring worn on the earlobe, matte gold, against dark green satin"))],
+    // Every earring's hover image in the drop earring's language (user 2026-10-02: 「金飾系列的 hover 圖都參考這個，黑白背景，金飾彩色」;
+    // people after the user's references, never facing the camera, faces invented): black and white, only the piece in colour.
+    "pearl-chain-goldfish-earrings": [site("scene-pearl-chain-goldfish-earrings-profile-bw.webp", t("黑白側臉照片，低髮髻、黑色緞面襯衫的女子低頭閉眼，耳垂上的珍珠長鏈小金魚耳環是唯一的彩色", "Black-and-white profile of a woman with a low bun in a black satin shirt, eyes lowered; the Pearl Chain Goldfish Earring is the only colour"), 1792, 2240)],
+    "diamond-goldfish-stud-earrings": [site("scene-diamond-goldfish-stud-earrings-profile-bw.webp", t("黑白照片，短黑髮女子側頭低眼，耳垂上的鑽石小金魚耳釘是唯一的彩色", "Black-and-white photograph of a woman with short black hair, head turned and eyes lowered; the diamond goldfish stud is the only colour"), 1792, 2240)],
+    "twin-goldfish-earrings": [site("scene-twin-goldfish-earrings-profile-bw.webp", t("黑白側臉照片，金髮綁馬尾的女子手撫後頸，耳垂上的雙魚小金魚耳環是唯一的彩色", "Black-and-white profile of a blonde woman with a ponytail, a hand at the nape of her neck; the Twin Goldfish Earring is the only colour"), 1792, 2240)],
+    "raw-gold-goldfish-earrings": [site("scene-raw-gold-goldfish-earrings-profile-bw.webp", t("黑白側臉照片，淺色短髮女子露出肩膀，耳垂上的璞金小金魚耳釘是唯一的彩色", "Black-and-white profile of a woman with close-cropped pale hair and a bare shoulder; the Raw Gold goldfish earring is the only colour"), 1792, 2240),
+      site("scene-raw-gold-earring-model.webp", t("璞金小金魚耳環配戴在耳垂上，霧面金，墨綠緞面", "Raw Gold goldfish earring worn on the earlobe, matte gold, against dark green satin"))],
     // black-and-white profile, only the earring in colour (user 2026-10-02: 側臉、黑白照片，只有耳環是彩色); a new image, the face
     // invented, generated with the site's own photograph of the earring as reference
     "diamond-goldfish-earrings": [site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的短髮女子，耳垂上的鑽石垂墜小金魚耳環是唯一的彩色", "Black-and-white profile of a short-haired woman with her eyes closed; the diamond goldfish drop earring on her lobe is the only colour"), 1792, 2240)],
