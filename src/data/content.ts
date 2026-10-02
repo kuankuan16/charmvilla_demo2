@@ -20,11 +20,14 @@ export const site = (file: string, alt: string, w = 1000, h = 1000): Img => { co
 // `label` is the English navigation label, `zh` the Chinese one. Chinese pages show both; English pages show `label` only.
 export const sections = [
   { id: "hero", label: "Top", zh: "首頁" },
-  { id: "bags", label: "Leather bag", zh: "真皮包" },
+  // order and names from the user's Google Doc (2026-10-02); 真皮包 kept
+  { id: "tea", label: "Goldfish Tea Bags", zh: "小金魚茶包" },
+  { id: "scents", label: "Scents", zh: "香氛" },
   { id: "jewelry", label: "Jewelry", zh: "金飾" },
-  { id: "tea", label: "Tea", zh: "茶包禮盒" },
-  { id: "teaware", label: "Teaware", zh: "茶器" },
-  { id: "visit", label: "Visit", zh: "門市" },
+  { id: "bags", label: "Leather Bags", zh: "真皮包" },
+  { id: "abundance", label: "Abundance Collection", zh: "豐盛系列" },
+  { id: "wood-fired", label: "Wood-Fired Collection", zh: "柴燒系列" },
+  { id: "visit", label: "Our Stores", zh: "門市" },
 ] as const;
 
 const buildContent = (lang: Locale) => {

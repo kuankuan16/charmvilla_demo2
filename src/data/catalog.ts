@@ -12,7 +12,7 @@ import type { Locale } from "../i18n/config";
 //
 // Bilingual (2026-10-01): buildCatalog(lang) builds the same products in Chinese (the source) or English. Every visible
 // string is written as t("中文", "English"); slugs, images, prices and Shopify ids are shared.
-export type CategoryId = "bags" | "jewelry" | "tea" | "teaware";
+export type CategoryId = "bags" | "jewelry" | "tea" | "scents" | "abundance" | "wood-fired";
 export type Category = { id: CategoryId; name: string; en: string; intro: string };
 export type ProductView = { label: string; image: Img };
 export type Product = {
@@ -43,11 +43,17 @@ const buildCatalog = (lang: Locale) => {
   const t = (zh: string, en: string) => (lang === "en" ? en : zh);
   const { bags, jewelry } = getContent(lang);
 
+  // Category names and order from the user's Google Doc (2026-10-02): 全部作品 All Pieces · 小金魚茶包 Goldfish Tea Bags · 香氛 Scents
+  // (slogan 「香味，是喜悅的記憶。」, the official store's 香味是喜悅的記憶 category: the hinoki pieces) · 金飾 Jewelry · 豐盛系列
+  // Abundance Collection · 柴燒系列 Wood-Fired Collection (the chopstick rest) · 門市 Our Stores. 真皮包 kept (user's choice).
+  // The former 茶器與工藝 is split into 香氛, 豐盛系列 and 柴燒系列 (/collections/teaware redirects to /collections/scents).
   const categories: Category[] = [
+    { id: "tea", name: t("小金魚茶包", "Goldfish Tea Bags"), en: "GOLDFISH TEA BAGS", intro: t("從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。", "From the warp and weft of the fabric to the grain of paulownia wood, a box of tea holds scenery worth a closer look. Each gift box keeps a set of handmade goldfish. Choose by box, count and tea for a gesture that finds its way into daily life.") },
+    { id: "scents", name: t("香氛", "Scents"), en: "SCENTS", intro: t("香味，是喜悅的記憶。", "Scent is a memory of joy.") },
+    { id: "jewelry", name: t("金飾", "Jewelry"), en: "JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Scaled down to the ear, the goldfish outline brings its lustre close to the skin. As you turn, the gold surface, the pearl and the diamond each show a different expression.") },
     { id: "bags", name: t("真皮包", "Leather Bags"), en: "LEATHER BAGS", intro: t("從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。", "Follow the plaited handle down to the body: grain and line each keep their own order. To pick up a leather bag is to bring an eye for material into the everyday.") },
-    { id: "jewelry", name: t("金飾", "Goldfish Jewelry"), en: "GOLDFISH JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Scaled down to the ear, the goldfish outline brings its lustre close to the skin. As you turn, the gold surface, the pearl and the diamond each show a different expression.") },
-    { id: "tea", name: t("小金魚茶包禮盒", "Goldfish Tea Gifts"), en: "GOLDFISH TEA GIFTS", intro: t("從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。", "From the warp and weft of the fabric to the grain of paulownia wood, a box of tea holds scenery worth a closer look. Each gift box keeps a set of handmade goldfish. Choose by box, count and tea for a gesture that finds its way into daily life.") },
-    { id: "teaware", name: t("茶器與工藝", "Teaware & Craft"), en: "TEAWARE & CRAFT", intro: t("餐桌上的陳列，隨每次使用而改變。點心架的高低、茶匙的弧線與木紋，讓日常器物有了值得停留的細節。", "What sits on the table changes with every use. The tiers of a dessert stand, the curve of a teaspoon and the grain of its wood give everyday objects details worth lingering over.") },
+    { id: "abundance", name: t("豐盛系列", "Abundance Collection"), en: "ABUNDANCE COLLECTION", intro: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A dessert stand brings height and layers to the tea table. From arranging to serving, afternoon tea finds its own rhythm.") },
+    { id: "wood-fired", name: t("柴燒系列", "Wood-Fired Collection"), en: "WOOD-FIRED COLLECTION", intro: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A chopstick rest drawn from the outline of a bird. A small thing that leaves a shaped pause between tableware and table.") },
   ];
 
   const bagProducts: Product[] = bags.products.map((p) => ({
@@ -140,7 +146,7 @@ const buildCatalog = (lang: Locale) => {
   // Seasonal editions lead the tea listing; the 16 official gift boxes follow.
   const teaProducts: Product[] = [...christmasGiftProductsFor(lang), ...teaGiftProductsFor(lang)];
 
-  const prosperity = t("豐盛系列", "Prosperity Series"), wooden = t("木質餐具", "Wooden Tableware");
+  const prosperity = t("豐盛系列", "Abundance Collection"), wooden = t("木質餐具", "Wooden Tableware");
   const tablewareEntries = [
     { slug: "prosperity-dessert-stand", name: t("下午茶點心架", "Afternoon Tea Dessert Stand"), en: "DESSERT STAND", series: prosperity, ids: ["CV-0068", "CV-0074", "CV-0081"],
       summary: t("把點心與茶，安放在同一席風景。", "Sweets and tea, set within one view."),
@@ -156,7 +162,7 @@ const buildCatalog = (lang: Locale) => {
       summary: t("一杯茶的旁邊，木紋靜靜相伴。", "Beside a cup of tea, wood grain keeps quiet company."),
       detail: t("雲朵形狀的檜木杯墊，把木質的紋理帶到茶杯旁。一組六片，近看表面，也觀察每一片的輪廓。", "Cloud-shaped hinoki coasters bring the grain of wood to the side of the cup. Six to a set: look closely at the surface, and at the outline of each piece."),
       story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。每一次放下茶杯，杯墊表面的紋理與雲朵的輪廓，便一次次回到注意之中。", "The hand knows the material before the eye does. Each time a cup is set down, the grain of the surface and the outline of the cloud come back to attention.") } },
-    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Bird Chopstick Rest"), en: "BIRD CHOPSTICK REST", series: t("茶席器物", "Objects for the Tea Table"), ids: ["CV-0256", "CV-0248", "CV-0239"],
+    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Bird Chopstick Rest"), en: "BIRD CHOPSTICK REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256", "CV-0248", "CV-0239"],
       summary: t("讓一雙筷子，有一處停歇。", "A place for a pair of chopsticks to rest."),
       detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A chopstick rest drawn from the outline of a bird. A small thing that leaves a shaped pause between tableware and table."),
       story: { title: t("餐具之間，一隻鳥", "A bird among the tableware"), body: t("筷子放下時，鳥形的輪廓便與修長的線條相遇。一件小器物改變了桌面的構圖，也讓用餐間的停頓有了可看的細節。", "When the chopsticks are set down, the bird's outline meets their long line. One small object changes the composition of the table and gives the pauses in a meal a detail to look at.") } },
@@ -189,7 +195,7 @@ const buildCatalog = (lang: Locale) => {
     ] },
   };
   const teawareProducts: Product[] = tablewareEntries.map((p) => ({
-    slug: p.slug, category: "teaware", name: p.name, english: p.en, summary: p.summary, description: p.detail,
+    slug: p.slug, category: (p.series === prosperity ? "abundance" : p.slug === "bird-chopstick-rest" ? "wood-fired" : "scents") as CategoryId, name: p.name, english: p.en, summary: p.summary, description: p.detail,
     image: gallery(p.ids[0], p.name), views: p.ids.map((id, i) => ({ label: i ? t(`細節 ${i}`, `Detail ${i}`) : t("商品全貌", "Full view"), image: gallery(id, p.name) })),
     facts: [
       { label: t("系列", "Series"), value: p.series }, { label: t("品項", "Item"), value: p.name },

@@ -13,7 +13,7 @@ export default function SiteFooter({ lang }: { lang: Locale }) {
   const { footer } = getCommerce(lang);
   return (
     <footer className="catalog-footer">
-      <div className="catalog-footer-top"><p className="catalog-footer-statement tc">{t("藝術即生活", "Art as Life")}</p><div><nav aria-label={t("頁尾導覽", "Footer navigation")}><Link href={categoryHref("all", lang)} className="tc">{t("全部商品", "All pieces")}</Link>{getCategories(lang).map((c) => <Link key={c.id} href={categoryHref(c.id, lang)} className="tc">{c.name}</Link>)}<Link href={localeHref(lang, "/about")} className="tc">{t("關於", "About")}</Link></nav></div></div>
+      <div className="catalog-footer-top"><p className="catalog-footer-statement tc">{t("藝術即生活", "Art as Life")}</p><div><nav aria-label={t("頁尾導覽", "Footer navigation")}><Link href={categoryHref("all", lang)} className="tc">{t("全部作品", "All Pieces")}</Link>{getCategories(lang).map((c) => <Link key={c.id} href={categoryHref(c.id, lang)} className="tc">{c.name}</Link>)}<Link href={localeHref(lang, "/about")} className="tc">{t("關於", "About")}</Link></nav></div></div>
       {/* The shopping rules on every page (2026-10-02). The seller's identity line was removed from the footer at the user's request
           (「刪」); it stays in full on the shopping guide's 賣家資訊 section (消保法 §18). */}
       <div className="catalog-footer-legal"><nav aria-label={t("購物說明", "Shopping information")}>{footer.links.map((l) => <Link key={l.href} href={localeHref(lang, l.href)} className="tc">{l.label}</Link>)}</nav></div>

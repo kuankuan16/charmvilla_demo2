@@ -67,7 +67,7 @@ const build = (lang: Locale) => {
         id: "teaware",
         craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Teaspoon and Coaster"),
         quote: [t("做木的人，", "The woodworker"), t("順著木紋把一片葉子鋸出來。", "saws a leaf out along the grain of the wood.")],
-        cta: { label: t("看茶器與工藝", "View teaware and craft"), href: "/collections/teaware" },
+        cta: { label: t("看香氛", "View scents"), href: "/collections/scents" },
         // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
         // with their engraved logos (also on the coaster and teaspoon pages)
         image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳",

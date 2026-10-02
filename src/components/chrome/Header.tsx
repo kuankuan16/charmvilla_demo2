@@ -60,7 +60,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   }, [open, close, innerPage]);
 
   // Primary: every product category; secondary: about, stores, account, the shopping guide and the language.
-  const primary = [{ id: "all", label: "All Objects", zh: "全部商品" } as const, ...sections.filter((s) => s.id !== "hero" && s.id !== "visit")];
+  const primary = [{ id: "all", label: "All Pieces", zh: "全部作品" } as const, ...sections.filter((s) => s.id !== "hero" && s.id !== "visit")];
   const secondary = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
     { href: sectionHref("visit"), label: t("門市資訊", "Our stores") },
@@ -111,7 +111,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <a href={sectionHref("tea")} onClick={close} className="menu-card menu-card--feature">
             <span className="menu-card-image"><Image src={teaCard.src} alt={teaCard.alt} fill sizes="(min-width:1024px) 24vw, 90vw" /></span>
             <span className="menu-card-body">
-              <span className="menu-card-title tc">{t("小金魚茶包禮盒", "Goldfish Tea Gifts")}</span>
+              <span className="menu-card-title tc">{t("小金魚茶包", "Goldfish Tea Bags")}</span>
               <span className="menu-card-meta"><span className="tc">{t("德國 iF・紅點設計獎", "iF and Red Dot awards")}</span><span className="menu-card-arrow" aria-hidden="true" /></span>
             </span>
           </a>
