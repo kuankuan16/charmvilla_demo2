@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = translator(lang);
   return {
     title: t("關於｜CHARM VILLA", "About | CHARM VILLA"),
-    description: getContent(lang).manifesto.paragraphs.slice(0, 2).join(" "),
+    description: getContent(lang).manifesto.paragraphs.slice(0, 2).join(" ").replace(/\n/g, " "),
     alternates: alternatesFor(lang, "/about"),
   };
 }

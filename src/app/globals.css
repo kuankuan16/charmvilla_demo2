@@ -651,9 +651,11 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
 .story-copy { font-size: clamp(15px, 1.4vw, 28px); font-weight: 500; line-height: 1.85; letter-spacing: .04em; overflow-wrap: anywhere; }
 .story-copy p { margin: 0 0 1em; }
+.story-copy p, .about-story p { white-space: pre-line; } /* keeps the line breaks inside the user's paragraphs (copy 2026-10-02) */
 .story-copy p:last-child { margin-bottom: 0; }
 .story-copy .story-lead { font-weight: 600; }
 .story-honours { margin-top: 40px; }
+.story-honours-heading { font-size: 13px; line-height: 1.8; font-weight: 600; }
 .story-honours-label { font-size: 12px; line-height: 1.8; color: #676767; }
 .story-honours-list { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 24px; }
 .story-honours-list li { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
@@ -729,30 +731,33 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .collection-results .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Reference Cases composition: split panels, a visible next card and quiet dots. */
-.store-carousel { position: relative; overflow: hidden; isolation: isolate; background: var(--color-page); padding: 75px 0 85px; }
+/* Reference Cases composition: split panels, a visible next card and quiet dots.
+   Dark ground for the whole screen (user 2026-10-02: 「這一屏想加入深色背景」): ink section, a slightly lifted warm
+   panel behind the store information, light text. */
+.store-carousel { position: relative; overflow: hidden; isolation: isolate; background: var(--color-ink); color: var(--color-page); padding: 75px 0 85px; }
+.store-carousel :focus-visible { outline-color: var(--color-page); }
 .store-brush { z-index: -1; top: -24vw; left: 35vw; width: 60vw; height: 70vw; transform: rotate(25deg); opacity: .28; mask-image: url('/media/hero/brushes/paint2_1_pc.webp'); }
 .store-heading { margin: 0 var(--page-gutter) 30px; display: flex; align-items: flex-end; justify-content: space-between; }
 .store-heading h2 { font-size: clamp(28px, 3.2vw, 54px); line-height: 1.15; }
 .store-heading p { font-size: 14px; margin-top: 10px; }
 .store-dots { display: flex; }
 .store-dots button { width: 28px; height: 32px; display: grid; place-items: center; }
-.store-dots span { width: 7px; height: 7px; border-radius: 50%; background: #b6b6b6; }
+.store-dots span { width: 7px; height: 7px; border-radius: 50%; background: rgb(246 248 250 / .32); }
 .store-dots [aria-pressed="true"] span { background: var(--color-gold); }
 .store-track { position: relative; display: flex; gap: 3vw; padding: 0 var(--page-gutter); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--page-gutter); scrollbar-width: none; cursor: grab; }
 .store-track::-webkit-scrollbar { display: none; }
 .store-track[data-dragging] { scroll-snap-type: none; cursor: grabbing; user-select: none; }
 .store-track img { pointer-events: none; }
-.store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: var(--color-page); scroll-snap-align: start; } /* one ground colour on the homepage (user 2026-10-01) */
-.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; background: var(--color-sand); color: var(--color-ink); } /* light beige ground behind the store information (user 2026-10-01: first gold, then 淺米黃); text on it is ink */
+.store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: var(--color-ink); scroll-snap-align: start; }
+.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; background: #2a2926; color: var(--color-page); } /* warm dark panel on the ink section (2026-10-02); before that 淺米黃 sand, first gold */
 .store-city { font-size: clamp(26px, 2.5vw, 42px); line-height: 1.2; }
-.store-city span { font-size: 13px; margin-left: 8px; color: rgb(31 31 31 / .72); }
-.store-name { margin-top: 18px; font-size: 12px; color: rgb(31 31 31 / .82); }
+.store-city span { font-size: 13px; margin-left: 8px; color: rgb(246 248 250 / .64); }
+.store-name { margin-top: 18px; font-size: 12px; color: rgb(246 248 250 / .78); }
 .store-copy h3 { font-size: clamp(21px, 2vw, 32px); line-height: 1.6; margin-top: 22px; font-weight: 500; }
 .store-description { margin-top: 22px; font-size: 14px; line-height: 1.95; }
-.store-information { margin-top: 28px; font-size: 12px; line-height: 1.9; color: rgb(31 31 31 / .82); }
-.store-map { display: inline-flex; align-items: center; gap: 32px; padding: 14px 22px; border: 1px solid rgb(31 31 31 / .6); margin-top: 28px; font-size: 13px; }
-.store-map:hover { background: var(--color-ink); color: white; border-color: var(--color-ink); }
+.store-information { margin-top: 28px; font-size: 12px; line-height: 1.9; color: rgb(246 248 250 / .78); }
+.store-map { display: inline-flex; align-items: center; gap: 32px; padding: 14px 22px; border: 1px solid rgb(246 248 250 / .6); margin-top: 28px; font-size: 13px; }
+.store-map:hover { background: var(--color-page); color: var(--color-ink); border-color: var(--color-page); }
 .store-photo { position: relative; min-width: 0; overflow: hidden; }
 .store-online { display: flex; align-items: center; gap: 30px; padding: 45px var(--page-gutter); }
 .store-online > p:nth-child(2) { max-width: 640px; font-size: 13px; line-height: 1.9; }

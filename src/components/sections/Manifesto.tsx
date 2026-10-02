@@ -48,7 +48,8 @@ export default function Manifesto() {
             </p>)}
           </div>
           <div className="story-honours" aria-label={tea.honoursAria} data-brand-awards="">
-            <p className="story-honours-label tc">{tea.honoursLabel} · {tea.honours[0]}</p>
+            <p className="story-honours-heading tc">{manifesto.honours.heading}</p>
+            <p className="story-honours-label tc">{manifesto.honours.patent}</p>
             <ul className="story-honours-list">
               {tea.awards.map(award => <li key={award.image.src}>
                 <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />

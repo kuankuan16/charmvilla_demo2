@@ -42,14 +42,20 @@ const buildContent = (lang: Locale) => {
     ],
   };
 
+  // User copy 2026-10-02 (replaces 「藝術即生活」 and its two paragraphs). "\n" is a line break the user set inside a
+  // paragraph; the user's draft wrote CHARMVILLA, kept as the protected term CHARM VILLA.
   const manifesto = {
     paragraphs: [
-      t("藝術即生活", "Art as Life"),
-      t("生活，是一座可以親近的藝廊。光落在皮革的細紋，隨轉身掠過耳畔的金色；一件器物被拿起、放下，材質與手的關係，也在這些微小的動作裡變得清楚。",
-        "Life is a gallery you can walk up to. Light settles in the grain of leather and, as you turn, passes over the gold at the ear. An object is picked up and set down, and in those small movements the relationship between material and hand comes into focus."),
-      t("在 CHARM VILLA，觀看從細節開始。編織的交接、金飾的輪廓、茶袋的一道摺痕，都是理解一件作品的入口。職人反覆琢磨材質與比例，讓手作的心意有了具體的形。作品走出陳列，來到肩上、耳畔與餐桌，藝術便有了日常的尺度。",
-        "At CHARM VILLA, looking begins with detail. The crossing of a plait, the outline of a piece of gold, a single fold in a tea bag: each is a way into the work. The artisans return again and again to material and proportion, until the care of the hand takes a definite form. When a piece leaves the display for the shoulder, the ear and the table, art takes on the scale of the everyday."),
+      t("藝術的日常尺度，來自職人的極致琢磨。", "The everyday measure of art comes from the artisan's patient refinement"),
+      t("一段交織的編織，耳畔的一道光影，茶湯中舒展的優雅姿態。\nCHARM VILLA 相信，真正的美，是讓極致工藝自然融入生活的日常節奏。",
+        "A plait woven through itself, a line of light at the ear, a form unfurling with quiet grace in the tea.\nCHARM VILLA believes true beauty lets the finest craft settle naturally into the rhythm of daily life."),
+      t("職人以時間磨礪材質，賦予作品可被觸摸的靈魂。\n當作品躍上肩頭、來到桌前，藝術，即是生活的本質。",
+        "Artisans hone the material over time and give each piece a soul you can touch.\nWhen a piece rises to the shoulder or comes to the table, art is the substance of life itself."),
     ],
+    honours: {
+      heading: t("國際專利與榮譽", "International patents and honours"),
+      patent: t("小金魚茶包（全球 34 國專利）", "Goldfish Tea Bag (patented in 34 countries)"),
+    },
     awards: t("小金魚茶包榮獲 2014 德國紅點傳達設計獎（Red Dot Winner）與 2015 德國 iF 設計大獎（iF DESIGN AWARD）。",
       "The Goldfish Tea Bag received the Red Dot Award: Communication Design 2014 (Red Dot Winner) and the iF DESIGN AWARD 2015, both in Germany."),
     // Not rendered since the image gallery became the craft carousel (2026-10-01); kept for the unused sections.
@@ -148,8 +154,8 @@ const buildContent = (lang: Locale) => {
     honoursLabel: t("小金魚茶包", "Goldfish Tea Bag"),
     honoursAria: t("小金魚茶包設計榮譽", "Design honours for the Goldfish Tea Bag"),
     awards: [
-      { image: { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 }, text: t("2015 德國 iF 設計大獎（iF DESIGN AWARD）", "iF DESIGN AWARD 2015, Germany") },
-      { image: { src: "/brand/awards/reddot-winner-2014-transparent.svg", alt: "Red Dot Winner 2014", w: 1200, h: 847 }, text: t("2014 德國紅點傳達設計獎（Red Dot Winner）", "Red Dot Award: Communication Design 2014 (Red Dot Winner), Germany") },
+      { image: { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 }, text: t("2015 德國 iF 設計大獎", "iF DESIGN AWARD 2015, Germany") },
+      { image: { src: "/brand/awards/reddot-winner-2014-transparent.svg", alt: "Red Dot Winner 2014", w: 1200, h: 847 }, text: t("2014 德國紅點傳達設計獎", "Red Dot Award: Communication Design 2014, Germany") },
     ],
   };
 
