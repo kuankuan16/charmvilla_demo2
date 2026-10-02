@@ -193,6 +193,14 @@ const buildContent = (lang: Locale) => {
     statement: t("作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The Scholart Selection，到京都寺町，CHARM VILLA 與夥伴一同呈現作品，讓遠近的觀看，回到材質與細節。",
       "For a piece to meet a person, it needs a place. From Regent Galleria at Regent Taipei and The Scholart Selection to Teramachi in Kyoto, CHARM VILLA presents its work together with its partners, so that looking, from near or far, comes back to material and detail."),
     cta: { label: "WORK WITH US", zh: t("合作洽詢", ""), href: "https://www.instagram.com/charmvilla/" },
+    // 2026-10-02 (user: 「這一屏改為這種形式…深色漸層的背景襯托出人物與包包，並導購」): a full-bleed banner after the
+    // reference's "Explore the Collection" — the dancer and the white bag on a dark gradient, the bag's name, its line, a shop button.
+    banner: {
+      image: site("banner-bag-dancer-dark.webp", t("黑白照片：深色漸層背景前，男舞者俯身，一手提著白色編織提把皮革包", "Black-and-white photograph: against a dark gradient, a male dancer bends forward, the white Braided Leather Bag hanging from one hand"), 2560, 1080),
+      title: t("編織提把皮革包", "The Braided Leather Bag"),
+      line: t("交織的提把，連起手與皮革。", "A plaited handle that joins hand and leather."),
+      cta: { label: t("選購真皮包", "Shop the bags"), href: "/collections/bags" },
+    },
   };
 
   const showMore = {
@@ -229,7 +237,7 @@ const buildContent = (lang: Locale) => {
             hours: t("10:00–21:00・全年無休", "10:00–21:00 · Open every day"),
             phone: { label: "02-2542-0303", tel: "+886225420303" }, // www.charmvilla.com.tw, 2026-10-02
             href: "https://goo.gl/maps/agJHzfM2VE82",
-            image: site("store-regent.jpg", t("CHARM VILLA 晶華門市（charmvilla.jp）", "CHARM VILLA store at Regent Taipei (charmvilla.jp)"), 640, 384),
+            image: site("store-regent-2k.webp", t("CHARM VILLA 晶華門市入口與陳列", "The entrance and displays of CHARM VILLA at Regent Taipei"), 2560, 1536), // charmvilla.jp photo, enhanced to 2K with Higgsfield upscale (2026-10-02); the sign redrawn from the wordmark where the upscale misspelt it
             intro: {
               city: "Taipei",
               heading: t("在城市裡，留一段細看的時間", "In the city, time set aside for a closer look"),
@@ -243,7 +251,7 @@ const buildContent = (lang: Locale) => {
             hours: t("週六・週日 11:00–18:00", "Saturday and Sunday 11:00–18:00"),
             phone: { label: "075-606-5507", tel: "+81756065507" }, // charmvilla.jp, 2026-10-02
             href: "https://goo.gl/maps/WBdsELDfMx52",
-            image: site("store-kyoto.jpg", t("CHARM VILLA 京都門市（charmvilla.jp）", "CHARM VILLA store in Kyoto (charmvilla.jp)"), 1000, 600),
+            image: site("store-kyoto-2k.webp", t("CHARM VILLA 京都門市的長桌與水墨牆面", "The long table and ink-painting wall of CHARM VILLA in Kyoto"), 2560, 1536), // charmvilla.jp photo, enhanced to 2K (2026-10-02)
             intro: {
               city: "Kyoto",
               heading: t("在寺町，與作品相遇", "In Teramachi, an encounter with the work"),
