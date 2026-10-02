@@ -606,7 +606,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* language drop-down: the toggle shows the current language and a chevron; the list slides open under it */
 .menu-lang-toggle { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; cursor: pointer; font: inherit; }
 .menu-lang-current { opacity: 1; }
-.menu-lang-current::before { content: "/"; margin-right: 8px; opacity: .5; }
+.menu-lang-current::before { content: "/"; margin-right: 8px; }
 .menu-lang-caret { width: 7px; height: 7px; margin-top: -4px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .3s cubic-bezier(.22, .8, .3, 1), margin .3s; }
 .menu-lang.is-open .menu-lang-caret { margin-top: 3px; transform: rotate(-135deg); }
 .menu-lang-drawer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22, .8, .3, 1); }
