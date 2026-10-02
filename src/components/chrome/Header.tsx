@@ -94,7 +94,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "/media/site/scene-wooden-interior-sunlit.webp",
+    all: "/media/site/scene-pink-bag-armchair-2k-v2.webp", // the pink bag on the leather armchair (user 2026-10-02: 「全部作品用剛剛皮革在沙發上的圖」)
     tea: "/media/site/ottoman-tray-tea-cup-v4-tag2.webp",
     scents: "/media/site/scene-coffee-table-tea-coasters-tag.webp",
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
