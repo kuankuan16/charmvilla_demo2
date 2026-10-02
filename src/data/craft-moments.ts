@@ -56,8 +56,9 @@ const build = (lang: Locale) => {
         craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Teaspoon and Coaster"),
         quote: [t("做木的人，", "The woodworker"), t("順著木紋把一片葉子鋸出來。", "saws a leaf out along the grain of the wood.")],
         cta: { label: t("看茶器與工藝", "View teaware and craft"), href: "/collections/teaware" },
-        image: site("craft-04-breakfast-table.webp", t("逆光的早餐桌：花形木杯墊上的一杯茶、銀杏茶匙、鳥形筷架與木筷",
-          "A backlit breakfast table: a cup of tea on a flower-shaped wooden coaster, a ginkgo teaspoon, a bird chopstick rest and wooden chopsticks")),
+        // user 2026-10-02: the breakfast table 換 the tray-table scene of the same pieces (also on the coaster and teaspoon pages)
+        image: site("scene-wooden-tray-table-sofa.webp", t("梅花形木盒、雲朵杯墊與銀杏茶匙，放在沙發旁的黑色托盤邊几上",
+          "A plum-blossom wooden box, a cloud-shaped coaster and a ginkgo teaspoon on a black tray table beside a sofa"), 1376, 2048),
       },
     ] as CraftMoment[],
   };
