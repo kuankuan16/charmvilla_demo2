@@ -95,7 +95,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
     all: "/media/site/scene-wooden-interior-sunlit.webp",
-    tea: "/media/site/ottoman-tray-tea-cup-v4.webp",
+    tea: "/media/site/ottoman-tray-tea-cup-v4-tag2.webp",
     scents: "/media/site/scene-coffee-table-tea-coasters-tag.webp",
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
     bags: "/media/site/partners-male-dancer-c.webp",
