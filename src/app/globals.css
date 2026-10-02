@@ -687,13 +687,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
 .story-copy { font-weight: 500; letter-spacing: .04em; overflow-wrap: anywhere; }
 .about-story p { white-space: pre-line; }
-.story-honours { margin-top: 56px; }
-.story-honours-heading { font-size: 13px; line-height: 1.8; font-weight: 600; }
-.story-honours-label { font-size: 12px; line-height: 1.8; color: #676767; }
-.story-honours-list { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 24px; }
+.story-honours { margin-top: 48px; }
+.story-honours-list { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
 .story-honours-list li { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .story-honours-list img { width: clamp(80px, 7vw, 120px); height: 85px; object-fit: contain; flex-shrink: 0; }
-.story-honours-list p { font-size: 12px; line-height: 1.85; }
 .story-brush { position: absolute; pointer-events: none; mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha; }
 .story-brush--message { right: -17vw; top: 12%; width: 54vw; height: 56vw; opacity: .78; transform: rotate(15deg); mask-image: url('/media/hero/brushes/paint1_2_pc.webp'); }
 .story-gallery { position: relative; z-index: 2; height: 180svh; }
@@ -717,10 +714,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .story-title { font-size: 17px; }
   .story-body { margin-top: 22px; font-size: 14px; line-height: 2; letter-spacing: .025em; }
   .story-honours { margin-top: 30px; }
-  .story-honours-label { font-size: 10px; }
-  .story-honours-list { flex-direction: column; gap: 40px; margin-top: 20px; }
+  .story-honours-list { gap: 28px; }
   .story-honours-list img { width: 88px; height: 62px; }
-  .story-honours-list p { font-size: 11px; }
   .story-brush--message { right: -60vw; top: 30%; width: 95vw; height: 140vw; opacity: .4; }
   .story-gallery { height: 145svh; }
   .story-gallery-stage { width: calc(100% - 2 * var(--page-gutter)); height: 72%; }

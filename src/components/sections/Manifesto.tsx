@@ -43,21 +43,17 @@ export default function Manifesto() {
       <div className="story-message">
         <div className="story-brush story-brush--message" aria-hidden="true"><InkBloom observe seed={11} /></div>
         {/* After the text-media block of jakobsencopenhagen.com (user 2026-10-02: 「標題跟內文分開欄位，並將內文字改小一點」): the title in
-            the first columns, the paragraphs set in beside it and a little lower, in smaller type. */}
+            the first columns, the paragraphs set in beside it in smaller type, both starting level. */}
         <div className="story-text-column story-copy">
           <h2 id="story-heading" className="story-title tc">{chars(title)}</h2>
           <div className="story-body tc">
             {body.map((text) => <p key={text}>{chars(text)}</p>)}
-            <div className="story-honours" aria-label={tea.honoursAria} data-brand-awards="">
-              <p className="story-honours-heading tc">{manifesto.honours.heading}</p>
-              <p className="story-honours-label tc">{manifesto.honours.patent}</p>
-              <ul className="story-honours-list">
-                {tea.awards.map(award => <li key={award.image.src}>
-                  <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />
-                  <p className="tc">{award.text}</p>
-                </li>)}
-              </ul>
-            </div>
+            {/* only the two award marks (user 2026-10-02: the heading, the patent line and the captions 「刪」 — the copy now tells them) */}
+            <ul className="story-honours story-honours-list" aria-label={tea.honoursAria} data-brand-awards="">
+              {tea.awards.map(award => <li key={award.image.src}>
+                <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />
+              </li>)}
+            </ul>
           </div>
         </div>
       </div>
