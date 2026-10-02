@@ -16,7 +16,7 @@ type Edition = {
 };
 
 const summary: Pair = ["聖誕限定・桐木盒與刺繡織布盒蓋", "Christmas limited · paulownia box with an embroidered fabric lid"];
-const craft: Pair = ["燙金：黑色裝飾線以微凹壓印／彩色圖案與 CHARM VILLA 字樣：刺繡", "Foil stamping: black decorative lines lightly debossed / Coloured motifs and the CHARM VILLA wordmark: embroidery"];
+const craft: Pair = ["燙金：黑色裝飾線以微凹壓印／彩色圖案與 CHARM VILLA 字樣：刺繡", "Foil stamping: black decorative lines lightly debossed / Colored motifs and the CHARM VILLA wordmark: embroidery"];
 const palette: Pair = ["米金布底 × 燙金 × 金線 Logo × 紅綠白刺繡", "Pale-gold fabric × foil stamping × gold-thread logo × red, green and white embroidery"];
 
 const editions: Edition[] = [
@@ -66,7 +66,7 @@ export const christmasGiftProductsFor = (lang: Locale): Product[] => {
         { label: t("系列", "Series"), value: t("2026 聖誕特別版", "2026 Christmas Edition") },
         { label: t("盒蓋圖案", "Lid motif"), value: p(e.motif) },
         { label: t("工藝", "Craft"), value: p(craft) },
-        { label: t("盒型與材質", "Box and materials"), value: t("桐木盒、織布盒蓋", "Paulownia wood box, woven-fabric lid") },
+        { label: t("盒型與材質", "Packaging"), value: t("桐木盒、織布盒蓋", "Paulownia wood box, woven-fabric lid") },
         { label: t("配色", "Palette"), value: p(palette) },
         { label: t("上市資訊", "Release"), value: t("聖誕新品；入數、售價與供應日期以官方公告為準，歡迎洽詢。", "New for Christmas. Count, price and availability dates follow the official announcement; enquiries are welcome.") },
       ],

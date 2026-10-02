@@ -49,12 +49,12 @@ const buildCatalog = (lang: Locale) => {
   // (user's choice) and renamed 交織系列 Interwoven Collection after their braided handles, in the series naming of the others.
   // The former 茶器與工藝 is split into 香氛, 豐盛系列 and 柴燒系列 (/collections/teaware redirects to /collections/scents).
   const categories: Category[] = [
-    { id: "tea", name: t("小金魚茶包", "Goldfish Tea Bags"), en: "GOLDFISH TEA BAGS", intro: t("從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。", "From the warp and weft of the fabric to the grain of paulownia wood, a box of tea holds scenery worth a closer look. Each gift box keeps a set of handmade goldfish. Choose by box, count and tea for a gesture that finds its way into daily life.") },
+    { id: "tea", name: t("小金魚茶包", "Goldfish Tea Bags"), en: "GOLDFISH TEA BAGS", intro: t("從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。", "Hand-folded Goldfish Tea Bags, presented in paper and paulownia wood gift boxes. Explore woven textures and illustrated lids, then choose the tea selection and box size for the person you have in mind.") },
     { id: "scents", name: t("香氛", "Scents"), en: "SCENTS", intro: t("香味，是喜悅的記憶。", "Scent is a memory of joy.") },
-    { id: "jewelry", name: t("金飾", "Jewelry"), en: "JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Scaled down to the ear, the goldfish outline brings its lustre close to the skin. As you turn, the gold surface, the pearl and the diamond each show a different expression.") },
-    { id: "bags", name: t("交織系列", "Interwoven Collection"), en: "INTERWOVEN COLLECTION", intro: t("從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。", "Follow the plaited handle down to the body: grain and line each keep their own order. To pick up a leather bag is to bring an eye for material into the everyday.") },
-    { id: "abundance", name: t("豐盛系列", "Abundance Collection"), en: "ABUNDANCE COLLECTION", intro: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A dessert stand brings height and layers to the tea table. From arranging to serving, afternoon tea finds its own rhythm.") },
-    { id: "wood-fired", name: t("柴燒系列", "Wood-Fired Collection"), en: "WOOD-FIRED COLLECTION", intro: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A chopstick rest drawn from the outline of a bird. A small thing that leaves a shaped pause between tableware and table.") },
+    { id: "jewelry", name: t("金飾", "Jewelry"), en: "JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Our goldfish takes on a new form in jewelry. Explore designs with pearls, diamonds and matte finishes, each catching the light in its own way as you move.") },
+    { id: "bags", name: t("交織系列", "Interwoven Collection"), en: "INTERWOVEN COLLECTION", intro: t("從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。", "A braided handle, textured leather and a carefully considered silhouette. Discover bags that bring distinctive details to the pieces you carry every day.") },
+    { id: "abundance", name: t("豐盛系列", "Abundance Collection"), en: "ABUNDANCE COLLECTION", intro: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only.") },
+    { id: "wood-fired", name: t("柴燒系列", "Wood-Fired Collection"), en: "WOOD-FIRED COLLECTION", intro: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "Individually shaped and finished by hand, with subtle variations in color and gradient from piece to piece. Hand wash only; not dishwasher safe.") },
   ];
 
   const bagProducts: Product[] = bags.products.map((p) => ({
@@ -64,7 +64,7 @@ const buildCatalog = (lang: Locale) => {
       `${p.name} lychee-grain leather with a flat three-strand plaited strap and a flat brass bar. The lines of the plait meet the grain of the body, and the metal joint gives the soft material a clear point of closure.`),
     image: p.views[0].image, views: p.views.map((v) => ({ label: v.label, image: v.image })),
     facts: [
-      { label: t("顏色", "Colour"), value: p.name }, { label: t("材質", "Material"), value: t("荔枝紋真皮", "Lychee-grain leather") },
+      { label: t("顏色", "Color"), value: p.name }, { label: t("材質", "Material"), value: t("荔枝紋真皮", "Lychee-grain leather") },
       { label: t("肩帶", "Strap"), value: t("扁平三股編織", "Flat three-strand plait") }, { label: t("五金", "Hardware"), value: t("扁銅棒", "Flat brass bar") },
       { label: t("發明專利", "Invention patent"), value: "TW I728606" },
     ],
@@ -150,9 +150,9 @@ const buildCatalog = (lang: Locale) => {
 
   const prosperity = t("豐盛系列", "Abundance Collection"), wooden = t("木質餐具", "Wooden Tableware");
   const tablewareEntries = [
-    { slug: "prosperity-dessert-stand", name: t("下午茶點心架", "Afternoon Tea Dessert Stand"), en: "DESSERT STAND", series: prosperity, ids: ["CV-0068", "CV-0074", "CV-0081"],
-      summary: t("把點心與茶，安放在同一席風景。", "Sweets and tea, set within one view."),
-      detail: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A dessert stand brings height and layers to the tea table. From arranging to serving, afternoon tea finds its own rhythm."),
+    { slug: "prosperity-dessert-stand", name: t("下午茶點心架", "Abundance Collection (4-Color Series)"), en: "ABUNDANCE COLLECTION", series: prosperity, ids: ["CV-0068", "CV-0074", "CV-0081"],
+      summary: t("把點心與茶，安放在同一席風景。", "Abundance Dessert Tray · Paper serving set"),
+      detail: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only."),
       story: { title: t("餐桌上的高與低", "Highs and lows on the table"), body: t("擺放，也是一種構圖。點心有了不同的高度，杯與盤之間便多了可觀看的層次；每次相聚，都能重新安排這一席景致。", "Arranging is a kind of composition. With sweets at different heights there are more layers to look at between cup and plate, and every gathering is a chance to set the scene anew.") } },
     { slug: "prosperity-stand-gift-box", name: t("點心架與包裝禮盒", "Dessert Stand with Gift Box"), en: "DESSERT STAND / GIFT BOX", series: prosperity, ids: ["CV-0121", "CV-0068"],
       summary: t("一份關於茶席，也關於相聚的心意。", "A gesture about the tea table, and about gathering."),
@@ -160,21 +160,21 @@ const buildCatalog = (lang: Locale) => {
       story: { title: t("從打開禮盒開始", "It begins with opening the box"), body: t("送出一件器物，也邀請對方想像它的位置。點心架從盒中來到桌上，與家中的杯盤相伴，禮物便開始參與下一次相聚。", "To give an object is to invite someone to imagine where it will sit. The stand moves from box to table, keeps company with the cups and plates of the house, and the gift begins to take part in the next gathering.") } },
     // 2026-10-02 (user: 「這些商品是分開販售，不要擅自合併」): the cloud coasters are their own product on www.charmvilla.com.tw
     // (id 156); the old "木質杯墊與茶匙" listing merged them with the ginkgo teaspoon, which is sold on its own below.
-    { slug: "cloud-coaster", name: t("雲朵杯墊", "Cloud Coasters"), en: "CLOUD COASTERS", series: wooden, ids: ["CV-0232"],
+    { slug: "cloud-coaster", name: t("雲朵杯墊", "Cloud Coaster"), en: "CLOUD COASTER", series: wooden, ids: ["CV-0232"],
       summary: t("一杯茶的旁邊，木紋靜靜相伴。", "Beside a cup of tea, wood grain keeps quiet company."),
       detail: t("雲朵形狀的檜木杯墊，把木質的紋理帶到茶杯旁。一組六片，近看表面，也觀察每一片的輪廓。", "Cloud-shaped hinoki coasters bring the grain of wood to the side of the cup. Six to a set: look closely at the surface, and at the outline of each piece."),
       story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。每一次放下茶杯，杯墊表面的紋理與雲朵的輪廓，便一次次回到注意之中。", "The hand knows the material before the eye does. Each time a cup is set down, the grain of the surface and the outline of the cloud come back to attention.") } },
-    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Bird Chopstick Rest"), en: "BIRD CHOPSTICK REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256", "CV-0248", "CV-0239"],
-      summary: t("讓一雙筷子，有一處停歇。", "A place for a pair of chopsticks to rest."),
-      detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A chopstick rest drawn from the outline of a bird. A small thing that leaves a shaped pause between tableware and table."),
+    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopsticks Rest"), en: "SONGBIRD CHOPSTICKS REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256", "CV-0248", "CV-0239"],
+      summary: t("讓一雙筷子，有一處停歇。", "Individually handcrafted, with natural variations in color."),
+      detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "Individually shaped and finished by hand, with subtle variations in color and gradient from piece to piece. Hand wash only; not dishwasher safe."),
       story: { title: t("餐具之間，一隻鳥", "A bird among the tableware"), body: t("筷子放下時，鳥形的輪廓便與修長的線條相遇。一件小器物改變了桌面的構圖，也讓用餐間的停頓有了可看的細節。", "When the chopsticks are set down, the bird's outline meets their long line. One small object changes the composition of the table and gives the pauses in a meal a detail to look at.") } },
-    { slug: "ginkgo-teaspoon-gift-box", name: t("銀杏茶匙", "Ginkgo Teaspoon"), en: "GINKGO TEASPOON", series: wooden, ids: ["CV-0231", "CV-0234", "CV-0229"],
-      summary: t("把一片葉子的形，留在茶席上。", "The shape of a leaf, kept at the tea table."),
-      detail: t("銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。", "The outline of a ginkgo leaf becomes the form of a teaspoon, and the wood grain offers a different detail each time you look. Presented in a gift box: a tea-table gesture to keep."),
+    { slug: "ginkgo-teaspoon-gift-box", name: t("銀杏茶匙", "Ginkgo Style Tea Spoon"), en: "GINKGO STYLE TEA SPOON", series: wooden, ids: ["CV-0231", "CV-0234", "CV-0229"],
+      summary: t("把一片葉子的形，留在茶席上。", "A Hinoki wood tea spoon, shaped in the Ginkgo style."),
+      detail: t("銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。", "A Hinoki wood tea spoon with a natural, mellow aroma. Gently hand wash to preserve the wood and craftsmanship; not dishwasher safe."),
       story: { title: t("一片葉子的轉譯", "A leaf, translated"), body: t("葉形來到茶席。銀杏的輪廓經由茶匙與木質呈現，既可近看造型，也能在取用之間，感受自然形態如何走入生活。", "A leaf shape arrives at the tea table. The ginkgo outline is rendered in a teaspoon and in wood: a form to look at closely and, in use, a way to sense how a natural shape enters daily life.") } },
-    { slug: "wooden-chopsticks", name: t("檜木筷子", "Hinoki Chopsticks"), en: "HINOKI CHOPSTICKS", series: wooden, ids: ["CV-0243", "CV-0245", "CV-0227"],
-      summary: t("從一雙木筷，開始日常的一餐。", "An everyday meal begins with a pair of wooden chopsticks."),
-      detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Follow the long line and the grain of the wood appears. Paired with the bird chopstick rest, they form a quiet set on the table."),
+    { slug: "wooden-chopsticks", name: t("檜木筷子", "Hinoki Wood Chopsticks"), en: "HINOKI WOOD CHOPSTICKS", series: wooden, ids: ["CV-0243", "CV-0245", "CV-0227"],
+      summary: t("從一雙木筷，開始日常的一餐。", "Hinoki Wood Chopsticks · Rest sold separately"),
+      detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Hinoki Wood Chopsticks, sold on their own. The Songbird Chopsticks Rest is sold separately."),
       story: { title: t("每日使用的線條", "A line used every day"), body: t("一雙筷子，常在手邊。從修長的外形看到木紋，熟悉的餐具也有可細讀之處；與鳥形筷架一同擺放，便形成餐桌上的小幅構圖。", "A pair of chopsticks is always within reach. From their long shape to the grain of the wood, even familiar tableware has something to read closely; set beside the bird chopstick rest, they make a small composition on the table.") } },
   ];
   const teawareOfficial: Record<string, { price: number; facts: { label: string; value: string }[] }> = {
@@ -185,7 +185,7 @@ const buildCatalog = (lang: Locale) => {
       { label: t("包裝", "Packaging"), value: t("外盒盒蓋以傳統織布機手工梭織", "Box lid hand-woven on a traditional loom") },
     ] },
     "wooden-chopsticks": { price: 680, facts: [
-      { label: t("販售單位", "Sold as"), value: t("2 雙／組（不含鳥形筷架）", "2 pairs per set (bird chopstick rest not included)") },
+      { label: t("販售單位", "Sold as"), value: t("2 雙／組（不含鳥形筷架）", "2 pairs per set (Songbird Chopsticks Rest sold separately)") },
       { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
       { label: t("尺寸", "Size"), value: t("長 23 cm", "Length 23 cm") },
     ] },
@@ -244,7 +244,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
     // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
-    "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Bird Chopstick Rest close up, chopsticks resting on the bird, charcoal behind")), gallery("CV-0242", t("鳥形筷架・青瓷與米黃的小鳥散在白桌與木炭之間", "Bird Chopstick Rests in celadon and cream scattered between a white table and charcoal"))],
+    "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Songbird Chopsticks Rest close up, chopsticks resting on the bird, charcoal behind")), gallery("CV-0242", t("鳥形筷架・青瓷與米黃的小鳥散在白桌與木炭之間", "Songbird Chopsticks Rests in celadon and cream scattered between a white table and charcoal"))],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
     site("scene-pink-bag-armchair-v3.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶與雲朵杯墊", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster"), 880, 1168)],
@@ -254,7 +254,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-02 (user: 「這張商品的情境照要換室內擺飾…喜歡他光影的呈現」, logos where the real pieces carry them): a new sunlit interior
   // replaces the black tray table by the sofa (scene-wooden-tray-table-sofa.webp, still in git).
   const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳", "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARM VILLA, beside a bouclé sofa and an oak bench"), 1792, 2240);
-  const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a bird-shaped rest beside a cloud-shaped coaster, close view of a black tray table"));
+  const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a Songbird Chopsticks Rest beside a cloud-shaped coaster, close view of a black tray table"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
   const coffeeTable = site("scene-coffee-table-tea-coasters-tag.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARM VILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARM VILLA"), 1792, 2240);
   // 2026-10-02 (user: 「改成只要出現銀杏茶匙，並補上品牌 logo」): the mustard ottomans with the coasters removed, one teaspoon with its engraving

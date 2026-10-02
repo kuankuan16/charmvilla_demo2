@@ -47,15 +47,16 @@ const buildContent = (lang: Locale) => {
 
   // User copy 2026-10-02 (replaces 「藝術即生活」 and its two paragraphs). "\n" is a line break the user set inside a
   // paragraph; the user's draft wrote CHARMVILLA, kept as the protected term CHARM VILLA.
+  // English (Copy Review 2026-10-02): the official slogan, word for word, as the heading; the two paragraphs from the review.
   const manifesto = {
     paragraphs: [
-      t("藝術的日常尺度\n來自職人的極致琢磨", "The everyday measure of art comes from the artisan's patient refinement"),
+      t("藝術的日常尺度\n來自職人的極致琢磨", "Enjoy a charming life and a charming world in CHARM VILLA"),
       // 2026-10-02, the user's own rewrite of both paragraphs (the awards and patents now told in the copy; the first word's
       // 「一」 restored where the pasted text had lost it).
       t("一段在指間交織的編織，一道掠過耳畔的光影，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃，而在極致工藝融入生活的靈動時刻：被配戴、被捧起、被細細品嘗，成為日常節奏的一部分。",
-        "A plait woven between the fingers, a line of light passing the ear, a small goldfish slowly unfurling in the tea. CHARM VILLA believes that true beauty is not kept in a distant display case but lives in the moments when craft enters daily life: worn, held in both hands, tasted slowly, until it becomes part of the rhythm of the day."),
+        "A goldfish takes shape in your cup. A braided leather handle rests in your hand. An earring catches the light as you turn. At CHARM VILLA, small details bring charm to the things you wear, carry and share."),
       t("每一件作品，都由職人以時間磨礪皮革、黃金與茶葉，將手的溫度與極致比例賦予形體。這份對原創工藝的堅守，讓小金魚茶包榮獲德國 Red Dot 紅點傳達設計獎與 iF 設計大獎，並取得全球 34 國專利。當藝術走出展覽，躍上肩頭、掠過耳畔、躍入茶湯，卓越的國際榮譽便落實為可被觸摸的日常尺度，讓美成為生活的本質。",
-        "Each piece is shaped by artisans who give time to leather, gold and tea leaves, bringing the warmth of the hand and careful proportion into form. This commitment to original craft won the Goldfish Tea Bag the Red Dot Award: Communication Design and the iF DESIGN AWARD in Germany, and patents in 34 countries. When art leaves the exhibition for the shoulder, the ear and the cup, international recognition becomes an everyday measure you can touch, and beauty becomes the substance of life."),
+        "Our artisans shape paper, leather, metal and wood with care, refining the details that make each piece distinctive. Given as a gift or enjoyed in your own daily life, these creations invite you to notice beauty in familiar moments and share it with others."),
     ],
     awards: t("小金魚茶包榮獲 2014 德國紅點傳達設計獎（Red Dot Winner）與 2015 德國 iF 設計大獎（iF DESIGN AWARD）。",
       "The Goldfish Tea Bag received the Red Dot Award: Communication Design 2014 (Red Dot Winner) and the iF DESIGN AWARD 2015, both in Germany."),

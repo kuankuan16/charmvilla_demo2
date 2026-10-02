@@ -151,7 +151,10 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
                 <p className="menu-group-title tc">{group.title}</p>
                 <ul>
                   {group.ids.map((id) => (
-                    <li key={id}><a href={sectionHref(id)} onClick={close} onMouseEnter={() => setPreview(id)} onFocus={() => setPreview(id)} className="menu-link tc">{label(id)}</a></li>
+                    <li key={id}><a href={sectionHref(id)} onClick={close} onMouseEnter={() => setPreview(id)} onFocus={() => setPreview(id)} className="menu-link tc">
+                      {/* English Copy Review 2026-10-02 (S03): the jewelry entry reads 「like a fish in water」 (如魚得水), with Jewelry beside the arrow */}
+                      {id === "jewelry" && !zh ? <>like a fish in water<span className="menu-link-tag">Jewelry<span className="menu-link-arrow" aria-hidden="true" /></span></> : label(id)}
+                    </a></li>
                   ))}
                 </ul>
               </div>

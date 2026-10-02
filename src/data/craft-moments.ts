@@ -38,8 +38,8 @@ const build = (lang: Locale) => {
       {
         id: "tea",
         craft: t("摺紙職人 · 小金魚茶包禮盒", "Paper-folding artisan · Goldfish Tea Gifts"),
-        quote: [t("摺紙的手，", "The hands that fold"), t("把一張濾紙摺成會游的形。", "turn a sheet of filter paper into a form that swims.")],
-        cta: { label: t("選一盒茶", "Choose a box of tea"), href: "/collections/tea" },
+        quote: [t("摺紙的手，", "A sheet of filter paper,"), t("把一張濾紙摺成會游的形。", "folded by hand into a goldfish that comes to life in your cup.")],
+        cta: { label: t("選一盒茶", "Explore tea gifts"), href: "/collections/tea" },
         // user 2026-10-02: the blossom glass cup 換 a Goldfish Tea Bag on the ottoman tray; second round (「靠近玻璃杯一點」, a round clear
         // cup like a coffee cup, a painting unlike the example, the ottoman in another colour): a new generated interior;
         // v3 (「右圖那張，後面角落的畫布要跟左圖一樣」「只變畫布的部分，其他不變」): the no-handle variant's painting composited in, every other pixel unchanged;
@@ -50,24 +50,24 @@ const build = (lang: Locale) => {
       {
         id: "leather",
         craft: t("製革職人 · 編織提把皮革包", "Leather artisan · Braided Leather Bag"),
-        quote: [t("裁皮的人，", "The one who cuts the leather"), t("落刀前先用手讀過整張皮。", "reads the whole hide by hand before the blade comes down.")],
-        cta: { label: t("看交織系列", "View the Interwoven Collection"), href: "/collections/bags" },
+        quote: [t("裁皮的人，", "Before the first cut,"), t("落刀前先用手讀過整張皮。", "the artisan feels the grain and character of the leather.")],
+        cta: { label: t("看交織系列", "Explore the Interwoven Collection"), href: "/collections/bags" },
         image: site("craft-02-leather-cream-rolls.webp", t("俯視的皮件工坊平鋪：木槌、皮繩、半月裁皮刀、削薄刀與木尺在左，兩捲米白荔枝紋皮料在右，暖光斜掃深色木桌",
           "A leather workshop flat lay seen from above: mallet, leather cord, half-moon knife, skiving knife and wooden rule on the left, two rolls of cream lychee-grain leather on the right, warm light raking across a dark wooden table")),
       },
       {
         id: "jewelry",
         craft: t("金工職人 · 小金魚耳環", "Goldsmith · Goldfish Earrings"),
-        quote: [t("金工的人，", "The goldsmith"), t("磨到只剩輪廓才肯停手。", "will not stop polishing until only the outline is left.")],
-        cta: { label: t("看金飾", "View jewelry"), href: "/collections/jewelry" },
+        quote: [t("金工的人，", "The goldsmith refines each curve,"), t("磨到只剩輪廓才肯停手。", "bringing the goldfish's form into focus.")],
+        cta: { label: t("看金飾", "Explore jewelry"), href: "/collections/jewelry" },
         image: site("craft-03-goldsmith-atelier.webp", t("晨光斜射進專業金工坊：半圓缺口的金工檯、皮兜與銼台上的小金魚，周圍是顯微鏡、吊鑽、壓延機與成排的鉗子",
           "Morning light slanting into a professional goldsmith's workshop: a bench with a half-round cut-out, a leather catch-skin and a small goldfish on the bench pin, surrounded by a microscope, a pendant drill, a rolling mill and rows of pliers")),
       },
       {
         id: "teaware",
-        craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Teaspoon and Coaster"),
-        quote: [t("做木的人，", "The woodworker"), t("順著木紋把一片葉子鋸出來。", "saws a leaf out along the grain of the wood.")],
-        cta: { label: t("看香氛", "View scents"), href: "/collections/scents" },
+        craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Style Tea Spoon and Cloud Coaster"),
+        quote: [t("做木的人，", "Following the grain,"), t("順著木紋把一片葉子鋸出來。", "the woodworker shapes a leaf from wood.")],
+        cta: { label: t("看香氛", "Explore scents"), href: "/collections/scents" },
         // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
         // with their engraved logos (also on the coaster and teaspoon pages)
         image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳",
