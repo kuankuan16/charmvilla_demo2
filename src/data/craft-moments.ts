@@ -17,6 +17,15 @@ const build = (lang: Locale) => {
   const t = translator(lang);
   return {
     heading: [t("從一雙手，", "From a pair of hands"), t("到一日的風景。", "to the scenery of a day.")],
+    // The two small photographs at the left of the first row (user 2026-10-02: the leather and goldsmith photographs
+    // 換 these two). Cut from the user's side-by-side image to 4:5; 100 px of the plain studio ground continued above
+    // the heads, since the supplied crop left none.
+    smalls: [
+      site("craft-small-bag-dancer-hands.webp", t("黑白照片：穿黑色長袖洋裝的女子雙手抬到臉旁，白色編織提把皮革包掛在手腕上",
+        "Black-and-white photograph of a woman in a long-sleeved black dress, hands raised beside her face, the white Braided Leather Bag hanging from her wrist"), 876, 1095),
+      site("craft-small-bag-dancer-reach.webp", t("黑白照片：穿黑色長袖洋裝的女子仰頭後傾，伸長的手臂提著白色編織提把皮革包",
+        "Black-and-white photograph of a woman in a long-sleeved black dress leaning back with her head raised, the white Braided Leather Bag held at the end of her outstretched arm"), 876, 1095),
+    ] as Img[],
     items: [
       {
         id: "tea",

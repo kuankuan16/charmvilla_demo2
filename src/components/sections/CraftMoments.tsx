@@ -10,10 +10,11 @@ import { getCraftMoments, type CraftMoment } from "@/data/craft-moments";
 import { localeHref, type Locale } from "@/i18n/config";
 
 // Which photograph goes where. The large places take the two widest files (tea 1200 px, then a 896 px one).
-const SMALL = ["leather", "jewelry"], LARGE = "tea", BESIDE_TEXT = "teaware";
+// The two small places hold the section's own photographs (`smalls`, user 2026-10-02), not the crafts' ones.
+const LARGE = "tea", BESIDE_TEXT = "teaware";
 
 export default function CraftMoments({ lang }: { lang: Locale }) {
-  const { heading, items } = getCraftMoments(lang);
+  const { heading, items, smalls } = getCraftMoments(lang);
   const by = (id: string) => items.find((item) => item.id === id) as CraftMoment;
   const figure = (item: CraftMoment, className: string, sizes: string) => (
     <figure key={item.id} className={`craft-fig ${className}`}>
@@ -23,7 +24,9 @@ export default function CraftMoments({ lang }: { lang: Locale }) {
   return (
     <section id="craft" className="craft-moments" aria-labelledby="craft-heading">
       <div className="craft-spread" data-animation="fade" data-duration="0.7">
-        <div className="craft-smalls">{SMALL.map((id) => figure(by(id), "", "(min-width:768px) 15vw, 50vw"))}</div>
+        <div className="craft-smalls">{smalls.map((img) => (
+          <figure key={img.src} className="craft-fig"><Image src={img.src} alt={img.alt} fill sizes="(min-width:768px) 15vw, 50vw" /></figure>
+        ))}</div>
         {figure(by(LARGE), "craft-large", "(min-width:768px) 46vw, 100vw")}
       </div>
       <div className="craft-story" data-animation="fade" data-duration="0.7">
