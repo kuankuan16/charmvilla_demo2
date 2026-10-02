@@ -96,7 +96,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const previews: Record<ShopId, string> = {
     all: "/media/site/scene-wooden-interior-sunlit.webp",
     tea: "/media/site/ottoman-tray-tea-cup-v4.webp",
-    scents: "/media/site/scene-coffee-table-tea-coasters.webp",
+    scents: "/media/site/scene-coffee-table-tea-coasters-tag.webp",
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
     bags: "/media/site/partners-male-dancer-c.webp",
     abundance: "/media/site/studio-prosperity-dessert-stand-hd.webp",
