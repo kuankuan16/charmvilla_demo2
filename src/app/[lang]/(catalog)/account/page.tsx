@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: t("會員｜CHARM VILLA", "Account | CHARM VILLA"),
     description: t("登入或註冊 CHARM VILLA 會員，管理個人資料、地址與訂單。", "Sign in or create a CHARM VILLA account to manage your details, addresses and orders."),
     alternates: alternatesFor(lang, "/account"),
+    robots: { index: false }, // personal page: kept out of search results
   };
 }
 
