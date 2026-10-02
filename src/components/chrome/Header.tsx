@@ -94,12 +94,12 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "/media/site/scene-pink-bag-armchair-2k-v2.webp", // the pink bag on the leather armchair (user 2026-10-02: 「全部作品用剛剛皮革在沙發上的圖」)
+    all: "/media/site/scene-pink-bag-armchair-2k-v3.webp", // the pink bag on the leather armchair (user 2026-10-02: 「全部作品用剛剛皮革在沙發上的圖」)
     tea: "/media/site/scene-leather-chair-goldfish-tea.webp", // the cup on the leather chair, foil tag with the CHARM VILLA lettering (user 2026-10-02)
     scents: "/media/site/scene-coffee-table-tea-coasters-tag.webp",
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
     bags: "/media/hero/male-embracing-white-bag-v2-hd.webp", // the homepage slide (user 2026-10-02: 「換」), cropped to face, hand and bag
-    abundance: "/media/site/studio-prosperity-dessert-stand-hd.webp",
+    abundance: "/media/site/studio2k-prosperity-dessert-stand.webp",
     "wood-fired": "/media/gallery/CV-0242.webp", // the brand's own photograph of the bird rests (asset library, 2026-10-02)
     hero: "", visit: "",
   };

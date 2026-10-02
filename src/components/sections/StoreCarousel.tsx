@@ -38,7 +38,7 @@ export default function StoreCarousel() {
   const current = shops[active];
   // the tall photograph at the left (user 2026-10-02: the pink-bag scene 「放首頁」, enhanced to 2K); the brand has no further
   // store photographs, and repeating a card's photograph beside it would show the same picture twice
-  const mood = site("scene-pink-bag-armchair-2k.webp", t("粉紅色編織提把皮革包放在米色皮革單椅上，背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶與雲朵杯墊", "A pink Braided Leather Bag on a beige leather armchair, a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster"), 1760, 2336);
+  const mood = site("scene-pink-bag-armchair-2k-v3.webp", t("粉紅色編織提把皮革包放在米色皮革單椅上，背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶、雲朵杯墊與銀杏茶匙", "A pink Braided Leather Bag on a beige leather armchair, a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster and a Ginkgo Style Tea Spoon"), 1760, 2336);
 
   return (
     <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our stores")}>
