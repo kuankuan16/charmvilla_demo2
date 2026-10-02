@@ -285,9 +285,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-thumb-frame::after { content: ""; position: absolute; inset: -4px; border: 1px solid var(--color-ink); }
 /* vertical rhythm of the information block (user 2026-10-01: 「調整上下間距，目前太緊」): open by default; pieces with five or more
    specification rows step down so that the button still closes the first screen, and short windows use the tightest set */
-.product-intro { --i-name: 10px; --i-price: 12px; --i-text: 26px; --i-lh: 1.85; --i-facts: 30px; --i-row: 12px; --i-note: 28px; --i-opt: 26px; --i-buy: 36px; }
-.product-intro:has(.product-keyfacts > div:nth-child(5)) { --i-name: 8px; --i-price: 10px; --i-text: 20px; --i-lh: 1.75; --i-facts: 22px; --i-row: 9px; --i-note: 20px; --i-opt: 20px; --i-buy: 28px; }
-.product-intro:has(.product-keyfacts > div:nth-child(6)) { --i-name: 6px; --i-price: 8px; --i-text: 16px; --i-lh: 1.7; --i-facts: 18px; --i-row: 8px; --i-note: 16px; --i-opt: 18px; --i-buy: 24px; }
+/* spec rows opened up (user 2026-10-02: 「spec 上下 gap 開一點」); each tier still keeps the button on the first screen */
+.product-intro { --i-name: 10px; --i-price: 12px; --i-text: 26px; --i-lh: 1.85; --i-facts: 30px; --i-row: 17px; --i-note: 28px; --i-opt: 26px; --i-buy: 36px; }
+.product-intro:has(.product-keyfacts > div:nth-child(5)) { --i-name: 8px; --i-price: 10px; --i-text: 20px; --i-lh: 1.75; --i-facts: 22px; --i-row: 14px; --i-note: 20px; --i-opt: 20px; --i-buy: 28px; }
+.product-intro:has(.product-keyfacts > div:nth-child(6)) { --i-name: 6px; --i-price: 8px; --i-text: 16px; --i-lh: 1.7; --i-facts: 18px; --i-row: 12px; --i-note: 16px; --i-opt: 18px; --i-buy: 24px; }
 .product-english { font-size: 11px; letter-spacing: .1em; line-height: 1.6; text-transform: uppercase; color: var(--color-stone-deep); }
 .product-intro h1 { font-size: clamp(22px, 1.67vw, 30px); font-weight: 400; line-height: 1.3; margin: var(--i-name) 0 0; text-wrap: balance; }
 .product-description { margin-top: var(--i-text); font-size: clamp(13.5px, 1vw, 16px); line-height: var(--i-lh); }
@@ -304,18 +305,25 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-buy:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
 /* windows up to 920px tall: the longest specification lists take the tight set */
 @media (min-width: 768px) and (max-height: 920px) {
-  .product-intro:has(.product-keyfacts > div:nth-child(6)) { --i-name: 4px; --i-price: 6px; --i-text: 12px; --i-lh: 1.6; --i-facts: 12px; --i-row: 5px; --i-note: 10px; --i-opt: 12px; --i-buy: 16px; }
+  .product-intro:has(.product-keyfacts > div:nth-child(6)) { --i-name: 4px; --i-price: 6px; --i-text: 12px; --i-lh: 1.6; --i-facts: 12px; --i-row: 8px; --i-note: 10px; --i-opt: 12px; --i-buy: 16px; }
 }
 /* short windows: tighten the first screen so the button still closes it */
 @media (min-width: 768px) and (max-height: 820px) {
   .product-first-lead { flex-basis: 16px; }
   .product-thumbnails { --thumb: 56px; }
   .product-intro h1 { font-size: 22px; }
-  .product-intro, .product-intro:has(.product-keyfacts > div:nth-child(5)), .product-intro:has(.product-keyfacts > div:nth-child(6)) { --i-name: 4px; --i-price: 6px; --i-text: 10px; --i-lh: 1.6; --i-facts: 12px; --i-row: 4px; --i-note: 10px; --i-opt: 12px; --i-buy: 14px; }
+  .product-intro, .product-intro:has(.product-keyfacts > div:nth-child(5)), .product-intro:has(.product-keyfacts > div:nth-child(6)) { --i-name: 4px; --i-price: 6px; --i-text: 10px; --i-lh: 1.6; --i-facts: 12px; --i-row: 5px; --i-note: 10px; --i-opt: 12px; --i-buy: 14px; }
   .product-description { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
   .product-keyfacts > div { font-size: 12px; line-height: 1.4; }
   .product-variants legend { margin-bottom: 8px; } .product-variants a { min-height: 34px; padding: 7px 13px; }
   .product-buy { min-height: 40px; }
+}
+/* the shortest laptop windows: one-tea gift boxes carry nine specification rows plus the tea choice */
+@media (min-width: 768px) and (max-height: 760px) {
+  .product-intro:has(.product-keyfacts > div:nth-child(8)) { --i-row: 3px; --i-facts: 8px; --i-note: 6px; --i-opt: 8px; --i-buy: 10px; }
+  .product-intro:has(.product-keyfacts > div:nth-child(8)) .product-keyfacts > div { line-height: 1.3; }
+  .product-choices legend { margin-bottom: 6px; }
+  .product-choices label { min-height: 30px; padding: 4px 11px; }
 }
 /* Under the first screen, after jakobsencopenhagen.com/en/products/karla (user 2026-10-01: 「右側的情境照應該要對齊上面資訊欄的欄位，
    左邊商品圖會暫時固定」): the information column goes on with the story text and the first scene photographs, each as wide as the
