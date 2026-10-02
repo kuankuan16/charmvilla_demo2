@@ -88,13 +88,12 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     hero: "", visit: "",
   };
   const [preview, setPreview] = useState<ShopId>("all");
-  useEffect(() => { if (!open) setPreview("all"); }, [open]);
 
   return (
     <header data-header="" className={`site-header fixed left-0 top-0 z-30 w-full ${open ? "menu--opened" : ""}`}>
       {/* Bang & Olufsen-style bar (user 2026-09-30): Menu on the left, the official wordmark centred, tools on the right. It stays in place while the menu is open. */}
       <div className="site-header-inner">
-        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t("關閉選單", "Close menu") : t("開啟選單", "Open menu")} className="header-menu-btn relative z-40 text-ink" onClick={() => setOpen((v) => !v)}>
+        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t("關閉選單", "Close menu") : t("開啟選單", "Open menu")} className="header-menu-btn relative z-40 text-ink" onClick={() => { setPreview("all"); setOpen((v) => !v); }}>
           <span className="menu-icon" aria-hidden="true"><span /><span /></span>
           <span className="menu-label" aria-hidden="true"><span>Menu</span><span>Close</span></span>
         </button>
