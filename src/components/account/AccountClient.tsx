@@ -4,6 +4,8 @@
 //   signed out     → 登入 / 註冊 / 忘記密碼
 //   signed in      → 個人資料 / 地址簿 / 訂單 / 登出
 import { useCallback, useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
+import { localeHref } from "@/i18n/config";
 import type { Customer, Address } from "@/lib/shopify/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
@@ -47,7 +49,7 @@ export default function AccountClient() {
     e.preventDefault(); setNotice(null);
     if (!configured) { setNotice({ kind: "error", text: NOT_CONNECTED }); return; }
     const form = new FormData(e.currentTarget); const payload: Record<string, unknown> = {};
-    form.forEach((v, k) => { if (k === "remember") return; payload[k] = k === "acceptsMarketing" || k === "makeDefault" ? v === "on" : String(v); });
+    form.forEach((v, k) => { if (k === "remember" || k === "consent") return; payload[k] = k === "acceptsMarketing" || k === "makeDefault" ? v === "on" : String(v); });
     setBusy(true);
     const { ok, data } = await api<{ ok?: boolean }>(path, { method, body: JSON.stringify(payload) });
     setBusy(false);
@@ -73,6 +75,8 @@ export default function AccountClient() {
                 <label className="tc">{t("手機", "Mobile")}<input id="reg-phone" name="phone" type="tel" autoComplete="tel" placeholder="+886…" /></label>
                 <label className="tc">{t("密碼", "Password")} <span className="account-req">{t("（必填，至少 8 個字元）", "(required, at least 8 characters)")}</span><input id="reg-password" name="password" type="password" autoComplete="new-password" required minLength={8} /></label>
                 <label className="account-check tc"><input id="reg-marketing" name="acceptsMarketing" type="checkbox" /> {t("願意收到新品與活動通知", "I would like to receive news of new pieces and events")}</label>
+                {/* 2026-10-02: the privacy notice and the terms are shown and agreed to before any personal data is sent (個資法 §8). */}
+                <label className="account-check tc"><input id="reg-consent" name="consent" type="checkbox" required /> <span>{t("我已閱讀並同意", "I have read and agree to the ")}<Link href={localeHref(lang, "/shopping-guide")} target="_blank">{t("購物須知與服務條款", "shopping guide and terms")}</Link>{t("及", " and the ")}<Link href={localeHref(lang, "/privacy")} target="_blank">{t("隱私權政策", "privacy policy")}</Link>{t("。", ".")}</span></label>
                 <button type="submit" className="btn-pill tc" disabled={busy}>{t("建立帳號", "Create account")}</button>
                 <p className="account-hint tc">{t("已有帳號？", "Already have an account? ")}<button type="button" onClick={() => { setTab("login"); setNotice(null); }}>{t("登入", "Sign in")}</button></p>
               </form>
