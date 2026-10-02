@@ -239,6 +239,9 @@ const buildCatalog = (lang: Locale) => {
     // satin), the goldfish outline taken from the brand's own silhouette, matte gold generated
     // (output/raw-gold-earring-scene-2026-10-01/v4-official-outline, approved 2026-10-01).
     "raw-gold-goldfish-earrings": [site("scene-raw-gold-earring-model.webp", t("璞金小金魚耳環配戴在耳垂上，霧面金，墨綠緞面", "Raw Gold goldfish earring worn on the earlobe, matte gold, against dark green satin"))],
+    // black-and-white profile, only the earring in colour (user 2026-10-02: 側臉、黑白照片，只有耳環是彩色); a new image, the face
+    // invented, generated with the site's own photograph of the earring as reference
+    "diamond-goldfish-earrings": [site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的短髮女子，耳垂上的鑽石垂墜小金魚耳環是唯一的彩色", "Black-and-white profile of a short-haired woman with her eyes closed; the diamond goldfish drop earring on her lobe is the only colour"), 1792, 2240)],
     "wooden-coaster-teaspoon": [woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa],
     "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
   };
