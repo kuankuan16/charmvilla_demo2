@@ -1,7 +1,7 @@
 "use client";
 // Stores, after the "Our Beauty Journal" block of solena-template.webflow.io (user 2026-10-02: 「分店資訊我要參考…的呈現，分析後
 // 高度模仿」): a tall photograph fills the left 45 % edge to edge; at the right the heading, then a slider of store cards
-// (photograph, city and hours, store name, its line, address and phone) running off the right edge so the next card peeks
+// (photograph, city and hours, store name, address and phone; the store's line of copy was removed on 2026-10-02 with the card height kept) running off the right edge so the next card peeks
 // in, a round arrow over the next card, and under the slider a square button to the current store's map beside a progress
 // line. The screen keeps the dark ground the user chose for it (2026-10-02: 「這一屏想加入深色背景」).
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -36,9 +36,9 @@ export default function StoreCarousel() {
     el.scrollTo({ left: Math.min(target.offsetLeft - cards[0].offsetLeft, el.scrollWidth - el.clientWidth), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
   const current = shops[active];
-  // the tall photograph at the left: an interior in the reference's mood (the brand has no further store photographs, and
-  // repeating a card's photograph beside it would show the same picture twice)
-  const mood = site("scene-coffee-table-tea-coasters.webp", t("陽光斜照的客廳一角，咖啡桌上一杯小金魚茶與雲朵杯墊", "Low sun across a living-room corner: a cup of goldfish tea and cloud coasters on a coffee table"), 1792, 2240);
+  // the tall photograph at the left (user 2026-10-02: the pink-bag scene 「放首頁」, enhanced to 2K); the brand has no further
+  // store photographs, and repeating a card's photograph beside it would show the same picture twice
+  const mood = site("scene-pink-bag-armchair-2k.webp", t("粉紅色編織提把皮革包放在米色皮革單椅上，背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶與雲朵杯墊", "A pink Braided Leather Bag on a beige leather armchair, a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster"), 1760, 2336);
 
   return (
     <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our stores")}>
@@ -54,7 +54,6 @@ export default function StoreCarousel() {
                 <div className="stores-card-body">
                   <p className="stores-card-meta tc">{shop.intro.city} / {shop.hours}</p>
                   <h3 className="tc">{shop.name}</h3>
-                  <p className="stores-card-desc tc">{shop.intro.body}</p>
                   <p className="stores-card-info tc">{shop.addr}{shop.phone && <> · <a href={`tel:${shop.phone.tel}`}>{shop.phone.label}</a></>}</p>
                 </div>
               </article>

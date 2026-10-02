@@ -846,11 +846,15 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .stores-card-image { position: relative; aspect-ratio: 600 / 365; overflow: hidden; }
 .stores-card-image img { transition: transform 1s cubic-bezier(.22, .8, .3, 1); }
 .stores-card:hover .stores-card-image img { transform: scale(1.04); }
-.stores-card-body { padding: clamp(24px, 2.8vw, 40px); }
+/* the store copy was removed (user 2026-10-02: 「刪除門市裡的文案，但保留目前 div 的高度」): the body keeps the height it had with the
+   copy (measured: 298 px on phones, 352→308 px from 768 to 1024, 308→292 px to 1440, 292→265 px to 1680) and the address line stays at its foot */
+.stores-card-body { display: flex; flex-direction: column; min-height: 298px; padding: clamp(24px, 2.8vw, 40px); }
+@media (min-width: 768px) { .stores-card-body { min-height: clamp(308px, calc(484px - 17.2vw), 352px); } }
+@media (min-width: 1024px) { .stores-card-body { min-height: calc(347px - 3.85vw); } }
+@media (min-width: 1440px) { .stores-card-body { min-height: clamp(265px, calc(454px - 11.25vw), 292px); } }
 .stores-card-meta { font-size: 14px; color: rgb(246 248 250 / .72); }
 .stores-card h3 { margin-top: 12px; font-size: clamp(22px, 2.1vw, 30px); font-weight: 400; line-height: 1.25; }
-.stores-card-desc { margin-top: 12px; font-size: 14px; line-height: 1.9; color: rgb(246 248 250 / .78); }
-.stores-card-info { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgb(246 248 250 / .14); font-size: 12px; line-height: 1.8; color: rgb(246 248 250 / .64); }
+.stores-card-info { margin-top: auto; padding-top: 14px; border-top: 1px solid rgb(246 248 250 / .14); font-size: 12px; line-height: 1.8; color: rgb(246 248 250 / .64); }
 .stores-card-info a:hover { color: var(--color-page); text-decoration: underline; text-underline-offset: 4px; }
 .stores-arrow { position: absolute; z-index: 2; top: calc(min(600px, 76%) * 365 / 600 / 2); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
 .stores-arrow--next { right: clamp(40px, 9%, 120px); }
