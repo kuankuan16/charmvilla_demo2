@@ -14,7 +14,7 @@ export async function GET(req: Request) {
   try { return json({ configured: true, cart: await getCart(id, buyerIp(req)) }); } catch (e) { return handleError(e); }
 }
 export async function POST(req: Request) {
-  const { id, lines } = await body<{ id?: string; lines?: { merchandiseId: string; quantity: number }[] }>(req);
+  const { id, lines } = await body<{ id?: string; lines?: { merchandiseId: string; quantity: number; attributes?: { key: string; value: string }[] }[] }>(req);
   if (!lines?.length) return json({ error: "bad_request", message: "缺少商品" }, 400);
   try { return json({ cart: id ? await addLines(id, lines, buyerIp(req)) : await createCart(lines, buyerIp(req)) }); } catch (e) { return handleError(e); }
 }

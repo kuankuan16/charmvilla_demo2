@@ -134,7 +134,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,
       officialUrl: `https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=${gift.officialId}`,
       price: { amount: (officialPrices.prices as Record<string, number>)[String(gift.officialId)], currency: "TWD" },
-      giftBox: { pieces: gift.pieces, series: v(gift.series), contents: gift.contents, choices: gift.choices },
+      giftBox: { pieces: gift.pieces, series: v(gift.series), contents: gift.contents, choices: gift.choices?.map(c => ({ label: v(c.label), contents: c.contents })) },
     };
   });
 };

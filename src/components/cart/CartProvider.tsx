@@ -15,11 +15,12 @@ export type CartLine = { key: string; slug: string | null; name: string; image: 
 type Ctx = {
   mode: "local" | "shopify"; ready: boolean; open: boolean; busy: boolean; error: string | null;
   lines: CartLine[]; count: number; subtotal: number; currency: string; checkoutUrl: string | null;
-  add: (product: Product, quantity?: number) => Promise<void>; update: (key: string, quantity: number) => Promise<void>; remove: (key: string) => Promise<void>;
+  add: (product: Product, quantity?: number, option?: number) => Promise<void>; update: (key: string, quantity: number) => Promise<void>; remove: (key: string) => Promise<void>;
   setOpen: (v: boolean) => void; formatPrice: (n: number, c?: string) => string;
 };
 
 const CartContext = createContext<Ctx | null>(null);
+const lineKey = (l: { slug: string; option?: number }) => (l.option === undefined ? l.slug : `${l.slug}#${l.option}`);
 const LOCAL_KEY = "cv-cart", ID_KEY = "cv-cart-id";
 const MODE: "local" | "shopify" = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify" ? "shopify" : "local";
 
@@ -32,7 +33,7 @@ const linesFromShopify = (cart: ShopifyCart | null, lang: Locale): CartLine[] =>
 export function CartProvider({ children }: { children: ReactNode }) {
   const { lang, t } = useT();
   const [ready, setReady] = useState(false); const [open, setOpen] = useState(false); const [busy, setBusy] = useState(false); const [error, setError] = useState<string | null>(null);
-  const [localLines, setLocalLines] = useState<{ slug: string; quantity: number }[]>([]);
+  const [localLines, setLocalLines] = useState<{ slug: string; quantity: number; option?: number }[]>([]);
   const [shopifyCart, setShopifyCart] = useState<ShopifyCart | null>(null);
   const cartId = useRef<string | null>(null);
 
@@ -61,22 +62,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
     } catch (e) { setError(e instanceof Error ? e.message : t("購物車更新失敗", "The bag could not be updated.")); } finally { setBusy(false); }
   }, [lang, t]);
 
-  const add = useCallback(async (product: Product, quantity = 1) => {
+  // `option`: the tea chosen for a gift box sold "one tea per box" (index into product.giftBox.choices); it is part of the line key.
+  const add = useCallback(async (product: Product, quantity = 1, option?: number) => {
     setOpen(true);
-    if (MODE === "shopify") { if (!product.shopify?.variantId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece is not yet linked in Shopify and cannot be added to the bag for now.")); return; } await call("POST", { lines: [{ merchandiseId: product.shopify.variantId, quantity }] }); return; }
-    setLocalLines((ls) => { const i = ls.findIndex((l) => l.slug === product.slug); if (i < 0) return [...ls, { slug: product.slug, quantity }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
+    if (MODE === "shopify") { if (!product.shopify?.variantId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece is not yet linked in Shopify and cannot be added to the bag for now.")); return; } const tea = option === undefined ? undefined : findProduct(product.slug, "zh")?.giftBox?.choices?.[option]?.label; await call("POST", { lines: [{ merchandiseId: product.shopify.variantId, quantity, ...(tea ? { attributes: [{ key: "茶款", value: tea }] } : {}) }] }); return; }
+    setLocalLines((ls) => { const i = ls.findIndex((l) => l.slug === product.slug && l.option === option); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
   }, [call, t]);
   const update = useCallback(async (key: string, quantity: number) => {
     if (quantity < 1) return;
     if (MODE === "shopify") { await call("PATCH", { lines: [{ id: key, quantity }] }); return; }
-    setLocalLines((ls) => ls.map((l) => (l.slug === key ? { ...l, quantity } : l)));
+    setLocalLines((ls) => ls.map((l) => (lineKey(l) === key ? { ...l, quantity } : l)));
   }, [call]);
   const remove = useCallback(async (key: string) => {
     if (MODE === "shopify") { await call("DELETE", { lineIds: [key] }); return; }
-    setLocalLines((ls) => ls.filter((l) => l.slug !== key));
+    setLocalLines((ls) => ls.filter((l) => lineKey(l) !== key));
   }, [call]);
 
-  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); return p ? [{ key: p.slug, slug: p.slug, name: p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang]);
+  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; return p ? [{ key: lineKey(l), slug: p.slug, name: choice ? `${p.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   const subtotal = lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = lines[0]?.currency ?? "TWD";
