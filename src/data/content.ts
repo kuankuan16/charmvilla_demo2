@@ -46,7 +46,7 @@ const buildContent = (lang: Locale) => {
   // paragraph; the user's draft wrote CHARMVILLA, kept as the protected term CHARM VILLA.
   const manifesto = {
     paragraphs: [
-      t("藝術的日常尺度，\n來自職人的極致琢磨", "The everyday measure of art comes from the artisan's patient refinement"),
+      t("藝術的日常尺度\n來自職人的極致琢磨", "The everyday measure of art comes from the artisan's patient refinement"),
       // 2026-10-02, the user's own rewrite of both paragraphs (the awards and patents now told in the copy; the first word's
       // 「一」 restored where the pasted text had lost it).
       t("一段在指間交織的編織，一道掠過耳畔的光影，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃，而在極致工藝融入生活的靈動時刻：被配戴、被捧起、被細細品嘗，成為日常節奏的一部分。",
@@ -164,7 +164,7 @@ const buildContent = (lang: Locale) => {
     heading: "茶器與工藝",
     headingEn: "TEAWARE & CRAFT",
     left: { label: "豐盛系列", items: ["下午茶點心架", "點心架與包裝禮盒"], image: gallery("CV-0068", "豐盛系列・下午茶點心架", 1951, 1053) },
-    right: { label: "木質餐具", items: ["木質杯墊與茶匙", "鳥形筷架", "銀杏茶匙禮盒", "木筷"], image: gallery("CV-0239", "鳥形筷架・木炭與餐具", 4644, 3096) },
+    right: { label: "木質餐具", items: ["雲朵杯墊", "鳥形筷架", "銀杏茶匙", "檜木筷子"], image: gallery("CV-0239", "鳥形筷架・木炭與餐具", 4644, 3096) },
   };
 
   const shown = {

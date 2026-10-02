@@ -150,24 +150,32 @@ const buildCatalog = (lang: Locale) => {
       summary: t("一份關於茶席，也關於相聚的心意。", "A gesture about the tea table, and about gathering."),
       detail: t("從點心架到包裝，完整觀看豐盛系列的贈禮形式。", "From the stand to its packaging: the Prosperity Series as it is given."),
       story: { title: t("從打開禮盒開始", "It begins with opening the box"), body: t("送出一件器物，也邀請對方想像它的位置。點心架從盒中來到桌上，與家中的杯盤相伴，禮物便開始參與下一次相聚。", "To give an object is to invite someone to imagine where it will sit. The stand moves from box to table, keeps company with the cups and plates of the house, and the gift begins to take part in the next gathering.") } },
-    { slug: "wooden-coaster-teaspoon", name: t("木質杯墊與茶匙", "Wooden Coaster and Teaspoon"), en: "COASTER & TEASPOON", series: wooden, ids: ["CV-0232", "CV-0231"],
+    // 2026-10-02 (user: 「這些商品是分開販售，不要擅自合併」): the cloud coasters are their own product on www.charmvilla.com.tw
+    // (id 156); the old "木質杯墊與茶匙" listing merged them with the ginkgo teaspoon, which is sold on its own below.
+    { slug: "cloud-coaster", name: t("雲朵杯墊", "Cloud Coasters"), en: "CLOUD COASTERS", series: wooden, ids: ["CV-0232"],
       summary: t("一杯茶的旁邊，木紋靜靜相伴。", "Beside a cup of tea, wood grain keeps quiet company."),
-      detail: t("杯墊與茶匙，把木質的紋理帶到茶杯旁。近看表面，也觀察每一件物件的輪廓。", "Coaster and teaspoon bring the grain of wood to the side of the cup. Look closely at the surface, and at the outline of each piece."),
-      story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。放下茶杯、拿起茶匙，這些熟悉的動作，讓表面的紋理與器物的輪廓，一次次回到注意之中。", "The hand knows the material before the eye does. Setting down a cup, picking up a spoon: these familiar movements bring the grain of the surface and the outline of the object back to attention, again and again.") } },
+      detail: t("雲朵形狀的檜木杯墊，把木質的紋理帶到茶杯旁。一組六片，近看表面，也觀察每一片的輪廓。", "Cloud-shaped hinoki coasters bring the grain of wood to the side of the cup. Six to a set: look closely at the surface, and at the outline of each piece."),
+      story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。每一次放下茶杯，杯墊表面的紋理與雲朵的輪廓，便一次次回到注意之中。", "The hand knows the material before the eye does. Each time a cup is set down, the grain of the surface and the outline of the cloud come back to attention.") } },
     { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Bird Chopstick Rest"), en: "BIRD CHOPSTICK REST", series: t("茶席器物", "Objects for the Tea Table"), ids: ["CV-0256", "CV-0248", "CV-0239"],
       summary: t("讓一雙筷子，有一處停歇。", "A place for a pair of chopsticks to rest."),
       detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A chopstick rest drawn from the outline of a bird. A small thing that leaves a shaped pause between tableware and table."),
       story: { title: t("餐具之間，一隻鳥", "A bird among the tableware"), body: t("筷子放下時，鳥形的輪廓便與修長的線條相遇。一件小器物改變了桌面的構圖，也讓用餐間的停頓有了可看的細節。", "When the chopsticks are set down, the bird's outline meets their long line. One small object changes the composition of the table and gives the pauses in a meal a detail to look at.") } },
-    { slug: "ginkgo-teaspoon-gift-box", name: t("銀杏茶匙禮盒", "Ginkgo Teaspoon Gift Box"), en: "GINKGO TEASPOON", series: wooden, ids: ["CV-0231", "CV-0234", "CV-0229"],
+    { slug: "ginkgo-teaspoon-gift-box", name: t("銀杏茶匙", "Ginkgo Teaspoon"), en: "GINKGO TEASPOON", series: wooden, ids: ["CV-0231", "CV-0234", "CV-0229"],
       summary: t("把一片葉子的形，留在茶席上。", "The shape of a leaf, kept at the tea table."),
       detail: t("銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。", "The outline of a ginkgo leaf becomes the form of a teaspoon, and the wood grain offers a different detail each time you look. Presented in a gift box: a tea-table gesture to keep."),
       story: { title: t("一片葉子的轉譯", "A leaf, translated"), body: t("葉形來到茶席。銀杏的輪廓經由茶匙與木質呈現，既可近看造型，也能在取用之間，感受自然形態如何走入生活。", "A leaf shape arrives at the tea table. The ginkgo outline is rendered in a teaspoon and in wood: a form to look at closely and, in use, a way to sense how a natural shape enters daily life.") } },
-    { slug: "wooden-chopsticks", name: t("木筷", "Wooden Chopsticks"), en: "WOODEN CHOPSTICKS", series: wooden, ids: ["CV-0243", "CV-0245", "CV-0227"],
+    { slug: "wooden-chopsticks", name: t("檜木筷子", "Hinoki Chopsticks"), en: "HINOKI CHOPSTICKS", series: wooden, ids: ["CV-0243", "CV-0245", "CV-0227"],
       summary: t("從一雙木筷，開始日常的一餐。", "An everyday meal begins with a pair of wooden chopsticks."),
       detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Follow the long line and the grain of the wood appears. Paired with the bird chopstick rest, they form a quiet set on the table."),
       story: { title: t("每日使用的線條", "A line used every day"), body: t("一雙筷子，常在手邊。從修長的外形看到木紋，熟悉的餐具也有可細讀之處；與鳥形筷架一同擺放，便形成餐桌上的小幅構圖。", "A pair of chopsticks is always within reach. From their long shape to the grain of the wood, even familiar tableware has something to read closely; set beside the bird chopstick rest, they make a small composition on the table.") } },
   ];
   const teawareOfficial: Record<string, { price: number; facts: { label: string; value: string }[] }> = {
+    "cloud-coaster": { price: 1880, facts: [
+      { label: t("販售單位", "Sold as"), value: t("6 片／組", "6 per set") },
+      { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
+      { label: t("尺寸", "Size"), value: "8 × 10 cm" },
+      { label: t("包裝", "Packaging"), value: t("外盒盒蓋以傳統織布機手工梭織", "Box lid hand-woven on a traditional loom") },
+    ] },
     "wooden-chopsticks": { price: 680, facts: [
       { label: t("販售單位", "Sold as"), value: t("2 雙／組（不含鳥形筷架）", "2 pairs per set (bird chopstick rest not included)") },
       { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
@@ -244,7 +252,7 @@ const buildCatalog = (lang: Locale) => {
     // black-and-white profile, only the earring in colour (user 2026-10-02: 側臉、黑白照片，只有耳環是彩色); a new image, the face
     // invented, generated with the site's own photograph of the earring as reference
     "diamond-goldfish-earrings": [site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的短髮女子，耳垂上的鑽石垂墜小金魚耳環是唯一的彩色", "Black-and-white profile of a short-haired woman with her eyes closed; the diamond goldfish drop earring on her lobe is the only colour"), 1792, 2240)],
-    "wooden-coaster-teaspoon": [woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa],
+    "cloud-coaster": [woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa],
     "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
   };
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
@@ -258,7 +266,7 @@ const buildCatalog = (lang: Locale) => {
   };
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這2張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
-  const sceneOmit: Record<string, string[]> = { "wooden-coaster-teaspoon": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`) };
+  const sceneOmit: Record<string, string[]> = { "cloud-coaster": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`) };
   // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
   const studioSources = new Set(["CV-0398", "CV-0400", "CV-0419", "CV-0420", "CV-0399", "CV-0397", "CV-0256"].map((id) => `/media/gallery/${id}.webp`));
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
