@@ -245,15 +245,14 @@ const buildCatalog = (lang: Locale) => {
     "wooden-coaster-teaspoon": [woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa],
     "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
   };
-  // Further studio views beside the front view: the bags' three-quarter view, the earrings' close photograph.
+  // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
+  // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
+  // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, the close view for
+  // Raw Gold, whose front view showed the piece too small (studio-listing.json points it at the close view).
   const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string }[]> = {
     "braided-leather-bag-white": [{ file: "studio-braided-leather-bag-white-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
     "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
     "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
-    "pearl-chain-goldfish-earrings": [{ file: "jewelry-pearl-chain.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
-    "diamond-goldfish-earrings": [{ file: "jewelry-diamond.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
-    "twin-goldfish-earrings": [{ file: "jewelry-twin.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
-    "raw-gold-goldfish-earrings": [{ file: "studio-raw-gold-goldfish-earrings-matte-close.webp", zh: "近照", en: "Close view", enAlt: "close view" }],
   };
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這2張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
