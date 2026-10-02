@@ -269,6 +269,8 @@ const buildCatalog = (lang: Locale) => {
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這2張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = { "cloud-coaster": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`) };
+  // off every page (user 2026-10-02: 「刪」 — the two near-identical flat lays of all the wooden pieces on stone)
+  const omitEverywhere = ["CV-0231", "CV-0232"].map((id) => `/media/gallery/${id}.webp`);
   // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
   const studioSources = new Set(["CV-0398", "CV-0400", "CV-0419", "CV-0420", "CV-0399", "CV-0397", "CV-0256"].map((id) => `/media/gallery/${id}.webp`));
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
@@ -284,7 +286,7 @@ const buildCatalog = (lang: Locale) => {
     const shown = new Set(views.map((v) => v.image.src));
     // the bird rest keeps its own photograph first; the new interior follows it
     const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] : []), ...(sceneExtra[p.slug] ?? [])]
-      .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && !(sceneOmit[p.slug] ?? []).includes(img.src) && list.findIndex((x) => x.src === img.src) === i);
+      .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && !(sceneOmit[p.slug] ?? []).includes(img.src) && !omitEverywhere.includes(img.src) && list.findIndex((x) => x.src === img.src) === i);
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };
   const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
