@@ -235,7 +235,9 @@ const buildCatalog = (lang: Locale) => {
   };
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
-    "braided-leather-bag-pink": [site("scene-pink-bag-armchair.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅的座墊上，背後是一幅藍色筆觸的畫", "Braided Leather Bag in pink on the seat of a beige leather armchair, a blue brush painting behind"))],
+    "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
+    // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
+    site("scene-pink-bag-armchair-v3.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶與雲朵杯墊", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster"), 880, 1168)],
   };
   // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
   // they lead the scenes of the pieces they show.

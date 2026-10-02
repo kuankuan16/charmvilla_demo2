@@ -825,49 +825,44 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .collection-results .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Reference Cases composition: split panels, a visible next card and quiet dots.
-   Dark ground for the whole screen (user 2026-10-02: 「這一屏想加入深色背景」): ink section, a slightly lifted warm
-   panel behind the store information, light text. */
-.store-carousel { position: relative; overflow: hidden; isolation: isolate; background: var(--color-ink); color: var(--color-page); padding: 75px 0 85px; }
-.store-carousel :focus-visible { outline-color: var(--color-page); }
-.store-brush { z-index: -1; top: -24vw; left: 35vw; width: 60vw; height: 70vw; transform: rotate(25deg); opacity: .28; mask-image: url('/media/hero/brushes/paint2_1_pc.webp'); }
-.store-heading { margin: 0 var(--page-gutter) 30px; display: flex; align-items: flex-end; justify-content: space-between; }
-.store-heading h2 { font-size: clamp(28px, 3.2vw, 54px); line-height: 1.15; }
-.store-heading p { font-size: 14px; margin-top: 10px; }
-.store-dots { display: flex; }
-.store-dots button { width: 28px; height: 32px; display: grid; place-items: center; }
-.store-dots span { width: 7px; height: 7px; border-radius: 50%; background: rgb(246 248 250 / .32); }
-.store-dots [aria-pressed="true"] span { background: var(--color-gold); }
-.store-track { position: relative; display: flex; gap: 3vw; padding: 0 var(--page-gutter); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--page-gutter); scrollbar-width: none; cursor: grab; }
-.store-track::-webkit-scrollbar { display: none; }
-.store-track[data-dragging] { scroll-snap-type: none; cursor: grabbing; user-select: none; }
-.store-track img { pointer-events: none; }
-.store-card { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 84vw; min-height: 580px; background: var(--color-ink); scroll-snap-align: start; }
-.store-copy { padding: clamp(30px, 3.6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; background: #2a2926; color: var(--color-page); } /* warm dark panel on the ink section (2026-10-02); before that 淺米黃 sand, first gold */
-.store-city { font-size: clamp(26px, 2.5vw, 42px); line-height: 1.2; }
-.store-city span { font-size: 13px; margin-left: 8px; color: rgb(246 248 250 / .64); }
-.store-name { margin-top: 18px; font-size: 12px; color: rgb(246 248 250 / .78); }
-.store-copy h3 { font-size: clamp(21px, 2vw, 32px); line-height: 1.6; margin-top: 22px; font-weight: 500; }
-.store-description { margin-top: 22px; font-size: 14px; line-height: 1.95; }
-.store-information { margin-top: 28px; font-size: 12px; line-height: 1.9; color: rgb(246 248 250 / .78); }
-.store-map { display: inline-flex; align-items: center; gap: 32px; padding: 14px 22px; border: 1px solid rgb(246 248 250 / .6); margin-top: 28px; font-size: 13px; }
-.store-map:hover { background: var(--color-page); color: var(--color-ink); border-color: var(--color-page); }
-.store-photo { position: relative; min-width: 0; overflow: hidden; }
-.store-online { display: flex; align-items: center; gap: 30px; padding: 45px var(--page-gutter); }
-.store-online > p:nth-child(2) { max-width: 640px; font-size: 13px; line-height: 1.9; }
-.store-online > a { margin-left: auto; font-size: 13px; white-space: nowrap; }
+/* Stores after solena-template.webflow.io's journal block (user 2026-10-02), on the dark ground chosen for this screen.
+   Measured on the reference at 1440: image block 45 % × full height; right block padded 60 px; heading 60 px caps;
+   60 px gap; cards 600 px wide (image 600×365, body padded 40 px, 1 px border), 30 px apart, running off the right edge;
+   then a square outline button beside a 3 px progress line. */
+.stores { display: grid; grid-template-columns: 45% 55%; min-height: 100svh; background: var(--color-ink); color: var(--color-page); overflow: hidden; }
+.stores-media { position: relative; min-height: 560px; }
+.stores-body { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: clamp(60px, 8vw, 120px) 0 clamp(60px, 7vw, 100px) clamp(32px, 4.2vw, 60px); }
+.stores-heading { padding-right: var(--page-gutter); }
+.stores-heading h2 { font-size: clamp(36px, 4.2vw, 64px); font-weight: 400; line-height: 1.15; letter-spacing: .02em; text-transform: uppercase; }
+.stores-heading p { margin-top: 10px; font-size: 14px; color: rgb(246 248 250 / .7); }
+.stores-slider { position: relative; margin-top: clamp(36px, 4.2vw, 60px); }
+.stores-track { display: flex; gap: clamp(18px, 2.1vw, 30px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-right: var(--page-gutter); outline-offset: 4px; }
+.stores-track::-webkit-scrollbar { display: none; }
+.stores-card { flex: 0 0 min(600px, 76%); scroll-snap-align: start; border: 1px solid rgb(246 248 250 / .14); background: #262523; }
+.stores-card-image { position: relative; aspect-ratio: 600 / 365; overflow: hidden; }
+.stores-card-image img { transition: transform 1s cubic-bezier(.22, .8, .3, 1); }
+.stores-card:hover .stores-card-image img { transform: scale(1.04); }
+.stores-card-body { padding: clamp(24px, 2.8vw, 40px); }
+.stores-card-meta { font-size: 14px; color: rgb(246 248 250 / .72); }
+.stores-card h3 { margin-top: 12px; font-size: clamp(22px, 2.1vw, 30px); font-weight: 400; line-height: 1.25; }
+.stores-card-desc { margin-top: 12px; font-size: 14px; line-height: 1.9; color: rgb(246 248 250 / .78); }
+.stores-card-info { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgb(246 248 250 / .14); font-size: 12px; line-height: 1.8; color: rgb(246 248 250 / .64); }
+.stores-card-info a:hover { color: var(--color-page); text-decoration: underline; text-underline-offset: 4px; }
+.stores-next { position: absolute; top: calc(min(600px, 76%) * 365 / 600 / 2); right: clamp(40px, 9%, 120px); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
+.stores-next:hover, .stores-next:focus-visible { background: var(--color-page); color: var(--color-ink); }
+.stores-foot { display: flex; align-items: center; gap: 30px; margin-top: clamp(40px, 4.8vw, 70px); padding-right: var(--page-gutter); }
+.stores-button { flex: none; padding: 16px 30px; border: 1px solid rgb(246 248 250 / .6); font-size: 14px; letter-spacing: .04em; transition: background .3s, color .3s; }
+.stores-button:hover, .stores-button:focus-visible { background: var(--color-page); color: var(--color-ink); }
+.stores-progress { flex: 1; height: 3px; background: rgb(246 248 250 / .16); overflow: hidden; }
+.stores-progress span { display: block; height: 100%; background: var(--color-gold); transform-origin: left; transition: transform .3s; }
+.stores :focus-visible { outline-color: var(--color-page); }
 @media (max-width: 767px) {
-  .store-carousel { padding: 50px 0; }
-  .store-heading { margin: 0 var(--page-gutter) 24px; }
-  .store-track { gap: 4vw; padding: 0 var(--page-gutter); scroll-padding-inline: var(--page-gutter); }
-  .store-card { flex-basis: calc(100vw - 2 * var(--page-gutter)); grid-template-columns: 1fr; min-height: 0; }
-  .store-photo { order: -1; height: 240px; }
-  .store-copy { padding: 26px; }
-  .store-copy h3 { font-size: 22px; margin-top: 15px; }
-  .store-description { font-size: 13px; }
-  .store-brush { top: -4vw; left: 35vw; height: 140vw; width: 110vw; }
-  .store-online { display: block; padding: 35px var(--page-gutter); }
-  .store-online > p:nth-child(2) { margin: 15px 0; }
+  .stores { display: block; min-height: 0; }
+  .stores-media { min-height: 0; aspect-ratio: 4 / 3; }
+  .stores-body { padding: 44px 0 52px var(--page-gutter); }
+  .stores-card { flex-basis: 86%; }
+  .stores-next { width: 56px; height: 56px; right: 8%; top: calc(86% * 365 / 600 / 2); }
+  .stores-foot { gap: 18px; }
 }
 
 /* Shared outer edge for every page; card interiors retain their own spacing. */
@@ -877,6 +872,18 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   :root { --page-gutter: 24px; }
 }
 /* The statement is set at the same level as the craft section's heading (user 2026-10-01: 「文字大小層級跟這個標題一樣」, said of the craft quotes, which were that size then). */
+/* full-bleed bag banner (2026-10-02): the photograph edge to edge, a soft dark veil behind the centred copy */
+.bag-banner { position: relative; isolation: isolate; display: grid; place-items: center; min-height: clamp(520px, 78svh, 860px); overflow: hidden; background: #111; color: #fff; text-align: center; }
+.bag-banner-image { position: absolute; inset: 0; z-index: -2; }
+.bag-banner-image img { object-position: 40% 50%; }
+.bag-banner::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 34% 42% at 50% 50%, rgb(0 0 0 / .42), transparent 72%), linear-gradient(to bottom, rgb(0 0 0 / .12), rgb(0 0 0 / .28)); pointer-events: none; }
+.bag-banner-copy { display: flex; flex-direction: column; align-items: center; max-width: 560px; padding: 0 var(--page-gutter); }
+.bag-banner-copy h2 { font-size: clamp(30px, 3.4vw, 54px); font-weight: 400; line-height: 1.2; letter-spacing: .04em; }
+.bag-banner-copy h2:lang(en) { letter-spacing: -.01em; }
+.bag-banner-copy p { margin-top: 14px; font-size: clamp(14px, 1.05vw, 16px); line-height: 1.8; color: rgb(255 255 255 / .82); }
+.bag-banner-button { margin-top: 26px; padding: 12px 22px; border: 1px solid rgb(255 255 255 / .7); font-size: 13px; letter-spacing: .12em; transition: background .3s, color .3s, border-color .3s; }
+.bag-banner-button:hover, .bag-banner-button:focus-visible { background: #fff; color: var(--color-ink); border-color: #fff; }
+@media (max-width: 767px) { .bag-banner { min-height: 72svh; } .bag-banner-image img { object-position: 30% 50%; } }
 .partners-statement { font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
 .partners-statement:lang(en) { letter-spacing: -.025em; }
 .partners-screen { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: calc(100svh - var(--header-h)); background: var(--color-page); }
