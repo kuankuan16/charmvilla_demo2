@@ -98,11 +98,13 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     tea: "/media/site/ottoman-tray-tea-cup-v4-tag2.webp",
     scents: "/media/site/scene-coffee-table-tea-coasters-tag.webp",
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
-    bags: "/media/site/partners-male-dancer-c.webp",
+    bags: "/media/hero/male-embracing-white-bag-v2-hd.webp", // the homepage slide (user 2026-10-02: 「換」), cropped to face, hand and bag
     abundance: "/media/site/studio-prosperity-dessert-stand-hd.webp",
     "wood-fired": "/media/gallery/CV-0242.webp", // the brand's own photograph of the bird rests (asset library, 2026-10-02)
     hero: "", visit: "",
   };
+  // where a landscape photograph sits in the portrait frame
+  const previewPosition: Partial<Record<ShopId, string>> = { bags: "65% 50%" };
   const [preview, setPreview] = useState<ShopId>("all");
 
   return (
@@ -171,7 +173,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <a href={sectionHref(preview)} onClick={close} className="menu-preview" tabIndex={-1} aria-hidden="true">
             {(Object.keys(previews) as ShopId[]).filter((id) => previews[id]).map((id) => (
               <span key={id} className={`menu-preview-image${id === preview ? " is-active" : ""}`}>
-                <Image src={previews[id]} alt="" fill sizes="(min-width:1024px) 30vw, 1px" />
+                <Image src={previews[id]} alt="" fill sizes="(min-width:1024px) 30vw, 1px" style={previewPosition[id] ? { objectPosition: previewPosition[id] } : undefined} />
               </span>
             ))}
             <span className="menu-preview-caption tc">{label(preview)}<span className="menu-card-arrow" /></span>
