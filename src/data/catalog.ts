@@ -248,7 +248,7 @@ const buildCatalog = (lang: Locale) => {
     "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Songbird Chopsticks Rest close up, chopsticks resting on the bird, charcoal behind")), gallery("CV-0242", t("鳥形筷架・青瓷與米黃的小鳥散在白桌與木炭之間", "Songbird Chopsticks Rests in celadon and cream scattered between a white table and charcoal"))],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
-    site("scene-pink-bag-armchair-2k-v3.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶、雲朵杯墊與銀杏茶匙", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea, a Cloud Coaster and a Ginkgo Style Tea Spoon"), 1760, 2336)],
+    site("scene-pink-bag-armchair-2k-v3-tagfix.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶、雲朵杯墊與銀杏茶匙", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea, a Cloud Coaster and a Ginkgo Style Tea Spoon"), 1760, 2336)],
   };
   // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
   // they lead the scenes of the pieces they show.
@@ -257,7 +257,7 @@ const buildCatalog = (lang: Locale) => {
   const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳", "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARM VILLA, beside a bouclé sofa and an oak bench"), 1792, 2240);
   const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a Songbird Chopsticks Rest beside a cloud-shaped coaster, close view of a black tray table"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
-  const coffeeTable = site("scene-coffee-table-tea-coasters-tag.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARM VILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARM VILLA"), 1792, 2240);
+  const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARM VILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARM VILLA"), 1792, 2240);
   // 2026-10-02 (user: 「改成只要出現銀杏茶匙，並補上品牌 logo」): the mustard ottomans with the coasters removed, one teaspoon with its engraving
   const ginkgoOttoman = site("scene-ginkgo-teaspoon-ottoman.webp", t("芥末黃織布圓凳上，一支刻著 CHARM VILLA 的銀杏茶匙", "A ginkgo teaspoon engraved CHARM VILLA on a mustard woven ottoman"), 1376, 2048);
   const sceneLead: Record<string, Img[]> = {

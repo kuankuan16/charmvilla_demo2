@@ -38,8 +38,8 @@ const build = (lang: Locale): NewsEntry[] => {
       slug: "goldfish-in-a-cup-eslite-nanxi", date: "2026-07-02", dateLabel: t("2026 年 7 月 2 日", "July 2, 2026"),
       tag: t("活動快訊", "Events"), title: t("「杯中金魚」期間限定茶席", "Goldfish in a Cup: a limited-time tea table"),
       summary: t("8 月 15 日起，於誠品生活南西。", "From August 15 at eslite spectrum Nanxi."),
-      card: site("ottoman-tray-tea-cup-v4-tag2.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
-      hero: site("ottoman-tray-tea-cup-v4-tag2.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
+      card: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
+      hero: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
       body: [
         t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi."),
         { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },
