@@ -36,9 +36,10 @@ export default function StoreCarousel() {
     el.scrollTo({ left: Math.min(target.offsetLeft - cards[0].offsetLeft, el.scrollWidth - el.clientWidth), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
   const current = shops[active];
-  // the tall photograph at the left (user 2026-10-02: the pink-bag scene 「放首頁」, enhanced to 2K); the brand has no further
-  // store photographs, and repeating a card's photograph beside it would show the same picture twice
-  const mood = site("scene-pink-bag-armchair-2k-v3.webp", t("粉紅色編織提把皮革包放在米色皮革單椅上，背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶、雲朵杯墊與銀杏茶匙", "A pink Braided Leather Bag on a beige leather armchair, a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster and a Ginkgo Style Tea Spoon"), 1760, 2336);
+  // the tall photograph at the left (user 2026-10-02: 「門市配圖換這張」): a sunlit daybed after the user's reference, a cup of
+  // goldfish tea on the side table (tag drawn in the scene) and the white Braided Leather Bag on the throw; the brand has no
+  // further store photographs, and repeating a card's photograph beside it would show the same picture twice
+  const mood = site("scene-daybed-goldfish-tea-bag.webp", t("陽光穿過百葉灑在米白毛圈布長榻上，邊桌上一杯小金魚茶，金色茶標寫著 CHARM VILLA，咖啡色毯子上放著白色編織提把皮革包", "Low sun through blinds across a cream bouclé daybed: a cup of goldfish tea on the side table, its gold tag reading CHARM VILLA, and the white Braided Leather Bag on a brown throw"), 1792, 2240);
 
   return (
     <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our stores")}>
