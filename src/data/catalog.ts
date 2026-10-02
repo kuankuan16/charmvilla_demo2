@@ -97,7 +97,7 @@ const buildCatalog = (lang: Locale) => {
     1: [gallery("CV-0372", t("小金魚耳環・鑽石系列・垂墜・配戴", "Goldfish Earrings, Diamond Series drop, as worn")), gallery("CV-0370", t("小金魚耳環・鑽石系列・垂墜・暗調肖像", "Goldfish Earrings, Diamond Series drop, a low-key portrait")), gallery("CV-0371", t("小金魚耳環・鑽石系列・垂墜・側臉", "Goldfish Earrings, Diamond Series drop, in profile")), site("goldfish-drop-sketch.webp", t("小金魚耳環・鑽石系列・垂墜・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series drop, charcoal sketch of the piece as worn"), 896, 1120)],
     // stud: the colour photograph of the stud as worn (CV-0373) was removed and the charcoal sketch kept (user 2026-10-02: 「保留素描的」)
     2: [gallery("CV-0374", t("小金魚耳環・鑽石系列・耳釘・深綠靜影", "Goldfish Earrings, Diamond Series stud, a still life in deep green")), site("goldfish-stud-sketch.webp", t("小金魚耳環・鑽石系列・耳釘・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series stud, charcoal sketch of the piece as worn"), 896, 1120)],
-    3: [gallery("CV-0378", t("小金魚耳環・雙魚系列・配戴", "Goldfish Earrings, Twin Series, as worn"))],
+    // twin: the as-worn photograph among ivory pleats (CV-0378) was removed (user 2026-10-02: 「刪」), so the twin has no scene
   };
   const jewelryEditorial = [
     {
@@ -229,7 +229,7 @@ const buildCatalog = (lang: Locale) => {
   // The scene that used to be the cover leads the scenes.
   const listingScene: Record<string, string> = {
     "braided-leather-bag-white": "CV-0422", "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
-    "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376", "twin-goldfish-earrings": "CV-0378",
+    "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376",
     "bird-chopstick-rest": "CV-0248",
   };
   const listingSceneSite: Record<string, Img> = {};
