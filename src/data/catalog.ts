@@ -93,7 +93,8 @@ const buildCatalog = (lang: Locale) => {
     t("單尾小金魚、霧面金屬表面", "Single small goldfish, matte metal surface"),
   ];
   const jewelryExtra: Record<number, Img[]> = {
-    0: [gallery("CV-0377", t("珍珠長鏈小金魚耳環・石面光影", "Pearl Chain Goldfish Earrings in light and shadow on stone")), gallery("CV-0379", t("珍珠長鏈小金魚耳環・橄欖綠花影", "Pearl Chain Goldfish Earrings among olive-green floral shadows")), gallery("CV-0380", t("珍珠長鏈小金魚耳環・米白衣領", "Pearl Chain Goldfish Earrings against a cream collar"))],
+    // pearl chain: the olive-coat portrait among ivory pleats (CV-0379) removed (user 2026-10-02: 「刪」)
+    0: [gallery("CV-0377", t("珍珠長鏈小金魚耳環・石面光影", "Pearl Chain Goldfish Earrings in light and shadow on stone")), gallery("CV-0380", t("珍珠長鏈小金魚耳環・米白衣領", "Pearl Chain Goldfish Earrings against a cream collar"))],
     1: [gallery("CV-0372", t("小金魚耳環・鑽石系列・垂墜・配戴", "Goldfish Earrings, Diamond Series drop, as worn")), gallery("CV-0370", t("小金魚耳環・鑽石系列・垂墜・暗調肖像", "Goldfish Earrings, Diamond Series drop, a low-key portrait")), gallery("CV-0371", t("小金魚耳環・鑽石系列・垂墜・側臉", "Goldfish Earrings, Diamond Series drop, in profile")), site("goldfish-drop-sketch.webp", t("小金魚耳環・鑽石系列・垂墜・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series drop, charcoal sketch of the piece as worn"), 896, 1120)],
     // stud: the colour photograph of the stud as worn (CV-0373) was removed and the charcoal sketch kept (user 2026-10-02: 「保留素描的」)
     2: [gallery("CV-0374", t("小金魚耳環・鑽石系列・耳釘・深綠靜影", "Goldfish Earrings, Diamond Series stud, a still life in deep green")), site("goldfish-stud-sketch.webp", t("小金魚耳環・鑽石系列・耳釘・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series stud, charcoal sketch of the piece as worn"), 896, 1120)],
