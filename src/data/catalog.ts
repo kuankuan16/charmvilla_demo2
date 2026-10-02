@@ -170,7 +170,7 @@ const buildCatalog = (lang: Locale) => {
   const featuredFiles: Record<string, string> = {
     "ginkgo-teaspoon-gift-box": "featured-ginkgo-teaspoon-gift-box.webp",
     "reunion-paulownia-gift-box": "featured-reunion-paulownia-gift-box.webp",
-    "bird-chopstick-rest": "featured-bird-chopstick-rest-70.webp", // the piece at 70 % of the first version (user 2026-10-01: 「這個商品圖還是沒有縮小」)
+    "bird-chopstick-rest": "featured-bird-chopstick-rest-55.webp", // the piece at 55 % of the first version, its centre moved up to 53 % of the height (user 2026-10-02: 「小鳥要縮小一點並高度要居中一點」; 70 % before)
   };
   const withShopify = (p: Product): Product => {
     const m = (shopifyMap as Record<string, { handle: string; variantId: string } | string>)[p.slug];
