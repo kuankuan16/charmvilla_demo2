@@ -123,11 +123,6 @@ const build = (lang: Locale) => {
       { label: t("退換貨", "Returns"), href: "/shopping-guide#returns" },
       { label: t("隱私權政策", "Privacy policy"), href: "/privacy" },
     ],
-    company: [
-      t(`${company.name}　統一編號 ${company.taxId}`, `${company.name} · Tax ID ${company.taxId}`),
-      t(`客服 ${company.phone}（${company.hours}）`, `+886 2 2542 0303 (${company.hours})`),
-      company.email,
-    ],
   };
 
   return {

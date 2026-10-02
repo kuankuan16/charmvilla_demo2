@@ -433,7 +433,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .catalog-footer a:hover { text-decoration: underline; text-underline-offset: 6px; }
 .catalog-footer-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 40px; padding: 26px 0; border-top: 1px solid rgb(255 255 255 / .16); font-size: 12px; line-height: 1.9; color: rgb(255 255 255 / .78); }
 .catalog-footer-legal nav { margin-top: 0; font-size: 12px; gap: 10px 24px; }
-.catalog-footer-legal address { font-style: normal; display: flex; flex-wrap: wrap; gap: 0 18px; }
 /* Shopping guide and privacy pages (2026-10-02): one reading column on the 12-column grid, contents list at the left. */
 .policy-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap, 20px); padding: 60px var(--page-gutter) 120px; }
 .policy-head { grid-column: 1 / span 12; margin-bottom: 50px; }
