@@ -33,8 +33,9 @@ const build = (lang: Locale) => {
         quote: [t("摺紙的手，", "The hands that fold"), t("把一張濾紙摺成會游的形。", "turn a sheet of filter paper into a form that swims.")],
         cta: { label: t("選一盒茶", "Choose a box of tea"), href: "/collections/tea" },
         // user 2026-10-02: the blossom glass cup 換 a Goldfish Tea Bag on the ottoman tray; second round (「靠近玻璃杯一點」, a round clear
-        // cup like a coffee cup, a painting unlike the example, the ottoman in another colour): a new generated interior
-        image: site("ottoman-tray-tea-cup.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
+        // cup like a coffee cup, a painting unlike the example, the ottoman in another colour): a new generated interior;
+        // v3 (「右圖那張，後面角落的畫布要跟左圖一樣」「只變畫布的部分，其他不變」): the no-handle variant's painting composited in, every other pixel unchanged
+        image: site("ottoman-tray-tea-cup-v3.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
           "On a wooden tray on a moss-green bouclé ottoman, a Goldfish Tea Bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
       },
       {
