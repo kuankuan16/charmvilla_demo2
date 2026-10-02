@@ -1,5 +1,6 @@
 // Two locales. Chinese (the source copy) lives at the unprefixed URL; English lives under /en.
 // src/proxy.ts rewrites unprefixed requests to the internal /zh segment, so every route is rendered from app/[lang].
+import { spaceCjk } from "../lib/text/spacing";
 export const locales = ["zh", "en"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "zh";
@@ -8,7 +9,9 @@ export const htmlLang: Record<Locale, string> = { zh: "zh-Hant", en: "en" };
 export const siteUrl = "https://charmvilla-gallery-site.vercel.app";
 /** t("中文", "English") for one locale: the Chinese source sits next to its English version at the point of use. */
 export type T = (zh: string, en: string) => string;
-const translators: Record<Locale, T> = { zh: (zh) => zh, en: (_zh, en) => en };
+// Every string from t() gets a half-width space where Chinese meets a letter or digit (spaceCjk), so copy written as
+// 「在2026年使用AI」 still shows 「在 2026 年使用 AI」.
+const translators: Record<Locale, T> = { zh: (zh) => spaceCjk(zh), en: (_zh, en) => spaceCjk(en) };
 export const translator = (lang: Locale): T => translators[lang]; // one stable function per locale (safe in hook deps)
 
 const passthrough = ["/media/", "/brand/", "/api/", "/_next/"];

@@ -135,7 +135,7 @@
   .link-swap:hover > span:first-child, .group:hover .link-swap > span:first-child { transform: translateY(-125%); }
   .link-swap:hover > span + span, .group:hover .link-swap > span + span { transform: translateY(-125%); }
 
-  /* Button with fill-on-hover. Square corners like the add-to-bag button (user 2026-10-02: 「統一跟購物車一樣沒有R 角的按鈕」). */
+  /* Button with fill-on-hover. Square corners like the add-to-bag button (user 2026-10-02: 「統一跟購物車一樣沒有 R 角的按鈕」). */
   .btn {
     position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
     padding: 12px 30px; border-radius: 0; font-weight: 700; font-size: var(--text-xs); letter-spacing: 0.02em;
@@ -193,7 +193,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .site-main { padding-top: var(--header-h); }
 .catalog-shell { background: var(--color-page); text-transform: none; min-height: 100vh; padding-top: var(--header-h); }
 /* Same ground as the homepage on every page (user 2026-09-30: 底色每一頁都跟首頁一樣). */
-/* Header bar = page colour at 80% opacity, no backdrop blur (user 2026-10-01: 不要毛玻璃，改成背景透明80%) */
+/* Header bar = page colour at 80% opacity, no backdrop blur (user 2026-10-01: 不要毛玻璃，改成背景透明 80%) */
 .catalog-shell [data-header]:not(.menu--opened) { background: rgb(246 248 250 / .8); }
 .catalog-shell [data-header] { z-index: 80; }
 .catalog-shell a, .catalog-shell button, .catalog-shell input, .catalog-shell summary { -webkit-tap-highlight-color: transparent; }
@@ -603,18 +603,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .menu-link::after { bottom: 3px; height: 1.5px; }
 .menu-link:hover, .menu-link:focus-visible, .menu-sublink:hover, .menu-sublink:focus-visible { color: var(--color-gold); }
 .menu-link:hover::after, .menu-link:focus-visible::after, .menu-sublink:hover::after, .menu-sublink:focus-visible::after { width: 100%; }
-/* language drop-down: the toggle shows the current language and a chevron; the list slides open under it */
-.menu-lang-toggle { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; cursor: pointer; font: inherit; }
-.menu-lang-current { opacity: 1; }
-.menu-lang-current::before { content: "/"; margin-right: 8px; }
-.menu-lang-caret { width: 7px; height: 7px; margin-top: -4px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .3s cubic-bezier(.22, .8, .3, 1), margin .3s; }
-.menu-lang.is-open .menu-lang-caret { margin-top: 3px; transform: rotate(-135deg); }
-.menu-lang-drawer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22, .8, .3, 1); }
-.menu-lang.is-open .menu-lang-drawer { grid-template-rows: 1fr; }
-.menu-lang-drawer > ul { overflow: hidden; min-height: 0; padding-left: 14px; }
-.menu-lang-drawer > ul > li:first-child { padding-top: 4px; }
-.menu-lang-option[aria-current]::before { content: ""; position: absolute; left: -14px; top: 50%; width: 5px; height: 5px; border-radius: 50%; background: currentColor; transform: translateY(-50%); }
-.menu-preview { grid-column: 9 / span 4; position: relative; display: block; justify-self: end; width: 100%; max-width: calc((100svh - var(--header-h) - 150px) * .8); color: #000; }
+/* the photograph three columns wide (user 2026-10-02: 「選單右邊的圖可以小一點」; it was four) */
+.menu-preview { grid-column: 10 / span 3; position: relative; display: block; justify-self: end; width: 100%; max-width: calc((100svh - var(--header-h) - 150px) * .66); color: #000; }
 .menu-preview-image { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; }
 .menu-preview-image:first-child { background: #edeee8; } /* the layers are stacked: only the bottom one carries the ground */
 .menu-preview-image:not(:first-child) { position: absolute; inset: 0 0 auto; }
@@ -758,7 +748,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .story-message { position: relative; overflow: visible; padding: clamp(80px, 9vw, 160px) 0 clamp(80px, 8vw, 150px); }
 .story-text-column { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); margin-inline: var(--page-gutter); align-items: start; }
 .story-title { white-space: pre-line; grid-column: 1 / span 3; font-size: clamp(17px, 1.35vw, 24px); line-height: 1.75; font-weight: 600; letter-spacing: .04em; }
-.story-body { grid-column: 4 / span 4; font-size: clamp(14px, 1.02vw, 17px); line-height: 2.05; } /* tops aligned with the title (user 2026-10-02) */
+/* tops aligned with the title; the left edge on column 7, where the large photograph of the next section starts
+   (user 2026-10-02: 「段落文字對齊下面的圖片左邊」) */
+.story-body { grid-column: 7 / span 4; font-size: clamp(14px, 1.02vw, 17px); line-height: 2.05; }
+@media (min-width: 768px) and (max-width: 1023px) { .story-body { grid-column: 7 / -1; } }
 .story-body > p + p { margin-top: 1.5em; }
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
 .story-copy { font-weight: 500; letter-spacing: .04em; overflow-wrap: anywhere; }
@@ -962,8 +955,17 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 
 /* Language switch (2026-10-01): plain text in the header tools, same weight and size as the Menu label. On a phone the bar
    has no room for it, so it lives at the end of the full-screen menu list instead. */
-.header-tools a.header-lang { width: auto; height: 24px; font-size: 13px; font-weight: 400; letter-spacing: .02em; white-space: nowrap; }
-@media (max-width: 767px) { .header-tools a.header-lang { display: none; } }
+/* language: a globe with a small list under it; black text, gold with a gold underline on hover (as in the menu) */
+.header-lang-menu { position: relative; display: inline-flex; }
+.header-globe { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; transition: opacity .2s; }
+.header-globe:hover, .header-lang-menu.is-open .header-globe { opacity: .6; }
+.header-lang-list { position: absolute; top: calc(100% + 16px); right: -14px; min-width: 136px; padding: 8px 0; background: var(--color-page); border: 1px solid rgb(0 0 0 / .1); box-shadow: 0 10px 28px rgb(0 0 0 / .08); }
+.header-lang-list[hidden] { display: none; }
+.header-tools .header-lang-list a { position: relative; display: block; width: auto; height: auto; padding: 8px 18px 8px 30px; font-size: 13px; line-height: 1.5; color: #000; white-space: nowrap; transition: color .2s; }
+.header-tools .header-lang-list a:hover, .header-tools .header-lang-list a:focus-visible { opacity: 1; color: var(--color-gold); text-decoration: underline; text-decoration-color: var(--color-gold); text-underline-offset: 5px; }
+.header-lang-list a[aria-current]::before { content: ""; position: absolute; left: 16px; top: 50%; width: 5px; height: 5px; border-radius: 50%; background: currentColor; transform: translateY(-50%); }
+/* phones: the globe takes the store pin's place (the stores stay in the menu) so the icons clear the centred wordmark */
+@media (max-width: 767px) { .header-tools .header-stores { display: none; } .header-lang-list { right: -8px; } }
 
 
 /* ---------- Footer after verin-template.webflow.io (user 2026-10-02) ------------------------------------------------

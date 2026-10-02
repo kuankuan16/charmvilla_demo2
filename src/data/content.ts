@@ -236,7 +236,7 @@ const buildContent = (lang: Locale) => {
           // Store photos + hours: official charmvilla.jp/#indexStore (user, 2026-09-24).
           {
             name: t("CHARM VILLA 晶華門市", "CHARM VILLA Regent Taipei"),
-            addr: t("台北市中山區中山北路二段39巷3號 B1（麗晶精品）", "B1, Regent Galleria, No. 3, Ln. 39, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei"),
+            addr: t("台北市中山區中山北路二段 39 巷 3 號 B1（麗晶精品）", "B1, Regent Galleria, No. 3, Ln. 39, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei"),
             hours: t("10:00–21:00・全年無休", "10:00–21:00 · Open every day"),
             phone: { label: "02-2542-0303", tel: "+886225420303" }, // www.charmvilla.com.tw, 2026-10-02
             href: "https://goo.gl/maps/agJHzfM2VE82",
@@ -250,7 +250,7 @@ const buildContent = (lang: Locale) => {
           },
           {
             name: t("CHARM VILLA 京都門市", "CHARM VILLA Kyoto"),
-            addr: t("京都市中京區寺町通二條・山本町442", "442 Yamamoto-cho, Teramachi-dori Nijo, Nakagyo-ku, Kyoto"),
+            addr: t("京都市中京區寺町通二條・山本町 442", "442 Yamamoto-cho, Teramachi-dori Nijo, Nakagyo-ku, Kyoto"),
             hours: t("週六・週日 11:00–18:00", "Saturday and Sunday 11:00–18:00"),
             phone: { label: "075-606-5507", tel: "+81756065507" }, // charmvilla.jp, 2026-10-02
             href: "https://goo.gl/maps/WBdsELDfMx52",
@@ -275,9 +275,9 @@ const buildContent = (lang: Locale) => {
       label: "NEWS:",
       labelZh: t("最新消息", ""),
       items: [
-        { date: t("8月11日", "Aug 11"), tag: t("禮盒預購", "Pre-order"), text: t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales.") },
-        { date: t("7月28日", "Jul 28"), tag: t("媒體報導", "Press"), text: t("《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。", "Monocle interviews founder Su Jingmei: how one goldfish swam into the world's teacups.") },
-        { date: t("7月2日", "Jul 2"), tag: t("活動快訊", "Events"), text: t("8月15日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi.") },
+        { date: t("8 月 11 日", "Aug 11"), tag: t("禮盒預購", "Pre-order"), text: t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales.") },
+        { date: t("7 月 28 日", "Jul 28"), tag: t("媒體報導", "Press"), text: t("《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。", "Monocle interviews founder Su Jingmei: how one goldfish swam into the world's teacups.") },
+        { date: t("7 月 2 日", "Jul 2"), tag: t("活動快訊", "Events"), text: t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi.") },
       ],
     },
     instagram: "https://www.instagram.com/charmvilla/",

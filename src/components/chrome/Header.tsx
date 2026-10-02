@@ -28,8 +28,19 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const pathname = usePathname();
   const switchHref = switchLocalePath(pathname, other);
   const switchProps = { href: switchHref, hrefLang: htmlLang[other], lang: htmlLang[other], "data-locale-switch": other, onClick: () => { if (!innerPage) { try { sessionStorage.setItem("cv-skip-preloader", "1"); } catch { /* ignore */ } } } };
-  // In the menu the language is a drop-down (user 2026-10-02: 「English 改為語系切換，可以下拉切換」); each language is named in itself.
+  // Language: a globe among the header icons that opens a short list (user 2026-10-02: 「應該是坐在最上面 icon 選單旁邊，用地球的
+  // icon 呈現，選了可以切換語系」; it replaced the EN link and the drop-down in the menu). Each language is named in itself.
   const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+  const globeRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!langOpen) return;
+    const onPointer = (e: PointerEvent) => { if (!langRef.current?.contains(e.target as Node)) setLangOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setLangOpen(false); globeRef.current?.focus(); } };
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("pointerdown", onPointer); document.removeEventListener("keydown", onKey); };
+  }, [langOpen]);
   const thisLanguage = { code: lang, name: zh ? "繁體中文" : "English", href: pathname, current: true };
   const otherLanguage = { code: other, name: zh ? "English" : "繁體中文", href: switchHref, current: false };
   const languages = zh ? [thisLanguage, otherLanguage] : [otherLanguage, thisLanguage]; // always 繁體中文, then English
@@ -106,8 +117,21 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <img src={brand.logo.src} alt="" className="h-auto w-full" draggable={false} />
         </Link>
         <div className="header-tools relative z-40 text-ink">
-          <a {...switchProps} className="header-lang tc" aria-label={zh ? "Switch to English" : "切換為中文"}>{zh ? "EN" : "中文"}</a>
-          <a href={sectionHref("visit")} aria-label={t("門市資訊", "Store information")} title={t("門市資訊", "Store information")} onClick={() => setOpen(false)}>
+          <div ref={langRef} className={`header-lang-menu${langOpen ? " is-open" : ""}`}>
+            <button ref={globeRef} type="button" className="header-globe" aria-label={t("切換語言", "Change language")} title={t("語言", "Language")} aria-expanded={langOpen} aria-controls="header-lang-list" onClick={() => setLangOpen((v) => !v)}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" /></svg>
+            </button>
+            <ul id="header-lang-list" className="header-lang-list" hidden={!langOpen}>
+              {languages.map((l) => (
+                <li key={l.code}>
+                  {l.current
+                    ? <a href={l.href} aria-current="true" lang={htmlLang[l.code]} className="tc" onClick={(e) => { e.preventDefault(); setLangOpen(false); }}>{l.name}</a>
+                    : <a {...switchProps} className="tc">{l.name}</a>}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <a href={sectionHref("visit")} className="header-stores" aria-label={t("門市資訊", "Store information")} title={t("門市資訊", "Store information")} onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
           </a>
           <Link href={localeHref(lang, "/account")} aria-label={t("會員", "Account")} title={t("會員", "Account")} onClick={() => setOpen(false)}>
@@ -138,22 +162,6 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
               <p className="menu-group-title menu-group-title--next tc">{t("服務", "Service")}</p>
               <ul>
                 {serviceLinks.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="menu-sublink tc">{l.label}</a></li>)}
-                <li className={`menu-lang${langOpen ? " is-open" : ""}`}>
-                  <button type="button" className="menu-sublink menu-lang-toggle tc" aria-expanded={langOpen} aria-controls="menu-lang-list" onClick={() => setLangOpen((v) => !v)}>
-                    {t("語言", "Language")}<span className="menu-lang-current">{zh ? "繁體中文" : "English"}</span><span className="menu-lang-caret" aria-hidden="true" />
-                  </button>
-                  <div className="menu-lang-drawer">
-                    <ul id="menu-lang-list" inert={!langOpen}>
-                      {languages.map((l) => (
-                        <li key={l.code}>
-                          {l.current
-                            ? <a href={l.href} aria-current="true" lang={htmlLang[l.code]} className="menu-sublink menu-lang-option tc" onClick={(e) => { e.preventDefault(); setLangOpen(false); }}>{l.name}</a>
-                            : <a {...switchProps} className="menu-sublink menu-lang-option tc">{l.name}</a>}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
               </ul>
             </div>
           </nav>
