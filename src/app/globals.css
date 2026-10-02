@@ -20,8 +20,10 @@
   --color-ground: #f6f2e9; /* shared ground behind cut-out product shots (brand cream) */
   --color-black: #000000;
 
-  --font-display: var(--font-outfit), "Outfit", sans-serif;
-  --font-tc: var(--font-outfit), var(--font-noto-tc), "Noto Sans TC", "PingFang TC", sans-serif;
+  /* English faces first, then Chinese (a Chinese face listed first would draw the Latin letters too), with system
+     fallbacks for macOS/iOS (PingFang TC), Windows (Microsoft JhengHei) and Android (Noto Sans CJK TC) */
+  --font-display: var(--font-outfit), "Outfit", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+  --font-tc: var(--font-outfit), "Helvetica Neue", Arial, var(--font-noto-tc), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
 
   --text-xs: 14px;
   --text-sm: 15px;
