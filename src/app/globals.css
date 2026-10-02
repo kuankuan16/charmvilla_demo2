@@ -682,7 +682,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .story-message { position: relative; overflow: visible; padding: clamp(80px, 9vw, 160px) 0 clamp(80px, 8vw, 150px); }
 .story-text-column { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); margin-inline: var(--page-gutter); align-items: start; }
 .story-title { white-space: pre-line; grid-column: 1 / span 3; font-size: clamp(17px, 1.35vw, 24px); line-height: 1.75; font-weight: 600; letter-spacing: .04em; }
-.story-body { grid-column: 4 / span 4; margin-top: clamp(56px, 5.5vw, 96px); font-size: clamp(14px, 1.02vw, 17px); line-height: 2.05; }
+.story-body { grid-column: 4 / span 4; font-size: clamp(14px, 1.02vw, 17px); line-height: 2.05; } /* tops aligned with the title (user 2026-10-02) */
 .story-body > p + p { margin-top: 1.5em; }
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
 .story-copy { font-weight: 500; letter-spacing: .04em; overflow-wrap: anywhere; }
