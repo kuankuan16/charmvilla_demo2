@@ -4,6 +4,7 @@ import "../globals.css";
 import { CartProvider } from "@/components/cart/CartProvider";
 import CartDrawer from "@/components/cart/CartDrawer";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
+import { getCommerce } from "@/data/commerce";
 import { locales, defaultLocale, isLocale, htmlLang, siteUrl, translator } from "@/i18n/config";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
@@ -31,9 +32,14 @@ export default async function RootLayout({ children, params }: Props & { childre
   const { lang: raw } = await params;
   // The proxy only ever sends "zh" or "en" here; a stray value (a file-like URL) falls back to the default and its page answers 404.
   const lang = isLocale(raw) ? raw : defaultLocale;
+  // The seller for search engines (schema.org Organization), from the same facts as the footer (2026-10-02).
+  const { company } = getCommerce(lang);
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "CHARM VILLA", legalName: company.name, taxID: company.taxId, url: siteUrl,
+    email: company.email, telephone: "+886-2-2542-0303", address: { "@type": "PostalAddress", streetAddress: company.address, addressCountry: "TW" },
+    sameAs: ["https://www.charmvilla.com.tw/", "https://www.facebook.com/CHARMVILLA8/", "https://www.instagram.com/charmvilla/"] };
   return (
     <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`}>
-      <body className="bg-page text-ink"><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /></CartProvider></LocaleProvider></body>
+      <body className="bg-page text-ink"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} /><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /></CartProvider></LocaleProvider></body>
     </html>
   );
 }

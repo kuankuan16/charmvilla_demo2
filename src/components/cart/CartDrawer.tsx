@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useCart } from "./CartProvider";
 import { productHref, categoryHref } from "@/data/catalog";
+import { localeHref } from "@/i18n/config";
 import { useT } from "@/i18n/LocaleProvider";
 
 export default function CartDrawer() {
@@ -47,6 +48,7 @@ export default function CartDrawer() {
               {cart.mode === "shopify" && cart.checkoutUrl
                 ? <a href={cart.checkoutUrl} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
                 : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Available once payment is connected")}>{t("前往結帳", "Go to checkout")}</button>}
+              <p className="cart-note tc"><Link href={localeHref(lang, "/shopping-guide#shipping")} onClick={() => cart.setOpen(false)} className="underline underline-offset-4">{t("運送、付款與退換貨說明", "Delivery, payment and returns")}</Link></p>
               {cart.mode === "local" && <p className="cart-note tc">{t("線上結帳將於 Shopify 串接完成後開放；目前可先加入購物車或洽詢門市。", "Online checkout will open once Shopify is connected. For now you can add pieces to your bag or contact a store.")}</p>}
             </footer>
           </>
