@@ -32,8 +32,10 @@ const build = (lang: Locale) => {
         craft: t("摺紙職人 · 小金魚茶包禮盒", "Paper-folding artisan · Goldfish Tea Gifts"),
         quote: [t("摺紙的手，", "The hands that fold"), t("把一張濾紙摺成會游的形。", "turn a sheet of filter paper into a form that swims.")],
         cta: { label: t("選一盒茶", "Choose a box of tea"), href: "/collections/tea" },
-        image: site("craft-01-blossom-cup.webp", t("木桌上的玻璃杯裡泡開一尾小金魚茶包，棉線掛過杯緣、金色茶標落在桌面，背景是櫻花的散景",
-          "A Goldfish Tea Bag unfurled in a glass cup on a wooden table, its cotton string over the rim and the gold tea tag resting on the table, cherry blossom out of focus behind")),
+        // user 2026-10-02: the blossom glass cup 換 the tea glass on the ottoman tray (the user's interior photograph; only the tray's
+        // contents generated, from the real tea bag in craft-01-blossom-cup.webp)
+        image: site("ottoman-tray-tea-glass.webp", t("米色布面方凳上的木托盤裡，一只玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色抽象畫",
+          "On a wooden tray on a pale upholstered ottoman, a Goldfish Tea Bag unfurls in a glass, its gold tag reading CHARM VILLA; an ochre abstract painting leans against the wall"), 1507, 1980),
       },
       {
         id: "leather",
