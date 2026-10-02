@@ -25,9 +25,14 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   // Language switch: the same page in the other language. A plain link (full load) so <html lang> and the page copy change together;
   // on the homepage the one-shot flag keeps the preloader from replaying.
   const other: Locale = zh ? "en" : "zh";
-  const switchHref = switchLocalePath(usePathname(), other);
+  const pathname = usePathname();
+  const switchHref = switchLocalePath(pathname, other);
   const switchProps = { href: switchHref, hrefLang: htmlLang[other], lang: htmlLang[other], "data-locale-switch": other, onClick: () => { if (!innerPage) { try { sessionStorage.setItem("cv-skip-preloader", "1"); } catch { /* ignore */ } } } };
-  const switchName = zh ? "English" : "中文";
+  // In the menu the language is a drop-down (user 2026-10-02: 「English 改為語系切換，可以下拉切換」); each language is named in itself.
+  const [langOpen, setLangOpen] = useState(false);
+  const thisLanguage = { code: lang, name: zh ? "繁體中文" : "English", href: pathname, current: true };
+  const otherLanguage = { code: other, name: zh ? "English" : "繁體中文", href: switchHref, current: false };
+  const languages = zh ? [thisLanguage, otherLanguage] : [otherLanguage, thisLanguage]; // always 繁體中文, then English
   const panelRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
   const previouslyOpen = useRef(false);
@@ -93,7 +98,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     <header data-header="" className={`site-header fixed left-0 top-0 z-30 w-full ${open ? "menu--opened" : ""}`}>
       {/* Bang & Olufsen-style bar (user 2026-09-30): Menu on the left, the official wordmark centred, tools on the right. It stays in place while the menu is open. */}
       <div className="site-header-inner">
-        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t("關閉選單", "Close menu") : t("開啟選單", "Open menu")} className="header-menu-btn relative z-40 text-ink" onClick={() => { setPreview("all"); setOpen((v) => !v); }}>
+        <button ref={openerRef} data-menu-opener="" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t("關閉選單", "Close menu") : t("開啟選單", "Open menu")} className="header-menu-btn relative z-40 text-ink" onClick={() => { setPreview("all"); setLangOpen(false); setOpen((v) => !v); }}>
           <span className="menu-icon" aria-hidden="true"><span /><span /></span>
           <span className="menu-label" aria-hidden="true"><span>Menu</span><span>Close</span></span>
         </button>
@@ -133,7 +138,22 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
               <p className="menu-group-title menu-group-title--next tc">{t("服務", "Service")}</p>
               <ul>
                 {serviceLinks.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="menu-sublink tc">{l.label}</a></li>)}
-                <li><a {...switchProps} className="menu-sublink tc">{switchName}</a></li>
+                <li className={`menu-lang${langOpen ? " is-open" : ""}`}>
+                  <button type="button" className="menu-sublink menu-lang-toggle tc" aria-expanded={langOpen} aria-controls="menu-lang-list" onClick={() => setLangOpen((v) => !v)}>
+                    {t("語言", "Language")}<span className="menu-lang-current">{zh ? "繁體中文" : "English"}</span><span className="menu-lang-caret" aria-hidden="true" />
+                  </button>
+                  <div className="menu-lang-drawer">
+                    <ul id="menu-lang-list" inert={!langOpen}>
+                      {languages.map((l) => (
+                        <li key={l.code}>
+                          {l.current
+                            ? <a href={l.href} aria-current="true" lang={htmlLang[l.code]} className="menu-sublink menu-lang-option tc" onClick={(e) => { e.preventDefault(); setLangOpen(false); }}>{l.name}</a>
+                            : <a {...switchProps} className="menu-sublink menu-lang-option tc">{l.name}</a>}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
               </ul>
             </div>
           </nav>
