@@ -16,7 +16,15 @@ export type CraftMoment = {
 const build = (lang: Locale) => {
   const t = translator(lang);
   return {
-    heading: [t("從一雙手，", "From a pair of hands"), t("到一日的風景。", "to the scenery of a day.")],
+    // user 2026-10-02: the heading and the four artisans' lines 換 the user's title and two paragraphs (the category links go too;
+    // the last sentence was cut off in the paste and ends 「本質。」 as the user confirmed). The items below keep only their photographs' role.
+    heading: [t("始於手溫", "Begun in the warmth of the hand"), t("形於日常", "Shaped in the everyday")],
+    body: [
+      t("物質本無言語，直到職人的手與時間在此重逢。從一折紙的流動、落刀前對皮革紋理的叩問，到金屬與木石在磨礪中的減法，我們在反覆琢磨的細節裡，將生命的溫度悄然刻入形體。",
+        "Material has no words of its own until the artisan's hands and time meet in it. From the flow of a single fold of paper and the question put to the grain of leather before the blade comes down, to what metal, wood and stone lose as they are honed, we press the warmth of life quietly into form through details worked over again and again."),
+      t("當作品走出展台，躍上肩頭、掠過耳畔、躍入茶湯，藝術便不再遙遠，而是轉化為一種可被觸摸的棲居姿態，凝練為生活最純粹的本質。",
+        "When a piece leaves the display for the shoulder, the ear and the tea, art is no longer far away. It becomes a way of living you can touch, distilled into the purest substance of life."),
+    ],
     // The two small photographs at the left of the first row (user 2026-10-02: the leather and goldsmith photographs
     // 換 these two). Cut from the user's side-by-side image to 4:5; 100 px of the plain studio ground continued above
     // the heads, since the supplied crop left none.
@@ -59,9 +67,10 @@ const build = (lang: Locale) => {
         craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Teaspoon and Coaster"),
         quote: [t("做木的人，", "The woodworker"), t("順著木紋把一片葉子鋸出來。", "saws a leaf out along the grain of the wood.")],
         cta: { label: t("看茶器與工藝", "View teaware and craft"), href: "/collections/teaware" },
-        // user 2026-10-02: the breakfast table 換 the tray-table scene of the same pieces (also on the coaster and teaspoon pages)
-        image: site("scene-wooden-tray-table-sofa.webp", t("梅花形木盒、雲朵杯墊與銀杏茶匙，放在沙發旁的黑色托盤邊几上",
-          "A plum-blossom wooden box, a cloud-shaped coaster and a ginkgo teaspoon on a black tray table beside a sofa"), 1376, 2048),
+        // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
+        // with their engraved logos (also on the coaster and teaspoon pages)
+        image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳",
+          "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARM VILLA, beside a bouclé sofa and an oak bench"), 1792, 2240),
       },
     ] as CraftMoment[],
   };

@@ -5,16 +5,15 @@
 // while the text passes. Each row fades in as it enters. Nothing moves on its own: no carousel, no dots, no pinned screen.
 // Server component; copy from @/data/craft-moments. Measurements of the reference: docs/qa/2026-10-01-craft-magazine/.
 import Image from "next/image";
-import Link from "next/link";
 import { getCraftMoments, type CraftMoment } from "@/data/craft-moments";
-import { localeHref, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 
 // Which photograph goes where. The large places take the two widest files (tea 1200 px, then a 896 px one).
 // The two small places hold the section's own photographs (`smalls`, user 2026-10-02), not the crafts' ones.
 const LARGE = "tea", BESIDE_TEXT = "teaware";
 
 export default function CraftMoments({ lang }: { lang: Locale }) {
-  const { heading, items, smalls } = getCraftMoments(lang);
+  const { heading, body, items, smalls } = getCraftMoments(lang);
   const by = (id: string) => items.find((item) => item.id === id) as CraftMoment;
   const figure = (item: CraftMoment, className: string, sizes: string) => (
     <figure key={item.id} className={`craft-fig ${className}`}>
@@ -32,15 +31,7 @@ export default function CraftMoments({ lang }: { lang: Locale }) {
       <div className="craft-story" data-animation="fade" data-duration="0.7">
         <div className="craft-words">
           <h2 id="craft-heading" className="craft-heading tc">{heading[0]}<br />{heading[1]}</h2>
-          <ul className="craft-list">
-            {items.map((item) => (
-              <li key={item.id}>
-                <p className="craft-craft tc">{item.craft}</p>
-                <p className="craft-quote tc">{item.quote[0]}<br />{item.quote[1]}</p>
-                <Link href={localeHref(lang, item.cta.href)} className="craft-link tc">{item.cta.label}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className="craft-body tc">{body.map((text) => <p key={text}>{text}</p>)}</div>
         </div>
         {figure(by(BESIDE_TEXT), "craft-large", "(min-width:768px) 46vw, 100vw")}
       </div>

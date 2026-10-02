@@ -854,17 +854,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* the text ends well below its last line, so the photograph beside it is held for a moment before the row leaves */
 .craft-words { padding: clamp(36px, 4.2vw, 60px) 0 clamp(90px, 13vw, 220px); }
 .craft-heading { grid-column: 1 / -1; margin: 0; font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
-.craft-list { grid-column: 3 / span 3; display: grid; row-gap: clamp(30px, 3vw, 46px); margin: clamp(40px, 4.2vw, 60px) 0 0; padding: 0; list-style: none; }
-.craft-craft { margin: 0 0 8px; font-size: 12px; line-height: 1.6; letter-spacing: .08em; color: var(--color-stone-deep); }
-.craft-quote { margin: 0; font-size: clamp(15px, 1.2vw, 19px); font-weight: 500; line-height: 1.75; letter-spacing: .02em; }
+.craft-body { grid-column: 3 / span 3; margin: clamp(40px, 4.2vw, 60px) 0 0; font-size: clamp(14px, 1.02vw, 17px); font-weight: 500; line-height: 2.05; letter-spacing: .04em; } /* the user's two paragraphs (2026-10-02), set like the brand story body */
+.craft-body > p + p { margin-top: 1.5em; }
 /* user 2026-10-01: 「英文標題字距再密一點」 — Latin headings are set tighter than the Chinese ones */
 .craft-heading:lang(en) { letter-spacing: -.025em; }
-.craft-quote:lang(en) { letter-spacing: -.01em; line-height: 1.5; }
-.craft-link { display: inline-block; margin-top: 12px; padding-bottom: 2px; border-bottom: 1px solid currentColor; font-size: 13px; line-height: 1.5; transition: opacity .3s; }
-.craft-link:hover { opacity: .55; }
-.craft-link:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
 @media (max-width: 1023px) {
-  .craft-list { grid-column: 2 / span 5; }
+  .craft-body { grid-column: 2 / span 5; }
   .partners-statement { font-size: clamp(20px, 2.6vw, 30px); }
 }
 @media (max-width: 767px) {
@@ -877,8 +872,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .craft-story .craft-large { position: relative; top: auto; order: -1; }
   .craft-words { display: block; padding: 36px 0 0; }
   .craft-heading { font-size: 24px; }
-  .craft-list { margin-top: 32px; row-gap: 28px; }
-  .craft-quote { font-size: 15px; }
+  .craft-body { margin-top: 24px; font-size: 14px; line-height: 2; letter-spacing: .025em; }
   .partners-statement { font-size: 24px; }
 }
 

@@ -231,7 +231,9 @@ const buildCatalog = (lang: Locale) => {
   };
   // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
   // they lead the scenes of the pieces they show.
-  const woodenSofa = site("scene-wooden-tray-table-sofa.webp", t("梅花形木盒、雲朵杯墊與銀杏茶匙，放在沙發旁的黑色托盤邊几上", "A plum-blossom wooden box, a cloud-shaped coaster and a ginkgo teaspoon on a black tray table beside a sofa"));
+  // 2026-10-02 (user: 「這張商品的情境照要換室內擺飾…喜歡他光影的呈現」, logos where the real pieces carry them): a new sunlit interior
+  // replaces the black tray table by the sofa (scene-wooden-tray-table-sofa.webp, still in git).
+  const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳", "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARM VILLA, beside a bouclé sofa and an oak bench"), 1792, 2240);
   const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a bird-shaped rest beside a cloud-shaped coaster, close view of a black tray table"));
   const woodenOttomans = site("scene-wooden-ottomans.webp", t("兩片雲朵杯墊與兩支銀杏茶匙，放在芥末黃織布圓凳上", "Two cloud-shaped coasters and two ginkgo teaspoons on a mustard woven ottoman"));
   const sceneLead: Record<string, Img[]> = {
