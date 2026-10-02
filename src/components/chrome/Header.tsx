@@ -94,13 +94,13 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "scene-wooden-interior-sunlit.webp",
-    tea: "ottoman-tray-tea-cup-v4.webp",
-    scents: "scene-coffee-table-tea-coasters.webp",
-    jewelry: "scene-diamond-goldfish-earring-profile-bw.webp",
-    bags: "partners-male-dancer-c.webp",
-    abundance: "studio-prosperity-dessert-stand-hd.webp",
-    "wood-fired": "scene-wooden-tray-table-closeup.webp",
+    all: "/media/site/scene-wooden-interior-sunlit.webp",
+    tea: "/media/site/ottoman-tray-tea-cup-v4.webp",
+    scents: "/media/site/scene-coffee-table-tea-coasters.webp",
+    jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
+    bags: "/media/site/partners-male-dancer-c.webp",
+    abundance: "/media/site/studio-prosperity-dessert-stand-hd.webp",
+    "wood-fired": "/media/gallery/CV-0242.webp", // the brand's own photograph of the bird rests (asset library, 2026-10-02)
     hero: "", visit: "",
   };
   const [preview, setPreview] = useState<ShopId>("all");
@@ -168,7 +168,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <a href={sectionHref(preview)} onClick={close} className="menu-preview" tabIndex={-1} aria-hidden="true">
             {(Object.keys(previews) as ShopId[]).filter((id) => previews[id]).map((id) => (
               <span key={id} className={`menu-preview-image${id === preview ? " is-active" : ""}`}>
-                <Image src={`/media/site/${previews[id]}`} alt="" fill sizes="(min-width:1024px) 30vw, 1px" />
+                <Image src={previews[id]} alt="" fill sizes="(min-width:1024px) 30vw, 1px" />
               </span>
             ))}
             <span className="menu-preview-caption tc">{label(preview)}<span className="menu-card-arrow" /></span>

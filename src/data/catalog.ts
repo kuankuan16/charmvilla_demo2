@@ -243,6 +243,8 @@ const buildCatalog = (lang: Locale) => {
   };
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
+    // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
+    "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Bird Chopstick Rest close up, chopsticks resting on the bird, charcoal behind")), gallery("CV-0242", t("鳥形筷架・青瓷與米黃的小鳥散在白桌與木炭之間", "Bird Chopstick Rests in celadon and cream scattered between a white table and charcoal"))],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
     site("scene-pink-bag-armchair-v3.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶與雲朵杯墊", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea on a cloud coaster"), 880, 1168)],
@@ -273,6 +275,9 @@ const buildCatalog = (lang: Locale) => {
   // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, the close view for
   // Raw Gold, whose front view showed the piece too small (studio-listing.json points it at the close view).
   const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string }[]> = {
+    // the brand's own photograph of the box, straight on, on the same light floor (asset library 2400 px cut-outs, 2026-10-02:
+    // 「更多的官網素材可以從這個網站抓」); the generated three-quarter view stays the cover
+    ...Object.fromEntries(["purple-butterfly", "year-of-plenty", "winter-blossom", "kyoto", "blossoming-prosperity"].map((s) => [`${s}-gift-box`, [{ file: `studio-${s}-gift-box-official.webp`, zh: "官方商品照", en: "Official photograph", enAlt: "official photograph" }]])),
     "braided-leather-bag-white": [{ file: "studio-braided-leather-bag-white-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
     "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
     "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
@@ -284,6 +289,11 @@ const buildCatalog = (lang: Locale) => {
   const omitEverywhere = ["CV-0231", "CV-0232", "CV-0234"].map((id) => `/media/gallery/${id}.webp`);
   // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
   const studioSources = new Set(["CV-0398", "CV-0400", "CV-0419", "CV-0420", "CV-0399", "CV-0397", "CV-0256"].map((id) => `/media/gallery/${id}.webp`));
+  // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
+  // the information column and its two landscapes close the page as one full row.
+  const sceneOrder: Record<string, string[]> = {
+    "bird-chopstick-rest": ["/media/gallery/CV-0248.webp", "/media/site/scene-wooden-tray-table-closeup.webp", "/media/gallery/CV-0242.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
+  };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {
     const file = (studioListing as Record<string, string>)[p.slug];
@@ -298,6 +308,7 @@ const buildCatalog = (lang: Locale) => {
     // the bird rest keeps its own photograph first; the new interior follows it
     const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] : []), ...(sceneExtra[p.slug] ?? [])]
       .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && !(sceneOmit[p.slug] ?? []).includes(img.src) && !omitEverywhere.includes(img.src) && list.findIndex((x) => x.src === img.src) === i);
+    const order = sceneOrder[p.slug]; if (order) scenes.sort((a, b) => order.indexOf(a.src) - order.indexOf(b.src));
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };
   const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);

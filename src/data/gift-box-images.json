@@ -15,9 +15,9 @@
     "h": 433
   },
   "582": {
-    "src": "/media/gift-boxes/official-582.png",
-    "w": 630,
-    "h": 420
+    "src": "/media/gift-boxes/official-582-hd.webp",
+    "w": 2284,
+    "h": 1304
   },
   "960": {
     "src": "/media/gift-boxes/official-960.png",
@@ -25,9 +25,9 @@
     "h": 481
   },
   "88": {
-    "src": "/media/gift-boxes/official-88.png",
-    "w": 630,
-    "h": 486
+    "src": "/media/gift-boxes/official-88-hd.webp",
+    "w": 1748,
+    "h": 1466
   },
   "891": {
     "src": "/media/gift-boxes/official-891.png",
@@ -40,14 +40,14 @@
     "h": 512
   },
   "954": {
-    "src": "/media/gift-boxes/official-954.png",
-    "w": 630,
-    "h": 486
+    "src": "/media/gift-boxes/official-954-hd.webp",
+    "w": 1523,
+    "h": 1264
   },
   "1053": {
-    "src": "/media/gift-boxes/official-1053.png",
-    "w": 630,
-    "h": 486
+    "src": "/media/gift-boxes/official-1053-hd.webp",
+    "w": 1539,
+    "h": 1317
   },
   "970": {
     "src": "/media/gift-boxes/official-970.png",
@@ -60,9 +60,9 @@
     "h": 420
   },
   "692": {
-    "src": "/media/gift-boxes/official-692.png",
-    "w": 600,
-    "h": 445
+    "src": "/media/gift-boxes/official-692-hd.webp",
+    "w": 2082,
+    "h": 1384
   },
   "183": {
     "src": "/media/gift-boxes/official-183.png",
