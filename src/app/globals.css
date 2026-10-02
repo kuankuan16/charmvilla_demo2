@@ -842,8 +842,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .craft-fig img { object-fit: cover; }
 .craft-smalls .craft-fig { grid-column: span 2; }
 .craft-large { grid-column: 7 / span 6; }
-/* the award marks on the tea photograph, one group (2026-10-02) */
-.award-badges { position: absolute; z-index: 2; top: clamp(14px, 1.7vw, 30px); right: clamp(14px, 1.7vw, 30px); display: flex; align-items: center; gap: clamp(14px, 1.5vw, 26px); pointer-events: none; }
+/* the award marks on the tea photograph, one group, bottom left (user 2026-10-02: 「要在左下角」) */
+.award-badges { position: absolute; z-index: 2; bottom: clamp(14px, 1.7vw, 30px); left: clamp(14px, 1.7vw, 30px); display: flex; align-items: center; gap: clamp(14px, 1.5vw, 26px); pointer-events: none; }
 .award-badges img { width: clamp(58px, 5.4vw, 96px); height: auto; }
 .craft-story .craft-large { position: sticky; top: var(--craft-top); }
 /* the text ends well below its last line, so the photograph beside it is held for a moment before the row leaves */
