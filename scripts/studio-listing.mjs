@@ -223,6 +223,9 @@ async function main() {
     console.log(slug.padEnd(34), close.padEnd(46), JSON.stringify(await compose(wall, obj, { fit: { w: 700, h: 760 }, anchor: 'centre', centreY: 0.5, shadow: 'drop' }, path.join(outDir, close))));
   }
   // official gift-box cut-outs
+  // NOTE 2026-10-02: the 18 tea gift boxes (these 16 and the two Christmas editions below) now use generated studio
+  // photographs, public/media/site/listing-tea-<slug>.webp (user: 「改用這個商品攝影的角度…立體感跟陰影的自然呈現…商品要居於畫面中央」). Re-running this
+  // script would point them back at studio-<slug>-hd.webp in studio-listing.json; restore the listing-tea entries afterwards.
   for (const [id, slug] of Object.entries(giftBoxes)) {
     const hi = path.join(srcDir, `official-${id}.png`); // the official site's 1440px file where one exists
     const obj = defringeWhite(await rgba(fs.existsSync(hi) ? hi : pub(`media/gift-boxes/official-${id}.png`)));
