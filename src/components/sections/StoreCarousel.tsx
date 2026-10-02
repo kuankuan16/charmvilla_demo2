@@ -23,16 +23,17 @@ export default function StoreCarousel() {
     setProgress(max > 0 ? el.scrollLeft / max : 1);
     const cards = el.querySelectorAll<HTMLElement>(".stores-card");
     const step = cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : 1;
-    setActive(Math.max(0, Math.min(shops.length - 1, Math.round(el.scrollLeft / step))));
+    // the last card cannot always scroll all the way to the start: at the end of the track it is the current one
+    setActive(el.scrollLeft >= max - 2 ? shops.length - 1 : Math.max(0, Math.min(shops.length - 1, Math.round(el.scrollLeft / step))));
   }, [shops.length]);
   useEffect(() => { onScroll(); }, [onScroll]);
 
   const go = (index: number) => {
     const el = track.current; if (!el) return;
     const cards = el.querySelectorAll<HTMLElement>(".stores-card");
-    const target = cards[(index + shops.length) % shops.length];
+    const target = cards[Math.max(0, Math.min(shops.length - 1, index))];
     if (!target) return;
-    el.scrollTo({ left: target.offsetLeft - cards[0].offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    el.scrollTo({ left: Math.min(target.offsetLeft - cards[0].offsetLeft, el.scrollWidth - el.clientWidth), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
   const current = shops[active];
   // the tall photograph at the left: an interior in the reference's mood (the brand has no further store photographs, and
@@ -59,7 +60,11 @@ export default function StoreCarousel() {
               </article>
             ))}
           </div>
-          {shops.length > 1 && <button type="button" className="stores-next" onClick={() => go(active + 1)} aria-label={active === shops.length - 1 ? t("回到第一家門市", "Back to the first store") : t("下一家門市", "Next store")}>
+          {/* user 2026-10-02: 「往右滑之後想回來左邊回不來」 — a back arrow appears once the slider has moved; the forward one hides at the end */}
+          {active > 0 && <button type="button" className="stores-arrow stores-arrow--prev" onClick={() => go(active - 1)} aria-label={t("上一家門市", "Previous store")}>
+            <svg width="34" height="12" viewBox="0 0 34 12" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><path d="M34 6H2M7 1 2 6l5 5" /></svg>
+          </button>}
+          {active < shops.length - 1 && <button type="button" className="stores-arrow stores-arrow--next" onClick={() => go(active + 1)} aria-label={t("下一家門市", "Next store")}>
             <svg width="34" height="12" viewBox="0 0 34 12" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><path d="M0 6h32M27 1l5 5-5 5" /></svg>
           </button>}
         </div>

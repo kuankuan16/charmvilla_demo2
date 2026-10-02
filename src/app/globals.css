@@ -847,8 +847,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .stores-card-desc { margin-top: 12px; font-size: 14px; line-height: 1.9; color: rgb(246 248 250 / .78); }
 .stores-card-info { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgb(246 248 250 / .14); font-size: 12px; line-height: 1.8; color: rgb(246 248 250 / .64); }
 .stores-card-info a:hover { color: var(--color-page); text-decoration: underline; text-underline-offset: 4px; }
-.stores-next { position: absolute; top: calc(min(600px, 76%) * 365 / 600 / 2); right: clamp(40px, 9%, 120px); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
-.stores-next:hover, .stores-next:focus-visible { background: var(--color-page); color: var(--color-ink); }
+.stores-arrow { position: absolute; z-index: 2; top: calc(min(600px, 76%) * 365 / 600 / 2); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
+.stores-arrow--next { right: clamp(40px, 9%, 120px); }
+.stores-arrow--prev { left: clamp(14px, 2%, 28px); }
+.stores-arrow:hover, .stores-arrow:focus-visible { background: var(--color-page); color: var(--color-ink); }
 .stores-foot { display: flex; align-items: center; gap: 30px; margin-top: clamp(40px, 4.8vw, 70px); padding-right: var(--page-gutter); }
 .stores-button { flex: none; padding: 16px 30px; border: 1px solid rgb(246 248 250 / .6); font-size: 14px; letter-spacing: .04em; transition: background .3s, color .3s; }
 .stores-button:hover, .stores-button:focus-visible { background: var(--color-page); color: var(--color-ink); }
@@ -860,7 +862,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .stores-media { min-height: 0; aspect-ratio: 4 / 3; }
   .stores-body { padding: 44px 0 52px var(--page-gutter); }
   .stores-card { flex-basis: 86%; }
-  .stores-next { width: 56px; height: 56px; right: 8%; top: calc(86% * 365 / 600 / 2); }
+  .stores-arrow { width: 56px; height: 56px; top: calc(86% * 365 / 600 / 2); }
+  .stores-arrow--next { right: 8%; }
   .stores-foot { gap: 18px; }
 }
 
