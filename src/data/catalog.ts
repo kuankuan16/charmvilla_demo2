@@ -6,7 +6,9 @@ import { getContent, gallery, site, type Img } from "./content";
 import type { Locale } from "../i18n/config";
 
 // Product facts come from the existing approved content and asset manifest.
-// No inferred prices, stock, metal purity, gemstone grades, sizes or tea brewing times.
+// No inferred prices, stock, metal purity, gemstone grades, sizes or tea brewing times. Prices, metal and sizes added
+// 2026-10-02 are copied from www.charmvilla.com.tw product pages (read that day); where the official page could not be
+// matched to a piece with certainty (the two diamond earrings, the Prosperity stands), nothing was added.
 //
 // Bilingual (2026-10-01): buildCatalog(lang) builds the same products in Chinese (the source) or English. Every visible
 // string is written as t("中文", "English"); slugs, images, prices and Shopify ids are shared.
@@ -116,11 +118,22 @@ const buildCatalog = (lang: Locale) => {
       body: t("少了亮面的反射，形狀便更安靜。魚身與尾鰭的每一處轉折都有被看見的空間，配戴時像一枚貼近耳畔的小印記。", "Without a polished surface to reflect, the shape grows quieter. Every turn of body and tail fin has room to be seen; worn, it is like a small mark kept close to the ear."),
     },
   ];
+  // www.charmvilla.com.tw (2026-10-02): K18 gold, made in Taiwan, sold per single earring, made to order in about 25–60 days,
+  // not shipped overseas. List prices only where the official page is certainly this piece.
+  const jewelryPrices: Record<string, number> = { "pearl-chain-goldfish-earrings": 9600, "twin-goldfish-earrings": 9600, "raw-gold-goldfish-earrings": 5500 };
+  const jewelryFacts = (slug: string) => [
+    { label: t("材質", "Material"), value: slug === "pearl-chain-goldfish-earrings" ? t("K18 純金、珍珠", "18K gold, pearl") : t("K18 純金", "18K gold") },
+    { label: t("販售單位", "Sold as"), value: t("單只（單耳）", "A single earring") },
+    { label: t("產地", "Made in"), value: t("台灣", "Taiwan") },
+    { label: t("製作時間", "Making time"), value: t("訂製商品，約 25–60 天；訂購前請先來電洽詢", "Made to order in about 25–60 days; please call before ordering") },
+    { label: t("寄送", "Delivery"), value: t("金飾不提供海外寄送", "Jewelry is not shipped overseas") },
+  ];
   const jewelryProducts: Product[] = jewelry.items.map((p, i) => ({
     slug: jewelrySlugs[i], category: "jewelry", name: p.title, english: jewelryEnglish[i],
     summary: p.desc, description: jewelryEditorial[i].description,
     image: p.image, views: [{ label: t("商品照", "Product photograph"), image: p.image }, ...(jewelryExtra[i] || []).map((image, j) => ({ label: t(`情境 ${j + 1}`, `Scene ${j + 1}`), image }))],
-    facts: [{ label: t("系列", "Series"), value: t("小金魚金飾", "Goldfish Jewelry") }, { label: t("款式", "Style"), value: p.title }, { label: t("設計細節", "Design details"), value: jewelryDetails[i] }],
+    facts: [{ label: t("系列", "Series"), value: t("小金魚金飾", "Goldfish Jewelry") }, { label: t("款式", "Style"), value: p.title }, { label: t("設計細節", "Design details"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
+    ...(jewelryPrices[jewelrySlugs[i]] ? { price: { amount: jewelryPrices[jewelrySlugs[i]], currency: "TWD" as const } } : {}),
     story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
   }));
 
@@ -154,13 +167,28 @@ const buildCatalog = (lang: Locale) => {
       detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Follow the long line and the grain of the wood appears. Paired with the bird chopstick rest, they form a quiet set on the table."),
       story: { title: t("每日使用的線條", "A line used every day"), body: t("一雙筷子，常在手邊。從修長的外形看到木紋，熟悉的餐具也有可細讀之處；與鳥形筷架一同擺放，便形成餐桌上的小幅構圖。", "A pair of chopsticks is always within reach. From their long shape to the grain of the wood, even familiar tableware has something to read closely; set beside the bird chopstick rest, they make a small composition on the table.") } },
   ];
+  const teawareOfficial: Record<string, { price: number; facts: { label: string; value: string }[] }> = {
+    "wooden-chopsticks": { price: 680, facts: [
+      { label: t("販售單位", "Sold as"), value: t("2 雙／組（不含鳥形筷架）", "2 pairs per set (bird chopstick rest not included)") },
+      { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
+      { label: t("尺寸", "Size"), value: t("長 23 cm", "Length 23 cm") },
+    ] },
+    "ginkgo-teaspoon-gift-box": { price: 760, facts: [
+      { label: t("販售單位", "Sold as"), value: t("1 只／盒", "1 per box") },
+      { label: t("材質", "Material"), value: t("檜木", "Cypress (hinoki)") },
+      { label: t("尺寸", "Size"), value: t("長 15.7 cm", "Length 15.7 cm") },
+      { label: t("設計", "Design"), value: "蘇靜媚" },
+    ] },
+  };
   const teawareProducts: Product[] = tablewareEntries.map((p) => ({
     slug: p.slug, category: "teaware", name: p.name, english: p.en, summary: p.summary, description: p.detail,
     image: gallery(p.ids[0], p.name), views: p.ids.map((id, i) => ({ label: i ? t(`細節 ${i}`, `Detail ${i}`) : t("商品全貌", "Full view"), image: gallery(id, p.name) })),
     facts: [
       { label: t("系列", "Series"), value: p.series }, { label: t("品項", "Item"), value: p.name },
       { label: t("使用情境", "Use"), value: p.series === prosperity ? t("下午茶與點心擺放", "Afternoon tea and serving sweets") : t("茶席與日常餐桌", "Tea table and everyday dining") },
+      ...(teawareOfficial[p.slug]?.facts ?? []),
     ],
+    ...(teawareOfficial[p.slug] ? { price: { amount: teawareOfficial[p.slug].price, currency: "TWD" as const } } : {}),
     story: { title: p.story.title, body: p.story.body, image: p.ids[1] ? gallery(p.ids[1], p.name) : undefined },
   }));
 
