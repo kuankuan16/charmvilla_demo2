@@ -150,14 +150,6 @@
   /* Index dot used as list bullets / markers (reference: rounded-full bg-current). */
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: currentColor; }
 
-  /* Menu panels: clip-path reveal (reference: clip-path .5s cubic-bezier(.3,.86,.36,.95)). */
-  /* The ink backdrop itself is clipped shut while closed (and hidden after its panels finish leaving). */
-  .menu-root { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); visibility: hidden; transition: clip-path 0.5s var(--ease-reveal) 0.3s, visibility 0s linear 0.8s; }
-  .menu--opened .menu-root { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); visibility: visible; transition: clip-path 0.5s var(--ease-reveal), visibility 0s; }
-  .menu-panel { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); transition: clip-path 0.5s var(--ease-reveal); }
-  .menu--opened .menu-panel { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
-  .menu-fade { opacity: 0; transition: opacity 0.35s var(--ease-reveal); }
-  .menu--opened .menu-fade { opacity: 1; }
 
   /* Custom cursor: the gold vector goldfish (user 2026-09-30). One fixed element; Cursor.tsx writes its transform
      directly (no CSS variables on <html>), so moving it costs no style recalculation outside this element. */
@@ -567,9 +559,81 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Header shares the content edges at every viewport size. */
 /* Header bar after the Bang & Olufsen reference (user 2026-09-30): Menu | centred wordmark | tools. */
 .site-header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 100%; width: 100%; padding-inline: var(--page-gutter); }
-.header-menu-btn { justify-self: start; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 13px; font-weight: 400; letter-spacing: .02em; }
-.header-menu-lines { display: flex; flex-direction: column; gap: 5px; width: 18px; }
-.header-menu-lines span { display: block; height: 1.5px; width: 100%; background: currentColor; }
+.header-menu-btn { justify-self: start; display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 13px; font-weight: 400; letter-spacing: .02em; }
+
+/* ---------- Menu, after solena-template.webflow.io (user 2026-10-02) ------------------------------------------------
+   Button: a thin 44 px circle with two short offset lines that cross into an X; the label rolls Menu → Close.
+   Panel: drops down from under the bar with clip-path (open .42 s ease-out, close .3 s ease-in, as measured on the
+   reference: 0 → full height in ~0.36 s); the page beneath dims. */
+.menu-icon { position: relative; display: block; width: 44px; height: 44px; border: 1px solid rgb(31 31 31 / .18); border-radius: 50%; transition: border-color .3s; }
+.header-menu-btn:hover .menu-icon { border-color: rgb(31 31 31 / .5); }
+.menu-icon span { position: absolute; left: 50%; top: 50%; width: 18px; height: 1px; background: currentColor; transition: transform .36s cubic-bezier(.22, .8, .3, 1); }
+.menu-icon span:first-child { transform: translate(calc(-50% - 4px), -3px); }
+.menu-icon span:last-child { transform: translate(calc(-50% + 4px), 3px); }
+.menu--opened .menu-icon span:first-child { transform: translate(-50%, 0) rotate(45deg); }
+.menu--opened .menu-icon span:last-child { transform: translate(-50%, 0) rotate(-45deg); }
+.menu-label { display: block; height: 1.6em; line-height: 1.6em; overflow: hidden; }
+.menu-label span { display: block; transition: transform .36s cubic-bezier(.22, .8, .3, 1); }
+.menu--opened .menu-label span { transform: translateY(-100%); }
+.menu--opened.site-header, .menu--opened .site-header-inner { background: var(--color-page); }
+.menu--opened .site-header-inner { box-shadow: 0 1px 0 rgb(31 31 31 / .1); }
+.menu-scrim { position: fixed; z-index: 1; inset: var(--header-h) 0 0; background: rgb(31 31 31 / .32); opacity: 0; visibility: hidden; transition: opacity .3s, visibility 0s linear .3s; cursor: default; }
+.menu--opened .menu-scrim { opacity: 1; visibility: visible; transition: opacity .4s; }
+.menu-root { text-transform: none; position: fixed; z-index: 2; top: var(--header-h); left: 0; width: 100%; max-height: calc(100svh - var(--header-h)); overflow-y: auto; background: var(--color-page); color: var(--color-ink); clip-path: inset(0 0 100% 0); visibility: hidden; transition: clip-path .3s cubic-bezier(.55, 0, .75, .4), visibility 0s linear .3s; overscroll-behavior: contain; }
+.menu--opened .menu-root { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path .42s cubic-bezier(.22, .8, .3, 1), visibility 0s; }
+.menu-top, .menu-info { opacity: 0; transform: translateY(10px); transition: opacity .2s, transform .2s; }
+.menu--opened .menu-top { opacity: 1; transform: none; transition: opacity .45s .12s, transform .6s .12s cubic-bezier(.22, .8, .3, 1); }
+.menu--opened .menu-info { opacity: 1; transform: none; transition: opacity .45s .2s, transform .6s .2s cubic-bezier(.22, .8, .3, 1); }
+.menu-top { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); padding: clamp(40px, 5vw, 70px) var(--page-gutter) clamp(36px, 3.6vw, 52px); }
+.menu-nav { grid-column: 1 / span 6; }
+.menu-primary { display: flex; flex-wrap: wrap; gap: 6px clamp(22px, 2.2vw, 34px); }
+.menu-link { position: relative; display: inline-block; padding: 4px 0; font-size: clamp(28px, 2.5vw, 40px); font-weight: 400; line-height: 1.25; letter-spacing: .02em; color: var(--color-stone-deep); transition: color .3s; }
+.menu-link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: currentColor; transition: width .4s cubic-bezier(.22, .8, .3, 1); }
+.menu-link:hover, .menu-link:focus-visible { color: var(--color-ink); }
+.menu-link:hover::after, .menu-link:focus-visible::after { width: 100%; }
+.menu-secondary { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: clamp(28px, 3vw, 44px); font-size: 14px; line-height: 1.8; }
+.menu-secondary a { color: var(--color-stone-deep); transition: color .3s; }
+.menu-secondary a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 5px; }
+.menu-card { position: relative; display: flex; flex-direction: column; min-height: clamp(300px, 26vw, 380px); background: #edeee8; overflow: hidden; }
+.menu-card--feature { grid-column: 7 / span 3; }
+.menu-card--story { grid-column: 10 / span 3; justify-content: flex-end; padding: clamp(18px, 1.7vw, 24px); }
+.menu-card-image { position: relative; display: block; flex: 0 0 auto; aspect-ratio: 17 / 10; overflow: hidden; }
+.menu-card-image img { object-fit: cover; transition: transform .8s cubic-bezier(.22, .8, .3, 1); }
+.menu-card--feature:hover .menu-card-image img { transform: scale(1.04); }
+.menu-card-body { display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: clamp(16px, 1.6vw, 24px); }
+.menu-card-title { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.5; }
+.menu-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; border-top: 1px solid rgb(31 31 31 / .14); font-size: 13px; color: var(--color-stone-deep); }
+.menu-card-arrow { position: relative; width: 60px; height: 1px; background: currentColor; transition: width .4s cubic-bezier(.22, .8, .3, 1); }
+.menu-card-arrow::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
+.menu-card--feature:hover .menu-card-arrow { width: 76px; }
+.menu-card-circle { position: absolute; top: clamp(16px, 1.6vw, 24px); right: clamp(16px, 1.6vw, 24px); display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--color-page); transition: background .3s, color .3s; }
+.menu-card--story:hover .menu-card-circle { background: var(--color-ink); color: var(--color-page); }
+.menu-card-big { font-size: clamp(30px, 2.8vw, 44px); line-height: 1.2; letter-spacing: .02em; }
+.menu-info { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px clamp(16px, 2vw, 32px); align-items: center; margin: 0 var(--page-gutter); padding: clamp(28px, 2.8vw, 40px) 0 clamp(32px, 3.2vw, 44px); border-top: 1px solid rgb(31 31 31 / .14); font-size: 13px; line-height: 1.75; color: var(--color-stone-deep); }
+.menu-info-heading { margin-bottom: 6px; font-size: 15px; color: var(--color-ink); }
+.menu-info a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
+.menu-social { justify-self: end; display: flex; gap: 10px; }
+.menu-root .menu-social a { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid rgb(31 31 31 / .16); border-radius: 50%; color: var(--color-ink); transition: background .3s, color .3s; }
+.menu-root .menu-social a:hover { background: var(--color-ink); color: var(--color-page); }
+@media (max-width: 1023px) {
+  .menu-top { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  .menu-nav { grid-column: 1 / -1; }
+  .menu-card--feature { grid-column: 1; } .menu-card--story { grid-column: 2; }
+  .menu-info { grid-template-columns: 1fr 1fr; }
+  .menu-social { justify-self: start; }
+}
+@media (max-width: 767px) {
+  .menu-icon { width: 40px; height: 40px; }
+  .menu-root { height: calc(100svh - var(--header-h)); }
+  .menu-top { display: block; padding: 32px var(--page-gutter) 28px; }
+  .menu-primary { flex-direction: column; gap: 2px; }
+  .menu-link { font-size: 30px; }
+  .menu-card { display: none; }
+  .menu-info { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-root, .menu--opened .menu-root, .menu-top, .menu-info, .menu--opened .menu-top, .menu--opened .menu-info, .menu-icon span, .menu-label span { transition: none !important; }
+}
 .header-brand { justify-self: center; width: 150px; }
 .header-tools { justify-self: end; display: flex; align-items: center; gap: 22px; }
 .header-tools a { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; transition: opacity .2s; }
