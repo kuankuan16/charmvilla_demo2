@@ -559,19 +559,19 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Header shares the content edges at every viewport size. */
 /* Header bar after the Bang & Olufsen reference (user 2026-09-30): Menu | centred wordmark | tools. */
 .site-header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 100%; width: 100%; padding-inline: var(--page-gutter); }
-.header-menu-btn { justify-self: start; display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 13px; font-weight: 400; letter-spacing: .02em; }
+.header-menu-btn { justify-self: start; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 13px; font-weight: 400; letter-spacing: .02em; }
 
 /* ---------- Menu, after solena-template.webflow.io (user 2026-10-02) ------------------------------------------------
-   Button: a thin 44 px circle with two short offset lines that cross into an X; the label rolls Menu → Close.
+   Button: two lines beside "Menu" that cross into an X; the label rolls Menu → Close.
    Panel: drops down from under the bar with clip-path (open .42 s ease-out, close .3 s ease-in, as measured on the
    reference: 0 → full height in ~0.36 s); the page beneath dims. */
-.menu-icon { position: relative; display: block; width: 44px; height: 44px; border: 1px solid rgb(31 31 31 / .18); border-radius: 50%; transition: border-color .3s; }
-.header-menu-btn:hover .menu-icon { border-color: rgb(31 31 31 / .5); }
-.menu-icon span { position: absolute; left: 50%; top: 50%; width: 18px; height: 1px; background: currentColor; transition: transform .36s cubic-bezier(.22, .8, .3, 1); }
-.menu-icon span:first-child { transform: translate(calc(-50% - 4px), -3px); }
-.menu-icon span:last-child { transform: translate(calc(-50% + 4px), 3px); }
-.menu--opened .menu-icon span:first-child { transform: translate(-50%, 0) rotate(45deg); }
-.menu--opened .menu-icon span:last-child { transform: translate(-50%, 0) rotate(-45deg); }
+/* the original button (user 2026-10-02: 「改回原本的造型」): two 18 px lines, 1.5 px, 5 px apart, beside "Menu"; open, they cross into an X */
+.menu-icon { position: relative; display: block; width: 18px; height: 8px; }
+.menu-icon span { position: absolute; left: 0; width: 100%; height: 1.5px; background: currentColor; transition: transform .3s cubic-bezier(.22, .8, .3, 1); }
+.menu-icon span:first-child { top: 0; }
+.menu-icon span:last-child { bottom: 0; }
+.menu--opened .menu-icon span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.menu--opened .menu-icon span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
 .menu-label { display: block; height: 1.6em; line-height: 1.6em; overflow: hidden; }
 .menu-label span { display: block; transition: transform .36s cubic-bezier(.22, .8, .3, 1); }
 .menu--opened .menu-label span { transform: translateY(-100%); }
@@ -623,7 +623,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .menu-social { justify-self: start; }
 }
 @media (max-width: 767px) {
-  .menu-icon { width: 40px; height: 40px; }
   .menu-root { height: calc(100svh - var(--header-h)); }
   .menu-top { display: block; padding: 32px var(--page-gutter) 28px; }
   .menu-primary { flex-direction: column; gap: 2px; }
@@ -883,7 +882,13 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .bag-banner-copy p { margin-top: 14px; font-size: clamp(14px, 1.05vw, 16px); line-height: 1.8; color: rgb(255 255 255 / .82); }
 .bag-banner-button { margin-top: 26px; padding: 12px 22px; border: 1px solid rgb(255 255 255 / .7); font-size: 13px; letter-spacing: .12em; transition: background .3s, color .3s, border-color .3s; }
 .bag-banner-button:hover, .bag-banner-button:focus-visible { background: #fff; color: var(--color-ink); border-color: #fff; }
-@media (max-width: 767px) { .bag-banner { min-height: 72svh; } .bag-banner-image img { object-position: 30% 50%; } }
+/* phone: the copy moves to the foot of the photograph so it never covers the bag; a deeper shade there keeps it legible */
+@media (max-width: 767px) {
+  .bag-banner { min-height: 82svh; place-items: end center; }
+  .bag-banner-image img { object-position: 34% 40%; }
+  .bag-banner::before { background: linear-gradient(to bottom, transparent 45%, rgb(0 0 0 / .78) 88%); }
+  .bag-banner-copy { padding-bottom: 44px; }
+}
 .partners-statement { font-size: clamp(24px, 2.5vw, 42px); font-weight: 500; line-height: 1.35; letter-spacing: .02em; }
 .partners-statement:lang(en) { letter-spacing: -.025em; }
 .partners-screen { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: calc(100svh - var(--header-h)); background: var(--color-page); }

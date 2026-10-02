@@ -1,26 +1,21 @@
-// Partners screen — one viewport, split edge to edge: photograph left, statement right. Server component; content from @/data/content.
+// Partners screen → a full-bleed banner (user 2026-10-02: 「這一屏改為[the reference]這種形式，適當地修改圖片，我希望是深色漸層的
+// 背景襯托出人物與包包，並導購」), after the reference's "Explore the Collection": one wide photograph edge to edge, the dancer
+// and the white bag on a dark gradient, and over it, centred, the bag's name, its line and a square outline button to the bags.
+// Server component; content from @/data/content.
+import Link from "next/link";
 import { getContent } from "@/data/content";
 import { Picture } from "@/components/ui";
-import type { Locale } from "@/i18n/config";
+import { localeHref, type Locale } from "@/i18n/config";
 
 export default function Partners({ lang }: { lang: Locale }) {
-  const { partners } = getContent(lang);
-  // One screen, edge to edge (user 2026-10-01: 「這一屏我想要左右滿版，並拿掉合作洽詢的按鈕」): the photograph fills the left
-  // half from the left edge of the window, the statement sits in the right half. The photograph is shown whole (no cover
-  // crop: the dancer's hand reaches its right edge).
+  const { banner } = getContent(lang).partners;
   return (
-    <section id="partners" className="partners-screen">
-      <div className="partners-image" data-animation="clip">
-        <Picture img={partners.image} sizes="(min-width:1280px) 50vw, 100vw" />
-      </div>
-      <div className="partners-copy">
-        {/* Whole-block rise (not split lines): CJK subsets load after the preloader, so line splitting can reflow.
-            In the Chinese statement, Latin brand names stay on one line; the English statement wraps as ordinary prose. */}
-        <p className="partners-statement tc" data-animation="moveUp" data-delay="0.1">
-          {lang === "en" ? partners.statement : partners.statement.split(/([A-Za-z][A-Za-z .]*[A-Za-z])/).map((run, i) =>
-            /^[A-Za-z]/.test(run) ? <span key={i} className="md:whitespace-nowrap">{run}</span> : run,
-          )}
-        </p>
+    <section id="partners" className="bag-banner" aria-labelledby="bag-banner-title">
+      <div className="bag-banner-image" data-animation="fade"><Picture img={banner.image} fill fit="cover" animate={false} sizes="100vw" /></div>
+      <div className="bag-banner-copy" data-animation="moveUp" data-delay="0.1">
+        <h2 id="bag-banner-title" className="tc">{banner.title}</h2>
+        <p className="tc">{banner.line}</p>
+        <Link href={localeHref(lang, banner.cta.href)} className="bag-banner-button tc">{banner.cta.label}</Link>
       </div>
     </section>
   );
