@@ -46,11 +46,13 @@ const buildContent = (lang: Locale) => {
   // paragraph; the user's draft wrote CHARMVILLA, kept as the protected term CHARM VILLA.
   const manifesto = {
     paragraphs: [
-      t("藝術的日常尺度，來自職人的極致琢磨。", "The everyday measure of art comes from the artisan's patient refinement"),
-      t("一段交織的編織，耳畔的一道光影，茶湯中舒展的優雅姿態。\nCHARM VILLA 相信，真正的美，是讓極致工藝自然融入生活的日常節奏。",
-        "A plait woven through itself, a line of light at the ear, a form unfurling with quiet grace in the tea.\nCHARM VILLA believes true beauty lets the finest craft settle naturally into the rhythm of daily life."),
-      t("職人以時間磨礪材質，賦予作品可被觸摸的靈魂。\n當作品躍上肩頭、來到桌前，藝術，即是生活的本質。",
-        "Artisans hone the material over time and give each piece a soul you can touch.\nWhen a piece rises to the shoulder or comes to the table, art is the substance of life itself."),
+      t("藝術的日常尺度，\n來自職人的極致琢磨。", "The everyday measure of art comes from the artisan's patient refinement"),
+      // 2026-10-02 later (user: 「文案的敘述可以換句話說讓他字數變多語意優美，像段落呈現」): the same ideas retold as two full
+      // paragraphs, no line breaks inside them; the title stays as written.
+      t("一段在指間交織的編織，一道掠過耳畔的光影，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃裡，而在極致工藝自然融入生活的時刻：被拿起、被配戴、被細細品嘗，成為日常節奏的一部分。",
+        "A plait woven between the fingers, a line of light passing the ear, a small goldfish slowly unfurling in the tea. CHARM VILLA believes that true beauty is not kept in a distant display case but found where craft settles naturally into life: picked up, worn, tasted slowly, until it becomes part of the rhythm of the day."),
+      t("每一件作品，都從材質開始。職人以時間磨礪皮革、黃金與茶葉，反覆琢磨比例與細節，讓手的溫度留在形體之中，賦予作品可被觸摸的靈魂。當作品走出陳列，躍上肩頭、來到耳畔與桌前，藝術便有了日常的尺度，也成為生活的本質。",
+        "Every piece begins with its material. Over time the artisans hone leather, gold and tea leaves, returning again and again to proportion and detail, until the warmth of the hand stays in the form and the piece carries a soul you can touch. When it leaves the display for the shoulder, the ear and the table, art takes on the measure of the everyday and becomes the substance of life itself."),
     ],
     honours: {
       heading: t("國際專利與榮譽", "International patents and honours"),

@@ -12,6 +12,9 @@ import { SCROLLER_SELECTOR } from "@/lib/motion/scroller";
 // Brand story text screen. The image gallery that used to follow it became the "以手成形" carousel (CraftMoments, 2026-10-01).
 export default function Manifesto() {
   const { manifesto, tea } = getContent(useLocale());
+  const [title, ...body] = manifesto.paragraphs;
+  // each character fades in with the scroll; the text itself is read once by screen readers
+  const chars = (text: string) => <><span className="sr-only">{text}</span><span aria-hidden="true">{Array.from(text).map((char, j) => <span key={j} className="story-char">{char}</span>)}</span></>;
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -39,23 +42,22 @@ export default function Manifesto() {
     <section id="manifesto" ref={root} className="brand-story" aria-labelledby="story-heading">
       <div className="story-message">
         <div className="story-brush story-brush--message" aria-hidden="true"><InkBloom observe seed={11} /></div>
-        <div className="story-text-column">
-          <h2 id="story-heading" className="sr-only">The Gallery</h2>
-          <div className="story-copy tc">
-            {manifesto.paragraphs.map((text, i) => <p key={text} className={i === 0 ? "story-lead" : undefined}>
-              <span className="sr-only">{text}</span>
-              <span aria-hidden="true">{Array.from(text).map((char, j) => <span key={j} className="story-char">{char}</span>)}</span>
-            </p>)}
-          </div>
-          <div className="story-honours" aria-label={tea.honoursAria} data-brand-awards="">
-            <p className="story-honours-heading tc">{manifesto.honours.heading}</p>
-            <p className="story-honours-label tc">{manifesto.honours.patent}</p>
-            <ul className="story-honours-list">
-              {tea.awards.map(award => <li key={award.image.src}>
-                <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />
-                <p className="tc">{award.text}</p>
-              </li>)}
-            </ul>
+        {/* After the text-media block of jakobsencopenhagen.com (user 2026-10-02: 「標題跟內文分開欄位，並將內文字改小一點」): the title in
+            the first columns, the paragraphs set in beside it and a little lower, in smaller type. */}
+        <div className="story-text-column story-copy">
+          <h2 id="story-heading" className="story-title tc">{chars(title)}</h2>
+          <div className="story-body tc">
+            {body.map((text) => <p key={text}>{chars(text)}</p>)}
+            <div className="story-honours" aria-label={tea.honoursAria} data-brand-awards="">
+              <p className="story-honours-heading tc">{manifesto.honours.heading}</p>
+              <p className="story-honours-label tc">{manifesto.honours.patent}</p>
+              <ul className="story-honours-list">
+                {tea.awards.map(award => <li key={award.image.src}>
+                  <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />
+                  <p className="tc">{award.text}</p>
+                </li>)}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

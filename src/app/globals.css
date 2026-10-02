@@ -680,14 +680,14 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Brand story: reference-width × 2/3, scroll reading and a pinned image gallery. */
 .brand-story { position: relative; background: transparent; }
 .story-message { position: relative; overflow: visible; padding: clamp(80px, 9vw, 160px) 0 clamp(80px, 8vw, 150px); }
-.story-text-column { position: relative; z-index: 2; width: 60.2%; margin-left: var(--page-gutter); }
+.story-text-column { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); margin-inline: var(--page-gutter); align-items: start; }
+.story-title { white-space: pre-line; grid-column: 1 / span 3; font-size: clamp(17px, 1.35vw, 24px); line-height: 1.75; font-weight: 600; letter-spacing: .04em; }
+.story-body { grid-column: 4 / span 4; margin-top: clamp(56px, 5.5vw, 96px); font-size: clamp(14px, 1.02vw, 17px); line-height: 2.05; }
+.story-body > p + p { margin-top: 1.5em; }
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
-.story-copy { font-size: clamp(15px, 1.4vw, 28px); font-weight: 500; line-height: 1.85; letter-spacing: .04em; overflow-wrap: anywhere; }
-.story-copy p { margin: 0 0 1em; }
-.story-copy p, .about-story p { white-space: pre-line; } /* keeps the line breaks inside the user's paragraphs (copy 2026-10-02) */
-.story-copy p:last-child { margin-bottom: 0; }
-.story-copy .story-lead { font-weight: 600; }
-.story-honours { margin-top: 40px; }
+.story-copy { font-weight: 500; letter-spacing: .04em; overflow-wrap: anywhere; }
+.about-story p { white-space: pre-line; }
+.story-honours { margin-top: 56px; }
 .story-honours-heading { font-size: 13px; line-height: 1.8; font-weight: 600; }
 .story-honours-label { font-size: 12px; line-height: 1.8; color: #676767; }
 .story-honours-list { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 24px; }
@@ -713,8 +713,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .story-thumb-progress { position: absolute; z-index: 1; left: 0; right: 0; bottom: -3px; height: 2px; background: var(--color-gold); transform: scaleX(0); transform-origin: left; }
 .story-thumb:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 5px; }
 @media (max-width: 767px) {
-  .story-text-column { width: calc(100% - 2 * var(--page-gutter)); margin-inline: var(--page-gutter); }
-  .story-copy { font-size: 13.5px; line-height: 1.85; letter-spacing: .025em; }
+  .story-text-column { display: block; }
+  .story-title { font-size: 17px; }
+  .story-body { margin-top: 22px; font-size: 14px; line-height: 2; letter-spacing: .025em; }
   .story-honours { margin-top: 30px; }
   .story-honours-label { font-size: 10px; }
   .story-honours-list { flex-direction: column; gap: 40px; margin-top: 20px; }
