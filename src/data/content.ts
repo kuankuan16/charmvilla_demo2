@@ -276,7 +276,6 @@ const buildContent = (lang: Locale) => {
       labelZh: t("最新消息", ""),
       items: [
         { date: t("8 月 11 日", "Aug 11"), tag: t("禮盒預購", "Pre-order"), text: t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales.") },
-        { date: t("7 月 28 日", "Jul 28"), tag: t("媒體報導", "Press"), text: t("《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。", "Monocle interviews founder Su Jingmei: how one goldfish swam into the world's teacups.") },
         { date: t("7 月 2 日", "Jul 2"), tag: t("活動快訊", "Events"), text: t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi.") },
       ],
     },

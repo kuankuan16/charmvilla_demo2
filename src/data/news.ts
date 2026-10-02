@@ -33,17 +33,7 @@ const build = (lang: Locale): NewsEntry[] => {
         { links: [{ label: t("小鮮月禮盒｜純茶包", "Small Moon Gift Box | Tea Only"), href: "/products/small-moon-tea-gift-box" }, { label: t("大盈月禮盒｜純茶包", "Full Moon Gift Box | Tea Only"), href: "/products/full-moon-tea-gift-box" }] },
       ],
     },
-    {
-      slug: "monocle-interview", date: "2026-07-28", dateLabel: t("2026 年 7 月 28 日", "July 28, 2026"),
-      tag: t("媒體報導", "Press"), title: t("《Monocle》專訪創辦人蘇靜媚", "Monocle interviews founder Su Jingmei"),
-      summary: t("一尾金魚，如何游進世界的茶杯。", "How one goldfish swam into the world's teacups."),
-      card: site("craft-01-blossom-cup.webp", t("玻璃杯裡泡開一尾小金魚茶包", "A Goldfish Tea Bag unfurled in a glass cup")),
-      hero: site("craft-01-blossom-cup.webp", t("玻璃杯裡泡開一尾小金魚茶包", "A Goldfish Tea Bag unfurled in a glass cup")),
-      body: [
-        t("《Monocle》專訪創辦人蘇靜媚：一尾金魚，如何游進世界的茶杯。", "Monocle interviews founder Su Jingmei: how one goldfish swam into the world's teacups."),
-        { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },
-      ],
-    },
+    // 2026-10-02 (user: 「刪」): the Monocle interview entry was removed; its URL redirects to /news (next.config.ts).
     {
       slug: "goldfish-in-a-cup-eslite-nanxi", date: "2026-07-02", dateLabel: t("2026 年 7 月 2 日", "July 2, 2026"),
       tag: t("活動快訊", "Events"), title: t("「杯中金魚」期間限定茶席", "Goldfish in a Cup: a limited-time tea table"),
