@@ -245,7 +245,8 @@ const buildCatalog = (lang: Locale) => {
   const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a bird-shaped rest beside a cloud-shaped coaster, close view of a black tray table"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
   const coffeeTable = site("scene-coffee-table-tea-coasters.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARM VILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARM VILLA"), 1792, 2240);
-  const woodenOttomans = site("scene-wooden-ottomans.webp", t("兩片雲朵杯墊與兩支銀杏茶匙，放在芥末黃織布圓凳上", "Two cloud-shaped coasters and two ginkgo teaspoons on a mustard woven ottoman"));
+  // 2026-10-02 (user: 「改成只要出現銀杏茶匙，並補上品牌 logo」): the mustard ottomans with the coasters removed, one teaspoon with its engraving
+  const ginkgoOttoman = site("scene-ginkgo-teaspoon-ottoman.webp", t("芥末黃織布圓凳上，一支刻著 CHARM VILLA 的銀杏茶匙", "A ginkgo teaspoon engraved CHARM VILLA on a mustard woven ottoman"), 1376, 2048);
   const sceneLead: Record<string, Img[]> = {
     // the only scene of the Raw Gold earring, so its listing card has a hover image too. The user's chosen model (dark green
     // satin), the goldfish outline taken from the brand's own silhouette, matte gold generated
@@ -254,7 +255,7 @@ const buildCatalog = (lang: Locale) => {
     // black-and-white profile, only the earring in colour (user 2026-10-02: 側臉、黑白照片，只有耳環是彩色); a new image, the face
     // invented, generated with the site's own photograph of the earring as reference
     "diamond-goldfish-earrings": [site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的短髮女子，耳垂上的鑽石垂墜小金魚耳環是唯一的彩色", "Black-and-white profile of a short-haired woman with her eyes closed; the diamond goldfish drop earring on her lobe is the only colour"), 1792, 2240)],
-    "cloud-coaster": [coffeeTable, woodenSofa, woodenOttomans, woodenCloseup], "ginkgo-teaspoon-gift-box": [woodenOttomans, woodenSofa, coffeeTable],
+    "cloud-coaster": [coffeeTable, woodenSofa, woodenCloseup], "ginkgo-teaspoon-gift-box": [ginkgoOttoman, woodenSofa, coffeeTable],
     "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
   };
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
