@@ -695,10 +695,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Brand-story body copy: ~25% smaller (user 2026-09-30: 內文字再小一點). */
 .story-copy { font-weight: 500; letter-spacing: .04em; overflow-wrap: anywhere; }
 .about-story p { white-space: pre-line; }
-.story-honours { margin-top: 48px; }
-.story-honours-list { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-.story-honours-list li { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-.story-honours-list img { width: clamp(80px, 7vw, 120px); height: 85px; object-fit: contain; flex-shrink: 0; }
 .story-brush { position: absolute; pointer-events: none; mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha; }
 .story-brush--message { right: -17vw; top: 12%; width: 54vw; height: 56vw; opacity: .78; transform: rotate(15deg); mask-image: url('/media/hero/brushes/paint1_2_pc.webp'); }
 .story-gallery { position: relative; z-index: 2; height: 180svh; }
@@ -721,9 +717,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .story-text-column { display: block; }
   .story-title { font-size: 17px; }
   .story-body { margin-top: 22px; font-size: 14px; line-height: 2; letter-spacing: .025em; }
-  .story-honours { margin-top: 30px; }
-  .story-honours-list { gap: 28px; }
-  .story-honours-list img { width: 88px; height: 62px; }
   .story-brush--message { right: -60vw; top: 30%; width: 95vw; height: 140vw; opacity: .4; }
   .story-gallery { height: 145svh; }
   .story-gallery-stage { width: calc(100% - 2 * var(--page-gutter)); height: 72%; }
@@ -850,6 +843,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .craft-fig img { object-fit: cover; }
 .craft-smalls .craft-fig { grid-column: span 2; }
 .craft-large { grid-column: 7 / span 6; }
+/* the award marks on the tea photograph, one group (2026-10-02) */
+.award-badges { position: absolute; z-index: 2; top: clamp(14px, 1.7vw, 30px); right: clamp(14px, 1.7vw, 30px); display: flex; align-items: center; gap: clamp(14px, 1.5vw, 26px); pointer-events: none; }
+.award-badges img { width: clamp(58px, 5.4vw, 96px); height: auto; }
 .craft-story .craft-large { position: sticky; top: var(--craft-top); }
 /* the text ends well below its last line, so the photograph beside it is held for a moment before the row leaves */
 .craft-words { padding: clamp(36px, 4.2vw, 60px) 0 clamp(90px, 13vw, 220px); }

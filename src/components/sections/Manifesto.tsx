@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,7 +10,7 @@ import { SCROLLER_SELECTOR } from "@/lib/motion/scroller";
 
 // Brand story text screen. The image gallery that used to follow it became the "以手成形" carousel (CraftMoments, 2026-10-01).
 export default function Manifesto() {
-  const { manifesto, tea } = getContent(useLocale());
+  const { manifesto } = getContent(useLocale());
   const [title, ...body] = manifesto.paragraphs;
   // each character fades in with the scroll; the text itself is read once by screen readers
   const chars = (text: string) => <><span className="sr-only">{text}</span><span aria-hidden="true">{Array.from(text).map((char, j) => <span key={j} className="story-char">{char}</span>)}</span></>;
@@ -48,12 +47,6 @@ export default function Manifesto() {
           <h2 id="story-heading" className="story-title tc">{chars(title)}</h2>
           <div className="story-body tc">
             {body.map((text) => <p key={text}>{chars(text)}</p>)}
-            {/* only the two award marks (user 2026-10-02: the heading, the patent line and the captions 「刪」 — the copy now tells them) */}
-            <ul className="story-honours story-honours-list" aria-label={tea.honoursAria} data-brand-awards="">
-              {tea.awards.map(award => <li key={award.image.src}>
-                <Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="120px" />
-              </li>)}
-            </ul>
           </div>
         </div>
       </div>
