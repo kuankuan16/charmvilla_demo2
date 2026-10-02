@@ -1,13 +1,17 @@
 "use client";
 // Fixed header bar with the menu after solena-template.webflow.io (user 2026-10-02: 「漢堡選單…高度模仿並推理成我們適合用的」):
 // the bar stays in place; a page-coloured panel drops down from under it (clip-path, ~0.4 s), the rest of the page dims and
-// closes the menu on click. Panel: large category links in a row with secondary links under them, two cards at the right
-// (the Goldfish Tea Gifts with their awards, and the brand story), (the bottom row of stores and contacts was removed at the user's request, 2026-10-02). The button is a thin circle with two offset lines that cross into an X, its label rolling Menu → Close.
+// closes the menu on click. The button is two thin lines that cross into an X, its label rolling Menu → Close.
+// Panel (user 2026-10-02: 「選單想要分幾欄呈現，用 UI 設計師的角度給我優化主要與次要的群組關係，並通通改成全黑，hover 才變成金色加底線」,
+// and after loewe.com: 「hover 每一類別時會換右邊的圖」): the shop links are the primary group, set large in two labelled
+// columns (product types, then collections); the brand and service links are the secondary group, small, in a third column;
+// a tall photograph at the right changes to the hovered (or focused) category. All text is black; hover/focus turns gold
+// with a gold underline.
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { brand, sections, site } from "@/data/content";
+import { brand, sections } from "@/data/content";
 import { useT } from "@/i18n/LocaleProvider";
 import { localeHref, switchLocalePath, htmlLang, type Locale } from "@/i18n/config";
 import CartButton from "@/components/cart/CartButton";
@@ -56,16 +60,35 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = previousOverflow; };
   }, [open, close, innerPage]);
 
-  // Primary: every product category; secondary: about, stores, account, the shopping guide and the language.
-  const primary = [{ id: "all", label: "All Pieces", zh: "全部作品" } as const, ...sections.filter((s) => s.id !== "hero" && s.id !== "visit")];
-  const secondary = [
+  // Primary: the shop, split into product types and collections. Secondary: the brand pages, then service (account, guide, language).
+  type ShopId = "all" | (typeof sections)[number]["id"];
+  const label = (id: ShopId) => id === "all" ? t("全部作品", "All Pieces") : (zh ? sections.find((s) => s.id === id)!.zh : sections.find((s) => s.id === id)!.label);
+  const shopGroups: { title: string; ids: ShopId[] }[] = [
+    { title: t("品項", "Shop"), ids: ["all", "tea", "scents", "jewelry"] },
+    { title: t("系列", "Collections"), ids: ["bags", "abundance", "wood-fired"] },
+  ];
+  const brandLinks = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
     { href: localeHref(lang, "/news"), label: t("最新消息", "News") },
     { href: sectionHref("visit"), label: t("門市資訊", "Our stores") },
+  ];
+  const serviceLinks = [
     { href: sectionHref("account"), label: t("會員", "Account") },
     { href: localeHref(lang, "/shopping-guide"), label: t("購物須知", "Shopping guide") },
   ];
-  const teaCard = site("ottoman-tray-tea-cup-v4.webp", t("木托盤上一杯小金魚茶，金色茶標寫著 CHARM VILLA", "A cup of goldfish tea on a wooden tray, its gold tag reading CHARM VILLA"), 1792, 2240);
+  // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
+  const previews: Record<ShopId, string> = {
+    all: "scene-wooden-interior-sunlit.webp",
+    tea: "ottoman-tray-tea-cup-v4.webp",
+    scents: "scene-coffee-table-tea-coasters.webp",
+    jewelry: "scene-diamond-goldfish-earring-profile-bw.webp",
+    bags: "partners-male-dancer-c.webp",
+    abundance: "studio-prosperity-dessert-stand-hd.webp",
+    "wood-fired": "scene-wooden-tray-table-closeup.webp",
+    hero: "", visit: "",
+  };
+  const [preview, setPreview] = useState<ShopId>("all");
+  useEffect(() => { if (!open) setPreview("all"); }, [open]);
 
   return (
     <header data-header="" className={`site-header fixed left-0 top-0 z-30 w-full ${open ? "menu--opened" : ""}`}>
@@ -94,26 +117,35 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
       <button type="button" className="menu-scrim" aria-hidden="true" tabIndex={-1} onClick={close} />
       <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label={t("選單", "Menu")} className="menu-root" aria-hidden={!open} inert={!open}>
         <div className="menu-top">
-          <nav className="menu-nav" aria-label={t("商品分類", "Categories")}>
-            <ul className="menu-primary">
-              {primary.map((s) => <li key={s.id}><a href={sectionHref(s.id)} onClick={close} className="menu-link tc">{zh ? s.zh : s.label}</a></li>)}
-            </ul>
-            <ul className="menu-secondary">
-              {secondary.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="tc">{l.label}</a></li>)}
-              <li><a {...switchProps} className="tc">{switchName}</a></li>
-            </ul>
+          <nav className="menu-nav" aria-label={t("選單", "Menu")}>
+            {shopGroups.map((group) => (
+              <div key={group.title} className="menu-group menu-group--primary">
+                <p className="menu-group-title tc">{group.title}</p>
+                <ul>
+                  {group.ids.map((id) => (
+                    <li key={id}><a href={sectionHref(id)} onClick={close} onMouseEnter={() => setPreview(id)} onFocus={() => setPreview(id)} className="menu-link tc">{label(id)}</a></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div className="menu-group menu-group--secondary">
+              <p className="menu-group-title tc">{t("品牌", "Brand")}</p>
+              <ul>{brandLinks.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="menu-sublink tc">{l.label}</a></li>)}</ul>
+              <p className="menu-group-title menu-group-title--next tc">{t("服務", "Service")}</p>
+              <ul>
+                {serviceLinks.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="menu-sublink tc">{l.label}</a></li>)}
+                <li><a {...switchProps} className="menu-sublink tc">{switchName}</a></li>
+              </ul>
+            </div>
           </nav>
-          <a href={sectionHref("tea")} onClick={close} className="menu-card menu-card--feature">
-            <span className="menu-card-image"><Image src={teaCard.src} alt={teaCard.alt} fill sizes="(min-width:1024px) 24vw, 90vw" /></span>
-            <span className="menu-card-body">
-              <span className="menu-card-title tc">{t("小金魚茶包", "Goldfish Tea Bags")}</span>
-              <span className="menu-card-meta"><span className="tc">{t("德國 iF・紅點設計獎", "iF and Red Dot awards")}</span><span className="menu-card-arrow" aria-hidden="true" /></span>
-            </span>
+          <a href={sectionHref(preview)} onClick={close} className="menu-preview" tabIndex={-1} aria-hidden="true">
+            {(Object.keys(previews) as ShopId[]).filter((id) => previews[id]).map((id) => (
+              <span key={id} className={`menu-preview-image${id === preview ? " is-active" : ""}`}>
+                <Image src={`/media/site/${previews[id]}`} alt="" fill sizes="(min-width:1024px) 30vw, 1px" />
+              </span>
+            ))}
+            <span className="menu-preview-caption tc">{label(preview)}<span className="menu-card-arrow" /></span>
           </a>
-          <Link href={localeHref(lang, "/about")} onClick={close} className="menu-card menu-card--story">
-            <span className="menu-card-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"><path d="M7 17 17 7M9 7h8v8" /></svg></span>
-            <span className="menu-card-big tc">{zh ? <>品牌<br />故事</> : <>Our<br />story</>}</span>
-          </Link>
         </div>
       </div>
     </header>
