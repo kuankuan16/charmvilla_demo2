@@ -270,6 +270,8 @@ const buildCatalog = (lang: Locale) => {
   // the bird rest leads with the white CHARMVILLA box and a budding branch, regenerated in the oak-table scene's light
   // (user 2026-10-05: 「重新算這張圖，攝影風格依照剛才的筷架情境照」 for CV-0248)
   const listingSceneSite: Record<string, Img> = {
+    // a new lifestyle scene (user 2026-10-05: 「我現在要做豐盛點心盤的生品情境照」): the stand with a few petits fours and goldfish tea on an oak table, olive sofa in front
+    "prosperity-dessert-stand": site("scene-dessert-stand-oak-table-tea.webp", t("昏暗溫暖的客廳，橡木圓桌上的豐盛點心盤擺著幾樣小點心，旁邊一杯小金魚茶，前景是橄欖綠毛圈沙發", "In a warm, dim living room, the Abundance Dessert Tray on a round oak table with a few petits fours and a glass of goldfish tea, an olive bouclé sofa in front"), 1792, 2240),
     "bird-chopstick-rest": site("scene-bird-rest-gift-box-v2.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a grey-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1688, 2110) /* levelled 2.5° (user 2026-10-05: 「修正照片的水平線」) */,
   };
   // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
