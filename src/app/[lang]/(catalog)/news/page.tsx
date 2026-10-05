@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表、期間限定活動與媒體報導。", "Launches, limited-time events and press."), alternates: alternatesFor(lang, "/news") };
 }
 
-// After verin-template.webflow.io/news: a large heading and one line, then a three-column grid of cards — photograph with
-// the category on a small label at its top right, title, one line — set close together (4 px across, 32 px down).
+// The list in the card style the About page used (user 2026-10-05: 「最新消息清單版型改這個」): three columns with the page's
+// gaps, a 4:5 photograph, then the date and category on one line, the title and one line of summary.
 export default async function NewsPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -29,7 +29,8 @@ export default async function NewsPage({ params }: Props) {
         {getNews(lang).map((n) => (
           <li key={n.slug}>
             <Link href={localeHref(lang, `/news/${n.slug}`)} className="news-card">
-              <span className="news-card-image"><Picture img={n.card} fill fit="cover" animate={false} sizes="(min-width:768px) 32vw, 100vw" /><span className="news-card-tag tc">{n.tag}</span></span>
+              <span className="news-card-image"><Picture img={n.card} fill fit="cover" animate={false} sizes="(min-width:768px) 32vw, 100vw" /></span>
+              <span className="news-card-meta tc"><time dateTime={n.date}>{n.dateLabel}</time>・{n.tag}</span>
               <span className="news-card-title tc">{n.title}</span>
               <span className="news-card-summary tc">{n.summary}</span>
             </Link>

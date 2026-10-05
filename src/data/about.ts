@@ -28,8 +28,8 @@ export const getAbout = (lang: Locale) => {
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     hero: site("scene-pink-bag-armchair-olive.webp", t("粉紅色編織提把皮革包放在橄欖綠布面單椅上，背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶", "The pink Braided Leather Bag on an olive bouclé armchair before an orange field painting, a glass of goldfish tea on an oak side table in front"), 1760, 2336),
     // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a call to the
-    // collection under the intro, a link under each chapter, the makers, selected pieces with their prices and a bag button,
-    // the store's service terms, the latest news, questions and answers, and a closing call. All facts come from
+    // collection under the intro, a link under each chapter,
+    // the store's service terms, questions and answers. All facts come from
     // commerce.ts (the official store's shopping guide), content.ts (the stores) and news.ts.
     cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
     figures: [
@@ -82,7 +82,7 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "everyday", index: "04", side: "left",
-        cta: { label: t("看精選作品", "See selected pieces"), href: "#about-shop-title" },
+        cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
           t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，逐件手工完成的柴燒鳥形筷架，可收納、重複使用的豐盛點心盤，K18 金的小金魚金飾，以及提把取得發明專利的交織系列皮革包。",
@@ -105,13 +105,6 @@ export const getAbout = (lang: Locale) => {
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
       { id: "wood-fired", image: site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240) },
     ] satisfies AboutRange[],
-    makersTitle: t("做作品的人", "The makers"),
-    makersIntro: t("每一件作品，都經過職人的手。", "Every piece passes through an artisan's hands."),
-    shopTitle: t("精選作品", "Selected pieces"),
-    shopIntro: t("從小金魚茶包到金飾與器物，挑一件帶回日常。", "From the Goldfish Tea Bags to jewelry and objects for the table, choose one to take home."),
-    // one priced piece from each line that can go straight into the bag (no tea to choose, not sold out)
-    shopSlugs: ["reunion-paulownia-gift-box", "pearl-chain-goldfish-earrings", "cloud-coaster", "prosperity-dessert-stand"],
-    shopMore: { label: t("欣賞全部作品", "View all pieces"), href: "/collections/all" },
     // the official store's terms (commerce.ts, www.charmvilla.com.tw, read 2026-10-02)
     benefits: [
       { id: "shipping", title: t("滿 NT$ 2,000 免運", "Free delivery from NT$ 2,000"), text: t("未滿酌收運費 NT$ 120，可寄送台灣與港澳。", "Below that, delivery is NT$ 120. We ship to Taiwan, Hong Kong and Macau."), href: "/shopping-guide#shipping" },
@@ -119,8 +112,6 @@ export const getAbout = (lang: Locale) => {
       { id: "delivery", title: t("約 5–7 個工作天送達", "Delivered in about 5–7 working days"), text: t("訂單成立後翌日起算；ATM 匯款於確認款項後約 5 個工作天。", "Counted from the day after the order; about 5 working days after an ATM payment is confirmed."), href: "/shopping-guide#shipping" },
       { id: "returns", title: t("七日鑑賞期", "Seven days to decide"), text: t("收到商品後七日內可退回；客服電話 02-2542-0303（10:00–21:00）。", "Return within seven days of receiving your order; call 02-2542-0303 (10:00–21:00)."), href: "/shopping-guide#returns" },
     ] satisfies { id: string; title: string; text: string; href: string }[],
-    newsTitle: t("最新消息", "Latest news"),
-    newsMore: { label: t("看全部消息", "All news"), href: "/news" },
     faqTitle: t("常見問題", "Frequently asked questions"),
     faq: [
       { q: t("運費怎麼計算？", "How much is delivery?"), a: t("單筆訂單滿 NT$ 2,000 免運費，未滿則酌收運費 NT$ 120。超商取貨單筆最多寄送 4 盒。", "Orders of NT$ 2,000 or more ship free; below that, delivery is NT$ 120. Convenience-store pickup takes up to 4 boxes per order.") },
@@ -131,13 +122,6 @@ export const getAbout = (lang: Locale) => {
       { q: t("哪裡可以看到實品？", "Where can I see the pieces?"), a: t("台北晶華門市（麗晶精品 B1，10:00–21:00 全年無休）與京都門市（寺町通二條，週六・週日 11:00–18:00）。", "At Regent Taipei (Regent Galleria B1, 10:00–21:00 every day) and in Kyoto (Teramachi-dori Nijo, Saturday and Sunday 11:00–18:00).") },
     ],
     faqMore: { label: t("看完整購物須知", "Read the full shopping guide"), href: "/shopping-guide" },
-    final: {
-      title: t("走進 CHARM VILLA", "Step into CHARM VILLA"),
-      body: "Enjoy a charming life and a charming world in CHARM VILLA.",
-      primary: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
-      secondary: { label: t("門市資訊", "Our stores"), href: "/#visit" },
-      image: site("store-regent-2k.webp", t("CHARM VILLA 晶華門市入口與陳列", "The entrance and displays of CHARM VILLA at Regent Taipei"), 2560, 1536),
-    },
     sourcesTitle: t("參考資料", "Sources"),
     sources: [
       { label: t("《台灣光華雜誌》專訪，陳建瑋，2015 年 7 月", "Taiwan Panorama interview, Kobe Chen, July 2015"),
