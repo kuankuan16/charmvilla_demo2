@@ -84,23 +84,25 @@ const buildCatalog = (lang: Locale) => {
   // "bezel diamond at the mouth" listing did not exist as a product; it and "single diamond" merged into 鑽石系列 (redirects in next.config.ts).
   // 2026-10-01 (user): 鑽石系列 has two styles — 垂墜 (fish + short chain + claw-set drop) and 耳釘 (stud, no drop). Scene photos are
   // sorted by which style they show: drop = CV-0370/0371/0372 + drop sketch; stud = CV-0376/0374/0373 + stud sketch.
-  const jewelrySlugs = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "diamond-goldfish-stud-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
-  const jewelryEnglish = ["PEARL CHAIN", "DIAMOND DROP", "DIAMOND STUD", "TWIN GOLDFISH", "RAW GOLD"];
+  const jewelrySlugs = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "diamond-goldfish-stud-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings", "diamond-bezel-goldfish-earrings"];
+  const jewelryEnglish = ["PEARL CHAIN", "DIAMOND DROP", "DIAMOND STUD", "TWIN GOLDFISH", "RAW GOLD", "DIAMOND BEZEL"];
   // the official store's series of each piece (如魚得水 › 珍珠系列／鑽石系列／雙魚系列／璞金系列)
-  const jewelrySeries = [t("珍珠系列", "Pearl Series"), t("鑽石系列", "Diamond Series"), t("鑽石系列", "Diamond Series"), t("雙魚系列", "Twin Series"), t("璞金系列", "Raw Gold Series")];
+  const jewelrySeries = [t("珍珠系列", "Pearl Series"), t("鑽石系列", "Diamond Series"), t("鑽石系列", "Diamond Series"), t("雙魚系列", "Twin Series"), t("璞金系列", "Raw Gold Series"), t("鑽石系列", "Diamond Series")];
   const jewelryDetails = [
     t("珍珠、長鏈與金魚", "Pearl, long chain and goldfish"),
     t("金魚、短鏈與爪鑲垂墜圓鑽", "Goldfish, short chain and a claw-set round diamond drop"),
     t("單尾金魚耳釘、魚口圓鑽、無垂墜", "Single goldfish stud, round diamond at the mouth, no drop"),
     t("兩尾金魚以短鏈相連", "Two goldfish joined by a short chain"),
     t("單尾小金魚、霧面金屬表面", "Single small goldfish, matte metal surface"),
+    t("金魚、短鏈與包鑲垂墜圓鑽", "Goldfish, short chain and a bezel-set round diamond drop"),
   ];
   const jewelryExtra: Record<number, Img[]> = {
     // pearl chain: the olive-coat portrait among ivory pleats (CV-0379) removed (user 2026-10-02: 「刪」)
     0: [gallery("CV-0377", t("珍珠長鏈小金魚耳環・石面光影", "Pearl Chain Goldfish Earrings in light and shadow on stone")), gallery("CV-0380", t("珍珠長鏈小金魚耳環・米白衣領", "Pearl Chain Goldfish Earrings against a cream collar"))],
-    1: [gallery("CV-0372", t("吐鑽小金魚耳環｜爪鑲・配戴", "Goldfish Earrings, Diamond Series drop, as worn")), gallery("CV-0370", t("吐鑽小金魚耳環｜爪鑲・暗調肖像", "Goldfish Earrings, Diamond Series drop, a low-key portrait")), gallery("CV-0371", t("吐鑽小金魚耳環｜爪鑲・側臉", "Goldfish Earrings, Diamond Series drop, in profile")), site("goldfish-drop-sketch.webp", t("吐鑽小金魚耳環｜爪鑲・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series drop, charcoal sketch of the piece as worn"), 896, 1120)],
     // stud: the colour photograph of the stud as worn (CV-0373) was removed and the charcoal sketch kept (user 2026-10-02: 「保留素描的」)
     2: [gallery("CV-0374", t("單鑽小金魚耳環・深綠靜影", "Goldfish Earrings, Diamond Series stud, a still life in deep green")), site("goldfish-stud-sketch.webp", t("單鑽小金魚耳環・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series stud, charcoal sketch of the piece as worn"), 896, 1120)],
+    // CV-0372/0370/0371 and the drop sketch show the bezel setting (checked 2026-10-05), so they belong to 包鑲, not 爪鑲
+    5: [gallery("CV-0372", t("吐鑽小金魚耳環｜包鑲・配戴", "Goldfish Earrings, Diamond Series bezel, as worn")), gallery("CV-0370", t("吐鑽小金魚耳環｜包鑲・暗調肖像", "Goldfish Earrings, Diamond Series bezel, a low-key portrait")), gallery("CV-0371", t("吐鑽小金魚耳環｜包鑲・側臉", "Goldfish Earrings, Diamond Series bezel, in profile")), site("goldfish-drop-sketch.webp", t("吐鑽小金魚耳環｜包鑲・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series bezel, charcoal sketch of the piece as worn"), 896, 1120)],
     // twin: the as-worn photograph among ivory pleats (CV-0378) was removed (user 2026-10-02: 「刪」), so the twin has no scene
   };
   const jewelryEditorial = [
@@ -129,10 +131,16 @@ const buildCatalog = (lang: Locale) => {
       title: t("只留下輪廓", "Only the outline remains"),
       body: t("少了亮面的反射，形狀便更安靜。魚身與尾鰭的每一處轉折都有被看見的空間，配戴時像一枚貼近耳畔的小印記。", "Without a polished surface to reflect, the shape grows quieter. Every turn of body and tail fin has room to be seen; worn, it is like a small mark kept close to the ear."),
     },
+    {
+      description: t("一尾小金魚停在耳畔，短鏈之下垂著一顆圓鑽，鑽石外圍由一圈金邊包住。金面與鑽石隨動作各自接住光。", "One small goldfish rests at the ear; below a short chain hangs a round diamond held in a rim of gold. Gold and diamond each catch the light as you move."),
+      title: t("金邊裡的一點光", "A point of light held in gold"),
+      body: t("包鑲把鑽石收進一圈金邊，輪廓更圓也更完整。金魚停在耳畔，圓鑽隨短鏈輕移，近看能讀出金邊與鑽石的分界。", "The bezel gathers the diamond into a ring of gold, so the outline is rounder and complete. The goldfish stays at the ear while the diamond moves on its short chain; up close you can read the line between gold and stone."),
+    },
   ];
   // www.charmvilla.com.tw (2026-10-02): K18 gold, made in Taiwan, sold per single earring, made to order in about 25–60 days,
   // not shipped overseas. List prices only where the official page is certainly this piece.
-  const jewelryPrices: Record<string, number> = { "pearl-chain-goldfish-earrings": 9600, "twin-goldfish-earrings": 9600, "raw-gold-goldfish-earrings": 5500 };
+  // 2026-10-05: 爪鑲 (id 128) 8,600, 單鑽 (id 132) 9,600 and 包鑲 (id 180) 10,300, matched to the official pages by photograph
+  const jewelryPrices: Record<string, number> = { "pearl-chain-goldfish-earrings": 9600, "twin-goldfish-earrings": 9600, "raw-gold-goldfish-earrings": 5500, "diamond-goldfish-earrings": 8600, "diamond-goldfish-stud-earrings": 9600, "diamond-bezel-goldfish-earrings": 10300 };
   const jewelryFacts = (slug: string) => [
     { label: t("材質", "Material"), value: slug === "pearl-chain-goldfish-earrings" ? t("K18 純金、珍珠", "18K gold, pearl") : t("K18 純金", "18K gold") },
     { label: t("販售單位", "Sold as"), value: t("單只（單耳）", "A single earring") },
@@ -140,7 +148,9 @@ const buildCatalog = (lang: Locale) => {
     { label: t("製作時間", "Making time"), value: t("訂製商品，約 25–60 天；訂購前請先來電洽詢", "Made to order in about 25–60 days; please call before ordering") },
     { label: t("寄送", "Delivery"), value: t("金飾不提供海外寄送", "Jewelry is not shipped overseas") },
   ];
-  const jewelryProducts: Product[] = jewelry.items.map((p, i) => ({
+  // the bezel-set drop sits next to the claw-set one
+  const jewelryOrder = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "diamond-bezel-goldfish-earrings", "diamond-goldfish-stud-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
+  const jewelryProducts: Product[] = jewelry.items.map((p, i): Product => ({
     slug: jewelrySlugs[i], category: "jewelry", name: p.title, english: jewelryEnglish[i],
     summary: p.desc, description: jewelryEditorial[i].description,
     image: p.image, views: [{ label: t("商品照", "Product photograph"), image: p.image }, ...(jewelryExtra[i] || []).map((image, j) => ({ label: t(`情境 ${j + 1}`, `Scene ${j + 1}`), image }))],
@@ -148,7 +158,7 @@ const buildCatalog = (lang: Locale) => {
     facts: [{ label: t("系列", "Series"), value: jewelrySeries[i] }, { label: t("組成", "Parts"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
     ...(jewelryPrices[jewelrySlugs[i]] ? { price: { amount: jewelryPrices[jewelrySlugs[i]], currency: "TWD" as const } } : {}),
     story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
-  }));
+  })).sort((a, b) => jewelryOrder.indexOf(a.slug) - jewelryOrder.indexOf(b.slug));
 
   // Seasonal editions lead the tea listing; the 16 official gift boxes follow.
   const teaProducts: Product[] = [...christmasGiftProductsFor(lang), ...teaGiftProductsFor(lang)];
@@ -159,10 +169,7 @@ const buildCatalog = (lang: Locale) => {
       summary: t("把點心與茶，安放在同一席風景。", "Abundance Dessert Tray · Paper serving set"),
       detail: t("以點心盤整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only."),
       story: { title: t("餐桌上的高與低", "Highs and lows on the table"), body: t("擺放，也是一種構圖。點心有了不同的高度，杯與盤之間便多了可觀看的層次；每次相聚，都能重新安排這一席景致。", "Arranging is a kind of composition. With sweets at different heights there are more layers to look at between cup and plate, and every gathering is a chance to set the scene anew.") } },
-    { slug: "prosperity-stand-gift-box", name: t("豐盛點心盤｜包裝禮盒", "Dessert Stand with Gift Box"), en: "DESSERT STAND / GIFT BOX", series: prosperity, ids: ["CV-0121", "CV-0068"],
-      summary: t("一份關於茶席，也關於相聚的心意。", "A gesture about the tea table, and about gathering."),
-      detail: t("從點心盤到包裝，完整觀看豐盛系列的贈禮形式。", "From the stand to its packaging: the Prosperity Series as it is given."),
-      story: { title: t("從打開禮盒開始", "It begins with opening the box"), body: t("送出一件器物，也邀請對方想像它的位置。點心盤從盒中來到桌上，與家中的杯盤相伴，禮物便開始參與下一次相聚。", "To give an object is to invite someone to imagine where it will sit. The stand moves from box to table, keeps company with the cups and plates of the house, and the gift begins to take part in the next gathering.") } },
+    // 豐盛點心盤｜包裝禮盒 removed: the official store sells one product, 豐盛點心盤 (user 2026-10-05: 「照官網的」); the URL redirects
     // 2026-10-02 (user: 「這些商品是分開販售，不要擅自合併」): the cloud coasters are their own product on www.charmvilla.com.tw
     // (id 156); the old "木質杯墊與茶匙" listing merged them with the ginkgo teaspoon, which is sold on its own below.
     { slug: "cloud-coaster", name: t("雲朵杯墊", "Cloud Coaster"), en: "CLOUD COASTER", series: wooden, ids: ["CV-0232"],
@@ -194,13 +201,13 @@ const buildCatalog = (lang: Locale) => {
       { label: t("使用注意", "Use"), value: t("點心紙僅限常溫、單次使用，請勿加熱；遠離火源，存放於乾燥處", "Dessert paper for room temperature and single use only; do not heat. Keep away from fire and store dry") },
       { label: t("設計", "Design"), value: "蘇靜媚" },
     ],
-    "prosperity-stand-gift-box": [{ label: t("內容物", "Contents"), value: t("豐盛點心盤、包裝禮盒", "Abundance dessert stand, gift box") }],
     "bird-chopstick-rest": [
       { label: t("製作", "Making"), value: t("逐件手工塑形與修整，每件色澤與漸層略有不同", "Shaped and finished by hand; color and gradient vary slightly from piece to piece") },
       { label: t("清潔方式", "Care"), value: t("僅限手洗，不可使用洗碗機", "Hand wash only; not dishwasher safe") },
     ],
   };
   const teawareOfficial: Record<string, { price: number; facts: { label: string; value: string }[] }> = {
+    "prosperity-dessert-stand": { price: 1880, facts: [] }, // official id 705, 豐盛系列｜豐盛點心盤 (2026-10-05); its facts are above
     "cloud-coaster": { price: 1880, facts: [
       { label: t("販售單位", "Sold as"), value: t("6 片／組", "6 per set") },
       { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
@@ -254,7 +261,7 @@ const buildCatalog = (lang: Locale) => {
   // The scene that used to be the cover leads the scenes.
   const listingScene: Record<string, string> = {
     "braided-leather-bag-white": "CV-0422", "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
-    "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376",
+    "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-stud-earrings": "CV-0376",
   };
   // the bird rest leads with the white CHARMVILLA box and a budding branch, regenerated in the oak-table scene's light
   // (user 2026-10-05: 「重新算這張圖，攝影風格依照剛才的筷架情境照」 for CV-0248)
@@ -302,6 +309,8 @@ const buildCatalog = (lang: Locale) => {
       site("scene-raw-gold-earring-model.webp", t("璞金小金魚耳環配戴在耳垂上，霧面金，墨綠緞面", "Raw Gold goldfish earring worn on the earlobe, matte gold, against dark green satin"))],
     // black-and-white profile, only the earring in colour (user 2026-10-02: 側臉、黑白照片，只有耳環是彩色); a new image, the face
     // invented, generated with the site's own photograph of the earring as reference
+    // the bezel: the brand's CV-0371 turned black and white with only the earring kept in colour (2026-10-05, no generation)
+    "diamond-bezel-goldfish-earrings": [site("scene-diamond-bezel-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的女子在布幔之間，耳垂上的包鑲吐鑽小金魚耳環是唯一的彩色", "Black-and-white profile of a woman with closed eyes between drapes; the bezel-set diamond goldfish earring is the only colour"), 1920, 2400)],
     "diamond-goldfish-earrings": [site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的短髮女子，耳垂上的鑽石垂墜小金魚耳環是唯一的彩色", "Black-and-white profile of a short-haired woman with her eyes closed; the diamond goldfish drop earring on her lobe is the only colour"), 1792, 2240)],
     "cloud-coaster": [coffeeTable, woodenSofa, woodenCloseup], "ginkgo-teaspoon-gift-box": [traySofa, woodenSofa, coffeeTable],
     "wooden-chopsticks": [woodenCloseup], // off the bird page (user 2026-10-05: 「刪」)

@@ -134,6 +134,8 @@ const buildContent = (lang: Locale) => {
       { n: "02b.", title: t("單鑽小金魚耳環", "Goldfish Earrings · Diamond Series · Stud"), desc: t("一尾小金魚停在耳畔，魚口一點圓鑽的光。", "One small goldfish rests at the ear, a point of diamond light at its mouth."), image: gallery("CV-0376", t("單鑽小金魚耳環・暖金緞光", "Goldfish Earrings, Diamond Series stud, on warm gold satin"), 1920, 2400) },
       { n: "03.", title: t("雙星小金魚耳環", "Goldfish Earrings · Twin Series"), desc: t("一尾停在耳畔，一尾隨短鏈垂落。", "One rests at the ear; the other falls on a short chain."), image: site("jewelry-twin.webp", t("雙星小金魚耳環・商品照", "Goldfish Earrings, Twin Series, product photograph"), 1200, 1500) },
       { n: "04.", title: t("小金魚耳環", "Goldfish Earrings · Raw Gold Series"), desc: t("霧面金屬的一尾小金魚，貼近耳畔。", "A single small goldfish in matte metal, close to the ear."), image: site("jewelry-raw-gold.webp", t("小金魚耳環・商品照", "Goldfish Earrings, Raw Gold Series, product photograph"), 1200, 1500) },
+      // 吐鑽小金魚耳環｜包鑲｜ (official id 180, 2026-10-05: 「就官網有資料就上」); placed after the claw-set drop in catalog.ts
+      { n: "02c.", title: t("吐鑽小金魚耳環｜包鑲", "Goldfish Earrings · Diamond Series · Bezel"), desc: t("魚身之下，一顆包鑲圓鑽隨短鏈輕垂。", "Beneath the fish, a bezel-set round diamond hangs lightly from a short chain."), image: site("studio-diamond-bezel-goldfish-earrings-wall-v1.webp", t("吐鑽小金魚耳環｜包鑲・商品照", "Goldfish Earrings, Diamond Series bezel, product photograph"), 2000, 2500) },
     ],
     craft: {
       label: "CRAFT:",
