@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
   return {
-    title: t("關於 CHARM VILLA｜子村莊園", "About | CHARM VILLA"),
+    title: t("關於 CHARM VILLA", "About | CHARM VILLA"),
     description: getAbout(lang).intro,
     alternates: alternatesFor(lang, "/about"),
   };
@@ -38,7 +38,6 @@ export default async function AboutPage({ params }: Props) {
         <div className="about-hero-title">
           <p className="catalog-eyebrow tc">{about.eyebrow}</p>
           <h1>{about.title}</h1>
-          <p className="about-hero-sub tc">{about.subtitle}</p>
         </div>
         <div className="about-hero-copy">
           <p className="about-slogan tc">{about.slogan}</p>

@@ -1042,8 +1042,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    the slogan again and the sources. Paragraphs 17px, notes 13px (type floor). */
 .about-page { padding-bottom: clamp(60px, 7vw, 120px); }
 .about-hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; align-items: end; padding: 65px var(--page-gutter) 50px; }
-.about-hero h1 { margin-top: 25px; font-size: clamp(55px, 9.8vw, 167px); font-weight: 500; line-height: .95; letter-spacing: -.06em; }
-.about-hero-sub { margin-top: 14px; font-size: 20px; letter-spacing: .3em; color: rgb(31 31 31 / .64); }
+.about-hero h1 { margin-top: 25px; font-size: clamp(55px, 9.8vw, 167px); font-weight: 300; line-height: .95; letter-spacing: -.02em; } /* lighter, and no letters touching (user 2026-10-05: 「改細一點」) */
 .about-hero-copy { max-width: 440px; justify-self: end; }
 .about-slogan { font-size: 23px; font-weight: 500; line-height: 1.6; }
 .about-intro { margin-top: 20px; font-size: 17px; line-height: 1.9; color: rgb(31 31 31 / .8); }
