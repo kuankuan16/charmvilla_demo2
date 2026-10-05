@@ -269,7 +269,7 @@ const buildCatalog = (lang: Locale) => {
     "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Songbird Chopsticks Rest close up, chopsticks resting on the bird, charcoal behind")), site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240)],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
-    site("scene-pink-bag-armchair-2k-v3-tagfix.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶、雲朵杯墊與銀杏茶匙", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea, a Cloud Coaster and a Ginkgo Style Tea Spoon"), 1760, 2336)],
+    site("scene-pink-bag-armchair-olive.webp", t("編織提把皮革包・粉紅色，放在橄欖綠布面單椅上；背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶與 CHARM VILLA 茶標", "Braided Leather Bag in pink on an olive bouclé armchair; an orange field painting behind, and on an oak side table in front a glass of goldfish tea with its CHARM VILLA tag"), 1760, 2336)],
   };
   // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
   // they lead the scenes of the pieces they show.
