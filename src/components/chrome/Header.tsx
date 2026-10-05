@@ -49,6 +49,12 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const previouslyOpen = useRef(false);
 
   const close = useCallback(() => setOpen(false), []);
+  // With a mouse, leaving the panel for the dimmed page below closes the menu (user 2026-10-05: 「滑鼠移開選單背景的 div 也會關閉」);
+  // a short grace period lets the pointer slip out and come back. Touch keeps tap-to-close.
+  const leaveTimer = useRef<number | undefined>(undefined);
+  const cancelLeave = () => window.clearTimeout(leaveTimer.current);
+  const closeOnLeave = (e: React.PointerEvent) => { if (e.pointerType !== "mouse" || !open) return; cancelLeave(); leaveTimer.current = window.setTimeout(close, 200); };
+  useEffect(() => () => window.clearTimeout(leaveTimer.current), []);
 
   useEffect(() => {
     const s = getScroller();
@@ -144,8 +150,8 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
       </div>
 
       {/* the page under the panel dims; a click there closes the menu */}
-      <button type="button" className="menu-scrim" aria-hidden="true" tabIndex={-1} onClick={close} />
-      <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label={t("選單", "Menu")} className="menu-root" aria-hidden={!open} inert={!open}>
+      <button type="button" className="menu-scrim" aria-hidden="true" tabIndex={-1} onClick={close} onPointerEnter={closeOnLeave} onPointerLeave={cancelLeave} />
+      <div id="site-menu" ref={panelRef} data-menu="" role="dialog" aria-modal="true" aria-label={t("選單", "Menu")} className="menu-root" aria-hidden={!open} inert={!open} onPointerEnter={cancelLeave}>
         <div className="menu-top">
           <nav className="menu-nav" aria-label={t("選單", "Menu")}>
             {shopGroups.map((group) => (
