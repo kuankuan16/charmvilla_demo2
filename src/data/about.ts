@@ -66,7 +66,8 @@ export const getAbout = (lang: Locale) => {
           t("如今小金魚茶包在全球 34 個國家取得設計專利，也曾登上 Bored Panda、Contemporist 等國際媒體；品牌並在京都寺町開設門市。",
             "Today the Goldfish Tea Bag holds design patents in 34 countries and has appeared in international media such as Bored Panda and Contemporist; the brand also has a store on Teramachi in Kyoto."),
         ],
-        image: gallery("CV-0166", t("一群白色紙金魚在牆前游動，CHARM VILLA 展覽", "A school of white paper goldfish swimming before a wall, a CHARM VILLA installation")),
+        // the brand's photograph of one paper goldfish on a mirror among white blossoms (CV-0169; user 2026-10-05: 「換」 for the school of fish, CV-0166)
+        image: gallery("CV-0169", t("一尾白色紙金魚停在鏡面上，倒影與白色花叢", "A single white paper goldfish on a mirror, its reflection among white blossoms"), 1200, 1800),
       },
       {
         id: "everyday", index: "04", side: "left",
