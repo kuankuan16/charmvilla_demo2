@@ -37,10 +37,11 @@ export const getAbout = (lang: Locale) => {
         id: "origin", index: "01", side: "right",
         title: t("起點：一個關於品牌的念頭", "Where it began"),
         body: [
-          t("創辦人蘇靜媚在德國科隆參展時，開始思考一個問題：身邊有那麼多優秀的設計人才，為什麼沒有讓人記得的品牌？",
-            "While exhibiting in Cologne, founder Su Ching-mei began to ask a question: with so many talented designers around her, why were there no brands people remembered?"),
-          t("這個念頭成了 CHARM VILLA 的起點：以打造迷人的家居生活為出發點，用設計創造屬於自己的品牌。",
-            "That question became the starting point of CHARM VILLA: to begin from a charming home life, and to build a brand of its own through design."),
+          // the original wording is back (user 2026-10-05: 「加回原文」), as reported by Taiwan Panorama, July 2015
+          t("創辦人蘇靜媚曾在德國科隆參展，聽見外國人看著台灣館說：「台灣是複製大王。」台灣有那麼多優秀的設計人才，為什麼沒有響亮的品牌？",
+            "At an exhibition in Cologne, founder Su Ching-mei heard visitors to the Taiwan Pavilion call Taiwan a land of imitation. Taiwan had so many talented designers; why did it have no brands of renown?"),
+          t("這個念頭成了 CHARM VILLA 的起點：以打造迷人的家居生活為出發點，用設計說台灣自己的故事。",
+            "That question became the starting point of CHARM VILLA: to begin from a charming home life, and to tell Taiwan's own story through design."),
         ],
         // the brand's installation photograph CV-0215, enhanced to 2K with Higgsfield's upscaler (user 2026-10-05)
         image: site("about-installation-2k.webp", t("沿著手繪牆面游動的白色小金魚裝置，CHARM VILLA 展覽", "A shoal of white paper goldfish along a painted wall, a CHARM VILLA installation"), 2400, 1604),
