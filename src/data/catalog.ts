@@ -279,7 +279,6 @@ const buildCatalog = (lang: Locale) => {
   const woodenCloseup = site("scene-wooden-tray-table-closeup-v2.webp", t("木筷擱在鳥形筷架上，旁邊一片刻著 CHARMVILLA 的雲朵杯墊，黑色托盤邊几，後方是橄欖綠毛呢沙發", "Wooden chopsticks on a Songbird Chopsticks Rest beside a Cloud Coaster engraved CHARMVILLA on a black tray table, an olive bouclé sofa behind"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
   const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARM VILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARM VILLA"), 1792, 2240);
-  // 2026-10-02 (user: 「改成只要出現銀杏茶匙，並補上品牌 logo」): the mustard ottomans with the coasters removed, one teaspoon with its engraving
   // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05: 「換剛剛那張」 on the spoon's
   // ottoman photograph, which stays in the repo)
   const traySofa = site("scene-wooden-tray-table-sofa-v2.webp", t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的梅花木盒、雲朵杯墊與銀杏茶匙", "A black tray table by an olive sofa: a plum-blossom box, a Cloud Coaster and a Ginkgo Style Tea Spoon, each engraved CHARMVILLA"), 1376, 2048);
