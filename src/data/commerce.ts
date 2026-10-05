@@ -61,7 +61,7 @@ const build = (lang: Locale) => {
       ], source: TW },
       { id: "made-to-order", heading: t("訂製與預購商品", "Made-to-order pieces"), blocks: [
         t("金飾為訂製商品，製作時間視訂單情形約 25–60 天，請於訂購前先來電洽詢。", "Jewelry is made to order and takes about 25–60 days depending on orders; please call us before ordering."),
-        t("珍稀禮盒（如紫斑蝶）依茶葉競賽結果供應，售價依競賽公定價格調整。", "Rare gift boxes (such as Sapphire Wings) depend on tea-competition results, and their price follows the competition's official price."),
+        t("珍稀商品（如紫斑蝶）依茶葉競賽結果供應，售價依競賽公定價格調整。", "Rare gift boxes (such as Sapphire Wings) depend on tea-competition results, and their price follows the competition's official price."),
       ], source: TW },
       { id: "returns", heading: t("退換貨", "Returns"), blocks: [
         t(`依${LAW}，網路購物之消費者得於收受商品後七日內，以退回商品或書面通知方式解除契約，無須說明理由及負擔任何費用或對價。`,

@@ -50,10 +50,11 @@ const buildCatalog = (lang: Locale) => {
   // The former 茶器與工藝 is split into 香氛, 豐盛系列 and 柴燒系列 (/collections/teaware redirects to /collections/scents).
   const categories: Category[] = [
     { id: "tea", name: t("小金魚茶包", "Goldfish Tea Bags"), en: "GOLDFISH TEA BAGS", intro: t("從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。", "Hand-folded Goldfish Tea Bags, presented in paper and paulownia wood gift boxes. Explore woven textures and illustrated lids, then choose the tea selection and box size for the person you have in mind.") },
-    { id: "scents", name: t("香氛", "Scents"), en: "SCENTS", intro: t("香味，是喜悅的記憶。", "Scent is a memory of joy.") },
-    { id: "jewelry", name: t("金飾", "Jewelry"), en: "JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Our goldfish takes on a new form in jewelry. Explore designs with pearls, diamonds and matte finishes, each catching the light in its own way as you move.") },
+    // Chinese names as on the official store www.charmvilla.com.tw (user 2026-10-05: 「全站的商品名稱與分類都跟官網一致」): 香味是喜悅的記憶 and 如魚得水
+    { id: "scents", name: t("香味是喜悅的記憶", "Scents"), en: "SCENTS", intro: t("以檜木製作的杯墊、茶匙與筷子。", "Scent is a memory of joy.") /* the slogan is now the Chinese name itself */ },
+    { id: "jewelry", name: t("如魚得水", "Jewelry"), en: "JEWELRY", intro: t("金魚的輪廓縮小至耳畔，光澤便有了貼近肌膚的尺度。轉身之間，欣賞金面、珍珠與鑽石各自的表情。", "Our goldfish takes on a new form in jewelry. Explore designs with pearls, diamonds and matte finishes, each catching the light in its own way as you move.") },
     { id: "bags", name: t("交織系列", "Interwoven Collection"), en: "INTERWOVEN COLLECTION", intro: t("從交織的提把看向包身，細紋與線條各有秩序。拿起一只皮革包，也把對材質的欣賞帶進日常。", "A braided handle, textured leather and a carefully considered silhouette. Discover bags that bring distinctive details to the pieces you carry every day.") },
-    { id: "abundance", name: t("豐盛系列", "Abundance Collection"), en: "ABUNDANCE COLLECTION", intro: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only.") },
+    { id: "abundance", name: t("豐盛系列", "Abundance Collection"), en: "ABUNDANCE COLLECTION", intro: t("以點心盤整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only.") },
     { id: "wood-fired", name: t("柴燒系列", "Wood-Fired Collection"), en: "WOOD-FIRED COLLECTION", intro: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "Individually shaped and finished by hand, with subtle variations in color and gradient from piece to piece. Hand wash only; not dishwasher safe.") },
   ];
 
@@ -85,6 +86,8 @@ const buildCatalog = (lang: Locale) => {
   // sorted by which style they show: drop = CV-0370/0371/0372 + drop sketch; stud = CV-0376/0374/0373 + stud sketch.
   const jewelrySlugs = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "diamond-goldfish-stud-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
   const jewelryEnglish = ["PEARL CHAIN", "DIAMOND DROP", "DIAMOND STUD", "TWIN GOLDFISH", "RAW GOLD"];
+  // the official store's series of each piece (如魚得水 › 珍珠系列／鑽石系列／雙魚系列／璞金系列)
+  const jewelrySeries = [t("珍珠系列", "Pearl Series"), t("鑽石系列", "Diamond Series"), t("鑽石系列", "Diamond Series"), t("雙魚系列", "Twin Series"), t("璞金系列", "Raw Gold Series")];
   const jewelryDetails = [
     t("珍珠、長鏈與金魚", "Pearl, long chain and goldfish"),
     t("金魚、短鏈與爪鑲垂墜圓鑽", "Goldfish, short chain and a claw-set round diamond drop"),
@@ -95,9 +98,9 @@ const buildCatalog = (lang: Locale) => {
   const jewelryExtra: Record<number, Img[]> = {
     // pearl chain: the olive-coat portrait among ivory pleats (CV-0379) removed (user 2026-10-02: 「刪」)
     0: [gallery("CV-0377", t("珍珠長鏈小金魚耳環・石面光影", "Pearl Chain Goldfish Earrings in light and shadow on stone")), gallery("CV-0380", t("珍珠長鏈小金魚耳環・米白衣領", "Pearl Chain Goldfish Earrings against a cream collar"))],
-    1: [gallery("CV-0372", t("小金魚耳環・鑽石系列・垂墜・配戴", "Goldfish Earrings, Diamond Series drop, as worn")), gallery("CV-0370", t("小金魚耳環・鑽石系列・垂墜・暗調肖像", "Goldfish Earrings, Diamond Series drop, a low-key portrait")), gallery("CV-0371", t("小金魚耳環・鑽石系列・垂墜・側臉", "Goldfish Earrings, Diamond Series drop, in profile")), site("goldfish-drop-sketch.webp", t("小金魚耳環・鑽石系列・垂墜・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series drop, charcoal sketch of the piece as worn"), 896, 1120)],
+    1: [gallery("CV-0372", t("吐鑽小金魚耳環｜爪鑲・配戴", "Goldfish Earrings, Diamond Series drop, as worn")), gallery("CV-0370", t("吐鑽小金魚耳環｜爪鑲・暗調肖像", "Goldfish Earrings, Diamond Series drop, a low-key portrait")), gallery("CV-0371", t("吐鑽小金魚耳環｜爪鑲・側臉", "Goldfish Earrings, Diamond Series drop, in profile")), site("goldfish-drop-sketch.webp", t("吐鑽小金魚耳環｜爪鑲・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series drop, charcoal sketch of the piece as worn"), 896, 1120)],
     // stud: the colour photograph of the stud as worn (CV-0373) was removed and the charcoal sketch kept (user 2026-10-02: 「保留素描的」)
-    2: [gallery("CV-0374", t("小金魚耳環・鑽石系列・耳釘・深綠靜影", "Goldfish Earrings, Diamond Series stud, a still life in deep green")), site("goldfish-stud-sketch.webp", t("小金魚耳環・鑽石系列・耳釘・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series stud, charcoal sketch of the piece as worn"), 896, 1120)],
+    2: [gallery("CV-0374", t("單鑽小金魚耳環・深綠靜影", "Goldfish Earrings, Diamond Series stud, a still life in deep green")), site("goldfish-stud-sketch.webp", t("單鑽小金魚耳環・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series stud, charcoal sketch of the piece as worn"), 896, 1120)],
     // twin: the as-worn photograph among ivory pleats (CV-0378) was removed (user 2026-10-02: 「刪」), so the twin has no scene
   };
   const jewelryEditorial = [
@@ -142,7 +145,7 @@ const buildCatalog = (lang: Locale) => {
     summary: p.desc, description: jewelryEditorial[i].description,
     image: p.image, views: [{ label: t("商品照", "Product photograph"), image: p.image }, ...(jewelryExtra[i] || []).map((image, j) => ({ label: t(`情境 ${j + 1}`, `Scene ${j + 1}`), image }))],
     // facts only (user 2026-10-05: 「商品 spec 不寫形容文案」): the style repeated the name and is gone; the parts are 「組成」
-    facts: [{ label: t("系列", "Series"), value: t("小金魚金飾", "Goldfish Jewelry") }, { label: t("組成", "Parts"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
+    facts: [{ label: t("系列", "Series"), value: jewelrySeries[i] }, { label: t("組成", "Parts"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
     ...(jewelryPrices[jewelrySlugs[i]] ? { price: { amount: jewelryPrices[jewelrySlugs[i]], currency: "TWD" as const } } : {}),
     story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
   }));
@@ -150,23 +153,23 @@ const buildCatalog = (lang: Locale) => {
   // Seasonal editions lead the tea listing; the 16 official gift boxes follow.
   const teaProducts: Product[] = [...christmasGiftProductsFor(lang), ...teaGiftProductsFor(lang)];
 
-  const prosperity = t("豐盛系列", "Abundance Collection"), wooden = t("木質餐具", "Wooden Tableware");
+  const prosperity = t("豐盛系列", "Abundance Collection"), wooden = t("香味是喜悅的記憶", "Scents");
   const tablewareEntries = [
-    { slug: "prosperity-dessert-stand", name: t("下午茶點心架", "Abundance Collection (4-Color Series)"), en: "ABUNDANCE COLLECTION", series: prosperity, ids: ["CV-0068", "CV-0074", "CV-0081"],
+    { slug: "prosperity-dessert-stand", name: t("豐盛點心盤", "Abundance Collection (4-Color Series)"), en: "ABUNDANCE COLLECTION", series: prosperity, ids: ["CV-0068", "CV-0074", "CV-0081"],
       summary: t("把點心與茶，安放在同一席風景。", "Abundance Dessert Tray · Paper serving set"),
-      detail: t("以點心架整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only."),
+      detail: t("以點心盤整理茶席上的高低與層次。從擺放到取用，讓下午茶有自己的節奏。", "A paper dessert tray designed for easy storage, portability and reuse, created by Su Ching-mei. Unfold the tray, place the supplied dessert paper on top and arrange your sweets for the gathering. The dessert paper is single-use and for room-temperature use only."),
       story: { title: t("餐桌上的高與低", "Highs and lows on the table"), body: t("擺放，也是一種構圖。點心有了不同的高度，杯與盤之間便多了可觀看的層次；每次相聚，都能重新安排這一席景致。", "Arranging is a kind of composition. With sweets at different heights there are more layers to look at between cup and plate, and every gathering is a chance to set the scene anew.") } },
-    { slug: "prosperity-stand-gift-box", name: t("點心架與包裝禮盒", "Dessert Stand with Gift Box"), en: "DESSERT STAND / GIFT BOX", series: prosperity, ids: ["CV-0121", "CV-0068"],
+    { slug: "prosperity-stand-gift-box", name: t("豐盛點心盤｜包裝禮盒", "Dessert Stand with Gift Box"), en: "DESSERT STAND / GIFT BOX", series: prosperity, ids: ["CV-0121", "CV-0068"],
       summary: t("一份關於茶席，也關於相聚的心意。", "A gesture about the tea table, and about gathering."),
-      detail: t("從點心架到包裝，完整觀看豐盛系列的贈禮形式。", "From the stand to its packaging: the Prosperity Series as it is given."),
-      story: { title: t("從打開禮盒開始", "It begins with opening the box"), body: t("送出一件器物，也邀請對方想像它的位置。點心架從盒中來到桌上，與家中的杯盤相伴，禮物便開始參與下一次相聚。", "To give an object is to invite someone to imagine where it will sit. The stand moves from box to table, keeps company with the cups and plates of the house, and the gift begins to take part in the next gathering.") } },
+      detail: t("從點心盤到包裝，完整觀看豐盛系列的贈禮形式。", "From the stand to its packaging: the Prosperity Series as it is given."),
+      story: { title: t("從打開禮盒開始", "It begins with opening the box"), body: t("送出一件器物，也邀請對方想像它的位置。點心盤從盒中來到桌上，與家中的杯盤相伴，禮物便開始參與下一次相聚。", "To give an object is to invite someone to imagine where it will sit. The stand moves from box to table, keeps company with the cups and plates of the house, and the gift begins to take part in the next gathering.") } },
     // 2026-10-02 (user: 「這些商品是分開販售，不要擅自合併」): the cloud coasters are their own product on www.charmvilla.com.tw
     // (id 156); the old "木質杯墊與茶匙" listing merged them with the ginkgo teaspoon, which is sold on its own below.
     { slug: "cloud-coaster", name: t("雲朵杯墊", "Cloud Coaster"), en: "CLOUD COASTER", series: wooden, ids: ["CV-0232"],
       summary: t("一杯茶的旁邊，木紋靜靜相伴。", "Beside a cup of tea, wood grain keeps quiet company."),
       detail: t("雲朵形狀的檜木杯墊，把木質的紋理帶到茶杯旁。一組六片，近看表面，也觀察每一片的輪廓。", "Cloud-shaped hinoki coasters bring the grain of wood to the side of the cup. Six to a set: look closely at the surface, and at the outline of each piece."),
       story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。每一次放下茶杯，杯墊表面的紋理與雲朵的輪廓，便一次次回到注意之中。", "The hand knows the material before the eye does. Each time a cup is set down, the grain of the surface and the outline of the cloud come back to attention.") } },
-    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopsticks Rest"), en: "SONGBIRD CHOPSTICKS REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256", "CV-0239"] /* CV-0248 replaced by scene-bird-rest-gift-box (2026-10-05) */,
+    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopsticks Rest"), en: "SONGBIRD CHOPSTICKS REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256"] /* CV-0248 replaced by scene-bird-rest-gift-box; CV-0239 (birds on a heap of charcoal) removed (user 2026-10-05: 「刪」) */,
       summary: t("讓一雙筷子，有一處停歇。", "Individually handcrafted, with natural variations in color."),
       detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "Individually shaped and finished by hand, with subtle variations in color and gradient from piece to piece. Hand wash only; not dishwasher safe."),
       story: { title: t("餐具之間，一隻鳥", "A bird among the tableware"), body: t("筷子放下時，鳥形的輪廓便與修長的線條相遇。一件小器物改變了桌面的構圖，也讓用餐間的停頓有了可看的細節。", "When the chopsticks are set down, the bird's outline meets their long line. One small object changes the composition of the table and gives the pauses in a meal a detail to look at.") } },
@@ -191,7 +194,7 @@ const buildCatalog = (lang: Locale) => {
       { label: t("使用注意", "Use"), value: t("點心紙僅限常溫、單次使用，請勿加熱；遠離火源，存放於乾燥處", "Dessert paper for room temperature and single use only; do not heat. Keep away from fire and store dry") },
       { label: t("設計", "Design"), value: "蘇靜媚" },
     ],
-    "prosperity-stand-gift-box": [{ label: t("內容物", "Contents"), value: t("豐盛點心架、包裝禮盒", "Abundance dessert stand, gift box") }],
+    "prosperity-stand-gift-box": [{ label: t("內容物", "Contents"), value: t("豐盛點心盤、包裝禮盒", "Abundance dessert stand, gift box") }],
     "bird-chopstick-rest": [
       { label: t("製作", "Making"), value: t("逐件手工塑形與修整，每件色澤與漸層略有不同", "Shaped and finished by hand; color and gradient vary slightly from piece to piece") },
       { label: t("清潔方式", "Care"), value: t("僅限手洗，不可使用洗碗機", "Hand wash only; not dishwasher safe") },
@@ -301,7 +304,7 @@ const buildCatalog = (lang: Locale) => {
     // invented, generated with the site's own photograph of the earring as reference
     "diamond-goldfish-earrings": [site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉照片，閉眼的短髮女子，耳垂上的鑽石垂墜小金魚耳環是唯一的彩色", "Black-and-white profile of a short-haired woman with her eyes closed; the diamond goldfish drop earring on her lobe is the only colour"), 1792, 2240)],
     "cloud-coaster": [coffeeTable, woodenSofa, woodenCloseup], "ginkgo-teaspoon-gift-box": [traySofa, woodenSofa, coffeeTable],
-    "wooden-chopsticks": [woodenCloseup], "bird-chopstick-rest": [woodenCloseup],
+    "wooden-chopsticks": [woodenCloseup], // off the bird page (user 2026-10-05: 「刪」)
   };
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
   // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
@@ -325,7 +328,7 @@ const buildCatalog = (lang: Locale) => {
   // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
-    "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/gallery/CV-0239.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
+    "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {
@@ -339,7 +342,7 @@ const buildCatalog = (lang: Locale) => {
       : p.views.slice(0, 1);
     const shown = new Set(views.map((v) => v.image.src));
     // the bird rest keeps its own photograph first; the new interior follows it
-    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] : []), ...(sceneExtra[p.slug] ?? [])]
+    const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] ?? [] : []), ...(sceneExtra[p.slug] ?? [])]
       .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && !(sceneOmit[p.slug] ?? []).includes(img.src) && !omitEverywhere.includes(img.src) && list.findIndex((x) => x.src === img.src) === i);
     const order = sceneOrder[p.slug]; if (order) scenes.sort((a, b) => order.indexOf(a.src) - order.indexOf(b.src));
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };

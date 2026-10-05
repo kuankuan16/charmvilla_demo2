@@ -22,8 +22,8 @@ export const sections = [
   { id: "hero", label: "Top", zh: "首頁" },
   // order and names from the user's Google Doc (2026-10-02); the leather bags kept as 交織系列 (user: 「用目前的商品分類邏輯優化一個比較有文學味的名稱」)
   { id: "tea", label: "Goldfish Tea Bags", zh: "小金魚茶包" },
-  { id: "scents", label: "Scents", zh: "香氛" },
-  { id: "jewelry", label: "Jewelry", zh: "金飾" },
+  { id: "scents", label: "Scents", zh: "香味是喜悅的記憶" },
+  { id: "jewelry", label: "Jewelry", zh: "如魚得水" },
   { id: "bags", label: "Interwoven Collection", zh: "交織系列" },
   { id: "abundance", label: "Abundance Collection", zh: "豐盛系列" },
   { id: "wood-fired", label: "Wood-Fired Collection", zh: "柴燒系列" },
@@ -122,18 +122,18 @@ const buildContent = (lang: Locale) => {
 
   const jewelry = {
     index: "3:",
-    kicker: t("金飾", "Goldfish Jewelry"),
+    kicker: t("如魚得水", "Goldfish Jewelry"),
     heading: "小金魚 金飾",
     headingEn: "GOLDFISH JEWELRY",
     items: [
       // Real product photography supplied by the brand on 2026-09-30 (output/jewelry-product-photos-2026-09-30): four series.
       { n: "01.", title: t("珍珠長鏈小金魚耳環", "Pearl Chain Goldfish Earrings"), desc: t("沿著珍珠長鏈，一尾金魚垂落在頸側。", "Along a long chain below a pearl, one goldfish falls beside the neck."), image: site("jewelry-pearl-chain.webp", t("珍珠長鏈小金魚耳環・商品照", "Pearl Chain Goldfish Earrings, product photograph"), 1200, 1500) },
-      { n: "02.", title: t("小金魚耳環・鑽石系列・垂墜", "Goldfish Earrings · Diamond Series · Drop"), desc: t("魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", "Beneath the fish, a claw-set round diamond hangs lightly from a short chain."), image: site("jewelry-diamond.webp", t("小金魚耳環・鑽石系列・垂墜・商品照", "Goldfish Earrings, Diamond Series drop, product photograph"), 1200, 1500) },
+      { n: "02.", title: t("吐鑽小金魚耳環｜爪鑲", "Goldfish Earrings · Diamond Series · Drop"), desc: t("魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", "Beneath the fish, a claw-set round diamond hangs lightly from a short chain."), image: site("jewelry-diamond.webp", t("吐鑽小金魚耳環｜爪鑲・商品照", "Goldfish Earrings, Diamond Series drop, product photograph"), 1200, 1500) },
       // 2026-10-01 (user): the diamond series has two styles — the drop above and a stud without the drop. Split listings; the stud's
       // product shot is the satin close-up until the brand supplies a studio photo of it.
-      { n: "02b.", title: t("小金魚耳環・鑽石系列・耳釘", "Goldfish Earrings · Diamond Series · Stud"), desc: t("一尾小金魚停在耳畔，魚口一點圓鑽的光。", "One small goldfish rests at the ear, a point of diamond light at its mouth."), image: gallery("CV-0376", t("小金魚耳環・鑽石系列・耳釘・暖金緞光", "Goldfish Earrings, Diamond Series stud, on warm gold satin"), 1920, 2400) },
-      { n: "03.", title: t("小金魚耳環・雙魚系列", "Goldfish Earrings · Twin Series"), desc: t("一尾停在耳畔，一尾隨短鏈垂落。", "One rests at the ear; the other falls on a short chain."), image: site("jewelry-twin.webp", t("小金魚耳環・雙魚系列・商品照", "Goldfish Earrings, Twin Series, product photograph"), 1200, 1500) },
-      { n: "04.", title: t("小金魚耳環・璞金系列", "Goldfish Earrings · Raw Gold Series"), desc: t("霧面金屬的一尾小金魚，貼近耳畔。", "A single small goldfish in matte metal, close to the ear."), image: site("jewelry-raw-gold.webp", t("小金魚耳環・璞金系列・商品照", "Goldfish Earrings, Raw Gold Series, product photograph"), 1200, 1500) },
+      { n: "02b.", title: t("單鑽小金魚耳環", "Goldfish Earrings · Diamond Series · Stud"), desc: t("一尾小金魚停在耳畔，魚口一點圓鑽的光。", "One small goldfish rests at the ear, a point of diamond light at its mouth."), image: gallery("CV-0376", t("單鑽小金魚耳環・暖金緞光", "Goldfish Earrings, Diamond Series stud, on warm gold satin"), 1920, 2400) },
+      { n: "03.", title: t("雙星小金魚耳環", "Goldfish Earrings · Twin Series"), desc: t("一尾停在耳畔，一尾隨短鏈垂落。", "One rests at the ear; the other falls on a short chain."), image: site("jewelry-twin.webp", t("雙星小金魚耳環・商品照", "Goldfish Earrings, Twin Series, product photograph"), 1200, 1500) },
+      { n: "04.", title: t("小金魚耳環", "Goldfish Earrings · Raw Gold Series"), desc: t("霧面金屬的一尾小金魚，貼近耳畔。", "A single small goldfish in matte metal, close to the ear."), image: site("jewelry-raw-gold.webp", t("小金魚耳環・商品照", "Goldfish Earrings, Raw Gold Series, product photograph"), 1200, 1500) },
     ],
     craft: {
       label: "CRAFT:",
@@ -167,7 +167,7 @@ const buildContent = (lang: Locale) => {
     kicker: "茶器",
     heading: "茶器與工藝",
     headingEn: "TEAWARE & CRAFT",
-    left: { label: "豐盛系列", items: ["下午茶點心架", "點心架與包裝禮盒"], image: gallery("CV-0068", "豐盛系列・下午茶點心架", 1951, 1053) },
+    left: { label: "豐盛系列", items: ["豐盛點心盤", "豐盛點心盤｜包裝禮盒"], image: gallery("CV-0068", "豐盛系列・豐盛點心盤", 1951, 1053) },
     right: { label: "木質餐具", items: ["雲朵杯墊", "鳥形筷架", "銀杏茶匙", "檜木筷子"], image: gallery("CV-0239", "鳥形筷架・木炭與餐具", 4644, 3096) },
   };
 

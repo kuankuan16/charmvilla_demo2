@@ -10,6 +10,16 @@ import ProductGallery from "@/components/catalog/ProductGallery";
 import ProductCard from "@/components/catalog/ProductCard";
 import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
 
+// The other categories by closeness, for 繼續觀看 when a category has fewer than four other pieces.
+const nearest: Record<string, string[]> = {
+  tea: ["scents", "abundance", "wood-fired", "jewelry", "bags"],
+  scents: ["wood-fired", "abundance", "tea", "jewelry", "bags"],
+  "wood-fired": ["scents", "abundance", "tea", "jewelry", "bags"],
+  abundance: ["tea", "scents", "wood-fired", "jewelry", "bags"],
+  jewelry: ["bags", "tea", "scents", "abundance", "wood-fired"],
+  bags: ["jewelry", "tea", "scents", "abundance", "wood-fired"],
+};
+
 type Props = { params: Promise<{ lang: string; slug: string }> };
 // No `dynamicParams = false`: an unknown slug must reach the page so notFound() can answer with the localized 404.
 export const generateStaticParams = () => products.map(({ slug }) => ({ slug }));
@@ -63,7 +73,13 @@ export default async function ProductPage({ params }: Props) {
     <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.value}</dd></div>)}</dl>
     {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
   </section>;
-  const related = [...siblings.filter((p) => p.slug !== slug), ...all.filter((p) => p.category !== product.category)].slice(0, 4);
+  // 繼續觀看 (user 2026-10-05: 「優先推薦同一類別的商品，不夠的話再推薦其他類別」): the pieces of this category that follow this one
+  // (wrapping round), then the nearest categories, one piece from each in turn, so a short category is not followed by four bags.
+  const at = siblings.findIndex((p) => p.slug === slug);
+  const sameCategory = [...siblings.slice(at + 1), ...siblings.slice(0, Math.max(at, 0))];
+  const others = (nearest[product.category] ?? []).map((id) => all.filter((p) => p.category === id));
+  const fill = Array.from({ length: Math.max(0, ...others.map((l) => l.length)) }, (_, i) => others.flatMap((l) => l[i] ?? []));
+  const related = [...sameCategory, ...fill.flat()].slice(0, 4);
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
     // Offer only where the official list price is known; no availability, since stock is not known (catalog.ts rule).
     ...(product.price && { offers: { "@type": "Offer", price: product.price.amount, priceCurrency: product.price.currency, url: `${siteUrl}${productHref(product, lang)}` } }) };

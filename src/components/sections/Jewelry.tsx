@@ -16,7 +16,7 @@ export default function Jewelry() {
         </div>
       </div>
 
-      <ul aria-label="小金魚金飾商品清單" className="mt-40 grid grid-cols-1 gap-x-20 gap-y-50 md:grid-cols-2 laptop:grid-cols-3" data-jewelry-products="">
+      <ul aria-label="如魚得水商品清單" className="mt-40 grid grid-cols-1 gap-x-20 gap-y-50 md:grid-cols-2 laptop:grid-cols-3" data-jewelry-products="">
         {jewelry.items.map((product, i) => (
           <li key={product.n} data-jewelry-product={product.n}>
             <article><Link href={productHref(jewelryCatalog[i])} className="group block" aria-label={`瀏覽 ${product.title}`}>
@@ -30,7 +30,7 @@ export default function Jewelry() {
           </li>
         ))}
       </ul>
-      <div className="mt-35 text-right"><Link href="/collections/jewelry" className="tc text-xs font-bold link-underline">瀏覽全部金飾</Link></div>
+      <div className="mt-35 text-right"><Link href="/collections/jewelry" className="tc text-xs font-bold link-underline">瀏覽全部如魚得水</Link></div>
 
       <div className="mt-60 pt-30">
         <div className="text-xs font-bold text-gold">{jewelry.craft.label}</div>

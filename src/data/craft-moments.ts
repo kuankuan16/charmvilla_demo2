@@ -59,7 +59,7 @@ const build = (lang: Locale) => {
         id: "jewelry",
         craft: t("金工職人 · 小金魚耳環", "Goldsmith · Goldfish Earrings"),
         quote: [t("金工的人，", "The goldsmith refines each curve,"), t("磨到只剩輪廓才肯停手。", "bringing the goldfish's form into focus.")],
-        cta: { label: t("看金飾", "Explore jewelry"), href: "/collections/jewelry" },
+        cta: { label: t("看如魚得水", "Explore jewelry"), href: "/collections/jewelry" },
         image: site("craft-03-goldsmith-atelier.webp", t("晨光斜射進專業金工坊：半圓缺口的金工檯、皮兜與銼台上的小金魚，周圍是顯微鏡、吊鑽、壓延機與成排的鉗子",
           "Morning light slanting into a professional goldsmith's workshop: a bench with a half-round cut-out, a leather catch-skin and a small goldfish on the bench pin, surrounded by a microscope, a pendant drill, a rolling mill and rows of pliers")),
       },
@@ -67,7 +67,7 @@ const build = (lang: Locale) => {
         id: "teaware",
         craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Style Tea Spoon and Cloud Coaster"),
         quote: [t("做木的人，", "Following the grain,"), t("順著木紋把一片葉子鋸出來。", "the woodworker shapes a leaf from wood.")],
-        cta: { label: t("看香氛", "Explore scents"), href: "/collections/scents" },
+        cta: { label: t("看香味是喜悅的記憶", "Explore scents"), href: "/collections/scents" },
         // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
         // with their engraved logos (also on the coaster and teaspoon pages)
         image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳",
