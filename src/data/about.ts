@@ -89,7 +89,8 @@ export const getAbout = (lang: Locale) => {
           t("一份禮物被打開、一杯茶被分享，美便從作品走進生活。",
             "When a gift is opened and a cup is shared, beauty moves from the object into everyday life."),
         ],
-        image: site("about-gift.webp", t("午後窗光下，一隻手把打開的桐木小金魚茶包禮盒遞給另一隻手，旁邊一杯小金魚茶", "In afternoon light one hand passes an open paulownia box of goldfish tea bags to another, a cup of goldfish tea beside it"), 1792, 2240),
+        // the red embroidered gift box with goldfish tea, cloud coasters, the ginkgo spoon and a songbird rest (user 2026-10-05: 「紅色禮盒好了放這裡」)
+        image: site("scene-red-giftbox-tea-hinoki-bird.webp", t("紅色絨布上的紅色刺繡桐木禮盒，白瓷金邊杯裡一尾小金魚茶，前景兩片雲朵杯墊、銀杏茶匙與柴燒鳥形筷架", "A red embroidered paulownia gift box on red velvet, goldfish tea in a white gold-rimmed cup, and in front two Cloud Coasters, a Ginkgo Style Tea Spoon and a Songbird Chopsticks Rest"), 1510, 1993),
       },
     ] satisfies AboutChapter[],
     rangeTitle: t("作品", "The pieces"),
