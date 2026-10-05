@@ -8,13 +8,17 @@ import SocialLinks from "@/components/ui/SocialLinks";
 import NewsletterForm from "./NewsletterForm";
 import { localeHref, translator, type Locale } from "@/i18n/config";
 
-export default function SiteFooter({ lang }: { lang: Locale }) {
+export default function SiteFooter({ lang, home = false }: { lang: Locale; home?: boolean }) {
   const t = translator(lang);
+  // On the homepage the page scrolls inside its own container, so links to the page itself must be in-page anchors that the
+  // scroller handles (a link to "/" there did nothing — found 2026-10-05 when the user asked for the footer links to work).
+  const homeHref = home ? "#hero" : localeHref(lang, "/");
+  const storesHref = home ? "#visit" : localeHref(lang, "/#visit");
   const columns = [
     { label: t("作品", "Collections"), links: [{ href: categoryHref("all", lang), label: t("全部作品", "All Pieces") }, ...getCategories(lang).map((c) => ({ href: categoryHref(c.id, lang), label: c.name }))] },
     { label: t("品牌", "Company"), links: [
-      { href: localeHref(lang, "/"), label: t("首頁", "Home") }, { href: localeHref(lang, "/about"), label: t("關於", "About") },
-      { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: localeHref(lang, "/#visit"), label: t("門市", "Our Stores") },
+      { href: homeHref, label: t("首頁", "Home") }, { href: localeHref(lang, "/about"), label: t("關於", "About") },
+      { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: storesHref, label: t("門市", "Our Stores") },
       { href: localeHref(lang, "/account"), label: t("會員", "Account") }] },
     { label: t("購物說明", "Help"), links: [
       { href: localeHref(lang, "/shopping-guide"), label: t("購物須知", "Shopping guide") }, { href: localeHref(lang, "/shopping-guide#shipping"), label: t("運送", "Delivery") },
@@ -44,7 +48,7 @@ export default function SiteFooter({ lang }: { lang: Locale }) {
         <p className="tc">© 2026 CHARM VILLA. {t("版權所有。", "All rights reserved.")}</p>
         <SocialLinks lang={lang} className="footer-social" />
       </div>
-      <Link href={localeHref(lang, "/")} className="footer-wordmark" aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}>
+      <Link href={homeHref} className="footer-wordmark" aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}>
         {/* eslint-disable-next-line @next/next/no-img-element -- an SVG wordmark, no optimisation needed */}
         <img src="/brand/charmvilla-wordmark.svg" alt="" width={3716} height={328} />
       </Link>

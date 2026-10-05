@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {/* 2026-10-02 (user: 「整個橫幅區塊都刪」): the bag banner screen is off the homepage; Partners.tsx stays in the repo. */}
         <Visit />
       </main>
-      <SiteFooter lang={lang} />
+      <SiteFooter lang={lang} home />
     </PageShell>
   );
 }
