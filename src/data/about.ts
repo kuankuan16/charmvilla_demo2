@@ -41,7 +41,8 @@ export const getAbout = (lang: Locale) => {
           t("這個念頭成了 CHARM VILLA 的起點：以打造迷人的家居生活為出發點，用設計創造屬於自己的品牌。",
             "That question became the starting point of CHARM VILLA: to begin from a charming home life, and to build a brand of its own through design."),
         ],
-        image: gallery("CV-0215", t("沿著手繪牆面游動的白色小金魚裝置，CHARM VILLA 展覽", "A shoal of white paper goldfish along a painted wall, a CHARM VILLA installation")),
+        // the brand's installation photograph CV-0215, enhanced to 2K with Higgsfield's upscaler (user 2026-10-05)
+        image: site("about-installation-2k.webp", t("沿著手繪牆面游動的白色小金魚裝置，CHARM VILLA 展覽", "A shoal of white paper goldfish along a painted wall, a CHARM VILLA installation"), 2400, 1604),
       },
       {
         id: "goldfish", index: "02", side: "left",
