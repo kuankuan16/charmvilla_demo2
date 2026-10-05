@@ -27,7 +27,6 @@ export default function FeaturedProducts({ lang }: { lang: Locale }) {
         <Link href={productHref(product, lang)} aria-label={t(`欣賞 ${product.name}`, `View ${product.name}`)}>
           <div className={`featured-image featured-image--${(product.featuredImage ?? product.image).cutout ? "cutout" : "scene"}`}><Picture img={product.featuredImage ?? product.image} fill fit={imageFit(product.featuredImage ?? product.image)} animate={false} sizes="(min-width:768px) 30vw, 90vw" />{product.hoverImage && <div className="catalog-card-hover" aria-hidden="true"><Picture img={product.hoverImage} fill fit="cover" animate={false} sizes="(min-width:768px) 30vw, 90vw" /></div>}</div>
           <div className="featured-caption"><h3 className="tc">{product.name}</h3></div>
-          <p className="tc">{product.summary}</p>
         </Link>
       </article>)}
     </div>

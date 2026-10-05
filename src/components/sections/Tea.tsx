@@ -26,7 +26,6 @@ export default function Tea() {
                 <span className="text-xs font-bold text-stone-deep">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="tc text-xl font-bold leading-small lg:text-2xl">{product.name}</h3>
               </div>
-              <p className="tc mt-15 text-base">{product.summary}</p>
             <span className="tc mt-15 inline-flex items-center gap-20 text-xs font-bold group-hover:underline">欣賞作品</span></Link></article>
           </li>
         ))}

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = findProduct(slug, lang);
   if (!product) return { title: t("找不到商品｜CHARM VILLA", "Piece not found | CHARM VILLA") };
   const title = t(`${product.name}｜CHARM VILLA`, `${product.name} | CHARM VILLA`);
-  return { title, description: product.description, alternates: alternatesFor(lang, productHref(product)), openGraph: { title, description: product.summary, images: [{ url: product.image.src, alt: product.image.alt }] } };
+  return { title, description: product.description, alternates: alternatesFor(lang, productHref(product)), openGraph: { title, description: product.description, images: [{ url: product.image.src, alt: product.image.alt }] } };
 }
 
 export default async function ProductPage({ params }: Props) {
@@ -97,7 +97,7 @@ export default async function ProductPage({ params }: Props) {
           {/* On Chinese pages the English name sits above the Chinese one; on English pages the name itself is English. */}
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
-          <p className="product-summary tc">{product.summary}</p>
+          {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
           {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}</p>}
           <p className="product-description tc">{product.description}</p>
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
