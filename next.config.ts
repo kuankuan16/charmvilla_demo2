@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     ...["goldfish-diamond-stud", "bezel-diamond-goldfish-earrings", "single-diamond-goldfish-earrings"].map(slug => ({ source: `${prefix}/products/${slug}`, destination: `${prefix}/products/diamond-goldfish-stud-earrings`, permanent: true })),
     // the coaster and the teaspoon are separate products (user 2026-10-02); the merged listing's address goes to the coasters
     { source: `${prefix}/collections/teaware`, destination: `${prefix}/collections/scents`, permanent: true }, // 茶器與工藝 split (user's Google Doc 2026-10-02)
+    ...["christmas-edition-stocking", "christmas-edition-candy-cane"].map(slug => ({ source: `${prefix}/products/${slug}`, destination: `${prefix}/collections/tea`, permanent: true })), // removed (user 2026-10-05: 「聖誕節茶包都刪」)
     { source: `${prefix}/products/prosperity-stand-gift-box`, destination: `${prefix}/products/prosperity-dessert-stand`, permanent: true }, // one product on the official store (user 2026-10-05: 「照官網的」)
     { source: `${prefix}/products/wooden-coaster-teaspoon`, destination: `${prefix}/products/cloud-coaster`, permanent: true },
     { source: `${prefix}/news/monocle-interview`, destination: `${prefix}/news`, permanent: false }, // entry removed (user 2026-10-02: 「刪」)

@@ -1,5 +1,4 @@
 import { teaGiftProductsFor, type TeaContents } from "./tea-gifts";
-import { christmasGiftProductsFor } from "./christmas-gifts";
 import shopifyMap from "./shopify-map.json";
 import studioListing from "./studio-listing.json";
 import { getContent, gallery, site, type Img } from "./content";
@@ -160,8 +159,8 @@ const buildCatalog = (lang: Locale) => {
     story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
   })).sort((a, b) => jewelryOrder.indexOf(a.slug) - jewelryOrder.indexOf(b.slug));
 
-  // Seasonal editions lead the tea listing; the 16 official gift boxes follow.
-  const teaProducts: Product[] = [...christmasGiftProductsFor(lang), ...teaGiftProductsFor(lang)];
+  // The 16 official gift boxes; the two 2026 Christmas editions were removed (user 2026-10-05: 「聖誕節茶包都刪」).
+  const teaProducts: Product[] = teaGiftProductsFor(lang);
 
   const prosperity = t("豐盛系列", "Abundance Collection"), wooden = t("香味是喜悅的記憶", "Scents");
   const tablewareEntries = [

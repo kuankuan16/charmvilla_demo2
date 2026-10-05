@@ -11,7 +11,7 @@ const root = path.resolve(__dirname, '..');
 const qa = path.join(root, 'docs/qa/2026-09-29-tea-gift-boxes');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'charmvilla-tea-'));
 // The data files import ../i18n/config, so the transpiled copies keep the src/ layout (data/ next to i18n/).
-for (const file of ['data/content', 'data/tea-gifts', 'data/christmas-gifts', 'data/catalog', 'i18n/config']) {
+for (const file of ['data/content', 'data/tea-gifts', 'data/catalog', 'i18n/config']) {
   const source = fs.readFileSync(path.join(root, `src/${file}.ts`), 'utf8');
   fs.mkdirSync(path.dirname(path.join(tmp, file)), { recursive: true });
   fs.writeFileSync(path.join(tmp, `${file}.js`), ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true } }).outputText);
@@ -28,14 +28,10 @@ for (const [i, p] of english.products.entries()) {
   const visible = JSON.stringify([p.name, p.summary, p.description, p.facts, p.story.title, p.story.body, p.variant, p.views.map(v => [v.label, v.image.alt]), p.image.alt, p.giftBox?.series]);
   assert(!/[\u3400-\u9fff]/.test(visible), `${p.slug}: Chinese text in the English listing`);
 }
-for (const p of english.teaProducts.filter(p => p.variant?.group === 'christmas-edition-2026')) assert(!p.officialUrl && !p.giftBox && p.facts.some(f => f.label === 'Release'), `${p.slug} (English) must not claim official listing or box contents`);
 const expectedIds = [891,64,954,1053,104,692,970,183,343,196,850,582,960,88,1072,994];
 assert.deepEqual(teaGifts.map(g => g.officialId), expectedIds);
 assert.equal(new Set(products.map(p => p.slug)).size, products.length);
-assert.equal(teaCatalog.length, 18, 'two Christmas editions + sixteen official gift boxes');
-const christmas = teaCatalog.filter(p => p.variant?.group === 'christmas-edition-2026');
-assert.deepEqual(christmas.map(p => p.slug), ['christmas-edition-stocking', 'christmas-edition-candy-cane']);
-for (const p of christmas) { assert(!p.officialUrl && !p.giftBox, `${p.slug} must not claim official listing or box contents`); assert(p.facts.some(f => f.label === '上市資訊')); for (const view of p.views) assert(fs.existsSync(path.join(root, 'public', view.image.src)), `Missing ${view.image.src}`); }
+assert.equal(teaCatalog.length, 16, 'the sixteen official gift boxes (Christmas editions removed 2026-10-05)');
 assert(!products.some(p => p.slug.startsWith('goldfish-tea-')));
 const selectedSource = fs.readFileSync(path.join(root, 'src/components/sections/FeaturedProducts.tsx'), 'utf8');
 const selectedBlock = selectedSource.match(/const slugs = \[([\s\S]+?)\]/)[1];
