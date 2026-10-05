@@ -27,11 +27,10 @@ export const getAbout = (lang: Locale) => {
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     hero: site("scene-pink-bag-armchair-olive.webp", t("粉紅色編織提把皮革包放在橄欖綠布面單椅上，背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶", "The pink Braided Leather Bag on an olive bouclé armchair before an orange field painting, a glass of goldfish tea on an oak side table in front"), 1760, 2336),
-    // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a call to the
-    // collection under the intro, a link under each chapter,
+    // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under each chapter (the
+    // button under the intro was removed: 「刪」),
     // the store's service terms, questions and answers. All facts come from
     // commerce.ts (the official store's shopping guide), content.ts (the stores) and news.ts.
-    cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
     figures: [
       { value: "2013", label: t("品牌創立", "Brand founded") },
       { value: "16", label: t("道工序，其中 9 道手作", "steps, 9 of them by hand") },

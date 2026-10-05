@@ -33,7 +33,7 @@ const ArrowLink = ({ href, label, lang }: { href: string; label: string; lang: L
 );
 
 // About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面」; then 「關於我們的頁面內容參考 zema-template.webflow.io/our-story，
-// 補齊更像電商的功能」). The reference's order, with this brand's facts: the opening with a call to the collection, the figures,
+// 補齊更像電商的功能」). The reference's order, with this brand's facts: the opening, the figures,
 // four chapters (each with a link), the range, the store's service terms (the reference's benefit badges), questions and answers,
 // and the sources every fact comes from (src/data/about.ts).
 export default async function AboutPage({ params }: Props) {
@@ -53,7 +53,6 @@ export default async function AboutPage({ params }: Props) {
           <h1>{about.title}</h1>
           <p className="about-slogan tc">{about.slogan}</p>
           <p className="about-intro tc">{about.intro}</p>
-          <Link href={localeHref(lang, about.cta.href)} className="about-button tc">{about.cta.label}<span className="about-link-arrow" aria-hidden="true" /></Link>
         </div>
         <figure className="about-hero-image"><Image src={about.hero.src} alt={about.hero.alt} fill priority sizes="(min-width:768px) 50vw, 100vw" quality={90} /></figure>
       </header>
