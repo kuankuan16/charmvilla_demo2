@@ -250,7 +250,7 @@ const buildCatalog = (lang: Locale) => {
   const studioAlt = (name: string) => t(`${name}・棚拍商品照`, `${name}, studio photograph`);
   // Homepage featured grid: studio shots generated 2026-09-30 in the white bag's language (output/featured-editorial-2026-09-30).
   const featuredFiles: Record<string, string> = {
-    // ginkgo: the 896 px featured shot filled the frame (user 2026-10-05: 「太滿，縮小一點商品的比例」); the smaller 2K cover v4 is used everywhere
+    // ginkgo: the 896 px featured shot filled the frame (user 2026-10-05: 「太滿，縮小一點商品的比例」); the 2K cover is used everywhere (v5: the product about 64 % of the width, after 「再大一點」)
     "reunion-paulownia-gift-box": "featured-reunion-paulownia-gift-box.webp",
     // bird-chopstick-rest: featured-bird-chopstick-rest-55.webp is now its cover everywhere (studio-listing.json; user 2026-10-05: 「所有這個商品都統一用這張當封面」)
   };
