@@ -12,7 +12,8 @@ import { site, gallery, type Img } from "./content";
 import { translator, type Locale } from "@/i18n/config";
 
 export type AboutRange = { id: string; image: Img; position?: string };
-export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; side: "left" | "right" };
+export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; side: "left" | "right"; cta?: AboutLink };
+export type AboutLink = { label: string; href: string };
 
 export const getAbout = (lang: Locale) => {
   const t = translator(lang);
@@ -26,6 +27,11 @@ export const getAbout = (lang: Locale) => {
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     hero: site("scene-pink-bag-armchair-olive.webp", t("粉紅色編織提把皮革包放在橄欖綠布面單椅上，背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶", "The pink Braided Leather Bag on an olive bouclé armchair before an orange field painting, a glass of goldfish tea on an oak side table in front"), 1760, 2336),
+    // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a call to the
+    // collection under the intro, a link under each chapter, the makers, selected pieces with their prices and a bag button,
+    // the store's service terms, the latest news, questions and answers, and a closing call. All facts come from
+    // commerce.ts (the official store's shopping guide), content.ts (the stores) and news.ts.
+    cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
     figures: [
       { value: "2013", label: t("品牌創立", "Brand founded") },
       { value: "16", label: t("道工序，其中 9 道手作", "steps, 9 of them by hand") },
@@ -35,6 +41,7 @@ export const getAbout = (lang: Locale) => {
     chapters: [
       {
         id: "origin", index: "01", side: "right",
+        cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("起點：一個關於品牌的念頭", "Where it began"),
         body: [
           // the original wording is back (user 2026-10-05: 「加回原文」), as reported by Taiwan Panorama, July 2015
@@ -48,6 +55,7 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "goldfish", index: "02", side: "left",
+        cta: { label: t("選購小金魚茶包", "Shop the Goldfish Tea Bags"), href: "/collections/tea" },
         title: t("一尾小金魚", "A goldfish in the cup"),
         body: [
           t("2013 年 4 月，小金魚茶包開始設計並申請專利。魚與水本就自然相連，金魚在東方又象徵吉祥；金魚與茶，都帶著東方的韻味。同年中秋節第一次推出，還來不及舉辦發表會就已售罄，訂單一路排到年底。",
@@ -61,6 +69,7 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "world", index: "03", side: "right",
+        cta: { label: t("看最新消息", "Read the latest news"), href: "/news" },
         title: t("被世界看見", "Seen by the world"),
         body: [
           t("2014 年，小金魚茶包獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中，獲得被譽為設計界奧斯卡的德國 iF 設計大獎金獎。",
@@ -73,6 +82,7 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "everyday", index: "04", side: "left",
+        cta: { label: t("看精選作品", "See selected pieces"), href: "#about-shop-title" },
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
           t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，逐件手工完成的柴燒鳥形筷架，可收納、重複使用的豐盛點心盤，K18 金的小金魚金飾，以及提把取得發明專利的交織系列皮革包。",
@@ -95,6 +105,39 @@ export const getAbout = (lang: Locale) => {
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
       { id: "wood-fired", image: site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240) },
     ] satisfies AboutRange[],
+    makersTitle: t("做作品的人", "The makers"),
+    makersIntro: t("每一件作品，都經過職人的手。", "Every piece passes through an artisan's hands."),
+    shopTitle: t("精選作品", "Selected pieces"),
+    shopIntro: t("從小金魚茶包到金飾與器物，挑一件帶回日常。", "From the Goldfish Tea Bags to jewelry and objects for the table, choose one to take home."),
+    // one priced piece from each line that can go straight into the bag (no tea to choose, not sold out)
+    shopSlugs: ["reunion-paulownia-gift-box", "pearl-chain-goldfish-earrings", "cloud-coaster", "prosperity-dessert-stand"],
+    shopMore: { label: t("欣賞全部作品", "View all pieces"), href: "/collections/all" },
+    // the official store's terms (commerce.ts, www.charmvilla.com.tw, read 2026-10-02)
+    benefits: [
+      { id: "shipping", title: t("滿 NT$ 2,000 免運", "Free delivery from NT$ 2,000"), text: t("未滿酌收運費 NT$ 120，可寄送台灣與港澳。", "Below that, delivery is NT$ 120. We ship to Taiwan, Hong Kong and Macau."), href: "/shopping-guide#shipping" },
+      { id: "payment", title: t("多種付款方式", "Several ways to pay"), text: t("貨到付款、線上刷卡、ATM 匯款。", "Cash on delivery, card online or ATM transfer."), href: "/shopping-guide#payment" },
+      { id: "delivery", title: t("約 5–7 個工作天送達", "Delivered in about 5–7 working days"), text: t("訂單成立後翌日起算；ATM 匯款於確認款項後約 5 個工作天。", "Counted from the day after the order; about 5 working days after an ATM payment is confirmed."), href: "/shopping-guide#shipping" },
+      { id: "returns", title: t("七日鑑賞期", "Seven days to decide"), text: t("收到商品後七日內可退回；客服電話 02-2542-0303（10:00–21:00）。", "Return within seven days of receiving your order; call 02-2542-0303 (10:00–21:00)."), href: "/shopping-guide#returns" },
+    ] satisfies { id: string; title: string; text: string; href: string }[],
+    newsTitle: t("最新消息", "Latest news"),
+    newsMore: { label: t("看全部消息", "All news"), href: "/news" },
+    faqTitle: t("常見問題", "Frequently asked questions"),
+    faq: [
+      { q: t("運費怎麼計算？", "How much is delivery?"), a: t("單筆訂單滿 NT$ 2,000 免運費，未滿則酌收運費 NT$ 120。超商取貨單筆最多寄送 4 盒。", "Orders of NT$ 2,000 or more ship free; below that, delivery is NT$ 120. Convenience-store pickup takes up to 4 boxes per order.") },
+      { q: t("可以用哪些方式付款？", "How can I pay?"), a: t("貨到付款、線上刷卡與 ATM 匯款。", "Cash on delivery, card online or ATM bank transfer.") },
+      { q: t("下單後多久會收到？", "When will my order arrive?"), a: t("貨到付款與線上刷卡，訂單成立後翌日起算約 5–7 個工作天；ATM 匯款於確認款項後翌日起算約 5 個工作天。", "For cash on delivery and card, about 5–7 working days from the day after the order; for ATM transfer, about 5 working days from the day after payment is confirmed.") },
+      { q: t("可以寄到海外嗎？", "Do you ship abroad?"), a: t("可寄送台灣與港澳，港澳同樣滿 NT$ 2,000 免運。金飾不提供海外寄送。", "We ship within Taiwan and to Hong Kong and Macau, with the same free delivery from NT$ 2,000. Jewelry is not shipped overseas.") },
+      { q: t("金飾需要等多久？", "How long does jewelry take?"), a: t("金飾為訂製商品，製作時間視訂單情形約 25–60 天，請於訂購前先來電洽詢 02-2542-0303。", "Jewelry is made to order and takes about 25–60 days depending on orders; please call 02-2542-0303 before ordering.") },
+      { q: t("哪裡可以看到實品？", "Where can I see the pieces?"), a: t("台北晶華門市（麗晶精品 B1，10:00–21:00 全年無休）與京都門市（寺町通二條，週六・週日 11:00–18:00）。", "At Regent Taipei (Regent Galleria B1, 10:00–21:00 every day) and in Kyoto (Teramachi-dori Nijo, Saturday and Sunday 11:00–18:00).") },
+    ],
+    faqMore: { label: t("看完整購物須知", "Read the full shopping guide"), href: "/shopping-guide" },
+    final: {
+      title: t("走進 CHARM VILLA", "Step into CHARM VILLA"),
+      body: "Enjoy a charming life and a charming world in CHARM VILLA.",
+      primary: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
+      secondary: { label: t("門市資訊", "Our stores"), href: "/#visit" },
+      image: site("store-regent-2k.webp", t("CHARM VILLA 晶華門市入口與陳列", "The entrance and displays of CHARM VILLA at Regent Taipei"), 2560, 1536),
+    },
     sourcesTitle: t("參考資料", "Sources"),
     sources: [
       { label: t("《台灣光華雜誌》專訪，陳建瑋，2015 年 7 月", "Taiwan Panorama interview, Kobe Chen, July 2015"),

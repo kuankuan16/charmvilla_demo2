@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AddToCart from "@/components/cart/AddToCart";
+import ProductCard from "@/components/catalog/ProductCard";
 import { getAbout } from "@/data/about";
 import { getContent } from "@/data/content";
-import { categoryHref, getCategories } from "@/data/catalog";
-import { alternatesFor, defaultLocale, isLocale, translator } from "@/i18n/config";
+import { getCraftMoments } from "@/data/craft-moments";
+import { getNews } from "@/data/news";
+import { categoryHref, findProduct, getCategories } from "@/data/catalog";
+import { alternatesFor, defaultLocale, isLocale, localeHref, translator, type Locale } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -20,10 +24,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面，我要刪除裡面的影片，並幫我產生適合情境的圖」). The film is gone;
-// the page follows the collection pages' editorial type: a display heading with the official slogan beside it, a wide photograph,
-// a row of figures, four chapters that alternate photograph and text on the 12 columns, the range, the slogan again and
-// the sources every fact comes from (src/data/about.ts).
+// Line icons for the store's terms (24 px grid, 1.5 px stroke, currentColor).
+const icons: Record<string, React.ReactNode> = {
+  shipping: <path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7M6 18a1.75 1.75 0 1 0 0-.01M17 18a1.75 1.75 0 1 0 0-.01" />,
+  payment: <path d="M3 6.5h18v11H3zM3 10h18M6.5 14.5h4" />,
+  delivery: <path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM12 7.5V12l3 2" />,
+  returns: <path d="M8 8.5H4.5V5M4.8 8.3A8 8 0 1 1 4 13" />,
+};
+
+const ArrowLink = ({ href, label, lang }: { href: string; label: string; lang: Locale }) => (
+  <Link href={href.startsWith("#") ? href : localeHref(lang, href)} className="about-link tc">{label}<span className="about-link-arrow" aria-hidden="true" /></Link>
+);
+
+// About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面」; then 「關於我們的頁面內容參考 zema-template.webflow.io/our-story，
+// 補齊更像電商的功能」). The reference's order, with this brand's facts: the opening with a call to the collection, the figures,
+// four chapters (each with a link), the makers (the reference's team), the range and selected pieces with prices and a bag
+// button, the store's service terms (the reference's benefit badges), the latest news (its blog), questions and answers,
+// a closing call with the stores, and the sources every fact comes from (src/data/about.ts).
 export default async function AboutPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -31,6 +48,9 @@ export default async function AboutPage({ params }: Props) {
   const about = getAbout(lang);
   const { tea } = getContent(lang);
   const categories = getCategories(lang);
+  const makers = getCraftMoments(lang).items;
+  const news = getNews(lang).slice(0, 3);
+  const picks = about.shopSlugs.map((slug) => findProduct(slug, lang)).filter((p) => p !== undefined);
   return (
     <article className="about-page">
       {/* Opening spread for a portrait photograph (2026-10-05): the name, slogan and intro in the left half, set at the foot of the
@@ -41,6 +61,7 @@ export default async function AboutPage({ params }: Props) {
           <h1>{about.title}</h1>
           <p className="about-slogan tc">{about.slogan}</p>
           <p className="about-intro tc">{about.intro}</p>
+          <Link href={localeHref(lang, about.cta.href)} className="about-button tc">{about.cta.label}<span className="about-link-arrow" aria-hidden="true" /></Link>
         </div>
         <figure className="about-hero-image"><Image src={about.hero.src} alt={about.hero.alt} fill priority sizes="(min-width:768px) 50vw, 100vw" quality={90} /></figure>
       </header>
@@ -63,9 +84,24 @@ export default async function AboutPage({ params }: Props) {
             {c.id === "world" && <div className="about-award-marks" role="group" aria-label={tea.honoursAria}>
               {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="200px" />)}
             </div>}
+            {c.cta && <p className="about-chapter-cta"><ArrowLink href={c.cta.href} label={c.cta.label} lang={lang} /></p>}
           </div>
         </section>
       ))}
+
+      <section className="about-makers" aria-labelledby="about-makers-title">
+        <header className="about-section-head">
+          <h2 id="about-makers-title" className="tc">{about.makersTitle}</h2>
+          <p className="tc">{about.makersIntro}</p>
+        </header>
+        <ul>
+          {makers.map((m) => <li key={m.id}><Link href={localeHref(lang, m.cta.href)} className="about-maker">
+            <span className="about-maker-image"><Image src={m.image.src} alt={m.image.alt} fill sizes="(min-width:1024px) 23vw, (min-width:768px) 46vw, 92vw" /></span>
+            <span className="about-maker-role tc">{m.craft}</span>
+            <span className="about-maker-cta tc">{m.cta.label}</span>
+          </Link></li>)}
+        </ul>
+      </section>
 
       <section className="about-range" aria-labelledby="about-range-title">
         <h2 id="about-range-title" className="tc">{about.rangeTitle}</h2>
@@ -81,8 +117,63 @@ export default async function AboutPage({ params }: Props) {
         </ul>
       </section>
 
+      <section className="about-shop" aria-labelledby="about-shop-title">
+        <header className="about-section-head">
+          <h2 id="about-shop-title" className="tc">{about.shopTitle}</h2>
+          <p className="tc">{about.shopIntro}</p>
+          <ArrowLink href={about.shopMore.href} label={about.shopMore.label} lang={lang} />
+        </header>
+        <ul className="about-shop-grid">
+          {picks.map((p, i) => <li key={p.slug}><ProductCard product={p} index={i} lang={lang} /><AddToCart product={p} /></li>)}
+        </ul>
+        <ul className="about-benefits" aria-label={t("購物服務", "Shopping services")}>
+          {about.benefits.map((b) => <li key={b.id}><Link href={localeHref(lang, b.href)} className="about-benefit">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icons[b.id]}</svg>
+            <strong className="tc">{b.title}</strong>
+            <span className="tc">{b.text}</span>
+          </Link></li>)}
+        </ul>
+      </section>
 
-      <p className="about-closing tc">{about.slogan}</p>
+      <section className="about-news" aria-labelledby="about-news-title">
+        <header className="about-section-head">
+          <h2 id="about-news-title" className="tc">{about.newsTitle}</h2>
+          <ArrowLink href={about.newsMore.href} label={about.newsMore.label} lang={lang} />
+        </header>
+        <ul>
+          {news.map((n) => <li key={n.slug}><Link href={localeHref(lang, `/news/${n.slug}`)} className="about-news-card">
+            <span className="about-news-image"><Image src={n.card.src} alt={n.card.alt} fill sizes="(min-width:768px) 31vw, 92vw" /></span>
+            <span className="about-news-meta tc"><time dateTime={n.date}>{n.dateLabel}</time>・{n.tag}</span>
+            <span className="about-news-title tc">{n.title}</span>
+            <span className="about-news-summary tc">{n.summary}</span>
+          </Link></li>)}
+        </ul>
+      </section>
+
+      <section className="about-faq" aria-labelledby="about-faq-title">
+        <header className="about-section-head">
+          <h2 id="about-faq-title" className="tc">{about.faqTitle}</h2>
+          <ArrowLink href={about.faqMore.href} label={about.faqMore.label} lang={lang} />
+        </header>
+        <div className="about-faq-list">
+          {about.faq.map((f) => <details key={f.q}>
+            <summary className="tc">{f.q}<span className="about-faq-icon" aria-hidden="true" /></summary>
+            <p className="tc">{f.a}</p>
+          </details>)}
+        </div>
+      </section>
+
+      <section className="about-final" aria-labelledby="about-final-title">
+        <div className="about-final-text">
+          <h2 id="about-final-title" className="tc">{about.final.title}</h2>
+          <p className="tc">{about.final.body}</p>
+          <div className="about-final-actions">
+            <Link href={localeHref(lang, about.final.primary.href)} className="about-button tc">{about.final.primary.label}<span className="about-link-arrow" aria-hidden="true" /></Link>
+            <ArrowLink href={about.final.secondary.href} label={about.final.secondary.label} lang={lang} />
+          </div>
+        </div>
+        <figure className="about-final-image"><Image src={about.final.image.src} alt={about.final.image.alt} fill sizes="(min-width:768px) 58vw, 100vw" /></figure>
+      </section>
 
       <footer className="about-sources">
         <h2 className="tc">{about.sourcesTitle}</h2>
