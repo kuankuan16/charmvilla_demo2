@@ -101,7 +101,8 @@ export const getAbout = (lang: Locale) => {
       { id: "jewelry", image: site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉，耳垂上的鑽石垂墜小金魚耳環", "A black-and-white profile wearing the diamond goldfish drop earring"), 1792, 2240) },
       // the black-and-white portrait of the man in black holding the white bag (user 2026-10-05: 「改成男生黑白，黑衣服張」), framed on face, hand and bag
       { id: "bags", image: { src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：穿黑衣的男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man in black, arms over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720 }, position: "65% 50%" },
-      { id: "abundance", image: site("studio2k-prosperity-dessert-stand-v2.webp", t("橄欖金色蜂巢摺紙的三層豐盛點心盤", "The three-tier olive-gold honeycomb paper Abundance dessert tray"), 2000, 2500) },
+      // a scene instead of the studio shot, the same picture as the menu's Abundance preview (user 2026-10-05: 「用情境照」)
+      { id: "abundance", image: site("scene-dessert-stand-fireplace-lounge.webp", t("夜晚的酒廊，大理石層架與壁爐火光前，深色桌上的豐盛點心盤擺著幾樣精緻小點心，旁邊一杯紅茶、巧克力與閃電泡芙", "A lounge at night, backlit marble shelves and a fire behind: on a dark table the Abundance Dessert Tray with a few refined petits fours, a cup of tea, chocolates and an éclair"), 1792, 2240) },
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
       { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("深色古銅托盤上的四隻柴燒鳥形筷架、備長炭與一雙檜木筷，近看", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a dark bronze tray, close up"), 1792, 2240) },
     ] satisfies AboutRange[],
