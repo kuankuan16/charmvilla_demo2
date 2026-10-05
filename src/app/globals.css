@@ -26,7 +26,9 @@
   --font-tc: var(--font-outfit), "Helvetica Neue", Arial, var(--font-noto-tc), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
 
   /* Paragraph text is 17px everywhere (user 2026-10-05: 「統一改成 17px」): product text and story, collection intros, the
-     homepage story and craft text, news and policy text, FAQ answers. Card one-liners stay 15px. */
+     homepage story and craft text, news and policy text, FAQ answers. Card one-liners stay 15px.
+     Titles are 500 (user 2026-10-05: 「統一細一點」 on a product name): card names, section and page subheads, the cart; only
+     the current category / tab stays 700. */
   /* Type floor (user 2026-10-05: 「全站除了備註 13px，其他內容文字都在 15px 之上，其他字級一比例放大」): notes, captions, legal lines,
      counts and small labels are 13px; every other size was scaled by 15/13 with 15px as the minimum; display type of 48px
      and up kept its size. */
@@ -251,7 +253,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .catalog-card-hover { position: absolute; inset: 0; opacity: 0; transition: opacity .45s ease, transform .7s cubic-bezier(.2,.65,.3,1) !important; }
 @media (hover: hover) { .catalog-card a:hover .catalog-card-hover, .featured-grid a:hover .catalog-card-hover { opacity: 1; } }
 .catalog-card a:focus-visible .catalog-card-hover, .featured-grid a:focus-visible .catalog-card-hover { opacity: 1; }
-.catalog-card h3 { font-size: clamp(20px,1.62vw,27px); font-weight: 700; line-height: 1.5; margin-top: 13px; }
+.catalog-card h3 { font-size: clamp(20px,1.62vw,27px); font-weight: 500; line-height: 1.5; margin-top: 13px; }
 .catalog-card p { font-size: 15px; line-height: 1.85; margin-top: 10px; color: #1f1f1fbf; }
 .collection-empty { padding: 100px 25px; text-align: center; }
 .collection-empty h1, .collection-empty h2 { font-size: clamp(32px,4.62vw,55px); margin: 25px 0; line-height: 1.5; }
@@ -299,7 +301,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Specifications: their own section under the button — a bold heading, then rows of bold dark labels and grey values,
    15px type on ~56px rows between hairlines, as in the reference */
 .product-more > .product-specs { margin-bottom: clamp(24px, 2.4vw, 40px); }
-.product-specs h2 { margin: 0 0 18px; font-size: 23px; font-weight: 600; line-height: 1.4; }
+.product-specs h2 { margin: 0 0 18px; font-size: 23px; font-weight: 500; line-height: 1.4; }
 .product-keyfacts > div { display: grid; grid-template-columns: minmax(7em, 38%) 1fr; gap: 16px; border-top: 1px solid rgb(31 31 31 / .14); padding: 17px 0; font-size: 17px; line-height: 1.5; }
 .product-keyfacts > div:last-child { border-bottom: 1px solid rgb(31 31 31 / .14); }
 .product-keyfacts dt { font-weight: 600; color: var(--color-ink); }
@@ -444,7 +446,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .policy-body { grid-column: 5 / span 7; }
 .policy-body section { padding-bottom: 44px; margin-bottom: 44px; border-bottom: 1px solid #1f1f1f1a; scroll-margin-top: calc(var(--header-h) + 24px); }
 .policy-body section:last-child { border-bottom: 0; }
-.policy-body h2 { font-size: 23px; line-height: 1.5; font-weight: 600; margin-bottom: 18px; }
+.policy-body h2 { font-size: 23px; line-height: 1.5; font-weight: 500; margin-bottom: 18px; }
 .policy-body p, .policy-body li { font-size: 17px; line-height: 2; }
 .policy-body p + p, .policy-body ul, .policy-body p + ul, .policy-body ul + p { margin-top: 10px; }
 .policy-body ul { list-style: disc; padding-left: 1.3em; }
@@ -658,7 +660,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .cart-panel { position: absolute; top: 0; right: 0; height: 100%; width: min(440px, 100vw); display: flex; flex-direction: column; background: var(--color-page); color: var(--color-ink); transform: translateX(100%); transition: transform .5s var(--ease-reveal); }
 .cart-root.is-open .cart-panel { transform: translateX(0); }
 .cart-head { display: flex; align-items: center; justify-content: space-between; padding: 22px 28px 18px; }
-.cart-head h2 { margin: 0; font-size: 18px; font-weight: 700; }
+.cart-head h2 { margin: 0; font-size: 18px; font-weight: 500; }
 .cart-head h2 span { margin-left: 8px; font-weight: 400; color: var(--color-stone-deep); }
 .cart-close { font-size: 18px; padding: 6px; }
 .cart-empty { padding: 40px 28px; display: grid; gap: 22px; justify-items: start; }
@@ -666,7 +668,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .cart-line { display: grid; grid-template-columns: 96px 1fr; gap: 18px; padding: 18px 0; }
 .cart-line-image { aspect-ratio: 4/5; background: var(--color-ground); overflow: hidden; }
 .cart-line-image img { width: 100%; height: 100%; object-fit: cover; }
-.cart-line-name { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.5; }
+.cart-line-name { margin: 0; font-size: 16px; font-weight: 500; line-height: 1.5; }
 .cart-line-price { margin: 4px 0 12px; font-size: 15px; }
 .cart-line-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .cart-line-tools .cart-qty { height: 36px; } .cart-line-tools .cart-qty button { width: 32px; font-size: 18px; }
@@ -704,7 +706,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .account-page > .account-shell { width: 100%; }
 .account-shell { max-width: 560px; margin-inline: auto; } /* centred (user 2026-09-30) */
 .account-title { font-size: clamp(35px, 3.92vw, 60px); font-weight: 500; line-height: 1.3; letter-spacing: -.03em; margin: 12px 0 28px; }
-.account-subtitle { font-size: 21px; font-weight: 700; margin: 34px 0 8px; }
+.account-subtitle { font-size: 21px; font-weight: 500; margin: 34px 0 8px; }
 .account-banner { margin: 0 0 22px; padding: 12px 14px; background: var(--color-ground); font-size: 15px; line-height: 1.7; }
 .account-tabs { display: flex; flex-wrap: wrap; gap: 26px; margin-bottom: 30px; font-size: 16px; }
 .account-tabs [role=tab] { padding-bottom: 6px; border-bottom: 2px solid transparent; }
@@ -753,7 +755,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .brand-story { position: relative; background: transparent; }
 .story-message { position: relative; overflow: visible; padding: clamp(80px, 9vw, 160px) 0 clamp(80px, 8vw, 150px); }
 .story-text-column { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); margin-inline: var(--page-gutter); align-items: start; }
-.story-title { white-space: pre-line; grid-column: 1 / span 3; font-size: clamp(20px, 1.56vw, 28px); line-height: 1.75; font-weight: 600; letter-spacing: .04em; }
+.story-title { white-space: pre-line; grid-column: 1 / span 3; font-size: clamp(20px, 1.56vw, 28px); line-height: 1.75; font-weight: 500; letter-spacing: .04em; }
 /* tops aligned with the title; the left edge on column 7, where the large photograph of the next section starts
    (user 2026-10-02: 「段落文字對齊下面的圖片左邊」) */
 .story-body { grid-column: 7 / span 4; font-size: 17px; line-height: 2.05; }
