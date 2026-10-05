@@ -104,8 +104,8 @@ const buildCatalog = (lang: Locale) => {
     2: [gallery("CV-0374", t("單鑽小金魚耳環・深綠靜影", "Goldfish Earrings, Diamond Series stud, a still life in deep green")), site("goldfish-stud-sketch.webp", t("單鑽小金魚耳環・炭筆素描配戴圖", "Goldfish Earrings, Diamond Series stud, charcoal sketch of the piece as worn"), 896, 1120)],
     // CV-0372/0370/0371 and the drop sketch show the bezel setting (checked 2026-10-05), so they belong to 包鑲, not 爪鑲
     // CV-0371 (red-brown drapes) and the drop sketch removed from the bezel page (user 2026-10-05: 「刪」)
-    5: [// a new colour portrait leads the bezel's scenes and its story (user 2026-10-05: 「更改女性的五官，並改為淺棕色頭髮，耳環掛這一款」)
-      site("scene-bezel-earring-profile-olive-sofa.webp", t("淺棕髮女子坐在橄欖綠毛圈沙發上側身看雜誌，耳垂上戴著包鑲吐鑽小金魚耳環；胡桃木茶几上一杯小金魚茶與白色編織提把皮革包", "A woman with light-brown hair reads a magazine on an olive bouclé sofa, in profile, wearing the bezel-set diamond goldfish earring; on a walnut table a glass of goldfish tea and the white Braided Leather Bag"), 1792, 2240), gallery("CV-0372", t("吐鑽小金魚耳環｜包鑲・配戴", "Goldfish Earrings, Diamond Series bezel, as worn")), gallery("CV-0370", t("吐鑽小金魚耳環｜包鑲・暗調肖像", "Goldfish Earrings, Diamond Series bezel, a low-key portrait"))],
+    5: [// the olive-sofa colour portrait was removed (user 2026-10-05: 「刪」)
+      gallery("CV-0372", t("吐鑽小金魚耳環｜包鑲・配戴", "Goldfish Earrings, Diamond Series bezel, as worn")), gallery("CV-0370", t("吐鑽小金魚耳環｜包鑲・暗調肖像", "Goldfish Earrings, Diamond Series bezel, a low-key portrait"))],
     // twin: the as-worn photograph among ivory pleats (CV-0378) was removed (user 2026-10-02: 「刪」), so the twin has no scene
   };
   const jewelryEditorial = [
@@ -296,8 +296,6 @@ const buildCatalog = (lang: Locale) => {
     site("scene-olive-mustard-lounge-pink-bag-tea.webp", t("灰褐色客廳裡，粉紅色編織提把皮革包放在橄欖綠毛圈扶手椅上，胡桃木茶几上有一杯小金魚茶與團圓桐木木盒，右邊芥末黃躺椅與地毯上灑著窗格光影", "In a taupe living room, the pink Braided Leather Bag on an olive bouclé armchair; on a walnut coffee table a glass of goldfish tea and the Reunion paulownia box; window light falls across a mustard lounge chair and the rug"), 1792, 2240)],
   };
   // the lounge scene shows the Reunion paulownia box beside the goldfish tea (2026-10-05)
-  // the bezel-earring portrait has the white bag on the table (2026-10-05)
-  sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-bezel-earring-profile-olive-sofa.webp", t("淺棕髮女子坐在橄欖綠毛圈沙發上側身看雜誌，耳垂上戴著包鑲吐鑽小金魚耳環；胡桃木茶几上一杯小金魚茶與白色編織提把皮革包", "A woman with light-brown hair reads a magazine on an olive bouclé sofa, in profile, wearing the bezel-set diamond goldfish earring; on a walnut table a glass of goldfish tea and the white Braided Leather Bag"), 1792, 2240)];
   sceneExtra["reunion-paulownia-gift-box"] = [...(sceneExtra["reunion-paulownia-gift-box"] ?? []), site("scene-olive-mustard-lounge-pink-bag-tea.webp", t("灰褐色客廳裡，粉紅色編織提把皮革包放在橄欖綠毛圈扶手椅上，胡桃木茶几上有一杯小金魚茶與團圓桐木木盒，右邊芥末黃躺椅與地毯上灑著窗格光影", "In a taupe living room, the pink Braided Leather Bag on an olive bouclé armchair; on a walnut coffee table a glass of goldfish tea and the Reunion paulownia box; window light falls across a mustard lounge chair and the rug"), 1792, 2240)];
   // Interior scenes of the wooden tableware (user-approved 2026-10-01, gallery CV-0447 / CV-0448, output/wooden-goods-interior-scenes-2026-10-01):
   // they lead the scenes of the pieces they show.
@@ -353,7 +351,7 @@ const buildCatalog = (lang: Locale) => {
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
     // the white bag's hover shows a person with the bag, like the blue and pink ones (user 2026-10-05: 「hover 也改成人物跟包」)
-    "braided-leather-bag-white": ["/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-floating-morandi.webp", "/media/gallery/CV-0426.webp", "/media/site/scene-bezel-earring-profile-olive-sofa.webp"],
+    "braided-leather-bag-white": ["/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-floating-morandi.webp", "/media/gallery/CV-0426.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
