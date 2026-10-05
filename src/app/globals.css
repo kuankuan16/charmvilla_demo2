@@ -1067,8 +1067,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-quote { margin-top: 30px; padding-left: 20px; border-left: 2px solid var(--color-gold); }
 .about-quote p { font-size: 20px; line-height: 1.7; }
 .about-quote cite { display: block; margin-top: 10px; font-size: 13px; font-style: normal; color: rgb(31 31 31 / .64); }
+.about-award-marks { display: flex; align-items: center; gap: clamp(28px, 3vw, 48px); margin-top: 36px; }
+.about-award-marks img { width: auto; height: clamp(64px, 5.6vw, 92px); }
 .about-range { padding: clamp(80px, 8vw, 140px) var(--page-gutter) 0; }
-.about-range h2, .about-stores h2 { margin-bottom: 28px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; }
+.about-range h2 { margin-bottom: 28px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; }
 .about-range ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 24px); }
 .about-range-card { display: block; }
 .about-range-image { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: #e6e4df; }
@@ -1076,14 +1078,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-range-card:hover .about-range-image img { transform: scale(1.04); }
 .about-range-name { display: inline-block; margin-top: 12px; font-size: 17px; }
 .about-range-card:hover .about-range-name, .about-range-card:focus-visible .about-range-name { color: var(--color-gold); text-decoration: underline; text-underline-offset: 5px; }
-.about-stores { margin: clamp(80px, 8vw, 140px) var(--page-gutter) 0; padding-top: clamp(40px, 4vw, 60px); border-top: 1px solid rgb(31 31 31 / .14); }
-.about-stores ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 3vw, 60px); }
-.about-store-meta { font-size: 15px; color: rgb(31 31 31 / .64); }
-.about-stores h3 { margin-top: 10px; font-size: clamp(23px, 2vw, 31px); font-weight: 500; }
-.about-store-addr { margin-top: 12px; font-size: 15px; line-height: 1.8; color: rgb(31 31 31 / .72); }
-.about-store-addr a { white-space: nowrap; }
-.about-stores-link { display: inline-block; margin-top: 30px; padding: 14px 28px; border: 1px solid var(--color-ink); font-size: 16px; transition: background .3s, color .3s; }
-.about-stores-link:hover, .about-stores-link:focus-visible { background: var(--color-ink); color: var(--color-page); }
 .about-closing { max-width: 1000px; margin: clamp(90px, 9vw, 160px) auto 0; padding: 0 var(--page-gutter); font-size: clamp(30px, 3.2vw, 52px); font-weight: 400; line-height: 1.45; text-align: center; text-wrap: balance; }
 .about-sources { margin: clamp(80px, 8vw, 140px) var(--page-gutter) 0; padding-top: 24px; border-top: 1px solid rgb(31 31 31 / .14); }
 .about-sources h2 { font-size: 13px; letter-spacing: .14em; color: rgb(31 31 31 / .64); }
@@ -1109,7 +1103,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .about-chapter { display: block; padding-top: 60px; }
   .about-chapter-text { margin-top: 28px; }
   .about-range ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .about-stores ul { grid-template-columns: 1fr; }
-  .about-closing { text-align: left; }
+    .about-closing { text-align: left; }
 }
 

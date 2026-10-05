@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getAbout } from "@/data/about";
 import { getContent } from "@/data/content";
 import { categoryHref, getCategories } from "@/data/catalog";
-import { alternatesFor, defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
+import { alternatesFor, defaultLocale, isLocale, translator } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -22,16 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面，我要刪除裡面的影片，並幫我產生適合情境的圖」). The film is gone;
 // the page follows the collection pages' editorial type: a display heading with the official slogan beside it, a wide photograph,
-// a row of figures, four chapters that alternate photograph and text on the 12 columns, the range, the stores, the slogan again and
+// a row of figures, four chapters that alternate photograph and text on the 12 columns, the range, the slogan again and
 // the sources every fact comes from (src/data/about.ts).
 export default async function AboutPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const t = translator(lang);
   const about = getAbout(lang);
-  const { tea, visit } = getContent(lang);
+  const { tea } = getContent(lang);
   const categories = getCategories(lang);
-  const shops = visit.tabs.find((tab) => tab.id === "shops")?.shops ?? [];
   return (
     <article className="about-page">
       <header className="about-hero">
@@ -54,16 +53,16 @@ export default async function AboutPage({ params }: Props) {
         <section key={c.id} className={`about-chapter about-chapter--${c.side}`} aria-labelledby={`about-${c.id}`}>
           <figure className="about-chapter-image" style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
             <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />
-            {/* the homepage's two award marks, as one group at the lower left of the goldfish photograph (user 2026-10-05: 「加入首頁那 2 個得獎 logo」); the Red Dot mark in its light version, as on the homepage, over the dark rug */}
-            {c.id === "goldfish" && <div className="award-badges" role="group" aria-label={tea.honoursAria}>
-              {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src.replace("reddot-winner-2014-transparent.svg", "reddot-winner-2014-light.svg")} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="96px" />)}
-            </div>}
           </figure>
           <div className="about-chapter-text">
             <p className="about-chapter-index">{c.index}</p>
             <h2 id={`about-${c.id}`} className="tc">{c.title}</h2>
             {c.body.map((p) => <p key={p} className="tc">{p}</p>)}
             {c.quote && <blockquote className="about-quote"><p className="tc">{c.quote.text}</p><cite className="tc">{c.quote.by}</cite></blockquote>}
+            {/* the two award marks under the 03 text, larger, without captions (user 2026-10-05: 「刪除說明字，並加大 logo」「得獎 logo 加在這段文字之下」) */}
+            {c.id === "world" && <div className="about-award-marks" role="group" aria-label={tea.honoursAria}>
+              {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="200px" />)}
+            </div>}
           </div>
         </section>
       ))}
@@ -75,24 +74,13 @@ export default async function AboutPage({ params }: Props) {
             const cat = categories.find((c) => c.id === r.id);
             if (!cat) return null;
             return <li key={r.id}><Link href={categoryHref(r.id, lang)} className="about-range-card">
-              <span className="about-range-image"><Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:1024px) 16vw, (min-width:768px) 31vw, 48vw" /></span>
+              <span className="about-range-image"><Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:1024px) 16vw, (min-width:768px) 31vw, 48vw" style={r.position ? { objectPosition: r.position } : undefined} /></span>
               <span className="about-range-name tc">{cat.name}</span>
             </Link></li>;
           })}
         </ul>
       </section>
 
-      <section className="about-stores" aria-labelledby="about-stores-title">
-        <h2 id="about-stores-title" className="tc">{about.storesTitle}</h2>
-        <ul>
-          {shops.map((s) => <li key={s.name}>
-            <p className="about-store-meta tc">{s.intro.city} / {s.hours}</p>
-            <h3 className="tc">{s.name}</h3>
-            <p className="about-store-addr tc">{s.addr}{s.phone && <> · <a href={`tel:${s.phone.tel}`}>{s.phone.label}</a></>}</p>
-          </li>)}
-        </ul>
-        <Link href={localeHref(lang, "/#visit")} className="about-stores-link tc">{about.storesCta}</Link>
-      </section>
 
       <p className="about-closing tc">{about.slogan}</p>
 

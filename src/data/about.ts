@@ -11,6 +11,7 @@
 import { site, gallery, type Img } from "./content";
 import { translator, type Locale } from "@/i18n/config";
 
+export type AboutRange = { id: string; image: Img; position?: string };
 export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; side: "left" | "right" };
 
 export const getAbout = (lang: Locale) => {
@@ -81,14 +82,14 @@ export const getAbout = (lang: Locale) => {
     rangeTitle: t("作品", "The pieces"),
     range: [
       { id: "tea", image: site("scene-leather-chair-goldfish-tea-tagfix.webp", t("皮椅上的一杯小金魚茶", "A cup of goldfish tea on a leather chair"), 1792, 2240) },
-      { id: "scents", image: site("scene-coffee-table-tea-coasters-tagfix.webp", t("咖啡桌上的雲朵杯墊與銀杏茶匙", "Cloud Coasters and a Ginkgo Style Tea Spoon on a coffee table"), 1792, 2240) },
+      { id: "scents", image: site("scene-wooden-tray-table-closeup-v2.webp", t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的雲朵杯墊與檜木筷子", "A black tray table by an olive sofa, a Cloud Coaster engraved CHARMVILLA and hinoki chopsticks"), 1376, 2048) },
       { id: "jewelry", image: site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉，耳垂上的鑽石垂墜小金魚耳環", "A black-and-white profile wearing the diamond goldfish drop earring"), 1792, 2240) },
-      { id: "bags", image: site("scene-pink-bag-armchair-2k-v3-tagfix.webp", t("皮椅上的粉紅色編織提把皮革包", "The pink Braided Leather Bag on a leather armchair"), 1760, 2336) },
+      // the black-and-white portrait of the man in black holding the white bag (user 2026-10-05: 「改成男生黑白，黑衣服張」), framed on face, hand and bag
+      { id: "bags", image: { src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：穿黑衣的男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man in black, arms over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720 }, position: "65% 50%" },
       { id: "abundance", image: site("studio2k-prosperity-dessert-stand.webp", t("金色摺紙的豐盛點心盤", "The gold folded-paper Abundance dessert tray"), 1792, 2240) },
-      { id: "wood-fired", image: site("scene-wooden-tray-table-closeup-v2.webp", t("檜木筷子擱在鳥形筷架上", "Hinoki chopsticks on a Songbird Chopsticks Rest"), 1376, 2048) },
-    ],
-    storesTitle: t("門市", "Visit us"),
-    storesCta: t("查看門市資訊", "Store information"),
+      // the tray close-up now stands for Scents, so the bird rests show the brand's own photograph
+      { id: "wood-fired", image: gallery("CV-0242", t("青瓷與米黃的柴燒鳥形筷架散在白桌與木炭之間", "Wood-fired Songbird Chopsticks Rests in celadon and cream between a white table and charcoal")) },
+    ] satisfies AboutRange[],
     sourcesTitle: t("參考資料", "Sources"),
     sources: [
       { label: t("《台灣光華雜誌》專訪，陳建瑋，2015 年 7 月", "Taiwan Panorama interview, Kobe Chen, July 2015"),

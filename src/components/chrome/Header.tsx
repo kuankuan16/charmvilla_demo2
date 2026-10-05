@@ -100,7 +100,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "/media/site/scene-walnut-table-tea-bag-v3.webp", // the walnut table: goldfish tea, Cloud Coasters, an olive branch, the blue bag (user 2026-10-05)
+    all: "/media/site/scene-pink-bag-armchair-2k-v3-tagfix.webp", // back to the pink bag on the leather armchair (user 2026-10-05: 「換回原本那張」)
     tea: "/media/site/scene-leather-chair-goldfish-tea-tagfix.webp", // the cup on the leather chair, foil tag with the CHARM VILLA lettering (user 2026-10-02)
     scents: "/media/site/scene-wooden-ottomans-v2.webp", // mustard ottomans, Cloud Coasters and Ginkgo spoons engraved CHARMVILLA (user 2026-10-05)
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
