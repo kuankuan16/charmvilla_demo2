@@ -1067,10 +1067,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-quote { margin-top: 30px; padding-left: 20px; border-left: 2px solid var(--color-gold); }
 .about-quote p { font-size: 20px; line-height: 1.7; }
 .about-quote cite { display: block; margin-top: 10px; font-size: 13px; font-style: normal; color: rgb(31 31 31 / .64); }
-.about-awards { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 34px; }
-.about-awards li { display: flex; flex-direction: column; gap: 10px; width: 130px; }
-.about-awards img { width: 100%; height: 56px; object-fit: contain; object-position: left center; }
-.about-awards span { font-size: 13px; line-height: 1.5; color: rgb(31 31 31 / .64); }
 .about-range { padding: clamp(80px, 8vw, 140px) var(--page-gutter) 0; }
 .about-range h2, .about-stores h2 { margin-bottom: 28px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; }
 .about-range ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 24px); }

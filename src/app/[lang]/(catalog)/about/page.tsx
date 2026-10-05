@@ -54,15 +54,16 @@ export default async function AboutPage({ params }: Props) {
         <section key={c.id} className={`about-chapter about-chapter--${c.side}`} aria-labelledby={`about-${c.id}`}>
           <figure className="about-chapter-image" style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
             <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />
+            {/* the homepage's two award marks, as one group at the lower left of the goldfish photograph (user 2026-10-05: 「加入首頁那 2 個得獎 logo」) */}
+            {c.id === "goldfish" && <div className="award-badges" role="group" aria-label={tea.honoursAria}>
+              {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="96px" />)}
+            </div>}
           </figure>
           <div className="about-chapter-text">
             <p className="about-chapter-index">{c.index}</p>
             <h2 id={`about-${c.id}`} className="tc">{c.title}</h2>
             {c.body.map((p) => <p key={p} className="tc">{p}</p>)}
             {c.quote && <blockquote className="about-quote"><p className="tc">{c.quote.text}</p><cite className="tc">{c.quote.by}</cite></blockquote>}
-            {c.id === "world" && <ul className="about-awards" aria-label={tea.honoursAria}>
-              {tea.awards.map((a) => <li key={a.image.src}><Image src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="120px" /><span className="tc">{a.text}</span></li>)}
-            </ul>}
           </div>
         </section>
       ))}
