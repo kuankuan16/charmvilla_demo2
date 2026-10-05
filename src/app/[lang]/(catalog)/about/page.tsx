@@ -34,8 +34,8 @@ const ArrowLink = ({ href, label, lang }: { href: string; label: string; lang: L
 
 // About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面」; then 「關於我們的頁面內容參考 zema-template.webflow.io/our-story，
 // 補齊更像電商的功能」). The reference's order, with this brand's facts: the opening, the figures,
-// four chapters (each with a link), the range, the store's service terms (the reference's benefit badges), questions and answers,
-// and the sources every fact comes from (src/data/about.ts).
+// four chapters (03 with a link), the range, the store's service terms (the reference's benefit badges), questions and answers.
+// The sources footer was removed (user 2026-10-05: 「刪」); the sources stay noted in src/data/about.ts.
 export default async function AboutPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -117,12 +117,6 @@ export default async function AboutPage({ params }: Props) {
           </details>)}
         </div>
       </section>
-
-      <footer className="about-sources">
-        <h2 className="tc">{about.sourcesTitle}</h2>
-        <ol>{about.sources.map((s) => <li key={s.href}><a href={s.href} target="_blank" rel="noreferrer" className="tc">{s.label}</a></li>)}</ol>
-        <p className="tc">{t("本頁內容依上述報導與官方資料整理。", "This page is compiled from the reports and official sources above.")}</p>
-      </footer>
     </article>
   );
 }

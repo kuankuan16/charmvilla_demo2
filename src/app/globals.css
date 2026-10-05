@@ -1103,12 +1103,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-faq-icon::after { transform: rotate(90deg); }
 .about-faq details[open] .about-faq-icon::after { transform: rotate(0deg); }
 .about-faq details p { max-width: 680px; padding: 0 0 24px; font-size: 17px; line-height: 1.9; color: rgb(31 31 31 / .78); }
-.about-sources { margin: clamp(80px, 8vw, 140px) var(--page-gutter) 0; padding-top: 24px; border-top: 1px solid rgb(31 31 31 / .14); }
-.about-sources h2 { font-size: 13px; letter-spacing: .14em; color: rgb(31 31 31 / .64); }
-.about-sources ol { margin-top: 12px; list-style: decimal; padding-left: 1.3em; }
-.about-sources li, .about-sources > p { font-size: 13px; line-height: 1.9; color: rgb(31 31 31 / .64); }
-.about-sources a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
-.about-sources > p { margin-top: 10px; }
 @media (max-width: 1023px) {
   .about-hero-text { grid-column: 1 / span 6; }
   .about-figures { grid-template-columns: repeat(2, 1fr); }

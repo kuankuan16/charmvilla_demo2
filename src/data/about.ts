@@ -1,9 +1,15 @@
 // About page copy (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面，刪除裡面的影片，產生適合情境的圖；資訊來源根據
-// 官網，或搜集網路上的媒體報導與採訪」). Every fact below comes from one of the sources listed at the end of this file:
+// 官網，或搜集網路上的媒體報導與採訪」). Every fact below comes from one of these sources (no longer listed on the page, user
+// 2026-10-05: 「刪」 for the Sources footer):
 //   P  = 陳建瑋〈子村莊園，小金魚茶包游向世界〉，《台灣光華雜誌》2015 年 7 月 (the founding story, the design idea, 16 steps / 9 by
 //        hand, no adhesive, asymmetric fins, April 2013, the 2013 Mid-Autumn sell-out, Red Dot 2014, iF Gold March 2015 among 1,624)
+//        https://www.taiwan-panorama.com/Articles/Details?Guid=face2970-4fcc-4068-b298-124b1eb68333
+//        https://www.taiwan-panorama.com/en/Articles/Details?Guid=2b1501c4-5b30-406b-82a4-ad10ef674664
 //   O  = CHARM VILLA 台灣官方線上商店 (slogan, 34-country design patents, food-grade non-woven fabric, SGS-tested teas)
-//   K  = internetcom.jp (the Kyoto store is the brand's first overseas store); M = Bored Panda / Contemporist coverage
+//        https://www.charmvilla.com.tw/
+//   K  = internetcom.jp (the Kyoto store is the brand's first overseas store) https://internetcom.jp/202351/gold-fish-tea-bag-charm-villa
+//   M  = Bored Panda https://www.boredpanda.com/gold-fish-tea-bag-charm-villa/ and Contemporist
+//        https://www.contemporist.com/teabags-designed-to-look-like-a-goldfish-is-swimming-in-your-mug/
 //   S  = this site's verified product facts (K18 gold, hinoki, invention patent TW I728606, the Abundance tray by 蘇靜媚)
 // Nothing here may be added without a source; no founding claims beyond these.
 // 2026-10-05 (user: 「拿掉關於我們所有『子村莊園』的字眼，都用 CHARM VILLA 呈現，並不強調來自台灣」): the brand is named CHARM VILLA only,
@@ -27,8 +33,8 @@ export const getAbout = (lang: Locale) => {
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     hero: site("scene-pink-bag-armchair-olive.webp", t("粉紅色編織提把皮革包放在橄欖綠布面單椅上，背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶", "The pink Braided Leather Bag on an olive bouclé armchair before an orange field painting, a glass of goldfish tea on an oak side table in front"), 1760, 2336),
-    // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under each chapter (the
-    // button under the intro was removed: 「刪」),
+    // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under chapter 03
+    // (the button under the intro and the links under 01, 02 and 04 were removed: 「刪」),
     // the store's service terms, questions and answers. All facts come from
     // commerce.ts (the official store's shopping guide), content.ts (the stores) and news.ts.
     figures: [
@@ -40,7 +46,6 @@ export const getAbout = (lang: Locale) => {
     chapters: [
       {
         id: "origin", index: "01", side: "right",
-        cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("起點：一個關於品牌的念頭", "Where it began"),
         body: [
           // the original wording is back (user 2026-10-05: 「加回原文」), as reported by Taiwan Panorama, July 2015
@@ -54,7 +59,6 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "goldfish", index: "02", side: "left",
-        cta: { label: t("選購小金魚茶包", "Shop the Goldfish Tea Bags"), href: "/collections/tea" },
         title: t("一尾小金魚", "A goldfish in the cup"),
         body: [
           t("2013 年 4 月，小金魚茶包開始設計並申請專利。魚與水本就自然相連，金魚在東方又象徵吉祥；金魚與茶，都帶著東方的韻味。同年中秋節第一次推出，還來不及舉辦發表會就已售罄，訂單一路排到年底。",
@@ -81,7 +85,6 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "everyday", index: "04", side: "left",
-        cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
           t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，逐件手工完成的柴燒鳥形筷架，可收納、重複使用的豐盛點心盤，K18 金的小金魚金飾，以及提把取得發明專利的交織系列皮革包。",
@@ -122,14 +125,5 @@ export const getAbout = (lang: Locale) => {
       { q: t("哪裡可以看到實品？", "Where can I see the pieces?"), a: t("台北晶華門市（麗晶精品 B1，10:00–21:00 全年無休）與京都門市（寺町通二條，週六・週日 11:00–18:00）。", "At Regent Taipei (Regent Galleria B1, 10:00–21:00 every day) and in Kyoto (Teramachi-dori Nijo, Saturday and Sunday 11:00–18:00).") },
     ],
     faqMore: { label: t("看完整購物須知", "Read the full shopping guide"), href: "/shopping-guide" },
-    sourcesTitle: t("參考資料", "Sources"),
-    sources: [
-      { label: t("《台灣光華雜誌》專訪，陳建瑋，2015 年 7 月", "Taiwan Panorama interview, Kobe Chen, July 2015"),
-        href: lang === "zh" ? "https://www.taiwan-panorama.com/Articles/Details?Guid=face2970-4fcc-4068-b298-124b1eb68333" : "https://www.taiwan-panorama.com/en/Articles/Details?Guid=2b1501c4-5b30-406b-82a4-ad10ef674664" },
-      { label: t("CHARM VILLA 官方線上商店", "CHARM VILLA official online store"), href: "https://www.charmvilla.com.tw/" },
-      { label: "Bored Panda, “Goldfish Tea Bags Will Turn Your Teacup Into A Fishbowl”", href: "https://www.boredpanda.com/gold-fish-tea-bag-charm-villa/" },
-      { label: "Contemporist, “Teabags Designed To Look Like A Goldfish Is Swimming In Your Mug”", href: "https://www.contemporist.com/teabags-designed-to-look-like-a-goldfish-is-swimming-in-your-mug/" },
-      { label: t("internetcom，CHARM VILLA 京都店開幕報導", "internetcom.jp, on the opening of CHARM VILLA Kyoto"), href: "https://internetcom.jp/202351/gold-fish-tea-bag-charm-villa" },
-    ],
   };
 };
