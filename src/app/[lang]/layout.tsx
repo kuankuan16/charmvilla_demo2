@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }: Props & { childre
   // The seller for search engines (schema.org Organization), from the same facts as the footer (2026-10-02).
   const { company } = getCommerce(lang);
   const organization = { "@context": "https://schema.org", "@type": "Organization", name: "CHARM VILLA", legalName: company.name, taxID: company.taxId, url: siteUrl,
-    email: company.email, telephone: "+886-2-2542-0303", address: { "@type": "PostalAddress", streetAddress: company.address, addressCountry: "TW" },
+    email: company.email, telephone: "+886-2-2542-0303",
     sameAs: ["https://www.charmvilla.com.tw/", "https://www.facebook.com/CHARMVILLA8/", "https://www.instagram.com/charmvilla/"] };
   return (
     <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`} suppressHydrationWarning>

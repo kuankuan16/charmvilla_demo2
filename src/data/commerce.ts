@@ -11,7 +11,7 @@ export type PolicySection = { id: string; heading: string; blocks: PolicyBlock[]
 
 // Sources (read 2026-10-02):
 const TW = "www.charmvilla.com.tw";                               // the brand's official online store
-const REGISTRY = "經濟部商工登記公示資料（data.gcis.nat.gov.tw）";    // company registry: tax id, representative, address
+const REGISTRY = "經濟部商工登記公示資料（data.gcis.nat.gov.tw）";    // company registry: company name and tax id
 const LAW = "消費者保護法第 19 條";
 
 const build = (lang: Locale) => {
@@ -21,17 +21,15 @@ const build = (lang: Locale) => {
   const company = {
     name: "子村宥宥股份有限公司",
     taxId: "70391352",
-    representative: "謝少庠",
-    address: t("新北市淡水區沙崙路一段 126 巷 32 號 2 樓", "2F, No. 32, Lane 126, Sec. 1, Shalun Rd., Tamsui Dist., New Taipei City, Taiwan"),
     phone: "02-2542-0303",
     hours: "10:00–21:00",
     email: "e-service@charmvilla.com",
   };
+  // Only the basic e-commerce facts are shown (user 2026-10-05: 「刪除詳細的個人資訊，只需保留電商基礎資訊就好」): the representative's
+  // name and the registered address are no longer listed.
   const identity: PolicyBlock = { list: [
     t(`公司名稱：${company.name}（CHARM VILLA）`, `Company: ${company.name} (CHARM VILLA)`),
     t(`統一編號：${company.taxId}`, `Tax ID (統一編號): ${company.taxId}`),
-    t(`代表人：${company.representative}`, `Representative: ${company.representative}`),
-    t(`公司登記地址：${company.address}`, `Registered address: ${company.address}`),
     t(`客服電話：${company.phone}（${company.hours}）`, `Customer service: +886 2 2542 0303 (${company.hours}, Taiwan time)`),
     t(`客服信箱：${company.email}`, `Email: ${company.email}`),
   ] };
