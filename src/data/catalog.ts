@@ -276,7 +276,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-02 (user: 「這張商品的情境照要換室內擺飾…喜歡他光影的呈現」, logos where the real pieces carry them): a new sunlit interior
   // replaces the black tray table by the sofa (scene-wooden-tray-table-sofa.webp, still in git).
   const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳", "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARM VILLA, beside a bouclé sofa and an oak bench"), 1792, 2240);
-  const woodenCloseup = site("scene-wooden-tray-table-closeup.webp", t("木筷擱在鳥形筷架上，旁邊一片雲朵杯墊，黑色托盤邊几特寫", "Wooden chopsticks on a Songbird Chopsticks Rest beside a cloud-shaped coaster, close view of a black tray table"));
+  const woodenCloseup = site("scene-wooden-tray-table-closeup-v2.webp", t("木筷擱在鳥形筷架上，旁邊一片刻著 CHARMVILLA 的雲朵杯墊，黑色托盤邊几，後方是橄欖綠毛呢沙發", "Wooden chopsticks on a Songbird Chopsticks Rest beside a Cloud Coaster engraved CHARMVILLA on a black tray table, an olive bouclé sofa behind"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
   const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARM VILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARM VILLA"), 1792, 2240);
   // 2026-10-02 (user: 「改成只要出現銀杏茶匙，並補上品牌 logo」): the mustard ottomans with the coasters removed, one teaspoon with its engraving
@@ -321,7 +321,7 @@ const buildCatalog = (lang: Locale) => {
   // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
-    "bird-chopstick-rest": ["/media/gallery/CV-0248.webp", "/media/site/scene-wooden-tray-table-closeup.webp", "/media/gallery/CV-0242.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
+    "bird-chopstick-rest": ["/media/gallery/CV-0248.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/gallery/CV-0242.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {
