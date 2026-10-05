@@ -103,7 +103,7 @@ export const getAbout = (lang: Locale) => {
       { id: "bags", image: { src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：穿黑衣的男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man in black, arms over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720 }, position: "65% 50%" },
       { id: "abundance", image: site("studio2k-prosperity-dessert-stand-v2.webp", t("橄欖金色蜂巢摺紙的三層豐盛點心盤", "The three-tier olive-gold honeycomb paper Abundance dessert tray"), 2000, 2500) },
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
-      { id: "wood-fired", image: site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240) },
+      { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("深色古銅托盤上的四隻柴燒鳥形筷架、備長炭與一雙檜木筷，近看", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a dark bronze tray, close up"), 1792, 2240) },
     ] satisfies AboutRange[],
     // the official store's terms (commerce.ts, www.charmvilla.com.tw, read 2026-10-02)
     benefits: [

@@ -106,7 +106,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
     bags: "/media/hero/male-embracing-white-bag-v2-hd.webp", // the homepage slide (user 2026-10-02: 「換」), cropped to face, hand and bag
     abundance: "/media/site/scene-dessert-stand-oak-table-tea-v3.webp", // a scene, not the studio shot (user 2026-10-05: 「右側換情境照」)
-    "wood-fired": "/media/site/scene-oak-table-bird-rests.webp", // songbird rests on a tray, oak coffee table (user 2026-10-05)
+    "wood-fired": "/media/site/scene-oak-table-bird-rests-close.webp", // closer, on the songbird rests (user 2026-10-05: 「再近一點，焦點在小鳥筷子架」)
     hero: "", visit: "",
   };
   // where a landscape photograph sits in the portrait frame
