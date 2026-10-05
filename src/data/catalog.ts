@@ -280,8 +280,8 @@ const buildCatalog = (lang: Locale) => {
   };
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
   // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
-  // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, the close view for
-  // Raw Gold, whose front view showed the piece too small (studio-listing.json points it at the close view).
+  // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, and the front view for
+  // Raw Gold too (2026-10-05: 「比例太大，應該要跟其他金飾視覺上是一樣大」; the close view had replaced it on 2026-10-01).
   const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string }[]> = {
     // the brand's own photograph of the box, straight on, on the same light floor (asset library 2400 px cut-outs, 2026-10-02:
     // 「更多的官網素材可以從這個網站抓」); the generated three-quarter view stays the cover
