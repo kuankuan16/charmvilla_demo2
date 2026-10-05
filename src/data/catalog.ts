@@ -337,6 +337,8 @@ const buildCatalog = (lang: Locale) => {
   // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, and the front view for
   // Raw Gold too (2026-10-05: 「比例太大，應該要跟其他金飾視覺上是一樣大」; the close view had replaced it on 2026-10-01).
   const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string }[]> = {
+    // the tray with its dessert-paper folder and gold box, the brand's CV-0120 on the listing ground (user 2026-10-05: 「製作成高清商品大圖」)
+    "prosperity-dessert-stand": [{ file: "studio2k-prosperity-dessert-stand-set.webp", zh: "點心盤與點心紙、包裝盒", en: "With dessert papers and box", enAlt: "with its dessert-paper folder and gift box" }],
     // the brand's own photograph of the box, straight on, on the same light floor (asset library 2400 px cut-outs, 2026-10-02:
     // 「更多的官網素材可以從這個網站抓」); the generated three-quarter view stays the cover
     ...Object.fromEntries(["purple-butterfly", "year-of-plenty", "winter-blossom", "kyoto", "blossoming-prosperity"].map((s) => [`${s}-gift-box`, [{ file: `studio-${s}-gift-box-official.webp`, zh: "官方商品照", en: "Official photograph", enAlt: "official photograph" }]])),
