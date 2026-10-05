@@ -834,16 +834,17 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    Measured on the reference at 1440: image block 45 % × full height; right block padded 60 px; heading 60 px caps;
    60 px gap; cards 600 px wide (image 600×365, body padded 40 px, 1 px border), 30 px apart, running off the right edge;
    then a square outline button beside a 3 px progress line. */
-.stores { display: grid; grid-template-columns: 45% 55%; min-height: 100svh; background: var(--color-ink); color: var(--color-page); overflow: hidden; }
+/* light ground after the reference journal block (user 2026-10-05: 「改成淺色背景，並刪除詳細地址上面的線」; it was dark since 10-02) */
+.stores { display: grid; grid-template-columns: 45% 55%; min-height: 100svh; background: #efeee8; color: var(--color-ink); overflow: hidden; }
 .stores-media { position: relative; min-height: 560px; }
 .stores-body { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: clamp(60px, 8vw, 120px) 0 clamp(60px, 7vw, 100px) clamp(32px, 4.2vw, 60px); }
 .stores-heading { padding-right: var(--page-gutter); }
 .stores-heading h2 { font-size: clamp(42px, 4.85vw, 74px); font-weight: 400; line-height: 1.15; letter-spacing: .02em; text-transform: uppercase; }
-.stores-heading p { margin-top: 10px; font-size: 16px; color: rgb(246 248 250 / .7); }
+.stores-heading p { margin-top: 10px; font-size: 16px; color: rgb(31 31 31 / .64); }
 .stores-slider { position: relative; margin-top: clamp(36px, 4.2vw, 60px); }
 .stores-track { display: flex; gap: clamp(18px, 2.1vw, 30px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-right: var(--page-gutter); outline-offset: 4px; }
 .stores-track::-webkit-scrollbar { display: none; }
-.stores-card { flex: 0 0 min(600px, 76%); scroll-snap-align: start; border: 1px solid rgb(246 248 250 / .14); background: #262523; }
+.stores-card { flex: 0 0 min(600px, 76%); scroll-snap-align: start; border: 1px solid rgb(31 31 31 / .12); background: transparent; }
 .stores-card-image { position: relative; aspect-ratio: 600 / 365; overflow: hidden; }
 .stores-card-image img { transition: transform 1s cubic-bezier(.22, .8, .3, 1); }
 .stores-card:hover .stores-card-image img { transform: scale(1.04); }
@@ -853,25 +854,27 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 @media (min-width: 768px) { .stores-card-body { min-height: clamp(308px, calc(484px - 17.2vw), 352px); } }
 @media (min-width: 1024px) { .stores-card-body { min-height: calc(347px - 3.85vw); } }
 @media (min-width: 1440px) { .stores-card-body { min-height: clamp(265px, calc(454px - 11.25vw), 292px); } }
-.stores-card-meta { font-size: 16px; color: rgb(246 248 250 / .72); }
+.stores-card-meta { font-size: 16px; color: rgb(31 31 31 / .72); }
 .stores-card h3 { margin-top: 12px; font-size: clamp(25px, 2.42vw, 35px); font-weight: 400; line-height: 1.25; }
-.stores-card-info { margin-top: auto; padding-top: 14px; border-top: 1px solid rgb(246 248 250 / .14); font-size: 15px; line-height: 1.8; color: rgb(246 248 250 / .64); }
-.stores-card-info a:hover { color: var(--color-page); text-decoration: underline; text-underline-offset: 4px; }
+.stores-card-info { margin-top: auto; font-size: 15px; line-height: 1.8; color: rgb(31 31 31 / .64); }
+.stores-card-info a { white-space: nowrap; } /* the phone number never breaks across lines */
+.stores-card-info a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
 .stores-arrow { position: absolute; z-index: 2; top: calc(min(600px, 76%) * 365 / 600 / 2); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
 .stores-arrow--next { right: clamp(40px, 9%, 120px); }
 .stores-arrow--prev { left: clamp(14px, 2%, 28px); }
 .stores-arrow:hover, .stores-arrow:focus-visible { background: var(--color-page); color: var(--color-ink); }
 .stores-foot { display: flex; align-items: center; gap: 30px; margin-top: clamp(40px, 4.8vw, 70px); padding-right: var(--page-gutter); }
-.stores-button { flex: none; padding: 16px 30px; border: 1px solid rgb(246 248 250 / .6); font-size: 16px; letter-spacing: .04em; transition: background .3s, color .3s; }
-.stores-button:hover, .stores-button:focus-visible { background: var(--color-page); color: var(--color-ink); }
-.stores-progress { flex: 1; height: 3px; background: rgb(246 248 250 / .16); overflow: hidden; }
+.stores-button { flex: none; padding: 16px 30px; border: 1px solid rgb(31 31 31 / .6); font-size: 16px; letter-spacing: .04em; transition: background .3s, color .3s; }
+.stores-button:hover, .stores-button:focus-visible { background: var(--color-ink); color: var(--color-page); }
+.stores-progress { flex: 1; height: 3px; background: rgb(31 31 31 / .12); overflow: hidden; }
 .stores-progress span { display: block; height: 100%; background: var(--color-gold); transform-origin: left; transition: transform .3s; }
-.stores :focus-visible { outline-color: var(--color-page); }
+.stores :focus-visible { outline-color: var(--color-ink); }
 @media (max-width: 767px) {
   .stores { display: block; min-height: 0; }
   .stores-media { min-height: 0; aspect-ratio: 4 / 3; }
   .stores-body { padding: 44px 0 52px var(--page-gutter); }
   .stores-card { flex-basis: 86%; }
+  .stores-card h3 { font-size: clamp(20px, 5.6vw, 22px); } /* the store name keeps to one line at phone width */
   .stores-arrow { width: 56px; height: 56px; top: calc(86% * 365 / 600 / 2); }
   .stores-arrow--next { right: 8%; }
   .stores-foot { gap: 18px; }
