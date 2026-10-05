@@ -21,7 +21,7 @@ export const getAbout = (lang: Locale) => {
     eyebrow: t("關於我們", "About"),
     title: "CHARM VILLA",
     // O: the official English slogan, word for word, in both languages
-    slogan: "Enjoy a charming life and a charming world in CHARM VILLA.",
+    slogan: "Enjoy a charming life and a charming world in CHARM\u00A0VILLA.",
     intro: t(
       "CHARM VILLA 是 2013 年由創意總監蘇靜媚創立的設計品牌。從一尾在茶杯裡舒展的小金魚茶包開始，我們把工藝、茶與設計帶進日常：送禮的時刻、一杯茶的時間，還有每天配戴、使用的物件。",
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),

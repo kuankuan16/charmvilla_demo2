@@ -45,7 +45,7 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
         </div>
       </div>
       <div className="footer-bottom">
-        <p className="tc">© 2026 CHARM VILLA. {t("版權所有。", "All rights reserved.")}</p>
+        <p className="tc">© 2026 CHARM&nbsp;VILLA. {t("版權所有。", "All rights reserved.")}</p>
         <SocialLinks lang={lang} className="footer-social" />
       </div>
       <Link href={homeHref} className="footer-wordmark" aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}>

@@ -12,3 +12,6 @@ const latinThenCjk = new RegExp(`([${LETTER_OR_DIGIT}])([${CJK}])`, "g");
 
 /** Inserts one half-width space wherever a Chinese (or Japanese) character meets a half-width letter or digit. */
 export const spaceCjk = (text: string): string => text.replace(cjkThenLatin, "$1 $2").replace(latinThenCjk, "$1 $2");
+
+/** The brand name never breaks across two lines (user 2026-10-05: 「不要分開品牌名稱」): its space becomes a no-break space. */
+export const keepBrand = (text: string): string => text.replace(/CHARM VILLA/g, "CHARM\u00A0VILLA");
