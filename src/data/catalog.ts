@@ -336,6 +336,8 @@ const buildCatalog = (lang: Locale) => {
   // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
+    // the white bag's hover shows a person with the bag, like the blue and pink ones (user 2026-10-05: 「hover 也改成人物跟包」)
+    "braided-leather-bag-white": ["/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-floating-morandi.webp", "/media/gallery/CV-0426.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
