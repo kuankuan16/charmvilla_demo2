@@ -344,7 +344,11 @@ const buildCatalog = (lang: Locale) => {
   };
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
-  const sceneOmit: Record<string, string[]> = { "cloud-coaster": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`) };
+  const sceneOmit: Record<string, string[]> = {
+    "cloud-coaster": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`),
+    // the three event photographs of the stands (CV-0068 / 0074 / 0081) are off the dessert tray page (user 2026-10-05: 「刪」)
+    "prosperity-dessert-stand": ["CV-0068", "CV-0074", "CV-0081"].map((id) => `/media/gallery/${id}.webp`),
+  };
   // off every page (user 2026-10-02: 「刪」 — the near-identical flat lays of all the wooden pieces on stone, then the third copy CV-0234)
   const omitEverywhere = ["CV-0231", "CV-0232", "CV-0234"].map((id) => `/media/gallery/${id}.webp`);
   // Not scenes: studio composites and their sources (cut-outs, the plain product shots the composites were made from).
