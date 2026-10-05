@@ -141,7 +141,8 @@ const buildCatalog = (lang: Locale) => {
     slug: jewelrySlugs[i], category: "jewelry", name: p.title, english: jewelryEnglish[i],
     summary: p.desc, description: jewelryEditorial[i].description,
     image: p.image, views: [{ label: t("商品照", "Product photograph"), image: p.image }, ...(jewelryExtra[i] || []).map((image, j) => ({ label: t(`情境 ${j + 1}`, `Scene ${j + 1}`), image }))],
-    facts: [{ label: t("系列", "Series"), value: t("小金魚金飾", "Goldfish Jewelry") }, { label: t("款式", "Style"), value: p.title }, { label: t("設計細節", "Design details"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
+    // facts only (user 2026-10-05: 「商品 spec 不寫形容文案」): the style repeated the name and is gone; the parts are 「組成」
+    facts: [{ label: t("系列", "Series"), value: t("小金魚金飾", "Goldfish Jewelry") }, { label: t("組成", "Parts"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
     ...(jewelryPrices[jewelrySlugs[i]] ? { price: { amount: jewelryPrices[jewelrySlugs[i]], currency: "TWD" as const } } : {}),
     story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
   }));
@@ -178,6 +179,24 @@ const buildCatalog = (lang: Locale) => {
       detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Hinoki Wood Chopsticks, sold on their own. The Songbird Chopsticks Rest is sold separately."),
       story: { title: t("每日使用的線條", "A line used every day"), body: t("一雙筷子，常在手邊。從修長的外形看到木紋，熟悉的餐具也有可細讀之處；與鳥形筷架一同擺放，便形成餐桌上的小幅構圖。", "A pair of chopsticks is always within reach. From their long shape to the grain of the wood, even familiar tableware has something to read closely; set beside the bird chopstick rest, they make a small composition on the table.") } },
   ];
+  // Only facts a buyer needs first (user 2026-10-05). Rows marked Shopify follow the Shopify product descriptions quoted in the
+  // English Website Copy Review (2026-10-02); prices stay with the official Taiwan store where known.
+  const handWash = { label: t("清潔方式", "Care"), value: t("請輕柔手洗，不可使用洗碗機", "Hand wash gently; not dishwasher safe") };
+  const teawareFacts: Record<string, { label: string; value: string }[]> = {
+    "prosperity-dessert-stand": [
+      { label: t("販售單位", "Sold as"), value: t("1 組／盒", "1 set per box") },
+      { label: t("材質", "Material"), value: t("紙", "Paper") },
+      { label: t("尺寸", "Size"), value: t("29.5 × 22 × 3.5 cm（±5%）", "29.5 × 22 × 3.5 cm (±5%)") },
+      { label: t("搭配點心紙", "Dessert paper"), value: t("紙＋PE（食品級），12 組／盒；台灣製，符合 ISO 22000 與 HACCP", "Paper + PE (food-contact grade), 12 sets per box; made in Taiwan, ISO 22000 and HACCP compliant") },
+      { label: t("使用注意", "Use"), value: t("點心紙僅限常溫、單次使用，請勿加熱；遠離火源，存放於乾燥處", "Dessert paper for room temperature and single use only; do not heat. Keep away from fire and store dry") },
+      { label: t("設計", "Design"), value: "蘇靜媚" },
+    ],
+    "prosperity-stand-gift-box": [{ label: t("內容物", "Contents"), value: t("豐盛點心架、包裝禮盒", "Abundance dessert stand, gift box") }],
+    "bird-chopstick-rest": [
+      { label: t("製作", "Making"), value: t("逐件手工塑形與修整，每件色澤與漸層略有不同", "Shaped and finished by hand; color and gradient vary slightly from piece to piece") },
+      { label: t("清潔方式", "Care"), value: t("僅限手洗，不可使用洗碗機", "Hand wash only; not dishwasher safe") },
+    ],
+  };
   const teawareOfficial: Record<string, { price: number; facts: { label: string; value: string }[] }> = {
     "cloud-coaster": { price: 1880, facts: [
       { label: t("販售單位", "Sold as"), value: t("6 片／組", "6 per set") },
@@ -189,21 +208,23 @@ const buildCatalog = (lang: Locale) => {
       { label: t("販售單位", "Sold as"), value: t("2 雙／組（不含鳥形筷架）", "2 pairs per set (Songbird Chopsticks Rest sold separately)") },
       { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
       { label: t("尺寸", "Size"), value: t("長 23 cm", "Length 23 cm") },
+      handWash,
     ] },
     "ginkgo-teaspoon-gift-box": { price: 760, facts: [
       { label: t("販售單位", "Sold as"), value: t("1 只／盒", "1 per box") },
       { label: t("材質", "Material"), value: t("檜木", "Cypress (hinoki)") },
       { label: t("尺寸", "Size"), value: t("長 15.7 cm", "Length 15.7 cm") },
       { label: t("設計", "Design"), value: "蘇靜媚" },
+      handWash,
     ] },
   };
   const teawareProducts: Product[] = tablewareEntries.map((p) => ({
     slug: p.slug, category: (p.series === prosperity ? "abundance" : p.slug === "bird-chopstick-rest" ? "wood-fired" : "scents") as CategoryId, name: p.name, english: p.en, summary: p.summary, description: p.detail,
     image: gallery(p.ids[0], p.name), views: p.ids.map((id, i) => ({ label: i ? t(`細節 ${i}`, `Detail ${i}`) : t("商品全貌", "Full view"), image: gallery(id, p.name) })),
     facts: [
-      { label: t("系列", "Series"), value: p.series }, { label: t("品項", "Item"), value: p.name },
-      { label: t("使用情境", "Use"), value: p.series === prosperity ? t("下午茶與點心擺放", "Afternoon tea and serving sweets") : t("茶席與日常餐桌", "Tea table and everyday dining") },
+      { label: t("系列", "Series"), value: p.series },
       ...(teawareOfficial[p.slug]?.facts ?? []),
+      ...(teawareFacts[p.slug] ?? []),
     ],
     ...(teawareOfficial[p.slug] ? { price: { amount: teawareOfficial[p.slug].price, currency: "TWD" as const } } : {}),
     story: { title: p.story.title, body: p.story.body, image: p.ids[1] ? gallery(p.ids[1], p.name) : undefined },

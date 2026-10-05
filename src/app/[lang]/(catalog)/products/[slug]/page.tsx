@@ -54,7 +54,15 @@ export default async function ProductPage({ params }: Props) {
   // small at the left, where they stay under the header while the large one passes. Anything else keeps its rows.
   const inSpreads = rest.length > 0 && rest.length % 3 === 0 && rest.every((img) => shapeOf(img) === "tall");
   const spreads = inSpreads ? rest.flatMap((_, i) => (i % 3 ? [] : [rest.slice(i, i + 3)])) : [], rowScenes = inSpreads ? [] : rest;
-  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2><p className="tc">{product.story.body}</p>{product.giftBox && <p className="product-image-note tc">{t("以禮盒販售；情境圖中的茶具、茶點與佈置物不包含在商品內。盒色與供應款式請以官方商店選項為準。", "Sold as a gift box. Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
+  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2><p className="tc">{product.story.body}</p>{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
+  // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
+  // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
+  const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
+  const specs = <section className="product-specs" aria-labelledby="specs-title">
+    <h2 id="specs-title" className="tc">{specTitle}</h2>
+    <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.value}</dd></div>)}</dl>
+    {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
+  </section>;
   const related = [...siblings.filter((p) => p.slug !== slug), ...all.filter((p) => p.category !== product.category)].slice(0, 4);
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
     // Offer only where the official list price is known; no availability, since stock is not known (catalog.ts rule).
@@ -63,8 +71,9 @@ export default async function ProductPage({ params }: Props) {
     <article className={`product-page product-page--${product.category}`} data-product={slug}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       {/* First screen after jakobsencopenhagen.com/en/products/holger-1-5-seater (user 2026-10-01: 「直接照這個一模一樣」): see ProductGallery
-          and the product page block in globals.css. Name, text, every specification and the button all sit inside the first screen
-          (user: 「所有資訊不需滑動才看到」). Under the button the same column carries the story and the first scene photographs, at the
+          and the product page block in globals.css. Name, summary line, price, text and the button sit inside the first screen
+          (user: 「所有資訊不需滑動才看到」); since 2026-10-05 the specifications follow the button in their own section, at the
+          reference's spacing (user's choice). Under them the same column carries the story and the first scene photographs, at the
           width of the information above them, while the product image on the left stays in place (after …/products/karla;
           user 2026-10-01: 「右側的情境照應該要對齊上面資訊欄的欄位，左邊商品圖會暫時固定」). No captions. */}
       <ProductGallery key={product.slug} name={product.name} views={product.views} intro={
@@ -72,14 +81,14 @@ export default async function ProductPage({ params }: Props) {
           {/* On Chinese pages the English name sits above the Chinese one; on English pages the name itself is English. */}
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
+          <p className="product-summary tc">{product.summary}</p>
           {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}</p>}
           <p className="product-description tc">{product.description}</p>
-          <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.value}</dd></div>)}</dl>
-          <p className="product-summary tc">{product.summary}</p>
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
           {/* user 2026-10-01: every product page carries the ink add-to-bag button; a piece without a list price goes into the bag as "price on request" */}
           <AddToCart product={product} />
         </div>}>
+        {specs}
         {!pair && storyText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery>
