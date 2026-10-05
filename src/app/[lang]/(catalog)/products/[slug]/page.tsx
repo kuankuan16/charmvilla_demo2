@@ -81,8 +81,8 @@ export default async function ProductPage({ params }: Props) {
   const fill = Array.from({ length: Math.max(0, ...others.map((l) => l.length)) }, (_, i) => others.flatMap((l) => l[i] ?? []));
   const related = [...sameCategory, ...fill.flat()].slice(0, 4);
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
-    // Offer only where the official list price is known; no availability, since stock is not known (catalog.ts rule).
-    ...(product.price && { offers: { "@type": "Offer", price: product.price.amount, priceCurrency: product.price.currency, url: `${siteUrl}${productHref(product, lang)}` } }) };
+    // Offer only where the official list price is known; availability only where the official store says sold out (catalog.ts rule).
+    ...(product.price && { offers: { "@type": "Offer", price: product.price.amount, priceCurrency: product.price.currency, url: `${siteUrl}${productHref(product, lang)}`, ...(product.soldOut && { availability: "https://schema.org/SoldOut" }) } }) };
   return (
     <article className={`product-page product-page--${product.category}`} data-product={slug}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
@@ -98,7 +98,7 @@ export default async function ProductPage({ params }: Props) {
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
           <p className="product-summary tc">{product.summary}</p>
-          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}</p>}
+          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}</p>}
           <p className="product-description tc">{product.description}</p>
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
           {/* user 2026-10-01: every product page carries the ink add-to-bag button; a piece without a list price goes into the bag as "price on request" */}

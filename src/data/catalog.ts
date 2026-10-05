@@ -33,6 +33,8 @@ export type Product = {
   featuredImage?: Img;
   /** Local-mode list price (official TWD). In shopify mode the Storefront API price wins. */
   price?: { amount: number; currency: "TWD" };
+  /** Marked sold out on the official store; the price stays visible and the bag button is disabled. */
+  soldOut?: boolean;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
   giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number }[] };
@@ -148,6 +150,8 @@ const buildCatalog = (lang: Locale) => {
     { label: t("寄送", "Delivery"), value: t("金飾不提供海外寄送", "Jewelry is not shipped overseas") },
   ];
   // the bezel-set drop sits next to the claw-set one
+  // the official store marks 吐鑽小金魚耳環｜爪鑲｜ (id 128) ｜售罄｜ (user 2026-10-05: mark it here too)
+  const jewelrySoldOut = new Set(["diamond-goldfish-earrings"]);
   const jewelryOrder = ["pearl-chain-goldfish-earrings", "diamond-goldfish-earrings", "diamond-bezel-goldfish-earrings", "diamond-goldfish-stud-earrings", "twin-goldfish-earrings", "raw-gold-goldfish-earrings"];
   const jewelryProducts: Product[] = jewelry.items.map((p, i): Product => ({
     slug: jewelrySlugs[i], category: "jewelry", name: p.title, english: jewelryEnglish[i],
@@ -156,6 +160,7 @@ const buildCatalog = (lang: Locale) => {
     // facts only (user 2026-10-05: 「商品 spec 不寫形容文案」): the style repeated the name and is gone; the parts are 「組成」
     facts: [{ label: t("系列", "Series"), value: jewelrySeries[i] }, { label: t("組成", "Parts"), value: jewelryDetails[i] }, ...jewelryFacts(jewelrySlugs[i])],
     ...(jewelryPrices[jewelrySlugs[i]] ? { price: { amount: jewelryPrices[jewelrySlugs[i]], currency: "TWD" as const } } : {}),
+    ...(jewelrySoldOut.has(jewelrySlugs[i]) ? { soldOut: true } : {}),
     story: { title: jewelryEditorial[i].title, body: jewelryEditorial[i].body, image: jewelryExtra[i]?.[0] },
   })).sort((a, b) => jewelryOrder.indexOf(a.slug) - jewelryOrder.indexOf(b.slug));
 

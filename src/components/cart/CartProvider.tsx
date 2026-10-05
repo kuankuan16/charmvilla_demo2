@@ -64,6 +64,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // `option`: the tea chosen for a gift box sold "one tea per box" (index into product.giftBox.choices); it is part of the line key.
   const add = useCallback(async (product: Product, quantity = 1, option?: number) => {
+    if (product.soldOut) return;
     setOpen(true);
     if (MODE === "shopify") { if (!product.shopify?.variantId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece is not yet linked in Shopify and cannot be added to the bag for now.")); return; } const tea = option === undefined ? undefined : findProduct(product.slug, "zh")?.giftBox?.choices?.[option]?.label; await call("POST", { lines: [{ merchandiseId: product.shopify.variantId, quantity, ...(tea ? { attributes: [{ key: "茶款", value: tea }] } : {}) }] }); return; }
     setLocalLines((ls) => { const i = ls.findIndex((l) => l.slug === product.slug && l.option === option); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
