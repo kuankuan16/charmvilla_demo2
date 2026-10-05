@@ -266,7 +266,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
     // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
-    "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Songbird Chopsticks Rest close up, chopsticks resting on the bird, charcoal behind")), gallery("CV-0242", t("鳥形筷架・青瓷與米黃的小鳥散在白桌與木炭之間", "Songbird Chopsticks Rests in celadon and cream scattered between a white table and charcoal"))],
+    "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Songbird Chopsticks Rest close up, chopsticks resting on the bird, charcoal behind")), site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240)],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
     site("scene-pink-bag-armchair-2k-v3-tagfix.webp", t("編織提把皮革包・粉紅色，放在米色皮革單椅上；背後是深藍色塊的畫，前景墨綠毛圈布凳上的木托盤擺著一杯小金魚茶、雲朵杯墊與銀杏茶匙", "Braided Leather Bag in pink on a beige leather armchair; a deep-blue field painting behind, and in front a tray on an olive bouclé ottoman with a glass of goldfish tea, a Cloud Coaster and a Ginkgo Style Tea Spoon"), 1760, 2336)],
@@ -322,7 +322,7 @@ const buildCatalog = (lang: Locale) => {
   // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
-    "bird-chopstick-rest": ["/media/gallery/CV-0248.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/gallery/CV-0242.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
+    "bird-chopstick-rest": ["/media/gallery/CV-0248.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {

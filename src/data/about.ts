@@ -89,8 +89,8 @@ export const getAbout = (lang: Locale) => {
       // the black-and-white portrait of the man in black holding the white bag (user 2026-10-05: 「改成男生黑白，黑衣服張」), framed on face, hand and bag
       { id: "bags", image: { src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：穿黑衣的男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man in black, arms over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720 }, position: "65% 50%" },
       { id: "abundance", image: site("studio2k-prosperity-dessert-stand.webp", t("金色摺紙的豐盛點心盤", "The gold folded-paper Abundance dessert tray"), 1792, 2240) },
-      // the tray close-up now stands for Scents, so the bird rests show the brand's own photograph
-      { id: "wood-fired", image: gallery("CV-0242", t("青瓷與米黃的柴燒鳥形筷架散在白桌與木炭之間", "Wood-fired Songbird Chopsticks Rests in celadon and cream between a white table and charcoal")) },
+      // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
+      { id: "wood-fired", image: site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240) },
     ] satisfies AboutRange[],
     sourcesTitle: t("參考資料", "Sources"),
     sources: [
