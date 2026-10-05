@@ -166,7 +166,7 @@ const buildCatalog = (lang: Locale) => {
       summary: t("一杯茶的旁邊，木紋靜靜相伴。", "Beside a cup of tea, wood grain keeps quiet company."),
       detail: t("雲朵形狀的檜木杯墊，把木質的紋理帶到茶杯旁。一組六片，近看表面，也觀察每一片的輪廓。", "Cloud-shaped hinoki coasters bring the grain of wood to the side of the cup. Six to a set: look closely at the surface, and at the outline of each piece."),
       story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。每一次放下茶杯，杯墊表面的紋理與雲朵的輪廓，便一次次回到注意之中。", "The hand knows the material before the eye does. Each time a cup is set down, the grain of the surface and the outline of the cloud come back to attention.") } },
-    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopsticks Rest"), en: "SONGBIRD CHOPSTICKS REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256", "CV-0248", "CV-0239"],
+    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopsticks Rest"), en: "SONGBIRD CHOPSTICKS REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256", "CV-0239"] /* CV-0248 replaced by scene-bird-rest-gift-box (2026-10-05) */,
       summary: t("讓一雙筷子，有一處停歇。", "Individually handcrafted, with natural variations in color."),
       detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "Individually shaped and finished by hand, with subtle variations in color and gradient from piece to piece. Hand wash only; not dishwasher safe."),
       story: { title: t("餐具之間，一隻鳥", "A bird among the tableware"), body: t("筷子放下時，鳥形的輪廓便與修長的線條相遇。一件小器物改變了桌面的構圖，也讓用餐間的停頓有了可看的細節。", "When the chopsticks are set down, the bird's outline meets their long line. One small object changes the composition of the table and gives the pauses in a meal a detail to look at.") } },
@@ -252,9 +252,12 @@ const buildCatalog = (lang: Locale) => {
   const listingScene: Record<string, string> = {
     "braided-leather-bag-white": "CV-0422", "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
     "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-earrings": "CV-0372", "diamond-goldfish-stud-earrings": "CV-0376",
-    "bird-chopstick-rest": "CV-0248",
   };
-  const listingSceneSite: Record<string, Img> = {};
+  // the bird rest leads with the white CHARMVILLA box and a budding branch, regenerated in the oak-table scene's light
+  // (user 2026-10-05: 「重新算這張圖，攝影風格依照剛才的筷架情境照」 for CV-0248)
+  const listingSceneSite: Record<string, Img> = {
+    "bird-chopstick-rest": site("scene-bird-rest-gift-box.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a grey-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1792, 2240),
+  };
   // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
   // (scene-white-bag-over-shoulder-ink-green) and the bag in the air on ink green (gallery CV-0450) — are off the site; the files
   // are in the git history. The white bag's scenes now lead with the bag in the air on Morandi sage.
@@ -322,7 +325,7 @@ const buildCatalog = (lang: Locale) => {
   // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
-    "bird-chopstick-rest": ["/media/gallery/CV-0248.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
+    "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {
