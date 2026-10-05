@@ -24,7 +24,6 @@ export default async function NewsPage({ params }: Props) {
     <section className="news-page" aria-labelledby="news-title">
       <header className="news-head">
         <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}</h1>
-        <p className="tc">{t("新品發表、期間限定活動與媒體報導，CHARM VILLA 的最新動態。", "Launches, limited-time events and press: the latest from CHARM VILLA.")}</p>
       </header>
       <ul className="news-grid">
         {getNews(lang).map((n) => (
