@@ -105,7 +105,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     scents: "/media/site/scene-wooden-tray-table-sofa-v3.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
     bags: "/media/hero/male-embracing-white-bag-v2-hd.webp", // the homepage slide (user 2026-10-02: 「換」), cropped to face, hand and bag
-    abundance: "/media/site/studio2k-prosperity-dessert-stand.webp",
+    abundance: "/media/site/studio2k-prosperity-dessert-stand-v2.webp", // the real piece, restored, on the listing ground (2026-10-05)
     "wood-fired": "/media/site/scene-oak-table-bird-rests.webp", // songbird rests on a tray, oak coffee table (user 2026-10-05)
     hero: "", visit: "",
   };
