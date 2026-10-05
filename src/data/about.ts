@@ -52,7 +52,8 @@ export const getAbout = (lang: Locale) => {
             "Each goldfish passes through 16 steps, nine of them by hand. The bag is made of food-grade non-woven fabric with no chemical adhesive, and its asymmetric fins let it unfurl and swim in hot water. Every tea used is SGS-tested."),
         ],
         quote: { text: t("「我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。」", "“We love tea culture, and we want a simple way to share it with the world.”"), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
-        image: site("about-craft.webp", t("一雙手在木桌上摺出小金魚茶包的紙鰭，旁邊是未完成的茶包與茶葉", "Hands folding the paper fins of a goldfish tea bag on a wooden bench, unfinished tea bags and tea leaves beside them"), 1792, 2240),
+        // user 2026-10-05: 「剛剛生成的皮革沙發取代這張」 (the hand-folding photograph, about-craft.webp, is kept in the repo)
+        image: site("scene-lounge-chair-tea-bird.webp", t("焦糖色真皮躺椅上放著白色編織提把皮革包，前景洞石邊几上一杯小金魚茶、金色茶標與柴燒鳥形筷架", "A white Braided Leather Bag on a cognac leather lounge chair; on a travertine side table in front, a glass of goldfish tea, its gold tag and a wood-fired Songbird Chopsticks Rest"), 1792, 2240),
       },
       {
         id: "world", index: "03", side: "right",

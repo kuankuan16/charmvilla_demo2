@@ -54,9 +54,9 @@ export default async function AboutPage({ params }: Props) {
         <section key={c.id} className={`about-chapter about-chapter--${c.side}`} aria-labelledby={`about-${c.id}`}>
           <figure className="about-chapter-image" style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
             <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />
-            {/* the homepage's two award marks, as one group at the lower left of the goldfish photograph (user 2026-10-05: 「加入首頁那 2 個得獎 logo」) */}
+            {/* the homepage's two award marks, as one group at the lower left of the goldfish photograph (user 2026-10-05: 「加入首頁那 2 個得獎 logo」); the Red Dot mark in its light version, as on the homepage, over the dark rug */}
             {c.id === "goldfish" && <div className="award-badges" role="group" aria-label={tea.honoursAria}>
-              {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="96px" />)}
+              {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src.replace("reddot-winner-2014-transparent.svg", "reddot-winner-2014-light.svg")} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="96px" />)}
             </div>}
           </figure>
           <div className="about-chapter-text">
