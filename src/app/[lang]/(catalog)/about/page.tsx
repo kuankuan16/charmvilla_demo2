@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import BrandFilm from "@/components/sections/BrandFilm";
+import { getAbout } from "@/data/about";
 import { getContent } from "@/data/content";
-import { alternatesFor, defaultLocale, isLocale, translator } from "@/i18n/config";
+import { categoryHref, getCategories } from "@/data/catalog";
+import { alternatesFor, defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -12,30 +14,93 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
   return {
-    title: t("關於｜CHARM VILLA", "About | CHARM VILLA"),
-    description: getContent(lang).manifesto.paragraphs.slice(0, 2).join(" ").replace(/\n/g, " "),
+    title: t("關於 CHARM VILLA｜子村莊園", "About | CHARM VILLA"),
+    description: getAbout(lang).intro,
     alternates: alternatesFor(lang, "/about"),
   };
 }
 
-// About (user 2026-10-01: 「新增一個 about 頁面，把影片移過去，首頁就不需要出現影片」). One spread on the product-page grid:
-// the film holds the left columns and stays in place, the brand story and the two awards run down the right.
+// About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面，我要刪除裡面的影片，並幫我產生適合情境的圖」). The film is gone;
+// the page follows the collection pages' editorial type: a display heading with the official slogan beside it, a wide photograph,
+// a row of figures, four chapters that alternate photograph and text on the 12 columns, the range, the stores, the slogan again and
+// the sources every fact comes from (src/data/about.ts).
 export default async function AboutPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const t = translator(lang);
-  const { manifesto, tea } = getContent(lang);
+  const about = getAbout(lang);
+  const { tea, visit } = getContent(lang);
+  const categories = getCategories(lang);
+  const shops = visit.tabs.find((tab) => tab.id === "shops")?.shops ?? [];
   return (
     <article className="about-page">
-      <div className="about-film"><BrandFilm /></div>
-      <div className="about-copy">
-        <h1 className="tc">{t("淬鍊日常的詩意：當工藝遇上生活儀式", "Crafting Everyday Poetics")}</h1>
-        <p className="about-sub">{t("Crafting Everyday Poetics — Where Artistry Meets Living.", "Where Artistry Meets Living.")}</p>
-        <div className="about-story tc">{manifesto.paragraphs.map((text) => <p key={text}>{text}</p>)}</div>
-        <ul className="about-awards" aria-label={tea.honoursAria}>
-          {tea.awards.map((award) => <li key={award.image.src}><Image src={award.image.src} alt={award.image.alt} width={award.image.w} height={award.image.h} sizes="90px" /><p className="tc">{award.text}</p></li>)}
+      <header className="about-hero">
+        <div className="about-hero-title">
+          <p className="catalog-eyebrow tc">{about.eyebrow}</p>
+          <h1>{about.title}</h1>
+          <p className="about-hero-sub tc">{about.subtitle}</p>
+        </div>
+        <div className="about-hero-copy">
+          <p className="about-slogan tc">{about.slogan}</p>
+          <p className="about-intro tc">{about.intro}</p>
+        </div>
+      </header>
+      <figure className="about-hero-image"><Image src={about.hero.src} alt={about.hero.alt} fill priority sizes="100vw" quality={90} /></figure>
+
+      <ul className="about-figures">
+        {about.figures.map((f) => <li key={f.value}><strong>{f.value}</strong><span className="tc">{f.label}</span></li>)}
+      </ul>
+
+      {about.chapters.map((c) => (
+        <section key={c.id} className={`about-chapter about-chapter--${c.side}`} aria-labelledby={`about-${c.id}`}>
+          <figure className="about-chapter-image" style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
+            <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />
+          </figure>
+          <div className="about-chapter-text">
+            <p className="about-chapter-index">{c.index}</p>
+            <h2 id={`about-${c.id}`} className="tc">{c.title}</h2>
+            {c.body.map((p) => <p key={p} className="tc">{p}</p>)}
+            {c.quote && <blockquote className="about-quote"><p className="tc">{c.quote.text}</p><cite className="tc">{c.quote.by}</cite></blockquote>}
+            {c.id === "world" && <ul className="about-awards" aria-label={tea.honoursAria}>
+              {tea.awards.map((a) => <li key={a.image.src}><Image src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="120px" /><span className="tc">{a.text}</span></li>)}
+            </ul>}
+          </div>
+        </section>
+      ))}
+
+      <section className="about-range" aria-labelledby="about-range-title">
+        <h2 id="about-range-title" className="tc">{about.rangeTitle}</h2>
+        <ul>
+          {about.range.map((r) => {
+            const cat = categories.find((c) => c.id === r.id);
+            if (!cat) return null;
+            return <li key={r.id}><Link href={categoryHref(r.id, lang)} className="about-range-card">
+              <span className="about-range-image"><Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:1024px) 16vw, (min-width:768px) 31vw, 48vw" /></span>
+              <span className="about-range-name tc">{cat.name}</span>
+            </Link></li>;
+          })}
         </ul>
-      </div>
+      </section>
+
+      <section className="about-stores" aria-labelledby="about-stores-title">
+        <h2 id="about-stores-title" className="tc">{about.storesTitle}</h2>
+        <ul>
+          {shops.map((s) => <li key={s.name}>
+            <p className="about-store-meta tc">{s.intro.city} / {s.hours}</p>
+            <h3 className="tc">{s.name}</h3>
+            <p className="about-store-addr tc">{s.addr}{s.phone && <> · <a href={`tel:${s.phone.tel}`}>{s.phone.label}</a></>}</p>
+          </li>)}
+        </ul>
+        <Link href={localeHref(lang, "/#visit")} className="about-stores-link tc">{about.storesCta}</Link>
+      </section>
+
+      <p className="about-closing tc">{about.slogan}</p>
+
+      <footer className="about-sources">
+        <h2 className="tc">{about.sourcesTitle}</h2>
+        <ol>{about.sources.map((s) => <li key={s.href}><a href={s.href} target="_blank" rel="noreferrer" className="tc">{s.label}</a></li>)}</ol>
+        <p className="tc">{t("本頁內容依上述報導與官方資料整理。", "This page is compiled from the reports and official sources above.")}</p>
+      </footer>
     </article>
   );
 }
