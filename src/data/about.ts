@@ -24,7 +24,8 @@ export const getAbout = (lang: Locale) => {
     intro: t(
       "CHARM VILLA 是 2013 年由創意總監蘇靜媚創立的設計品牌。從一尾在茶杯裡舒展的小金魚茶包開始，我們把工藝、茶與設計帶進日常：送禮的時刻、一杯茶的時間，還有每天配戴、使用的物件。",
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
-    hero: site("about-hero.webp", t("熱水注入玻璃杯，杯中的小金魚茶包在茶湯裡舒展", "Hot water poured into a glass cup, a goldfish tea bag unfurling in the tea"), 2400, 1600),
+    // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
+    hero: site("scene-pink-bag-armchair-olive.webp", t("粉紅色編織提把皮革包放在橄欖綠布面單椅上，背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶", "The pink Braided Leather Bag on an olive bouclé armchair before an orange field painting, a glass of goldfish tea on an oak side table in front"), 1760, 2336),
     figures: [
       { value: "2013", label: t("品牌創立", "Brand founded") },
       { value: "16", label: t("道工序，其中 9 道手作", "steps, 9 of them by hand") },

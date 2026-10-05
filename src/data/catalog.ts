@@ -256,7 +256,7 @@ const buildCatalog = (lang: Locale) => {
   // the bird rest leads with the white CHARMVILLA box and a budding branch, regenerated in the oak-table scene's light
   // (user 2026-10-05: 「重新算這張圖，攝影風格依照剛才的筷架情境照」 for CV-0248)
   const listingSceneSite: Record<string, Img> = {
-    "bird-chopstick-rest": site("scene-bird-rest-gift-box.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a grey-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1792, 2240),
+    "bird-chopstick-rest": site("scene-bird-rest-gift-box-v2.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a grey-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1688, 2110) /* levelled 2.5° (user 2026-10-05: 「修正照片的水平線」) */,
   };
   // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
   // (scene-white-bag-over-shoulder-ink-green) and the bag in the air on ink green (gallery CV-0450) — are off the site; the files
@@ -269,7 +269,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
     // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
-    "bird-chopstick-rest": [gallery("CV-0240", t("鳥形筷架・筷子架在小鳥上的近景，背後是木炭", "Songbird Chopsticks Rest close up, chopsticks resting on the bird, charcoal behind")), site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240)],
+    "bird-chopstick-rest": [site("scene-bird-rest-tray-closeup.webp", t("深色古銅托盤上，一雙檜木筷架在青瓷色鳥形筷架上，後方小鳥停在備長炭上", "On a dark bronze tray, hinoki chopsticks resting on a celadon Songbird Chopsticks Rest, another bird perched on binchotan behind"), 2040, 1360) /* CV-0240 re-staged on the oak scene's tray (2026-10-05) */, site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240)],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
     site("scene-pink-bag-armchair-olive.webp", t("編織提把皮革包・粉紅色，放在橄欖綠布面單椅上；背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶與 CHARM VILLA 茶標", "Braided Leather Bag in pink on an olive bouclé armchair; an orange field painting behind, and on an oak side table in front a glass of goldfish tea with its CHARM VILLA tag"), 1760, 2336)],
@@ -325,7 +325,7 @@ const buildCatalog = (lang: Locale) => {
   // An explicit order where the photographs would otherwise leave a half-empty row: the bird rest's three portraits run down
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
-    "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/gallery/CV-0239.webp", "/media/gallery/CV-0240.webp"],
+    "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-wooden-tray-table-closeup-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/gallery/CV-0239.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   const withListing = (p: Product): Product => {

@@ -33,17 +33,17 @@ export default async function AboutPage({ params }: Props) {
   const categories = getCategories(lang);
   return (
     <article className="about-page">
+      {/* Opening spread for a portrait photograph (2026-10-05): the name, slogan and intro in the left half, set at the foot of the
+          column; the photograph fills the right half. */}
       <header className="about-hero">
-        <div className="about-hero-title">
+        <div className="about-hero-text">
           <p className="catalog-eyebrow tc">{about.eyebrow}</p>
           <h1>{about.title}</h1>
-        </div>
-        <div className="about-hero-copy">
           <p className="about-slogan tc">{about.slogan}</p>
           <p className="about-intro tc">{about.intro}</p>
         </div>
+        <figure className="about-hero-image"><Image src={about.hero.src} alt={about.hero.alt} fill priority sizes="(min-width:768px) 50vw, 100vw" quality={90} /></figure>
       </header>
-      <figure className="about-hero-image"><Image src={about.hero.src} alt={about.hero.alt} fill priority sizes="100vw" quality={90} /></figure>
 
       <ul className="about-figures">
         {about.figures.map((f) => <li key={f.value}><strong>{f.value}</strong><span className="tc">{f.label}</span></li>)}

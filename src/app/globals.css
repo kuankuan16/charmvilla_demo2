@@ -1041,12 +1041,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    beside it, a wide photograph, figures between hairlines, chapters alternating photograph and text, the range, the stores,
    the slogan again and the sources. Paragraphs 17px, notes 13px (type floor). */
 .about-page { padding-bottom: clamp(60px, 7vw, 120px); }
-.about-hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; align-items: end; padding: 65px var(--page-gutter) 50px; }
+.about-hero { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: end; padding: 50px var(--page-gutter) 0; }
+.about-hero-text { grid-column: 1 / span 5; padding-bottom: 8px; }
 .about-hero h1 { margin-top: 25px; font-size: clamp(55px, 9.8vw, 167px); font-weight: 300; line-height: .95; letter-spacing: -.02em; } /* lighter, and no letters touching (user 2026-10-05: 「改細一點」) */
-.about-hero-copy { max-width: 440px; justify-self: end; }
-.about-slogan { font-size: 23px; font-weight: 500; line-height: 1.6; }
-.about-intro { margin-top: 20px; font-size: 17px; line-height: 1.9; color: rgb(31 31 31 / .8); }
-.about-hero-image { position: relative; margin: 0 var(--page-gutter); aspect-ratio: 3 / 2; max-height: 82svh; width: calc(100% - 2 * var(--page-gutter)); overflow: hidden; background: #e6e4df; }
+.about-slogan { margin-top: 36px; font-size: 23px; font-weight: 500; line-height: 1.6; max-width: 440px; }
+.about-intro { margin-top: 20px; font-size: 17px; line-height: 1.9; color: rgb(31 31 31 / .8); max-width: 440px; }
+.about-hero-image { position: relative; grid-column: 7 / -1; aspect-ratio: 4 / 5; max-height: calc(100svh - var(--header-h) - 60px); width: 100%; justify-self: end; margin: 0; overflow: hidden; background: #e6e4df; }
 .about-hero-image img { object-fit: cover; }
 .about-figures { display: grid; grid-template-columns: repeat(4, 1fr); margin: clamp(48px, 5vw, 80px) var(--page-gutter) 0; border-top: 1px solid rgb(31 31 31 / .14); border-bottom: 1px solid rgb(31 31 31 / .14); }
 .about-figures li { display: flex; flex-direction: column; gap: 10px; padding: clamp(24px, 2.6vw, 40px) clamp(16px, 1.6vw, 28px); }
@@ -1086,8 +1086,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-sources a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
 .about-sources > p { margin-top: 10px; }
 @media (max-width: 1023px) {
-  .about-hero { grid-template-columns: 1fr; gap: 28px; }
-  .about-hero-copy { justify-self: start; }
+  .about-hero-text { grid-column: 1 / span 6; }
   .about-figures { grid-template-columns: repeat(2, 1fr); }
   .about-figures li:nth-child(3) { border-left: 0; }
   .about-figures li:nth-child(n + 3) { border-top: 1px solid rgb(31 31 31 / .14); }
@@ -1097,8 +1096,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .about-range ul { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; }
 }
 @media (max-width: 767px) {
-  .about-hero { padding-top: 40px; }
-  .about-hero-image { aspect-ratio: 4 / 3; }
+  .about-hero { display: block; padding-top: 40px; }
+  .about-hero-image { margin-top: 32px; max-height: none; }
   .about-figures strong { font-size: clamp(30px, 8.6vw, 42px); white-space: nowrap; }
   .about-chapter { display: block; padding-top: 60px; }
   .about-chapter-text { margin-top: 28px; }
