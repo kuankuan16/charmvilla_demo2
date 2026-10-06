@@ -875,7 +875,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 
 /* Shared outer edge for every page; card interiors retain their own spacing. */
 /* Side gutters widened (user 2026-09-30: 左右的 padding 再多一點). */
-:root { --page-gutter: clamp(40px, 8vw, 160px); } /* 左右留白再加大（使用者 2026-10-06：「全站左右的 padding 再多一點」），原本 clamp(32px, 6.5vw, 130px) */
+:root { --content-max: 1160px; --page-gutter: max(clamp(40px, 5vw, 72px), calc((100vw - var(--content-max)) / 2)); } /* 內容最寬 1160px 置中；窄螢幕用 5vw（40–72px），寬螢幕用上限（使用者 2026-10-06）。原本 clamp(40px, 8vw, 160px)，更早是 clamp(32px, 6.5vw, 130px) */
 @media (max-width: 767px) {
   :root { --page-gutter: 28px; }
 }
