@@ -296,6 +296,8 @@ const buildCatalog = (lang: Locale) => {
   sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-walking-tobacco.webp", t("身穿菸草棕針織衫與寬褲的女子走過米白灰泥牆，手提白色編織提把皮革包，午後陽光把包的影子投在牆上", "A woman in a tobacco-brown knit and wide trousers walks past an off-white plaster wall, the white Braided Leather Bag in her hand, late sun casting its shadow on the wall"), 1792, 2240)];
   // 粉紅包手提行走：象牙白細條紋襯衫與寬褲，參考使用者的手提姿勢（使用者 2026-10-06：「放上官網」）
   sceneExtra["braided-leather-bag-pink"] = [...(sceneExtra["braided-leather-bag-pink"] ?? []), site("scene-pink-bag-walking-ivory-linen.webp", t("穿象牙白細條紋襯衫與寬褲的女子走過米白牆，手提粉紅色編織提把皮革包，牆上有柔和的光影", "A woman in an ivory pinstripe shirt and wide trousers walks past a cream wall, the pink Braided Leather Bag in her hand, soft shadows on the wall"), 1792, 2240)];
+  // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
+  sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-olive-armchair-rattan.webp", t("暖色客廳一角，橄欖綠毛圈布扶手椅上靠著藍色編織提把皮革包；牆上是橘色系的抽象大圓弧畫，椅子左邊是一張藤編茶几", "A warm corner of a living room: the blue Braided Leather Bag rests on an olive bouclé armchair, an orange arched abstract painting on the wall and a woven rattan side table to the left"), 1520, 2688)];
   // 白包肩背近拍：深藍薄紗襯衫、側光照出荔枝紋（使用者 2026-10-06：「放上官網」）
   sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-shoulder-navy-silk.webp", t("穿深藍薄紗襯衫的女子側身，白色編織提把皮革包背在肩上、貼著身側，側光照出荔枝紋皮革", "A woman in a sheer navy blouse in profile, the white Braided Leather Bag on her shoulder close to her side, side light raking across the lychee-grain leather"), 1792, 2240)];
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-shoulder-oatmeal-coat.webp", t("穿燕麥色羊毛大衣的女子側身回望，藍色編織提把皮革包背在肩上、貼著身側", "A woman in an oatmeal wool coat glances back over her shoulder, the blue Braided Leather Bag worn on her shoulder close to her side"), 1792, 2240)];
@@ -374,7 +376,7 @@ const buildCatalog = (lang: Locale) => {
     // 白包卡片 hover 改用手提行走照（使用者 2026-10-06：「白色包包 商品 hover 用這張」），所以它排第一
     "braided-leather-bag-white": ["/media/site/scene-white-bag-walking-tobacco.webp", "/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-shoulder-navy-silk.webp"],
     // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
-    "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
+    "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-blue-bag-olive-armchair-rattan.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
