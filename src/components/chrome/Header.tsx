@@ -105,7 +105,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     scents: "/media/site/scene-wooden-tray-table-sofa-v4.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
     bags: "/media/hero/male-embracing-white-bag-v2-hd.webp", // the homepage slide (user 2026-10-02: 「換」), cropped to face, hand and bag
-    abundance: "/media/site/scene-dessert-stand-marble-desert-lounge.webp", // the marble table by the desert window (user 2026-10-05: 「換」 from the fireplace lounge)
+    abundance: "/media/site/scene-dessert-stand-fireplace-lounge-v2-menu.webp", // the fireplace lounge cropped to the tray, fire, flowers and cup (user 2026-10-06: 「我要換這樣裁切範圍的圖」); 1112 px wide, the crop itself, not enlarged
     "wood-fired": "/media/site/scene-oak-table-bird-rests-close.webp", // closer, on the songbird rests (user 2026-10-05: 「再近一點，焦點在小鳥筷子架」)
     hero: "", visit: "",
   };
