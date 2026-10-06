@@ -9,7 +9,7 @@ export default function NewsletterForm() {
   const [note, setNote] = useState<string | null>(null);
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setNote(t("電子報將於 Shopify 串接完成後開放訂閱。", "The newsletter opens once the online store is connected."));
+    setNote(t("電子報將於 Shopify 串接完成後開放訂閱。", "The newsletter is not open yet."));
   };
   return (
     <form className="footer-news-form" onSubmit={submit}>

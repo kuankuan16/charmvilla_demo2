@@ -23,7 +23,7 @@ const build = (lang: Locale) => {
       t("物質本無言語，直到職人的手與時間在此重逢。從一折紙的流動、落刀前對皮革紋理的叩問，到金屬與木石在磨礪中的減法，我們在反覆琢磨的細節裡，將生命的溫度悄然刻入形體。",
         "Material has no words of its own until the artisan's hands and time meet in it. From the flow of a single fold of paper and the question put to the grain of leather before the blade comes down, to what metal, wood and stone lose as they are honed, we press the warmth of life quietly into form through details worked over again and again."),
       t("當作品走出展台，躍上肩頭、掠過耳畔、躍入茶湯，藝術便不再遙遠，而是轉化為一種可被觸摸的棲居姿態，凝練為生活最純粹的本質。",
-        "When a piece leaves the display for the shoulder, the ear and the tea, art is no longer far away. It becomes a way of living you can touch, distilled into the purest substance of life."),
+        "When a piece leaves the display for the shoulder, the ear and the tea, art is no longer far away. It becomes a way of living you can touch."),
     ],
     // The two small photographs at the left of the first row (user 2026-10-02: the leather and goldsmith photographs
     // 換 these two). Cut from the user's side-by-side image to 4:5; 100 px of the plain studio ground continued above
@@ -45,7 +45,7 @@ const build = (lang: Locale) => {
         // v3 (「右圖那張，後面角落的畫布要跟左圖一樣」「只變畫布的部分，其他不變」): the no-handle variant's painting composited in, every other pixel unchanged;
         // v4 (「這裡不自然」): the canvas continues down behind the ottoman instead of ending on a hard edge left of the tray
         image: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
-          "On a wooden tray on a moss-green bouclé ottoman, a Goldfish Tea Bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
+          "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
       },
       {
         id: "leather",
@@ -70,8 +70,8 @@ const build = (lang: Locale) => {
         cta: { label: t("看香味是喜悅的記憶", "Explore scents"), href: "/collections/scents" },
         // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
         // with their engraved logos (also on the coaster and teaspoon pages)
-        image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARM VILLA，旁邊是毛圈布沙發與橡木長凳",
-          "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARM VILLA, beside a bouclé sofa and an oak bench"), 1792, 2240),
+        image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARMVILLA，旁邊是毛圈布沙發與橡木長凳",
+          "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARMVILLA, beside a bouclé sofa and an oak bench"), 1792, 2240),
       },
     ] as CraftMoment[],
   };

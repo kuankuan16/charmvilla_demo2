@@ -92,7 +92,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const brandLinks = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
     { href: localeHref(lang, "/news"), label: t("最新消息", "News") },
-    { href: sectionHref("visit"), label: t("門市資訊", "Our stores") },
+    { href: sectionHref("visit"), label: t("門市資訊", "Our Stores") },
   ];
   const serviceLinks = [
     { href: sectionHref("account"), label: t("會員", "Account") },

@@ -25,7 +25,7 @@ export default function PolicyPage({ title, intro, updated, sections, labels }: 
               : "list" in b
                 ? <ul key={i}>{b.list.map((item) => <li key={item} className="tc">{item}</li>)}</ul>
                 : <p key={i} className="policy-pending tc"><span>{labels.pending}</span>{b.pending}</p>)}
-            {s.source && <p className="policy-source tc">{labels.source}{s.source}</p>}
+            {/* `s.source` is the editors' reference (commerce.ts) and is not shown to customers (copy decision 2026-10-06) */}
           </section>
         ))}
       </div>

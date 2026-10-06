@@ -47,9 +47,9 @@ export default function CartDrawer() {
               <p className="cart-note tc">{cart.currency === "TWD" ? (free ? t("台灣宅配免運費。", "Free home delivery in Taiwan.") : t("台灣宅配運費 NT$ 120，滿 NT$ 2,000 免運。", "Home delivery in Taiwan NT$ 120; free for orders of NT$ 2,000 or more.")) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
               {cart.mode === "shopify" && cart.checkoutUrl
                 ? <a href={cart.checkoutUrl} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
-                : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Available once payment is connected")}>{t("前往結帳", "Go to checkout")}</button>}
+                : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Online checkout is not open yet")}>{t("前往結帳", "Go to checkout")}</button>}
               <p className="cart-note tc"><Link href={localeHref(lang, "/shopping-guide#shipping")} onClick={() => cart.setOpen(false)} className="underline underline-offset-4">{t("運送、付款與退換貨說明", "Delivery, payment and returns")}</Link></p>
-              {cart.mode === "local" && <p className="cart-note tc">{t("線上結帳將於 Shopify 串接完成後開放；目前可先加入購物車或洽詢門市。", "Online checkout will open once Shopify is connected. For now you can add pieces to your bag or contact a store.")}</p>}
+              {cart.mode === "local" && <p className="cart-note tc">{t("線上結帳將於 Shopify 串接完成後開放；目前可先加入購物車或洽詢門市。", "Online checkout is not open yet. For now you can add pieces to your bag or contact a store.")}</p>}
             </footer>
           </>
         )}
