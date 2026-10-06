@@ -287,7 +287,7 @@ const buildCatalog = (lang: Locale) => {
   // (user 2026-10-05: 「重新算這張圖，攝影風格依照剛才的筷架情境照」 for CV-0248)
   const listingSceneSite: Record<string, Img> = {
     // 白包的沙發人物情境：棕色皮沙發換成橄欖綠毛圈布沙發（使用者 2026-10-06：「這2張換」）
-    "braided-leather-bag-white": site("scene-white-bag-olive-sofa-woman.webp", t("棕色西裝的女子靠坐在橄欖綠毛圈布沙發上，手握白色編織提把皮革包的提把，包放在坐墊上", "A woman in a brown blazer leans back on an olive bouclé sofa, holding the braided handle of the white Braided Leather Bag as it rests on the seat"), 1760, 2240),
+    "braided-leather-bag-white": site("scene-white-bag-olive-sofa-woman.webp", t("棕色西裝的女子靠坐在橄欖綠毛圈布沙發上，手握白色編織提把皮革包的提把，包放在坐墊上", "A woman in a brown blazer leans back on an olive bouclé sofa, holding the braided handle of the white Braided Leather Bag as it rests on the seat"), 1764, 2240),
     // a new lifestyle scene (user 2026-10-05: 「我現在要做豐盛點心盤的生品情境照」): the stand with a few petits fours and goldfish tea on an oak table, olive sofa in front
     // v3 (user 2026-10-05): the bottom tier widened to the real piece's 38 : 71 : 100 and the painting navy; v2: an orange wall, a white gold-rimmed cup, a piped-cream tartlet, a fiddle-leaf fig
     "prosperity-dessert-stand": site("scene-dessert-stand-oak-table-tea-v3.webp", t("燒橘色牆面的溫暖客廳，牆上一幅海軍藍的畫，橡木圓桌上的豐盛點心盤擺著幾樣小點心，旁邊一杯白瓷金邊杯泡的小金魚茶，後方是琴葉榕，前景是橄欖綠毛圈沙發", "In a warm room with a burnt-orange wall and a navy painting, the Abundance Dessert Tray on a round oak table with a few petits fours, goldfish tea in a white gold-rimmed cup, a fiddle-leaf fig behind and an olive bouclé sofa in front"), 1792, 2240),
