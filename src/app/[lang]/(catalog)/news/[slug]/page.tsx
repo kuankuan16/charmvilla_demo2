@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { CSSProperties } from "react";
 import { Picture } from "@/components/ui";
 import { findNews, getNews } from "@/data/news";
 import { alternatesFor, defaultLocale, isLocale, locales, localeHref, translator } from "@/i18n/config";
@@ -33,7 +34,7 @@ export default async function NewsArticle({ params }: Props) {
   return (
     <article className="news-article">
       <div className="news-story">
-        <div className="news-story-media"><div className="news-story-image"><Picture img={n.card} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></div></div>
+        <div className="news-story-media"><div className="news-story-image" style={n.ground ? { background: n.ground } : undefined}><Picture img={n.card} fill fit={n.whole ? "contain" : "cover"} animate={false} sizes="(min-width:768px) 46vw, 100vw" /></div></div>
         <div className="news-story-text">
           <nav className="news-crumbs tc" aria-label={t("麵包屑", "Breadcrumb")}><Link href={localeHref(lang, "/news")}>{t("最新消息", "News")}</Link><span aria-hidden="true">/</span><span aria-current="page">{n.title}</span></nav>
           <div className="news-story-main">
@@ -61,7 +62,7 @@ export default async function NewsArticle({ params }: Props) {
               <li key={o.slug}>
                 <Link href={localeHref(lang, `/news/${o.slug}`)} className="news-more-row">
                   <span className="news-num" aria-hidden="true">{o.n}</span>
-                  <div className="news-more-thumb"><Picture img={o.card} fill fit="cover" animate={false} sizes="120px" /></div>
+                  <div className="news-more-thumb" style={o.focus ? ({ "--focus": o.focus } as CSSProperties) : undefined}><Picture img={o.card} fill fit="cover" animate={false} sizes="120px" /></div>
                   <div><span className="news-more-meta tc">{o.tag}・<time dateTime={o.date}>{o.dateLabel}</time></span><span className="news-more-title tc">{o.title}</span></div>
                   <span className="news-arrow news-arrow-long" aria-hidden="true" />
                 </Link>
