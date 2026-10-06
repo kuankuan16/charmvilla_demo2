@@ -311,7 +311,7 @@ const buildCatalog = (lang: Locale) => {
   // 參考 9 張包款廣告照的拍法生成的人物情境照，臉只露到唇下（使用者 2026-10-06：「這2個放上官網商品內容頁」）
   sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-walking-tobacco.webp", t("身穿菸草棕針織衫與寬褲的女子走過米白灰泥牆，手提白色編織提把皮革包，午後陽光把包的影子投在牆上", "A woman in a tobacco-brown knit and wide trousers walks past an off-white plaster wall, the white Braided Leather Bag in her hand, late sun casting its shadow on the wall"), 1792, 2240)];
   // 粉紅包手提行走：象牙白細條紋襯衫與寬褲，參考使用者的手提姿勢（使用者 2026-10-06：「放上官網」）
-  sceneExtra["braided-leather-bag-pink"] = [...(sceneExtra["braided-leather-bag-pink"] ?? []), site("scene-pink-bag-walking-ivory-linen.webp", t("穿象牙白細條紋襯衫與寬褲的女子走過米白牆，手提粉紅色編織提把皮革包，牆上有柔和的光影", "A woman in an ivory pinstripe shirt and wide trousers walks past a cream wall, the pink Braided Leather Bag in her hand, soft shadows on the wall"), 1792, 2240)];
+  sceneExtra["braided-leather-bag-pink"] = [...(sceneExtra["braided-leather-bag-pink"] ?? []), site("scene-pink-bag-olive-sofa-tea-tray.webp", t("一隻手提著粉紅色編織提把皮革包，斜射的暖陽落在橄欖綠絨布沙發上；前景木邊几的托盤裡，一杯小金魚茶放在雲朵杯墊上，旁邊是 CHARM VILLA 茶標", "A hand holds the pink Braided Leather Bag by its handle in slanting warm sun over an olive velvet sofa; on the tray of the wooden side table in front, a cup of goldfish tea on a cloud coaster beside its CHARM VILLA tag"), 1360, 2048)];
   // 藍包肩背近拍：暖灰羊毛西裝配象牙白絲質圍巾，斜射陽光切過包蓋（使用者 2026-10-06）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-shoulder-taupe-blazer-wide.webp", t("暖灰色寬肩羊毛西裝外套與象牙白絲質圍巾的女子側身站立，土耳其藍色編織提把皮革包背在肩上、貼著身側，斜射的陽光灑在淡紫灰的牆面上", "A woman in a taupe oversized wool blazer and an ivory silk scarf stands in profile, the turquoise Braided Leather Bag on her shoulder, slanting sun across a pale mauve wall"), 1520, 2688)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
@@ -396,7 +396,7 @@ const buildCatalog = (lang: Locale) => {
     // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
     "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-blue-bag-shoulder-taupe-blazer-wide.webp", "/media/site/scene-blue-bag-olive-armchair-rattan.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
-    "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
+    "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-olive-sofa-tea-tray.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
