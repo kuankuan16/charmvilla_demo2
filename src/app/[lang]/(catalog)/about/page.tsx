@@ -117,12 +117,6 @@ export default async function AboutPage({ params }: Props) {
           </details>)}
         </div>
       </section>
-
-      <footer className="about-sources">
-        <h2 className="tc">{about.sourcesTitle}</h2>
-        <ol>{about.sources.map((s) => <li key={s.href}><a href={s.href} target="_blank" rel="noreferrer" className="tc">{s.label}</a></li>)}</ol>
-        <p className="tc">{t("本頁內容依上述報導與官方資料整理。", "This page is compiled from the reports and official sources above.")}</p>
-      </footer>
     </article>
   );
 }

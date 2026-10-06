@@ -1,5 +1,6 @@
 // About page copy (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面，刪除裡面的影片，產生適合情境的圖；資訊來源根據
-// 官網，或搜集網路上的媒體報導與採訪」). Every fact below comes from one of the sources listed at the end of this file:
+// 官網，或搜集網路上的媒體報導與採訪」). Every fact below comes from one of these sources (no longer listed on the page,
+// user 2026-10-06: 「刪」 the 參考資料 block):
 //   P  = 陳建瑋〈子村莊園，小金魚茶包游向世界〉，《台灣光華雜誌》2015 年 7 月 (the founding story, the design idea, 16 steps / 9 by
 //        hand, no adhesive, asymmetric fins, April 2013, the 2013 Mid-Autumn sell-out, Red Dot 2014, iF Gold March 2015 among 1,624)
 //   O  = CHARM VILLA 台灣官方線上商店 (slogan, 34-country design patents, food-grade non-woven fabric, SGS-tested teas)
@@ -123,14 +124,5 @@ export const getAbout = (lang: Locale) => {
       { q: t("哪裡可以看到實品？", "Where can I see the pieces?"), a: t("台北晶華門市（麗晶精品 B1，10:00–21:00 全年無休）與京都門市（寺町通二條，週六・週日 11:00–18:00）。", "At Regent Taipei (Regent Galleria B1, 10:00–21:00 every day) and in Kyoto (Teramachi-dori Nijo, Saturday and Sunday 11:00–18:00).") },
     ],
     faqMore: { label: t("看完整購物須知", "Read the full shopping guide"), href: "/shopping-guide" },
-    sourcesTitle: t("參考資料", "Sources"),
-    sources: [
-      { label: t("《台灣光華雜誌》專訪，陳建瑋，2015 年 7 月", "Taiwan Panorama interview, Kobe Chen, July 2015"),
-        href: lang === "zh" ? "https://www.taiwan-panorama.com/Articles/Details?Guid=face2970-4fcc-4068-b298-124b1eb68333" : "https://www.taiwan-panorama.com/en/Articles/Details?Guid=2b1501c4-5b30-406b-82a4-ad10ef674664" },
-      { label: t("CHARM VILLA 官方線上商店", "CHARM VILLA official online store"), href: "https://www.charmvilla.com.tw/" },
-      { label: "Bored Panda, “Goldfish Tea Bags Will Turn Your Teacup Into A Fishbowl”", href: "https://www.boredpanda.com/gold-fish-tea-bag-charm-villa/" },
-      { label: "Contemporist, “Teabags Designed To Look Like A Goldfish Is Swimming In Your Mug”", href: "https://www.contemporist.com/teabags-designed-to-look-like-a-goldfish-is-swimming-in-your-mug/" },
-      { label: t("internetcom，CHARM VILLA 京都店開幕報導", "internetcom.jp, on the opening of CHARM VILLA Kyoto"), href: "https://internetcom.jp/202351/gold-fish-tea-bag-charm-villa" },
-    ],
   };
 };
