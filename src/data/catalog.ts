@@ -296,6 +296,9 @@ const buildCatalog = (lang: Locale) => {
     site("scene-olive-mustard-lounge-pink-bag-tea.webp", t("灰褐色客廳裡，粉紅色編織提把皮革包放在橄欖綠毛圈扶手椅上，胡桃木茶几上有一杯小金魚茶與團圓桐木木盒，右邊芥末黃躺椅與地毯上灑著窗格光影", "In a taupe living room, the pink Braided Leather Bag on an olive bouclé armchair; on a walnut coffee table a glass of goldfish tea and the Reunion paulownia box; window light falls across a mustard lounge chair and the rug"), 1792, 2240)],
   };
   // the twin-earring portrait on a mustard sofa (user 2026-10-05: 「加入對應的商品圖」): the twin earrings, the blue bag and the cloud coaster are all in it
+  // 參考 9 張包款廣告照的拍法生成的人物情境照，臉只露到唇下（使用者 2026-10-06：「這2個放上官網商品內容頁」）
+  sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-walking-tobacco.webp", t("身穿菸草棕針織衫與寬褲的女子走過米白灰泥牆，手提白色編織提把皮革包，午後陽光把包的影子投在牆上", "A woman in a tobacco-brown knit and wide trousers walks past an off-white plaster wall, the white Braided Leather Bag in her hand, late sun casting its shadow on the wall"), 1792, 2240)];
+  sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-shoulder-oatmeal-coat.webp", t("穿燕麥色羊毛大衣的女子側身回望，藍色編織提把皮革包背在肩上、貼著身側", "A woman in an oatmeal wool coat glances back over her shoulder, the blue Braided Leather Bag worn on her shoulder close to her side"), 1792, 2240)];
   for (const slug of ["twin-goldfish-earrings", "braided-leather-bag-blue", "cloud-coaster"]) sceneExtra[slug] = [...(sceneExtra[slug] ?? []), site("scene-twin-earring-profile-mustard-sofa.webp", t("金髮女子靠在芥末黃毛圈沙發上的側臉，耳垂上戴著雙星小金魚耳環；小邊桌上雲朵杯墊承著一杯小金魚茶，旁邊是藍色編織提把皮革包", "A blonde woman in profile on a mustard bouclé sofa, wearing the Twin Goldfish Earrings; on a side table a glass of goldfish tea on a Cloud Coaster beside the blue Braided Leather Bag"), 1792, 2240)];
   // a second dessert-tray scene: a desert lounge with a larger marble table (user 2026-10-05)
   // a third: a fireplace lounge at night, after the user's hotel afternoon-tea references (2026-10-05); flutes, teapot and jars removed, the tray at true size; v2 stands it on the tabletop, further right (user: 「應該在桌面上，不要往上浮，並右移」)
@@ -355,6 +358,8 @@ const buildCatalog = (lang: Locale) => {
     "cloud-coaster": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`),
     // the three event photographs of the stands (CV-0068 / 0074 / 0081) are off the dessert tray page (user 2026-10-05: 「刪」)
     "prosperity-dessert-stand": ["CV-0068", "CV-0074", "CV-0081"].map((id) => `/media/gallery/${id}.webp`),
+    // 白包頁拿掉白、藍兩只包在檯座上的照片（使用者 2026-10-06：「刪」）
+    "braided-leather-bag-white": ["/media/gallery/CV-0426.webp"],
   };
   // off every page (user 2026-10-02: 「刪」 — the near-identical flat lays of all the wooden pieces on stone, then the third copy CV-0234)
   const omitEverywhere = ["CV-0231", "CV-0232", "CV-0234"].map((id) => `/media/gallery/${id}.webp`);
@@ -364,7 +369,9 @@ const buildCatalog = (lang: Locale) => {
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
     // the white bag's hover shows a person with the bag, like the blue and pink ones (user 2026-10-05: 「hover 也改成人物跟包」)
-    "braided-leather-bag-white": ["/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-floating-morandi.webp", "/media/gallery/CV-0426.webp"],
+    "braided-leather-bag-white": ["/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-walking-tobacco.webp", "/media/site/scene-white-bag-floating-morandi.webp"],
+    // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
+    "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp", "/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
