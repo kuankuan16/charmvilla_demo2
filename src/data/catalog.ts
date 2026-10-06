@@ -372,9 +372,9 @@ const buildCatalog = (lang: Locale) => {
     "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
     "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle-hd-v2.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
   };
-  // 茶葉禮盒：依盒內數量，第二張縮圖放「打開盒子看數量」的開箱圖，在官方商品照之前（使用者 2026-10-06：「像真皮包一樣」）
+  // 茶葉禮盒：依盒內數量，縮圖最後一張放「打開盒子看數量」的開箱圖（使用者 2026-10-06：「像真皮包一樣」；有官方正面圖的，正面圖在前、開箱圖放最後）
   for (const [n, slugs] of [[12, ["reunion-paper", "reunion-paulownia", "spring-dawn", "winter-blossom"]], [18, ["year-of-plenty", "blossoming-prosperity", "spring-blossoms", "orchid", "purple-butterfly", "full-moon-tea"]]] as const) {
-    for (const s of slugs) studioExtra[`${s}-gift-box`] = [{ file: `gift-box-unboxed-${n}.webp`, zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` }, ...(studioExtra[`${s}-gift-box`] ?? [])];
+    for (const s of slugs) studioExtra[`${s}-gift-box`] = [...(studioExtra[`${s}-gift-box`] ?? []), { file: `gift-box-unboxed-${n}.webp`, zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` }];
   }
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
