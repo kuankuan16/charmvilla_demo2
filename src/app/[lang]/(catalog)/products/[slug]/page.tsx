@@ -128,7 +128,7 @@ export default async function ProductPage({ params }: Props) {
         <div className="product-pair-side">{storyText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
       </section>}
       {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
-        <div className="product-spread-smalls">{textAboveSmalls && si === 0 && <div className="product-spread-text">{storyText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
+        <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{storyText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
         <figure className="scene-fig product-spread-large" data-shape="tall" style={{ aspectRatio: frameOf(large) }}><Picture img={large} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
       </section>)}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
