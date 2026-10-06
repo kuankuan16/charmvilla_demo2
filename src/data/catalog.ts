@@ -315,6 +315,8 @@ const buildCatalog = (lang: Locale) => {
   sceneExtra["braided-leather-bag-pink"] = [...(sceneExtra["braided-leather-bag-pink"] ?? []), site("scene-pink-bag-olive-sofa-tea-tray.webp", t("一隻手提著粉紅色編織提把皮革包，斜射的暖陽落在橄欖綠絨布沙發上；前景木邊几的托盤裡，一杯小金魚茶放在雲朵杯墊上，旁邊是 CHARM VILLA 茶標", "A hand holds the pink Braided Leather Bag by its handle in slanting warm sun over an olive velvet sofa; on the tray of the wooden side table in front, a cup of goldfish tea on a cloud coaster beside its CHARM VILLA tag"), 1360, 1700)];
   // 藍包肩背近拍：暖灰羊毛西裝配象牙白絲質圍巾，斜射陽光切過包蓋（使用者 2026-10-06）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-shoulder-taupe-blazer-wide.webp", t("暖灰色寬肩羊毛西裝外套與象牙白絲質圍巾的女子側身站立，土耳其藍色編織提把皮革包背在肩上、貼著身側，斜射的陽光灑在淡紫灰的牆面上", "A woman in a taupe oversized wool blazer and an ivory silk scarf stands in profile, the turquoise Braided Leather Bag on her shoulder, slanting sun across a pale mauve wall"), 1520, 2688)];
+  // 團圓繽紛紙盒：深咖啡背景、枯木前的禮盒、玻璃杯小金魚茶與茶包袋（使用者 2026-10-06：「先放上去官網內容頁」）
+  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-paper-gift-box-driftwood.webp", t("深咖啡色背景前，團圓繽紛紙盒擋在一段枯木前，旁邊一杯玻璃杯泡的小金魚茶、金色茶標籤與一包茶包袋", "Before a dark cocoa backdrop, the Reunion paper gift box in front of a piece of driftwood, with goldfish tea in a glass cup, its gold tag and a tea pouch"), 1792, 2240)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-olive-armchair-rattan.webp", t("暖色客廳一角，橄欖綠毛圈布扶手椅上靠著藍色編織提把皮革包；牆上是橘色系的抽象大圓弧畫，椅子左邊是一張藤編茶几", "A warm corner of a living room: the blue Braided Leather Bag rests on an olive bouclé armchair, an orange arched abstract painting on the wall and a woven rattan side table to the left"), 1520, 2688)];
   // 白包肩背近拍：深藍薄紗襯衫、側光照出荔枝紋（使用者 2026-10-06：「放上官網」）
@@ -402,6 +404,8 @@ const buildCatalog = (lang: Locale) => {
     "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-blue-bag-shoulder-taupe-blazer-wide.webp", "/media/site/scene-blue-bag-olive-armchair-rattan.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-olive-sofa-tea-tray.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
+    // 團圓繽紛紙盒：新情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
+    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/scene-reunion-paper-gift-box-driftwood.webp", "/media/site/journal-301.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
