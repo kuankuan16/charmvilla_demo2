@@ -5,7 +5,8 @@ import { site, type Img } from "./content";
 import { translator, type Locale } from "../i18n/config";
 
 export type NewsBlock = string | { list: string[] } | { links: { label: string; href: string }[] };
-export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; hero: Img; body: NewsBlock[] };
+// `focus` is the card photograph's object-position, used where the list crops it wider than it is (the framed rows are 4:3)
+export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; focus?: string; hero: Img; body: NewsBlock[] };
 
 const build = (lang: Locale): NewsEntry[] => {
   const t = translator(lang);
@@ -15,6 +16,7 @@ const build = (lang: Locale): NewsEntry[] => {
       tag: t("新品發表", "New launch"), title: t("SHOW MORE! 真皮包新品發表會", "SHOW MORE! The leather bag launch"),
       summary: t("編織提把皮革包巡迴發表：台北、洛杉磯、京都三場。", "The Braided Leather Bag on tour: Taipei, Los Angeles and Kyoto."),
       card: site("partners-male-dancer-c.webp", t("黑白男舞者側身俯首，一手提著白色編織提把皮革包", "Black-and-white photograph of a male dancer bowing in profile, the white Braided Leather Bag hanging from one hand"), 1869, 1952),
+      focus: "50% 30%",
       hero: site("banner-bag-dancer-dark.webp", t("深色漸層前，男舞者俯身，一手提著白色編織提把皮革包", "Against a dark gradient, a male dancer bends forward, the white Braided Leather Bag hanging from one hand"), 2560, 1080),
       body: [
         t("編織提把皮革包的新品發表，分三場舉行：", "The Braided Leather Bag is presented in three events:"),
@@ -27,6 +29,7 @@ const build = (lang: Locale): NewsEntry[] => {
       tag: t("禮盒預購", "Pre-order"), title: t("2026 中秋限定禮盒開放預購", "2026 Mid-Autumn gift boxes: pre-orders open"),
       summary: t("燙金魚鱗紙盒限量登場。", "A limited paper box in gold-foil fish scales."),
       card: site("scene-small-moon-tea-gift-box.webp", t("小鮮月禮盒的茶席情境", "The Small Moon gift box at a tea table")),
+      focus: "50% 72%",
       hero: site("scene-small-moon-tea-gift-box.webp", t("小鮮月禮盒的茶席情境", "The Small Moon gift box at a tea table")),
       body: [
         t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders are open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales."),
@@ -40,6 +43,7 @@ const build = (lang: Locale): NewsEntry[] => {
       summary: t("8 月 15 日起，於誠品生活南西。", "From August 15 at eslite spectrum Nanxi."),
       // the tea-table scene with fluted glasses (user 2026-10-06: 「取代這張」); its tag laid flat on the cloth per the tag spec
       card: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("暖光茶席上，一隻手托著黑色鎚紋鐵托盤，直條紋玻璃杯裡泡著一尾小金魚茶包，金色 CHARM VILLA 茶標平放在桌布上；後方幾杯茶在柔焦裡", "At a sunlit tea table a hand holds a hammered black iron tray with a goldfish tea bag steeping in a fluted glass, the gold CHARM VILLA tag lying flat on the cloth, more cups soft-focus behind"), 1792, 2240),
+      focus: "50% 76%",
       hero: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("暖光茶席上，一隻手托著黑色鎚紋鐵托盤，直條紋玻璃杯裡泡著一尾小金魚茶包，金色 CHARM VILLA 茶標平放在桌布上；後方幾杯茶在柔焦裡", "At a sunlit tea table a hand holds a hammered black iron tray with a goldfish tea bag steeping in a fluted glass, the gold CHARM VILLA tag lying flat on the cloth, more cups soft-focus behind"), 1792, 2240),
       body: [
         t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi."),

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Picture } from "@/components/ui";
+import NewsIndex from "@/components/catalog/NewsIndex";
 import { getNews } from "@/data/news";
 import { alternatesFor, defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
 
@@ -11,32 +10,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return { title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表、期間限定活動與媒體報導。", "Launches, limited-time events and press."), alternates: alternatesFor(lang, "/news") };
+  return { title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表、禮盒預購與期間限定活動。", "Launches, gift-box pre-orders and limited-time events."), alternates: alternatesFor(lang, "/news") };
 }
 
-// The list in the card style the About page used (user 2026-10-05: 「最新消息清單版型改這個」): three columns with the page's
-// gaps, a 4:5 photograph, then the date and category on one line, the title and one line of summary.
+// News (user 2026-10-06: 「最新消息單元的版型參考這些，並重新設計適合現在官網的版型」, after jakobsencopenhagen.com/stories and
+// the verin, framer and solena templates): the title with the number of stories in light ink and a short line at the right,
+// then the filters and the list (src/components/catalog/NewsIndex.tsx). Stories are numbered newest first.
 export default async function NewsPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const t = translator(lang);
+  const news = getNews(lang);
+  const items = news.map((n, i) => ({
+    slug: n.slug, href: localeHref(lang, `/news/${n.slug}`), n: String(i + 1).padStart(2, "0"), date: n.date, dateLabel: n.dateLabel,
+    tag: n.tag, title: n.title, summary: n.summary, card: n.card, focus: n.focus,
+  }));
   return (
     <section className="news-page" aria-labelledby="news-title">
-      <header className="news-head">
-        <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}</h1>
+      <header className="news-mast">
+        <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}<span className="news-mast-count" aria-hidden="true">{news.length}</span></h1>
+        <p className="news-mast-intro tc">{t("新品發表、禮盒預購與期間限定活動，CHARM VILLA 的近況都在這裡。", "Launches, gift-box pre-orders and limited-time events: the latest from CHARM VILLA.")}</p>
       </header>
-      <ul className="news-grid">
-        {getNews(lang).map((n) => (
-          <li key={n.slug}>
-            <Link href={localeHref(lang, `/news/${n.slug}`)} className="news-card">
-              <span className="news-card-image"><Picture img={n.card} fill fit="cover" animate={false} sizes="(min-width:768px) 32vw, 100vw" /></span>
-              <span className="news-card-meta tc"><time dateTime={n.date}>{n.dateLabel}</time>・{n.tag}</span>
-              <span className="news-card-title tc">{n.title}</span>
-              <span className="news-card-summary tc">{n.summary}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <NewsIndex items={items} allLabel={t("全部", "All")} filterLabel={t("依分類瀏覽", "Browse by category")} readLabel={t("閱讀全文", "Read the story")} />
     </section>
   );
 }
