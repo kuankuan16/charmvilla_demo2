@@ -280,12 +280,14 @@ const buildCatalog = (lang: Locale) => {
   //   scenes = everything photographed in a setting — the hover image of the card and the magazine spread under the gallery.
   // The scene that used to be the cover leads the scenes.
   const listingScene: Record<string, string> = {
-    "braided-leather-bag-white": "CV-0422", "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
+    "braided-leather-bag-blue": "CV-0423", "braided-leather-bag-pink": "CV-0424",
     "pearl-chain-goldfish-earrings": "CV-0377", "diamond-goldfish-stud-earrings": "CV-0376",
   };
   // the bird rest leads with the white CHARMVILLA box and a budding branch, regenerated in the oak-table scene's light
   // (user 2026-10-05: 「重新算這張圖，攝影風格依照剛才的筷架情境照」 for CV-0248)
   const listingSceneSite: Record<string, Img> = {
+    // 白包的沙發人物情境：棕色皮沙發換成橄欖綠毛圈布沙發（使用者 2026-10-06：「這2張換」）
+    "braided-leather-bag-white": site("scene-white-bag-olive-sofa-woman.webp", t("棕色西裝的女子靠坐在橄欖綠毛圈布沙發上，手握白色編織提把皮革包的提把，包放在坐墊上", "A woman in a brown blazer leans back on an olive bouclé sofa, holding the braided handle of the white Braided Leather Bag as it rests on the seat"), 1792, 2240),
     // a new lifestyle scene (user 2026-10-05: 「我現在要做豐盛點心盤的生品情境照」): the stand with a few petits fours and goldfish tea on an oak table, olive sofa in front
     // v3 (user 2026-10-05): the bottom tier widened to the real piece's 38 : 71 : 100 and the painting navy; v2: an orange wall, a white gold-rimmed cup, a piped-cream tartlet, a fiddle-leaf fig
     "prosperity-dessert-stand": site("scene-dessert-stand-oak-table-tea-v3.webp", t("燒橘色牆面的溫暖客廳，牆上一幅海軍藍的畫，橡木圓桌上的豐盛點心盤擺著幾樣小點心，旁邊一杯白瓷金邊杯泡的小金魚茶，後方是琴葉榕，前景是橄欖綠毛圈沙發", "In a warm room with a burnt-orange wall and a navy painting, the Abundance Dessert Tray on a round oak table with a few petits fours, goldfish tea in a white gold-rimmed cup, a fiddle-leaf fig behind and an olive bouclé sofa in front"), 1792, 2240),
@@ -313,7 +315,9 @@ const buildCatalog = (lang: Locale) => {
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-olive-armchair-rattan.webp", t("暖色客廳一角，橄欖綠毛圈布扶手椅上靠著藍色編織提把皮革包；牆上是橘色系的抽象大圓弧畫，椅子左邊是一張藤編茶几", "A warm corner of a living room: the blue Braided Leather Bag rests on an olive bouclé armchair, an orange arched abstract painting on the wall and a woven rattan side table to the left"), 1520, 2688)];
   // 白包肩背近拍：深藍薄紗襯衫、側光照出荔枝紋（使用者 2026-10-06：「放上官網」）
-  sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-shoulder-navy-silk.webp", t("穿深藍薄紗襯衫的女子側身，白色編織提把皮革包背在肩上、貼著身側，側光照出荔枝紋皮革", "A woman in a sheer navy blouse in profile, the white Braided Leather Bag on her shoulder close to her side, side light raking across the lychee-grain leather"), 1792, 2240)];
+  // 橘牆、橄欖綠沙發、藤編茶几與冒煙的熱茶；女子從鼻子一半往下裁切，不露出眼睛（使用者 2026-10-06）
+  sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-orange-wall-olive-sofa.webp", t("赭橘色牆前，棕色西裝的女子靠坐在橄欖綠毛圈布沙發上，手握白色編織提把皮革包的提把，沙發旁的藤編茶几上一杯冒著熱氣的茶；畫面從鼻子一半往下", "Before an ochre wall a woman in a brown blazer sits on an olive bouclé sofa, a hand on the braided handle of the white Braided Leather Bag; a steaming cup of tea on the woven rattan table beside her. The frame starts halfway down the nose"), 1360, 1513)];
+  sceneExtra["braided-leather-bag-white"] = [...(sceneExtra["braided-leather-bag-white"] ?? []), site("scene-white-bag-olive-velvet-chair.webp", t("暗暖光線下，白色編織提把皮革包放在橄欖綠絲絨扶手椅的坐墊上，荔枝紋顆粒、側邊銅色金屬棒與編織提把都清楚可見", "In low warm light the white Braided Leather Bag rests on the seat of an olive velvet armchair, the lychee grain, the brass bars at the sides and the braided handle in sharp detail"), 1360, 2048)];
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-shoulder-oatmeal-coat.webp", t("穿燕麥色羊毛大衣的女子側身回望，藍色編織提把皮革包背在肩上、貼著身側", "A woman in an oatmeal wool coat glances back over her shoulder, the blue Braided Leather Bag worn on her shoulder close to her side"), 1792, 2240)];
   for (const slug of ["twin-goldfish-earrings", "braided-leather-bag-blue", "cloud-coaster"]) sceneExtra[slug] = [...(sceneExtra[slug] ?? []), site("scene-twin-earring-profile-mustard-sofa.webp", t("金髮女子靠在芥末黃毛圈沙發上的側臉，耳垂上戴著雙星小金魚耳環；小邊桌上雲朵杯墊承著一杯小金魚茶，旁邊是藍色編織提把皮革包", "A blonde woman in profile on a mustard bouclé sofa, wearing the Twin Goldfish Earrings; on a side table a glass of goldfish tea on a Cloud Coaster beside the blue Braided Leather Bag"), 1792, 2240)];
   // a second dessert-tray scene: a desert lounge with a larger marble table (user 2026-10-05)
@@ -388,7 +392,7 @@ const buildCatalog = (lang: Locale) => {
   const sceneOrder: Record<string, string[]> = {
     // the white bag's hover shows a person with the bag, like the blue and pink ones (user 2026-10-05: 「hover 也改成人物跟包」)
     // 白包卡片 hover 改用手提行走照（使用者 2026-10-06：「白色包包 商品 hover 用這張」），所以它排第一
-    "braided-leather-bag-white": ["/media/site/scene-white-bag-walking-tobacco.webp", "/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-shoulder-navy-silk.webp"],
+    "braided-leather-bag-white": ["/media/site/scene-white-bag-walking-tobacco.webp", "/media/site/scene-white-bag-olive-sofa-woman.webp", "/media/site/scene-white-bag-olive-velvet-chair.webp", "/media/site/scene-white-bag-orange-wall-olive-sofa.webp"],
     // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
     "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-blue-bag-olive-armchair-rattan.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
