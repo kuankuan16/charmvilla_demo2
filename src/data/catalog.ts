@@ -352,7 +352,7 @@ const buildCatalog = (lang: Locale) => {
     ...Object.fromEntries(["purple-butterfly", "year-of-plenty", "winter-blossom", "kyoto", "blossoming-prosperity"].map((s) => [`${s}-gift-box`, [{ file: `studio-${s}-gift-box-official.webp`, zh: "官方商品照", en: "Official photograph", enAlt: "official photograph" }]])),
     "braided-leather-bag-white": [{ file: "studio-braided-leather-bag-white-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
     "braided-leather-bag-blue": [{ file: "studio-braided-leather-bag-blue-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
-    "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle-hd.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
+    "braided-leather-bag-pink": [{ file: "studio-braided-leather-bag-pink-angle-hd-v2.webp", zh: "斜側面", en: "Three-quarter view", enAlt: "three-quarter view" }],
   };
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
