@@ -96,7 +96,7 @@ export const getAbout = (lang: Locale) => {
     ] satisfies AboutChapter[],
     rangeTitle: t("作品", "The pieces"),
     range: [
-      { id: "tea", image: site("scene-leather-chair-goldfish-tea-tagfix.webp", t("皮椅上的一杯小金魚茶", "A cup of goldfish tea on a leather chair"), 1792, 2240) },
+      { id: "tea", image: site("scene-oak-table-goldfish-tea-chair.webp", t("暗暖光線下的橡木長桌，一杯小金魚茶與金色 CHARM VILLA 茶標，桌邊是胡桃木扶手椅", "In low warm light a cup of goldfish tea and its gold CHARM VILLA tag on an oak table, a walnut armchair at its edge"), 1792, 2240) },
       // the same picture as the menu's Scents preview (user 2026-10-05: 「改成選單的香氛那一張」)
       { id: "scents", image: site("scene-wooden-tray-table-sofa-v4.webp", t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的梅花木盒、雲朵杯墊與銀杏茶匙", "A black tray table by an olive sofa: a plum-blossom box, a Cloud Coaster and a Ginkgo Style Tea Spoon, each engraved CHARMVILLA"), 1376, 2048) },
       { id: "jewelry", image: site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉，耳垂上的鑽石垂墜小金魚耳環", "A black-and-white profile wearing the diamond goldfish drop earring"), 1792, 2240) },
