@@ -64,6 +64,8 @@ export default async function ProductPage({ params }: Props) {
   // small at the left, where they stay under the header while the large one passes. Anything else keeps its rows.
   const inSpreads = rest.length > 0 && rest.length % 3 === 0 && rest.every((img) => shapeOf(img) === "tall");
   const spreads = inSpreads ? rest.flatMap((_, i) => (i % 3 ? [] : [rest.slice(i, i + 3)])) : [], rowScenes = inSpreads ? [] : rest;
+  // 白包頁：故事文字放在第一組的兩張小圖正上方，不放在資訊欄（使用者 2026-10-06）
+  const textAboveSmalls = product.slug === "braided-leather-bag-white" && spreads.length > 0;
   const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2><p className="tc">{product.story.body}</p>{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
@@ -118,15 +120,15 @@ export default async function ProductPage({ params }: Props) {
         {specs}
         {brew}
         {concept}
-        {!pair && storyText}
+        {!pair && !textAboveSmalls && storyText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery>
       {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-labelledby="story-title">
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
         <div className="product-pair-side">{storyText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
       </section>}
-      {spreads.map(([large, ...small]) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
-        <div className="product-spread-smalls">{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
+      {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
+        <div className="product-spread-smalls">{textAboveSmalls && si === 0 && <div className="product-spread-text">{storyText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
         <figure className="scene-fig product-spread-large" data-shape="tall" style={{ aspectRatio: frameOf(large) }}><Picture img={large} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
       </section>)}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
