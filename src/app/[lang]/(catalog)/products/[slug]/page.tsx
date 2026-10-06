@@ -65,7 +65,7 @@ export default async function ProductPage({ params }: Props) {
   const inSpreads = rest.length > 0 && rest.length % 3 === 0 && rest.every((img) => shapeOf(img) === "tall");
   const spreads = inSpreads ? rest.flatMap((_, i) => (i % 3 ? [] : [rest.slice(i, i + 3)])) : [], rowScenes = inSpreads ? [] : rest;
   // 白包頁：故事文字放在第一組的兩張小圖正上方，不放在資訊欄（使用者 2026-10-06）
-  const textAboveSmalls = product.slug === "braided-leather-bag-white" && spreads.length > 0;
+  const textAboveSmalls = (product.slug === "braided-leather-bag-white" || product.slug === "braided-leather-bag-blue") && spreads.length > 0;
   const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2><p className="tc">{product.story.body}</p>{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
