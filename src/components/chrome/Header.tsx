@@ -100,7 +100,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "/media/site/scene-pink-bag-armchair-olive.webp", // the pink bag, olive chair, orange painting, goldfish tea on an oak side table (user 2026-10-05)
+    all: "/media/site/scene-pink-bag-armchair-olive-v2.webp", // the pink bag, olive chair, orange painting, goldfish tea on an oak side table (user 2026-10-05)
     tea: "/media/site/scene-leather-chair-goldfish-tea-tagfix.webp", // the cup on the leather chair, foil tag with the CHARM VILLA lettering (user 2026-10-02)
     scents: "/media/site/scene-wooden-tray-table-sofa-v4.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",

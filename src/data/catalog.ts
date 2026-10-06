@@ -288,7 +288,7 @@ const buildCatalog = (lang: Locale) => {
     "bird-chopstick-rest": [site("scene-bird-rest-tray-closeup.webp", t("深色古銅托盤上，一雙檜木筷架在青瓷色鳥形筷架上，後方小鳥停在備長炭上", "On a dark bronze tray, hinoki chopsticks resting on a celadon Songbird Chopsticks Rest, another bird perched on binchotan behind"), 2040, 1360) /* CV-0240 re-staged on the oak scene's tray (2026-10-05) */, site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240)],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
-    site("scene-pink-bag-armchair-olive.webp", t("編織提把皮革包・粉紅色，放在橄欖綠布面單椅上；背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶與 CHARM VILLA 茶標", "Braided Leather Bag in pink on an olive bouclé armchair; an orange field painting behind, and on an oak side table in front a glass of goldfish tea with its CHARM VILLA tag"), 1760, 2336)],
+    site("scene-pink-bag-armchair-olive-v2.webp", t("編織提把皮革包・粉紅色，放在橄欖綠布面單椅上；背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶與 CHARM VILLA 茶標", "Braided Leather Bag in pink on an olive bouclé armchair; an orange field painting behind, and on an oak side table in front a glass of goldfish tea with its CHARM VILLA tag"), 1760, 2336)],
     // 客廳照（橄欖綠扶手椅、芥末黃躺椅、團圓桐木盒）已從粉紅包頁拿掉（使用者 2026-10-06：「刪」），團圓桐木木盒頁仍保留
   };
   // the twin-earring portrait on a mustard sofa (user 2026-10-05: 「加入對應的商品圖」): the twin earrings, the blue bag and the cloud coaster are all in it
@@ -378,7 +378,7 @@ const buildCatalog = (lang: Locale) => {
     // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
     "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-blue-bag-olive-armchair-rattan.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
-    "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
+    "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
