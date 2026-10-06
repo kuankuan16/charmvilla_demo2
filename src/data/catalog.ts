@@ -280,11 +280,8 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
   // (scene-white-bag-over-shoulder-ink-green) and the bag in the air on ink green (gallery CV-0450) — are off the site; the files
   // are in the git history. The white bag's scenes now lead with the bag in the air on Morandi sage.
-  const sceneAfterLead: Record<string, Img[]> = {
-    "braided-leather-bag-white": [
-      // the strap follows the user's reference curve, Morandi sage backdrop (output/white-bag-floating-ink-green-2026-10-01/v2-strap-curve-morandi)
-      site("scene-white-bag-floating-morandi.webp", t("編織提把皮革包・白色，在莫蘭迪灰綠背景前懸空，肩帶畫出長弧", "Braided Leather Bag in white, in mid-air against a Morandi sage backdrop, its strap drawing a long arc"))],
-  };
+  // 白包懸空照已拿掉（使用者 2026-10-06：「刪」），目前沒有排在主圖後面的情境照
+  const sceneAfterLead: Record<string, Img[]> = {};
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
     // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
@@ -372,11 +369,12 @@ const buildCatalog = (lang: Locale) => {
   // the information column and its two landscapes close the page as one full row.
   const sceneOrder: Record<string, string[]> = {
     // the white bag's hover shows a person with the bag, like the blue and pink ones (user 2026-10-05: 「hover 也改成人物跟包」)
-    "braided-leather-bag-white": ["/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-walking-tobacco.webp", "/media/site/scene-white-bag-shoulder-navy-silk.webp", "/media/site/scene-white-bag-floating-morandi.webp"],
+    // 白包卡片 hover 改用手提行走照（使用者 2026-10-06：「白色包包 商品 hover 用這張」），所以它排第一
+    "braided-leather-bag-white": ["/media/site/scene-white-bag-walking-tobacco.webp", "/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-shoulder-navy-silk.webp"],
     // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
     "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp", "/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
-    "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp", "/media/site/scene-pink-bag-armchair-olive.webp"],
+    "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
