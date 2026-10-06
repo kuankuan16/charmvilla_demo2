@@ -356,8 +356,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-spread-smalls { grid-column: 1 / span 6; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--pdp-gap); min-width: 0; position: sticky; top: calc(var(--header-h) + var(--pdp-gap)); }
 .product-spread-smalls .scene-fig { grid-column: span 2; }
 .product-spread-smalls .product-spread-text { grid-column: 1 / -1; max-width: calc(66.667% - var(--pdp-gap) / 3); margin-bottom: clamp(24px, 3vw, 48px); }
-/* 文案加兩張小圖是一組：寬度只到兩張圖，垂直置中在右邊大圖的高度中間 */
-.product-spread-smalls.is-centered { align-self: center; align-content: start; }
+/* 文案加兩張小圖是一組：寬度只到兩張圖；起點高度和藍包頁的文案區塊一樣（使用者 2026-10-06） */
+.product-spread-smalls.is-centered { align-self: start; align-content: start; padding-top: clamp(56px, 10.6vw, 153px); }
 .product-spread-large { grid-column: 7 / span 6; }
 .product-story-text { min-width: 0; }
 .product-story-text h2 { font-size: clamp(23px, 1.85vw, 31px); font-weight: 500; line-height: 1.5; text-wrap: balance; }
@@ -389,7 +389,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-spread-smalls { display: contents; }
   .product-spread-large { order: -1; }
   .product-spread-smalls .product-spread-text { max-width: none; margin-bottom: 12px; }
-  .product-spread-smalls.is-centered { align-self: auto; }
+  .product-spread-smalls.is-centered { align-self: auto; padding-top: 0; }
   .product-pair-side { padding-top: 22px; }
   .product-pair-side .product-story-text { width: auto; margin-bottom: 26px; }
   .product-pair-side .scene-fig { position: relative; top: auto; width: auto; }
