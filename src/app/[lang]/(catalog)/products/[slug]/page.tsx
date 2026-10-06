@@ -56,11 +56,9 @@ export default async function ProductPage({ params }: Props) {
   // Exactly three scenes follow …/products/liam and …/products/joana-longchair-xl-2-seater instead (user 2026-10-01: 「版型參考 liam」,
   // 「情境照３張的版型」＋ the Joana page): one in the column, then a large one under the product image; beside it, from the left
   // edge of the information column, the story text and under that a small one, which stays in view while the large one passes.
-  // 白包頁有第 4 張情境照時，前 3 張照 3 張的排法，第 4 張排在下面一列（使用者 2026-10-06：新增橘牆沙發照）
-  const pairPlusRow = product.slug === "braided-leather-bag-white" && scenes.length === 4;
-  const pair = scenes.length === 3 ? scenes.slice(1) : pairPlusRow ? scenes.slice(1, 3) : null;
+  const pair = scenes.length === 3 ? scenes.slice(1) : null;
   const inColumn = pair ? 1 : scenes.length <= 3 ? scenes.length : [1, 2, 3].find((n) => fullRows(scenes.slice(n))) ?? 2;
-  const columnScenes = scenes.slice(0, inColumn), rest = pairPlusRow ? scenes.slice(3) : pair ? [] : scenes.slice(inColumn);
+  const columnScenes = scenes.slice(0, inColumn), rest = pair ? [] : scenes.slice(inColumn);
   // Portraits that close the page in threes make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
   // homepage (user 2026-10-01: 「商品內頁如果有多圖的情況也是用相同的邏輯處理」): the first one large at the right, the other two
   // small at the left, where they stay under the header while the large one passes. Anything else keeps its rows.
