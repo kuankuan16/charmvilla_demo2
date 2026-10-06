@@ -82,7 +82,7 @@ const buildContent = (lang: Locale) => {
         views: [
           { label: t("正面", "Front"), en: "FRONT", image: gallery("CV-0398", t("編織提把皮革包・白色正面", "Braided Leather Bag in white, front view"), 1122, 1402) },
           { label: t("斜側面", "Three-quarter"), en: "THREE-QUARTER", image: gallery("CV-0400", t("編織提把皮革包・白色斜側面", "Braided Leather Bag in white, three-quarter view"), 1122, 1402) },
-          { label: t("情境", "In context"), en: "EDITORIAL", image: site("scene-white-bag-olive-sofa-woman.webp", t("編織提把皮革包・白色，橄欖綠沙發手提情境", "Braided Leather Bag in white, held by hand on an olive sofa"), 1792, 2240) },
+          { label: t("情境", "In context"), en: "EDITORIAL", image: site("scene-white-bag-olive-sofa-woman.webp", t("編織提把皮革包・白色，橄欖綠沙發手提情境", "Braided Leather Bag in white, held by hand on an olive sofa"), 1760, 2240) },
           { label: t("靜物", "Still life"), en: "STILL LIFE", image: gallery("CV-0426", t("編織提把皮革包・白色與藍色，紙捲雕塑靜物", "Braided Leather Bags in white and blue, a still life with paper-roll sculptures"), 896, 1120) },
         ],
       },
