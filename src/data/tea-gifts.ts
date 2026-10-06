@@ -136,14 +136,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       slug: gift.slug, category: "tea", name, english: gift.english,
       summary: (en && gift.en.summary) || t(`${gift.pieces} 入／盒 · ${mix}`, `${gift.pieces} per box · ${mix}`),
       description: en ? gift.en.description : gift.description, image,
-      views: (() => {
-        const first = [...(gift.scene || generated || journalScene ? [{ label: t("禮盒情境", "Gift box scene"), image }] : []), { label: t("官方商品圖", "Official product image"), image: official }];
-        // 12 入、18 入的禮盒：第二張放開箱圖，一眼看出盒內的數量（使用者 2026-10-06）
-        const unboxed = !gift.setOf && (gift.pieces === 12 || gift.pieces === 18)
-          ? { label: t(`開箱・${gift.pieces} 入`, `Unboxed · ${gift.pieces} tea bags`), image: site(`gift-box-unboxed-${gift.pieces}.webp`, t(`${name}・打開禮盒，整齊排列的 ${gift.pieces} 包金色茶包`, `${name}, the box opened to show ${gift.pieces} gold tea bags in neat rows`), 1792, 2240) }
-          : undefined;
-        return unboxed ? [first[0], unboxed, ...first.slice(1)] : first;
-      })(),
+      views: [...(gift.scene || generated || journalScene ? [{ label: t("禮盒情境", "Gift box scene"), image }] : []), { label: t("官方商品圖", "Official product image"), image: official }],
       facts: [
         { label: t("系列", "Series"), value: v(gift.series) },
         { label: t("販售單位", "Sold as"), value: gift.setOf
