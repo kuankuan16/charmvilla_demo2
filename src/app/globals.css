@@ -305,6 +305,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-keyfacts > div:last-child { border-bottom: 1px solid rgb(31 31 31 / .14); }
 .product-keyfacts dt { font-weight: 600; color: var(--color-ink); }
 .product-keyfacts dd { color: var(--color-stone-deep); }
+/* a gift box's teas, one per line (user 2026-10-06) */
+.product-fact-list { margin: 0; padding-left: 1.2em; list-style: disc; }
+.product-fact-list li + li { margin-top: 4px; }
 .product-specs .product-image-note { margin-top: 20px; font-size: 13px; line-height: 1.7; }
 @media (max-width: 767px) { .product-keyfacts > div { grid-template-columns: 7em 1fr; } }
 /* add to bag: the reference's FIND RETAILERS — full column width, ink ground, page-coloured capitals (user 2026-10-01) */

@@ -26,7 +26,8 @@ export type Product = {
   views: ProductView[];
   /** Scene photography, laid out below the gallery like a magazine spread. */
   scenes?: Img[];
-  facts: { label: string; value: string }[];
+  /** items: a list fact (a gift box's teas) shown as bullet points; value keeps the same text as one line */
+  facts: { label: string; value: string; items?: string[] }[];
   story: { title: string; body: string; image?: Img };
   variant?: { group: string; label: string };
   officialUrl?: string;

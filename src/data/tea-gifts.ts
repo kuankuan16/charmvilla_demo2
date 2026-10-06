@@ -142,7 +142,9 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
         { label: t("販售單位", "Sold as"), value: gift.setOf
           ? t(`1 組 ${gift.setOf} 盒（每盒小金魚茶包 ${gift.pieces} 入）`, `1 set of ${gift.setOf} boxes (${gift.pieces} Goldfish Tea Bags each)`)
           : t(`1 盒／小金魚茶包 ${gift.pieces} 入`, `1 box / ${gift.pieces} Goldfish Tea Bags`) },
-        { label: gift.choices ? t("茶款選擇（每盒擇一）", "Choose one tea variety") : t("盒內茶款", "Tea selection"), value: contents },
+        { label: gift.choices ? t("茶款選擇（每盒擇一）", "Choose one tea variety") : t("盒內茶款", "Tea selection"), value: contents,
+          // one tea per line (user 2026-10-06: 「內容物用點列」)
+          items: gift.choices ? gift.choices.map(c => describeContents(c.contents)) : gift.contents.map(c => describeContents([c])) },
         { label: t("盒型與材質", "Packaging"), value: v(gift.box) },
         { label: t("外盒尺寸（長 × 寬 × 高）", "Box dimensions (L × W × H)"), value: sizeText(gift.dimensions.replace(" cm", "").split(" × ").map(Number), lang) },
         ...(gift.ingredients ? [{ label: t("成分", "Ingredients"), value: t(gift.ingredients.zh, gift.ingredients.en) }] : []),

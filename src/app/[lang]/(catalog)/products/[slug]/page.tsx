@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
   const specs = <section className="product-specs" aria-labelledby="specs-title">
     <h2 id="specs-title" className="tc">{specTitle}</h2>
-    <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.value}</dd></div>)}</dl>
+    <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{item}</li>)}</ul> : f.value}</dd></div>)}</dl>
     {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
   </section>;
   // How to brew (tea gift boxes except the fruit & herbal tea box) and the Show more! concept (bags): their own sections after the specifications,
