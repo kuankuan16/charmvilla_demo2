@@ -360,6 +360,8 @@ const buildCatalog = (lang: Locale) => {
     "prosperity-dessert-stand": ["CV-0068", "CV-0074", "CV-0081"].map((id) => `/media/gallery/${id}.webp`),
     // 白包頁拿掉白、藍兩只包在檯座上的照片（使用者 2026-10-06：「刪」）
     "braided-leather-bag-white": ["/media/gallery/CV-0426.webp"],
+    // 藍包頁拿掉米色大衣背影照（使用者 2026-10-06：標叉）
+    "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp"],
   };
   // off every page (user 2026-10-02: 「刪」 — the near-identical flat lays of all the wooden pieces on stone, then the third copy CV-0234)
   const omitEverywhere = ["CV-0231", "CV-0232", "CV-0234"].map((id) => `/media/gallery/${id}.webp`);
@@ -372,7 +374,7 @@ const buildCatalog = (lang: Locale) => {
     // 白包卡片 hover 改用手提行走照（使用者 2026-10-06：「白色包包 商品 hover 用這張」），所以它排第一
     "braided-leather-bag-white": ["/media/site/scene-white-bag-walking-tobacco.webp", "/media/gallery/CV-0422.webp", "/media/site/scene-white-bag-shoulder-navy-silk.webp"],
     // 藍色：新照片排在第一張情境照（也是卡片 hover 圖）後面（使用者 2026-10-06：「這2個放上官網商品內容頁」）
-    "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp", "/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
+    "braided-leather-bag-blue": ["/media/site/scene-blue-bag-shoulder-oatmeal-coat.webp", "/media/site/scene-twin-earring-profile-mustard-sofa.webp"],
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive.webp", "/media/site/scene-pink-bag-walking-ivory-linen.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
