@@ -14,7 +14,7 @@ type Tab = "login" | "register" | "recover";
 type Section = "profile" | "addresses" | "orders";
 const money = (m: { amount: string; currencyCode: string }) => m.currencyCode === "TWD" ? `NT$ ${Number(m.amount).toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency: m.currencyCode }).format(Number(m.amount));
 const statusZh: Record<string, string> = { PAID: "已付款", PENDING: "待付款", AUTHORIZED: "已授權", REFUNDED: "已退款", PARTIALLY_REFUNDED: "部分退款", VOIDED: "已取消", FULFILLED: "已出貨", UNFULFILLED: "備貨中", PARTIALLY_FULFILLED: "部分出貨" };
-const statusEn: Record<string, string> = { PAID: "Paid", PENDING: "Payment pending", AUTHORIZED: "Authorised", REFUNDED: "Refunded", PARTIALLY_REFUNDED: "Partially refunded", VOIDED: "Cancelled", FULFILLED: "Shipped", UNFULFILLED: "Being prepared", PARTIALLY_FULFILLED: "Partially shipped" };
+const statusEn: Record<string, string> = { PAID: "Paid", PENDING: "Payment pending", AUTHORIZED: "Authorized", REFUNDED: "Refunded", PARTIALLY_REFUNDED: "Partially refunded", VOIDED: "Canceled", FULFILLED: "Shipped", UNFULFILLED: "Being prepared", PARTIALLY_FULFILLED: "Partially shipped" };
 
 async function api<T>(path: string, init?: RequestInit): Promise<{ ok: boolean; status: number; data: T & { message?: string; error?: string } }> {
   const res = await fetch(path, { ...init, headers: { "Content-Type": "application/json", ...(init?.headers || {}) } });
@@ -25,7 +25,7 @@ async function api<T>(path: string, init?: RequestInit): Promise<{ ok: boolean; 
 export default function AccountClient() {
   const { lang, t } = useT();
   const zh = lang === "zh";
-  const NOT_CONNECTED = t("會員系統將於 Shopify 串接完成後啟用。", "The member area will be enabled once Shopify is connected.");
+  const NOT_CONNECTED = t("會員系統將於 Shopify 串接完成後啟用。", "The member area is not open yet.");
   const status = zh ? statusZh : statusEn;
   const required = t("（必填）", "(required)");
   // Chinese forms ask for the family name first; English forms for the given name first.

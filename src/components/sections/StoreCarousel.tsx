@@ -42,7 +42,7 @@ export default function StoreCarousel() {
   const mood = site("scene-daybed-goldfish-tea-bag.webp", t("陽光穿過百葉灑在米白毛圈布長榻上，邊桌上一杯小金魚茶，金色茶標寫著 CHARM VILLA，咖啡色毯子上放著白色編織提把皮革包", "Low sun through blinds across a cream bouclé daybed: a cup of goldfish tea on the side table, its gold tag reading CHARM VILLA, and the white Braided Leather Bag on a brown throw"), 1792, 2240);
 
   return (
-    <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our stores")}>
+    <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our Stores")}>
       <div className="stores-media"><Picture img={mood} fill fit="cover" animate={false} sizes="(min-width:768px) 45vw, 100vw" /></div>
       <div className="stores-body">
         <header className="stores-heading"><h2>{visit.storesHeading}</h2>{visit.storesSub && <p className="tc">{visit.storesSub}</p>}</header>

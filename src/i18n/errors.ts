@@ -5,7 +5,7 @@ import type { Locale } from "./config";
 const english: Record<string, string> = {
   bad_request: "Some required information is missing. Please check and try again.",
   unauthorized: "Please sign in first.",
-  not_configured: "This will be available once Shopify is connected.",
+  not_configured: "This is not open yet.",
   server_error: "Something went wrong. Please try again.",
 };
 const cjk = /[\u3400-\u9fff]/;

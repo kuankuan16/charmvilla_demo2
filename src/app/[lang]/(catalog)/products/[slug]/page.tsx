@@ -73,6 +73,17 @@ export default async function ProductPage({ params }: Props) {
     <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.value}</dd></div>)}</dl>
     {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
   </section>;
+  // How to brew (tea gift boxes except the fruit & herbal tea box) and the Show more! concept (bags): their own sections after the specifications,
+  // in the same row style (user 2026-10-06, guide §4 and §5).
+  const brew = product.brew && <section className="product-specs product-brew" aria-labelledby="brew-title">
+    <h2 id="brew-title" className="tc">{product.brew.title}</h2>
+    <dl className="product-keyfacts">{product.brew.steps.map((s, i) => <div key={s.title}><dt className="tc">{i + 1}. {s.title}</dt><dd className="tc">{s.text}</dd></div>)}</dl>
+  </section>;
+  const concept = product.concept && <section className="product-specs product-concept" aria-labelledby="concept-title">
+    <h2 id="concept-title" className="tc">{product.concept.title}</h2>
+    <p className="product-slogan" lang="en">&ldquo;{product.concept.slogan}&rdquo;</p>
+    <p className="tc">{product.concept.body}</p>
+  </section>;
   // 繼續觀看 (user 2026-10-05: 「優先推薦同一類別的商品，不夠的話再推薦其他類別」): the pieces of this category that follow this one
   // (wrapping round), then the nearest categories, one piece from each in turn, so a short category is not followed by four bags.
   const at = siblings.findIndex((p) => p.slug === slug);
@@ -105,6 +116,8 @@ export default async function ProductPage({ params }: Props) {
           <AddToCart product={product} />
         </div>}>
         {specs}
+        {brew}
+        {concept}
         {!pair && storyText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery>

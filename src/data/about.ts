@@ -35,8 +35,8 @@ export const getAbout = (lang: Locale) => {
     figures: [
       { value: "2013", label: t("品牌創立", "Brand founded") },
       { value: "16", label: t("道工序，其中 9 道手作", "steps, 9 of them by hand") },
-      { value: "34", label: t("國設計專利", "countries with design patents") },
-      { value: "iF GOLD", label: t("2015 德國 iF 設計大獎金獎", "iF Design Award Gold, 2015") },
+      { value: "34", label: t("國設計專利", "countries with design patents for the Goldfish Tea Bag") },
+      { value: "iF GOLD", label: t("2015 德國 iF 設計大獎金獎", "iF Design Award Gold 2015, Goldfish Tea Bag") },
     ],
     chapters: [
       {
@@ -59,7 +59,7 @@ export const getAbout = (lang: Locale) => {
         title: t("一尾小金魚", "A goldfish in the cup"),
         body: [
           t("2013 年 4 月，小金魚茶包開始設計並申請專利。魚與水本就自然相連，金魚在東方又象徵吉祥；金魚與茶，都帶著東方的韻味。同年中秋節第一次推出，還來不及舉辦發表會就已售罄，訂單一路排到年底。",
-            "Design work on the Goldfish Tea Bag began in April 2013, and a patent was filed. Fish and water belong together, and in the East the goldfish stands for good fortune; goldfish and tea share an Oriental flavour. Launched for the Mid-Autumn Festival that year, it sold out before a launch event could be held, with orders running to the end of the year."),
+            "Design work on the goldfish tea bag began in April 2013, and a patent was filed. Fish and water belong together. In Chinese, the name of the goldfish echoes words for treasure and abundance, carrying wishes of happiness, peace, and prosperity. Launched for the Mid-Autumn Festival that year, it sold out before a launch event could be held, with orders running to the end of the year."),
           t("每一尾小金魚要經過 16 道工序，其中 9 道必須靠手工完成。茶包以食品等級不織布製作，過程不使用任何化學黏劑；左右不對稱的魚鰭，讓牠在熱水裡舒展、游動。所使用的茶葉皆通過 SGS 檢測。",
             "Each goldfish passes through 16 steps, nine of them by hand. The bag is made of food-grade non-woven fabric with no chemical adhesive, and its asymmetric fins let it unfurl and swim in hot water. Every tea used is SGS-tested."),
         ],
@@ -72,10 +72,10 @@ export const getAbout = (lang: Locale) => {
         cta: { label: t("看最新消息", "Read the latest news"), href: "/news" },
         title: t("被世界看見", "Seen by the world"),
         body: [
-          t("2014 年，小金魚茶包獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中，獲得被譽為設計界奧斯卡的德國 iF 設計大獎金獎。",
-            "In 2014 the Goldfish Tea Bag won the Red Dot Award for Communication Design; in March 2015, from 1,624 selected entries, it won an iF Design Award Gold, often called the Oscar of design."),
+          t("2014 年，小金魚茶包獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中，獲得德國 iF 設計大獎金獎。",
+            "In 2014 the goldfish tea bag won the Red Dot Award for Communication Design; in March 2015, from 1,624 selected entries, it won an iF Design Award Gold."),
           t("如今小金魚茶包在全球 34 個國家取得設計專利，也曾登上 Bored Panda、Contemporist 等國際媒體；品牌並在京都寺町開設門市。",
-            "Today the Goldfish Tea Bag holds design patents in 34 countries and has appeared in international media such as Bored Panda and Contemporist; the brand also has a store on Teramachi in Kyoto."),
+            "Today the goldfish tea bag holds design patents in 34 countries and has appeared in international media such as Bored Panda and Contemporist; the brand also has a store on Teramachi in Kyoto."),
         ],
         // the brand's photograph of one paper goldfish on a mirror among white blossoms (CV-0169; user 2026-10-05: 「換」 for the school of fish, CV-0166)
         image: gallery("CV-0169", t("一尾白色紙金魚停在鏡面上，倒影與白色花叢", "A single white paper goldfish on a mirror, its reflection among white blossoms"), 1200, 1800),
@@ -86,7 +86,7 @@ export const getAbout = (lang: Locale) => {
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
           t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，逐件手工完成的柴燒鳥形筷架，可收納、重複使用的豐盛點心盤，K18 金的小金魚金飾，以及提把取得發明專利的交織系列皮革包。",
-            "From the Goldfish Tea Bag, CHARM VILLA carries the same care into more everyday pieces: hinoki coasters, tea spoons and chopsticks; wood-fired songbird chopstick rests, each finished by hand; the reusable Abundance dessert tray; goldfish earrings in 18K gold; and the leather bags of the Interwoven Collection, whose braided handle holds an invention patent."),
+            "From the goldfish tea bag, CHARM VILLA carries the same care into more everyday pieces: hinoki coasters, tea spoons and chopsticks; wood-fired songbird chopstick rests, each finished by hand; the reusable Abundance dessert tray; goldfish earrings in 18K gold; and the leather bags of the Interwoven Collection, whose braided handle holds an invention patent."),
           t("一份禮物被打開、一杯茶被分享，美便從作品走進生活。",
             "When a gift is opened and a cup is shared, beauty moves from the object into everyday life."),
         ],
@@ -111,14 +111,14 @@ export const getAbout = (lang: Locale) => {
     benefits: [
       { id: "shipping", title: t("滿 NT$ 2,000 免運", "Free delivery from NT$ 2,000"), text: t("未滿酌收運費 NT$ 120，可寄送台灣與港澳。", "Below that, delivery is NT$ 120. We ship to Taiwan, Hong Kong and Macau."), href: "/shopping-guide#shipping" },
       { id: "payment", title: t("多種付款方式", "Several ways to pay"), text: t("貨到付款、線上刷卡、ATM 匯款。", "Cash on delivery, card online or ATM transfer."), href: "/shopping-guide#payment" },
-      { id: "delivery", title: t("約 5–7 個工作天送達", "Delivered in about 5–7 working days"), text: t("訂單成立後翌日起算；ATM 匯款於確認款項後約 5 個工作天。", "Counted from the day after the order; about 5 working days after an ATM payment is confirmed."), href: "/shopping-guide#shipping" },
+      { id: "delivery", title: t("約 5–7 個工作天送達", "Delivered in about 5–7 business days"), text: t("訂單成立後翌日起算；ATM 匯款於確認款項後約 5 個工作天。", "Counted from the day after the order; about 5 business days after an ATM payment is confirmed."), href: "/shopping-guide#shipping" },
       { id: "returns", title: t("七日鑑賞期", "Seven days to decide"), text: t("收到商品後七日內可退回；客服電話 02-2542-0303（10:00–21:00）。", "Return within seven days of receiving your order; call 02-2542-0303 (10:00–21:00)."), href: "/shopping-guide#returns" },
     ] satisfies { id: string; title: string; text: string; href: string }[],
     faqTitle: t("常見問題", "Frequently asked questions"),
     faq: [
       { q: t("運費怎麼計算？", "How much is delivery?"), a: t("單筆訂單滿 NT$ 2,000 免運費，未滿則酌收運費 NT$ 120。超商取貨單筆最多寄送 4 盒。", "Orders of NT$ 2,000 or more ship free; below that, delivery is NT$ 120. Convenience-store pickup takes up to 4 boxes per order.") },
       { q: t("可以用哪些方式付款？", "How can I pay?"), a: t("貨到付款、線上刷卡與 ATM 匯款。", "Cash on delivery, card online or ATM bank transfer.") },
-      { q: t("下單後多久會收到？", "When will my order arrive?"), a: t("貨到付款與線上刷卡，訂單成立後翌日起算約 5–7 個工作天；ATM 匯款於確認款項後翌日起算約 5 個工作天。", "For cash on delivery and card, about 5–7 working days from the day after the order; for ATM transfer, about 5 working days from the day after payment is confirmed.") },
+      { q: t("下單後多久會收到？", "When will my order arrive?"), a: t("貨到付款與線上刷卡，訂單成立後翌日起算約 5–7 個工作天；ATM 匯款於確認款項後翌日起算約 5 個工作天。", "For cash on delivery and card, about 5–7 business days from the day after the order; for ATM transfer, about 5 business days from the day after payment is confirmed.") },
       { q: t("可以寄到海外嗎？", "Do you ship abroad?"), a: t("可寄送台灣與港澳，港澳同樣滿 NT$ 2,000 免運。金飾不提供海外寄送。", "We ship within Taiwan and to Hong Kong and Macau, with the same free delivery from NT$ 2,000. Jewelry is not shipped overseas.") },
       { q: t("金飾需要等多久？", "How long does jewelry take?"), a: t("金飾為訂製商品，製作時間視訂單情形約 25–60 天，請於訂購前先來電洽詢 02-2542-0303。", "Jewelry is made to order and takes about 25–60 days depending on orders; please call 02-2542-0303 before ordering.") },
       { q: t("哪裡可以看到實品？", "Where can I see the pieces?"), a: t("台北晶華門市（麗晶精品 B1，10:00–21:00 全年無休）與京都門市（寺町通二條，週六・週日 11:00–18:00）。", "At Regent Taipei (Regent Galleria B1, 10:00–21:00 every day) and in Kyoto (Teramachi-dori Nijo, Saturday and Sunday 11:00–18:00).") },

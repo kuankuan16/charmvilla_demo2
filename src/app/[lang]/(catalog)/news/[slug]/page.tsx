@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw, slug } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const n = findNews(slug, lang);
-  return n ? { title: `${n.title}｜CHARM VILLA`, description: n.summary, alternates: alternatesFor(lang, `/news/${slug}`) } : {};
+  return n ? { title: lang === "en" ? `${n.title} | CHARM VILLA` : `${n.title}｜CHARM VILLA`, description: n.summary, alternates: alternatesFor(lang, `/news/${slug}`) } : {};
 }
 
 // Article (user 2026-10-06, after jakobsencopenhagen.com/stories, verin, framer and solena): the 4:5 photograph held beside
@@ -63,7 +63,7 @@ export default async function NewsArticle({ params }: Props) {
                 <Link href={localeHref(lang, `/news/${o.slug}`)} className="news-more-row">
                   <span className="news-num" aria-hidden="true">{o.n}</span>
                   <div className="news-more-thumb" style={o.focus ? ({ "--focus": o.focus } as CSSProperties) : undefined}><Picture img={o.card} fill fit="cover" animate={false} sizes="120px" /></div>
-                  <div><span className="news-more-meta tc">{o.tag}・<time dateTime={o.date}>{o.dateLabel}</time></span><span className="news-more-title tc">{o.title}</span></div>
+                  <div><span className="news-more-meta tc">{o.tag}{lang === "en" ? " · " : "・"}<time dateTime={o.date}>{o.dateLabel}</time></span><span className="news-more-title tc">{o.title}</span></div>
                   <span className="news-arrow news-arrow-long" aria-hidden="true" />
                 </Link>
               </li>

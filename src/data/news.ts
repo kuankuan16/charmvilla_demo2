@@ -16,10 +16,10 @@ const build = (lang: Locale): NewsEntry[] => {
   return [
     {
       slug: "show-more-leather-bag-launch", date: "2026-10-03", dateLabel: t("2026 年 10 月", "October 2026"),
-      tag: t("新品發表", "New launch"), title: t("SHOW MORE! 真皮包\u200b新品發表會", "SHOW MORE! The leather bag launch"),
+      tag: t("新品發表", "New launch"), title: t("Show more! 真皮包\u200b新品發表會", "Show more! The leather bag launch"),
       summary: t("編織提把皮革包巡迴發表：台北、洛杉磯、京都三場。", "The Braided Leather Bag on tour: Taipei, Los Angeles and Kyoto."),
       // the launch invitation instead of the dancer (user 2026-10-06: 「這張改」): the list crops to the bag, the article shows it whole
-      card: gallery("CV-0427", t("Show more! 真皮包新品發表邀請卡：淺灰紙上浮雕的編織提把皮革包，上方金色 CHARM VILLA，下方三場發表的日期與地點", "Invitation to the Show more! leather bag launch: the braided-handle bag embossed on pale grey paper under gold CHARM VILLA lettering, with the dates and venues of the three events"), 1280, 1963),
+      card: gallery("CV-0427", t("Show more! 真皮包新品發表邀請卡：淺灰紙上浮雕的編織提把皮革包，上方金色 CHARM VILLA，下方三場發表的日期與地點", "Invitation to the Show more! leather bag launch: the braided-handle bag embossed on pale gray paper under gold CHARM VILLA lettering, with the dates and venues of the three events"), 1280, 1963),
       focus: "50% 50.5%", whole: true, ground: "#eceef0", // 50.5 %: the card band falls between the text lines at 1.3 : 1 and 1.43 : 1
       hero: site("banner-bag-dancer-dark.webp", t("深色漸層前，男舞者俯身，一手提著白色編織提把皮革包", "Against a dark gradient, a male dancer bends forward, the white Braided Leather Bag hanging from one hand"), 2560, 1080),
       body: [

@@ -43,14 +43,14 @@ const build = (lang: Locale) => {
       { id: "payment", heading: t("訂購與付款", "Ordering and payment"), blocks: [
         t("付款方式：貨到付款、線上刷卡、ATM 匯款（戶名：子村宥宥股份有限公司）。", "Payment: cash on delivery, card online, or ATM bank transfer (account name 子村宥宥股份有限公司)."),
         t("本站標示之價格為新台幣。", "Prices on this site are in New Taiwan dollars (NT$)."),
-        pending("價格是否含稅、刷卡分期與其他付款方式，待品牌方確認。", "Whether prices include tax, card instalments and any other payment methods are awaiting confirmation."),
+        pending("價格是否含稅、刷卡分期與其他付款方式，待品牌方確認。", "Whether prices include tax, card installments and any other payment methods are awaiting confirmation."),
         t("訂單於出貨前，CHARM VILLA 保有不接受訂單或取消出貨之權利。", "Until an order is shipped, CHARM VILLA may decline the order or cancel its shipment."),
       ], source: TW },
       { id: "shipping", heading: t("運送", "Delivery"), blocks: [
         { list: [
           t("單筆訂單滿 NT$ 2,000 免運費；未滿則酌收運費 NT$ 120。", "Orders of NT$ 2,000 or more ship free; below that, delivery is NT$ 120."),
-          t("貨到付款、線上刷卡：訂單成立後翌日起算，約 5–7 個工作天送達。", "Cash on delivery or card: about 5–7 working days from the day after the order is placed."),
-          t("ATM 匯款：確認款項後翌日起算，約 5 個工作天送達。", "ATM transfer: about 5 working days from the day after payment is confirmed."),
+          t("貨到付款、線上刷卡：訂單成立後翌日起算，約 5–7 個工作天送達。", "Cash on delivery or card: about 5–7 business days from the day after the order is placed."),
+          t("ATM 匯款：確認款項後翌日起算，約 5 個工作天送達。", "ATM transfer: about 5 business days from the day after payment is confirmed."),
           t("超商取貨單筆最多寄送 4 盒。", "Convenience-store pickup takes up to 4 boxes per order."),
           t("可寄送台灣與港澳；港澳訂單同樣滿 NT$ 2,000 免運，香港部分偏遠地區物流可能另收運費。", "We ship within Taiwan and to Hong Kong and Macau, with the same free delivery from NT$ 2,000; in some remote parts of Hong Kong the carrier may charge an extra fee."),
           t("金飾不提供海外寄送。", "Jewelry is not shipped overseas."),
@@ -73,7 +73,7 @@ const build = (lang: Locale) => {
       ] },
       { id: "service", heading: t("客服與消費爭議", "Customer service and complaints"), blocks: [
         t(`客服電話 ${company.phone}（${company.hours}），客服信箱 ${company.email}。`, `Call +886 2 2542 0303 (${company.hours}, Taiwan time) or write to ${company.email}.`),
-        t("如對處理結果有疑義，可撥打行政院消費者服務專線 1950 或向各地方政府消費者服務中心申訴。", "If a complaint is not resolved, consumers in Taiwan can call the Executive Yuan consumer hotline 1950 or contact a local government consumer service centre."),
+        t("如對處理結果有疑義，可撥打行政院消費者服務專線 1950 或向各地方政府消費者服務中心申訴。", "If a complaint is not resolved, consumers in Taiwan can call the Executive Yuan consumer hotline 1950 or contact a local government consumer service center."),
         t("本站條款之解釋與適用依中華民國法律，並以公司所在地之地方法院為第一審管轄法院。", "These terms are governed by the laws of the Republic of China (Taiwan); the district court where the company is registered is the court of first instance."),
       ], source: TW },
     ] as PolicySection[],
@@ -125,7 +125,7 @@ const build = (lang: Locale) => {
 
   return {
     company, guide, privacy, footer,
-    updated: t("資料更新日期：2026 年 10 月 2 日", "Last updated: 2 October 2026"),
+    updated: t("資料更新日期：2026 年 10 月 2 日", "Last updated: October 2, 2026"),
     labels: { contents: t("本頁內容", "On this page"), pending: t("待品牌方提供", "To be confirmed"), source: t("資料來源：", "Source: ") },
   };
 };

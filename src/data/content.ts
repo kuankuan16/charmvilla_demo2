@@ -56,10 +56,10 @@ const buildContent = (lang: Locale) => {
       t("一段在指間交織的編織，一道掠過耳畔的光影，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃，而在極致工藝融入生活的靈動時刻：被配戴、被捧起、被細細品嘗，成為日常節奏的一部分。",
         "A goldfish takes shape in your cup. A braided leather handle rests in your hand. An earring catches the light as you turn. At CHARM VILLA, small details bring charm to the things you wear, carry and share."),
       t("每一件作品，都由職人以時間磨礪皮革、黃金與茶葉，將手的溫度與極致比例賦予形體。這份對原創工藝的堅守，讓小金魚茶包榮獲德國 Red Dot 紅點傳達設計獎與 iF 設計大獎，並取得全球 34 國專利。當藝術走出展覽，躍上肩頭、掠過耳畔、躍入茶湯，卓越的國際榮譽便落實為可被觸摸的日常尺度，讓美成為生活的本質。",
-        "Our artisans shape paper, leather, metal and wood with care, refining the details that make each piece distinctive. Given as a gift or enjoyed in your own daily life, these creations invite you to notice beauty in familiar moments and share it with others."),
+        "Our artisans shape paper, leather, metal and wood with care, refining the details that make each piece distinctive. That care helped the goldfish tea bag win the Red Dot Award: Communication Design and the iF Design Award in Germany, and earn design patents in 34 countries. Given as a gift or enjoyed in your own daily life, these creations invite you to notice beauty in familiar moments and share it with others."),
     ],
     awards: t("小金魚茶包榮獲 2014 德國紅點傳達設計獎（Red Dot Winner）與 2015 德國 iF 設計大獎（iF DESIGN AWARD）。",
-      "The Goldfish Tea Bag received the Red Dot Award: Communication Design 2014 (Red Dot Winner) and the iF DESIGN AWARD 2015, both in Germany."),
+      "The goldfish tea bag received the Red Dot Award: Communication Design 2014 (Red Dot Winner) and the iF DESIGN AWARD 2015, both in Germany."),
     // Not rendered since the image gallery became the craft carousel (2026-10-01); kept for the unused sections.
     images: [
       { ...site("about-02.webp", "指尖摺製小金魚茶包的手作情境", 1361, 1824), label: "手作細節" },
@@ -104,7 +104,7 @@ const buildContent = (lang: Locale) => {
       },
     ],
     detail: { hint: "查看細節", viewsLabel: "VIEWS:", close: "CLOSE", closeZh: "關閉" },
-    cta: { label: "SHOW MORE! 新品發表", href: "#news-show-more" },
+    cta: { label: "Show more! 新品發表", href: "#news-show-more" },
   };
 
   // Unused homepage section (kept for reference); Chinese only.
@@ -128,7 +128,7 @@ const buildContent = (lang: Locale) => {
     items: [
       // Real product photography supplied by the brand on 2026-09-30 (output/jewelry-product-photos-2026-09-30): four series.
       { n: "01.", title: t("珍珠長鏈小金魚耳環", "Pearl Chain Goldfish Earrings"), desc: t("沿著珍珠長鏈，一尾金魚垂落在頸側。", "Along a long chain below a pearl, one goldfish falls beside the neck."), image: site("jewelry-pearl-chain.webp", t("珍珠長鏈小金魚耳環・商品照", "Pearl Chain Goldfish Earrings, product photograph"), 1200, 1500) },
-      { n: "02.", title: t("吐鑽小金魚耳環｜爪鑲", "Goldfish Earrings · Diamond Series · Drop"), desc: t("魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", "Beneath the fish, a claw-set round diamond hangs lightly from a short chain."), image: site("jewelry-diamond.webp", t("吐鑽小金魚耳環｜爪鑲・商品照", "Goldfish Earrings, Diamond Series drop, product photograph"), 1200, 1500) },
+      { n: "02.", title: t("吐鑽小金魚耳環｜爪鑲", "Goldfish Earrings · Diamond Series · Drop"), desc: t("魚身之下，一顆爪鑲圓鑽隨短鏈輕垂。", "Beneath the fish, a prong-set round diamond hangs lightly from a short chain."), image: site("jewelry-diamond.webp", t("吐鑽小金魚耳環｜爪鑲・商品照", "Goldfish Earrings, Diamond Series drop, product photograph"), 1200, 1500) },
       // 2026-10-01 (user): the diamond series has two styles — the drop above and a stud without the drop. Split listings; the stud's
       // product shot is the satin close-up until the brand supplies a studio photo of it.
       { n: "02b.", title: t("單鑽小金魚耳環", "Goldfish Earrings · Diamond Series · Stud"), desc: t("一尾小金魚停在耳畔，魚口一點圓鑽的光。", "One small goldfish rests at the ear, a point of diamond light at its mouth."), image: gallery("CV-0376", t("單鑽小金魚耳環・暖金緞光", "Goldfish Earrings, Diamond Series stud, on warm gold satin"), 1920, 2400) },
@@ -156,7 +156,7 @@ const buildContent = (lang: Locale) => {
     craft: "形，從一雙手開始。薄透茶袋經過裁剪、摺疊與縫製，魚鰭和尾巴逐漸成形，再填入台灣茶葉。水注入杯中，原本靜止的輪廓隨之舒展，手作也有了另一種觀看方式。",
     honours: [t("全球 34 國設計專利", "Design patents in 34 countries"), "2014 德國紅點傳達設計獎 Red Dot Winner", "2015 德國 iF 設計大獎 iF Gold Award"],
     honoursLabel: t("小金魚茶包", "Goldfish Tea Bag"),
-    honoursAria: t("小金魚茶包設計榮譽", "Design honours for the Goldfish Tea Bag"),
+    honoursAria: t("小金魚茶包設計榮譽", "Design honors for the Goldfish Tea Bag"),
     awards: [
       { image: { src: "/brand/awards/if-gold-award-2015.svg", alt: "iF Gold Award 2015", w: 1200, h: 615 }, text: t("2015 德國 iF 設計大獎", "iF DESIGN AWARD 2015, Germany") },
       { image: { src: "/brand/awards/reddot-winner-2014-transparent.svg", alt: "Red Dot Winner 2014", w: 1200, h: 847 }, text: t("2014 德國紅點傳達設計獎", "Red Dot Award: Communication Design 2014, Germany") },
@@ -204,7 +204,7 @@ const buildContent = (lang: Locale) => {
     banner: {
       image: site("banner-bag-dancer-dark.webp", t("黑白照片：深色漸層背景前，男舞者俯身，一手提著白色編織提把皮革包", "Black-and-white photograph: against a dark gradient, a male dancer bends forward, the white Braided Leather Bag hanging from one hand"), 2560, 1080),
       title: t("編織提把皮革包", "The Braided Leather Bag"),
-      line: t("交織的提把，連起手與皮革。", "A plaited handle that joins hand and leather."),
+      line: t("交織的提把，連起手與皮革。", "A braided handle that joins hand and leather."),
       cta: { label: t("選購交織系列", "Shop the Interwoven Collection"), href: "/collections/bags" },
     },
   };
@@ -219,7 +219,7 @@ const buildContent = (lang: Locale) => {
       { date: t("10/17", "Oct 17"), city: "USA", venue: "The Scholart Selection · San Gabriel, CA" },
       { date: t("10/31", "Oct 31"), city: "JAPAN", venue: t("CHARM VILLA 京都", "CHARM VILLA Kyoto") },
     ],
-    cta: { label: t("查看邀請", "View the invitation"), aria: t("查看 SHOW MORE! 新品發表邀請卡", "View the SHOW MORE! launch invitation"), href: "/media/gallery/CV-0427.webp" },
+    cta: { label: t("查看邀請", "View the invitation"), aria: t("查看 Show more! 新品發表邀請卡", "View the Show more! launch invitation"), href: "/media/gallery/CV-0427.webp" },
     invitation: gallery("CV-0427", t("Show more! 真皮包新品發表邀請卡（最終版）", "Show more! invitation to the leather bag launch (final version)"), 1280, 1963),
   };
 
@@ -248,7 +248,7 @@ const buildContent = (lang: Locale) => {
               city: "Taipei",
               heading: t("在城市裡，留一段細看的時間", "In the city, time set aside for a closer look"),
               body: t("走進台北晶華門市，讓畫面中的作品來到眼前。從皮革的編織、金飾的輪廓，到茶與器物，沿著材質逐件觀看，感受作品與日常生活的距離。",
-                "Step into our store at Regent Taipei and meet in person the pieces you have seen in pictures. From plaited leather and the outlines of gold to tea and objects for the table, look at each one through its material and sense how close the work sits to daily life."),
+                "Step into our store at Regent Taipei and meet in person the pieces you have seen in pictures. From braided leather and the outlines of gold to tea and objects for the table, look at each one through its material and sense how close the work sits to daily life."),
             },
           },
           {
