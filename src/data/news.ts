@@ -38,8 +38,9 @@ const build = (lang: Locale): NewsEntry[] => {
       slug: "goldfish-in-a-cup-eslite-nanxi", date: "2026-07-02", dateLabel: t("2026 年 7 月 2 日", "July 2, 2026"),
       tag: t("活動快訊", "Events"), title: t("「杯中金魚」期間限定茶席", "Goldfish in a Cup: a limited-time tea table"),
       summary: t("8 月 15 日起，於誠品生活南西。", "From August 15 at eslite spectrum Nanxi."),
-      card: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
-      hero: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("木托盤上一杯小金魚茶", "A cup of goldfish tea on a wooden tray"), 1792, 2240),
+      // the tea-table scene with fluted glasses (user 2026-10-06: 「取代這張」); its tag laid flat on the cloth per the tag spec
+      card: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("暖光茶席上，一隻手托著黑色鎚紋鐵托盤，直條紋玻璃杯裡泡著一尾小金魚茶包，金色 CHARM VILLA 茶標平放在桌布上；後方幾杯茶在柔焦裡", "At a sunlit tea table a hand holds a hammered black iron tray with a goldfish tea bag steeping in a fluted glass, the gold CHARM VILLA tag lying flat on the cloth, more cups soft-focus behind"), 1792, 2240),
+      hero: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("暖光茶席上，一隻手托著黑色鎚紋鐵托盤，直條紋玻璃杯裡泡著一尾小金魚茶包，金色 CHARM VILLA 茶標平放在桌布上；後方幾杯茶在柔焦裡", "At a sunlit tea table a hand holds a hammered black iron tray with a goldfish tea bag steeping in a fluted glass, the gold CHARM VILLA tag lying flat on the cloth, more cups soft-focus behind"), 1792, 2240),
       body: [
         t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi."),
         { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },
