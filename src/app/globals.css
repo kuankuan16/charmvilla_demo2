@@ -591,7 +591,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Panel columns (user 2026-10-02): two primary shop columns in large type, a secondary column of small brand and service
    links, the category photograph at the right. Every label and link is black; hover/focus turns it gold with a gold line. */
 .menu-top { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(36px, 4vw, 60px) var(--page-gutter) clamp(36px, 3.6vw, 52px); }
-.menu-nav { grid-column: 1 / span 8; display: grid; grid-template-columns: minmax(0, 3.3fr) minmax(0, 2.7fr) minmax(0, 2fr); /* the first column holds 香味是喜悅的記憶 on one line (2026-10-05) */ column-gap: clamp(16px, 1.6vw, 28px); }
+.menu-nav { grid-column: 1 / span 8; display: grid; grid-template-columns: minmax(0, 3.3fr) minmax(0, 2fr) minmax(0, 2fr); /* 作品｜品牌｜服務 三欄（2026-10-07） */ /* the first column holds 香味是喜悅的記憶 on one line (2026-10-05) */ column-gap: clamp(16px, 1.6vw, 28px); }
 .menu-group { color: #000; }
 .menu-group ul { display: grid; }
 .menu-group-title { margin: 0 0 clamp(14px, 1.4vw, 22px); padding-bottom: 10px; border-bottom: 1px solid rgb(0 0 0 / .12); font-size: 13px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #000; }

@@ -87,8 +87,8 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const label = (id: ShopId) => id === "all" ? t("全部作品", "All Pieces") : (zh ? sections.find((s) => s.id === id)!.zh : sections.find((s) => s.id === id)!.label);
   const shopGroups: { title: string; ids: ShopId[] }[] = [
     // 如魚得水（jewelry）與交織系列（bags）全站隱藏（使用者 2026-10-07：美國市場不販售真皮包與金飾）
-    { title: t("品項", "Shop"), ids: ["all", "tea", "scents"] },
-    { title: t("系列", "Collections"), ids: ["abundance", "wood-fired"] },
+    // 豐盛系列也隱藏後只剩四類，品項與系列合成一欄「作品」（使用者 2026-10-07：「並重新整合選單」）
+    { title: t("作品", "Shop"), ids: ["all", "tea", "scents", "wood-fired"] },
   ];
   const brandLinks = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
@@ -106,7 +106,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     scents: "/media/site/scene-wooden-tray-table-sofa-v4.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
     jewelry: "", // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
     bags: "", // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
-    abundance: "/media/site/scene-dessert-stand-oak-table-tea-v3.webp", // the oak table by the fig tree, whole frame (user 2026-10-06: 「選單改成這張」)
+    abundance: "", // 豐盛系列隱藏（2026-10-07）
     "wood-fired": "/media/site/scene-oak-table-bird-rests-close.webp", // closer, on the songbird rests (user 2026-10-05: 「再近一點，焦點在小鳥筷子架」)
     hero: "", visit: "",
   };
@@ -168,10 +168,13 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
                 </ul>
               </div>
             ))}
+            {/* 品牌與服務各一欄，和「作品」並排三欄（2026-10-07） */}
             <div className="menu-group menu-group--secondary">
               <p className="menu-group-title tc">{t("品牌", "Brand")}</p>
               <ul>{brandLinks.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="menu-sublink tc">{l.label}</a></li>)}</ul>
-              <p className="menu-group-title menu-group-title--next tc">{t("服務", "Service")}</p>
+            </div>
+            <div className="menu-group menu-group--secondary">
+              <p className="menu-group-title tc">{t("服務", "Service")}</p>
               <ul>
                 {serviceLinks.map((l) => <li key={l.href}><a href={l.href} onClick={close} className="menu-sublink tc">{l.label}</a></li>)}
               </ul>

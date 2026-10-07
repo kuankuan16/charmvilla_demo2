@@ -16,7 +16,8 @@ export type CategoryId = "bags" | "jewelry" | "tea" | "scents" | "abundance" | "
 export type Category = { id: CategoryId; name: string; en: string; intro: string };
 // 美國市場不販售真皮包與金飾（使用者 2026-10-07：「全站把交織系列與如魚得水系列隱藏」）：這兩類不進分類與商品清單，
 // 所以選單、清單、商品頁（變成 404）、頁尾、網站地圖、相關商品都不會出現。資料保留，要恢復時把這裡清空即可。
-export const hiddenCategories: ReadonlySet<CategoryId> = new Set<CategoryId>(["bags", "jewelry"]);
+// 豐盛系列（點心盤）也隱藏（使用者 2026-10-07：「隱藏所有「豐盛系列」（點心盤）的商品與選單按鈕」）
+export const hiddenCategories: ReadonlySet<CategoryId> = new Set<CategoryId>(["bags", "jewelry", "abundance"]);
 export type ProductView = { label: string; image: Img };
 export type Product = {
   slug: string; category: CategoryId; name: string; english: string;

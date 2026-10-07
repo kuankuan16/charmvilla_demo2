@@ -10,7 +10,7 @@ import { localeHref, translator, type Locale } from "@/i18n/config";
 const slugs = [
   "reunion-paulownia-gift-box",
   "ginkgo-teaspoon-gift-box",
-  "prosperity-dessert-stand",
+  "spring-blossoms-gift-box", // 豐盛點心盤隱藏後換成花滿富春（2026-10-07）
   "bird-chopstick-rest",
   "year-of-plenty-gift-box",
   "cloud-coaster",
