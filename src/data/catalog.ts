@@ -394,6 +394,8 @@ const buildCatalog = (lang: Locale) => {
     "braided-leather-bag-white": ["/media/gallery/CV-0426.webp"],
     // 藍包頁拿掉米色大衣背影照（使用者 2026-10-06：標叉）
     "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp"],
+    // 檜木筷子頁拿掉備長炭上的小鳥筷架照（使用者 2026-10-07：「刪」）
+    "wooden-chopsticks": ["/media/gallery/CV-0245.webp"],
   };
   // off every page (user 2026-10-02: 「刪」 — the near-identical flat lays of all the wooden pieces on stone, then the third copy CV-0234)
   const omitEverywhere = ["CV-0231", "CV-0232", "CV-0234"].map((id) => `/media/gallery/${id}.webp`);
