@@ -87,7 +87,7 @@ export default async function AboutPage({ params }: Props) {
             const cat = categories.find((c) => c.id === r.id);
             if (!cat) return null;
             return <li key={r.id}><Link href={categoryHref(r.id, lang)} className="about-range-card">
-              <span className="about-range-image"><Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:1024px) 16vw, (min-width:768px) 31vw, 48vw" style={r.position ? { objectPosition: r.position } : undefined} /></span>
+              <span className="about-range-image"><Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:768px) 31vw, 48vw" style={r.position ? { objectPosition: r.position } : undefined} /></span>
               <span className="about-range-name tc">{cat.name}</span>
             </Link></li>;
           })}

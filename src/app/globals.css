@@ -1137,7 +1137,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-award-marks img { width: auto; height: clamp(64px, 5.6vw, 92px); }
 .about-range { padding: clamp(80px, 8vw, 140px) var(--page-gutter) 0; }
 .about-range h2 { margin-bottom: 28px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; }
-.about-range ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 24px); }
+/* one equal column per category, the row filling the content width (user 2026-10-07: 「均分內容總寬度」, three categories left) */
+.about-range ul { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(12px, 1.4vw, 24px); }
 .about-range-card { display: block; }
 .about-range-image { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: #e6e4df; }
 .about-range-image img { object-fit: cover; transition: transform .9s cubic-bezier(.22, .8, .3, 1); }
@@ -1187,7 +1188,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .about-chapter--left .about-chapter-text, .about-chapter--right .about-chapter-text { grid-column: 7 / -1; }
   .about-chapter--right .about-chapter-image { grid-column: 7 / -1; }
   .about-chapter--right .about-chapter-text { grid-column: 1 / span 6; }
-  .about-range ul { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; }
+  .about-range ul { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; }
   .about-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-benefits li:nth-child(3) { border-left: 0; }
   .about-benefits li:nth-child(n + 3) { border-top: 1px solid rgb(31 31 31 / .14); }
