@@ -43,7 +43,7 @@ const build = (lang: Locale) => {
         // cup like a coffee cup, a painting unlike the example, the ottoman in another colour): a new generated interior;
         // v3 (「右圖那張，後面角落的畫布要跟左圖一樣」「只變畫布的部分，其他不變」): the no-handle variant's painting composited in, every other pixel unchanged;
         // v4 (「這裡不自然」): the canvas continues down behind the ottoman instead of ending on a hard edge left of the tray
-        image: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
+        image: site("ottoman-tray-tea-cup-v5-realcup.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
           "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
       },
       {
