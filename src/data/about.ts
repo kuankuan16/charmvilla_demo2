@@ -52,8 +52,9 @@ export const getAbout = (lang: Locale) => {
           t("這個念頭成了 CHARM VILLA 的起點：以打造迷人的家居生活為出發點，用設計說台灣自己的故事。",
             "That question became the starting point of CHARM VILLA: to begin from a charming home life, and to tell Taiwan's own story through design."),
         ],
-        // the brand's installation photograph CV-0215, enhanced to 2K with Higgsfield's upscaler (user 2026-10-05)
-        image: site("about-installation-2k.webp", t("沿著手繪牆面游動的白色小金魚裝置，CHARM VILLA 展覽", "A shoal of white paper goldfish along a painted wall, a CHARM VILLA installation"), 2400, 1604),
+        // a generated scene in the site's photography (user 2026-10-07: 「01～04 的配圖，只有 03 不變…自動幫我生成」); the installation
+        // photograph about-installation-2k.webp (CV-0215) stays in the repo
+        image: site("about-scene-01-giftbox-sofa.webp", t("橄欖綠沙發旁的胡桃木桌上，團圓禮盒、一包封好的小金魚茶包袋、幾片茶葉，右邊一杯玻璃杯小金魚茶", "On a walnut table by an olive sofa, the Joyful Reunion gift box, a sealed goldfish tea sachet, a few tea leaves and, at the right, a glass of goldfish tea"), 1856, 2304),
       },
       {
         id: "goldfish", index: "02", side: "left",
@@ -68,7 +69,8 @@ export const getAbout = (lang: Locale) => {
         quote: { text: t("「我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。」", "“We love tea culture, and we want a simple way to share it with the world.”"), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
         // user 2026-10-05: 「剛剛生成的皮革沙發取代這張」 (the hand-folding photograph, about-craft.webp, is kept in the repo)
         // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：皮躺椅白包照換回原本手摺小金魚的照片
-        image: site("about-craft.webp", t("陽光灑在木桌上，一雙手正在摺小金魚茶包的濾紙，旁邊是摺好的金魚、玫瑰花苞與茶葉", "Sunlight on a wooden table: two hands fold the filter paper of a goldfish tea bag beside finished goldfish, rosebuds and tea leaves"), 1792, 2240),
+        // generated scene (user 2026-10-07); the hand-folding photograph about-craft.webp stays in the repo
+        image: site("about-scene-02-goldfish-cup.webp", t("胡桃木桌上一杯玻璃杯小金魚茶，旁邊一尾還沒泡的白色小金魚茶包、金色茶包袋、玫瑰花苞與烏龍茶球，後方是橄欖綠沙發", "A glass of goldfish tea on a walnut table, a dry white goldfish tea bag, a gold sachet, rosebuds and oolong pearls beside it, an olive sofa behind"), 1856, 2304),
       },
       {
         id: "world", index: "03", side: "right",
@@ -94,7 +96,8 @@ export const getAbout = (lang: Locale) => {
             "When a gift is opened and a cup is shared, beauty moves from the object into everyday life."),
         ],
         // the red embroidered gift box with goldfish tea, cloud coasters, the ginkgo spoon and a songbird rest (user 2026-10-05: 「紅色禮盒好了放這裡」)
-        image: site("scene-red-giftbox-tea-hinoki-bird.webp", t("紅色絨布上的紅色刺繡桐木禮盒，白瓷金邊杯裡一尾小金魚茶，前景兩片雲朵杯墊、銀杏茶匙與柴燒鳥形筷架", "A red embroidered paulownia gift box on red velvet, goldfish tea in a white gold-rimmed cup, and in front two Cloud Coasters, a Ginkgo Style Tea Spoon and a Songbird Chopsticks Rest"), 1510, 1993),
+        // generated scene (user 2026-10-07); the red gift box scene scene-red-giftbox-tea-hinoki-bird.webp stays in the repo
+        image: site("about-scene-04-everyday-pieces.webp", t("橄欖綠沙發旁的胡桃木邊桌：白瓷杯小金魚茶放在雲朵杯墊上，另一片雲朵杯墊、銀杏茶匙，一雙檜木筷擱在柴燒鳥形筷架上", "A walnut side table by an olive sofa: goldfish tea in a white cup on a Cloud Coaster, a second coaster, a Ginkgo Style Tea Spoon and hinoki chopsticks on a Songbird Chopsticks Rest"), 1856, 2304),
       },
     ] satisfies AboutChapter[],
     rangeTitle: t("作品", "The pieces"),
