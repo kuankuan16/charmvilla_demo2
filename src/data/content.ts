@@ -39,8 +39,9 @@ const buildContent = (lang: Locale) => {
     image: site("scene-red-giftbox-tea-hinoki-bird.webp", t("紅色絨布上的紅色刺繡桐木禮盒，白瓷金邊杯裡一尾小金魚茶，前景雲朵杯墊、銀杏茶匙與柴燒鳥形筷架", "A red embroidered paulownia gift box on red velvet, goldfish tea in a white gold-rimmed cup, cloud coasters, the ginkgo spoon and a songbird rest in front"), 1510, 1993), // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）；輪播三張換成小金魚茶包禮盒、香氛系列、柴燒系列的情境照
     // （使用者 2026-10-07：「把首頁真皮包包跟金飾的 Banner 圖，換成小金魚茶包禮盒、香氛系列、柴燒系列的情境照」）
+    // 茶葉禮盒那張換成橄欖綠沙發的情境照（使用者 2026-10-07：「換其他情境照」；枯木那張從此沒人用，檔案移除）
     slides: [
-      { id: "tea", src: "/media/site/scene-reunion-paper-gift-box-driftwood.webp", alt: t("深咖啡色背景前，團圓繽紛紙盒擋在一段枯木前，旁邊一杯玻璃杯泡的小金魚茶、金色茶標籤與一包茶包袋", "Before a dark cocoa backdrop, the Reunion paper gift box in front of a piece of driftwood, with goldfish tea in a glass cup, its gold tag and a tea pouch"), w: 1792, h: 2240, label: t("小金魚茶包禮盒", "Goldfish Tea Gifts"), en: "Tea gifts", href: "/collections/tea" },
+      { id: "tea", src: "/media/site/scene-reunion-paper-gift-box-olive-sofa-pouch.webp", alt: t("橄欖綠毛圈沙發旁的核桃木桌上，團圓繽紛紙盒、一包茶包袋與右邊一杯玻璃杯泡的小金魚茶", "On a walnut table beside an olive bouclé sofa, the Reunion paper gift box, a tea pouch and a glass cup of goldfish tea at the right"), w: 1856, h: 2304, label: t("小金魚茶包禮盒", "Goldfish Tea Gifts"), en: "Tea gifts", href: "/collections/tea" },
       { id: "scents", src: "/media/site/scene-wooden-tray-table-sofa-v4.webp", alt: t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的梅花木盒、雲朵杯墊與銀杏茶匙", "A black tray table by an olive sofa: a plum-blossom box, a Cloud Coaster and a Ginkgo Style Tea Spoon, each engraved CHARMVILLA"), w: 1376, h: 2048, label: t("香味是喜悅的記憶", "Scents"), en: "Scents", href: "/collections/scents" },
       { id: "wood-fired", src: "/media/site/scene-oak-table-bird-rests.webp", alt: t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), w: 1792, h: 2240, label: t("柴燒系列", "Wood-Fired Collection"), en: "Wood-fired", href: "/collections/wood-fired" },
     ],
