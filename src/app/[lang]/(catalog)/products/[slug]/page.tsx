@@ -70,14 +70,18 @@ export default async function ProductPage({ params }: Props) {
   const textAboveSmalls = (product.slug === "braided-leather-bag-white" || product.slug === "braided-leather-bag-blue") && spreads.length > 0;
   // a story body may hold several paragraphs (blank-line separated); `more` is a second titled text (紫斑蝶: about the butterflies, 2026-10-07)
   const paragraphs = (text: string, prefix: string) => text.split(/\n\s*\n/).map((p, i) => <p key={`${prefix}${i}`} className="tc">{p}</p>);
-  // The story is no longer its own block anywhere (user 2026-10-07: 「刪除 故事…改在商品規格裡」, 「刪」 on the magazine page): its text,
-  // its second titled text (紫斑蝶) and the tea awards are rows of the specifications below. How to brew (tea gift boxes except the fruit &
-  // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
-  // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
-  const storyRows = [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
+  // The story is its own text again, set like the "Teil derselben Kollektion" block of jakobsencopenhagen.com/de/produkte/stina-
+  // ecksitzinsel-3-sitzer (user 2026-10-07, with a screenshot of that block: 「所有這個文字都抽出來。像這樣處理」): the title and the text
+  // at one size, the title in ink, the text in grey under a blank line, and a photograph under the text — beside the large photograph
+  // (three scenes) or in the column over the first scene photograph. Its second titled text (紫斑蝶) follows in the same type. Earlier
+  // that day it had been a row of the specifications (「刪除 故事…改在商品規格裡」); the tea awards still are one.
   // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
   // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
-  const sideText = null;
+  const sideText = <div className="product-story-text">
+    <h2 className="tc">{product.story.title}</h2>
+    {paragraphs(product.story.body, "s")}
+    {product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}
+  </div>;
   const teaPages = product.category === "tea" && <TeaPages product={product} t={t} />;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
@@ -109,8 +113,7 @@ export default async function ProductPage({ params }: Props) {
     <h2 id="specs-title" className="tc">{specTitle}</h2>
     <dl className="product-keyfacts">
       {specFacts.map((f) => <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{smallParen(item)}</li>)}</ul> : f.value}</dd></div>)}
-      {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
-      {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
+      {product.category === "tea" && <div className="product-awards-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
     </dl>
     {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
   </section>;
