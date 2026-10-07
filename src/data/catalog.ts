@@ -452,7 +452,8 @@ const buildCatalog = (lang: Locale) => {
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-olive-sofa-tea-tray.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
-    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-two-people-tea-black-oak-table.webp"],
+    // 沙發那張排第一，所以它也是卡片的 hover 圖（使用者 2026-10-07：「hover 換這張」）
+    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-two-people-tea-black-oak-table.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
