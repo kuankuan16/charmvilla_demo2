@@ -384,6 +384,8 @@ const buildCatalog = (lang: Locale) => {
     ? { file: "studio-reunion-paper-gift-box-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
   // 第三張：這個盒子本身的開箱圖（藍蓋橘盒、12 包茶包袋）（使用者 2026-10-07：「上第三張商品圖」）
   studioExtra["reunion-paper-gift-box"].push({ file: "studio-reunion-paper-gift-box-unboxed.webp", zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid beside it" });
+  // 團圓桐木木盒：第二張放這個盒子蓋好的斜角圖，開箱圖維持最後（使用者 2026-10-07：「上商品圖」）
+  studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = {
