@@ -203,8 +203,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .site-main { padding-top: var(--header-h); }
 .catalog-shell { background: var(--color-page); text-transform: none; min-height: 100vh; padding-top: var(--header-h); }
 /* Same ground as the homepage on every page (user 2026-09-30: 底色每一頁都跟首頁一樣). */
-/* Header bar = page colour at 80% opacity, no backdrop blur (user 2026-10-01: 不要毛玻璃，改成背景透明 80%) */
-.catalog-shell [data-header]:not(.menu--opened) { background: rgb(246 248 250 / .8); }
+/* Header bar = solid page colour (user 2026-10-07: 「選單背景不要透明」; before that 80% opacity since 2026-10-01) */
+.catalog-shell [data-header]:not(.menu--opened) { background: var(--color-page); }
 .catalog-shell [data-header] { z-index: 80; }
 .catalog-shell a, .catalog-shell button, .catalog-shell input, .catalog-shell summary { -webkit-tap-highlight-color: transparent; }
 .catalog-shell main:focus { outline: none; }
@@ -545,7 +545,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   margin-top: -50px; overflow: visible; background: transparent; color: #29251e; z-index: 1;
   touch-action: pan-y;
 }
-[data-page-scroller]:has(.orbit-hero) [data-header]:not(.menu--opened) { background: rgb(246 248 250 / .8); }
+[data-page-scroller]:has(.orbit-hero) [data-header]:not(.menu--opened) { background: var(--color-page); }
 .orbit-stage { position: absolute; inset: 0; }
 .orbit-paints, .orbit-photographs { position: absolute; inset: 0; pointer-events: none; }
 .orbit-paints { overflow: visible; }
@@ -1320,7 +1320,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(56px, 6vw, 96px) var(--page-gutter) clamp(80px, 9vw, 140px); }
 .faq-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
 .faq-head h1 { font-size: clamp(40px, 4.4vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
-.faq-intro { max-width: 34ch; margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); }
+.faq-intro { margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); } /* no max-width, so a short intro stays on one line (user 2026-10-07: 「不要換行」) */
 .faq-contact { display: inline-flex; align-items: center; margin-top: 36px; padding: 13px 26px; border-radius: 0; /* square (user 2026-10-07: 「按鈕都統一用沒有 R 角的」「我說聯絡我們，其他保留」— only this one) */ background: var(--color-ink); color: var(--color-page); font-size: 15px; letter-spacing: .04em; transition: opacity .2s; }
 .faq-contact:hover { opacity: .8; }
 .faq-contact:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
