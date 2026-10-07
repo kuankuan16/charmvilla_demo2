@@ -422,7 +422,7 @@ const buildCatalog = (lang: Locale) => {
     // 藍包頁拿掉米色大衣背影照（使用者 2026-10-06：標叉）
     "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp"],
     // 團圓：橘盒的舊情境照全部下架，只留木桌光影那張（使用者 2026-10-07：「用這張情境圖」）
-    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/scene-reunion-paper-gift-box-olive-sofa-pouch.webp", "/media/site/journal-301.webp"],
+    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/journal-301.webp"],
     // 檜木筷子頁拿掉備長炭上的小鳥筷架照（使用者 2026-10-07：「刪」）
     "wooden-chopsticks": ["/media/gallery/CV-0245.webp"],
   };
