@@ -1337,7 +1337,14 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .faq-plus::before, .faq-plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 18px; height: 1px; background: var(--color-ink); transform: translate(-50%, -50%); transition: transform .25s; }
 .faq-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
 .faq-group[open] .faq-plus::after { transform: translate(-50%, -50%) rotate(0); }
-.faq-group-body { padding: 0 0 22px; }
+.faq-group-body { padding: 0 0 26px; }
+/* a policy section's own text inside its row (the shipping, privacy, terms and Prop 65 pages) */
+.faq-text, .faq-list li { max-width: 62ch; font-size: 16px; line-height: 1.85; color: var(--color-stone-deep); }
+.faq-text + .faq-text, .faq-list, .faq-text + .faq-list, .faq-list + .faq-text { margin-top: 12px; }
+.faq-list { list-style: disc; padding-left: 1.3em; }
+.faq-text + .faq-item, .faq-list + .faq-item { margin-top: 18px; }
+.faq-pending span { display: inline-block; margin-right: 8px; padding: 0 8px; border: 1px solid currentColor; font-size: 13px; line-height: 1.7; }
+.faq-updated { margin-top: 14px; font-size: 13px; color: var(--color-stone-deep); }
 .faq-item { border-top: 1px solid rgb(31 31 31 / .12); }
 .faq-item summary { display: grid; grid-template-columns: 1fr 28px; column-gap: 24px; align-items: center; padding: 18px 0; font-size: 17px; font-weight: 500; line-height: 1.5; cursor: pointer; list-style: none; }
 .faq-item summary::-webkit-details-marker { display: none; }

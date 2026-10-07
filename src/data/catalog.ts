@@ -398,7 +398,7 @@ const buildCatalog = (lang: Locale) => {
   // beige placeholder views after it until their other photographs are chosen (user 2026-10-07: 「重生商品圖的那張，其他先用米黃色塊取代表示要再挑圖」);
   // the official photograph and the generic unboxed view are off these pages for now. 京都版 has no material in the folder and keeps its views.
   for (const s of ["spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]) {
-    studioExtra[`${s}-gift-box`] = [1, 2].map(() => ({ file: "", zh: "待挑圖", en: "To be chosen", enAlt: "photograph to be chosen", placeholder: true }));
+    studioExtra[`${s}-gift-box`] = [1, 2].map(() => ({ file: "", zh: "缺圖", en: "No image yet", enAlt: "no image yet", placeholder: true })); // every placeholder reads 缺圖 (user 2026-10-07: 「都改成缺圖」)
   }
   // 團圓（美國版 Joyful Reunion）：三張商品圖照 Shopify 的照片重生（docs/reference/reunion-us-shopify-box.jpg：桐木盒、芥末黃亞麻盒蓋、土耳其藍刺繡金魚、
   // 金線 CHARM VILLA、四角淡綠松針、金色拉片、沒有腰封；使用者 2026-10-07：「這款才對」）：封面俯視斜角（studio-listing.json）、斜角近景、開箱 15 入
@@ -468,7 +468,7 @@ const buildCatalog = (lang: Locale) => {
   // listing of its own; user 2026-10-07: 「在團圓頁選『粉紅色』時切換」)
   const bySlug = new Map(listed.map((p) => [p.slug, p]));
   // …or grey blocks while that option is off sale (the Reunion box's 粉紅色 and 藍色; user 2026-10-07: 「粉紅色商品下架改成灰色塊」「藍色也是」)
-  const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("暫停販售", "Not available"), image: { src: "", alt: t("暫停販售", "Not available"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
+  const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("缺圖", "No image yet"), image: { src: "", alt: t("缺圖", "No image yet"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
   const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews)
     ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.placeholderViews ? { ...c, views: greyViews(c.placeholderViews) } : c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c) } } : p);
   return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: products.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };

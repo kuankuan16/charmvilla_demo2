@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PolicyPage from "@/components/catalog/PolicyPage";
-import { getCommerce } from "@/data/commerce";
+import FaqAccordion from "@/components/catalog/FaqAccordion";
+import { getCommerce, supportEmail } from "@/data/commerce";
 import { alternatesFor, defaultLocale, isLocale, translator } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -17,5 +17,7 @@ export default async function Page({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const { privacy: doc, labels } = getCommerce(lang);
-  return <PolicyPage title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} />;
+  const t = translator(lang);
+  // the same two-level accordion as the FAQ (user 2026-10-07: 「其他很多資訊的頁面也都用相同的邏輯設計」)
+  return <FaqAccordion title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} contact={{ label: t("聯絡我們", "Contact us"), href: `mailto:${supportEmail}` }} />;
 }

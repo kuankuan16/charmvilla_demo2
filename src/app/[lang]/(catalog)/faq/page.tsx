@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const { faq: doc } = getCommerce(lang);
+  const { faq: doc, labels } = getCommerce(lang);
   const t = translator(lang);
   // an accordion since 2026-10-07 (user: 「可以點開才回答的形式，不要一下就看這麼多字」); the other policy pages keep PolicyPage
-  return <FaqAccordion title={doc.title} intro={doc.intro} sections={doc.sections} contact={{ label: t("聯絡我們", "Contact us"), href: `mailto:${supportEmail}` }} />;
+  return <FaqAccordion title={doc.title} intro={doc.intro} sections={doc.sections} labels={labels} contact={{ label: t("聯絡我們", "Contact us"), href: `mailto:${supportEmail}` }} />;
 }
