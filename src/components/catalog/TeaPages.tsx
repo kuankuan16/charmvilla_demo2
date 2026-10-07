@@ -1,8 +1,9 @@
 // One sheet under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 and 沖泡方式 side by side on one screen
 // (user 2026-10-07: 「『茶款介紹』與『沖泡方式』整合成一屏（並調整版型），放在目前商品的情境之下，推薦商品之上」; before that two
 // brochure pages right under the first screen). A rule with small labels across the top, the teas as a numbered list at the
-// left, the brewing steps with line icons at the right; no picture (「配圖都是錯誤的，不要放」) and no small decorative text
-// (「所有裝飾性的小字都拿掉，精簡」), nor numbers (「這一區塊的裝飾數字都拿掉」).
+// left, the brewing steps with line icons at the right; no picture (「配圖都是錯誤的，不要放」), no small decorative text
+// (「所有裝飾性的小字都拿掉，精簡」), no numbers (「這一區塊的裝飾數字都拿掉」), no rules; each row is title | text in two columns
+// (「拿掉線，標題都加大一點，內容改在另外一欄」).
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
 
@@ -28,7 +29,6 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      <div className="tea-page-rule" aria-hidden="true" />
       <div className="tea-sheet-grid">
         {notes && <div className="tea-sheet-col tea-sheet-col--notes">
           <h2 id="tea-notes-title" className="tc">{notes.title}</h2>
@@ -39,7 +39,7 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
         {brew && <div className="tea-sheet-col tea-sheet-col--brew">
           <h2 id="brew-title" className="tc">{brew.title}</h2>
           <ol className="brew-steps">
-            {brew.steps.map((s, i) => <li key={s.title}><span className="brew-icon">{brewIcons[i] ?? brewIcons[4]}</span><div><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></div></li>)}
+            {brew.steps.map((s, i) => <li key={s.title}><span className="brew-icon">{brewIcons[i] ?? brewIcons[4]}</span><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></li>)}
           </ol>
         </div>}
       </div>
