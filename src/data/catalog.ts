@@ -411,10 +411,11 @@ const buildCatalog = (lang: Locale) => {
   // 「這 2 張分別放入有符合該對應數量的茶包數的禮盒，放在第三張商品圖」; the two unboxed photographs from 2026-10-06).
   for (const [n, slugs] of [[12, ["spring-dawn", "winter-blossom"]], [18, ["orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]]] as const) {
     for (const s of slugs) studioExtra[`${s}-gift-box`] = [
-      // the 12-bag boxes: the view from the near short end with the white paper band (user 2026-10-07: 「12 入的商品都參考這個形式生成第二張商品圖」);
-      // the 18-bag boxes: the three-quarter view without ribbon
+      // 12 入：從近端短邊斜上方看的角度，「沒有」腰封（使用者 2026-10-07 先說「12 入的商品都參考這個形式生成第二張商品圖」，
+      // 之後說「新修的都不需要腰帶」；Nano Banana 2.1 拿腰封版當底、附核准封面，只把腰封拿掉；腰封版留在 git 歷史裡）
+      // 18 入：斜角、無緞帶
       n === 12
-        ? { file: `studio-${s}-gift-box-band-angle.webp`, zh: "腰封", en: "With its band", enAlt: "the box seen from its short end, the white paper band around it" }
+        ? { file: `studio-${s}-gift-box-end-angle.webp`, zh: "斜角", en: "Angled view", enAlt: "the box closed, seen from its short end at an angle, without its band" }
         : { file: `studio-${s}-gift-box-angle-v2.webp`, zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle, without its ribbon" },
       { file: n === 12 ? "gift-box-unboxed-12-v2.webp" : "gift-box-unboxed-18.webp", zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` },
     ];
