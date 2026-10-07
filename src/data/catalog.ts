@@ -401,7 +401,7 @@ const buildCatalog = (lang: Locale) => {
   // 「用相同邏輯生成這個商品的 3 張商品圖（都要高清，注意刺繡的細節與英文字換角度時不要跑掉）」）：封面俯視斜角（studio-listing.json v4）、斜角近景、開箱
   studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
   studioExtra["reunion-paulownia-gift-box"] = studioExtra["reunion-paulownia-gift-box"].map((v) => v.file === "gift-box-unboxed-12-v2.webp"
-    ? { file: "studio-reunion-paulownia-gift-box-unboxed-v4.webp" /* v4：盒蓋改成很薄的一片（使用者 2026-10-07：「蓋子太厚，要參考實拍重生一張」） */, zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid in front of it" } : v);
+    ? { file: "studio-reunion-paulownia-gift-box-unboxed-v5.webp" /* v5：照實拍的相機角度與透視重生（使用者 2026-10-07：「粉紅色那一款上有透視錯誤，請再重新生成一張參考實拍」）；v4 把盒蓋改薄 */, zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid in front of it" } : v);
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = {
