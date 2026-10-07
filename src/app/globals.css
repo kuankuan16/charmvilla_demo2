@@ -887,7 +887,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .stores-card-info { margin-top: auto; font-size: 15px; line-height: 1.8; color: rgb(31 31 31 / .64); }
 .stores-card-info a { white-space: nowrap; } /* the phone number never breaks across lines */
 .stores-card-info a:hover { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
-.stores-arrow { position: absolute; z-index: 2; top: calc(min(600px, 76%) * 365 / 600 / 2); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 0; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
+.stores-arrow { position: absolute; z-index: 2; top: calc(min(600px, 76%) * 365 / 600 / 2); display: grid; place-items: center; width: 90px; height: 90px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); backdrop-filter: blur(4px); transform: translateY(-50%); transition: background .3s, color .3s; }
 .stores-arrow--next { right: clamp(40px, 9%, 120px); }
 .stores-arrow--prev { left: clamp(14px, 2%, 28px); }
 .stores-arrow:hover, .stores-arrow:focus-visible { background: var(--color-page); color: var(--color-ink); }
@@ -1321,7 +1321,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .faq-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
 .faq-head h1 { font-size: clamp(40px, 4.4vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
 .faq-intro { max-width: 34ch; margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); }
-.faq-contact { display: inline-flex; align-items: center; margin-top: 36px; padding: 13px 26px; border-radius: 0; /* square like every other button (user 2026-10-07: 「按鈕都統一用沒有 R 角的」) */ background: var(--color-ink); color: var(--color-page); font-size: 15px; letter-spacing: .04em; transition: opacity .2s; }
+.faq-contact { display: inline-flex; align-items: center; margin-top: 36px; padding: 13px 26px; border-radius: 0; /* square (user 2026-10-07: 「按鈕都統一用沒有 R 角的」「我說聯絡我們，其他保留」— only this one) */ background: var(--color-ink); color: var(--color-page); font-size: 15px; letter-spacing: .04em; transition: opacity .2s; }
 .faq-contact:hover { opacity: .8; }
 .faq-contact:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
 .faq-body { grid-column: 7 / span 6; }
@@ -1343,7 +1343,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary:hover span:first-child { color: var(--color-stone-deep); }
 .faq-item summary:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
-.faq-toggle { position: relative; width: 28px; height: 28px; border-radius: 0; background: var(--color-ink); }
+.faq-toggle { position: relative; width: 28px; height: 28px; border-radius: 50%; background: var(--color-ink); }
 .faq-toggle::before, .faq-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--color-page); transform: translate(-50%, -50%); transition: transform .25s; }
 .faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
 .faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(0); }
