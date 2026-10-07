@@ -15,6 +15,7 @@
   /* Exact opaque-pixel color of the approved /brand/charmvilla-logo.png. */
   --color-gold: #e4a038;
   --color-gold-light: var(--color-gold);
+  --color-bronze: #a4813f; /* 金咖啡色 — the tea sheet's icons (user 2026-10-07) */
   --color-white: #ffffff;
   --color-sand: #faf8f4; /* warm paper behind the store information: the page background of jakobsencopenhagen.com, rgb(250 248 244) (user 2026-10-01: 「門市想要這個背景色」; before that gold, then #d9cdb9) */
   --color-ground: #f6f2e9; /* shared ground behind cut-out product shots (brand cream) */
@@ -262,13 +263,13 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Product page — first screen, layout and pointer behaviour after jakobsencopenhagen.com/en/products/kalle (user 2026-10-01:
    「直接照這個一模一樣」「版型與滑鼠的互動請高度學習」; reference numbers in docs/qa/2026-10-01-product-studio-gallery/reference/).
    One 12-column grid. The studio image holds columns 1–6 right under the header and, since 2026-10-07 (user: 「高度學習並推理模仿
-   這一屏的呈現」, the STINA page), fills the window's height down to the bottom gutter, the 4:5 photograph covering that frame; two
+   這一屏的呈現」, the STINA page), fills the window's height, leaving a gap under it as tall as the header (「底部要跟 menu 的高一樣」), the 4:5 photograph covering that frame; two
    short facts sit in its bottom-left corner. The right column — columns 9–12, as tall as the image — opens with 5:6 thumbnails
    (one frame 4px outside sliding to the chosen one) and closes at the foot of the image with the name, the text, three thin
    feature rows between hairlines, an origin line, the options and two full-width buttons (ink add-to-bag, outlined second).
    Views cross-fade in 300ms; thin arrows appear at the image's edges while the pointer is over it. Every gallery image is
    a 4:5 studio photograph shown with object-fit: cover, so this image has the same size and height on every product page. */
-.product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(480px, calc(100svh - var(--header-h) - var(--page-gutter))); display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
+.product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(480px, calc(100svh - 2 * var(--header-h))); display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
 .product-stage-size { grid-column: 1 / span 12; grid-row: 1; height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
 .product-stage { grid-column: 1 / span 12; grid-row: 1 / span 2; align-self: start; min-width: 0; position: sticky; top: var(--header-h); }
 .product-main-image { position: relative; width: 100%; height: var(--pdp-stage); overflow: hidden; background: var(--color-page); }
@@ -291,7 +292,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    information block sits at the foot of the image, the gap between them taking whatever height the window leaves. */
 .product-first-lead { flex: 0 0 72px; } /* the reference's pt-18 */
 .product-first-gap { flex: 1 1 24px; min-height: 24px; }
-.product-thumbnails { --thumb: 80px; position: relative; display: flex; flex-wrap: wrap; gap: 8px; padding: 4px; margin: -4px; } /* 80 × 96, 8px apart, as on the reference */
+.product-thumbnails { --thumb: clamp(80px, 6.94vw, 120px); position: relative; display: flex; flex-wrap: wrap; gap: clamp(8px, .7vw, 12px); padding: 4px; margin: -4px; } /* 100 × 120 at 1440, up to 120 × 144 on wide screens — a quarter larger than the reference's 80 × 96 (user 2026-10-07: 「商品縮圖我要大一點」, 「商品縮圖調大了沒有？」) */
 .product-thumbnails button { width: var(--thumb); aspect-ratio: 5 / 6; background: var(--color-white); cursor: pointer; }
 .product-thumbnails button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
 .product-thumbnails img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -1282,45 +1283,35 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-editorial-col + .product-editorial-col { margin-top: 40px; }
 }
 
-/* Tea pages under the first screen (user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來…在商品介紹頁下面，生成一個新的版型」; after the
-   brochure references: a rule with three small labels across the top, a large title at the left, a numbered list with hairlines at the
-   right, a photograph in the free column, line icons on the brewing steps). */
-.tea-pages { margin: clamp(56px, 6vw, 96px) var(--page-gutter) 0; }
-.tea-page + .tea-page { margin-top: clamp(64px, 7vw, 112px); }
+/* The tea sheet (user 2026-10-07: 「『茶款介紹』與『沖泡方式』整合成一屏（並調整版型），放在目前商品的情境之下，推薦商品之上」, 「配圖都是錯誤的，
+   不要放」): a rule with three small labels across the top, then two columns on one screen — the teas as a numbered list with
+   hairlines at the left, the brewing steps with bronze icons (the goldfish one the brand's own vector) at the right. */
+.tea-sheet { margin: clamp(48px, 5vw, 80px) var(--page-gutter) clamp(72px, 8vw, 128px); }
 .tea-page-rule { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; padding: 12px 0 0; border-top: 1px solid var(--color-ink); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
 .tea-page-rule span:nth-child(2) { text-align: center; letter-spacing: .08em; }
 .tea-page-rule span:last-child { text-align: right; }
-.tea-page-grid { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; padding-top: clamp(40px, 4.5vw, 72px); }
-.tea-page-lead { grid-column: 1 / span 5; min-width: 0; }
-.tea-page-eyebrow { margin-bottom: 18px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--color-stone-deep); }
-.tea-page h2 { font-size: clamp(36px, 3.9vw, 60px); font-weight: 400; line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
-.tea-page-intro { margin-top: 22px; max-width: 30ch; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); }
-.tea-page-photo { position: relative; aspect-ratio: 4 / 5; margin-top: clamp(40px, 4.5vw, 72px); overflow: hidden; background: #eceae5; }
-.tea-page-photo--side { grid-column: 1 / span 5; margin-top: 0; }
-.tea-page--notes .tea-page-photo { width: 80%; }
-.tea-notes-list, .brew-steps { list-style: none; margin: 0; padding: 0; }
-.tea-notes-list { grid-column: 7 / span 6; border-top: 1px solid rgb(31 31 31 / .18); }
-.tea-notes-list li { display: grid; grid-template-columns: 4.2em 1fr; gap: 8px; padding: 22px 0; border-bottom: 1px solid rgb(31 31 31 / .18); }
-.tea-num { font-size: 15px; letter-spacing: .04em; color: var(--color-stone-deep); font-variant-numeric: tabular-nums; }
-.tea-notes-list h3 { font-size: 19px; font-weight: 500; line-height: 1.4; }
-.tea-notes-list h3 small { display: block; margin-top: 3px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
-.tea-notes-list p { margin-top: 8px; font-size: 15px; line-height: 1.85; color: var(--color-stone-deep); }
-.tea-page-grid--brew .tea-page-lead { grid-column: 7 / span 6; }
-.brew-steps { margin-top: clamp(32px, 3.5vw, 56px); border-top: 1px solid rgb(31 31 31 / .18); }
-.brew-steps li { display: grid; grid-template-columns: 44px 1fr; gap: 22px; align-items: start; padding: 20px 0; border-bottom: 1px solid rgb(31 31 31 / .18); }
-.brew-icon { display: block; width: 44px; height: 44px; color: var(--color-ink); }
-.brew-steps h3 { display: flex; gap: 12px; align-items: baseline; font-size: 17px; font-weight: 500; line-height: 1.5; }
-.brew-steps p { margin-top: 6px; font-size: 15px; line-height: 1.85; color: var(--color-stone-deep); }
-@media (max-width: 1023px) and (min-width: 768px) {
-  .tea-page-lead { grid-column: 1 / span 6; }
-  .tea-notes-list, .tea-page-grid--brew .tea-page-lead { grid-column: 7 / span 6; }
-  .tea-page-photo--side { grid-column: 1 / span 6; }
-}
+.tea-sheet-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(24px, 2.8vw, 48px); align-items: start; padding-top: clamp(28px, 3vw, 44px); }
+.tea-sheet-col { min-width: 0; }
+.tea-sheet-col--notes { grid-column: 1 / span 6; }
+.tea-sheet-col--brew { grid-column: 7 / span 6; }
+.tea-page-eyebrow { margin-bottom: 12px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--color-stone-deep); }
+.tea-sheet h2 { font-size: clamp(26px, 2.2vw, 34px); font-weight: 400; line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; }
+.tea-sheet-intro { margin-top: 12px; font-size: 15px; line-height: 1.7; color: var(--color-stone-deep); }
+.tea-notes-list, .brew-steps { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .18); }
+.tea-notes-list li { display: grid; grid-template-columns: 3.6em 1fr; gap: 6px; padding: 13px 0; border-bottom: 1px solid rgb(31 31 31 / .18); }
+.tea-num { font-size: 13px; letter-spacing: .04em; color: var(--color-stone-deep); font-variant-numeric: tabular-nums; }
+.tea-notes-list h3 { font-size: 16px; font-weight: 500; line-height: 1.4; }
+.tea-notes-list h3 small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
+.tea-notes-list p { margin-top: 5px; font-size: 15px; line-height: 1.7; color: var(--color-stone-deep); }
+.brew-steps li { display: grid; grid-template-columns: 40px 1fr; gap: 18px; align-items: start; padding: 13px 0; border-bottom: 1px solid rgb(31 31 31 / .18); }
+.brew-icon { display: block; width: 40px; height: 40px; color: var(--color-bronze); }
+.brew-icon svg { display: block; width: 100%; height: 100%; }
+.brew-steps h3 { display: flex; gap: 10px; align-items: baseline; font-size: 16px; font-weight: 500; line-height: 1.5; }
+.brew-steps p { margin-top: 4px; font-size: 15px; line-height: 1.7; color: var(--color-stone-deep); }
 @media (max-width: 767px) {
-  .tea-page-grid { display: block; padding-top: 28px; }
-  .tea-page--notes .tea-page-photo { width: 100%; margin-top: 28px; margin-bottom: 32px; }
-  .tea-page-photo--side { margin-bottom: 32px; }
-  .tea-notes-list li { grid-template-columns: 3.4em 1fr; padding: 18px 0; }
-  .brew-steps li { grid-template-columns: 36px 1fr; gap: 16px; }
+  .tea-sheet-grid { display: block; padding-top: 24px; }
+  .tea-sheet-col + .tea-sheet-col { margin-top: 40px; }
+  .tea-notes-list li { grid-template-columns: 3.2em 1fr; }
+  .brew-steps li { grid-template-columns: 36px 1fr; gap: 14px; }
   .brew-icon { width: 36px; height: 36px; }
 }

@@ -10,7 +10,6 @@ import ProductGallery from "@/components/catalog/ProductGallery";
 import { ProductOptionProvider } from "@/components/catalog/ProductOption";
 import ProductCard from "@/components/catalog/ProductCard";
 import TeaPages from "@/components/catalog/TeaPages";
-import { site } from "@/data/content";
 import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
 
 // The other categories by closeness, for 繼續觀看 when a category has fewer than four other pieces.
@@ -76,13 +75,10 @@ export default async function ProductPage({ params }: Props) {
   // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
   // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
   const storyRows = [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
-  // 茶款介紹 and 沖泡方式 are no longer in the column nor beside the photographs: they are the brochure pages under the first screen
-  // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來，不要放在商品介紹頁面的版面裡面」).
+  // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
+  // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
   const sideText = null;
-  const teaPages = product.category === "tea" && <TeaPages product={product} t={t} photos={{
-    notes: site("scene-tea-leaves-rosebuds-goldfish-pouch.webp", t("核桃木桌上，摺起的薄紙裡一小堆烏龍茶球，旁邊幾朵乾燥玫瑰花苞與花瓣、一包茶包袋與一尾還沒泡的小金魚茶包", "On a walnut table, rolled oolong leaves in a fold of thin paper, dried rosebuds and petals, a tea pouch and a dry goldfish tea bag"), 1856, 2304),
-    brew: site("scene-goldfish-tea-glass-walnut-olive.webp", t("橄欖綠沙發旁的核桃木桌上，一杯雙層玻璃杯泡的小金魚茶，泡開的小金魚透出玫瑰花瓣與茶葉，棉線越過杯口接到旁邊的金色茶標籤", "On a walnut table by an olive sofa, goldfish tea in a double-walled glass cup, the brewed goldfish showing its rose petals and leaves, the string over the rim to the gold tag beside it"), 1856, 2304),
-  }} />;
+  const teaPages = product.category === "tea" && <TeaPages product={product} t={t} />;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
@@ -169,7 +165,6 @@ export default async function ProductPage({ params }: Props) {
         {!pair && !textAboveSmalls && sideText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery></ProductOptionProvider>
-      {teaPages}
       {editorial}
       {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-label={t("情境照", "In use")}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
@@ -182,6 +177,7 @@ export default async function ProductPage({ params }: Props) {
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
         {rowScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes={shapeOf(img) === "tall" ? "(min-width:768px) 31vw, 100vw" : "(min-width:768px) 46vw, 100vw"} /></figure>)}
       </section>}
+      {teaPages}
       <section className="product-related" aria-labelledby="related-title"><div className="product-related-heading"><h2 id="related-title" className="tc">{t("繼續觀看", "Explore more pieces")}</h2></div><div className="catalog-grid">{related.map((p, i) => <ProductCard key={p.slug} product={p} index={i} lang={lang} />)}</div></section>
     </article>
   );

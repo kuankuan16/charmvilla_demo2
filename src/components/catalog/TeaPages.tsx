@@ -1,18 +1,19 @@
-// Below the first screen of a tea gift box: 茶款介紹 and 沖泡方式 as two brochure-like pages (user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來…
-// 在商品介紹頁下面，生成一個新的版型」, with references of interior-design decks — a rule with small labels across the top, a large
-// title at the left, a numbered list with hairlines at the right, a photograph in the free column). The brewing steps carry line
-// icons (「看能不能加入 icon 呈現」) and each page a tea photograph in the site's own light and colours.
+// One sheet under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 and 沖泡方式 side by side on one screen
+// (user 2026-10-07: 「『茶款介紹』與『沖泡方式』整合成一屏（並調整版型），放在目前商品的情境之下，推薦商品之上」; before that two
+// brochure pages right under the first screen). A rule with small labels across the top, the teas as a numbered list at the
+// left, the brewing steps with line icons at the right; no picture (「配圖都是錯誤的，不要放」).
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
-import type { Img } from "@/data/content";
-import { Picture } from "@/components/ui";
 
-const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
-/** one line icon per brewing step, in the steps' order (pour, open, add the goldfish, steep, enjoy) */
+const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
+/** the brand's own goldfish (public/brand/goldfish-gold.svg, one path on a 1184 × 988 box), filled in the icons' colour */
+const GOLDFISH_D = "M 503.500 132.197 C 489.596 140.098, 459.998 182.885, 437.920 227 C 428.440 245.943, 424.966 254.295, 414.877 282.414 C 406.674 305.276, 405.231 308, 401.326 308 C 400.026 308, 385.358 301.089, 368.731 292.643 C 336.483 276.261, 325.414 271.543, 304 265.048 C 278.185 257.220, 257.539 253.949, 233.697 253.912 C 211.751 253.878, 195.714 257.004, 189.046 262.615 C 183.435 267.336, 185.317 276.091, 197.296 301 C 214.945 337.702, 227.732 374.376, 233.208 404 C 236.335 420.913, 236.327 450.342, 233.192 464.749 C 228.124 488.045, 219.283 508.176, 203.438 532.500 C 157.095 603.645, 145 624.458, 145 633.063 C 145 637.311, 148.905 638.893, 161.215 639.633 C 192.534 641.517, 238.627 628.455, 274.500 607.530 C 291.627 597.539, 291.471 597.571, 294.324 603.554 C 298.061 611.390, 312.347 623.536, 321.491 626.652 C 331.307 629.996, 344.241 626.318, 356.889 616.585 C 368.669 607.521, 377.257 595.813, 390.417 570.878 C 397.915 556.671, 408.650 541.586, 413.542 538.380 C 417.400 535.853, 419.516 538.062, 426.388 551.793 C 444.828 588.636, 451.611 609.618, 461.966 661.845 C 474.948 727.318, 483.075 753.203, 503.386 793.772 C 516.931 820.827, 525.871 835.217, 540.492 853.500 C 558.351 875.830, 571.119 887.165, 599.778 906.126 C 639.307 932.279, 670.179 944.441, 700.236 945.702 C 717.400 946.423, 724.881 945.278, 744.530 938.922 C 768.286 931.239, 785.721 921.528, 801.081 907.425 C 812.061 897.345, 816.303 897.324, 824.995 907.309 C 834.729 918.491, 855.359 927.505, 873.978 928.712 C 890.489 929.781, 923.699 920.669, 942.632 909.874 C 952.262 904.384, 963.663 893.844, 967.536 886.851 C 971.519 879.661, 971.809 865.547, 968.139 857.500 C 960.395 840.516, 939.024 824.784, 914 817.646 C 903.361 814.612, 902.964 813.101, 911.500 808.152 C 919.093 803.749, 947.069 775.911, 956.100 763.771 C 971.967 742.441, 982.402 719.287, 980.563 709.487 C 980.207 707.584, 979.044 704.109, 977.979 701.764 C 975.159 695.550, 975.468 693.385, 979.734 689.477 C 982.851 686.621, 983.451 685.430, 983.368 682.260 C 983.141 673.607, 971.672 658.518, 948.142 635.916 C 936.001 624.254, 934 621.900, 934 619.276 C 934 616.001, 938.586 609.130, 947.735 598.695 C 962.591 581.750, 959.724 565.928, 939.337 552.363 C 908.429 531.797, 886.337 535.963, 860.390 567.250 C 858.679 569.313, 856.622 571, 855.819 571 C 855.015 571, 850.114 568.263, 844.929 564.917 C 822.413 550.390, 791.153 537.327, 760.157 529.492 C 751.302 527.253, 726.119 522.731, 682 515.459 C 650.158 510.210, 615.185 506.820, 573.500 504.941 C 559.750 504.321, 546.845 503.397, 544.823 502.888 C 535.259 500.480, 532.832 487.714, 540.904 482.281 C 544.303 479.993, 564.160 479.301, 577.806 480.994 C 597.641 483.455, 602.631 483.760, 608.784 482.888 C 619.321 481.396, 625.903 477.003, 630.203 468.594 C 632.477 464.146, 632.919 454.586, 631.015 451.028 C 629.154 447.551, 630.543 444.745, 635.718 441.525 C 638.348 439.889, 645.900 434.462, 652.500 429.465 C 659.100 424.468, 672.600 414.504, 682.500 407.322 C 738.016 367.049, 798.614 314.618, 806.366 300.152 C 808.901 295.421, 809.060 294.632, 807.746 293.318 C 806.432 292.004, 804.197 292.185, 788.380 294.887 C 778.546 296.568, 751.760 300.885, 728.856 304.482 C 649.967 316.870, 643.546 317.200, 613.240 310.431 C 583.570 303.805, 566.428 290.433, 551.156 262 C 545.057 250.646, 542.486 241.604, 538.505 217.500 C 527.757 152.424, 520.437 130.933, 509.054 131.030 C 507.099 131.047, 504.600 131.572, 503.500 132.197";
+/** one icon per brewing step, in the steps' order (pour, open, add the goldfish — the brand's vector goldfish, steep, enjoy) */
+const goldfish = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1184 988" width="40" height="40" aria-hidden="true" className="brew-icon-goldfish"><path d={GOLDFISH_D} fill="currentColor" /></svg>;
 const brewIcons = [
   icon(<><path d="M13 22h22l-2.2 15.2a2 2 0 0 1-2 1.8H17.2a2 2 0 0 1-2-1.8z" /><path d="M35 25h2.5a3.5 3.5 0 0 1 0 7H34" /><path d="M9 7c5 0 7 3 7 7 0 3-2 4-2 8" /><path d="M20 10c0 2-1.5 3-1.5 5" /><circle cx="25" cy="13" r=".6" fill="currentColor" /></>),
   icon(<><path d="M15 12h18v26H15z" /><path d="M15 12v-2h18v2" /><path d="M16 8.5h16M16 10.5h16" strokeWidth=".8" /><path d="M13 19h22" strokeDasharray="2 2.5" /><path d="M33 19l2.5-1.5v3z" fill="currentColor" stroke="none" /><path d="M20 27h8M20 31h8" strokeWidth=".9" /></>),
-  icon(<><path d="M21 24.5c0-4 3.6-7 8-7s8 3 8 7-3.6 7-8 7-8-3-8-7z" /><path d="M21 24.5l-5-6 1.2 5.2-5.6-1.4 4.2 3.6-4.6 2.6 5.6-.2-2.6 4.8z" /><circle cx="33.5" cy="23.5" r=".9" fill="currentColor" /><path d="M8 38.5c2.7-2 5.3-2 8 0s5.3 2 8 0 5.3-2 8-0 5.3 2 8 0" /></>),
+  goldfish(),
   icon(<><circle cx="24" cy="24" r="15" /><path d="M24 13v11l6 4" /><path d="M24 9v2M39 24h-2M24 39v-2M9 24h2" /></>),
   icon(<><path d="M12 22h22v6a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z" /><path d="M34 25h2.5a3.5 3.5 0 0 1 0 7H34" /><path d="M9 41h30" /><path d="M18 8c0 2.5-2 3.5-2 6s2 3 2 5M24 6c0 2.5-2 3.5-2 6s2 3 2 5M30 8c0 2.5-2 3.5-2 6s2 3 2 5" /></>),
 ];
@@ -20,41 +21,31 @@ const brewIcons = [
 const paren = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`}<small>{m[2]}</small></> : text; };
 const two = (n: number) => String(n).padStart(2, "0");
 
-export default function TeaPages({ product, photos, t }: { product: Product; photos: { notes: Img; brew: Img }; t: (zh: string, en: string) => string }) {
+export default function TeaPages({ product, t }: { product: Product; t: (zh: string, en: string) => string }) {
   const notes = product.teaNotes, brew = product.brew;
   if (!notes && !brew) return null;
-  let page = 0;
-  const rule = (title: string) => <div className="tea-page-rule" aria-hidden="true"><span>CHARM VILLA</span><span>{product.name}{t("・", " · ")}{title}</span><span>{two(++page)}</span></div>;
+  const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
-    <section className="tea-pages" aria-label={t("茶款介紹與沖泡方式", "The teas and how to brew")}>
-      {notes && <article className="tea-page tea-page--notes" aria-labelledby="tea-notes-title">
-        {rule(notes.title)}
-        <div className="tea-page-grid">
-          <div className="tea-page-lead">
-            <p className="tea-page-eyebrow">{t("茶款", "Tea selection")}</p>
-            <h2 id="tea-notes-title" className="tc">{notes.title}</h2>
-            <p className="tea-page-intro tc">{product.summary}</p>
-            <figure className="tea-page-photo"><Picture img={photos.notes} fill fit="cover" animate={false} sizes="(min-width:768px) 40vw, 100vw" /></figure>
-          </div>
+    <section className="tea-sheet" aria-label={title}>
+      <div className="tea-page-rule" aria-hidden="true"><span>CHARM VILLA</span><span>{product.name}{t("・", " · ")}{title}</span><span>01</span></div>
+      <div className="tea-sheet-grid">
+        {notes && <div className="tea-sheet-col tea-sheet-col--notes">
+          <p className="tea-page-eyebrow">{t("茶款", "Tea selection")}</p>
+          <h2 id="tea-notes-title" className="tc">{notes.title}</h2>
+          <p className="tea-sheet-intro tc">{product.summary}</p>
           <ol className="tea-notes-list">
             {notes.items.map((n, i) => <li key={n.name}><span className="tea-num">({two(i + 1)})</span><div><h3 className="tc">{paren(n.name)}</h3><p className="tc">{n.text}</p></div></li>)}
           </ol>
-        </div>
-      </article>}
-      {brew && <article className="tea-page tea-page--brew" aria-labelledby="brew-title">
-        {rule(brew.title)}
-        <div className="tea-page-grid tea-page-grid--brew">
-          <figure className="tea-page-photo tea-page-photo--side"><Picture img={photos.brew} fill fit="cover" animate={false} sizes="(min-width:768px) 40vw, 100vw" /></figure>
-          <div className="tea-page-lead">
-            <p className="tea-page-eyebrow">{t("沖泡", "How to brew")}</p>
-            <h2 id="brew-title" className="tc">{brew.title}</h2>
-            <p className="tea-page-intro tc">{t("150 mL 熱水、95°C，浸泡約 5 分鐘。", "150 mL of water at 95°C, about 5 minutes.")}</p>
-            <ol className="brew-steps">
-              {brew.steps.map((s, i) => <li key={s.title}><span className="brew-icon">{brewIcons[i] ?? brewIcons[4]}</span><div><h3 className="tc"><span className="tea-num">{two(i + 1)}</span>{s.title}</h3><p className="tc">{s.text}</p></div></li>)}
-            </ol>
-          </div>
-        </div>
-      </article>}
+        </div>}
+        {brew && <div className="tea-sheet-col tea-sheet-col--brew">
+          <p className="tea-page-eyebrow">{t("沖泡", "How to brew")}</p>
+          <h2 id="brew-title" className="tc">{brew.title}</h2>
+          <p className="tea-sheet-intro tc">{t("150 mL 熱水、95°C，浸泡約 5 分鐘。", "150 mL of water at 95°C, about 5 minutes.")}</p>
+          <ol className="brew-steps">
+            {brew.steps.map((s, i) => <li key={s.title}><span className="brew-icon">{brewIcons[i] ?? brewIcons[4]}</span><div><h3 className="tc"><span className="tea-num">{two(i + 1)}</span>{s.title}</h3><p className="tc">{s.text}</p></div></li>)}
+          </ol>
+        </div>}
+      </div>
     </section>
   );
 }
