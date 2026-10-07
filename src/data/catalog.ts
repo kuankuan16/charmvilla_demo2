@@ -462,6 +462,8 @@ const buildCatalog = (lang: Locale) => {
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
     // 沙發那張排第一，所以它也是卡片的 hover 圖（使用者 2026-10-07：「hover 換這張」）
     "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-two-people-tea-black-oak-table.webp"],
+    // 年年有魚：三張情境照的版型裡，兩人喝茶的黑橡木圓桌照當大圖、木桌白瓷杯的故事照（journal-319）當右邊的小圖；卡片 hover 仍是茶席情境（使用者 2026-10-07：「交換位置」）
+    "year-of-plenty-gift-box": ["/media/site/CV-0356-tag2.webp", "/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/journal-319.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
