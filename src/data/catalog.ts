@@ -409,7 +409,11 @@ const buildCatalog = (lang: Locale) => {
   // 「這 2 張分別放入有符合該對應數量的茶包數的禮盒，放在第三張商品圖」; the two unboxed photographs from 2026-10-06).
   for (const [n, slugs] of [[12, ["spring-dawn", "winter-blossom"]], [18, ["orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]]] as const) {
     for (const s of slugs) studioExtra[`${s}-gift-box`] = [
-      { file: `studio-${s}-gift-box-angle-v2.webp`, zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle, without its ribbon" },
+      // the 12-bag boxes: the view from the near short end with the white paper band (user 2026-10-07: 「12 入的商品都參考這個形式生成第二張商品圖」);
+      // the 18-bag boxes: the three-quarter view without ribbon
+      n === 12
+        ? { file: `studio-${s}-gift-box-band-angle.webp`, zh: "腰封", en: "With its band", enAlt: "the box seen from its short end, the white paper band around it" }
+        : { file: `studio-${s}-gift-box-angle-v2.webp`, zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle, without its ribbon" },
       { file: n === 12 ? "gift-box-unboxed-12-v2.webp" : "gift-box-unboxed-18.webp", zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` },
     ];
   }
