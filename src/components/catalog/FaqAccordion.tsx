@@ -3,7 +3,7 @@
 // intro, the document's date and a contact button at the left; at the right one closed row per section with a thin +, and inside it
 // the section's content — paragraphs and lists as they are, each question its own row with a round +/− button, the answer shown
 // only once opened. Native <details>, so it works without JavaScript and is keyboard-accessible. A document with a single
-// section (Prop 65) opens it at once.
+// section (Prop 65) opens it at once. The documents' section numbers (「1. 健康…」) are dropped from the row titles (user 2026-10-07: 「拿掉數字」).
 import type { PolicySection } from "@/data/commerce";
 
 export default function FaqAccordion({ title, intro, updated, sections, contact, labels }: {
@@ -21,7 +21,7 @@ export default function FaqAccordion({ title, intro, updated, sections, contact,
       <div className="faq-body">
         {sections.map((s) => (
           <details key={s.id} id={s.id} className="faq-group" open={sections.length === 1 || undefined}>
-            <summary className="faq-group-summary"><h2 className="tc">{s.heading}</h2><span className="faq-plus" aria-hidden="true" /></summary>
+            <summary className="faq-group-summary"><h2 className="tc">{s.heading.replace(/^\d+\.\s*/, "")}</h2><span className="faq-plus" aria-hidden="true" /></summary>
             <div className="faq-group-body">
               {s.blocks.map((b, i) => typeof b === "string"
                 ? <p key={i} className="faq-text tc">{b}</p>
