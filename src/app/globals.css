@@ -1225,3 +1225,41 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* a product story with several paragraphs, and its second titled text (紫斑蝶) */
 .product-story-text p + p { margin-top: 12px; }
 .product-story-more { margin-top: 28px; margin-bottom: 8px; font-size: 19px; line-height: 1.5; font-weight: 500; }
+
+/* Product page (user 2026-10-07: 「右側的資訊太多了」, after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer): the column
+   keeps three thin key rows under the description; the specifications, 茶款介紹 and how to brew sit below the first screen as a
+   magazine inner page — a rule across the width, the section title at the left, the details in two text columns at the right. */
+.product-keylines { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .14); }
+.product-keylines li { display: grid; grid-template-columns: minmax(5em, 32%) 1fr; gap: 14px; padding: 11px 0; border-bottom: 1px solid rgb(31 31 31 / .14); font-size: 15px; line-height: 1.5; }
+.product-keylines li span:first-child { color: var(--color-stone-deep); }
+.product-editorial { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; margin: clamp(56px, 6vw, 96px) var(--page-gutter) 0; padding: clamp(48px, 5vw, 80px) 0 clamp(72px, 8vw, 128px); border-top: 1px solid var(--color-ink); }
+.product-editorial-head { grid-column: 1 / span 3; position: sticky; top: calc(var(--header-h) + 24px); }
+.product-editorial-eyebrow { margin-bottom: 14px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
+.product-editorial-head h2 { font-size: clamp(28px, 2.5vw, 40px); font-weight: 500; line-height: 1.3; text-wrap: balance; }
+.product-editorial-head .product-image-note { margin-top: 22px; max-width: 30ch; font-size: 13px; line-height: 1.7; color: var(--color-stone-deep); }
+.product-editorial-body { grid-column: 5 / span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(32px, 4vw, 72px); row-gap: 40px; align-items: start; }
+.product-editorial-col { min-width: 0; }
+.product-editorial .product-keyfacts > div { grid-template-columns: minmax(7em, 36%) 1fr; padding: 14px 0; font-size: 15px; line-height: 1.6; }
+.product-editorial .product-keyfacts > div:first-child { border-top: 0; padding-top: 0; }
+.product-editorial h3 { margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--color-ink); font-size: 19px; font-weight: 500; line-height: 1.5; }
+.product-editorial-block + .product-editorial-block { margin-top: 44px; }
+.product-editorial-item + .product-editorial-item { margin-top: 18px; }
+.product-editorial-item h4 { margin-bottom: 4px; font-size: 15px; font-weight: 600; line-height: 1.5; }
+.product-editorial-item p { font-size: 15px; line-height: 1.85; color: var(--color-stone-deep); }
+.product-brew-steps { list-style: none; counter-reset: step; margin: 0; padding: 0; }
+.product-brew-steps li { display: grid; grid-template-columns: 2.4em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgb(31 31 31 / .14); font-size: 15px; line-height: 1.7; }
+.product-brew-steps li::before { counter-increment: step; content: counter(step, decimal-leading-zero); padding-top: 2px; font-size: 13px; letter-spacing: .08em; color: var(--color-stone-deep); }
+.product-brew-steps strong { display: block; font-weight: 600; }
+.product-brew-steps p { margin-top: 2px; color: var(--color-stone-deep); }
+.product-editorial .product-concept .product-slogan { margin: 0 0 14px; font-size: 19px; }
+.product-editorial .product-concept p:not(.product-slogan) { font-size: 15px; line-height: 1.85; }
+@media (max-width: 1279px) and (min-width: 768px) {
+  .product-editorial-head { grid-column: 1 / span 4; }
+  .product-editorial-body { grid-column: 5 / span 8; grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .product-editorial { display: block; margin-top: 40px; padding: 32px 0 56px; }
+  .product-editorial-head { position: static; margin-bottom: 28px; }
+  .product-editorial-body { display: block; }
+  .product-editorial-col + .product-editorial-col { margin-top: 40px; }
+}

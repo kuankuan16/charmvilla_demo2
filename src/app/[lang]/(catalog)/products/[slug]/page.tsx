@@ -72,27 +72,41 @@ export default async function ProductPage({ params }: Props) {
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
-  const specs = <section className="product-specs" aria-labelledby="specs-title">
-    <h2 id="specs-title" className="tc">{specTitle}</h2>
-    <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{item}</li>)}</ul> : f.value}</dd></div>)}</dl>
-    {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
-  </section>;
-  // How to brew (tea gift boxes except the fruit & herbal tea box) and the Show more! concept (bags): their own sections after the specifications,
-  // in the same row style (user 2026-10-06, guide §4 and §5).
-  const brew = product.brew && <section className="product-specs product-brew" aria-labelledby="brew-title">
-    <h2 id="brew-title" className="tc">{product.brew.title}</h2>
-    <dl className="product-keyfacts">{product.brew.steps.map((s, i) => <div key={s.title}><dt className="tc">{i + 1}. {s.title}</dt><dd className="tc">{s.text}</dd></div>)}</dl>
-  </section>;
-  // 茶款介紹 (tea gift boxes): each tea in the box with its note, in the same row style, between the specifications and how to brew
-  // (user 2026-10-07: 「加入目前官網的商品介紹頁」, the official product pages' order).
-  const teaNotes = product.teaNotes && <section className="product-specs product-tea-notes" aria-labelledby="tea-notes-title">
-    <h2 id="tea-notes-title" className="tc">{product.teaNotes.title}</h2>
-    <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{n.name}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
-  </section>;
-  const concept = product.concept && <section className="product-specs product-concept" aria-labelledby="concept-title">
-    <h2 id="concept-title" className="tc">{product.concept.title}</h2>
+  // The column keeps only the essentials (user 2026-10-07: 「右側的資訊太多了」, after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer,
+  // whose column shows three short feature rows and tucks the details away): three thin key rows under the description, and the
+  // specifications, 茶款介紹, how to brew and the Show more! concept move below the first screen into a magazine inner page
+  // (section title at the left, the details in two text columns at the right).
+  const byLabel = (labels: string[]) => product.facts.filter((f) => labels.includes(f.label));
+  const keyRows: [string, string][] = product.category === "tea"
+    ? [[t("內容", "Contents"), product.summary], ...byLabel([t("盒型與材質", "Packaging"), t("保存期限", "Shelf life")]).map((f) => [f.label, f.value] as [string, string])]
+    : product.facts.slice(0, 3).map((f) => [f.label, f.value] as [string, string]);
+  const keyLines = keyRows.length > 0 && <ul className="product-keylines">{keyRows.map(([label, value]) => <li key={label}><span className="tc">{label}</span><span className="tc">{value}</span></li>)}</ul>;
+  const specs = <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{item}</li>)}</ul> : f.value}</dd></div>)}</dl>;
+  // 茶款介紹 (user 2026-10-07: 「加入目前官網的商品介紹頁」): each tea as a small heading over its note
+  const teaNotes = product.teaNotes && <div className="product-editorial-block" aria-labelledby="tea-notes-title">
+    <h3 id="tea-notes-title" className="tc">{product.teaNotes.title}</h3>
+    {product.teaNotes.items.map((n) => <div key={n.name} className="product-editorial-item"><h4 className="tc">{n.name}</h4><p className="tc">{n.text}</p></div>)}
+  </div>;
+  // How to brew (tea gift boxes except the fruit & herbal tea box; guide §4): numbered steps
+  const brew = product.brew && <div className="product-editorial-block" aria-labelledby="brew-title">
+    <h3 id="brew-title" className="tc">{product.brew.title}</h3>
+    <ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><div><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></div></li>)}</ol>
+  </div>;
+  const concept = product.concept && <div className="product-editorial-block product-concept" aria-labelledby="concept-title">
+    <h3 id="concept-title" className="tc">{product.concept.title}</h3>
     <p className="product-slogan" lang="en">&ldquo;{product.concept.slogan}&rdquo;</p>
     <p className="tc">{product.concept.body}</p>
+  </div>;
+  const editorial = <section className="product-editorial" aria-labelledby="specs-title">
+    <div className="product-editorial-head">
+      <p className="product-editorial-eyebrow">{t("商品細節", "Details")}</p>
+      <h2 id="specs-title" className="tc">{specTitle}</h2>
+      {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見右側規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed here. Box color and available styles follow the options in the official store.")}</p>}
+    </div>
+    <div className="product-editorial-body">
+      <div className="product-editorial-col">{specs}</div>
+      {(teaNotes || brew || concept) && <div className="product-editorial-col">{teaNotes}{brew}{concept}</div>}
+    </div>
   </section>;
   // 繼續觀看 (user 2026-10-05: 「優先推薦同一類別的商品，不夠的話再推薦其他類別」): the pieces of this category that follow this one
   // (wrapping round), then the nearest categories, one piece from each in turn, so a short category is not followed by four bags.
@@ -121,17 +135,15 @@ export default async function ProductPage({ params }: Props) {
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
           {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}</p>}
           <p className="product-description tc">{product.description}</p>
+          {keyLines}
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
           {/* user 2026-10-01: every product page carries the ink add-to-bag button; a piece without a list price goes into the bag as "price on request" */}
           <AddToCart product={product} />
         </div>}>
-        {specs}
-        {teaNotes}
-        {brew}
-        {concept}
         {!pair && !textAboveSmalls && storyText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery>
+      {editorial}
       {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-labelledby="story-title">
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
         <div className="product-pair-side">{storyText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
