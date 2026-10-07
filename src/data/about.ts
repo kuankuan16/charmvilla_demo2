@@ -29,9 +29,8 @@ export const getAbout = (lang: Locale) => {
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：白包照換成方凳托盤上的小金魚茶
-    // v5 (user 2026-10-07: 「套用你後來學習的知識優化這一張透明茶杯與茶標籤還有小金魚的部分，要更接近真實」): only the cup (the brand's
-    // single-walled fishbowl cup), the brewed goldfish and the tag with its string were redrawn and composited back; v4 stays in git
-    hero: site("ottoman-tray-tea-cup-v5-realcup.webp", t("墨綠色毛圈布方凳上的木托盤裡，品牌的小魚缸玻璃杯泡開一尾小金魚茶包，透出玫瑰花瓣與茶葉，棉線越過杯口接到旁邊的金色茶標籤；牆邊靠著一幅赭色圓形筆觸的抽象畫", "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in the brand's fishbowl glass cup, rose petals and leaves showing through, its string over the rim to the gold tag beside it; an ochre abstract painting leans against the wall"), 1792, 2240),
+    // v4 again (user 2026-10-07: 「換回原本的」 after a v5 that redrew the cup, the goldfish and the tag; v5 stays in git history)
+    hero: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫", "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
     // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under each chapter (the
     // button under the intro was removed: 「刪」),
     // the store's service terms, questions and answers. All facts come from
