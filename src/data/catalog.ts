@@ -405,10 +405,12 @@ const buildCatalog = (lang: Locale) => {
   // the official photograph and the generic unboxed view are off these pages for now. 京都版 has no material in the folder and keeps its views.
   // The second view is the box at an angle on the gradient grey ground, with NO ribbon (user 2026-10-07, with two store photographs:
   // 「參考這兩張實際商品照，推理目前所有禮盒的第二張圖…都不用緞帶」; Nano Banana 2.1 from each box's approved cover); the third is still 缺圖
-  for (const s of ["spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]) {
-    studioExtra[`${s}-gift-box`] = [
+  // The third view is the opened box with the right number of gold pouches — 12 in the long boxes, 18 in the square ones (user 2026-10-07:
+  // 「這 2 張分別放入有符合該對應數量的茶包數的禮盒，放在第三張商品圖」; the two unboxed photographs from 2026-10-06).
+  for (const [n, slugs] of [[12, ["spring-dawn", "winter-blossom"]], [18, ["orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]]] as const) {
+    for (const s of slugs) studioExtra[`${s}-gift-box`] = [
       { file: `studio-${s}-gift-box-angle-v2.webp`, zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle, without its ribbon" },
-      { file: "", zh: "缺圖", en: "No image yet", enAlt: "no image yet", placeholder: true }, // every placeholder reads 缺圖 (user 2026-10-07: 「都改成缺圖」)
+      { file: n === 12 ? "gift-box-unboxed-12-v2.webp" : "gift-box-unboxed-18.webp", zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` },
     ];
   }
   // 團圓（美國版 Joyful Reunion）：三張商品圖照 Shopify 的照片重生（docs/reference/reunion-us-shopify-box.jpg：桐木盒、芥末黃亞麻盒蓋、土耳其藍刺繡金魚、
