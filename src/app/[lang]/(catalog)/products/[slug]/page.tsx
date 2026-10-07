@@ -135,7 +135,7 @@ export default async function ProductPage({ params }: Props) {
   const others = (nearest[product.category] ?? []).map((id) => all.filter((p) => p.category === id));
   const fill = Array.from({ length: Math.max(0, ...others.map((l) => l.length)) }, (_, i) => others.flatMap((l) => l[i] ?? []));
   const related = [...sameCategory, ...fill.flat()].slice(0, 4);
-  const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
+  const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.filter((v) => !v.placeholder).map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
     // Offer only where the official list price is known; availability only where the official store says sold out (catalog.ts rule).
     ...(product.price && { offers: { "@type": "Offer", price: product.price.amount, priceCurrency: product.price.currency, url: `${siteUrl}${productHref(product, lang)}`, ...(product.soldOut && { availability: "https://schema.org/SoldOut" }) } }) };
   return (

@@ -1075,10 +1075,6 @@
     2000,
     2500
   ],
-  "/media/site/listing-tea-purple-butterfly-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
   "/media/site/listing-tea-spring-blossoms-gift-box-v3.webp": [
     1600,
     2000
@@ -1095,23 +1091,7 @@
     1600,
     2000
   ],
-  "/media/site/listing-tea-winter-blossom-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
   "/media/site/listing-tea-kyoto-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
-  "/media/site/listing-tea-spring-dawn-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
-  "/media/site/listing-tea-year-of-plenty-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
-  "/media/site/listing-tea-orchid-gift-box-v3.webp": [
     1600,
     2000
   ],
@@ -1120,10 +1100,6 @@
     2000
   ],
   "/media/site/listing-tea-full-moon-tea-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
-  "/media/site/listing-tea-blossoming-prosperity-gift-box-v3.webp": [
     1600,
     2000
   ],
@@ -1382,5 +1358,29 @@
   "/media/site/ottoman-tray-tea-cup-v5-realcup.webp": [
     1792,
     2240
+  ],
+  "/media/site/listing-tea-spring-dawn-gift-box-v4.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/listing-tea-winter-blossom-gift-box-v4.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/listing-tea-orchid-gift-box-v4.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/listing-tea-purple-butterfly-gift-box-v4.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/listing-tea-year-of-plenty-gift-box-v4.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/listing-tea-blossoming-prosperity-gift-box-v4.webp": [
+    1856,
+    2304
   ]
 }

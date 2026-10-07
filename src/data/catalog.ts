@@ -18,7 +18,7 @@ export type Category = { id: CategoryId; name: string; en: string; intro: string
 // 所以選單、清單、商品頁（變成 404）、頁尾、網站地圖、相關商品都不會出現。資料保留，要恢復時把這裡清空即可。
 // 豐盛系列（點心盤）也隱藏（使用者 2026-10-07：「隱藏所有「豐盛系列」（點心盤）的商品與選單按鈕」）
 export const hiddenCategories: ReadonlySet<CategoryId> = new Set<CategoryId>(["bags", "jewelry", "abundance"]);
-export type ProductView = { label: string; image: Img };
+export type ProductView = { label: string; image: Img; placeholder?: boolean }; // placeholder: a beige block, the photograph still to be chosen
 export type Product = {
   slug: string; category: CategoryId; name: string; english: string;
   summary: string; description: string;
@@ -377,7 +377,7 @@ const buildCatalog = (lang: Locale) => {
   // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
   // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, and the front view for
   // Raw Gold too (2026-10-05: 「比例太大，應該要跟其他金飾視覺上是一樣大」; the close view had replaced it on 2026-10-01).
-  const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string }[]> = {
+  const studioExtra: Record<string, { file: string; zh: string; en: string; enAlt: string; placeholder?: boolean }[]> = {
     // the cover is now the set with its dessert-paper folder and gold box on the listing ground (user 2026-10-05: 「豐盛系列的商品大圖用這個去改淺灰背景」);
     // the tray on its own follows (the earlier CV-0120 set view was the same arrangement, so it is not repeated)
     "prosperity-dessert-stand": [{ file: "studio2k-prosperity-dessert-stand-v2.webp", zh: "點心盤", en: "The tray", enAlt: "the three-tier tray on its own" }],
@@ -391,6 +391,12 @@ const buildCatalog = (lang: Locale) => {
   // 茶葉禮盒：依盒內數量，縮圖最後一張放「打開盒子看數量」的開箱圖（使用者 2026-10-06：「像真皮包一樣」；有官方正面圖的，正面圖在前、開箱圖放最後）
   for (const [n, slugs] of [[12, ["reunion-paper", "reunion-paulownia", "spring-dawn", "winter-blossom"]], [18, ["year-of-plenty", "blossoming-prosperity", "spring-blossoms", "orchid", "purple-butterfly", "full-moon-tea"]]] as const) {
     for (const s of slugs) studioExtra[`${s}-gift-box`] = [...(studioExtra[`${s}-gift-box`] ?? []), { file: n === 12 ? "gift-box-unboxed-12-v2.webp" /* 透視校正版（使用者 2026-10-06） */ : `gift-box-unboxed-${n}.webp`, zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` }];
+  }
+  // The six boxes whose cover is regenerated from the brand's photographs (~/Desktop/金魚商品圖/小金魚茶包 Goldfish Shaped Tea Bags) show two
+  // beige placeholder views after it until their other photographs are chosen (user 2026-10-07: 「重生商品圖的那張，其他先用米黃色塊取代表示要再挑圖」);
+  // the official photograph and the generic unboxed view are off these pages for now. 京都版 has no material in the folder and keeps its views.
+  for (const s of ["spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]) {
+    studioExtra[`${s}-gift-box`] = [1, 2].map(() => ({ file: "", zh: "待挑圖", en: "To be chosen", enAlt: "photograph to be chosen", placeholder: true }));
   }
   // 團圓（美國版 Joyful Reunion）：三張商品圖照 Shopify 的照片重生（docs/reference/reunion-us-shopify-box.jpg：桐木盒、芥末黃亞麻盒蓋、土耳其藍刺繡金魚、
   // 金線 CHARM VILLA、四角淡綠松針、金色拉片、沒有腰封；使用者 2026-10-07：「這款才對」）：封面俯視斜角（studio-listing.json）、斜角近景、開箱 15 入
@@ -442,7 +448,9 @@ const buildCatalog = (lang: Locale) => {
     const lead = [...(p.slug === "bird-chopstick-rest" ? [] : sceneLead[p.slug] ?? []), listingSceneSite[p.slug], ...(sceneAfterLead[p.slug] ?? []), sceneId ? gallery(sceneId, t(`${p.name}・情境照`, `${p.name}, in context`)) : undefined].filter((x): x is Img => Boolean(x));
     // A product without a studio photograph yet (the diamond stud) keeps its own first image as cover and only view.
     const views: ProductView[] = studio
-      ? [{ label: t("正面", "Front view"), image: studio }, ...(studioExtra[p.slug] ?? []).map((v) => ({ label: t(v.zh, v.en), image: site(v.file, `${p.name}${t("・", ", ")}${t(v.zh, v.enAlt)}`) }))]
+      ? [{ label: t("正面", "Front view"), image: studio }, ...(studioExtra[p.slug] ?? []).map((v) => v.placeholder
+        ? { label: t(v.zh, v.en), image: { src: "", alt: t(v.zh, v.enAlt), w: 4, h: 5 }, placeholder: true }
+        : { label: t(v.zh, v.en), image: site(v.file, `${p.name}${t("・", ", ")}${t(v.zh, v.enAlt)}`) })]
       : p.views.slice(0, 1);
     const shown = new Set(views.map((v) => v.image.src));
     // the bird rest keeps its own photograph first; the new interior follows it
