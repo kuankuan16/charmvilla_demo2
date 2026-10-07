@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return { title: t("購物須知｜CHARM VILLA", "Shopping guide | CHARM VILLA"), description: t("CHARM VILLA 線上購物的付款、運送、退換貨、發票與客服說明。", "Payment, delivery, returns, invoices and customer service for CHARM VILLA online orders."), alternates: alternatesFor(lang, "/shopping-guide") };
+  return { title: t("加州 65 號提案警語｜CHARM VILLA", "California Proposition 65 Warning | CHARM VILLA"), description: t("CHARM VILLA 商品的加州 65 號提案警語。", "The California Proposition 65 warning for CHARM VILLA products."), alternates: alternatesFor(lang, "/prop65") };
 }
 
 export default async function Page({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const { guide, labels, updated } = getCommerce(lang);
-  return <PolicyPage title={guide.title} intro={guide.intro} updated={updated} sections={guide.sections} labels={labels} />;
+  const { prop65: doc, labels } = getCommerce(lang);
+  return <PolicyPage title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} />;
 }

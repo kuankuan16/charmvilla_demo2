@@ -97,7 +97,8 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   const serviceLinks = [
     { href: sectionHref("account"), label: t("會員", "Account") },
-    { href: localeHref(lang, "/shopping-guide"), label: t("購物須知", "Shopping guide") },
+    { href: localeHref(lang, "/faq"), label: t("常見問題", "FAQ") },
+    { href: localeHref(lang, "/policy"), label: t("運送與退換貨", "Shipping & Returns") },
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {

@@ -32,13 +32,16 @@ export type Product = {
   scenes?: Img[];
   /** items: a list fact (a gift box's teas) shown as bullet points; value keeps the same text as one line */
   facts: { label: string; value: string; items?: string[] }[];
-  story: { title: string; body: string; image?: Img };
+  /** `more`: a second titled text under the story (紫斑蝶: about Taiwan's purple crow butterflies); bodies may hold paragraphs separated by blank lines */
+  story: { title: string; body: string; image?: Img; more?: { title: string; body: string } };
   variant?: { group: string; label: string };
+  /** not sold on the US store (tea boxes, user 2026-10-07): kept out of every listing, menu, sitemap and product page; data kept */
+  hidden?: boolean;
   officialUrl?: string;
   /** Studio editorial shot for the homepage featured grid (falls back to `image`). */
   featuredImage?: Img;
-  /** Local-mode list price (official TWD). In shopify mode the Storefront API price wins. */
-  price?: { amount: number; currency: "TWD" };
+  /** Local-mode list price: USD on the US catalogue (tea gift boxes, 2026-10-07), the official TWD price elsewhere. In shopify mode the Storefront API price wins. */
+  price?: { amount: number; currency: "TWD" | "USD" };
   /** Marked sold out on the official store; the price stays visible and the bag button is disabled. */
   soldOut?: boolean;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
@@ -49,7 +52,8 @@ export type Product = {
   teaNotes?: { title: string; items: { name: string; text: string }[] };
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number }[] };
+  /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -444,7 +448,7 @@ const buildCatalog = (lang: Locale) => {
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };
   const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
-  return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: products.filter((p) => !hiddenCategories.has(p.category)), bagProducts, jewelryProducts, teaProducts, teawareProducts };
+  return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: products.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };
 };
 
 const catalogs: Partial<Record<Locale, ReturnType<typeof buildCatalog>>> = {};

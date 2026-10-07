@@ -35,10 +35,9 @@ export default async function RootLayout({ children, params }: Props & { childre
   const { lang: raw } = await params;
   // The proxy only ever sends "zh" or "en" here; a stray value (a file-like URL) falls back to the default and its page answers 404.
   const lang = isLocale(raw) ? raw : defaultLocale;
-  // The seller for search engines (schema.org Organization), from the same facts as the footer (2026-10-02).
-  const { company } = getCommerce(lang);
-  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "CHARM VILLA", legalName: company.name, taxID: company.taxId, url: siteUrl,
-    email: company.email, telephone: "+886-2-2542-0303",
+  // The seller for search engines (schema.org Organization): the US store's contact (commerce.ts, user's document 2026-10-07).
+  const { email } = getCommerce(lang);
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "CHARM VILLA", url: siteUrl, email,
     sameAs: ["https://www.charmvilla.com.tw/", "https://www.facebook.com/CHARMVILLA8/", "https://www.instagram.com/charmvilla/"] };
   return (
     <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`} suppressHydrationWarning>

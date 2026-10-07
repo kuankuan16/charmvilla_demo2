@@ -8,9 +8,9 @@ import { localeHref, translator, type Locale } from "@/i18n/config";
 // appears while a card is hovered (user 2026-10-01: 「首頁清單 hover 時也要換情境照」).
 // 真皮包與金飾全站隱藏（使用者 2026-10-07），白包與兩對耳環換成豐盛點心盤、年年有魚與雲朵杯墊
 const slugs = [
-  "reunion-paulownia-gift-box",
+  "reunion-paper-gift-box", // 團圓（美國版一個商品，2026-10-07）
   "ginkgo-teaspoon-gift-box",
-  "spring-blossoms-gift-box", // 豐盛點心盤隱藏後換成花滿富春（2026-10-07）
+  "spring-dawn-gift-box", // 花滿富春不在美國販售，換成春曉（2026-10-07）
   "bird-chopstick-rest",
   "year-of-plenty-gift-box",
   "cloud-coaster",

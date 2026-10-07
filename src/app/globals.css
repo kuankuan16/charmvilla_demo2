@@ -1218,3 +1218,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-concept p:lang(en):not(.product-slogan) { line-height: 1.6; }
 /* a sold-out piece: the bag button reads as switched off (grey ground, no hover), not only as faded */
 .product-buy:disabled { opacity: 1; background: rgb(31 31 31 / .12); color: rgb(31 31 31 / .62); cursor: not-allowed; }
+
+/* FAQ page (2026-10-07): each question a small heading over its answer */
+.policy-qa + .policy-qa { margin-top: 26px; }
+.policy-qa h3 { font-size: 19px; line-height: 1.5; font-weight: 500; margin-bottom: 6px; }
+/* a product story with several paragraphs, and its second titled text (紫斑蝶) */
+.product-story-text p + p { margin-top: 12px; }
+.product-story-more { margin-top: 28px; margin-bottom: 8px; font-size: 19px; line-height: 1.5; font-weight: 500; }

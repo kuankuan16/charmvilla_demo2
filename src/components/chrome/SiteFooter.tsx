@@ -4,6 +4,7 @@
 // official PNG so it stays sharp at this size). The homepage and every inner page render this component.
 import Link from "next/link";
 import { getCategories, categoryHref } from "@/data/catalog";
+import { getCommerce } from "@/data/commerce";
 import SocialLinks from "@/components/ui/SocialLinks";
 import NewsletterForm from "./NewsletterForm";
 import { localeHref, translator, type Locale } from "@/i18n/config";
@@ -20,11 +21,9 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
       { href: homeHref, label: t("首頁", "Home") }, { href: localeHref(lang, "/about"), label: t("關於", "About") },
       { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: storesHref, label: t("門市", "Our Stores") },
       { href: localeHref(lang, "/account"), label: t("會員", "Account") }] },
-    { label: t("購物說明", "Help"), links: [
-      { href: localeHref(lang, "/shopping-guide"), label: t("購物須知", "Shopping guide") }, { href: localeHref(lang, "/shopping-guide#shipping"), label: t("運送", "Delivery") },
-      { href: localeHref(lang, "/shopping-guide#returns"), label: t("退換貨", "Returns") }, { href: localeHref(lang, "/shopping-guide#service"), label: t("客服", "Customer service") }] },
-    { label: t("條款", "Legal"), links: [
-      { href: localeHref(lang, "/privacy"), label: t("隱私權政策", "Privacy policy") }, { href: localeHref(lang, "/shopping-guide#payment"), label: t("服務條款", "Terms of sale") }] },
+    // the US store's FAQ and policies (commerce.ts, user's document 2026-10-07)
+    { label: t("購物說明", "Help"), links: getCommerce(lang).footer.help.map((l) => ({ href: l.href.startsWith("mailto:") ? l.href : localeHref(lang, l.href), label: l.label })) },
+    { label: t("條款", "Legal"), links: getCommerce(lang).footer.legal.map((l) => ({ href: localeHref(lang, l.href), label: l.label })) },
   ];
   return (
     <footer className="catalog-footer site-footer-v2">

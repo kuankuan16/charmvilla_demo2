@@ -66,7 +66,9 @@ export default async function ProductPage({ params }: Props) {
   const spreads = inSpreads ? rest.flatMap((_, i) => (i % 3 ? [] : [rest.slice(i, i + 3)])) : [], rowScenes = inSpreads ? [] : rest;
   // 白包頁：故事文字放在第一組的兩張小圖正上方，不放在資訊欄（使用者 2026-10-06）
   const textAboveSmalls = (product.slug === "braided-leather-bag-white" || product.slug === "braided-leather-bag-blue") && spreads.length > 0;
-  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2><p className="tc">{product.story.body}</p>{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
+  // a story body may hold several paragraphs (blank-line separated); `more` is a second titled text (紫斑蝶: about the butterflies, 2026-10-07)
+  const paragraphs = (text: string, prefix: string) => text.split(/\n\s*\n/).map((p, i) => <p key={`${prefix}${i}`} className="tc">{p}</p>);
+  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="tc product-story-more">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");

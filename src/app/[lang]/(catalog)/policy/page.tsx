@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return { title: t("隱私權政策｜CHARM VILLA", "Privacy Policy | CHARM VILLA"), description: t("CHARM VILLA 如何蒐集、使用與揭露您的個人資料。", "How CHARM VILLA collects, uses and discloses your personal information."), alternates: alternatesFor(lang, "/privacy") };
+  return { title: t("運送與退換貨政策｜CHARM VILLA", "Shipping & Returns Policy | CHARM VILLA"), description: t("CHARM VILLA 美國線上商店的運費、配送時間與退換貨規定。", "Shipping rates, delivery times, and returns guidelines for the CHARM VILLA US online store."), alternates: alternatesFor(lang, "/policy") };
 }
 
 export default async function Page({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const { privacy: doc, labels } = getCommerce(lang);
+  const { policy: doc, labels } = getCommerce(lang);
   return <PolicyPage title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} />;
 }

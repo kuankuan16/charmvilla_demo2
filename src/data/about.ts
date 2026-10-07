@@ -10,6 +10,7 @@
 // 2026-10-05 (user: 「拿掉關於我們所有『子村莊園』的字眼，都用 CHARM VILLA 呈現，並不強調來自台灣」): the brand is named CHARM VILLA only,
 // the Chinese slogan (which contains 子村) gives way to the official English line, and Taiwan is no longer the frame of the story.
 import { site, gallery, type Img } from "./content";
+import { getCommerce } from "./commerce";
 import { translator, type Locale } from "@/i18n/config";
 
 export type AboutRange = { id: string; image: Img; position?: string };
@@ -109,22 +110,15 @@ export const getAbout = (lang: Locale) => {
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
       { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("深色古銅托盤上的四隻柴燒鳥形筷架、備長炭與一雙檜木筷，近看", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a dark bronze tray, close up"), 1792, 2240) },
     ] satisfies AboutRange[],
-    // the official store's terms (commerce.ts, www.charmvilla.com.tw, read 2026-10-02)
+    // the US store's Shipping & Returns Policy and FAQ (commerce.ts, user's document 2026-10-07)
     benefits: [
-      { id: "shipping", title: t("滿 NT$ 2,000 免運", "Free delivery from NT$ 2,000"), text: t("未滿酌收運費 NT$ 120，可寄送台灣與港澳。", "Below that, delivery is NT$ 120. We ship to Taiwan, Hong Kong and Macau."), href: "/shopping-guide#shipping" },
-      { id: "payment", title: t("多種付款方式", "Several ways to pay"), text: t("貨到付款、線上刷卡、ATM 匯款。", "Cash on delivery, card online or ATM transfer."), href: "/shopping-guide#payment" },
-      { id: "delivery", title: t("約 5–7 個工作天送達", "Delivered in about 5–7 business days"), text: t("訂單成立後翌日起算；ATM 匯款於確認款項後約 5 個工作天。", "Counted from the day after the order; about 5 business days after an ATM payment is confirmed."), href: "/shopping-guide#shipping" },
-      { id: "returns", title: t("七日鑑賞期", "Seven days to decide"), text: t("收到商品後七日內可退回；客服電話 02-2542-0303（10:00–21:00）。", "Return within seven days of receiving your order; call 02-2542-0303 (10:00–21:00)."), href: "/shopping-guide#returns" },
+      { id: "shipping", title: t("滿 US$ 99 免運", "Free shipping over $99"), text: t("未達則依結帳時的地址與配送方式計算運費。", "Below that, shipping is calculated at checkout by address and service."), href: "/policy#us-shipping" },
+      { id: "delivery", title: t("3–7 個工作天送達", "Delivered in 3–7 business days"), text: t("從加州出貨；出貨後寄送追蹤連結給您。", "Ships from California; a tracking link follows once your order ships."), href: "/policy#processing" },
+      { id: "returns", title: t("陶瓷商品 14 天內可退", "14-day returns on ceramics"), text: t("茶品為食品，售出後恕不退換；損壞或錯誤訂單請於 7 天內告知。", "Tea is a food product and is not returnable; report damage or errors within 7 days."), href: "/policy#returns" },
+      { id: "contact", title: t("來信 us@charmvilla.com", "Email us@charmvilla.com"), text: t("挑選禮物或既有訂單的協助，我們很樂意為您服務。", "For help choosing a gift or with an existing order."), href: "/faq" },
     ] satisfies { id: string; title: string; text: string; href: string }[],
     faqTitle: t("常見問題", "Frequently asked questions"),
-    faq: [
-      { q: t("運費怎麼計算？", "How much is delivery?"), a: t("單筆訂單滿 NT$ 2,000 免運費，未滿則酌收運費 NT$ 120。超商取貨單筆最多寄送 4 盒。", "Orders of NT$ 2,000 or more ship free; below that, delivery is NT$ 120. Convenience-store pickup takes up to 4 boxes per order.") },
-      { q: t("可以用哪些方式付款？", "How can I pay?"), a: t("貨到付款、線上刷卡與 ATM 匯款。", "Cash on delivery, card online or ATM bank transfer.") },
-      { q: t("下單後多久會收到？", "When will my order arrive?"), a: t("貨到付款與線上刷卡，訂單成立後翌日起算約 5–7 個工作天；ATM 匯款於確認款項後翌日起算約 5 個工作天。", "For cash on delivery and card, about 5–7 business days from the day after the order; for ATM transfer, about 5 business days from the day after payment is confirmed.") },
-      { q: t("可以寄到海外嗎？", "Do you ship abroad?"), a: t("可寄送台灣與港澳，港澳同樣滿 NT$ 2,000 免運。金飾不提供海外寄送。", "We ship within Taiwan and to Hong Kong and Macau, with the same free delivery from NT$ 2,000. Jewelry is not shipped overseas.") },
-      { q: t("金飾需要等多久？", "How long does jewelry take?"), a: t("金飾為訂製商品，製作時間視訂單情形約 25–60 天，請於訂購前先來電洽詢 02-2542-0303。", "Jewelry is made to order and takes about 25–60 days depending on orders; please call 02-2542-0303 before ordering.") },
-      { q: t("哪裡可以看到實品？", "Where can I see the pieces?"), a: t("台北晶華門市（麗晶精品 B1，10:00–21:00 全年無休）與京都門市（寺町通二條，週六・週日 11:00–18:00）。", "At Regent Taipei (Regent Galleria B1, 10:00–21:00 every day) and in Kyoto (Teramachi-dori Nijo, Saturday and Sunday 11:00–18:00).") },
-    ],
-    faqMore: { label: t("看完整購物須知", "Read the full shopping guide"), href: "/shopping-guide" },
+    faq: getCommerce(lang).faqHighlights.map(({ q, a }) => ({ q, a })),
+    faqMore: { label: t("看完整常見問題", "Read the full FAQ"), href: "/faq" },
   };
 };
