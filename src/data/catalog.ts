@@ -332,6 +332,8 @@ const buildCatalog = (lang: Locale) => {
   // 團圓（美國版）的情境照：gallery.charmvilla.com 品牌素材 CV-0445「金色禮盒與小金魚茶包｜木桌光影」（使用者 2026-10-07：「用這張情境圖」）——
   // 芥末黃松針盒配玻璃杯小金魚茶，和現在的盒子一致。橘盒的橄欖綠沙發照（scene-reunion-paper-gift-box-olive-sofa-pouch.webp）只留給首頁輪播
   sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-oak-table-light.webp", t("淺色橡木桌上的斜陽與樹影，團圓禮盒的芥末黃松針盒蓋，旁邊一杯雙層玻璃杯泡的小金魚茶與金色茶標籤", "Slanting sun and leaf shadows on a pale oak table: the Reunion box's mustard lid with pine sprigs, and beside it goldfish tea in a double-walled glass cup with its gold tag"), 1536, 1024)];
+  // 橄欖綠沙發旁的核桃木桌那張（盒子已換成松針盒）也放進商品頁，排在木桌光影之後（使用者 2026-10-07：「放上商品圖的內容頁」）
+  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-olive-sofa-pouch.webp", t("橄欖綠毛圈沙發旁的核桃木桌上，團圓禮盒的桐木盒與芥末黃松針盒蓋、一包茶包袋、幾粒茶葉與玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶", "On a walnut table beside an olive bouclé sofa, the Reunion paulownia box with its mustard pine-sprig lid, a tea pouch, a few tea leaves and rosebuds, and a glass cup of goldfish tea at the right"), 1856, 2304)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-olive-armchair-rattan.webp", t("暖色客廳一角，橄欖綠毛圈布扶手椅上靠著藍色編織提把皮革包；牆上是橘色系的抽象大圓弧畫，椅子左邊是一張藤編茶几", "A warm corner of a living room: the blue Braided Leather Bag rests on an olive bouclé armchair, an orange arched abstract painting on the wall and a woven rattan side table to the left"), 1520, 2688)];
   // 白包肩背近拍：深藍薄紗襯衫、側光照出荔枝紋（使用者 2026-10-06：「放上官網」）
@@ -421,8 +423,8 @@ const buildCatalog = (lang: Locale) => {
     "braided-leather-bag-white": ["/media/gallery/CV-0426.webp"],
     // 藍包頁拿掉米色大衣背影照（使用者 2026-10-06：標叉）
     "braided-leather-bag-blue": ["/media/gallery/CV-0423.webp"],
-    // 團圓：橘盒的舊情境照全部下架，只留木桌光影那張（使用者 2026-10-07：「用這張情境圖」）
-    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/journal-301.webp"],
+    // 團圓：橘盒的舊情境照下架（使用者 2026-10-07：「用這張情境圖」）；換成松針盒的沙發照後來又放回商品頁（「放上商品圖的內容頁」）
+    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/journal-301.webp"],
     // 檜木筷子頁拿掉備長炭上的小鳥筷架照（使用者 2026-10-07：「刪」）
     "wooden-chopsticks": ["/media/gallery/CV-0245.webp"],
   };
@@ -441,7 +443,7 @@ const buildCatalog = (lang: Locale) => {
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-olive-sofa-tea-tray.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
-    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-oak-table-light.webp"],
+    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
