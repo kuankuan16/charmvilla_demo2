@@ -63,8 +63,9 @@ export default async function AboutPage({ params }: Props) {
 
       {about.chapters.map((c) => (
         <section key={c.id} className={`about-chapter about-chapter--${c.side}`} aria-labelledby={`about-${c.id}`}>
-          <figure className="about-chapter-image" style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
-            <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />
+          <figure className={`about-chapter-image${c.placeholder ? " is-placeholder" : ""}`} style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
+            {/* a grey block where the photograph is still to be chosen (user 2026-10-07: 「用灰色塊先取代」) */}
+            {c.placeholder ? <span className="about-placeholder-label tc">{t("待挑圖", "Image to come")}</span> : <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />}
           </figure>
           <div className="about-chapter-text">
             <p className="about-chapter-index">{c.index}</p>

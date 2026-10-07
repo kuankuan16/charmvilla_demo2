@@ -14,7 +14,7 @@ import { getCommerce } from "./commerce";
 import { translator, type Locale } from "@/i18n/config";
 
 export type AboutRange = { id: string; image: Img; position?: string };
-export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; side: "left" | "right"; cta?: AboutLink };
+export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; placeholder?: boolean /* a grey block instead of the image, the photograph still to be chosen */; side: "left" | "right"; cta?: AboutLink };
 export type AboutLink = { label: string; href: string };
 
 export const getAbout = (lang: Locale) => {
@@ -59,6 +59,7 @@ export const getAbout = (lang: Locale) => {
         // 01 (user 2026-10-07: 「到桌面『品牌與展覽』裡面重新生成高品質、商業攝影的素材搭配」): the booth generated from the folder's one
         // photograph, the Songbird series panel (IMG_1319), in the site's light; the sofa scene about-scene-01-giftbox-sofa.webp stays in the repo
         image: site("about-scene-01-exhibition-panel.webp", t("設計展的展位：白色看板上三根墨畫的鳥羽與直排小字「小鳥兒系列／鳥羽 創作／手繪 蘇靜媚」，底下金色 CHARM VILLA；看板前一朵白荷花，淺木檯座上放著團圓禮盒與一杯玻璃杯小金魚茶", "A design-fair booth: a white panel with three ink-painted feathers, a column of small characters naming the Songbird series and the hand-drawn work by Su Ching-mei, and CHARM VILLA in gold; a white lotus before it, and on a pale wooden plinth the Reunion gift box and a glass cup of goldfish tea"), 1856, 2304),
+        placeholder: true, // a grey block for now (user 2026-10-07: 「用灰色塊先取代」); the image above stays on file
       },
       {
         id: "goldfish", index: "02", side: "left",
@@ -75,6 +76,7 @@ export const getAbout = (lang: Locale) => {
         // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：皮躺椅白包照換回原本手摺小金魚的照片
         // generated scene (user 2026-10-07); the hand-folding photograph about-craft.webp stays in the repo
         image: site("about-scene-02-goldfish-cup.webp", t("胡桃木桌上一杯玻璃杯小金魚茶，旁邊一尾還沒泡的白色小金魚茶包、金色茶包袋、玫瑰花苞與烏龍茶球，後方是橄欖綠沙發", "A glass of goldfish tea on a walnut table, a dry white goldfish tea bag, a gold sachet, rosebuds and oolong pearls beside it, an olive sofa behind"), 1856, 2304),
+        placeholder: true, // a grey block for now (user 2026-10-07: 「用灰色塊先取代」); the image above stays on file
       },
       {
         id: "world", index: "03", side: "right",
