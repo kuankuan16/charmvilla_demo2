@@ -30,7 +30,7 @@ export type TeaGift = {
   /** lid colours sold with every tea choice (春曉 Blue/Pink, 蝴蝶蘭 Gold/Pink): each tea × lid is a Shopify variant */
   lid?: Bi[];
   /** packaging options with the same contents and price (團圓 Gold/Pink/Blue) */
-  packaging?: { label: Bi; text: Bi }[];
+  packaging?: { label: Bi; text: Bi; viewsFrom?: string }[];
   /** the US list price in USD (the lowest option); a box without it is priced from the Taiwan store (official-prices.json, TWD) */
   usd?: number;
   setOf?: number;          // sold as a set of this many boxes (心有愛: NT$810 buys 3 boxes)
@@ -100,7 +100,7 @@ export const teaGifts: TeaGift[] = [
   { officialId: 891, slug: "reunion-paper-gift-box", journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: reunionBoxes, dimensions: "", weight: 0, contents: fifteen, usd: 170, scene: "CV-0348",
     packaging: [
       { label: gold, text: { zh: "橘色紙盒搭配金色手工刺繡盒蓋。", en: "Orange paper box with a hand-embroidered gold lid." } },
-      { label: pink, text: { zh: "桐木盒搭配粉紅色手工刺繡盒蓋。", en: "Paulownia wood box with a hand-embroidered pink lid." } },
+      { label: pink, text: { zh: "桐木盒搭配粉紅色手工刺繡盒蓋。", en: "Paulownia wood box with a hand-embroidered pink lid." }, viewsFrom: "reunion-paulownia-gift-box" /* its three studio views show while chosen */ },
       { label: blue, text: { zh: "藍色紙盒搭配黃色手工刺繡盒蓋。", en: "Blue paper box with a hand-embroidered yellow lid." } },
     ],
     description: "CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包。所有包裝選項均含相同茶款組合，適合與親友共享或贈禮。",
@@ -225,7 +225,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       : { amount: (officialPrices.prices as Record<string, number>)[String(gift.officialId)], currency: "TWD" as const };
     // What the bag button offers: each tea × lid colour (the Shopify variants), each packaging option, or each tea
     const bagChoices = gift.packaging
-      ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount, note: lt(p.text) })) // the text shows under the chooser once chosen (user 2026-10-07: 「可以精簡呈現在這區」), no longer a specification row
+      ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount, note: lt(p.text), viewsFrom: p.viewsFrom })) // the text shows under the chooser once chosen (user 2026-10-07: 「可以精簡呈現在這區」), no longer a specification row
       : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map(l => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price })));
     const choiceLabel = gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("選擇茶款（每盒擇一）", "Choose your tea");
     return {

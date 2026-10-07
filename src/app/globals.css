@@ -268,11 +268,11 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    feature rows between hairlines, an origin line, the options and two full-width buttons (ink add-to-bag, outlined second).
    Views cross-fade in 300ms; thin arrows appear at the image's edges while the pointer is over it. Every gallery image is
    a 4:5 studio photograph shown with object-fit: cover, so this image has the same size and height on every product page. */
-.product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(480px, calc(100svh - var(--header-h) - var(--page-gutter))); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
-.product-stage-size { grid-column: 1 / span 6; grid-row: 1; height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
-.product-stage { grid-column: 1 / span 6; grid-row: 1 / span 2; align-self: start; min-width: 0; position: sticky; top: var(--header-h); }
+.product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(480px, calc(100svh - var(--header-h) - var(--page-gutter))); display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
+.product-stage-size { grid-column: 1 / span 12; grid-row: 1; height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
+.product-stage { grid-column: 1 / span 12; grid-row: 1 / span 2; align-self: start; min-width: 0; position: sticky; top: var(--header-h); }
 .product-main-image { position: relative; width: 100%; height: var(--pdp-stage); overflow: hidden; background: var(--color-page); }
-.product-stage-caption { position: absolute; left: clamp(16px, 1.1vw, 22px); bottom: clamp(14px, 1vw, 20px); z-index: 1; font-size: 15px; line-height: 1.55; color: var(--color-ink); }
+.product-stage-caption { position: absolute; left: clamp(16px, 1.1vw, 22px); bottom: clamp(14px, 1vw, 20px); z-index: 1; font-size: 13px; line-height: 1.55; color: var(--color-ink); } /* 13px (user 2026-10-07: 「左下角的說明文字都再縮小一點」) */
 .product-stage-caption p span:first-child { color: var(--color-stone-deep); }
 .product-slide { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .product-slide[data-active=true] { opacity: 1; pointer-events: auto; }
@@ -282,7 +282,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-main-image:hover .product-arrow, .product-arrow:focus-visible { opacity: 1; }
 .product-arrow:focus-visible { outline: 2px solid var(--color-ink); }
 @media (hover: none) { .product-arrow { opacity: 1; } }
-.product-column { grid-column: 8 / span 5; grid-row: 1; min-width: 0; display: flex; } /* five columns since 2026-10-07 (user: 「希望加寬文字欄位，不希望茶款要斷行」) */
+/* the hero grid has 24 columns so the information column can be four and a half of the twelve: its original four plus a little
+   (user 2026-10-07: 「右邊的資訊 div 改回原本比原本再寬一點就好」, after a five-column try) */
+.product-column { grid-column: 16 / span 9; grid-row: 1; min-width: 0; display: flex; }
 .product-first { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 /* As on the STINA page (user 2026-10-07, after a morning of top-aligned trials): the thumbnails hang under the header and the
    information block sits at the foot of the image, the gap between them taking whatever height the window leaves. */
@@ -355,7 +357,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    column, and the product image stays under the header until the column has passed (their bottom edges then meet). Scenes
    the column does not take close the page in rows on the same 12 columns: portraits on 4 columns, so the third one sits
    under the information column; landscapes on 6. */
-.product-more { grid-column: 8 / span 5; grid-row: 2; min-width: 0; display: flex; flex-direction: column; gap: var(--pdp-gap); padding-top: clamp(48px, 5vw, 84px); }
+.product-more { grid-column: 16 / span 9; grid-row: 2; min-width: 0; display: flex; flex-direction: column; gap: var(--pdp-gap); padding-top: clamp(48px, 5vw, 84px); }
 .product-more .product-story-text { margin-bottom: clamp(16px, 1.6vw, 28px); }
 .scene-fig { position: relative; min-width: 0; overflow: hidden; background: var(--color-ground); }
 .product-scenes { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
@@ -365,9 +367,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    under the stage a large photograph as wide as the product image; beside it, from the left edge of the information column,
    the story text set a little down from the photograph's top (153px at 1440 on the reference) and, 70px under the text, a small
    photograph two columns wide, which stays under the header while the large one passes. */
-.product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
-.product-pair-large { grid-column: 1 / span 6; align-self: start; }
-.product-pair-side { --side-cols: 5; grid-column: 8 / span 5; min-width: 0; padding-top: clamp(56px, 10.6vw, 153px); }
+.product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); column-gap: var(--pdp-gap); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
+.product-pair-large { grid-column: 1 / span 12; align-self: start; }
+.product-pair-side { --side-cols: 4.5; grid-column: 16 / span 9; min-width: 0; padding-top: clamp(56px, 10.6vw, 153px); }
 .product-pair[data-large=wide] .product-pair-side { padding-top: 0; } /* a landscape photograph is too low for the offset */
 .product-pair-side .product-story-text { width: calc((100% - (var(--side-cols) - 1) * var(--pdp-gap)) / var(--side-cols) * 3 + 2 * var(--pdp-gap)); margin-bottom: clamp(36px, 4.9vw, 70px); }
 .product-pair-side .product-story-text p { color: var(--color-stone-deep); }
@@ -390,8 +392,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-awards img { width: 78px; height: 48px; object-fit: contain; }
 .product-related h2 { font-size: clamp(23px, 1.85vw, 31px); font-weight: 500; line-height: 1.5; }
 @media (max-width: 1279px) and (min-width: 768px) {
-  .product-column, .product-more { grid-column: 8 / span 5; }
-  .product-pair-side { --side-cols: 5; grid-column: 8 / span 5; }
+  .product-column, .product-more { grid-column: 15 / span 10; }
+  .product-pair-side { --side-cols: 5; grid-column: 15 / span 10; }
 }
 @media (max-width: 767px) {
   .product-hero { display: block; padding: 0 0 14px; }

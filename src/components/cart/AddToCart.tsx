@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useProductOption } from "@/components/catalog/ProductOption";
 import { useCart } from "./CartProvider";
 import { formatPrice, type Product } from "@/data/catalog";
 import { useT } from "@/i18n/LocaleProvider";
@@ -10,7 +10,7 @@ import { useT } from "@/i18n/LocaleProvider";
 export default function AddToCart({ product }: { product: Product }) {
   const cart = useCart(); const { t } = useT();
   const choices = product.giftBox?.choices;
-  const [option, setOption] = useState<number | undefined>(undefined);
+  const { option, setOption } = useProductOption(); // shared with the gallery (ProductOption.tsx)
   const missing = Boolean(choices) && option === undefined;
   return <>
     {choices && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}</legend>

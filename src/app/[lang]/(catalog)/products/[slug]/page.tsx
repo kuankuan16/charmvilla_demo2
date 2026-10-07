@@ -7,6 +7,7 @@ import AddToCart from "@/components/cart/AddToCart";
 import { getContent, type Img } from "@/data/content";
 import { Picture } from "@/components/ui";
 import ProductGallery from "@/components/catalog/ProductGallery";
+import { ProductOptionProvider } from "@/components/catalog/ProductOption";
 import ProductCard from "@/components/catalog/ProductCard";
 import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
 
@@ -85,20 +86,26 @@ export default async function ProductPage({ params }: Props) {
   // A bracketed part of a name or label — 東方美人茶（白毫烏龍茶）, 紅玉紅茶（Red Jade／Ruby No.18）3 入, 重量（含盒） — goes on its own
   // small line under the rest (user 2026-10-07: 「括號內的文字都換行用小字呈現」).
   const smallParen = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`}<small className="product-paren">{m[2]}</small></> : text; };
-  const plainFacts = product.facts.filter((f) => !(f.items && f.items.length > 1));
-  const caption = plainFacts.slice(0, 2).map((f) => <p key={f.label}><span className="tc">{f.label}</span> / <span className="tc">{f.value}</span></p>);
+  // Each fact appears once (user 2026-10-07: 「不要一直重複一樣的資訊」, 「規格內的系列可以刪」): the series and one short fact in the
+  // image's corner, three facts in the thin rows, and the specifications carry only what is left.
   const byLabel = (labels: string[]) => labels.map((l) => product.facts.find((f) => f.label === l)).filter((f): f is NonNullable<typeof f> => Boolean(f));
-  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Sold as"), t("盒型與材質", "Packaging"), t("保存期限", "Shelf life")]) : plainFacts.slice(0, 3);
+  const plainFacts = product.facts.filter((f) => !(f.items && f.items.length > 1));
+  const captionRows = product.category === "tea" ? byLabel([t("系列", "Series"), t("保存期限", "Shelf life")]) : plainFacts.slice(0, 2);
+  const caption = captionRows.map((f) => <p key={f.label}><span className="tc">{f.label}</span> / <span className="tc">{f.value}</span></p>);
+  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Sold as"), t("盒型與材質", "Packaging"), t("茶包材質", "Tea bag material")]) : plainFacts.slice(2, 5);
   const keyLines = keyRows.length > 0 && <ul className="product-keylines">{keyRows.map((f) => <li key={f.label}><span className="tc">{f.label}</span><span className="tc">{f.value}</span></li>)}</ul>;
+  const shownAbove = new Set([...captionRows, ...keyRows].map((f) => f.label).concat(t("系列", "Series")));
+  const specFacts = product.facts.filter((f) => !shownAbove.has(f.label));
   const origin = product.facts.find((f) => f.label === t("產地", "Made in"));
   const originNote = origin && <p className="product-origin tc">{t(`${origin.value}製作。`, `Made in ${origin.value}.`)}</p>;
-  const secondAction = product.brew ? { href: "#brew-title", label: t("查看沖泡方式", "How to brew") } : { href: `${lang === "en" ? "/en" : ""}/faq`, label: t("常見問題", "FAQ") };
+  // the second, outlined button leads to the brewing steps; other products have none (user 2026-10-07: 「移除常見問題」)
+  const secondAction = product.brew ? { href: "#brew-title", label: t("查看沖泡方式", "How to brew") } : null;
   // Back in the column, after the button, as before 2026-10-07 (user 2026-10-07: 「商品規格我喜歡放在原本的位置」; the three thin key rows and
   // the magazine-page specifications of that morning are gone again).
   const specs = <section className="product-specs" aria-labelledby="specs-title">
     <h2 id="specs-title" className="tc">{specTitle}</h2>
     <dl className="product-keyfacts">
-      {product.facts.map((f) => <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{smallParen(item)}</li>)}</ul> : f.value}</dd></div>)}
+      {specFacts.map((f) => <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{smallParen(item)}</li>)}</ul> : f.value}</dd></div>)}
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
       {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
     </dl>
@@ -141,7 +148,7 @@ export default async function ProductPage({ params }: Props) {
           reference's spacing (user's choice). Under them the same column carries the story and the first scene photographs, at the
           width of the information above them, while the product image on the left stays in place (after …/products/karla;
           user 2026-10-01: 「右側的情境照應該要對齊上面資訊欄的欄位，左邊商品圖會暫時固定」). No captions. */}
-      <ProductGallery key={product.slug} name={product.name} views={product.views} intro={
+      <ProductOptionProvider><ProductGallery key={product.slug} name={product.name} views={product.views} optionViews={product.giftBox?.choices?.map((c) => c.views)} intro={
         <div className="product-intro">
           {/* On Chinese pages the English name sits above the Chinese one; on English pages the name itself is English. */}
           {lang === "zh" && <p className="product-english">{product.english}</p>}
@@ -153,13 +160,13 @@ export default async function ProductPage({ params }: Props) {
           {originNote}
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
           {/* user 2026-10-01: every product page carries the ink add-to-bag button; a piece without a list price goes into the bag as "price on request" */}
-          <div className="product-actions"><AddToCart product={product} /><a className="product-buy product-buy--secondary tc" href={secondAction.href}>{secondAction.label}</a></div>
+          <div className="product-actions"><AddToCart product={product} />{secondAction && <a className="product-buy product-buy--secondary tc" href={secondAction.href}>{secondAction.label}</a>}</div>
         </div>} caption={caption}>
         {specs}
         {teaNotes}
         {!pair && !textAboveSmalls && sideText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
-      </ProductGallery>
+      </ProductGallery></ProductOptionProvider>
       {editorial}
       {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-labelledby={sideTitle}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>

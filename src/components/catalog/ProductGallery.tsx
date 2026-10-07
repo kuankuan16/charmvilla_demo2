@@ -14,14 +14,21 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import type { ProductView } from "@/data/catalog";
 import { useT } from "@/i18n/LocaleProvider";
+import { useProductOption } from "./ProductOption";
 
 const Arrow = ({ flip = false }: { flip?: boolean }) => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true" style={flip ? { transform: "scaleX(-1)" } : undefined}><path d="M13.708 5.854H.708m0 0L6.223.354M.708 5.854l5.515 5.5" stroke="currentColor" /></svg>;
 
 // `caption`: two short facts at the image's bottom-left corner, like the reference's "Stoff / Lodge 216 Curry" lines
 // (user 2026-10-07, jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer: 「高度學習並推理模仿這一屏的呈現」).
-export default function ProductGallery({ name, views, intro, caption, children }: { name: string; views: ProductView[]; intro: ReactNode; caption?: ReactNode; children?: ReactNode }) {
+// `optionViews[i]`: the views shown instead while option i is chosen (the Reunion box's pink packaging is the paulownia box).
+export default function ProductGallery({ name, views: baseViews, optionViews, intro, caption, children }: { name: string; views: ProductView[]; optionViews?: (ProductView[] | undefined)[]; intro: ReactNode; caption?: ReactNode; children?: ReactNode }) {
   const { t } = useT();
+  const { option } = useProductOption();
+  const views = (option !== undefined && optionViews?.[option]) || baseViews;
+  const viewsKey = views.map((v) => v.image.src).join("|");
   const [active, setActive] = useState(0);
+  const [seenKey, setSeenKey] = useState(viewsKey);
+  if (seenKey !== viewsKey) { setSeenKey(viewsKey); setActive(0); } // a new set of views opens on its first one
   const [frame, setFrame] = useState<[number, number]>([0, 0]);
   const thumbs = useRef<HTMLDivElement>(null);
   const move = (offset: number) => setActive((i) => (i + offset + views.length) % views.length);
@@ -31,7 +38,7 @@ export default function ProductGallery({ name, views, intro, caption, children }
     place();
     window.addEventListener("resize", place);
     return () => window.removeEventListener("resize", place);
-  }, [active]);
+  }, [active, viewsKey]);
   return (
     <section className="product-hero" aria-labelledby="product-name">
       {/* takes the image's place in the first row, so that row is as tall as the image while the image itself spans both rows and sticks */}

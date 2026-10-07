@@ -53,7 +53,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string }[]; choiceLabel?: string };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; views?: ProductView[] }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -450,7 +450,12 @@ const buildCatalog = (lang: Locale) => {
     const order = sceneOrder[p.slug]; if (order) scenes.sort((a, b) => order.indexOf(a.src) - order.indexOf(b.src));
     return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
   };
-  const products: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
+  const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
+  // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
+  // listing of its own; user 2026-10-07: 「在團圓頁選『粉紅色』時切換」)
+  const bySlug = new Map(listed.map((p) => [p.slug, p]));
+  const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom)
+    ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c) } } : p);
   return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: products.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };
 };
 
