@@ -392,11 +392,12 @@ const buildCatalog = (lang: Locale) => {
   for (const [n, slugs] of [[12, ["reunion-paper", "reunion-paulownia", "spring-dawn", "winter-blossom"]], [18, ["year-of-plenty", "blossoming-prosperity", "spring-blossoms", "orchid", "purple-butterfly", "full-moon-tea"]]] as const) {
     for (const s of slugs) studioExtra[`${s}-gift-box`] = [...(studioExtra[`${s}-gift-box`] ?? []), { file: n === 12 ? "gift-box-unboxed-12-v2.webp" /* 透視校正版（使用者 2026-10-06） */ : `gift-box-unboxed-${n}.webp`, zh: `開箱・${n} 入`, en: `Unboxed · ${n} tea bags`, enAlt: `the box opened to show ${n} gold tea bags in neat rows` }];
   }
-  // 團圓繽紛紙盒：木盒開箱圖換成這個盒子本身（藍蓋橘盒）蓋好的斜角圖（使用者 2026-10-07：「取代」）；其他 12 入禮盒不變
+  // 團圓（美國版 Joyful Reunion）：三張商品圖照 Shopify 的照片重生（docs/reference/reunion-us-shopify-box.jpg：桐木盒、芥末黃亞麻盒蓋、土耳其藍刺繡金魚、
+  // 金線 CHARM VILLA、四角淡綠松針、金色拉片、沒有腰封；使用者 2026-10-07：「這款才對」）：封面俯視斜角（studio-listing.json）、斜角近景、開箱 15 入
+  // （3 欄 5 排）。之前的藍蓋橘盒三張（台灣的繽紛紙盒）留在 git 歷史裡
   studioExtra["reunion-paper-gift-box"] = (studioExtra["reunion-paper-gift-box"] ?? []).map((v) => v.file === "gift-box-unboxed-12-v2.webp"
-    ? { file: "studio-reunion-paper-gift-box-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
-  // 第三張：這個盒子本身的開箱圖（藍蓋橘盒、12 包茶包袋）（使用者 2026-10-07：「上第三張商品圖」）
-  studioExtra["reunion-paper-gift-box"].push({ file: "studio-reunion-paper-gift-box-unboxed.webp", zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid beside it" });
+    ? { file: "studio-reunion-gift-box-us-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
+  studioExtra["reunion-paper-gift-box"].push({ file: "studio-reunion-gift-box-us-unboxed-15.webp", zh: "開箱・15 入", en: "Unboxed · 15 tea bags", enAlt: "the box opened to show 15 gold tea bags, the lid in front of it" });
   // 團圓桐木木盒：三張商品圖照繽紛紙盒的邏輯重生（Nano Banana 2.1，以官網的珊瑚紅亞麻盒蓋＋粉紅刺繡金魚照片當商品參考；使用者 2026-10-07：
   // 「用相同邏輯生成這個商品的 3 張商品圖（都要高清，注意刺繡的細節與英文字換角度時不要跑掉）」）：封面俯視斜角（studio-listing.json v4）、斜角近景、開箱
   studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
