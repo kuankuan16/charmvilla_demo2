@@ -286,7 +286,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    blank space anywhere (user 2026-10-07: 「gap 縮短」, then 「gap 高度是現在的 4 倍，取消按鈕固定的位置改通通對齊最上面試試看」 — the gap
    is four times the 24–40 px it had just been). The image's size box spans both rows so it no longer sets the first row's height. */
 .product-first-lead { flex: 0 0 clamp(28px, 5vw, 72px); }
-.product-first-gap { flex: 0 0 clamp(96px, 12vh, 160px); }
+.product-first-gap { flex: 0 0 clamp(48px, 6vh, 80px); } /* halved again (user 2026-10-07: 「縮短 gap」 on the 4× version) */
 .product-thumbnails { --thumb: clamp(64px, 5.56vw, 100px); position: relative; display: flex; flex-wrap: wrap; gap: clamp(8px, .56vw, 10px); padding: 4px; margin: -4px; }
 .product-thumbnails button { width: var(--thumb); aspect-ratio: 5 / 6; background: var(--color-white); cursor: pointer; }
 .product-thumbnails button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
