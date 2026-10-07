@@ -403,8 +403,13 @@ const buildCatalog = (lang: Locale) => {
   // The six boxes whose cover is regenerated from the brand's photographs (~/Desktop/金魚商品圖/小金魚茶包 Goldfish Shaped Tea Bags) show two
   // beige placeholder views after it until their other photographs are chosen (user 2026-10-07: 「重生商品圖的那張，其他先用米黃色塊取代表示要再挑圖」);
   // the official photograph and the generic unboxed view are off these pages for now. 京都版 has no material in the folder and keeps its views.
+  // The second view is the box at an angle on the gradient grey ground, with NO ribbon (user 2026-10-07, with two store photographs:
+  // 「參考這兩張實際商品照，推理目前所有禮盒的第二張圖…都不用緞帶」; Nano Banana 2.1 from each box's approved cover); the third is still 缺圖
   for (const s of ["spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]) {
-    studioExtra[`${s}-gift-box`] = [1, 2].map(() => ({ file: "", zh: "缺圖", en: "No image yet", enAlt: "no image yet", placeholder: true })); // every placeholder reads 缺圖 (user 2026-10-07: 「都改成缺圖」)
+    studioExtra[`${s}-gift-box`] = [
+      { file: `studio-${s}-gift-box-angle-v2.webp`, zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle, without its ribbon" },
+      { file: "", zh: "缺圖", en: "No image yet", enAlt: "no image yet", placeholder: true }, // every placeholder reads 缺圖 (user 2026-10-07: 「都改成缺圖」)
+    ];
   }
   // 團圓（美國版 Joyful Reunion）：三張商品圖照 Shopify 的照片重生（docs/reference/reunion-us-shopify-box.jpg：桐木盒、芥末黃亞麻盒蓋、土耳其藍刺繡金魚、
   // 金線 CHARM VILLA、四角淡綠松針、金色拉片、沒有腰封；使用者 2026-10-07：「這款才對」）：封面俯視斜角（studio-listing.json）、斜角近景、開箱 15 入
