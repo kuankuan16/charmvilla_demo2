@@ -282,6 +282,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-slide--placeholder { display: grid; place-items: center; background: #efe7d6; }
 .product-placeholder-label { font-size: 13px; letter-spacing: .14em; color: var(--color-stone-deep); }
 .product-thumbnails button.is-placeholder { background: #efe7d6; }
+/* grey where the option is off sale (user 2026-10-07: 「粉紅色商品下架改成灰色塊」) */
+.product-slide--placeholder.is-grey, .product-thumbnails button.is-placeholder.is-grey { background: #e2e2df; }
 .product-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 40px; height: 40px; margin-top: -20px; color: var(--color-ink); opacity: 0; transition: opacity .2s; }
 .product-arrow--prev { left: 4px; } .product-arrow--next { right: 4px; }
 .product-main-image:hover .product-arrow, .product-arrow:focus-visible { opacity: 1; }

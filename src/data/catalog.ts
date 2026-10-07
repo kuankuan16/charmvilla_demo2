@@ -18,7 +18,7 @@ export type Category = { id: CategoryId; name: string; en: string; intro: string
 // 所以選單、清單、商品頁（變成 404）、頁尾、網站地圖、相關商品都不會出現。資料保留，要恢復時把這裡清空即可。
 // 豐盛系列（點心盤）也隱藏（使用者 2026-10-07：「隱藏所有「豐盛系列」（點心盤）的商品與選單按鈕」）
 export const hiddenCategories: ReadonlySet<CategoryId> = new Set<CategoryId>(["bags", "jewelry", "abundance"]);
-export type ProductView = { label: string; image: Img; placeholder?: boolean }; // placeholder: a beige block, the photograph still to be chosen
+export type ProductView = { label: string; image: Img; placeholder?: boolean; tone?: "grey" }; // placeholder: a beige block (grey where the option is off sale), the photograph still to be chosen
 export type Product = {
   slug: string; category: CategoryId; name: string; english: string;
   summary: string; description: string;
@@ -53,7 +53,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; views?: ProductView[] }[]; choiceLabel?: string };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; views?: ProductView[] }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -467,8 +467,10 @@ const buildCatalog = (lang: Locale) => {
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
   // listing of its own; user 2026-10-07: 「在團圓頁選『粉紅色』時切換」)
   const bySlug = new Map(listed.map((p) => [p.slug, p]));
-  const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom)
-    ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c) } } : p);
+  // …or grey blocks while that option is off sale (the Reunion box's 粉紅色 and 藍色; user 2026-10-07: 「粉紅色商品下架改成灰色塊」「藍色也是」)
+  const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("暫停販售", "Not available"), image: { src: "", alt: t("暫停販售", "Not available"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
+  const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews)
+    ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.placeholderViews ? { ...c, views: greyViews(c.placeholderViews) } : c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c) } } : p);
   return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: products.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };
 };
 
