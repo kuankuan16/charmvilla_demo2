@@ -405,6 +405,8 @@ const buildCatalog = (lang: Locale) => {
   // the official photograph and the generic unboxed view are off these pages for now. 京都版 has no material in the folder and keeps its views.
   // The second view is the box at an angle on the gradient grey ground, with NO ribbon (user 2026-10-07, with two store photographs:
   // 「參考這兩張實際商品照，推理目前所有禮盒的第二張圖…都不用緞帶」; Nano Banana 2.1 from each box's approved cover); the third is still 缺圖
+  // 京都版的第三張：紙盒打開、6 包金色茶包袋 2 欄 3 排（Nano Banana 2.1，照使用者 2026-10-07 的開盒實拍；「生成京都版的第三張商品圖」）
+  studioExtra["kyoto-gift-box"] = [...(studioExtra["kyoto-gift-box"] ?? []), { file: "studio-kyoto-gift-box-unboxed-6.webp", zh: "開箱・6 入", en: "Unboxed · 6 tea bags", enAlt: "the paper box opened, its lid folded back, six gold tea bags in two columns" }];
   // The third view is the opened box with the right number of gold pouches — 12 in the long boxes, 18 in the square ones (user 2026-10-07:
   // 「這 2 張分別放入有符合該對應數量的茶包數的禮盒，放在第三張商品圖」; the two unboxed photographs from 2026-10-06).
   for (const [n, slugs] of [[12, ["spring-dawn", "winter-blossom"]], [18, ["orchid", "purple-butterfly", "year-of-plenty", "blossoming-prosperity"]]] as const) {
