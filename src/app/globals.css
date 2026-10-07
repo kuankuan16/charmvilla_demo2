@@ -1317,7 +1317,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
    at the left, the questions at the right, one per row between hairlines with a round +/− button; the answer opens on click. */
-.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(56px, 6vw, 96px) var(--page-gutter) clamp(80px, 9vw, 140px); }
+.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(96px, 11vw, 176px) var(--page-gutter) clamp(80px, 9vw, 140px); } /* more room above (user 2026-10-07: 「所有純文字頁的上面空間可以再留白多一點」) */
 .faq-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
 .faq-head h1 { font-size: clamp(40px, 4.4vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
 .faq-intro { margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); } /* no max-width, so a short intro stays on one line (user 2026-10-07: 「不要換行」) */
@@ -1360,7 +1360,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .faq-body { grid-column: 6 / span 7; }
 }
 @media (max-width: 767px) {
-  .faq-page { display: block; padding: 40px var(--page-gutter) 80px; }
+  .faq-page { display: block; padding: 64px var(--page-gutter) 80px; }
   .faq-head { position: static; margin-bottom: 40px; }
   .faq-head h1 { font-size: 34px; }
   .faq-group-summary { padding: 20px 0; column-gap: 16px; }
