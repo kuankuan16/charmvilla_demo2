@@ -96,8 +96,10 @@ export const getAbout = (lang: Locale) => {
             "When a gift is opened and a cup is shared, beauty moves from the object into everyday life."),
         ],
         // the red embroidered gift box with goldfish tea, cloud coasters, the ginkgo spoon and a songbird rest (user 2026-10-05: 「紅色禮盒好了放這裡」)
-        // generated scene (user 2026-10-07); the red gift box scene scene-red-giftbox-tea-hinoki-bird.webp stays in the repo
-        image: site("about-scene-04-everyday-pieces.webp", t("橄欖綠沙發旁的胡桃木邊桌：白瓷杯小金魚茶放在雲朵杯墊上，另一片雲朵杯墊、銀杏茶匙，一雙檜木筷擱在柴燒鳥形筷架上", "A walnut side table by an olive sofa: goldfish tea in a white cup on a Cloud Coaster, a second coaster, a Ginkgo Style Tea Spoon and hinoki chopsticks on a Songbird Chopsticks Rest"), 1856, 2304),
+        // generated scene (user 2026-10-07); the red gift box scene scene-red-giftbox-tea-hinoki-bird.webp stays in the repo.
+        // The coasters, spoon, chopsticks and bird rest were then removed from it (user 2026-10-07: 「這張刪掉杯墊與其他商品」), only the
+        // table top changed; the earlier version about-scene-04-everyday-pieces.webp stays in the repo
+        image: site("about-scene-04-tea-cup.webp", t("橄欖綠沙發旁的胡桃木邊桌上，一杯白瓷杯泡的小金魚茶放在白瓷盤上", "On a walnut side table by an olive sofa, goldfish tea in a white cup on its saucer"), 1856, 2304),
       },
     ] satisfies AboutChapter[],
     rangeTitle: t("作品", "The pieces"),
