@@ -27,7 +27,8 @@ export const getAbout = (lang: Locale) => {
       "CHARM VILLA 是 2013 年由創意總監蘇靜媚創立的設計品牌。從一尾在茶杯裡舒展的小金魚茶包開始，我們把工藝、茶與設計帶進日常：送禮的時刻、一杯茶的時間，還有每天配戴、使用的物件。",
       "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
-    hero: site("scene-white-bag-orange-wall-olive-sofa.webp", t("盤髮女子身穿棕色西裝，靠坐在橄欖綠毛圈沙發上，手提象牙白編織提把皮革包；左邊藤編邊几上一杯冒著熱氣的茶，斜射的陽光在地面留下光影", "A woman in a brown suit leans back on an olive bouclé sofa, an ivory Braided Leather Bag in her hand; a steaming cup on a woven side table at left, slanting sun across the floor"), 1360, 1513),
+    // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：白包照換成方凳托盤上的小金魚茶
+    hero: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫", "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
     // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under each chapter (the
     // button under the intro was removed: 「刪」),
     // the store's service terms, questions and answers. All facts come from
@@ -65,7 +66,8 @@ export const getAbout = (lang: Locale) => {
         ],
         quote: { text: t("「我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。」", "“We love tea culture, and we want a simple way to share it with the world.”"), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
         // user 2026-10-05: 「剛剛生成的皮革沙發取代這張」 (the hand-folding photograph, about-craft.webp, is kept in the repo)
-        image: site("scene-lounge-chair-tea-bird.webp", t("焦糖色真皮躺椅上放著白色編織提把皮革包，前景洞石邊几上一杯小金魚茶、金色茶標與柴燒鳥形筷架", "A white Braided Leather Bag on a cognac leather lounge chair; on a travertine side table in front, a glass of goldfish tea, its gold tag and a wood-fired Songbird Chopsticks Rest"), 1792, 2240),
+        // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：皮躺椅白包照換回原本手摺小金魚的照片
+        image: site("about-craft.webp", t("陽光灑在木桌上，一雙手正在摺小金魚茶包的濾紙，旁邊是摺好的金魚、玫瑰花苞與茶葉", "Sunlight on a wooden table: two hands fold the filter paper of a goldfish tea bag beside finished goldfish, rosebuds and tea leaves"), 1792, 2240),
       },
       {
         id: "world", index: "03", side: "right",

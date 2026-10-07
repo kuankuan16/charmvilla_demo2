@@ -28,11 +28,10 @@ const build = (lang: Locale) => {
     // The two small photographs at the left of the first row (user 2026-10-02: the leather and goldsmith photographs
     // 換 these two). Cut from the user's side-by-side image to 4:5; 100 px of the plain studio ground continued above
     // the heads, since the supplied crop left none.
+    // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：兩張舞者提白包的小圖換成鳥形筷架禮盒與茶几上的雲朵杯墊
     smalls: [
-      site("craft-small-bag-dancer-hands.webp", t("黑白照片：穿黑色長袖洋裝的女子雙手抬到臉旁，白色編織提把皮革包掛在手腕上",
-        "Black-and-white photograph of a woman in a long-sleeved black dress, hands raised beside her face, the white Braided Leather Bag hanging from her wrist"), 876, 1095),
-      site("craft-small-bag-dancer-reach.webp", t("黑白照片：穿黑色長袖洋裝的女子仰頭後傾，伸長的手臂提著白色編織提把皮革包",
-        "Black-and-white photograph of a woman in a long-sleeved black dress leaning back with her head raised, the white Braided Leather Bag held at the end of her outstretched arm"), 876, 1095),
+      site("scene-bird-rest-gift-box-v2.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a gray-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1688, 2110),
+      site("scene-coffee-table-tea-coasters-tagfix.webp", t("陽光斜照的米白石灰咖啡桌上，一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster, and beside it another cloud coaster and the ginkgo teaspoon"), 1792, 2240),
     ] as Img[],
     items: [
       {

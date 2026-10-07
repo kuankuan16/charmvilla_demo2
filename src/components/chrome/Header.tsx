@@ -104,8 +104,8 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     all: "/media/site/scene-red-giftbox-tea-hinoki-bird.webp", // 紅色刺繡禮盒、小金魚茶、雲朵杯墊、銀杏茶匙與鳥形筷架（原本的粉紅包照片隨真皮包一起隱藏，2026-10-07）
     tea: "/media/site/scene-oak-table-goldfish-tea-chair.webp", // the cup on the oak table beside a walnut armchair (user 2026-10-06: 「全站有這張圖都換」)
     scents: "/media/site/scene-wooden-tray-table-sofa-v4.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
-    jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
-    bags: "/media/hero/male-embracing-white-bag-v2-hd.webp", // the homepage slide (user 2026-10-02: 「換」), cropped to face, hand and bag
+    jewelry: "", // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
+    bags: "", // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
     abundance: "/media/site/scene-dessert-stand-oak-table-tea-v3.webp", // the oak table by the fig tree, whole frame (user 2026-10-06: 「選單改成這張」)
     "wood-fired": "/media/site/scene-oak-table-bird-rests-close.webp", // closer, on the songbird rests (user 2026-10-05: 「再近一點，焦點在小鳥筷子架」)
     hero: "", visit: "",

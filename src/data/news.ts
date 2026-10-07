@@ -58,5 +58,7 @@ const build = (lang: Locale): NewsEntry[] => {
 };
 
 const built: Partial<Record<Locale, NewsEntry[]>> = {};
-export const getNews = (lang: Locale) => (built[lang] ??= build(lang));
+// 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：Show more! 真皮包新品發表那篇不出現在清單、其他文章與網站地圖，網址變 404；資料保留
+const hiddenNews = new Set(["show-more-leather-bag-launch"]);
+export const getNews = (lang: Locale) => (built[lang] ??= build(lang).filter((n) => !hiddenNews.has(n.slug)));
 export const findNews = (slug: string, lang: Locale) => getNews(lang).find((n) => n.slug === slug);

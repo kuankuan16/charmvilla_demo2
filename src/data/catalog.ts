@@ -395,7 +395,7 @@ const buildCatalog = (lang: Locale) => {
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = {
-    "cloud-coaster": ["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`),
+    "cloud-coaster": [...["CV-0232", "CV-0231"].map((id) => `/media/gallery/${id}.webp`), "/media/site/scene-twin-earring-profile-mustard-sofa.webp"], // 耳環加藍包的那張：真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
     // the three event photographs of the stands (CV-0068 / 0074 / 0081) are off the dessert tray page (user 2026-10-05: 「刪」)
     "prosperity-dessert-stand": ["CV-0068", "CV-0074", "CV-0081"].map((id) => `/media/gallery/${id}.webp`),
     // 白包頁拿掉白、藍兩只包在檯座上的照片（使用者 2026-10-06：「刪」）

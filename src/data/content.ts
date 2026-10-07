@@ -36,13 +36,13 @@ const buildContent = (lang: Locale) => {
   const hero = {
     title: "EVERYDAY LUXURIES",
     subtitle: t("藝術即生活", "Art as Life"),
-    image: gallery("CV-0422", t("白色編織提把皮革包，沙發人物情境", "Braided Leather Bag in white, held by a seated figure on a sofa"), 2048, 2048),
-    // 真皮包與金飾全站隱藏（使用者 2026-10-07）：三張先改連到全部作品，照片待使用者決定是否更換
+    image: site("scene-red-giftbox-tea-hinoki-bird.webp", t("紅色絨布上的紅色刺繡桐木禮盒，白瓷金邊杯裡一尾小金魚茶，前景雲朵杯墊、銀杏茶匙與柴燒鳥形筷架", "A red embroidered paulownia gift box on red velvet, goldfish tea in a white gold-rimmed cup, cloud coasters, the ginkgo spoon and a songbird rest in front"), 1510, 1993), // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
+    // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）；輪播三張換成小金魚茶包禮盒、香氛系列、柴燒系列的情境照
+    // （使用者 2026-10-07：「把首頁真皮包包跟金飾的 Banner 圖，換成小金魚茶包禮盒、香氛系列、柴燒系列的情境照」）
     slides: [
-      { id: "male", src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man with both arms folded over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720, label: t("全部作品", "All Pieces"), en: "All pieces", href: "/collections/all" },
-      { id: "female", src: "/media/hero/dancer-female-selected.webp", alt: t("黑白女舞者高舉手臂，白色編織提把皮革包掛於腕間", "Black-and-white photograph of a female dancer with one arm raised, the white Braided Leather Bag hanging from her wrist"), w: 1690, h: 2294, label: t("全部作品", "All Pieces"), en: "All pieces", href: "/collections/all" },
-      // black-and-white version of gallery CV-0380 (user 2026-10-01: 「首頁這張改黑白照試試看」; docs/qa/2026-10-01-hero-jewelry-bw/build.mjs)
-      { id: "jewelry", src: "/media/hero/pearl-earring-profile-bw.webp", alt: t("黑白照片：側臉光影中的珍珠長鏈小金魚耳環，淺色衣領", "Black-and-white photograph of the Pearl Chain Goldfish Earrings in profile light above a pale collar"), w: 1921, h: 2400, label: t("全部作品", "All Pieces"), en: "All pieces", href: "/collections/all" },
+      { id: "tea", src: "/media/site/scene-reunion-paper-gift-box-driftwood.webp", alt: t("深咖啡色背景前，團圓繽紛紙盒擋在一段枯木前，旁邊一杯玻璃杯泡的小金魚茶、金色茶標籤與一包茶包袋", "Before a dark cocoa backdrop, the Reunion paper gift box in front of a piece of driftwood, with goldfish tea in a glass cup, its gold tag and a tea pouch"), w: 1792, h: 2240, label: t("小金魚茶包禮盒", "Goldfish Tea Gifts"), en: "Tea gifts", href: "/collections/tea" },
+      { id: "scents", src: "/media/site/scene-wooden-tray-table-sofa-v4.webp", alt: t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的梅花木盒、雲朵杯墊與銀杏茶匙", "A black tray table by an olive sofa: a plum-blossom box, a Cloud Coaster and a Ginkgo Style Tea Spoon, each engraved CHARMVILLA"), w: 1376, h: 2048, label: t("香味是喜悅的記憶", "Scents"), en: "Scents", href: "/collections/scents" },
+      { id: "wood-fired", src: "/media/site/scene-oak-table-bird-rests.webp", alt: t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), w: 1792, h: 2240, label: t("柴燒系列", "Wood-Fired Collection"), en: "Wood-fired", href: "/collections/wood-fired" },
     ],
   };
 

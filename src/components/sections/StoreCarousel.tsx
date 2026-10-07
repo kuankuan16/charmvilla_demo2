@@ -39,7 +39,8 @@ export default function StoreCarousel() {
   // the tall photograph at the left (user 2026-10-02: 「門市配圖換這張」): a sunlit daybed after the user's reference, a cup of
   // goldfish tea on the side table (tag drawn in the scene) and the white Braided Leather Bag on the throw; the brand has no
   // further store photographs, and repeating a card's photograph beside it would show the same picture twice
-  const mood = site("scene-daybed-goldfish-tea-bag.webp", t("陽光穿過百葉灑在米白毛圈布長榻上，邊桌上一杯小金魚茶，金色茶標寫著 CHARM VILLA，咖啡色毯子上放著白色編織提把皮革包", "Low sun through blinds across a cream bouclé daybed: a cup of goldfish tea on the side table, its gold tag reading CHARM VILLA, and the white Braided Leather Bag on a brown throw"), 1792, 2240);
+  // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：長榻照（毯子上有白包）換成官網茶誌的倒茶照
+  const mood = site("journal-308.webp", t("窗邊木桌上，從白瓷壺把茶倒進玻璃杯，杯裡一尾小金魚茶包", "By the window, tea poured from a white pot into a glass cup holding a goldfish tea bag"), 1080, 1350);
 
   return (
     <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our Stores")}>
