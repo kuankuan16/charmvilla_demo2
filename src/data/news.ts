@@ -25,7 +25,7 @@ const build = (lang: Locale): NewsEntry[] => {
       body: [
         t("編織提把皮革包的新品發表，分三場舉行：", "The Braided Leather Bag is presented in three events:"),
         { list: [t("10 月 3 日・台北晶華酒店 麗晶精品 B1", "October 3 · Regent Galleria B1, Regent Taipei"), t("10 月 17 日・The Scholart Selection・San Gabriel, CA", "October 17 · The Scholart Selection · San Gabriel, CA"), t("10 月 31 日・CHARM VILLA 京都", "October 31 · CHARM VILLA Kyoto")] },
-        { links: [{ label: t("選購交織系列", "Shop the Interwoven Collection"), href: "/collections/bags" }] }, // 「查看邀請卡」 removed (user 2026-10-06: 「刪」)
+        // 「選購交織系列」按鈕隨真皮包全站隱藏一起拿掉（使用者 2026-10-07）；「查看邀請卡」 removed (user 2026-10-06: 「刪」)
       ],
     },
     {

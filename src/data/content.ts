@@ -37,11 +37,12 @@ const buildContent = (lang: Locale) => {
     title: "EVERYDAY LUXURIES",
     subtitle: t("藝術即生活", "Art as Life"),
     image: gallery("CV-0422", t("白色編織提把皮革包，沙發人物情境", "Braided Leather Bag in white, held by a seated figure on a sofa"), 2048, 2048),
+    // 真皮包與金飾全站隱藏（使用者 2026-10-07）：三張先改連到全部作品，照片待使用者決定是否更換
     slides: [
-      { id: "male", src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man with both arms folded over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720, label: t("編織提把皮革包", "Braided Leather Bag"), en: "Leather bag", href: "/products/braided-leather-bag-white" },
-      { id: "female", src: "/media/hero/dancer-female-selected.webp", alt: t("黑白女舞者高舉手臂，白色編織提把皮革包掛於腕間", "Black-and-white photograph of a female dancer with one arm raised, the white Braided Leather Bag hanging from her wrist"), w: 1690, h: 2294, label: t("編織提把皮革包", "Braided Leather Bag"), en: "Leather bag", href: "/products/braided-leather-bag-white" },
+      { id: "male", src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man with both arms folded over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720, label: t("全部作品", "All Pieces"), en: "All pieces", href: "/collections/all" },
+      { id: "female", src: "/media/hero/dancer-female-selected.webp", alt: t("黑白女舞者高舉手臂，白色編織提把皮革包掛於腕間", "Black-and-white photograph of a female dancer with one arm raised, the white Braided Leather Bag hanging from her wrist"), w: 1690, h: 2294, label: t("全部作品", "All Pieces"), en: "All pieces", href: "/collections/all" },
       // black-and-white version of gallery CV-0380 (user 2026-10-01: 「首頁這張改黑白照試試看」; docs/qa/2026-10-01-hero-jewelry-bw/build.mjs)
-      { id: "jewelry", src: "/media/hero/pearl-earring-profile-bw.webp", alt: t("黑白照片：側臉光影中的珍珠長鏈小金魚耳環，淺色衣領", "Black-and-white photograph of the Pearl Chain Goldfish Earrings in profile light above a pale collar"), w: 1921, h: 2400, label: t("珍珠長鏈小金魚耳環", "Pearl Chain Goldfish Earrings"), en: "Goldfish jewelry", href: "/products/pearl-chain-goldfish-earrings" },
+      { id: "jewelry", src: "/media/hero/pearl-earring-profile-bw.webp", alt: t("黑白照片：側臉光影中的珍珠長鏈小金魚耳環，淺色衣領", "Black-and-white photograph of the Pearl Chain Goldfish Earrings in profile light above a pale collar"), w: 1921, h: 2400, label: t("全部作品", "All Pieces"), en: "All pieces", href: "/collections/all" },
     ],
   };
 

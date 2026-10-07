@@ -6,13 +6,14 @@ import { localeHref, translator, type Locale } from "@/i18n/config";
 
 // A single cross-category selection; full collections live on their own pages. As on the listing cards, the scene photograph
 // appears while a card is hovered (user 2026-10-01: 「首頁清單 hover 時也要換情境照」).
+// 真皮包與金飾全站隱藏（使用者 2026-10-07），白包與兩對耳環換成豐盛點心盤、年年有魚與雲朵杯墊
 const slugs = [
-  "braided-leather-bag-white",
-  "pearl-chain-goldfish-earrings",
-  "ginkgo-teaspoon-gift-box",
   "reunion-paulownia-gift-box",
+  "ginkgo-teaspoon-gift-box",
+  "prosperity-dessert-stand",
   "bird-chopstick-rest",
-  "diamond-goldfish-earrings",
+  "year-of-plenty-gift-box",
+  "cloud-coaster",
 ];
 
 export default function FeaturedProducts({ lang }: { lang: Locale }) {

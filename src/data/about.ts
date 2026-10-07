@@ -85,8 +85,8 @@ export const getAbout = (lang: Locale) => {
         cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
-          t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，逐件手工完成的柴燒鳥形筷架，可收納、重複使用的豐盛點心盤，K18 金的小金魚金飾，以及提把取得發明專利的交織系列皮革包。",
-            "From the goldfish tea bag, CHARM VILLA carries the same care into more everyday pieces: hinoki coasters, tea spoons and chopsticks; wood-fired songbird chopstick rests, each finished by hand; the reusable Abundance dessert tray; goldfish earrings in 18K gold; and the leather bags of the Interwoven Collection, whose braided handle holds an invention patent."),
+          t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，逐件手工完成的柴燒鳥形筷架，以及可收納、重複使用的豐盛點心盤。",
+            "From the goldfish tea bag, CHARM VILLA carries the same care into more everyday pieces: hinoki coasters, tea spoons and chopsticks; wood-fired songbird chopstick rests, each finished by hand; and the reusable Abundance dessert tray."),
           t("一份禮物被打開、一杯茶被分享，美便從作品走進生活。",
             "When a gift is opened and a cup is shared, beauty moves from the object into everyday life."),
         ],

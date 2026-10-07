@@ -86,8 +86,9 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   type ShopId = "all" | (typeof sections)[number]["id"];
   const label = (id: ShopId) => id === "all" ? t("全部作品", "All Pieces") : (zh ? sections.find((s) => s.id === id)!.zh : sections.find((s) => s.id === id)!.label);
   const shopGroups: { title: string; ids: ShopId[] }[] = [
-    { title: t("品項", "Shop"), ids: ["all", "tea", "scents", "jewelry"] },
-    { title: t("系列", "Collections"), ids: ["bags", "abundance", "wood-fired"] },
+    // 如魚得水（jewelry）與交織系列（bags）全站隱藏（使用者 2026-10-07：美國市場不販售真皮包與金飾）
+    { title: t("品項", "Shop"), ids: ["all", "tea", "scents"] },
+    { title: t("系列", "Collections"), ids: ["abundance", "wood-fired"] },
   ];
   const brandLinks = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
@@ -100,7 +101,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "/media/site/scene-pink-bag-armchair-olive-v2.webp", // the pink bag, olive chair, orange painting, goldfish tea on an oak side table (user 2026-10-05)
+    all: "/media/site/scene-red-giftbox-tea-hinoki-bird.webp", // 紅色刺繡禮盒、小金魚茶、雲朵杯墊、銀杏茶匙與鳥形筷架（原本的粉紅包照片隨真皮包一起隱藏，2026-10-07）
     tea: "/media/site/scene-oak-table-goldfish-tea-chair.webp", // the cup on the oak table beside a walnut armchair (user 2026-10-06: 「全站有這張圖都換」)
     scents: "/media/site/scene-wooden-tray-table-sofa-v4.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
     jewelry: "/media/site/scene-diamond-goldfish-earring-profile-bw.webp",
