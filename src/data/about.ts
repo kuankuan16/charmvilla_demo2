@@ -54,7 +54,9 @@ export const getAbout = (lang: Locale) => {
         ],
         // a generated scene in the site's photography (user 2026-10-07: 「01～04 的配圖，只有 03 不變…自動幫我生成」); the installation
         // photograph about-installation-2k.webp (CV-0215) stays in the repo
-        image: site("about-scene-01-giftbox-sofa.webp", t("橄欖綠沙發旁的胡桃木桌上，團圓禮盒、一包封好的小金魚茶包袋、幾片茶葉，右邊一杯玻璃杯小金魚茶", "On a walnut table by an olive sofa, the Joyful Reunion gift box, a sealed goldfish tea sachet, a few tea leaves and, at the right, a glass of goldfish tea"), 1856, 2304),
+        // 01 (user 2026-10-07: 「到桌面『品牌與展覽』裡面重新生成高品質、商業攝影的素材搭配」): the booth generated from the folder's one
+        // photograph, the Songbird series panel (IMG_1319), in the site's light; the sofa scene about-scene-01-giftbox-sofa.webp stays in the repo
+        image: site("about-scene-01-exhibition-panel.webp", t("設計展的展位：白色看板上三根墨畫的鳥羽與直排小字「小鳥兒系列／鳥羽 創作／手繪 蘇靜媚」，底下金色 CHARM VILLA；看板前一朵白荷花，淺木檯座上放著團圓禮盒與一杯玻璃杯小金魚茶", "A design-fair booth: a white panel with three ink-painted feathers, a column of small characters naming the Songbird series and the hand-drawn work by Su Ching-mei, and CHARM VILLA in gold; a white lotus before it, and on a pale wooden plinth the Reunion gift box and a glass cup of goldfish tea"), 1856, 2304),
       },
       {
         id: "goldfish", index: "02", side: "left",
