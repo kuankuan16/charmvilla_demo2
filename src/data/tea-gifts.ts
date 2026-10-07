@@ -110,6 +110,26 @@ const brewSteps = (t: (zh: string, en: string) => string) => [
   { title: t("享用", "Enjoy"), text: t("聞一聞茶香，啜飲一口，為自己留一段時間。", "Enjoy the fragrance, take a sip, and make a little time for yourself.") },
 ];
 
+// 茶款介紹 under the specifications, as on the official product pages (user 2026-10-07, with the wording for the four main teas);
+// 金萱 and 花果茶 are condensed from the official store's descriptions. A competition tea describes its base tea, plus the note on the competitions.
+const teaNotes: Record<string, { zh: string; en: string }> = {
+  [rose]: { zh: "取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。",
+    en: "Fresh organic rose petals from Nantou, Taiwan, paired with carefully selected oolong leaves. A golden amber liquor carrying a mellow rose fragrance, smooth on the palate with a long finish." },
+  [honey]: { zh: "蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。",
+    en: "Organic rose petals added to honey-scented black tea: the rich sweetness of rose alongside the natural, mellow sweetness of the tea." },
+  [ruby]: { zh: "台灣特有茶種台茶 18 號，又名紅玉。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。",
+    en: "Taiwan's own cultivar, TTES No. 18, known as Ruby. A bright, clear, vivid red liquor, rich and smooth, with natural notes of cinnamon, mint and a light floral scent." },
+  [beauty]: { zh: "又稱白毫烏龍茶。茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。",
+    en: "Also known as white-tip oolong. Tea leafhoppers feed on the young buds, giving the tea its natural honeyed, fruity floral aroma and a full, smooth sweetness." },
+  [jinxuan]: { zh: "茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。",
+    en: "A bright golden, clear liquor; lightly roasted and mellow with a natural milky note, smooth and refreshing, gentle in character." },
+  [fruit]: { zh: "無咖啡因。以蘋果、木瓜、蜜桃、西洋梨、鳳梨與芒果為甜蜜基底，佐以矢車菊與檸檬香茅的清雅香氣，再點綴玫瑰果的甘酸，入喉溫潤甜美。",
+    en: "Caffeine-free. A sweet base of apple, papaya, peach, pear, pineapple and mango, with the light fragrance of cornflower and lemongrass and a touch of tart rosehip; warm and sweet on the palate." },
+};
+const teaNoteKey = (name: string) => name.includes("玫瑰烏龍") ? rose : name.includes("東方美人") ? beauty : name;
+const competitionNote = { zh: "每年由政府協辦冬夏兩季評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。",
+  en: "Each winter and summer, government-supported competitions judge the dry leaf and the brewed leaf, the aroma of the leaf and the liquor, and the color of the liquor, and award each grade with rigor." };
+
 export const teaGiftProductsFor = (lang: Locale): Product[] => {
   const en = lang === "en";
   const t = (zh: string, e: string) => (en ? e : zh);
@@ -160,6 +180,13 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
           "Look first at the texture of the lid, then at the folds of the goldfish. From handwork at the fingertips to the unfurling in water, each small thing invites a slower pace of looking. Once the box is opened, art enters daily life with the time spent drinking tea together."),
         image: journalStory,
       },
+      teaNotes: (() => {
+        const names = gift.choices ? gift.choices.flatMap(c => c.contents.map(x => x.name)) : gift.contents.map(c => c.name);
+        const keys = [...new Set(names.map(teaNoteKey))];
+        const items = keys.map(k => { const n = teaNotes[k]; if (!n) throw new Error(`tea-gifts: no 茶款介紹 for "${k}"`); return { name: v(k), text: t(n.zh, n.en) }; });
+        if (names.some(n => n.includes("獲獎"))) items.push({ name: t("比賽獲獎茶", "Competition-winning teas"), text: t(competitionNote.zh, competitionNote.en) });
+        return { title: t("茶款介紹", "About the teas"), items };
+      })(),
       ...(gift.slug !== "fruit-infusion-gift-box" ? { brew: { title: t("沖泡方式", "How to brew"), steps: brewSteps(t) } } : {}),
       ...(gift.soldOut ? { soldOut: true } : {}),
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,

@@ -81,6 +81,12 @@ export default async function ProductPage({ params }: Props) {
     <h2 id="brew-title" className="tc">{product.brew.title}</h2>
     <dl className="product-keyfacts">{product.brew.steps.map((s, i) => <div key={s.title}><dt className="tc">{i + 1}. {s.title}</dt><dd className="tc">{s.text}</dd></div>)}</dl>
   </section>;
+  // 茶款介紹 (tea gift boxes): each tea in the box with its note, in the same row style, between the specifications and how to brew
+  // (user 2026-10-07: 「加入目前官網的商品介紹頁」, the official product pages' order).
+  const teaNotes = product.teaNotes && <section className="product-specs product-tea-notes" aria-labelledby="tea-notes-title">
+    <h2 id="tea-notes-title" className="tc">{product.teaNotes.title}</h2>
+    <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{n.name}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
+  </section>;
   const concept = product.concept && <section className="product-specs product-concept" aria-labelledby="concept-title">
     <h2 id="concept-title" className="tc">{product.concept.title}</h2>
     <p className="product-slogan" lang="en">&ldquo;{product.concept.slogan}&rdquo;</p>
@@ -118,6 +124,7 @@ export default async function ProductPage({ params }: Props) {
           <AddToCart product={product} />
         </div>}>
         {specs}
+        {teaNotes}
         {brew}
         {concept}
         {!pair && !textAboveSmalls && storyText}

@@ -45,6 +45,8 @@ export type Product = {
   shopify?: { handle: string; variantId: string };
   /** How to brew (tea gift boxes, guide §4). */
   brew?: { title: string; steps: { title: string; text: string }[] };
+  /** 茶款介紹: a note on each tea in the box (tea gift boxes, as on the official product pages). */
+  teaNotes?: { title: string; items: { name: string; text: string }[] };
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number }[] };
