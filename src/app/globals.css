@@ -1316,3 +1316,38 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .brew-steps p { grid-column: 2; }
   .brew-icon { width: 36px; height: 36px; margin-top: 0; }
 }
+
+/* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
+   at the left, the questions at the right, one per row between hairlines with a round +/− button; the answer opens on click. */
+.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(56px, 6vw, 96px) var(--page-gutter) clamp(80px, 9vw, 140px); }
+.faq-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
+.faq-head h1 { font-size: clamp(40px, 4.4vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
+.faq-intro { max-width: 34ch; margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); }
+.faq-contact { display: inline-flex; align-items: center; margin-top: 36px; padding: 13px 26px; border-radius: 999px; background: var(--color-ink); color: var(--color-page); font-size: 15px; letter-spacing: .04em; transition: opacity .2s; }
+.faq-contact:hover { opacity: .8; }
+.faq-contact:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
+.faq-body { grid-column: 7 / span 6; }
+.faq-group + .faq-group { margin-top: clamp(44px, 4.5vw, 72px); }
+.faq-group h2 { margin-bottom: 6px; font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
+.faq-item { border-bottom: 1px solid rgb(31 31 31 / .18); }
+.faq-item summary { display: grid; grid-template-columns: 1fr 32px; column-gap: 24px; align-items: center; padding: 22px 0; font-size: 19px; font-weight: 500; line-height: 1.5; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover span:first-child { color: var(--color-stone-deep); }
+.faq-item summary:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
+.faq-toggle { position: relative; width: 32px; height: 32px; border-radius: 50%; background: var(--color-ink); }
+.faq-toggle::before, .faq-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--color-page); transform: translate(-50%, -50%); transition: transform .25s; }
+.faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(0); }
+.faq-item > p { max-width: 60ch; padding: 0 56px 26px 0; margin-top: -6px; font-size: 16px; line-height: 1.85; color: var(--color-stone-deep); }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .faq-head { grid-column: 1 / span 4; }
+  .faq-body { grid-column: 6 / span 7; }
+}
+@media (max-width: 767px) {
+  .faq-page { display: block; padding: 40px var(--page-gutter) 80px; }
+  .faq-head { position: static; margin-bottom: 40px; }
+  .faq-head h1 { font-size: 34px; }
+  .faq-item summary { padding: 18px 0; font-size: 17px; column-gap: 16px; grid-template-columns: 1fr 28px; }
+  .faq-toggle { width: 28px; height: 28px; }
+  .faq-item > p { padding-right: 0; }
+}

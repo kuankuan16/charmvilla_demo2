@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PolicyPage from "@/components/catalog/PolicyPage";
-import { getCommerce } from "@/data/commerce";
+import FaqAccordion from "@/components/catalog/FaqAccordion";
+import { getCommerce, supportEmail } from "@/data/commerce";
 import { alternatesFor, defaultLocale, isLocale, translator } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -16,6 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const { faq: doc, labels } = getCommerce(lang);
-  return <PolicyPage title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} />;
+  const { faq: doc } = getCommerce(lang);
+  const t = translator(lang);
+  // an accordion since 2026-10-07 (user: 「可以點開才回答的形式，不要一下就看這麼多字」); the other policy pages keep PolicyPage
+  return <FaqAccordion title={doc.title} intro={doc.intro} sections={doc.sections} contact={{ label: t("聯絡我們", "Contact us"), href: `mailto:${supportEmail}` }} />;
 }
