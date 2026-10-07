@@ -9,6 +9,8 @@ import { Picture } from "@/components/ui";
 import ProductGallery from "@/components/catalog/ProductGallery";
 import { ProductOptionProvider } from "@/components/catalog/ProductOption";
 import ProductCard from "@/components/catalog/ProductCard";
+import TeaPages from "@/components/catalog/TeaPages";
+import { site } from "@/data/content";
 import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
 
 // The other categories by closeness, for 繼續觀看 when a category has fewer than four other pieces.
@@ -74,8 +76,13 @@ export default async function ProductPage({ params }: Props) {
   // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
   // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
   const storyRows = [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
-  const brewText = product.brew && <div className="product-story-text product-brew-text"><h2 id="brew-title" className="tc">{product.brew.title}</h2><ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></li>)}</ol></div>;
-  const sideText = brewText || null, sideTitle = "brew-title";
+  // 茶款介紹 and 沖泡方式 are no longer in the column nor beside the photographs: they are the brochure pages under the first screen
+  // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來，不要放在商品介紹頁面的版面裡面」).
+  const sideText = null;
+  const teaPages = product.category === "tea" && <TeaPages product={product} t={t} photos={{
+    notes: site("scene-tea-leaves-rosebuds-goldfish-pouch.webp", t("核桃木桌上，摺起的薄紙裡一小堆烏龍茶球，旁邊幾朵乾燥玫瑰花苞與花瓣、一包茶包袋與一尾還沒泡的小金魚茶包", "On a walnut table, rolled oolong leaves in a fold of thin paper, dried rosebuds and petals, a tea pouch and a dry goldfish tea bag"), 1856, 2304),
+    brew: site("scene-goldfish-tea-glass-walnut-olive.webp", t("橄欖綠沙發旁的核桃木桌上，一杯雙層玻璃杯泡的小金魚茶，泡開的小金魚透出玫瑰花瓣與茶葉，棉線越過杯口接到旁邊的金色茶標籤", "On a walnut table by an olive sofa, goldfish tea in a double-walled glass cup, the brewed goldfish showing its rose petals and leaves, the string over the rim to the gold tag beside it"), 1856, 2304),
+  }} />;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
@@ -90,11 +97,11 @@ export default async function ProductPage({ params }: Props) {
   // image's corner, three facts in the thin rows, and the specifications carry only what is left.
   const byLabel = (labels: string[]) => labels.map((l) => product.facts.find((f) => f.label === l)).filter((f): f is NonNullable<typeof f> => Boolean(f));
   const plainFacts = product.facts.filter((f) => !(f.items && f.items.length > 1));
-  const captionRows = product.category === "tea" ? byLabel([t("系列", "Series"), t("保存期限", "Shelf life")]) : plainFacts.slice(0, 2);
-  const caption = captionRows.map((f) => <p key={f.label}><span className="tc">{f.label}</span> / <span className="tc">{f.value}</span></p>);
-  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Sold as"), t("盒型與材質", "Packaging"), t("茶包材質", "Tea bag material")]) : plainFacts.slice(2, 5);
+  // no caption in the image's corner any more (user 2026-10-07: 「刪除產品圖左下角的字」); its two facts are not repeated elsewhere, so they return to the specifications
+  const caption = null;
+  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Sold as"), t("盒型與材質", "Packaging"), t("保存期限", "Shelf life")]) : plainFacts.filter((f) => f.label !== t("系列", "Series")).slice(0, 3);
   const keyLines = keyRows.length > 0 && <ul className="product-keylines">{keyRows.map((f) => <li key={f.label}><span className="tc">{f.label}</span><span className="tc">{f.value}</span></li>)}</ul>;
-  const shownAbove = new Set([...captionRows, ...keyRows].map((f) => f.label).concat(t("系列", "Series")));
+  const shownAbove = new Set(keyRows.map((f) => f.label).concat(t("系列", "Series")));
   const specFacts = product.facts.filter((f) => !shownAbove.has(f.label));
   const origin = product.facts.find((f) => f.label === t("產地", "Made in"));
   const originNote = origin && <p className="product-origin tc">{t(`${origin.value}製作。`, `Made in ${origin.value}.`)}</p>;
@@ -113,10 +120,6 @@ export default async function ProductPage({ params }: Props) {
   </section>;
   // 茶款介紹 (tea gift boxes): each tea in the box with its note, in the same row style right after the specifications — it counts as
   // part of them (user 2026-10-07: 「加入目前官網的商品介紹頁」, then 「茶款也算在規格裡好了」).
-  const teaNotes = product.teaNotes && <section className="product-specs product-tea-notes" aria-labelledby="tea-notes-title">
-    <h2 id="tea-notes-title" className="tc">{product.teaNotes.title}</h2>
-    <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{smallParen(n.name)}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
-  </section>;
   // Below the first screen, a magazine inner page after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07:
   // 「沖泡另外用像雜誌的版型」): a rule across the width, the title at the left, the text in a column at the right. Only a bag's Show more!
   // concept uses it now (the tea story left it on 2026-10-07: 「刪」). No eyebrow above the title (「刪除商品細節的字眼」).
@@ -163,12 +166,12 @@ export default async function ProductPage({ params }: Props) {
           <div className="product-actions"><AddToCart product={product} />{secondAction && <a className="product-buy product-buy--secondary tc" href={secondAction.href}>{secondAction.label}</a>}</div>
         </div>} caption={caption}>
         {specs}
-        {teaNotes}
         {!pair && !textAboveSmalls && sideText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery></ProductOptionProvider>
+      {teaPages}
       {editorial}
-      {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-labelledby={sideTitle}>
+      {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-label={t("情境照", "In use")}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
         <div className="product-pair-side">{sideText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
       </section>}
