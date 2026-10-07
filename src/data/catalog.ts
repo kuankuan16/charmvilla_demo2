@@ -403,7 +403,7 @@ const buildCatalog = (lang: Locale) => {
   // （3 欄 5 排）。之前的藍蓋橘盒三張（台灣的繽紛紙盒）留在 git 歷史裡
   studioExtra["reunion-paper-gift-box"] = (studioExtra["reunion-paper-gift-box"] ?? []).map((v) => v.file === "gift-box-unboxed-12-v2.webp"
     ? { file: "studio-reunion-gift-box-us-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
-  studioExtra["reunion-paper-gift-box"].push({ file: "studio-reunion-gift-box-us-unboxed-15.webp", zh: "開箱・15 入", en: "Unboxed · 15 tea bags", enAlt: "the box opened to show 15 gold tea bags, the lid in front of it" });
+  // the unboxed view is off the page (user 2026-10-07: 「15 盒的圖 3 拿掉，包數沒有對」); studio-reunion-gift-box-us-unboxed-15.webp stays in git history
   // 團圓桐木木盒：三張商品圖照繽紛紙盒的邏輯重生（Nano Banana 2.1，以官網的珊瑚紅亞麻盒蓋＋粉紅刺繡金魚照片當商品參考；使用者 2026-10-07：
   // 「用相同邏輯生成這個商品的 3 張商品圖（都要高清，注意刺繡的細節與英文字換角度時不要跑掉）」）：封面俯視斜角（studio-listing.json v4）、斜角近景、開箱
   studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
