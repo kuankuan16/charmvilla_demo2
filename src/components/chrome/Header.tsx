@@ -102,7 +102,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   ];
   // one photograph per category (all ≥ 1376 px wide); decorative, the link text names the category
   const previews: Record<ShopId, string> = {
-    all: "/media/site/scene-red-giftbox-tea-hinoki-bird.webp", // 紅色刺繡禮盒、小金魚茶、雲朵杯墊、銀杏茶匙與鳥形筷架（原本的粉紅包照片隨真皮包一起隱藏，2026-10-07）
+    all: "/media/site/scene-dining-table-olive-chairs-tea-pieces.webp", // 橡木餐桌與橄欖綠餐椅的斜陽，白瓷杯小金魚茶、雲朵杯墊、銀杏茶匙與檜木筷（使用者 2026-10-07：「全部作品的選單圖換這張」）；之前是紅色刺繡禮盒那張
     tea: "/media/site/scene-oak-table-goldfish-tea-chair.webp", // the cup on the oak table beside a walnut armchair (user 2026-10-06: 「全站有這張圖都換」)
     scents: "/media/site/scene-wooden-tray-table-sofa-v4.webp", // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05)
     jewelry: "", // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
