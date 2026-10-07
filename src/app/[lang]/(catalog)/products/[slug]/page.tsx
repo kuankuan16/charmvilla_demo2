@@ -73,17 +73,32 @@ export default async function ProductPage({ params }: Props) {
   // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
   // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
   const storyRows = [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
-  const brewText = product.brew && <div className="product-story-text product-brew-text"><h2 id="brew-title" className="tc">{product.brew.title}</h2><ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><div><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></div></li>)}</ol></div>;
+  const brewText = product.brew && <div className="product-story-text product-brew-text"><h2 id="brew-title" className="tc">{product.brew.title}</h2><ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></li>)}</ol></div>;
   const sideText = brewText || null, sideTitle = "brew-title";
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
+  // First screen after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07: 「高度學習並推理模仿這一屏的呈現」):
+  // the image fills the window's height at the left with two short facts in its bottom-left corner; the column at the right opens with
+  // the thumbnails and closes, at the foot of the image, with the name, the text, three thin feature rows between hairlines, an origin
+  // line where the product has one, the options, and two full-width buttons — the ink add-to-bag and an outlined second one.
+  // A bracketed part of a name or label — 東方美人茶（白毫烏龍茶）, 紅玉紅茶（Red Jade／Ruby No.18）3 入, 重量（含盒） — goes on its own
+  // small line under the rest (user 2026-10-07: 「括號內的文字都換行用小字呈現」).
+  const smallParen = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`}<small className="product-paren">{m[2]}</small></> : text; };
+  const plainFacts = product.facts.filter((f) => !(f.items && f.items.length > 1));
+  const caption = plainFacts.slice(0, 2).map((f) => <p key={f.label}><span className="tc">{f.label}</span> / <span className="tc">{f.value}</span></p>);
+  const byLabel = (labels: string[]) => labels.map((l) => product.facts.find((f) => f.label === l)).filter((f): f is NonNullable<typeof f> => Boolean(f));
+  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Sold as"), t("盒型與材質", "Packaging"), t("保存期限", "Shelf life")]) : plainFacts.slice(0, 3);
+  const keyLines = keyRows.length > 0 && <ul className="product-keylines">{keyRows.map((f) => <li key={f.label}><span className="tc">{f.label}</span><span className="tc">{f.value}</span></li>)}</ul>;
+  const origin = product.facts.find((f) => f.label === t("產地", "Made in"));
+  const originNote = origin && <p className="product-origin tc">{t(`${origin.value}製作。`, `Made in ${origin.value}.`)}</p>;
+  const secondAction = product.brew ? { href: "#brew-title", label: t("查看沖泡方式", "How to brew") } : { href: `${lang === "en" ? "/en" : ""}/faq`, label: t("常見問題", "FAQ") };
   // Back in the column, after the button, as before 2026-10-07 (user 2026-10-07: 「商品規格我喜歡放在原本的位置」; the three thin key rows and
   // the magazine-page specifications of that morning are gone again).
   const specs = <section className="product-specs" aria-labelledby="specs-title">
     <h2 id="specs-title" className="tc">{specTitle}</h2>
     <dl className="product-keyfacts">
-      {product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{item}</li>)}</ul> : f.value}</dd></div>)}
+      {product.facts.map((f) => <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{smallParen(item)}</li>)}</ul> : f.value}</dd></div>)}
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
       {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
     </dl>
@@ -93,7 +108,7 @@ export default async function ProductPage({ params }: Props) {
   // part of them (user 2026-10-07: 「加入目前官網的商品介紹頁」, then 「茶款也算在規格裡好了」).
   const teaNotes = product.teaNotes && <section className="product-specs product-tea-notes" aria-labelledby="tea-notes-title">
     <h2 id="tea-notes-title" className="tc">{product.teaNotes.title}</h2>
-    <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{n.name}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
+    <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{smallParen(n.name)}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
   </section>;
   // Below the first screen, a magazine inner page after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07:
   // 「沖泡另外用像雜誌的版型」): a rule across the width, the title at the left, the text in a column at the right. Only a bag's Show more!
@@ -134,10 +149,12 @@ export default async function ProductPage({ params }: Props) {
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
           {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}</p>}
           <p className="product-description tc">{product.description}</p>
+          {keyLines}
+          {originNote}
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
           {/* user 2026-10-01: every product page carries the ink add-to-bag button; a piece without a list price goes into the bag as "price on request" */}
-          <AddToCart product={product} />
-        </div>}>
+          <div className="product-actions"><AddToCart product={product} /><a className="product-buy product-buy--secondary tc" href={secondAction.href}>{secondAction.label}</a></div>
+        </div>} caption={caption}>
         {specs}
         {teaNotes}
         {!pair && !textAboveSmalls && sideText}

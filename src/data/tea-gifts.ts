@@ -225,7 +225,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       : { amount: (officialPrices.prices as Record<string, number>)[String(gift.officialId)], currency: "TWD" as const };
     // What the bag button offers: each tea × lid colour (the Shopify variants), each packaging option, or each tea
     const bagChoices = gift.packaging
-      ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount }))
+      ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount, note: lt(p.text) })) // the text shows under the chooser once chosen (user 2026-10-07: 「可以精簡呈現在這區」), no longer a specification row
       : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map(l => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price })));
     const choiceLabel = gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("選擇茶款（每盒擇一）", "Choose your tea");
     return {
@@ -242,7 +242,6 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
           // one tea per line (user 2026-10-06: 「內容物用點列」)
           items: gift.choices ? gift.choices.map(c => describeContents(c.contents)) : gift.contents.map(c => describeContents([c])) },
         ...(gift.lid ? [{ label: t("盒蓋顏色", "Lid options"), value: gift.lid.map(lt).join(t("或", " or ")) }] : []),
-        ...(gift.packaging ? [{ label: t("包裝選項", "Packaging options"), value: gift.packaging.map(p => `${lt(p.label)}：${lt(p.text)}`).join(" "), items: gift.packaging.map(p => `${lt(p.label)}${t("：", ": ")}${lt(p.text)}`) }] : []),
         { label: t("盒型與材質", "Packaging"), value: v(gift.box) },
         ...(gift.dimensions ? [{ label: t("外盒尺寸（長 × 寬 × 高）", "Box dimensions (L × W × H)"), value: sizeText(gift.dimensions.replace(" cm", "").split(" × ").map(Number), lang) }] : []),
         ...(gift.ingredients ? [{ label: t("成分", "Ingredients"), value: lt(gift.ingredients) }] : []),

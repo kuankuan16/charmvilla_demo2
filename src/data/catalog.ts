@@ -53,7 +53,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number }[]; choiceLabel?: string };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {

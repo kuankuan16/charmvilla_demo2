@@ -261,16 +261,19 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .catalog-not-found { min-height: 65vh; }
 /* Product page — first screen, layout and pointer behaviour after jakobsencopenhagen.com/en/products/kalle (user 2026-10-01:
    「直接照這個一模一樣」「版型與滑鼠的互動請高度學習」; reference numbers in docs/qa/2026-10-01-product-studio-gallery/reference/).
-   One 12-column grid. The studio image holds columns 1–6 right under the header; it is 4:5 and never taller than the window
-   less a clear margin (user: 「全站這個位置的圖都統一縮短高度，右邊的資訊欄都往上移」), so the right column — columns 9–12, as tall as
-   the image — closes above the fold: 5:6 thumbnails at the top (80×96 at 1440, 8px apart, one frame 4px outside sliding to
-   the chosen one), then name, text, every specification, the colour choice and the ink add-to-bag button at the foot.
+   One 12-column grid. The studio image holds columns 1–6 right under the header and, since 2026-10-07 (user: 「高度學習並推理模仿
+   這一屏的呈現」, the STINA page), fills the window's height down to the bottom gutter, the 4:5 photograph covering that frame; two
+   short facts sit in its bottom-left corner. The right column — columns 9–12, as tall as the image — opens with 5:6 thumbnails
+   (one frame 4px outside sliding to the chosen one) and closes at the foot of the image with the name, the text, three thin
+   feature rows between hairlines, an origin line, the options and two full-width buttons (ink add-to-bag, outlined second).
    Views cross-fade in 300ms; thin arrows appear at the image's edges while the pointer is over it. Every gallery image is
    a 4:5 studio photograph shown with object-fit: cover, so this image has the same size and height on every product page. */
-.product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(380px, calc(100svh - var(--header-h) - clamp(64px, 11svh, 140px))); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
-.product-stage-size { grid-column: 1 / span 6; grid-row: 1 / span 2; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
+.product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(480px, calc(100svh - var(--header-h) - var(--page-gutter))); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
+.product-stage-size { grid-column: 1 / span 6; grid-row: 1; height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
 .product-stage { grid-column: 1 / span 6; grid-row: 1 / span 2; align-self: start; min-width: 0; position: sticky; top: var(--header-h); }
-.product-main-image { position: relative; width: 100%; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); overflow: hidden; background: var(--color-page); }
+.product-main-image { position: relative; width: 100%; height: var(--pdp-stage); overflow: hidden; background: var(--color-page); }
+.product-stage-caption { position: absolute; left: clamp(16px, 1.1vw, 22px); bottom: clamp(14px, 1vw, 20px); z-index: 1; font-size: 15px; line-height: 1.55; color: var(--color-ink); }
+.product-stage-caption p span:first-child { color: var(--color-stone-deep); }
 .product-slide { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .product-slide[data-active=true] { opacity: 1; pointer-events: auto; }
 .product-slide img { object-fit: cover; }
@@ -279,14 +282,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-main-image:hover .product-arrow, .product-arrow:focus-visible { opacity: 1; }
 .product-arrow:focus-visible { outline: 2px solid var(--color-ink); }
 @media (hover: none) { .product-arrow { opacity: 1; } }
-.product-column { grid-column: 9 / span 4; grid-row: 1; min-width: 0; display: flex; }
+.product-column { grid-column: 8 / span 5; grid-row: 1; min-width: 0; display: flex; } /* five columns since 2026-10-07 (user: 「希望加寬文字欄位，不希望茶款要斷行」) */
 .product-first { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-/* The information column aligns to the top and is as tall as its content: the thumbnails, a fixed gap, the name and the button, then
-   the specifications straight after — nothing is anchored to the bottom of the first screen any more, so a tall monitor adds no
-   blank space anywhere (user 2026-10-07: 「gap 縮短」, then 「gap 高度是現在的 4 倍，取消按鈕固定的位置改通通對齊最上面試試看」 — the gap
-   is four times the 24–40 px it had just been). The image's size box spans both rows so it no longer sets the first row's height. */
-.product-first-lead { flex: 0 0 clamp(28px, 5vw, 72px); }
-.product-first-gap { flex: 0 0 clamp(48px, 6vh, 80px); } /* halved again (user 2026-10-07: 「縮短 gap」 on the 4× version) */
+/* As on the STINA page (user 2026-10-07, after a morning of top-aligned trials): the thumbnails hang under the header and the
+   information block sits at the foot of the image, the gap between them taking whatever height the window leaves. */
+.product-first-lead { flex: 0 0 clamp(40px, 6.2vh, 85px); }
+.product-first-gap { flex: 1 1 24px; min-height: 24px; }
 .product-thumbnails { --thumb: clamp(64px, 5.56vw, 100px); position: relative; display: flex; flex-wrap: wrap; gap: clamp(8px, .56vw, 10px); padding: 4px; margin: -4px; }
 .product-thumbnails button { width: var(--thumb); aspect-ratio: 5 / 6; background: var(--color-white); cursor: pointer; }
 .product-thumbnails button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
@@ -298,14 +299,21 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-intro { --i-name: 10px; --i-price: 12px; --i-text: 26px; --i-lh: 1.85; --i-facts: 30px; --i-row: 17px; --i-note: 28px; --i-opt: 26px; --i-buy: 36px; }
 /* Type after the user's reference (2026-10-05): a spaced grey English line, the name, a grey summary line, then the text */
 .product-english { font-size: 13px; letter-spacing: .12em; line-height: 1.6; text-transform: uppercase; color: var(--color-stone-deep); }
-.product-intro h1 { font-size: clamp(28px, 2.31vw, 35px); font-weight: 500; line-height: 1.3; margin: var(--i-name) 0 0; text-wrap: balance; }
-.product-description { margin-top: var(--i-text); font-size: 17px; line-height: 1.85; }
-.product-description:lang(en) { line-height: 1.6; }
+.product-intro h1 { font-size: clamp(26px, 1.75vw, 32px); font-weight: 400; line-height: 1.3; margin: var(--i-name) 0 0; text-wrap: balance; }
+.product-description { margin-top: var(--i-text); font-size: 17px; line-height: 1.7; }
+.product-description:lang(en) { line-height: 1.5; }
+/* three thin feature rows between hairlines, the origin line, and the two buttons — the STINA page's foot of the column */
+.product-keylines { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .18); }
+.product-keylines li { display: grid; grid-template-columns: minmax(5.5em, 28%) 1fr; gap: 14px; padding: 11px 0; border-bottom: 1px solid rgb(31 31 31 / .18); font-size: 15px; line-height: 1.5; letter-spacing: .02em; }
+.product-keylines li span:first-child { color: var(--color-stone-deep); }
+.product-origin { margin-top: 30px; font-size: 17px; line-height: 1.5; }
+.product-actions { display: grid; gap: 14px; margin-top: clamp(28px, 4vh, 52px); }
+.product-actions .product-buy { margin-top: 0; }
 /* Specifications: their own section under the button — a bold heading, then rows of bold dark labels and grey values,
    15px type on ~56px rows between hairlines, as in the reference */
 .product-more > .product-specs { margin-bottom: clamp(24px, 2.4vw, 40px); }
 .product-specs h2 { margin: 0 0 18px; font-size: 23px; font-weight: 500; line-height: 1.4; }
-.product-keyfacts > div { display: grid; grid-template-columns: minmax(7em, 38%) 1fr; gap: 16px; border-top: 1px solid rgb(31 31 31 / .14); padding: 17px 0; font-size: 17px; line-height: 1.5; }
+.product-keyfacts > div { display: grid; grid-template-columns: minmax(5.5em, 26%) 1fr; gap: 16px; border-top: 1px solid rgb(31 31 31 / .14); padding: 17px 0; font-size: 17px; line-height: 1.5; }
 .product-keyfacts > div:last-child { border-bottom: 1px solid rgb(31 31 31 / .14); }
 .product-keyfacts dt { font-weight: 600; color: var(--color-ink); }
 .product-keyfacts dd { color: var(--color-stone-deep); }
@@ -315,13 +323,19 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-specs .product-image-note { margin-top: 20px; font-size: 13px; line-height: 1.7; }
 /* the story and the awards as rows of the specifications (user 2026-10-07: 「刪除 故事…改在商品規格裡」) */
 .product-story-row dd p + p { margin-top: 8px; }
+/* the bracketed part of a name on its own small line (user 2026-10-07: 「括號內的文字都換行用小字呈現」) */
+.product-paren { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: .01em; color: var(--color-stone-deep); }
+/* the chosen packaging, in one line under the choice buttons */
+.product-choice-note { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--color-stone-deep); }
 .product-story-row .product-awards { margin-top: 2px; gap: 20px; }
 @media (max-width: 767px) { .product-keyfacts > div { grid-template-columns: 7em 1fr; } }
 /* add to bag: the reference's FIND RETAILERS — full column width, ink ground, page-coloured capitals (user 2026-10-01) */
-.product-buy { display: block; width: 100%; margin-top: var(--i-buy); min-height: clamp(42px, 2.9vw, 50px); padding: 10px 20px; background: var(--color-ink); color: var(--color-page); font-size: clamp(16px, 1.21vw, 20px); font-weight: 400; line-height: 1.3; letter-spacing: .08em; text-transform: uppercase; transition: opacity .2s; }
+.product-buy { display: block; width: 100%; margin-top: var(--i-buy); min-height: clamp(42px, 3.2vh, 50px); padding: 10px 20px; background: var(--color-ink); color: var(--color-page); font-size: 15px; font-weight: 400; line-height: 1.3; letter-spacing: .1em; text-transform: uppercase; transition: opacity .2s; }
 .product-buy:hover:not(:disabled) { opacity: .8; }
 .product-buy:disabled { opacity: .5; cursor: default; }
 .product-buy:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
+.product-buy--secondary { display: flex; align-items: center; justify-content: center; background: transparent; color: var(--color-ink); border: 1px solid var(--color-ink); text-align: center; text-decoration: none; transition: background-color .2s, color .2s; }
+.product-buy--secondary:hover { opacity: 1; background: var(--color-ink); color: var(--color-page); }
 /* short windows: tighten the first screen so the button still closes it */
 @media (min-width: 768px) and (max-height: 820px) {
   .product-first-lead { flex-basis: 16px; }
@@ -341,7 +355,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    column, and the product image stays under the header until the column has passed (their bottom edges then meet). Scenes
    the column does not take close the page in rows on the same 12 columns: portraits on 4 columns, so the third one sits
    under the information column; landscapes on 6. */
-.product-more { grid-column: 9 / span 4; grid-row: 2; min-width: 0; display: flex; flex-direction: column; gap: var(--pdp-gap); padding-top: clamp(48px, 5vw, 84px); }
+.product-more { grid-column: 8 / span 5; grid-row: 2; min-width: 0; display: flex; flex-direction: column; gap: var(--pdp-gap); padding-top: clamp(48px, 5vw, 84px); }
 .product-more .product-story-text { margin-bottom: clamp(16px, 1.6vw, 28px); }
 .scene-fig { position: relative; min-width: 0; overflow: hidden; background: var(--color-ground); }
 .product-scenes { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
@@ -353,7 +367,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    photograph two columns wide, which stays under the header while the large one passes. */
 .product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
 .product-pair-large { grid-column: 1 / span 6; align-self: start; }
-.product-pair-side { --side-cols: 4; grid-column: 9 / span 4; min-width: 0; padding-top: clamp(56px, 10.6vw, 153px); }
+.product-pair-side { --side-cols: 5; grid-column: 8 / span 5; min-width: 0; padding-top: clamp(56px, 10.6vw, 153px); }
 .product-pair[data-large=wide] .product-pair-side { padding-top: 0; } /* a landscape photograph is too low for the offset */
 .product-pair-side .product-story-text { width: calc((100% - (var(--side-cols) - 1) * var(--pdp-gap)) / var(--side-cols) * 3 + 2 * var(--pdp-gap)); margin-bottom: clamp(36px, 4.9vw, 70px); }
 .product-pair-side .product-story-text p { color: var(--color-stone-deep); }
@@ -381,7 +395,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 }
 @media (max-width: 767px) {
   .product-hero { display: block; padding: 0 0 14px; }
-  .product-main-image { max-height: none; }
+  .product-main-image { height: auto; aspect-ratio: 4 / 5; }
+  .product-stage-caption { display: none; }
   .product-column { display: block; padding: 0 var(--page-gutter); }
   .product-first { min-height: 0; }
   .product-first-lead { display: none; }
@@ -1245,11 +1260,14 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-brew-text .product-brew-steps { margin-top: 18px; }
 .product-editorial h3 { margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--color-ink); font-size: 19px; font-weight: 500; line-height: 1.5; }
 .product-editorial-block + .product-editorial-block { margin-top: 44px; }
+/* the brewing steps in two columns — number and title together at the left, the text at the right — no rules between them, as wide as
+   the column's content (user 2026-10-07: 「沖泡方式的文字寬度可以對齊到內容寬度並刪除線條，改用 2 欄呈現（把數字跟標題合併為一欄）」) */
 .product-brew-steps { list-style: none; counter-reset: step; margin: 0; padding: 0; }
-.product-brew-steps li { display: grid; grid-template-columns: 2.4em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgb(31 31 31 / .14); font-size: 15px; line-height: 1.7; }
-.product-brew-steps li::before { counter-increment: step; content: counter(step, decimal-leading-zero); padding-top: 2px; font-size: 13px; letter-spacing: .08em; color: var(--color-stone-deep); }
-.product-brew-steps strong { display: block; font-weight: 600; }
-.product-brew-steps p { margin-top: 2px; color: var(--color-stone-deep); }
+.product-brew-steps li { display: grid; grid-template-columns: minmax(7em, 30%) 1fr; gap: 16px; padding: 9px 0; font-size: 15px; line-height: 1.7; }
+.product-brew-steps strong { font-weight: 600; }
+.product-brew-steps strong::before { counter-increment: step; content: counter(step, decimal-leading-zero); margin-right: .6em; font-size: 13px; font-weight: 400; letter-spacing: .08em; color: var(--color-stone-deep); }
+.product-brew-steps p { margin: 0; color: var(--color-stone-deep); }
+.product-pair-side .product-brew-text { width: auto; }
 .product-editorial .product-concept .product-slogan { margin: 0 0 14px; font-size: 19px; }
 .product-editorial .product-concept p:not(.product-slogan) { font-size: 15px; line-height: 1.85; }
 @media (max-width: 1279px) and (min-width: 768px) {

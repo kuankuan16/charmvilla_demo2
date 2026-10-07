@@ -14,7 +14,9 @@ export default function AddToCart({ product }: { product: Product }) {
   const missing = Boolean(choices) && option === undefined;
   return <>
     {choices && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}</legend>
-      <div>{choices.map((c, i) => <label key={c.label} className="tc"><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{c.price && c.price !== product.price?.amount ? `・${formatPrice(c.price, product.price?.currency)}` : ""}</label>)}</div>
+      <div>{choices.map((c, i) => <label key={c.label} className="tc" title={c.note}><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{c.price && c.price !== product.price?.amount ? `・${formatPrice(c.price, product.price?.currency)}` : ""}</label>)}</div>
+      {/* the chosen packaging in one line (user 2026-10-07: the 包裝選項 texts 「可以精簡呈現在這區」) */}
+      {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}
     </fieldset>}
     <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1, option)} disabled={cart.busy || missing || product.soldOut}>{product.soldOut ? t("已售罄", "Sold out") : missing ? (product.giftBox?.choiceLabel?.includes("包裝") || product.giftBox?.choiceLabel?.includes("packaging") ? t("請先選擇包裝", "Choose a packaging first") : t("請先選擇茶款", "Choose a tea first")) : t("加入購物車", "Add to bag")}</button>
   </>;

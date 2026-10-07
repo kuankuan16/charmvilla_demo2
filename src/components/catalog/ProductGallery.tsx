@@ -17,7 +17,9 @@ import { useT } from "@/i18n/LocaleProvider";
 
 const Arrow = ({ flip = false }: { flip?: boolean }) => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true" style={flip ? { transform: "scaleX(-1)" } : undefined}><path d="M13.708 5.854H.708m0 0L6.223.354M.708 5.854l5.515 5.5" stroke="currentColor" /></svg>;
 
-export default function ProductGallery({ name, views, intro, children }: { name: string; views: ProductView[]; intro: ReactNode; children?: ReactNode }) {
+// `caption`: two short facts at the image's bottom-left corner, like the reference's "Stoff / Lodge 216 Curry" lines
+// (user 2026-10-07, jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer: 「高度學習並推理模仿這一屏的呈現」).
+export default function ProductGallery({ name, views, intro, caption, children }: { name: string; views: ProductView[]; intro: ReactNode; caption?: ReactNode; children?: ReactNode }) {
   const { t } = useT();
   const [active, setActive] = useState(0);
   const [frame, setFrame] = useState<[number, number]>([0, 0]);
@@ -40,6 +42,7 @@ export default function ProductGallery({ name, views, intro, children }: { name:
           {views.map((v, i) => <div key={v.image.src} className="product-slide" data-active={i === active} aria-hidden={i !== active}>
             <Image src={v.image.src} alt={v.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" quality={90} priority={i === 0} />
           </div>)}
+          {caption && <div className="product-stage-caption">{caption}</div>}
           {views.length > 1 && <>
             <button type="button" className="product-arrow product-arrow--prev" onClick={() => move(-1)} aria-label={t("上一張", "Previous image")}><Arrow /></button>
             <button type="button" className="product-arrow product-arrow--next" onClick={() => move(1)} aria-label={t("下一張", "Next image")}><Arrow flip /></button>
