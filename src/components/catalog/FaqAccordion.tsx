@@ -7,7 +7,7 @@
 import type { PolicySection } from "@/data/commerce";
 
 export default function FaqAccordion({ title, intro, updated, sections, contact, labels }: {
-  title: string; intro?: string; updated?: string; sections: PolicySection[]; contact: { label: string; href: string };
+  title: string; intro?: string; updated?: string; sections: PolicySection[]; contact?: { label: string; href: string };
   labels?: { pending: string };
 }) {
   return (
@@ -16,7 +16,7 @@ export default function FaqAccordion({ title, intro, updated, sections, contact,
         <h1 className="tc">{title}</h1>
         {intro && <p className="faq-intro tc">{intro}</p>}
         {updated && <p className="faq-updated tc">{updated}</p>}
-        <a className="faq-contact tc" href={contact.href}>{contact.label}</a>
+        {contact && <a className="faq-contact tc" href={contact.href}>{contact.label}</a>}
       </header>
       <div className="faq-body">
         {sections.map((s) => (
