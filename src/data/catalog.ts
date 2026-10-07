@@ -325,11 +325,11 @@ const buildCatalog = (lang: Locale) => {
   sceneExtra["braided-leather-bag-pink"] = [...(sceneExtra["braided-leather-bag-pink"] ?? []), site("scene-pink-bag-olive-sofa-tea-tray.webp", t("一隻手提著粉紅色編織提把皮革包，斜射的暖陽落在橄欖綠絨布沙發上；前景木邊几的托盤裡，一杯小金魚茶放在雲朵杯墊上，旁邊是 CHARM VILLA 茶標", "A hand holds the pink Braided Leather Bag by its handle in slanting warm sun over an olive velvet sofa; on the tray of the wooden side table in front, a cup of goldfish tea on a cloud coaster beside its CHARM VILLA tag"), 1360, 1700)];
   // 藍包肩背近拍：暖灰羊毛西裝配象牙白絲質圍巾，斜射陽光切過包蓋（使用者 2026-10-06）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-shoulder-taupe-blazer-wide.webp", t("暖灰色寬肩羊毛西裝外套與象牙白絲質圍巾的女子側身站立，土耳其藍色編織提把皮革包背在肩上、貼著身側，斜射的陽光灑在淡紫灰的牆面上", "A woman in a taupe oversized wool blazer and an ivory silk scarf stands in profile, the turquoise Braided Leather Bag on her shoulder, slanting sun across a pale mauve wall"), 1520, 2688)];
-  // 團圓繽紛紙盒：橄欖綠沙發前的圓形橡木桌上，禮盒、茶包袋、茶葉與玫瑰花苞、右邊出血的玻璃杯小金魚茶；橘色牆上有夕陽光斑（Nano Banana 2.1，
-  // 以使用者 2026-10-07 傳來的照片當商品參考、桌面「室內空間」#18 的房間當場景參考、沙發改成橄欖綠：「我要順便換場景」「偏好橄欖綠色搭配橘色牆面」）。
-  // 它取代了同一張照片直接上架的版本（腰封上的 M 壞掉，使用者 2026-10-07），更早之前是深咖啡枯木那張（scene-reunion-paper-gift-box-driftwood.webp，
-  // 使用者：「刪」；檔案留著，首頁茶葉禮盒的格子還在用）
-  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-paper-gift-box-olive-sofa-orange-wall.webp", t("橘色牆、橄欖綠毛圈沙發前的圓形橡木桌上，團圓繽紛紙盒的藍色刺繡盒蓋配橘色盒身與白色腰封，前面一包茶包袋與幾粒茶葉、玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶", "On a round oak coffee table before an olive bouclé sofa and a burnt-orange wall, the Reunion paper gift box with its blue embroidered lid, orange box and white band; in front a tea pouch with a few tea leaves and rosebuds, and a glass cup of goldfish tea at the right"), 1856, 2304)];
+  // 團圓繽紛紙盒：橄欖綠毛圈沙發旁的核桃木桌上，禮盒、茶包袋、茶葉與玫瑰花苞、右邊出血的玻璃杯小金魚茶（Nano Banana 2.1 v4，
+  // 桌面「金魚商品圖」裡使用者 2026-10-07 挑的那張：「大圖換成我剛剛挑的那張」；關於頁 01 也是同一張，各存一份）。
+  // 它取代了橘牆圓桌的版本（scene-reunion-paper-gift-box-olive-sofa-orange-wall，PNG 留在桌面「金魚商品圖」），更早是直接上架的使用者照片
+  // （腰封上的 M 壞掉）與深咖啡枯木那張（scene-reunion-paper-gift-box-driftwood.webp，使用者：「刪」；檔案留著，首頁茶葉禮盒的格子還在用）
+  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-paper-gift-box-olive-sofa-pouch.webp", t("橄欖綠毛圈沙發旁的核桃木桌上，團圓繽紛紙盒的藍色刺繡盒蓋配橘色盒身與白色腰封，前面一包茶包袋與幾粒茶葉、玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶", "On a walnut table beside an olive bouclé sofa, the Reunion paper gift box with its blue embroidered lid, orange box and white band; in front a tea pouch with a few tea leaves and rosebuds, and a glass cup of goldfish tea at the right"), 1856, 2304)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-olive-armchair-rattan.webp", t("暖色客廳一角，橄欖綠毛圈布扶手椅上靠著藍色編織提把皮革包；牆上是橘色系的抽象大圓弧畫，椅子左邊是一張藤編茶几", "A warm corner of a living room: the blue Braided Leather Bag rests on an olive bouclé armchair, an orange arched abstract painting on the wall and a woven rattan side table to the left"), 1520, 2688)];
   // 白包肩背近拍：深藍薄紗襯衫、側光照出荔枝紋（使用者 2026-10-06：「放上官網」）
@@ -430,7 +430,7 @@ const buildCatalog = (lang: Locale) => {
     // 粉紅：手提行走的新照片排在第一張情境照後面（使用者 2026-10-06：「放上官網」）
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-olive-sofa-tea-tray.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
-    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/scene-reunion-paper-gift-box-olive-sofa-orange-wall.webp", "/media/site/journal-301.webp"],
+    "reunion-paper-gift-box": ["/media/gallery/CV-0348.webp", "/media/site/scene-reunion-paper-gift-box-olive-sofa-pouch.webp", "/media/site/journal-301.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);

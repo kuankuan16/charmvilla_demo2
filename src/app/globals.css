@@ -281,8 +281,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 @media (hover: none) { .product-arrow { opacity: 1; } }
 .product-column { grid-column: 9 / span 4; grid-row: 1; min-width: 0; display: flex; }
 .product-first { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-.product-first-lead { flex: 0 1 clamp(28px, 5vw, 72px); }
-.product-first-gap { flex: 1 1 22px; min-height: 16px; }
+/* The thumbnails sit just above the name, the two a short fixed distance apart; the spare height of the first screen goes above them
+   (user 2026-10-07: 「gap 縮短」 — on a tall monitor the growing gap had pushed the name far below the thumbnails). */
+.product-first-lead { flex: 1 1 clamp(28px, 5vw, 72px); }
+.product-first-gap { flex: 0 0 clamp(24px, 3vh, 40px); }
 .product-thumbnails { --thumb: clamp(64px, 5.56vw, 100px); position: relative; display: flex; flex-wrap: wrap; gap: clamp(8px, .56vw, 10px); padding: 4px; margin: -4px; }
 .product-thumbnails button { width: var(--thumb); aspect-ratio: 5 / 6; background: var(--color-white); cursor: pointer; }
 .product-thumbnails button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
@@ -1226,16 +1228,19 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-story-text p + p { margin-top: 12px; }
 .product-story-more { margin-top: 28px; margin-bottom: 8px; font-size: 19px; line-height: 1.5; font-weight: 500; }
 
-/* Product page, below the first screen: how to brew (tea) and the Show more! concept (bags) as a magazine inner page, after
-   jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07: 「沖泡另外用像雜誌的版型」) — a rule across the
-   width, the title at the left, the text in a column at the right. The specifications and 茶款介紹 stay in the information column
-   (user 2026-10-07: 「商品規格我喜歡放在原本的位置」, 「茶款也算在規格裡好了」). */
+/* Product page, below the first screen: a magazine inner page after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer
+   (user 2026-10-07: 「沖泡另外用像雜誌的版型」) — a rule across the width, the title at the left, the text in a column at the right.
+   It holds a tea gift box's story (the brewing steps took the story's own place beside the photographs, 「沖泡方式改放在故事的位置」)
+   and a bag's Show more! concept. The specifications and 茶款介紹 stay in the information column (「商品規格我喜歡放在原本的位置」). */
 .product-editorial { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; margin: clamp(56px, 6vw, 96px) var(--page-gutter) 0; padding: clamp(48px, 5vw, 80px) 0 clamp(72px, 8vw, 128px); border-top: 1px solid var(--color-ink); }
 .product-editorial-head { grid-column: 1 / span 3; position: sticky; top: calc(var(--header-h) + 24px); }
-.product-editorial-eyebrow { margin-bottom: 14px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-stone-deep); }
 .product-editorial-head h2 { font-size: clamp(28px, 2.5vw, 40px); font-weight: 500; line-height: 1.3; text-wrap: balance; }
 .product-editorial-body { grid-column: 5 / span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(32px, 4vw, 72px); row-gap: 40px; align-items: start; }
 .product-editorial-col { min-width: 0; }
+.product-editorial .product-story-text p { margin-top: 0; font-size: 15px; line-height: 1.85; color: var(--color-stone-deep); }
+.product-editorial .product-story-text p + p { margin-top: 12px; }
+.product-editorial .product-story-more { margin: 28px 0 8px; padding: 0; border: 0; font-size: 17px; }
+.product-brew-text .product-brew-steps { margin-top: 18px; }
 .product-editorial h3 { margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--color-ink); font-size: 19px; font-weight: 500; line-height: 1.5; }
 .product-editorial-block + .product-editorial-block { margin-top: 44px; }
 .product-brew-steps { list-style: none; counter-reset: step; margin: 0; padding: 0; }

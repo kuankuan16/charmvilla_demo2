@@ -68,7 +68,12 @@ export default async function ProductPage({ params }: Props) {
   const textAboveSmalls = (product.slug === "braided-leather-bag-white" || product.slug === "braided-leather-bag-blue") && spreads.length > 0;
   // a story body may hold several paragraphs (blank-line separated); `more` is a second titled text (紫斑蝶: about the butterflies, 2026-10-07)
   const paragraphs = (text: string, prefix: string) => text.split(/\n\s*\n/).map((p, i) => <p key={`${prefix}${i}`} className="tc">{p}</p>);
-  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="tc product-story-more">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</div>;
+  const storyBody = <>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="tc product-story-more">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</>;
+  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2>{storyBody}</div>;
+  // How to brew (tea gift boxes except the fruit & herbal tea box; guide §4) takes the story's place — beside the large photograph, or in
+  // the column — in the story's type (user 2026-10-07: 「沖泡方式改放在故事的位置」); the story then fills the magazine page below.
+  const brewText = product.brew && <div className="product-story-text product-brew-text"><h2 id="brew-title" className="tc">{product.brew.title}</h2><ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><div><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></div></li>)}</ol></div>;
+  const sideText = brewText || storyText, sideTitle = brewText ? "brew-title" : "story-title";
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
@@ -85,17 +90,15 @@ export default async function ProductPage({ params }: Props) {
     <h2 id="tea-notes-title" className="tc">{product.teaNotes.title}</h2>
     <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{n.name}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
   </section>;
-  // How to brew (tea gift boxes except the fruit & herbal tea box; guide §4) and the Show more! concept (bags) sit below the first
-  // screen as a magazine inner page, after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07:
-  // 「沖泡另外用像雜誌的版型」): a rule across the width, the title at the left, the text in a column at the right.
-  const brew = product.brew ? { id: "brew", title: product.brew.title, body: <ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><div><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></div></li>)}</ol> } : null;
+  // Below the first screen, a magazine inner page after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07:
+  // 「沖泡另外用像雜誌的版型」): a rule across the width, the title at the left, the text in a column at the right. It holds the story of a
+  // tea gift box (whose own place the brewing steps took) and the Show more! concept of a bag. No eyebrow above the title (user
+  // 2026-10-07: 「刪除商品細節的字眼」).
+  const story = brewText ? { id: "story", title: product.story.title, body: <div className="product-story-text">{storyBody}</div> } : null;
   const concept = product.concept ? { id: "concept", title: product.concept.title, body: <div className="product-concept"><p className="product-slogan" lang="en">&ldquo;{product.concept.slogan}&rdquo;</p><p className="tc">{product.concept.body}</p></div> } : null;
-  const [first, ...more] = [brew, concept].filter((b): b is NonNullable<typeof b> => Boolean(b));
+  const [first, ...more] = [story, concept].filter((b): b is NonNullable<typeof b> => Boolean(b));
   const editorial = first && <section className="product-editorial" aria-labelledby={`${first.id}-title`}>
-    <div className="product-editorial-head">
-      <p className="product-editorial-eyebrow">{t("商品細節", "Details")}</p>
-      <h2 id={`${first.id}-title`} className="tc">{first.title}</h2>
-    </div>
+    <div className="product-editorial-head"><h2 id={`${first.id}-title`} className="tc">{first.title}</h2></div>
     <div className="product-editorial-body">
       <div className="product-editorial-col">{first.body}</div>
       {more.length > 0 && <div className="product-editorial-col">{more.map((b) => <div key={b.id} className="product-editorial-block"><h3 id={`${b.id}-title`} className="tc">{b.title}</h3>{b.body}</div>)}</div>}
@@ -134,16 +137,16 @@ export default async function ProductPage({ params }: Props) {
         </div>}>
         {specs}
         {teaNotes}
-        {!pair && !textAboveSmalls && storyText}
+        {!pair && !textAboveSmalls && sideText}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery>
       {editorial}
-      {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-labelledby="story-title">
+      {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-labelledby={sideTitle}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
-        <div className="product-pair-side">{storyText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
+        <div className="product-pair-side">{sideText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
       </section>}
       {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
-        <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{storyText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
+        <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{sideText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
         <figure className="scene-fig product-spread-large" data-shape="tall" style={{ aspectRatio: frameOf(large) }}><Picture img={large} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
       </section>)}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
