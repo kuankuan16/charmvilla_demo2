@@ -397,11 +397,11 @@ const buildCatalog = (lang: Locale) => {
     ? { file: "studio-reunion-paper-gift-box-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
   // 第三張：這個盒子本身的開箱圖（藍蓋橘盒、12 包茶包袋）（使用者 2026-10-07：「上第三張商品圖」）
   studioExtra["reunion-paper-gift-box"].push({ file: "studio-reunion-paper-gift-box-unboxed.webp", zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid beside it" });
-  // 團圓桐木木盒：第二張放這個盒子蓋好的斜角圖，開箱圖維持最後（使用者 2026-10-07：「上商品圖」）
-  studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
-  // 開箱圖換成這個盒子本身（米色亞麻盒蓋、桐木盒）的版本；v2 是使用者 2026-10-07 傳來的那張（「取代現在官網的第三張商品照」，928 × 1144）
+  // 團圓桐木木盒：三張商品圖照繽紛紙盒的邏輯重生（Nano Banana 2.1，以官網的珊瑚紅亞麻盒蓋＋粉紅刺繡金魚照片當商品參考；使用者 2026-10-07：
+  // 「用相同邏輯生成這個商品的 3 張商品圖（都要高清，注意刺繡的細節與英文字換角度時不要跑掉）」）：封面俯視斜角（studio-listing.json v4）、斜角近景、開箱
+  studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
   studioExtra["reunion-paulownia-gift-box"] = studioExtra["reunion-paulownia-gift-box"].map((v) => v.file === "gift-box-unboxed-12-v2.webp"
-    ? { file: "studio-reunion-paulownia-gift-box-unboxed-v2.webp", zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid beside it" } : v);
+    ? { file: "studio-reunion-paulownia-gift-box-unboxed-v3.webp", zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid in front of it" } : v);
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = {

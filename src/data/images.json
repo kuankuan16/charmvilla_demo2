@@ -1079,10 +1079,6 @@
     2000,
     2500
   ],
-  "/media/site/listing-tea-reunion-paulownia-gift-box-v3.webp": [
-    1600,
-    2000
-  ],
   "/media/site/listing-tea-purple-butterfly-gift-box-v3.webp": [
     1600,
     2000
@@ -1347,14 +1343,6 @@
     2560,
     3200
   ],
-  "/media/site/studio-reunion-paulownia-gift-box-closed-angle.webp": [
-    2560,
-    3200
-  ],
-  "/media/site/studio-reunion-paulownia-gift-box-unboxed-v2.webp": [
-    928,
-    1144
-  ],
   "/media/site/about-scene-01-giftbox-sofa.webp": [
     1856,
     2304
@@ -1368,6 +1356,18 @@
     2304
   ],
   "/media/site/about-scene-04-tea-cup.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/listing-tea-reunion-paulownia-gift-box-v4.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/studio-reunion-paulownia-gift-box-closed-angle-v2.webp": [
+    1856,
+    2304
+  ],
+  "/media/site/studio-reunion-paulownia-gift-box-unboxed-v3.webp": [
     1856,
     2304
   ]
