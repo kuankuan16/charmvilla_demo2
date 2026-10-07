@@ -333,8 +333,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-specs .product-image-note { margin-top: 20px; font-size: 13px; line-height: 1.7; }
 /* the story and the awards as rows of the specifications (user 2026-10-07: 「刪除 故事…改在商品規格裡」) */
 .product-story-row dd p + p { margin-top: 8px; }
-/* the bracketed part of a name on its own small line (user 2026-10-07: 「括號內的文字都換行用小字呈現」) */
-.product-paren { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: .01em; color: var(--color-stone-deep); }
+/* the bracketed part of a name as a small note that follows on the same line, not on a line of its own (user 2026-10-07: 「小字改成不換行，接在後面像備註文一樣」; before that 「括號內的文字都換行用小字呈現」) */
+.product-paren { display: inline-block; margin-left: .2em; font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: .01em; color: var(--color-stone-deep); }
 /* the chosen packaging, in one line under the choice buttons */
 .product-choice-note { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--color-stone-deep); }
 .product-story-row .product-awards { margin-top: 2px; gap: 20px; }

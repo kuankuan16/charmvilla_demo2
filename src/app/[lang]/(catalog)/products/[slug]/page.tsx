@@ -86,9 +86,9 @@ export default async function ProductPage({ params }: Props) {
   // the image fills the window's height at the left with two short facts in its bottom-left corner; the column at the right opens with
   // the thumbnails and closes, at the foot of the image, with the name, the text, three thin feature rows between hairlines, an origin
   // line where the product has one, the options, and two full-width buttons — the ink add-to-bag and an outlined second one.
-  // A bracketed part of a name or label — 東方美人茶（白毫烏龍茶）, 紅玉紅茶（Red Jade／Ruby No.18）3 入, 重量（含盒） — goes on its own
-  // small line under the rest (user 2026-10-07: 「括號內的文字都換行用小字呈現」).
-  const smallParen = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`}<small className="product-paren">{m[2]}</small></> : text; };
+  // A bracketed part of a name or label — 東方美人茶（白毫烏龍茶）, 紅玉紅茶（Red Jade／Ruby No.18）3 入, 重量（含盒） — follows the rest
+  // on the same line as a small note (user 2026-10-07: 「小字改成不換行，接在後面像備註文一樣」; earlier that day it had its own line).
+  const smallParen = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`} <small className="product-paren">{m[2]}</small></> : text; };
   // Each fact appears once (user 2026-10-07: 「不要一直重複一樣的資訊」, 「規格內的系列可以刪」): the series and one short fact in the
   // image's corner, three facts in the thin rows, and the specifications carry only what is left.
   const byLabel = (labels: string[]) => labels.map((l) => product.facts.find((f) => f.label === l)).filter((f): f is NonNullable<typeof f> => Boolean(f));
