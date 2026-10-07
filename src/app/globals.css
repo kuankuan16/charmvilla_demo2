@@ -268,7 +268,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    Views cross-fade in 300ms; thin arrows appear at the image's edges while the pointer is over it. Every gallery image is
    a 4:5 studio photograph shown with object-fit: cover, so this image has the same size and height on every product page. */
 .product-hero { --pdp-gap: clamp(12px, 1.4vw, 24px); --pdp-ease: cubic-bezier(.165, .84, .44, 1); --pdp-stage: max(380px, calc(100svh - var(--header-h) - clamp(64px, 11svh, 140px))); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: stretch; padding: 0 var(--page-gutter) clamp(70px, 9vw, 130px); }
-.product-stage-size { grid-column: 1 / span 6; grid-row: 1; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
+.product-stage-size { grid-column: 1 / span 6; grid-row: 1 / span 2; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); visibility: hidden; pointer-events: none; }
 .product-stage { grid-column: 1 / span 6; grid-row: 1 / span 2; align-self: start; min-width: 0; position: sticky; top: var(--header-h); }
 .product-main-image { position: relative; width: 100%; aspect-ratio: 4 / 5; max-height: var(--pdp-stage); overflow: hidden; background: var(--color-page); }
 .product-slide { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity .3s; }
@@ -281,10 +281,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 @media (hover: none) { .product-arrow { opacity: 1; } }
 .product-column { grid-column: 9 / span 4; grid-row: 1; min-width: 0; display: flex; }
 .product-first { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-/* The thumbnails sit just above the name, the two a short fixed distance apart; the spare height of the first screen goes above them
-   (user 2026-10-07: 「gap 縮短」 — on a tall monitor the growing gap had pushed the name far below the thumbnails). */
-.product-first-lead { flex: 1 1 clamp(28px, 5vw, 72px); }
-.product-first-gap { flex: 0 0 clamp(24px, 3vh, 40px); }
+/* The information column aligns to the top and is as tall as its content: the thumbnails, a fixed gap, the name and the button, then
+   the specifications straight after — nothing is anchored to the bottom of the first screen any more, so a tall monitor adds no
+   blank space anywhere (user 2026-10-07: 「gap 縮短」, then 「gap 高度是現在的 4 倍，取消按鈕固定的位置改通通對齊最上面試試看」 — the gap
+   is four times the 24–40 px it had just been). The image's size box spans both rows so it no longer sets the first row's height. */
+.product-first-lead { flex: 0 0 clamp(28px, 5vw, 72px); }
+.product-first-gap { flex: 0 0 clamp(96px, 12vh, 160px); }
 .product-thumbnails { --thumb: clamp(64px, 5.56vw, 100px); position: relative; display: flex; flex-wrap: wrap; gap: clamp(8px, .56vw, 10px); padding: 4px; margin: -4px; }
 .product-thumbnails button { width: var(--thumb); aspect-ratio: 5 / 6; background: var(--color-white); cursor: pointer; }
 .product-thumbnails button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
@@ -311,6 +313,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-fact-list { margin: 0; padding-left: 1.2em; list-style: disc; }
 .product-fact-list li + li { margin-top: 4px; }
 .product-specs .product-image-note { margin-top: 20px; font-size: 13px; line-height: 1.7; }
+/* the story and the awards as rows of the specifications (user 2026-10-07: 「刪除 故事…改在商品規格裡」) */
+.product-story-row dd p + p { margin-top: 8px; }
+.product-story-row .product-awards { margin-top: 2px; gap: 20px; }
 @media (max-width: 767px) { .product-keyfacts > div { grid-template-columns: 7em 1fr; } }
 /* add to bag: the reference's FIND RETAILERS — full column width, ink ground, page-coloured capitals (user 2026-10-01) */
 .product-buy { display: block; width: 100%; margin-top: var(--i-buy); min-height: clamp(42px, 2.9vw, 50px); padding: 10px 20px; background: var(--color-ink); color: var(--color-page); font-size: clamp(16px, 1.21vw, 20px); font-weight: 400; line-height: 1.3; letter-spacing: .08em; text-transform: uppercase; transition: opacity .2s; }
@@ -1237,9 +1242,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-editorial-head h2 { font-size: clamp(28px, 2.5vw, 40px); font-weight: 500; line-height: 1.3; text-wrap: balance; }
 .product-editorial-body { grid-column: 5 / span 8; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(32px, 4vw, 72px); row-gap: 40px; align-items: start; }
 .product-editorial-col { min-width: 0; }
-.product-editorial .product-story-text p { margin-top: 0; font-size: 15px; line-height: 1.85; color: var(--color-stone-deep); }
-.product-editorial .product-story-text p + p { margin-top: 12px; }
-.product-editorial .product-story-more { margin: 28px 0 8px; padding: 0; border: 0; font-size: 17px; }
 .product-brew-text .product-brew-steps { margin-top: 18px; }
 .product-editorial h3 { margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--color-ink); font-size: 19px; font-weight: 500; line-height: 1.5; }
 .product-editorial-block + .product-editorial-block { margin-top: 44px; }

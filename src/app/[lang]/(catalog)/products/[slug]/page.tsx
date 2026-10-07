@@ -68,12 +68,13 @@ export default async function ProductPage({ params }: Props) {
   const textAboveSmalls = (product.slug === "braided-leather-bag-white" || product.slug === "braided-leather-bag-blue") && spreads.length > 0;
   // a story body may hold several paragraphs (blank-line separated); `more` is a second titled text (紫斑蝶: about the butterflies, 2026-10-07)
   const paragraphs = (text: string, prefix: string) => text.split(/\n\s*\n/).map((p, i) => <p key={`${prefix}${i}`} className="tc">{p}</p>);
-  const storyBody = <>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="tc product-story-more">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}{product.category === "tea" && <div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div>}</>;
-  const storyText = <div className="product-story-text"><h2 id="story-title" className="tc">{product.story.title}</h2>{storyBody}</div>;
-  // How to brew (tea gift boxes except the fruit & herbal tea box; guide §4) takes the story's place — beside the large photograph, or in
-  // the column — in the story's type (user 2026-10-07: 「沖泡方式改放在故事的位置」); the story then fills the magazine page below.
+  // The story is no longer its own block anywhere (user 2026-10-07: 「刪除 故事…改在商品規格裡」, 「刪」 on the magazine page): its text,
+  // its second titled text (紫斑蝶) and the tea awards are rows of the specifications below. How to brew (tea gift boxes except the fruit &
+  // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
+  // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
+  const storyRows = [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
   const brewText = product.brew && <div className="product-story-text product-brew-text"><h2 id="brew-title" className="tc">{product.brew.title}</h2><ol className="product-brew-steps">{product.brew.steps.map((s) => <li key={s.title}><div><strong className="tc">{s.title}</strong><p className="tc">{s.text}</p></div></li>)}</ol></div>;
-  const sideText = brewText || storyText, sideTitle = brewText ? "brew-title" : "story-title";
+  const sideText = brewText || null, sideTitle = "brew-title";
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
   const specTitle = product.category === "tea" ? t("禮盒內容與規格", "Gift box contents and details") : product.category === "bags" ? t("材質與做工", "Materials and construction") : t("商品規格", "Product details");
@@ -81,7 +82,11 @@ export default async function ProductPage({ params }: Props) {
   // the magazine-page specifications of that morning are gone again).
   const specs = <section className="product-specs" aria-labelledby="specs-title">
     <h2 id="specs-title" className="tc">{specTitle}</h2>
-    <dl className="product-keyfacts">{product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{item}</li>)}</ul> : f.value}</dd></div>)}</dl>
+    <dl className="product-keyfacts">
+      {product.facts.map((f) => <div key={f.label}><dt className="tc">{f.label}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{item}</li>)}</ul> : f.value}</dd></div>)}
+      {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
+      {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
+    </dl>
     {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
   </section>;
   // 茶款介紹 (tea gift boxes): each tea in the box with its note, in the same row style right after the specifications — it counts as
@@ -91,12 +96,10 @@ export default async function ProductPage({ params }: Props) {
     <dl className="product-keyfacts">{product.teaNotes.items.map((n) => <div key={n.name}><dt className="tc">{n.name}</dt><dd className="tc">{n.text}</dd></div>)}</dl>
   </section>;
   // Below the first screen, a magazine inner page after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer (user 2026-10-07:
-  // 「沖泡另外用像雜誌的版型」): a rule across the width, the title at the left, the text in a column at the right. It holds the story of a
-  // tea gift box (whose own place the brewing steps took) and the Show more! concept of a bag. No eyebrow above the title (user
-  // 2026-10-07: 「刪除商品細節的字眼」).
-  const story = brewText ? { id: "story", title: product.story.title, body: <div className="product-story-text">{storyBody}</div> } : null;
+  // 「沖泡另外用像雜誌的版型」): a rule across the width, the title at the left, the text in a column at the right. Only a bag's Show more!
+  // concept uses it now (the tea story left it on 2026-10-07: 「刪」). No eyebrow above the title (「刪除商品細節的字眼」).
   const concept = product.concept ? { id: "concept", title: product.concept.title, body: <div className="product-concept"><p className="product-slogan" lang="en">&ldquo;{product.concept.slogan}&rdquo;</p><p className="tc">{product.concept.body}</p></div> } : null;
-  const [first, ...more] = [story, concept].filter((b): b is NonNullable<typeof b> => Boolean(b));
+  const [first, ...more] = [concept].filter((b): b is NonNullable<typeof b> => Boolean(b));
   const editorial = first && <section className="product-editorial" aria-labelledby={`${first.id}-title`}>
     <div className="product-editorial-head"><h2 id={`${first.id}-title`} className="tc">{first.title}</h2></div>
     <div className="product-editorial-body">
