@@ -64,13 +64,14 @@ export default async function ProductPage({ params }: Props) {
   // in rows on the same 12 columns (a portrait takes 4 columns, a landscape 6). The column takes one to three, as few as leave full rows.
   const spanOf = (img: Img) => (shapeOf(img) === "tall" ? 4 : 6);
   const fullRows = (list: Img[]) => { let row = 0; for (const img of list) { row += spanOf(img); if (row > 12) return false; if (row === 12) row = 0; } return row === 0; };
-  // Exactly three scenes follow the STINA page's "STINA / Hocker A — Teil derselben Kollektion" block instead (user 2026-10-01: 「版型參考
-  // liam」, 「情境照３張的版型」; user 2026-10-08, with that block: 「這屏我想要像[STINA]設計」): the first and the third in the column, the
-  // second large under the product image with the piece's name and category beside it and, from column 9, 「同系列作品」 — a line about
-  // the next piece of the category, a link to it and its photograph two columns wide (the small scene used to sit there).
+  // Exactly three scenes follow …/products/liam and …/products/joana-longchair-xl-2-seater (user 2026-10-01: 「版型參考 liam」, 「情境照３張的
+  // 版型」), on the STINA page's columns (2026-10-08: 「這屏我想要像[STINA]設計」): one in the column, then a large one under the product image on
+  // columns 1–6; from column 9 the piece's story — its title and text — and under that the third scene, small. The STINA block's own
+  // texts (the name and category lines, 「同系列作品」 and the companion piece's photograph) came and went the same night (「刪」, then
+  // 「用藍色圈起來的文案換餐具之間，一隻鳥…」 with the small scene drawn back into the slot).
   const pair = scenes.length === 3 ? scenes.slice(1) : null;
   const inColumn = pair ? 1 : scenes.length <= 3 ? scenes.length : [1, 2, 3].find((n) => fullRows(scenes.slice(n))) ?? 2;
-  const columnScenes = pair ? [scenes[0], pair[1]] : scenes.slice(0, inColumn), rest = pair ? [] : scenes.slice(inColumn);
+  const columnScenes = scenes.slice(0, inColumn), rest = pair ? [] : scenes.slice(inColumn);
   // Portraits that close the page in threes make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
   // homepage (user 2026-10-01: 「商品內頁如果有多圖的情況也是用相同的邏輯處理」): the first one large at the right, the other two
   // small at the left, where they stay under the header while the large one passes. Anything else keeps its rows.
@@ -85,10 +86,13 @@ export default async function ProductPage({ params }: Props) {
   // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
   // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
   const storyInColumn = product.category === "tea";
-  const storyRows = storyInColumn ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
+  // with three scenes the story stands beside the large photograph instead of in the specifications (user 2026-10-08: 「用藍色圈起來的文案換
+  // 餐具之間，一隻鳥…」, then 「刪」 on the specifications' story row), so it is written once
+  const storyInPair = Boolean(pair) && !storyInColumn;
+  const storyRows = storyInColumn || storyInPair ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
   // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
   // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
-  const sideText = null;
+  const sideText = storyInPair ? <div className="product-story-text"><h2 className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}</div> : null;
   // Tea gift boxes (user 2026-10-08, with the STINA page's "Teil derselben Kollektion" block: 「都放下面一點的排序」「像這樣呈現」): the story
   // leaves the specifications and sits at the foot of the column as that block — the title in ink and the text in grey at one size, a
   // blank line between — with the column's first scene photograph 80px under it; its second titled text (紫斑蝶) follows in the same type.
@@ -197,11 +201,10 @@ export default async function ProductPage({ params }: Props) {
       {editorial}
       {pair && <section className="product-pair" aria-label={t("情境照", "In use")}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
-        {/* the reference's name/category lines and its 「同系列作品」 text went the same night (user 2026-10-08: 「刪」): the companion's small
-            photograph alone, linking to it */}
-        {related[0] && <div className="product-pair-side">
-          <Link href={productHref(related[0], lang)} className="product-pair-small-link" aria-label={t(`瀏覽 ${related[0].name}`, `View ${related[0].name}`)}><figure className="scene-fig product-pair-small" style={{ aspectRatio: "3 / 4" }}><Picture img={related[0].image} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 50vw" /></figure></Link>
-        </div>}
+        <div className="product-pair-side">
+          {sideText}
+          <figure className="scene-fig product-pair-small" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 22vw, 100vw" /></figure>
+        </div>
       </section>}
       {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
         <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{sideText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>

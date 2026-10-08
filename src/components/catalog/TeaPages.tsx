@@ -8,9 +8,9 @@
 // repeated and overlapped — the goldfish is the brand's own vector, stroked the same way (「小金魚改為線稿，跟其他的風格一樣」, 2026-10-07).
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
-import { Picture } from "@/components/ui";
 import TeaKinds from "./TeaKinds";
 import BrewProcess from "./BrewProcess";
+import TeaFilm from "./TeaFilm";
 import { site, type Img } from "@/data/content";
 import { GOLDFISH_D } from "./goldfish-path";
 
@@ -60,7 +60,12 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
       {notes && <TeaKinds title={notes.title} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
         <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{t("美好的沖泡方式", "A beautiful way to brew")}</h2>
-        {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}
+        {/* the 20-second sunrise film at the bottom left instead of the photograph (user 2026-10-08: 「改成剛剛的影片」; brew.image stays on file) */}
+        <div className="brew-process-media brew-process-media--film" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%">
+          <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
+            label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
+            playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />
+        </div>
         <ol className="brew-steps" data-brew-steps="">
           {brew.steps.map((s, i) => <li key={s.title} data-brew-step="">
             <span className="brew-rail" aria-hidden="true"><span className="brew-dot" />{i < brew.steps.length - 1 && <span className="brew-line"><span className="brew-line-fill" /></span>}</span>
