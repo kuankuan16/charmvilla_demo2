@@ -1300,30 +1300,41 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .tea-sheet-unit, .brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; }
 .tea-sheet-unit > h2, .brew-process > h2 { grid-column: 1 / span 4; }
 .tea-sheet h2 { font-size: clamp(30px, 2.6vw, 40px); font-weight: 400; line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; }
-.tea-notes-list, .brew-steps { list-style: none; margin: 0; padding: 0; }
-.tea-sheet-unit > .tea-notes-list { grid-column: 6 / span 7; }
-.tea-notes-list li { display: grid; grid-template-columns: 9em 1fr; column-gap: 20px; align-items: start; padding: 16px 0; } /* the text close to its title (user 2026-10-07: 「個別標題跟內文的 gap 要近一點」) */
-/* 茶款介紹 as a stack of cards after nexifye.webflow.io (user 2026-10-08): the title sticks at the left while every tea's card sticks at the
-   same height at the right, so each card slides up over the one before; white, a hairline frame, square corners, one height for all (grid rows of 1fr)
-   so none shows beneath the next. Pure CSS sticky — the only motion script is the title's rise (MotionScope, moveUp 45px). */
-.tea-notes-stack { --stack-top: calc(var(--header-h) + 40px); }
-.tea-notes-stack > h2 { position: sticky; top: var(--stack-top); }
-.tea-notes-title { display: block; }
-.tea-notes-stack .tea-notes-list { display: grid; grid-auto-rows: 1fr; gap: 16px; } /* every row as tall as the tallest card, at any width */
-.tea-notes-stack .tea-notes-list li { position: sticky; top: var(--stack-top); min-height: 13rem; padding: 36px 32px; background: var(--color-white); border: 1px solid rgb(31 31 31 / 0.12); box-shadow: 0 -12px 24px -20px rgb(31 31 31 / 0.18); }
-.tea-notes-list h3, .brew-steps h3 { font-size: 22px; font-weight: 500; line-height: 1.4; } /* larger, the text in ink (user 2026-10-08: 「這 2 屏的內文都用深色字，字級都可以再大一點」) */
-.tea-notes-list h3 small { display: block; margin-top: 3px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
-.tea-notes-list p, .brew-steps p { margin: 0; padding-top: 4px; font-size: 17px; line-height: 1.75; color: var(--color-ink); }
-.tea-sheet-unit + .brew-process, .tea-film + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
-/* the film between them after nexifye.webflow.io's video section (user 2026-10-08): edge to edge beyond the sheet's gutters, 100vh
-   (60vh on phones, 40vh on small phones), the video covering the band; a 56px frosted round button at the bottom right (40px on
-   small phones) pauses and resumes it. Round here on purpose: it sits on the film, not among the site's square buttons. */
-.tea-film { position: relative; height: 100svh; margin: clamp(96px, 10vw, 176px) calc(-1 * var(--page-gutter)) 0; background: var(--color-ink); overflow: hidden; }
+.brew-steps { list-style: none; margin: 0; padding: 0; }
+.brew-steps h3 { font-size: 22px; font-weight: 500; line-height: 1.4; } /* larger, the text in ink (user 2026-10-08: 「這 2 屏的內文都用深色字，字級都可以再大一點」) */
+.brew-steps p { margin: 0; padding-top: 4px; font-size: 17px; line-height: 1.75; color: var(--color-ink); }
+.tea-notes-hero + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
+/* 茶款介紹 (user 2026-10-08, after a two-card reference): a beige band — jakobsencopenhagen.com's page ground, --color-sand — across the
+   width, the title centred, then two cards of one height: the sunrise film at the left with its round frosted pause button, and the
+   deep-coffee panel at the right (TeaNotesPanel) where every ~110px of pointer travel grows the next tea's white card and the cards
+   stay. Square corners like the rest of the site. The panel's hint fades once the first card is out; a faint goldfish sits in its corner. */
+.tea-notes-hero { margin: clamp(56px, 6vw, 96px) calc(-1 * var(--page-gutter)) 0; padding: clamp(64px, 7vw, 112px) var(--page-gutter) clamp(72px, 8vw, 128px); background: var(--color-sand); }
+.tea-notes-hero > h2 { margin: 0 auto clamp(36px, 4vw, 56px); max-width: 18em; text-align: center; }
+.tea-notes-duo { display: grid; grid-template-columns: 1.45fr 1fr; gap: clamp(16px, 1.6vw, 24px); align-items: stretch; max-width: 1280px; margin: 0 auto; }
+.tea-film { position: relative; aspect-ratio: 3 / 2; background: var(--color-ink); overflow: hidden; }
 .tea-film-video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.tea-film-control { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgb(0 0 0 / 0.25); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); color: var(--color-white); transition: background-color .2s, transform .2s; }
-.tea-film-control:hover { background: rgb(0 0 0 / 0.4); }
+.tea-film-control { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgb(0 0 0 / 0.3); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); color: var(--color-white); transition: background-color .2s, transform .2s; } /* round on purpose: it sits on the film, not among the site's square buttons */
+.tea-film-control:hover { background: rgb(0 0 0 / 0.45); }
 .tea-film-control:active { transform: scale(.94); }
 .tea-film-control:focus-visible { outline: 2px solid var(--color-white); outline-offset: 3px; }
+.tea-notes-panel { position: relative; overflow: hidden; padding: clamp(28px, 3vw, 40px) clamp(24px, 2.6vw, 36px); background: #2a1c14; color: #f4eee5; user-select: none; touch-action: manipulation; }
+.tea-notes-hint { max-width: 12em; margin: 0; font-size: clamp(22px, 2vw, 28px); font-weight: 500; line-height: 1.35; transition: opacity .5s; }
+.tea-notes-hint-touch { display: none; }
+@media (hover: none), (pointer: coarse) { .tea-notes-hint-mouse { display: none; } .tea-notes-hint-touch { display: inline; } }
+.tea-notes-panel.is-started .tea-notes-hint { opacity: .3; }
+.tea-notes-mark { position: absolute; right: 7%; bottom: 7%; width: 36%; color: #f4eee5; opacity: .14; pointer-events: none; }
+.tea-notes-card { position: absolute; width: min(300px, 78%); padding: 20px 22px 22px; background: var(--color-white); color: var(--color-ink); box-shadow: 0 24px 48px -20px rgb(0 0 0 / 0.55); transform-origin: 12% 10%; animation: tea-card-grow .55s cubic-bezier(.2, .8, .2, 1) both; pointer-events: none; }
+.tea-notes-card h3 { margin: 0; font-size: 20px; font-weight: 500; line-height: 1.35; }
+.tea-notes-card h3 small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
+.tea-notes-card p { margin: 10px 0 0; font-size: 17px; line-height: 1.7; }
+@keyframes tea-card-grow { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .tea-notes-card { animation: none; } }
+@media (max-width: 1023px) {
+  .tea-notes-duo { grid-template-columns: 1fr; }
+  .tea-film { aspect-ratio: 16 / 9; }
+  .tea-notes-panel { min-height: 380px; }
+}
+@media (max-width: 479px) { .tea-film-control { width: 40px; height: 40px; } .tea-notes-card { width: min(300px, 86%); } .tea-notes-card p { font-size: 16px; } }
 .brew-process { grid-template-rows: auto 1fr; }
 .brew-process > h2 { grid-row: 1; }
 .brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
@@ -1342,24 +1353,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .is-brew-animated [data-brew-step]:not(.is-active) .brew-icon { color: var(--color-stone); }
 @media (max-width: 1279px) and (min-width: 768px) {
   .tea-sheet-unit > h2, .brew-process > h2, .brew-process-media { grid-column: 1 / span 5; }
-  .tea-sheet-unit > .tea-notes-list, .brew-process > .brew-steps { grid-column: 7 / span 6; }
-  .tea-notes-stack .tea-notes-list li { grid-template-columns: 1fr; row-gap: 6px; }
   .brew-steps li { grid-template-columns: 15px 40px 1fr; row-gap: 4px; }
   .brew-steps p { grid-column: 3; }
 }
-@media (max-width: 479px) {
-  .tea-film { height: 40svh; }
-  .tea-film-control { width: 40px; height: 40px; }
-}
 @media (max-width: 767px) {
   .tea-sheet-unit, .brew-process { display: block; }
-  .tea-notes-list { margin-top: 28px; }
-  .tea-notes-list li { grid-template-columns: 1fr; row-gap: 6px; padding: 14px 0; }
-  .tea-notes-stack { --stack-top: calc(var(--header-h) + 16px); }
-  .tea-notes-stack > h2 { position: static; }
-  .tea-notes-stack .tea-notes-list li { padding: 28px 24px; }
-  .tea-sheet-unit + .brew-process, .tea-film + .brew-process { margin-top: 72px; }
-  .tea-film { height: 60svh; margin-top: 72px; }
+  .tea-notes-hero + .brew-process { margin-top: 72px; }
   .brew-process-media { margin: 28px 0 12px; } /* above the steps, the full width (the reference's phone layout) */
   .brew-steps { --brew-dot-y: 36px; }
   .brew-steps li { grid-template-columns: 15px 36px 1fr; column-gap: 14px; row-gap: 4px; padding: 18px 0; }

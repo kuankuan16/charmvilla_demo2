@@ -36,13 +36,13 @@ export default function TeaFilm({ src, srcSmall, poster, label, playLabel, pause
     if (v.paused) { stoppedByUser.current = false; v.play().catch(() => {}); } else { stoppedByUser.current = true; v.pause(); }
   };
   return (
-    <section className="tea-film" aria-label={label}>
+    <figure className="tea-film" aria-label={label}>
       <video ref={video} className="tea-film-video" poster={poster} muted loop playsInline preload="none" disablePictureInPicture aria-label={label} />
       <button type="button" className="tea-film-control" onClick={toggle} aria-label={paused ? playLabel : pauseLabel} aria-pressed={paused}>
         {paused
           ? <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" /></svg>
           : <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" /></svg>}
       </button>
-    </section>
+    </figure>
   );
 }

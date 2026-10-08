@@ -18,10 +18,10 @@ import { Picture } from "@/components/ui";
 import BrewProcess from "./BrewProcess";
 import MotionScope from "./MotionScope";
 import TeaFilm from "./TeaFilm";
+import TeaNotesPanel from "./TeaNotesPanel";
+import { GOLDFISH_D } from "./goldfish-path";
 
 const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
-/** the brand's own goldfish (public/brand/goldfish-gold.svg, one path on a 1184 × 988 box), filled in the icons' colour */
-const GOLDFISH_D = "M 503.500 132.197 C 489.596 140.098, 459.998 182.885, 437.920 227 C 428.440 245.943, 424.966 254.295, 414.877 282.414 C 406.674 305.276, 405.231 308, 401.326 308 C 400.026 308, 385.358 301.089, 368.731 292.643 C 336.483 276.261, 325.414 271.543, 304 265.048 C 278.185 257.220, 257.539 253.949, 233.697 253.912 C 211.751 253.878, 195.714 257.004, 189.046 262.615 C 183.435 267.336, 185.317 276.091, 197.296 301 C 214.945 337.702, 227.732 374.376, 233.208 404 C 236.335 420.913, 236.327 450.342, 233.192 464.749 C 228.124 488.045, 219.283 508.176, 203.438 532.500 C 157.095 603.645, 145 624.458, 145 633.063 C 145 637.311, 148.905 638.893, 161.215 639.633 C 192.534 641.517, 238.627 628.455, 274.500 607.530 C 291.627 597.539, 291.471 597.571, 294.324 603.554 C 298.061 611.390, 312.347 623.536, 321.491 626.652 C 331.307 629.996, 344.241 626.318, 356.889 616.585 C 368.669 607.521, 377.257 595.813, 390.417 570.878 C 397.915 556.671, 408.650 541.586, 413.542 538.380 C 417.400 535.853, 419.516 538.062, 426.388 551.793 C 444.828 588.636, 451.611 609.618, 461.966 661.845 C 474.948 727.318, 483.075 753.203, 503.386 793.772 C 516.931 820.827, 525.871 835.217, 540.492 853.500 C 558.351 875.830, 571.119 887.165, 599.778 906.126 C 639.307 932.279, 670.179 944.441, 700.236 945.702 C 717.400 946.423, 724.881 945.278, 744.530 938.922 C 768.286 931.239, 785.721 921.528, 801.081 907.425 C 812.061 897.345, 816.303 897.324, 824.995 907.309 C 834.729 918.491, 855.359 927.505, 873.978 928.712 C 890.489 929.781, 923.699 920.669, 942.632 909.874 C 952.262 904.384, 963.663 893.844, 967.536 886.851 C 971.519 879.661, 971.809 865.547, 968.139 857.500 C 960.395 840.516, 939.024 824.784, 914 817.646 C 903.361 814.612, 902.964 813.101, 911.500 808.152 C 919.093 803.749, 947.069 775.911, 956.100 763.771 C 971.967 742.441, 982.402 719.287, 980.563 709.487 C 980.207 707.584, 979.044 704.109, 977.979 701.764 C 975.159 695.550, 975.468 693.385, 979.734 689.477 C 982.851 686.621, 983.451 685.430, 983.368 682.260 C 983.141 673.607, 971.672 658.518, 948.142 635.916 C 936.001 624.254, 934 621.900, 934 619.276 C 934 616.001, 938.586 609.130, 947.735 598.695 C 962.591 581.750, 959.724 565.928, 939.337 552.363 C 908.429 531.797, 886.337 535.963, 860.390 567.250 C 858.679 569.313, 856.622 571, 855.819 571 C 855.015 571, 850.114 568.263, 844.929 564.917 C 822.413 550.390, 791.153 537.327, 760.157 529.492 C 751.302 527.253, 726.119 522.731, 682 515.459 C 650.158 510.210, 615.185 506.820, 573.500 504.941 C 559.750 504.321, 546.845 503.397, 544.823 502.888 C 535.259 500.480, 532.832 487.714, 540.904 482.281 C 544.303 479.993, 564.160 479.301, 577.806 480.994 C 597.641 483.455, 602.631 483.760, 608.784 482.888 C 619.321 481.396, 625.903 477.003, 630.203 468.594 C 632.477 464.146, 632.919 454.586, 631.015 451.028 C 629.154 447.551, 630.543 444.745, 635.718 441.525 C 638.348 439.889, 645.900 434.462, 652.500 429.465 C 659.100 424.468, 672.600 414.504, 682.500 407.322 C 738.016 367.049, 798.614 314.618, 806.366 300.152 C 808.901 295.421, 809.060 294.632, 807.746 293.318 C 806.432 292.004, 804.197 292.185, 788.380 294.887 C 778.546 296.568, 751.760 300.885, 728.856 304.482 C 649.967 316.870, 643.546 317.200, 613.240 310.431 C 583.570 303.805, 566.428 290.433, 551.156 262 C 545.057 250.646, 542.486 241.604, 538.505 217.500 C 527.757 152.424, 520.437 130.933, 509.054 131.030 C 507.099 131.047, 504.600 131.572, 503.500 132.197";
 /** one icon per brewing step, in the steps' order (pour, open, add the goldfish — the brand's vector goldfish, steep, enjoy) */
 // the brand's goldfish as a line drawing like the other icons (user 2026-10-07: 「小金魚改為線稿，跟其他的風格一樣」): stroke only, ~1.3/48 of the box
 const goldfish = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 1224 1028" width="40" height="40" aria-hidden="true" className="brew-icon-goldfish"><path d={GOLDFISH_D} fill="none" stroke="currentColor" strokeWidth="32" strokeLinejoin="round" /></svg>;
@@ -33,25 +33,27 @@ const brewIcons = [
   icon(<><path d="M12 22h22v6a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z" /><path d="M34 25h2.5a3.5 3.5 0 0 1 0 7H34" /><path d="M9 41h30" /><path d="M18 8c0 2.5-2 3.5-2 6s2 3 2 5M24 6c0 2.5-2 3.5-2 6s2 3 2 5M30 8c0 2.5-2 3.5-2 6s2 3 2 5" /></>),
 ];
 
-const paren = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`}<small>{m[2]}</small></> : text; };
-
 export default function TeaPages({ product, t }: { product: Product; t: (zh: string, en: string) => string }) {
   const notes = product.teaNotes, brew = product.brew;
   if (!notes && !brew) return null;
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      {notes && <MotionScope className="tea-sheet-unit tea-notes-stack">
-        <h2 id="tea-notes-title" className="tc"><span className="tea-notes-title" data-animation="moveUp" data-from="45" data-duration="0.5" data-ease="power2.out" data-start="top 80%">{notes.title}</span></h2>
-        <ol className="tea-notes-list">
-          {notes.items.map((n) => <li key={n.name}><h3 className="tc">{paren(n.name)}</h3><p className="tc">{n.text}</p></li>)}
-        </ol>
+      {/* 茶款介紹 since the afternoon of 2026-10-08, after the user's two-card reference (「茶款介紹改成像這樣的版面…把下面喝茶的影片縮小放上去」):
+          the title centred, then the sunrise film as a card at the left and the deep-coffee panel at the right that grows a tea card
+          wherever the pointer moves (TeaNotesPanel); the band sits on jakobsencopenhagen.com's beige (--color-sand, 「背景色參考…的米黃色」).
+          The film: the same 20-second backlit cup of goldfish tea on every tea box (Wan 3.0 from a Nano Banana 2.1 frame; ffmpeg 1080p/720p, muted). */}
+      {notes && <MotionScope className="tea-notes-hero">
+        <h2 id="tea-notes-title" className="tc" data-animation="moveUp" data-from="45" data-duration="0.5" data-ease="power2.out" data-start="top 80%">{notes.title}</h2>
+        <div className="tea-notes-duo">
+          <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
+            label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
+            playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />
+          <TeaNotesPanel items={notes.items} label={notes.title}
+            hintMouse={t("移動滑鼠，認識這盒裡的茶款", "Move your mouse to meet the teas in this box")}
+            hintTouch={t("點一下，認識這盒裡的茶款", "Tap to meet the teas in this box")} />
+        </div>
       </MotionScope>}
-      {/* the sunrise film between the two units (user 2026-10-08: 「參考 nexifye 放在『茶款介紹』這一屏的下面」): the same 20-second
-          backlit cup of goldfish tea on every tea box (Wan 3.0 from a Nano Banana 2.1 frame; ffmpeg 1080p/720p, muted) */}
-      {notes && brew && <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
-        label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
-        playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />}
       {brew && <BrewProcess>
         <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{brew.title}</h2>
         {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}
