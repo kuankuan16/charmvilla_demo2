@@ -340,6 +340,9 @@ const buildCatalog = (lang: Locale) => {
   // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
   const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves"), 1856, 2304);
   for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
+  // 年年有魚：胡桃木桌斜陽照（禮盒無緞帶、白瓷杯裡泡開的小金魚、金色茶標籤、尤加利；Nano Banana 2.1，照 Seven Tea House 的光影）放進商品頁
+  // （使用者 2026-10-08：「放入內容頁」）；排在共用的兩張之後，所以成為頁尾那組的大圖
+  sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-walnut-table-sun-white-cup-tag.webp", t("午後斜陽與葉影落在胡桃木桌上，年年有魚的紅色刺繡禮盒旁，白瓷杯裡泡開一尾小金魚茶包，棉線接到金色 CHARM VILLA 茶標籤，後方一小瓶尤加利", "Afternoon sun and leaf shadows on a walnut table: beside the Year of Plenty box with its red embroidered lid, a goldfish tea bag steeps in a white porcelain cup, its string reaching the gold CHARM VILLA tag; a sprig of eucalyptus behind"), 1856, 2304)];
   // 橄欖綠沙發旁的核桃木桌那張（盒子已換成松針盒）也放進商品頁，排在木桌光影之後（使用者 2026-10-07：「放上商品圖的內容頁」）
   sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-olive-sofa-pouch.webp", t("橄欖綠毛圈沙發旁的核桃木桌上，團圓禮盒的桐木盒與芥末黃松針盒蓋、一包茶包袋、幾粒茶葉與玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶", "On a walnut table beside an olive bouclé sofa, the Reunion paulownia box with its mustard pine-sprig lid, a tea pouch, a few tea leaves and rosebuds, and a glass cup of goldfish tea at the right"), 1856, 2304)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
