@@ -49,14 +49,9 @@ export default async function ProductPage({ params }: Props) {
   const siblings = getCategoryProducts(product.category, lang);
   const variants = product.variant ? all.filter((p) => p.variant?.group === product.variant?.group) : [];
   const allScenes = product.scenes ?? [];
-  // Tea gift boxes close with the two photographs every box shares — two people at the black oak table, the hands and the mug — as the
-  // two small images of a spread of their own (user 2026-10-08: 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」); the box's own last
-  // scene is that spread's large image when the box has more than one, so the pair never shows large. They leave the automatic split below.
-  const SHARED = ["/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"];
-  const sharedSmalls = product.category === "tea" ? SHARED.map((src) => allScenes.find((img) => img.src === src)).filter((x): x is Img => Boolean(x)) : [];
-  const own = sharedSmalls.length === 2 ? allScenes.filter((img) => !SHARED.includes(img.src)) : allScenes;
-  const sharedLarge = sharedSmalls.length === 2 && own.length >= 2 ? own[own.length - 1] : undefined;
-  const scenes = sharedLarge ? own.slice(0, -1) : own;
+  // (the shared closing spread of the tea boxes — the two people and the hands with the mug as two small images — went with the
+  // three-scene rule of 2026-10-08: each box now lists exactly three scenes, chosen in catalog.ts)
+  const scenes = allScenes;
   // Portrait and square photographs are framed 4:5, landscape ones 3:2, very wide ones keep their own proportion.
   const shapeOf = (img: Img) => (img.w / img.h > 1.9 ? "banner" : img.w / img.h > 1.15 ? "wide" : "tall");
   const frameOf = (img: Img) => ({ banner: `${img.w} / ${img.h}`, wide: "3 / 2", tall: "4 / 5" })[shapeOf(img)];
@@ -85,10 +80,11 @@ export default async function ProductPage({ params }: Props) {
   // its second titled text (紫斑蝶) and the tea awards are rows of the specifications below. How to brew (tea gift boxes except the fruit &
   // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
   // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
-  const storyInColumn = product.category === "tea";
-  // with three scenes the story stands beside the large photograph instead of in the specifications (user 2026-10-08: 「用藍色圈起來的文案換
-  // 餐具之間，一隻鳥…」, then 「刪」 on the specifications' story row), so it is written once
-  const storyInPair = Boolean(pair) && !storyInColumn;
+  // with three scenes the story stands beside the large photograph — instead of in the specifications, or, for a tea box, instead of at the
+  // foot of the column (user 2026-10-08: 「用藍色圈起來的文案換餐具之間，一隻鳥…」, then 「刪」 on the specifications' story row, then every tea box
+  // on the ginkgo teaspoon page's three-scene layout 「所有茶葉禮盒的情境照部分都跟…版型設計一樣」), so it is written once
+  const storyInPair = Boolean(pair);
+  const storyInColumn = product.category === "tea" && !storyInPair;
   const storyRows = storyInColumn || storyInPair ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
   // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
   // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
@@ -212,10 +208,6 @@ export default async function ProductPage({ params }: Props) {
       </section>)}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
         {rowScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes={shapeOf(img) === "tall" ? "(min-width:768px) 31vw, 100vw" : "(min-width:768px) 46vw, 100vw"} /></figure>)}
-      </section>}
-      {sharedSmalls.length === 2 && <section className={`product-spread product-spread--shared${sharedLarge ? "" : " is-smalls-only"}`} aria-label={t("情境照", "In use")}>
-        <div className="product-spread-smalls">{sharedSmalls.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
-        {sharedLarge && <figure className="scene-fig product-spread-large" data-shape={shapeOf(sharedLarge)} style={{ aspectRatio: frameOf(sharedLarge) }}><Picture img={sharedLarge} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>}
       </section>}
       {teaPages}
       <section className="product-related" aria-labelledby="related-title">

@@ -506,7 +506,25 @@ const buildCatalog = (lang: Locale) => {
     const scenes = [...lead, ...p.views.map((v) => v.image), ...(p.story.image ? [p.story.image] : []), ...(p.slug === "bird-chopstick-rest" ? sceneLead[p.slug] ?? [] : []), ...(sceneExtra[p.slug] ?? [])]
       .filter((img, i, list) => !shown.has(img.src) && !isStudioLike(img) && !(sceneOmit[p.slug] ?? []).includes(img.src) && !omitEverywhere.includes(img.src) && list.findIndex((x) => x.src === img.src) === i);
     const order = sceneOrder[p.slug]; if (order) scenes.sort((a, b) => order.indexOf(a.src) - order.indexOf(b.src));
-    return { ...p, image: views[0].image, hoverImage: scenes[0], views, scenes };
+    // Tea gift boxes show exactly three scenes in the ginkgo teaspoon page's layout — the first in the column, the second large beside the
+    // story, the third small — chosen so none repeat (user 2026-10-08: 「所有茶葉禮盒的情境照部分都跟…ginkgo-teaspoon-gift-box 版型設計一樣，只用 3 張
+    // 情境照，挑不重複的用」): the olive-sofa lead (also the card's hover), the box's own best other scene (the two people at the oak table where
+    // it has none), and the hands with the mug. The other scenes stay in sceneExtra, unlisted.
+    const three = teaThree[p.slug];
+    const chosen = three ? three.map((file) => scenes.find((img) => img.src === `/media/site/${file}`)).filter((x): x is Img => Boolean(x)) : [];
+    const shownScenes = chosen.length === 3 ? chosen : scenes;
+    return { ...p, image: views[0].image, hoverImage: shownScenes[0], views, scenes: shownScenes };
+  };
+  const twoPeople = "scene-two-people-tea-black-oak-table.webp", mug = "scene-hands-speckled-mug-goldfish-tea-warm-light.webp";
+  const teaThree: Record<string, [string, string, string]> = {
+    "reunion-paper-gift-box": ["scene-reunion-gift-box-us-olive-sofa-pouch.webp", twoPeople, mug],
+    "spring-dawn-gift-box": ["scene-spring-dawn-gift-box-olive-sofa-pouch.webp", "scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", mug],
+    "winter-blossom-gift-box": ["scene-winter-blossom-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
+    "orchid-gift-box": ["scene-orchid-gift-box-olive-sofa-pouch.webp", "scene-orchid-gift-box.webp", mug],
+    "purple-butterfly-gift-box": ["scene-purple-butterfly-gift-box-olive-sofa-pouch.webp", "scene-purple-butterfly-gift-box.webp", mug],
+    "kyoto-gift-box": ["scene-kyoto-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
+    "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
+    "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
