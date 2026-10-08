@@ -1436,7 +1436,7 @@ main:has(> .faq-page) { background: #efeee8; } /* the ground runs on below a sho
 .faq-group[open] .faq-plus::after { transform: translate(-50%, -50%) rotate(0); }
 .faq-group-body { padding: 0 32px 26px; }
 /* a policy section's own text inside its row (the shipping, privacy, terms and Prop 65 pages) */
-.faq-text, .faq-list li { max-width: 62ch; font-size: 20px; line-height: 1.7; color: #5a5a5a; }
+.faq-text, .faq-list li { max-width: 62ch; font-size: 17px; line-height: 1.8; color: #5a5a5a; } /* 17px (user 2026-10-08: 「展開的內文字改為 17pt」; was 20) */
 .faq-text + .faq-text, .faq-list, .faq-text + .faq-list, .faq-list + .faq-text { margin-top: 12px; }
 .faq-list { list-style: disc; padding-left: 1.3em; }
 .faq-text + .faq-item, .faq-list + .faq-item { margin-top: 18px; }
@@ -1450,7 +1450,7 @@ main:has(> .faq-page) { background: #efeee8; } /* the ground runs on below a sho
 .faq-toggle::before, .faq-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--color-page); transform: translate(-50%, -50%); transition: transform .25s; }
 .faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
 .faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(0); }
-.faq-item > p { max-width: 60ch; padding: 8px 52px 30px 0; margin-top: 0; font-size: 20px; line-height: 1.7; color: #5a5a5a; } /* the answer in the reference's size and its mid grey (user 2026-10-08: 「內文字的淺灰色都改這個內文顏色」) */
+.faq-item > p { max-width: 60ch; padding: 8px 52px 30px 0; margin-top: 0; font-size: 17px; line-height: 1.8; color: #5a5a5a; } /* the answer in the reference's size and its mid grey (user 2026-10-08: 「內文字的淺灰色都改這個內文顏色」) */
 @media (max-width: 1023px) and (min-width: 768px) {
   .faq-head { grid-column: 1 / span 4; }
   .faq-body { grid-column: 6 / span 7; }
@@ -1463,7 +1463,7 @@ main:has(> .faq-page) { background: #efeee8; } /* the ground runs on below a sho
   .faq-group-body { padding: 0 20px 20px; }
   .faq-group-summary h2 { font-size: 18px; }
   .faq-item summary { padding: 16px 0; font-size: 18px; column-gap: 16px; grid-template-columns: 1fr 26px; }
-  .faq-item > p, .faq-text, .faq-list li { font-size: 17px; }
+  .faq-item > p, .faq-text, .faq-list li { font-size: 16px; }
   .faq-toggle { width: 26px; height: 26px; }
   .faq-item > p { padding-right: 0; }
 }
