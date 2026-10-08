@@ -173,6 +173,11 @@ const brewSteps = (t: (zh: string, en: string) => string) => [
   { title: t("浸泡", "Steep"), text: t("浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。", "Steep for about 5 minutes as the tea's color deepens and the goldfish takes shape.") },
   { title: t("享用", "Enjoy"), text: t("聞一聞茶香，啜飲一口，為自己留一段時間。", "Enjoy the fragrance, take a sip, and make a little time for yourself.") },
 ];
+// The photograph at the bottom left of the steps, in the site's light (Nano Banana 2.1 after the brewed-goldfish, glass cup, cloud coaster and
+// walnut-table references; the string retouched to fall behind the cup, no tag in view; user 2026-10-08: 「參考目前官網的攝影風格…產出一個適合的配圖」).
+const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing-glass-cup-cloud-coaster-walnut.webp",
+  t("午後斜陽下的胡桃木桌，雲朵檜木杯墊上一只圓肚玻璃杯，琥珀色茶湯裡泡開的小金魚茶包透出粉紅玫瑰花瓣與茶葉；後方是橄欖綠沙發",
+    "A walnut table in low afternoon sun: on a cloud-shaped hinoki coaster, a round glass cup of amber tea in which the goldfish tea bag has opened to show its pink rose petals and tea leaves; an olive sofa behind"), 1856, 2304);
 
 // 茶款介紹 under the specifications, as on the official product pages (user 2026-10-07, with the wording for the four main teas);
 // 金萱 and 花果茶 are condensed from the official store's descriptions. A competition tea describes its base tea, plus the note on the competitions.
@@ -266,7 +271,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
         if (names.some(isCompetitionTea)) items.push({ name: t("比賽獲獎茶", "Competition-winning teas"), text: lt(competitionNote) });
         return { title: t("茶款介紹", "About the teas"), items };
       })(),
-      ...(gift.slug !== "fruit-infusion-gift-box" ? { brew: { title: t("沖泡方式", "How to brew"), steps: brewSteps(t) } } : {}),
+      ...(gift.slug !== "fruit-infusion-gift-box" ? { brew: { title: t("沖泡方式", "How to brew"), steps: brewSteps(t), image: brewImage(t) } } : {}),
       ...(gift.soldOut ? { soldOut: true } : {}),
       ...(gift.hidden ? { hidden: true } : {}),
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,

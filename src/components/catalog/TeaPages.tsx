@@ -1,11 +1,17 @@
-// One sheet under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 and 沖泡方式 side by side on one screen
+// One sheet under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 and 沖泡方式, side by side on one screen until 2026-10-08
 // (user 2026-10-07: 「『茶款介紹』與『沖泡方式』整合成一屏（並調整版型），放在目前商品的情境之下，推薦商品之上」; before that two
 // brochure pages right under the first screen). A rule with small labels across the top, the teas as a numbered list at the
 // left, the brewing steps with line icons at the right; no picture (「配圖都是錯誤的，不要放」), no small decorative text
 // (「所有裝飾性的小字都拿掉，精簡」), no numbers (「這一區塊的裝飾數字都拿掉」), no rules; each row is title | text in two columns
 // (「拿掉線，標題都加大一點，內容改在另外一欄」).
+// 沖泡方式 since 2026-10-08 after rooferplus.webflow.io's 「A Process Designed for Precision」 (user: 「分析並高度學習…這一屏的動態效果，並推理
+// 適合目前官網設計風格的樣式呈現」): its own screen under 茶款介紹 — the title at the top left, a photograph at the bottom left (「左下角的圖」),
+// the steps at the right on a hairline rail that fills in bronze as the page scrolls, each step's dot and icon turning bronze when the fill
+// reaches it (lib/motion/animations.ts, brew-process). Still no numbers and no rules between the steps: the rail is the one line.
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
+import { Picture } from "@/components/ui";
+import BrewProcess from "./BrewProcess";
 
 const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
 /** the brand's own goldfish (public/brand/goldfish-gold.svg, one path on a 1184 × 988 box), filled in the icons' colour */
@@ -29,20 +35,19 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      <div className="tea-sheet-grid">
-        {notes && <div className="tea-sheet-col tea-sheet-col--notes">
-          <h2 id="tea-notes-title" className="tc">{notes.title}</h2>
-          <ol className="tea-notes-list">
-            {notes.items.map((n) => <li key={n.name}><h3 className="tc">{paren(n.name)}</h3><p className="tc">{n.text}</p></li>)}
-          </ol>
-        </div>}
-        {brew && <div className="tea-sheet-col tea-sheet-col--brew">
-          <h2 id="brew-title" className="tc">{brew.title}</h2>
-          <ol className="brew-steps">
-            {brew.steps.map((s, i) => <li key={s.title}><span className="brew-icon">{brewIcons[i] ?? brewIcons[4]}</span><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></li>)}
-          </ol>
-        </div>}
-      </div>
+      {notes && <div className="tea-sheet-unit">
+        <h2 id="tea-notes-title" className="tc">{notes.title}</h2>
+        <ol className="tea-notes-list">
+          {notes.items.map((n) => <li key={n.name}><h3 className="tc">{paren(n.name)}</h3><p className="tc">{n.text}</p></li>)}
+        </ol>
+      </div>}
+      {brew && <BrewProcess>
+        <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{brew.title}</h2>
+        {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}
+        <ol className="brew-steps" data-brew-steps="">
+          {brew.steps.map((s, i) => <li key={s.title} data-brew-step=""><span className="brew-rail" aria-hidden="true"><span className="brew-dot" />{i < brew.steps.length - 1 && <span className="brew-line"><span className="brew-line-fill" /></span>}</span><span className="brew-icon">{brewIcons[i] ?? brewIcons[4]}</span><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></li>)}
+        </ol>
+      </BrewProcess>}
     </section>
   );
 }
