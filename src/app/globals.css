@@ -394,6 +394,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-pair-large { grid-column: 1 / span 6; }
 .product-pair-side { grid-column: 9 / span 4; min-width: 0; padding-top: 150px; }
 .product-pair-side .product-story-text { max-width: 360px; margin-bottom: 88px; } /* the piece's story, then its small scene (「用藍色圈起來的文案換餐具之間，一隻鳥…」) */
+.product-pair-side .product-story-text h2 { font-size: 24px; line-height: 1.3; font-weight: 500; } /* larger, and the text in the same ink as the title (user 2026-10-08: 「標題放大，內文跟標題都一樣色」) */
+.product-pair-side .product-story-text p { color: var(--color-ink); }
 .product-pair-small { width: calc((100% - 3 * var(--pdp-gap)) / 4 * 2 + var(--pdp-gap)); } /* two columns; a landscape one three */
 .product-pair-small[data-shape=wide] { width: calc((100% - 3 * var(--pdp-gap)) / 4 * 3 + 2 * var(--pdp-gap)); }
 /* Three portraits left for the foot of the page make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
@@ -458,6 +460,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-spread-smalls.is-centered { align-self: auto; padding-top: 0; }
   .product-pair-side { padding-top: 16px; }
   .product-pair-side .product-story-text { max-width: none; margin-bottom: 24px; }
+  .product-pair-side .product-story-text h2 { font-size: 20px; }
   .product-pair-small { width: 60%; }
   .product-pair-small[data-shape=wide] { width: 100%; }
 }
