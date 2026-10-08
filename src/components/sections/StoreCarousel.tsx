@@ -39,8 +39,9 @@ export default function StoreCarousel() {
   // the tall photograph at the left (user 2026-10-02: 「門市配圖換這張」): a sunlit daybed after the user's reference, a cup of
   // goldfish tea on the side table (tag drawn in the scene) and the white Braided Leather Bag on the throw; the brand has no
   // further store photographs, and repeating a card's photograph beside it would show the same picture twice
-  // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：長榻照（毯子上有白包）換成官網茶誌的倒茶照
-  const mood = site("journal-308.webp", t("窗邊木桌上，從白瓷壺把茶倒進玻璃杯，杯裡一尾小金魚茶包", "By the window, tea poured from a white pot into a glass cup holding a goldfish tea bag"), 1080, 1350);
+  // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：長榻照（毯子上有白包）換成官網茶誌的倒茶照；
+  // 2026-10-08 換成 Y 字椅上的小金魚茶照（雜誌、白襯衫、兩隻柴燒鳥形筷架；Nano Banana 2.1 4K，棉線修到杯後；使用者：「上架」「換成門市的左邊大圖」）
+  const mood = site("scene-chair-magazine-goldfish-tea-wood-fired-birds.webp", t("午後斜陽下的橡木 Y 字椅，坐墊上疊著雜誌，白瓷杯裡泡開的小金魚茶包透出粉紅玫瑰花瓣，椅背搭著白襯衫，旁邊兩隻柴燒鳥形筷架", "An oak wishbone chair in low afternoon sun: magazines on the woven seat, a white mug in which the goldfish tea bag has opened to show its pink rose petals, a white shirt over the back and two wood-fired Songbird Chopsticks Rests beside it"), 1856, 2304);
 
   return (
     <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our Stores")}>
