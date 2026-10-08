@@ -343,6 +343,10 @@ const buildCatalog = (lang: Locale) => {
   // 年年有魚：米白圓桌斜陽照（禮盒無緞帶、青瓷咖啡杯裡泡開的小金魚、尤加利，標籤藏在杯後；Nano Banana 2.1，照使用者給的 EAU 書那張的色調）放進商品頁，
   // 排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「放入內容頁」，之後「右取代左」——胡桃木桌白瓷杯金標籤那張換成這張）
   sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-cream-table-sun-celadon-cup.webp", t("米白圓桌上一道斜射的陽光，年年有魚的紅色刺繡禮盒旁，青瓷咖啡杯裡泡開一尾小金魚茶包，後方一小瓶尤加利投下葉影", "A hard beam of sun across a cream round table: beside the Year of Plenty box with its red embroidered lid, a goldfish tea bag steeps in a celadon cup; a sprig of eucalyptus behind throws its leaf shadow"), 1856, 2304)];
+  // 春曉：手持玻璃杯的俯角照（胡桃木桌、打開的畫冊、橄欖綠沙發；Nano Banana 2.1，照使用者給的三張編輯攝影參考——暖斜光、淺景深、手入鏡——
+  // 延續全站風格）放進商品頁，排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「高度學習這幾張圖，並延續全站的攝影風格，重新生成一張…
+  // 的商品圖」，兩版中選了亮光的第一版：「放進商品說明頁」）
+  sceneExtra["spring-dawn-gift-box"] = [...(sceneExtra["spring-dawn-gift-box"] ?? []), site("scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", t("俯角的胡桃木桌：春曉禮盒斜放在打開的畫冊旁，前方雲朵杯墊上一杯玻璃杯小金魚茶，一隻手握著杯把，旁邊靠著金色茶包袋，後方是橄欖綠毛圈沙發", "Looking down on a walnut table: the Spring Awakening box lies at an angle beside an open art book; in front, a hand holds a glass cup of goldfish tea on a cloud coaster, a gold tea pouch beside it, an olive bouclé sofa behind"), 1856, 2304)];
   // 橄欖綠沙發旁的核桃木桌那張（盒子已換成松針盒）也放進商品頁，排在木桌光影之後（使用者 2026-10-07：「放上商品圖的內容頁」）
   sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-olive-sofa-pouch.webp", t("橄欖綠毛圈沙發旁的核桃木桌上，團圓禮盒的桐木盒與芥末黃松針盒蓋、一包茶包袋、幾粒茶葉與玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶", "On a walnut table beside an olive bouclé sofa, the Reunion paulownia box with its mustard pine-sprig lid, a tea pouch, a few tea leaves and rosebuds, and a glass cup of goldfish tea at the right"), 1856, 2304)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
