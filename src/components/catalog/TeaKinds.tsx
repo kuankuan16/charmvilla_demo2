@@ -5,9 +5,9 @@
 // which the row of 400 × 520 cards slides from 40vw to −70vw as the run scrolls (scrub 0.8), each card swelling from 0.8 to 1 and back as it
 // passes; the cards' tops are staggered (130 / 0 / 120 / 50 / 90). A card at rest is text alone on its olive cover — the tea's name in 32px
 // and its note (「一開始是文字而已，hover 的時候才會出現圖」「標題要跟裡面的茶種名稱一樣」「詳細的文字介紹放在一開始的列表上面」); hovering it
-// (desktop) lifts the cover's five blocks to show the dry-leaf photograph, the name and the note rising in through masks over it. Below 992px
-// there is no hover, so the photograph and its text show and the cover is gone. Reduced motion: no scrub, no curtain, the cards just sit in a
-// row that scrolls sideways.
+// (desktop) lifts the cover's five blocks to show the dry-leaf photograph bare, with nothing written over it (「刪掉圖片上的文字與漸層黑」);
+// where there is no hover a tap (or Enter) toggles the cover. Reduced motion: no scrub, no curtain, the cards just sit in a row that scrolls
+// sideways.
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -66,17 +66,13 @@ export default function TeaKinds({ label, title, items }: { label: string; title
             <div ref={main} className="teakind-main">
               {items.map((tea, i) => (
                 <div key={tea.name} className="teakind-pad" style={{ paddingTop: PAD[i % PAD.length] }}>
-                  <article className="teakind-card" aria-label={tea.name}>
-                    {/* the photograph, with the name and the note over its foot: the hover state on desktop, the only state below 992px */}
-                    <div className="teakind-img-para">
-                      <div className="teakind-img">{tea.image ? <Picture img={tea.image} fill fit="cover" animate={false} sizes="400px" /> : <div className="teakind-missing"><span className="tc">{t("缺圖", "No image yet")}</span></div>}</div>
-                      <div className="teakind-para">
-                        <h3 className="teakind-h06 tc"><span className="bw-mask"><span className="bw-mask-in">{tea.name}</span></span></h3>
-                        <p className="teakind-bs tc"><span className="bw-mask"><span className="bw-mask-in">{tea.text}</span></span></p>
-                      </div>
-                    </div>
-                    {/* the olive cover at rest: the same name and note, text alone; hidden from readers, which get the photograph's copy */}
-                    <div className="teakind-cover" aria-hidden="true">
+                  <article className="teakind-card" aria-label={tea.name} tabIndex={0}
+                    onClick={(e) => e.currentTarget.classList.toggle("is-open")}
+                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.currentTarget.classList.toggle("is-open"); } }}>
+                    {/* the photograph, bare — no text and no gradient over it (「刪掉圖片上的文字與漸層黑」) */}
+                    <div className="teakind-img">{tea.image ? <Picture img={tea.image} fill fit="cover" animate={false} sizes="400px" /> : <div className="teakind-missing"><span className="tc">{t("缺圖", "No image yet")}</span></div>}</div>
+                    {/* the olive cover at rest: the name and the note, the card's only text */}
+                    <div className="teakind-cover">
                       <div className="teakind-blocks">{[0, 1, 2, 3, 4].map((k) => <span key={k} className="teakind-block" style={{ transitionDelay: `${[0.1, 0.16, 0.21, 0.16, 0.1][k]}s` }} />)}</div>
                       <h3 className="teakind-h05 tc"><span className="bw-mask"><span className="bw-mask-in">{tea.name}</span></span></h3>
                       <p className="teakind-cover-text tc"><span className="bw-mask"><span className="bw-mask-in">{tea.text}</span></span></p>

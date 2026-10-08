@@ -1330,31 +1330,27 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .teakind-wrap { display: flex; flex-direction: column; justify-content: center; height: 100%; }
 .teakind-main { display: flex; gap: 64px; width: max-content; will-change: transform; }
 .teakind-pad { flex: none; }
-/* a card at rest is text alone on its olive cover — the tea's name and its note; the photograph underneath shows when the cover's five
-   blocks lift on hover (user 2026-10-08: 「一開始是文字而已，hover 的時候才會出現圖」「標題要跟裡面的茶種名稱一樣」「詳細的文字介紹放在一開始的
-   列表上面」). Below 992px there is no hover: the photograph and its text show and the cover is gone. */
-.teakind-card { position: relative; width: 400px; height: 520px; border-radius: 4px; overflow: hidden; background: var(--color-field); }
-.teakind-img-para { position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; padding: 32px; color: var(--bw-base); }
+/* a card at rest is text alone on its olive cover — the tea's name and its note; the photograph underneath shows bare, with no text and no
+   gradient over it, when the cover's five blocks lift (user 2026-10-08: 「一開始是文字而已，hover 的時候才會出現圖」「標題要跟裡面的茶種名稱一樣」
+   「詳細的文字介紹放在一開始的列表上面」「刪掉圖片上的文字與漸層黑」). On desktop the cover lifts on hover; where there is no hover a tap
+   toggles it (.is-open). */
+.teakind-card { position: relative; width: 400px; height: 520px; border-radius: 4px; overflow: hidden; background: var(--color-field); cursor: pointer; }
 .teakind-img { position: absolute; inset: 0; }
-.teakind-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(31 31 31 / .72), rgb(31 31 31 / 0) 55%); }
 .teakind-missing { display: grid; place-items: center; height: 100%; background: var(--color-field); }
 .teakind-missing span { font-size: 13px; letter-spacing: .14em; color: var(--color-stone-deep); }
-.teakind-para { position: relative; display: flex; flex-direction: column; gap: 12px; }
-.teakind-h06 { font-size: 18px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; }
-.teakind-bs { font-size: 16px; line-height: 1.6; color: var(--bw-gray); }
 .teakind-cover { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 32px; pointer-events: none; }
 .teakind-blocks { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
 .teakind-block { display: block; height: 100%; background: var(--bw-olive); transform-origin: top; transform: scaleY(1); transition: transform .5s cubic-bezier(.87, 0, .13, 1); }
 .teakind-h05 { position: relative; font-size: 32px; line-height: 1.2em; font-weight: 500; letter-spacing: -.04em; color: var(--bw-base); }
 .teakind-cover-text { position: relative; font-size: 16px; line-height: 1.6; color: var(--bw-base); }
+.teakind-card.is-open .teakind-block { transform: scaleY(0); }
+.teakind-card.is-open .teakind-h05 .bw-mask-in { transform: translateY(-110%); }
+.teakind-card.is-open .teakind-cover-text .bw-mask-in { transform: translateY(110%); }
 @media (hover: hover) and (min-width: 992px) {
-  .teakind-para .bw-mask-in { transform: translateY(110%); }
   .teakind-card:hover .teakind-block { transform: scaleY(0); }
   .teakind-card:hover .teakind-h05 .bw-mask-in { transform: translateY(-110%); }
   .teakind-card:hover .teakind-cover-text .bw-mask-in { transform: translateY(110%); }
-  .teakind-card:hover .teakind-para .bw-mask-in { transform: translateY(0); transition-delay: .3s; }
 }
-@media (max-width: 991px) { .teakind-cover { display: none; } }
 @media (max-width: 767px) { .teakind-card { width: 380px; height: 480px; } }
 @media (max-width: 479px) { .teakind-main { gap: 46px; } .teakind-card { width: 320px; height: 420px; } .teakind-head { padding-bottom: 0; } }
 @media (prefers-reduced-motion: reduce) {
