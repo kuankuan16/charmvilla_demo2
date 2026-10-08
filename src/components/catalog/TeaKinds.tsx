@@ -1,7 +1,7 @@
 "use client";
 // 茶款介紹 after the "Expertise Behind Bramwel" screen of bramwel-service-template.webflow.io (user 2026-10-08: 「Expertise Behind Bramwel 這一屏
 // 改介紹茶種」, its type and motion to be copied exactly): bramwel's curtain — five blocks of the screen's ground rising as it arrives (scrub 0.8;
-// 「這個效果要放在茶種那邊」) — then a 500vh sticky run on the stores' cream ground: the label and the centred 64px heading, then a 100vh screen in
+// 「這個效果要放在茶種那邊」) — then a 500vh sticky run on the white ground: the centred 64px heading, then a 100vh screen in
 // which the row of 400 × 520 cards slides from 40vw to −70vw as the run scrolls (scrub 0.8), each card swelling from 0.8 to 1 and back as it
 // passes; the cards' tops are staggered (130 / 0 / 120 / 50 / 90). A card at rest is text alone on its olive cover — the tea's name in 32px
 // and its note (「一開始是文字而已，hover 的時候才會出現圖」「標題要跟裡面的茶種名稱一樣」「詳細的文字介紹放在一開始的列表上面」); hovering it
@@ -27,7 +27,8 @@ const splitName = (name: string): [string, string | undefined] => {
   return m ? [m[1], m[2]] : [name, undefined];
 };
 
-export default function TeaKinds({ label, title, items }: { label: string; title: string; items: TeaKind[] }) {
+// (bramwel's small label with a square dot above the heading — 「■ 茶款」 — is gone: user 2026-10-08 「刪」)
+export default function TeaKinds({ title, items }: { title: string; items: TeaKind[] }) {
   const { t } = useT();
   const curtain = useRef<HTMLDivElement>(null);
   const sticky = useRef<HTMLDivElement>(null);
@@ -64,7 +65,6 @@ export default function TeaKinds({ label, title, items }: { label: string; title
       <div ref={curtain} className="bw-curtain" aria-hidden="true"><div className="bw-curtain-blocks">{CURTAIN.map((_, k) => <span key={k} className="bw-curtain-block" />)}</div></div>
       <div ref={sticky} className="teakind-sticky">
         <div className="teakind-head">
-          <div className="bw-label"><span className="bw-label-dot" aria-hidden="true" /><span className="bw-bxs tc">{label}</span></div>
           <h2 id="tea-notes-title" className="teakind-h02 tc">{title}</h2>
         </div>
         <section className="teakind-section" aria-label={title}>

@@ -55,7 +55,7 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   const tags = stepTags(t);
   return (
     <section className="tea-sheet" aria-label={title}>
-      {notes && <TeaKinds label={t("茶款", "Our teas")} title={notes.title} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
+      {notes && <TeaKinds title={notes.title} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
         <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{t("美好的沖泡方式", "A beautiful way to brew")}</h2>
         {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}
