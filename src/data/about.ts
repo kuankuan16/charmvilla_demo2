@@ -30,7 +30,7 @@ export const getAbout = (lang: Locale) => {
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：白包照換成方凳托盤上的小金魚茶
     // v4 again (user 2026-10-07: 「換回原本的」 after a v5 that redrew the cup, the goldfish and the tag; v5 stays in git history)
-    hero: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫", "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
+    hero: site("scene-olive-armchair-books-goldfish-tea.webp", t("橄欖綠皮革扶手椅上疊著一本橘色、一本深藍色的書，書上放著雲朵檜木杯墊與一杯玻璃杯小金魚茶，茶湯在橘色書皮上映出光斑；牆邊靠著一幅橘色筆觸的抽象畫", "On an olive-green leather armchair, an orange book on a navy one, a cloud-shaped hinoki coaster and a glass cup of goldfish tea on top, the tea casting a glow on the orange cover; an orange abstract painting leans against the wall behind"), 1856, 2304),
     // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under each chapter (the
     // button under the intro was removed: 「刪」),
     // the store's service terms, questions and answers. All facts come from

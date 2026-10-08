@@ -43,8 +43,11 @@ const build = (lang: Locale) => {
         // cup like a coffee cup, a painting unlike the example, the ottoman in another colour): a new generated interior;
         // v3 (「右圖那張，後面角落的畫布要跟左圖一樣」「只變畫布的部分，其他不變」): the no-handle variant's painting composited in, every other pixel unchanged;
         // v4 (「這裡不自然」): the canvas continues down behind the ottoman instead of ending on a hard edge left of the tray
-        image: site("ottoman-tray-tea-cup-v4-tagfix.webp", t("墨綠色毛圈布方凳上的木托盤裡，一只圓弧透明玻璃杯泡開一尾小金魚茶包，金色茶標寫著 CHARM VILLA；牆邊靠著一幅赭色圓形筆觸的抽象畫",
-          "On a wooden tray on a moss-green bouclé ottoman, a goldfish tea bag unfurls in a round clear glass cup, its gold tag reading CHARM VILLA; an abstract painting with a burnt-sienna circle leans against the wall"), 1792, 2240),
+        // 2026-10-08 (user: 「取代全站」): the ottoman-tray photograph gave way, here and on the About hero, to the olive leather armchair
+        // scene — orange and navy books, the cloud coaster and the loop-handle glass teacup, an orange abstract painting behind (Nano Banana 2.1,
+        // the whole room generated in one go rather than edited; string hidden behind the far rim, no tag)
+        image: site("scene-olive-armchair-books-goldfish-tea.webp", t("橄欖綠皮革扶手椅上疊著一本橘色、一本深藍色的書，書上放著雲朵檜木杯墊與一杯玻璃杯小金魚茶，茶湯在橘色書皮上映出光斑；牆邊靠著一幅橘色筆觸的抽象畫",
+          "On an olive-green leather armchair, an orange book on a navy one, a cloud-shaped hinoki coaster and a glass cup of goldfish tea on top, the tea casting a glow on the orange cover; an orange abstract painting leans against the wall behind"), 1856, 2304),
       },
       {
         id: "leather",
