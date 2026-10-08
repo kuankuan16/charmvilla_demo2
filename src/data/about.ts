@@ -56,8 +56,10 @@ export const getAbout = (lang: Locale) => {
         // photograph about-installation-2k.webp (CV-0215) stays in the repo
         // 01 (user 2026-10-07: 「到桌面『品牌與展覽』裡面重新生成高品質、商業攝影的素材搭配」): the booth generated from the folder's one
         // photograph, the Songbird series panel (IMG_1319), in the site's light; the sofa scene about-scene-01-giftbox-sofa.webp stays in the repo
-        image: site("about-scene-01-exhibition-panel.webp", t("設計展的展位：白色看板上三根墨畫的鳥羽與直排小字「小鳥兒系列／鳥羽 創作／手繪 蘇靜媚」，底下金色 CHARM VILLA；看板前一朵白荷花，淺木檯座上放著團圓禮盒與一杯玻璃杯小金魚茶", "A design-fair booth: a white panel with three ink-painted feathers, a column of small characters naming the Songbird series and the hand-drawn work by Su Ching-mei, and CHARM VILLA in gold; a white lotus before it, and on a pale wooden plinth the Reunion gift box and a glass cup of goldfish tea"), 1856, 2304),
-        placeholder: true, // a grey block for now (user 2026-10-07: 「用灰色塊先取代」); the image above stays on file
+        // the brand's own photograph of its paper-goldfish installation (341.JPG), re-shot as a 2K studio image by Nano Banana 2.1 with the
+        // composition kept (user 2026-10-08: 「用 Higgsfield…enhance，把它變成是…更有質感的 studio shot，然後 2K 的 image。放進官網」); it replaces
+        // the grey block of 2026-10-07. The design-fair booth photograph (about-scene-01-exhibition-panel.webp) stays on file.
+        image: site("about-scene-01-paper-goldfish-exhibition.webp", t("展場裡懸著一群白色薄紙摺的小金魚，前景一尾虛化、中景的摺痕與魚鰭清楚；背景是藍色墨染的板子與黑色反光地面", "A shoal of white tissue-paper goldfish hung in an exhibition, one blurred in the foreground and the folds and fins of the others sharp; behind them a panel of blue ink wash and a black reflective floor"), 2528, 1696),
       },
       {
         id: "goldfish", index: "02", side: "left",

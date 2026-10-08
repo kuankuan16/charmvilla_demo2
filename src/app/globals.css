@@ -1307,24 +1307,32 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* ===== 茶款介紹 + 美好的沖泡方式 after bramwel-service-template.webflow.io (user 2026-10-08): its "Expertise Behind Bramwel" screen holds the teas,
    its "Comprehensive capabilities…" screen the brewing steps, in that order (「最後將這兩屏順序顛倒」). Bramwel's type is copied to the pixel
    (「文字的大小樣式我都要一模一樣去模仿」): h02 64 / 48 / 45 / 30 px, h04 48 / 35 / 37 / 23, h05 32 / 26 / 23 / 18, h06 18 / 16 / 18 / 15, bs 14,
-   all 500 for headings and 400 for text, line-height 1.1em (headings) 1.2em (text), letter-spacing −0.04em on headings — at desktop /
-   ≤991 / ≤767 / ≤479. Its wine ground becomes the leather brown the user asked for (「背景色我要用皮革的咖啡色」); its text colours stay:
-   base #fcf7f1, gray-100 #d5d5d5. Square corners except bramwel's own 2–4px radii, which are kept as measured. */
-.tea-sheet { --bw-brown: #3b2418; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: #6b6f45; }
+   all 500 for headings and 400 for text, line-height 1.1em (headings), letter-spacing −0.04em on headings — at desktop / ≤991 / ≤767 / ≤479.
+   Its 14px/1.2 texts became 16px/1.6 the same day (「文字可以大一點點…行距要開一點」). Both screens stand on the stores' cream ground with
+   white cards, as the text pages do (first the leather brown 「皮革的咖啡色」, then 「茶款介紹跟『美好的沖泡方式』都用門市一樣的奶黃背景色」);
+   only the olive cover of a tea card keeps bramwel's cream text. Square corners except bramwel's own 2–4px radii, which are kept as measured. */
+.tea-sheet { --bw-ground: #efeee8; --bw-text: #5a5a5a; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: #6b6f45; }
 .bw-label { display: flex; align-items: center; gap: 10px; }
 .bw-label-dot { width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
 .bw-bxs { font-size: 14px; line-height: 1.2em; font-weight: 400; }
 .bw-mask { display: block; overflow: hidden; }
 .bw-mask-in { display: block; transition: transform .5s cubic-bezier(.87, 0, .13, 1); }
 
-/* --- the teas: a 500vh run; the heading block, then the sticky 100vh screen --- */
-.teakind-sticky { position: relative; height: 500vh; margin: clamp(56px, 6vw, 96px) calc(-1 * var(--page-gutter)) 0; }
-.teakind-head { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 0 var(--page-gutter) 60px; color: var(--color-ink); }
+/* --- the teas: the curtain, then a 500vh run on the cream ground — the heading block, then the sticky 100vh screen. bramwel's curtain
+   (five blocks rising from the page's ground as the run arrives) stands at its top (user 2026-10-08: 「這個效果要放在茶種那邊」). --- */
+.bw-curtain { padding-top: 80px; margin: 0 calc(-1 * var(--page-gutter)); }
+.bw-curtain-blocks { display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; height: 200px; }
+.bw-curtain-block { display: block; height: 0; background: var(--bw-ground); }
+.teakind-sticky { position: relative; height: 500vh; margin: 0 calc(-1 * var(--page-gutter)); padding-top: 80px; background: var(--bw-ground); color: var(--color-ink); }
+.teakind-head { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 0 var(--page-gutter) 60px; }
 .teakind-h02 { font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; text-align: center; }
-.teakind-section { position: sticky; top: 0; height: 100vh; padding-top: var(--header-h); overflow: hidden; background: var(--color-page); }
+.teakind-section { position: sticky; top: 0; height: 100vh; padding-top: var(--header-h); overflow: hidden; background: var(--bw-ground); }
 .teakind-wrap { display: flex; flex-direction: column; justify-content: center; height: 100%; }
 .teakind-main { display: flex; gap: 64px; width: max-content; will-change: transform; }
 .teakind-pad { flex: none; }
+/* a card at rest is text alone on its olive cover — the tea's name and its note; the photograph underneath shows when the cover's five
+   blocks lift on hover (user 2026-10-08: 「一開始是文字而已，hover 的時候才會出現圖」「標題要跟裡面的茶種名稱一樣」「詳細的文字介紹放在一開始的
+   列表上面」). Below 992px there is no hover: the photograph and its text show and the cover is gone. */
 .teakind-card { position: relative; width: 400px; height: 520px; border-radius: 4px; overflow: hidden; background: var(--color-field); }
 .teakind-img-para { position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; padding: 32px; color: var(--bw-base); }
 .teakind-img { position: absolute; inset: 0; }
@@ -1333,19 +1341,20 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .teakind-missing span { font-size: 13px; letter-spacing: .14em; color: var(--color-stone-deep); }
 .teakind-para { position: relative; display: flex; flex-direction: column; gap: 12px; }
 .teakind-h06 { font-size: 18px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; }
-.teakind-bs { font-size: 14px; line-height: 1.2em; color: var(--bw-gray); }
-.teakind-hover { position: absolute; inset: 0; padding: 32px; pointer-events: none; }
+.teakind-bs { font-size: 16px; line-height: 1.6; color: var(--bw-gray); }
+.teakind-cover { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 32px; pointer-events: none; }
 .teakind-blocks { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
-.teakind-block { display: block; height: 100%; background: var(--bw-olive); transform-origin: top; transform: scaleY(0); transition: transform .5s cubic-bezier(.87, 0, .13, 1); }
+.teakind-block { display: block; height: 100%; background: var(--bw-olive); transform-origin: top; transform: scaleY(1); transition: transform .5s cubic-bezier(.87, 0, .13, 1); }
 .teakind-h05 { position: relative; font-size: 32px; line-height: 1.2em; font-weight: 500; letter-spacing: -.04em; color: var(--bw-base); }
-.teakind-h05 .bw-mask-in { transform: translateY(-2em); }
+.teakind-cover-text { position: relative; font-size: 16px; line-height: 1.6; color: var(--bw-base); }
 @media (hover: hover) and (min-width: 992px) {
-  .teakind-card:hover .teakind-block { transform: scaleY(1); }
-  .teakind-card:hover .teakind-h05 .bw-mask-in { transform: translateY(0); transition-delay: .3s; }
-  .teakind-card:hover .teakind-h06 .bw-mask-in { transform: translateY(1.1em); transition-delay: .1s; }
-  .teakind-card:hover .teakind-bs .bw-mask-in { transform: translateY(2.2em); }
+  .teakind-para .bw-mask-in { transform: translateY(110%); }
+  .teakind-card:hover .teakind-block { transform: scaleY(0); }
+  .teakind-card:hover .teakind-h05 .bw-mask-in { transform: translateY(-110%); }
+  .teakind-card:hover .teakind-cover-text .bw-mask-in { transform: translateY(110%); }
+  .teakind-card:hover .teakind-para .bw-mask-in { transform: translateY(0); transition-delay: .3s; }
 }
-@media (max-width: 991px) { .teakind-hover { display: none; } }
+@media (max-width: 991px) { .teakind-cover { display: none; } }
 @media (max-width: 767px) { .teakind-card { width: 380px; height: 480px; } }
 @media (max-width: 479px) { .teakind-main { gap: 46px; } .teakind-card { width: 320px; height: 420px; } .teakind-head { padding-bottom: 0; } }
 @media (prefers-reduced-motion: reduce) {
@@ -1354,36 +1363,33 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .teakind-wrap { overflow-x: auto; padding: 40px var(--page-gutter); }
 }
 
-/* --- the brewing steps: the curtain, then the 300vh run of the sticky leather-brown screen --- */
-.brewcap-curtain { padding-top: 80px; margin: 0 calc(-1 * var(--page-gutter)); }
-.brewcap-blocks { display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; height: 200px; }
-.brewcap-block { display: block; height: 0; background: var(--bw-brown); }
+/* --- the brewing steps: the 300vh run of the sticky screen on the cream ground; the cards are white blocks, as on the text pages --- */
 .brewcap-sticky { position: relative; height: 300vh; margin: 0 calc(-1 * var(--page-gutter)); }
-.brewcap-section { position: sticky; top: 0; height: 100vh; padding: calc(var(--header-h) + 40px) 40px 0; overflow: hidden; background: var(--bw-brown); color: var(--bw-base); } /* bramwel's 40px plus the site's fixed header, so the title clears it */
+.brewcap-section { position: sticky; top: 0; height: 100vh; padding: calc(var(--header-h) + 40px) var(--page-gutter) 0; overflow: hidden; background: var(--bw-ground); color: var(--color-ink); } /* bramwel's 40px plus the site's fixed header, so the title clears it; the sides are the site's gutter (user 2026-10-08: 「左右的 padding 要跟全站的內容邊界範圍完全一樣」) */
 .brewcap-container { width: 100%; height: 100%; }
 .brewcap-content { display: flex; justify-content: space-between; height: 100%; }
 .brewcap-left { display: flex; flex-direction: column; justify-content: space-between; max-width: 600px; padding-bottom: 40px; }
-.brewcap-h02 { font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--bw-base); }
-.brewcap-para-label { display: flex; flex-direction: column; gap: 16px; max-width: 440px; color: var(--bw-base); }
-.brewcap-bs { font-size: 14px; line-height: 1.2em; font-weight: 400; color: var(--bw-gray); }
-.brewcap-bxs { font-size: 14px; line-height: 1.2em; font-weight: 400; color: var(--bw-gray); }
+.brewcap-h02 { font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
+.brewcap-para-label { display: flex; flex-direction: column; gap: 16px; max-width: 440px; color: var(--color-ink); }
+.brewcap-bs { font-size: 16px; line-height: 1.6; font-weight: 400; color: var(--bw-text); }
+.brewcap-bxs { font-size: 14px; line-height: 1.2em; font-weight: 400; color: var(--bw-text); }
 .brewcap-items { position: sticky; top: 0; align-self: flex-start; display: flex; flex-direction: column; gap: 16px; will-change: transform; }
-.brewcap-item { display: flex; flex-direction: column; justify-content: space-between; width: 680px; height: 540px; padding: 40px; border-radius: 2px; background: #ffffff0d; transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
-.brewcap-item:hover { background: #ffffff1a; }
+.brewcap-item { display: flex; flex-direction: column; justify-content: space-between; width: 680px; height: 540px; padding: 40px; border-radius: 2px; background: #fff; transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
+.brewcap-item:hover { background: #faf9f5; }
 .brewcap-item-top { display: flex; justify-content: space-between; }
 .brewcap-top-left { display: flex; gap: 20px; }
 .brewcap-top-left .brewcap-bxs { padding-top: 12px; }
-.brewcap-h04 { max-width: 250px; font-size: 48px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--bw-base); }
-.brewcap-top-right { display: flex; flex-direction: column; justify-content: center; max-width: 200px; }
+.brewcap-h04 { max-width: 250px; font-size: 48px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
+.brewcap-top-right { display: flex; flex-direction: column; justify-content: center; max-width: 260px; }
 .brewcap-item-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-.brewcap-icon { width: 200px; max-height: 240px; padding: 0 40px; color: var(--bw-base); }
+.brewcap-icon { width: 180px; max-height: 240px; color: var(--color-ink); opacity: .6; } /* bramwel's icons: thin geometric strokes at 60 %, 180px in the card */
 .brewcap-icon svg { display: block; width: 100%; height: auto; }
 .brewcap-tags { display: flex; flex: 1; justify-content: flex-end; gap: 10px; }
-.brewcap-tag { padding: 6px 12px; background: #ffffff0d; }
+.brewcap-tag { padding: 6px 12px; background: var(--bw-ground); }
 @media (min-width: 1920px) { .brewcap-h02, .teakind-h02 { font-size: 72px; } .brewcap-left { max-width: 650px; } .brewcap-item { width: 800px; } }
 @media (max-width: 991px) {
   .brewcap-sticky { height: auto; }
-  .brewcap-section { position: static; height: auto; padding: 80px 20px; }
+  .brewcap-section { position: static; height: auto; padding: 80px var(--page-gutter); }
   .brewcap-content { flex-direction: column; gap: 40px; }
   .brewcap-items { position: static; }
   .brewcap-item { width: 100%; }

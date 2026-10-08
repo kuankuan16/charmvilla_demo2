@@ -1,11 +1,11 @@
 "use client";
 // 美好的沖泡方式 after the "Comprehensive capabilities for enterprise growth" screen of bramwel-service-template.webflow.io (user 2026-10-08:
-// 「背景色我要用皮革的咖啡色」「右邊的的 4 張卡片改為 5 張卡片介紹目前官網的沖泡方式」「icon 就用現在畫的沖泡 icon 去取代」「文字的大小樣式我都要一模一樣去模仿」):
-// five curtain blocks rise to 40 / 70 / 100 / 70 / 40 % as the screen arrives (scrub 0.8), then a 300vh sticky run of a 100vh leather-brown
-// screen — the 64px heading, the label and the 14px paragraph at the left, the stack of 680 × 540 cards at the right sliding up −65% over
-// the run; each card: the number and the 48px step name at the top left, the 14px text at the top right, the step's line icon at the bottom
-// left, two tags at the bottom right; the card's tint deepens on hover (0.6s sine.inOut). Bramwel's Inter sizes are kept to the pixel; the
-// screen's ground is the leather brown. Below 992px the screen stops being sticky and the cards stack in a column.
+// 「右邊的的 4 張卡片改為 5 張卡片介紹目前官網的沖泡方式」「文字的大小樣式我都要一模一樣去模仿」「icon 照這個風格…重新畫一遍像似的」): a 300vh
+// sticky run of a 100vh screen on the stores' cream ground (first bramwel's wine as the leather brown 「皮革的咖啡色」, then 「都用門市一樣的奶黃
+// 背景色」) — the 64px heading, the label and the paragraph at the left, the stack of 680 × 540 white cards at the right sliding up −65% over
+// the run; each card: the number and the 48px step name at the top left, the text at the top right, the step's geometric line icon at the
+// bottom left, two tags at the bottom right; the card's tint deepens on hover (0.6s sine.inOut). The sides are the site's gutter. Bramwel's
+// curtain now stands above 茶款介紹 (TeaKinds), which comes first. Below 992px the screen stops being sticky and the cards stack in a column.
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,20 +15,15 @@ gsap.registerPlugin(ScrollTrigger);
 export type BrewCard = { title: string; text: string; icon: ReactNode; tags: string[] };
 
 export default function BrewCapabilities({ label, title, intro, cards }: { label: string; title: string; intro: string; cards: BrewCard[] }) {
-  const curtain = useRef<HTMLDivElement>(null);
   const run = useRef<HTMLDivElement>(null);
   const stack = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const c = curtain.current, r = run.current, s = stack.current;
-    if (!c || !r || !s) return;
+    const r = run.current, s = stack.current;
+    if (!r || !s) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     ScrollTrigger.defaults({ scroller: window });
     const ctx = gsap.context(() => {
-      const blocks = Array.from(c.querySelectorAll<HTMLElement>(".brewcap-block"));
-      const heights = [40, 70, 100, 70, 40];
-      // paused tweens driven only by their scroll triggers (free-running ones would finish before the trigger takes them over)
-      gsap.timeline({ paused: true, scrollTrigger: { trigger: c, start: "clamp(top bottom)", end: "clamp(top top)", scrub: 0.8 } })
-        .to(blocks, { height: (i) => `${heights[i]}%`, duration: 1, ease: "sine.inOut" }, 0);
+      // a paused tween driven only by its scroll trigger (a free-running one would finish before the trigger takes it over)
       if (window.innerWidth > 991) gsap.fromTo(s, { yPercent: 0 }, { yPercent: -65, duration: 1, ease: "sine.inOut", paused: true,
         scrollTrigger: { trigger: r, start: "clamp(20% bottom)", end: "clamp(bottom 60%)", scrub: 0.8 } });
     }, r);
@@ -40,7 +35,6 @@ export default function BrewCapabilities({ label, title, intro, cards }: { label
   }, [cards.length]);
   return (
     <>
-      <div ref={curtain} className="brewcap-curtain" aria-hidden="true"><div className="brewcap-blocks">{[0, 1, 2, 3, 4].map((k) => <span key={k} className="brewcap-block" />)}</div></div>
       <div ref={run} className="brewcap-sticky" id="brew-title-anchor">
         <section className="brewcap-section" aria-labelledby="brew-title">
           <div className="brewcap-container">
