@@ -1390,7 +1390,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--pdp-gap, clamp(12px, 1.4vw, 24px)); align-items: start; padding: clamp(72px, 8vw, 128px) 0 clamp(64px, 7vw, 112px); } /* on the page's ground, inside the gutters (「背景效果都刪掉」「也不用另外套不一樣的背景色」) */
 .brew-process > h2 { grid-column: 1 / span 5; grid-row: 1; font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); } /* five columns: the seven characters at 64px do not fit four */
 .brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
-.brew-process-media--film { aspect-ratio: 16 / 9; } /* the sunrise film instead of the photograph (user 2026-10-08: 「改成剛剛的影片」), its whole frame */
+.brew-process-media--film { aspect-ratio: 3 / 4; } /* the sunrise film instead of the photograph (user 2026-10-08: 「改成剛剛的影片」), in a portrait frame (「影片直式４：３的比例」): the 16:9 film is cropped to its middle */
 .brew-process-media .tea-film { position: absolute; inset: 0; aspect-ratio: auto; }
 .tea-film { position: relative; aspect-ratio: 16 / 9; background: var(--color-ink); overflow: hidden; }
 .tea-film-video { display: block; width: 100%; height: 100%; object-fit: cover; }
