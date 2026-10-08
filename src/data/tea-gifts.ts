@@ -40,6 +40,7 @@ export type TeaGift = {
   journalScene?: number;   // tea-journal photo (people-free) showing this box, used as the listing image
   sceneFile?: string;      // generated listing scene in /media/site (output/tea-gift-listing-scenes-2026-09-30), used when no gallery scene exists
   journalStory?: number;   // tea-journal photo (people-free) for the product page "in everyday life" section
+  storyFile?: { file: string; alt: Bi }; // generated photo in /media/site taking journalStory's place, with its own alt text
   description: string;
   note?: string;
   /** the document's Product Notice bullets */
@@ -129,7 +130,9 @@ export const teaGifts: TeaGift[] = [
     en: { name: "A Rose Encounter", description: "The same rose takes on a different expression with each tea it meets. Three goldfish of Rose Oolong Tea and three of Rose & Honey-Scented Black Tea invite two people to begin drinking together from a single box." } },
   { officialId: 196, slug: "tea-to-share-gift-box", hidden: true, sceneFile: "scene-tea-to-share-gift-box.webp", journalStory: 311, name: "魚你分享｜茶繽紛", english: "TEA TO SHARE", series: "經典商品", pieces: 6, box: "紙盒", dimensions: "13 × 11.4 × 11.4 cm", weight: 100, contents: [rose, ruby, jinxuan, beauty, honey, fruit].map(name => count(name, 1)), description: "六款茶，各留一尾。從烏龍、紅茶到花果茶，讓同一只禮盒盛下不同的選擇，也為分享留下話題。",
     en: { name: "Tea to Share | Assorted Teas", description: "Six teas, one goldfish of each. From oolong and black tea to fruit and herbal tea, one box holds different choices and leaves something to talk about when it is shared." } },
-  { officialId: 850, slug: "spring-dawn-gift-box", journalStory: 307, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
+  // journal-307 (a white cup on a rainy window sill) gave way to the two hands holding a speckled mug of goldfish tea in low warm light
+  // (Nano Banana 2.1 after the user's reference photo, the string retouched to fall behind the far rim; user 2026-10-08: 「取代全站這張圖」)
+  { officialId: 850, slug: "spring-dawn-gift-box", storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", en: "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
     description: "CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。", en: "As dawn breaks, morning sunlight washes the sky into a soft, translucent veil. Yellow tits sing their morning song amid the golden blossoms of a trumpet tree, weaving a spring scene that invites you to linger." } },
     notice: [competitionPricing, tieDyeColors],
@@ -210,7 +213,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
     const journalAlt = t(`${name}・日常茶時情境（tea journal）`, `${name}, an everyday tea moment (tea journal)`);
     const sceneAlt = t(`${name}・禮盒茶席情境`, `${name}, the gift box at a tea table`);
     const journalScene = gift.journalScene ? site(`journal-${gift.journalScene}.webp`, journalAlt) : undefined;
-    const journalStory = gift.journalStory ? site(`journal-${gift.journalStory}.webp`, journalAlt) : undefined;
+    const journalStory = gift.storyFile ? site(gift.storyFile.file, lt(gift.storyFile.alt)) : gift.journalStory ? site(`journal-${gift.journalStory}.webp`, journalAlt) : undefined;
     const generated = gift.sceneFile ? site(gift.sceneFile, sceneAlt) : undefined;
     const image = gift.scene ? gallery(gift.scene, sceneAlt) : generated ?? journalScene ?? official;
     const contents = gift.choices
