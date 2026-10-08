@@ -29,6 +29,8 @@ export type TeaGift = {
   choices?: { label: string; contents: TeaContents; price?: number }[];
   /** lid colours sold with every tea choice (春曉 Blue/Pink, 蝴蝶蘭 Gold/Pink): each tea × lid is a Shopify variant */
   lid?: Bi[];
+  /** studio views of a lid colour that has its own photographs (春曉 pink: cover + end angle; the unboxed view is shared), by lid index */
+  lidViews?: Record<number, { cover: string; angle: string }>;
   /** packaging options with the same contents and price (團圓 Gold/Pink/Blue) */
   packaging?: { label: Bi; text: Bi; viewsFrom?: string; placeholderViews?: number }[];
   /** the US list price in USD (the lowest option); a box without it is priced from the Taiwan store (official-prices.json, TWD) */
@@ -132,7 +134,9 @@ export const teaGifts: TeaGift[] = [
     en: { name: "Tea to Share | Assorted Teas", description: "Six teas, one goldfish of each. From oolong and black tea to fruit and herbal tea, one box holds different choices and leaves something to talk about when it is shared." } },
   // journal-307 (a white cup on a rainy window sill) gave way to the two hands holding a speckled mug of goldfish tea in low warm light
   // (Nano Banana 2.1 after the user's reference photo, the string retouched to fall behind the far rim; user 2026-10-08: 「取代全站這張圖」)
-  { officialId: 850, slug: "spring-dawn-gift-box", storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", en: "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
+  // 春曉粉紅盒蓋的商品圖（使用者 2026-10-08：「粉紅色版封面…根據目前官網的商品圖生成 2 張商品圖，第 3 張共用 12 入的圖」）：以藍色盒蓋的封面與斜角圖
+  // 為底、只換布色（粉紅＋淡黃紮染）與緞帶色（淡粉），刺繡與金字不動（Nano Banana 2.1，照使用者的實拍）；選到粉紅盒蓋時商品圖切換成這組
+  { officialId: 850, slug: "spring-dawn-gift-box", lidViews: { 1: { cover: "studio-spring-dawn-gift-box-pink-cover.webp", angle: "studio-spring-dawn-gift-box-pink-end-angle.webp" } }, storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", en: "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
     description: "CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。", en: "As dawn breaks, morning sunlight washes the sky into a soft, translucent veil. Yellow tits sing their morning song amid the golden blossoms of a trumpet tree, weaving a spring scene that invites you to linger." } },
     notice: [competitionPricing, tieDyeColors],
@@ -234,7 +238,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
     // What the bag button offers: each tea × lid colour (the Shopify variants), each packaging option, or each tea
     const bagChoices = gift.packaging
       ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount, note: lt(p.text), viewsFrom: p.viewsFrom, placeholderViews: p.placeholderViews })) // the text shows under the chooser once chosen (user 2026-10-07: 「可以精簡呈現在這區」), no longer a specification row
-      : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map(l => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price })));
+      : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map((l, li) => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price, lidViews: l ? gift.lidViews?.[li] : undefined })));
     const choiceLabel = gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("選擇茶款（每盒擇一）", "Choose your tea");
     return {
       slug: gift.slug, category: "tea", name, english: gift.english,
