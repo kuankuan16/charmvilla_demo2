@@ -47,7 +47,15 @@ export default async function ProductPage({ params }: Props) {
   const category = getCategory(product.category, lang)!;
   const siblings = getCategoryProducts(product.category, lang);
   const variants = product.variant ? all.filter((p) => p.variant?.group === product.variant?.group) : [];
-  const scenes = product.scenes ?? [];
+  const allScenes = product.scenes ?? [];
+  // Tea gift boxes close with the two photographs every box shares — two people at the black oak table, the hands and the mug — as the
+  // two small images of a spread of their own (user 2026-10-08: 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」); the box's own last
+  // scene is that spread's large image when the box has more than one, so the pair never shows large. They leave the automatic split below.
+  const SHARED = ["/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"];
+  const sharedSmalls = product.category === "tea" ? SHARED.map((src) => allScenes.find((img) => img.src === src)).filter((x): x is Img => Boolean(x)) : [];
+  const own = sharedSmalls.length === 2 ? allScenes.filter((img) => !SHARED.includes(img.src)) : allScenes;
+  const sharedLarge = sharedSmalls.length === 2 && own.length >= 2 ? own[own.length - 1] : undefined;
+  const scenes = sharedLarge ? own.slice(0, -1) : own;
   // Portrait and square photographs are framed 4:5, landscape ones 3:2, very wide ones keep their own proportion.
   const shapeOf = (img: Img) => (img.w / img.h > 1.9 ? "banner" : img.w / img.h > 1.15 ? "wide" : "tall");
   const frameOf = (img: Img) => ({ banner: `${img.w} / ${img.h}`, wide: "3 / 2", tall: "4 / 5" })[shapeOf(img)];
@@ -74,10 +82,23 @@ export default async function ProductPage({ params }: Props) {
   // its second titled text (紫斑蝶) and the tea awards are rows of the specifications below. How to brew (tea gift boxes except the fruit &
   // herbal tea box; guide §4) sits where the story used to — beside the large photograph, or in the column — in the story's type
   // (user 2026-10-07: 「沖泡方式改放在故事的位置」).
-  const storyRows = [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
+  const storyInColumn = product.category === "tea";
+  const storyRows = storyInColumn ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
   // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
   // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
   const sideText = null;
+  // Tea gift boxes (user 2026-10-08, with the STINA page's "Teil derselben Kollektion" block: 「都放下面一點的排序」「像這樣呈現」): the story
+  // leaves the specifications and sits at the foot of the column as that block — the title in ink and the text in grey at one size, a
+  // blank line between — with the column's first scene photograph 80px under it; its second titled text (紫斑蝶) follows in the same type.
+  // The two photographs every tea box shares (two people at the black oak table, the hands and the mug) close the page as the two small
+  // images of a spread (「這２張共用，而且都是小圖呈現」).
+  const storyBlock = storyInColumn && <div className="product-story-block">
+    <div className="product-story-text">
+      <h2 className="tc">{product.story.title}</h2>
+      {paragraphs(product.story.body, "s")}
+      {product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}
+    </div>
+  </div>;
   const teaPages = product.category === "tea" && <TeaPages product={product} t={t} />;
   // Specifications under the button, in their own section (user 2026-10-05: the reference's spacing and type, 「按鈕移到規格上面」;
   // facts only — 「不寫形容文案，清楚呈現商品規格與內容物等消費者必須要第一時間知道的訊息」).
@@ -163,6 +184,7 @@ export default async function ProductPage({ params }: Props) {
         </div>} caption={caption}>
         {specs}
         {!pair && !textAboveSmalls && sideText}
+        {storyBlock}
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery></ProductOptionProvider>
       {editorial}
@@ -176,6 +198,10 @@ export default async function ProductPage({ params }: Props) {
       </section>)}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
         {rowScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes={shapeOf(img) === "tall" ? "(min-width:768px) 31vw, 100vw" : "(min-width:768px) 46vw, 100vw"} /></figure>)}
+      </section>}
+      {sharedSmalls.length === 2 && <section className={`product-spread product-spread--shared${sharedLarge ? "" : " is-smalls-only"}`} aria-label={t("情境照", "In use")}>
+        <div className="product-spread-smalls">{sharedSmalls.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
+        {sharedLarge && <figure className="scene-fig product-spread-large" data-shape={shapeOf(sharedLarge)} style={{ aspectRatio: frameOf(sharedLarge) }}><Picture img={sharedLarge} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>}
       </section>}
       {teaPages}
       <section className="product-related" aria-labelledby="related-title"><div className="product-related-heading"><h2 id="related-title" className="tc">{t("繼續觀看", "Explore more pieces")}</h2></div><div className="catalog-grid">{related.map((p, i) => <ProductCard key={p.slug} product={p} index={i} lang={lang} />)}</div></section>

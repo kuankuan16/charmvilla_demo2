@@ -322,6 +322,17 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Specifications: their own section under the button — a bold heading, then rows of bold dark labels and grey values,
    15px type on ~56px rows between hairlines, as in the reference */
 .product-more > .product-specs { margin-bottom: clamp(24px, 2.4vw, 40px); }
+/* The story at the foot of the column, in the type of the STINA page's "Teil derselben Kollektion" block (user 2026-10-07 with a screenshot:
+   「所有這個文字都抽出來。像這樣處理」; 2026-10-08 with the hands-and-mug photograph: 「都放下面一點的排序」「像這樣呈現」): title and text at one
+   size — the reference's 16px — the title in ink, a blank line, the text in grey; no heading size, no rule, no label column; the
+   column's next photograph 80px under the text. */
+.product-story-block { display: flex; flex-direction: column; margin-top: clamp(32px, 3.6vw, 56px); }
+.product-story-text { min-width: 0; font-size: 16px; line-height: 1.7; color: var(--color-stone-deep); }
+.product-story-text:lang(en) { line-height: 1.5; }
+.product-story-text h2, .product-story-text h3 { margin: 0; font-size: inherit; font-weight: inherit; line-height: inherit; color: var(--color-ink); }
+.product-story-text p { margin: 0; }
+.product-story-text h2 + p, .product-story-text h3 + p, .product-story-text p + p, .product-story-text .product-story-more { margin-top: 1.7em; margin-top: 1lh; }
+.product-story-block + .scene-fig { margin-top: clamp(40px, 5.6vw, 80px); } /* the reference's 80px from the text to the photograph under it */
 .product-specs h2 { margin: 0 0 18px; font-size: 23px; font-weight: 500; line-height: 1.4; }
 .product-keyfacts > div { display: grid; grid-template-columns: minmax(5.5em, 26%) 1fr; gap: 16px; border-top: 1px solid rgb(31 31 31 / .14); padding: 17px 0; font-size: 17px; line-height: 1.5; }
 .product-keyfacts > div:last-child { border-bottom: 1px solid rgb(31 31 31 / .14); }
@@ -393,9 +404,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* 文案加兩張小圖是一組：寬度只到兩張圖；起點高度和藍包頁的文案區塊一樣（使用者 2026-10-06） */
 .product-spread-smalls.is-centered { align-self: start; align-content: start; padding-top: clamp(56px, 10.6vw, 153px); }
 .product-spread-large { grid-column: 7 / span 6; }
-.product-story-text { min-width: 0; }
-.product-story-text h2 { font-size: clamp(23px, 1.85vw, 31px); font-weight: 500; line-height: 1.5; text-wrap: balance; }
-.product-story-text p { margin-top: 12px; font-size: 17px; line-height: 2.05; }
+/* the two photographs every tea box shares, small, with the box's own last scene large at the right — or alone at the left when the box
+   has no scene to spare (user 2026-10-08: 「這２張共用，而且都是小圖呈現」) */
+.product-spread--shared.is-smalls-only .product-spread-smalls { position: static; }
 .product-awards { display: flex; gap: 26px; align-items: center; margin-top: 26px; }
 .product-awards img { width: 78px; height: 48px; object-fit: contain; }
 .product-related h2 { font-size: clamp(23px, 1.85vw, 31px); font-weight: 500; line-height: 1.5; }

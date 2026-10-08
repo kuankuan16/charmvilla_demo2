@@ -335,8 +335,9 @@ const buildCatalog = (lang: Locale) => {
   // 兩人喝茶的氛圍照（黑橡木圓桌、畫冊、兩杯玻璃杯小金魚茶；Nano Banana 2.1，照使用者給的五張攝影風格參考生成）：每個茶葉禮盒商品頁的
   // 情境照最後一張（使用者 2026-10-07：「放到情境照」「商品內容頁」）
   const twoPeopleTea = site("scene-two-people-tea-black-oak-table.webp", t("黑橡木圓桌上翻開的畫冊旁，兩杯玻璃杯泡的小金魚茶，一隻手拿著近處的杯子，對面另一個人的手靠著第二杯；後方是橄欖綠沙發", "Two glass cups of goldfish tea beside an open art book on a black oak table, one hand holding the near cup and another person's hand by the second; an olive sofa behind"), 1856, 2304);
-  // 雙手捧米白斑點陶杯的小金魚茶照（春曉的故事照；Nano Banana 2.1，照使用者的參考照光影加入茶包）也放到每個茶葉禮盒商品頁，排在兩人喝茶照之後
-  // （使用者 2026-10-08：「這張加入所有茶類的內容頁」）；春曉頁已有它當故事照，去重後只出現一次
+  // 雙手捧米白斑點陶杯的小金魚茶照（Nano Banana 2.1，照使用者的參考照光影加入茶包）：和兩人喝茶照一起是每個茶葉禮盒商品頁共用的最後
+  // 兩張情境照，兩張都以小圖呈現 — 頁尾「兩小一大」的那兩張小圖，大圖是該款自己的情境照（使用者 2026-10-08：「這張加入所有茶類的內容頁」,
+  // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
   const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves"), 1856, 2304);
   for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
   // 橄欖綠沙發旁的核桃木桌那張（盒子已換成松針盒）也放進商品頁，排在木桌光影之後（使用者 2026-10-07：「放上商品圖的內容頁」）
