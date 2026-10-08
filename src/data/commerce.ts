@@ -126,7 +126,7 @@ const build = (lang: Locale) => {
   const privacy: PolicyDoc = {
     title: t("隱私權政策", "Privacy Policy"),
     updated: t("最後更新：2026 年 6 月 13 日", "Last Updated: Jun 13, 2026"),
-    intro: t("本隱私權政策說明 Charm Villa（「我們」）在您造訪本網站（「本站」）或於本站購物時，如何蒐集、使用與揭露您的個人資料。", "This Privacy Policy describes how Charm Villa (\"we\", \"us\", or \"our\") collects, uses, and discloses your Personal Information when you visit or make a purchase from our website (the \"Site\")."),
+    intro: t("本隱私權政策說明 Charm Villa 在您造訪本網站或於本站購物時，如何蒐集、使用與揭露您的個人資料。", "This Privacy Policy describes how Charm Villa (\"we\", \"us\", or \"our\") collects, uses, and discloses your Personal Information when you visit or make a purchase from our website (the \"Site\")."),
     sections: [
       { id: "platform", heading: t("1. 資料的蒐集與儲存（我們的平台）", "1. How We Collect and Store Data (Our Platform)"), blocks: [
         t("我們使用 Shopify 作為後端電子商務平台，並透過其 API 連接。我們不會將您的付款或個人資料直接儲存在自己的實體伺服器上；您的資料會安全地傳送至 Shopify 並由其處理，Shopify 作為我們的資料處理者，協助我們營運商店。關於 Shopify 如何使用您的個人資料，請見 www.shopify.com/legal/privacy。", "We use Shopify as our backend e-commerce platform and connect to it via their API. We do not directly store your payment or personal data on our own physical servers. Instead, your data is securely transmitted to and processed by Shopify, which acts as our data processor to help us run our store. You can read more about how Shopify uses your Personal Information here: www.shopify.com/legal/privacy."),

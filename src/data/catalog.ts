@@ -331,7 +331,7 @@ const buildCatalog = (lang: Locale) => {
   // （腰封上的 M 壞掉）與深咖啡枯木那張（scene-reunion-paper-gift-box-driftwood.webp，使用者：「刪」；檔案留著，首頁茶葉禮盒的格子還在用）
   // 團圓（美國版）的情境照：gallery.charmvilla.com 品牌素材 CV-0445「金色禮盒與小金魚茶包｜木桌光影」（使用者 2026-10-07：「用這張情境圖」）——
   // 芥末黃松針盒配玻璃杯小金魚茶，和現在的盒子一致。橘盒的橄欖綠沙發照（scene-reunion-paper-gift-box-olive-sofa-pouch.webp）只留給首頁輪播
-  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-oak-table-light.webp", t("淺色橡木桌上的斜陽與樹影，團圓禮盒的芥末黃松針盒蓋，旁邊一杯雙層玻璃杯泡的小金魚茶與金色茶標籤", "Slanting sun and leaf shadows on a pale oak table: the Reunion box's mustard lid with pine sprigs, and beside it goldfish tea in a double-walled glass cup with its gold tag"), 1536, 1024)];
+  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-walnut-olive-chair-portrait.webp", t("赭橘色牆前的胡桃木圓桌，團圓禮盒的桐木盒與芥末黃松針盒蓋平放在斜陽裡，前方一杯雙層玻璃杯泡的小金魚茶與金色 CHARM VILLA 茶標籤，後方是橄欖綠毛圈扶手椅與一幅深藍畫", "On a round walnut table before a burnt-orange wall, the Reunion paulownia box with its mustard pine-sprig lid lies in low sun; in front, a double-walled glass of goldfish tea with its gold CHARM VILLA tag; an olive bouclé armchair and a navy painting behind"), 1856, 2304)];
   // 兩人喝茶的氛圍照（黑橡木圓桌、畫冊、兩杯玻璃杯小金魚茶；Nano Banana 2.1，照使用者給的五張攝影風格參考生成）：每個茶葉禮盒商品頁的
   // 情境照最後一張（使用者 2026-10-07：「放到情境照」「商品內容頁」）
   const twoPeopleTea = site("scene-two-people-tea-black-oak-table.webp", t("黑橡木圓桌上翻開的畫冊旁，兩杯玻璃杯泡的小金魚茶，一隻手拿著近處的杯子，對面另一個人的手靠著第二杯；後方是橄欖綠沙發", "Two glass cups of goldfish tea beside an open art book on a black oak table, one hand holding the near cup and another person's hand by the second; an olive sofa behind"), 1856, 2304);
@@ -482,7 +482,7 @@ const buildCatalog = (lang: Locale) => {
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
     // 沙發那張排第一，所以它也是卡片的 hover 圖（使用者 2026-10-07：「hover 換這張」）
     // the hands-and-mug photograph (2026-10-08) listed last, so an unlisted scene never sorts ahead of the sofa photograph that is the hover
-    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"],
+    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-walnut-olive-chair-portrait.webp", "/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
