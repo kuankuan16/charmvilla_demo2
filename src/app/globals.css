@@ -1341,12 +1341,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    its "Comprehensive capabilities…" screen the brewing steps, in that order (「最後將這兩屏順序顛倒」). Bramwel's type is copied to the pixel
    (「文字的大小樣式我都要一模一樣去模仿」): h02 64 / 48 / 45 / 30 px, h04 48 / 35 / 37 / 23, h05 32 / 26 / 23 / 18, h06 18 / 16 / 18 / 15, bs 14,
    all 500 for headings and 400 for text, line-height 1.1em (headings), letter-spacing −0.04em on headings — at desktop / ≤991 / ≤767 / ≤479.
-   Its 14px/1.2 texts became 16px/1.6 the same day (「文字可以大一點點…行距要開一點」). Both screens stand on the stores' cream ground with
-   white cards, as the text pages do (first the leather brown 「皮革的咖啡色」, then 「茶款介紹跟『美好的沖泡方式』都用門市一樣的奶黃背景色」);
-   only the olive cover of a tea card keeps bramwel's cream text. Square corners except bramwel's own 2–4px radii, which are kept as measured. */
-/* both screens' ground went white the same evening (user 2026-10-08: 「這區塊改白色，下面的美好的泡茶也是」), so the brewing cards took the
-   stores' cream instead and their tags went white */
-.tea-sheet { --bw-ground: #fff; --bw-card: #efeee8; --bw-text: #5a5a5a; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: #6b6f45; }
+   Its 14px/1.2 texts became 16px/1.6 the same day (「文字可以大一點點…行距要開一點」). The grounds were the stores' cream, then white
+   (「這區塊改白色，下面的美好的泡茶也是」). The bramwel brewing screen itself lasted one evening: 美好的沖泡方式 went back to the rooferplus
+   rail (see .brew-process below), so only 茶款介紹 is bramwel's now; the olive cover of a tea card keeps bramwel's cream text. */
+.tea-sheet { --bw-ground: #fff; --bw-card: #efeee8; --bw-text: #5a5a5a; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: var(--color-bronze); /* was the olive #6b6f45 (「綠色也是改成金色」) */ }
 .bw-label { display: flex; align-items: center; gap: 10px; }
 .bw-label-dot { width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
 .bw-bxs { font-size: 14px; line-height: 1.2em; font-weight: 400; }
@@ -1395,58 +1393,75 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .teakind-wrap { overflow-x: auto; padding: 40px var(--page-gutter); }
 }
 
-/* --- the brewing steps: the 300vh run of the sticky screen on the cream ground; the cards are white blocks, as on the text pages --- */
-.brewcap-sticky { position: relative; height: 300vh; margin: 0 calc(-1 * var(--page-gutter)); }
-.brewcap-section { position: sticky; top: 0; height: 100vh; padding: calc(var(--header-h) + 40px) var(--page-gutter) 0; overflow: hidden; background: var(--bw-ground); color: var(--color-ink); } /* bramwel's 40px plus the site's fixed header, so the title clears it; the sides are the site's gutter (user 2026-10-08: 「左右的 padding 要跟全站的內容邊界範圍完全一樣」) */
-.brewcap-container { width: 100%; height: 100%; }
-.brewcap-content { display: flex; justify-content: space-between; height: 100%; }
-.brewcap-left { display: flex; flex-direction: column; justify-content: space-between; max-width: 600px; padding-bottom: 40px; }
-.brewcap-h02 { font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
-.brewcap-para-label { display: flex; flex-direction: column; gap: 16px; max-width: 440px; color: var(--color-ink); }
-.brewcap-bs { font-size: 16px; line-height: 1.6; font-weight: 400; color: var(--bw-text); }
-.brewcap-bxs { font-size: 14px; line-height: 1.2em; font-weight: 400; color: var(--bw-text); }
-.brewcap-items { position: sticky; top: 0; align-self: flex-start; display: flex; flex-direction: column; gap: 16px; will-change: transform; }
-.brewcap-item { display: flex; flex-direction: column; justify-content: space-between; width: 680px; height: 540px; padding: 40px; border-radius: 2px; background: var(--bw-card); transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
-.brewcap-item:hover { background: #e8e6de; }
-.brewcap-item-top { display: flex; justify-content: space-between; }
-.brewcap-top-left { display: flex; gap: 20px; }
-.brewcap-top-left .brewcap-bxs { padding-top: 12px; }
-.brewcap-h04 { max-width: 250px; font-size: 48px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
-.brewcap-top-right { display: flex; flex-direction: column; justify-content: center; max-width: 260px; }
-.brewcap-item-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-.brewcap-icon { width: 180px; max-height: 240px; color: var(--color-ink); opacity: .6; } /* bramwel's icons: thin geometric strokes at 60 %, 180px in the card */
-.brewcap-icon svg { display: block; width: 100%; height: auto; }
-.brewcap-tags { display: flex; flex: 1; justify-content: flex-end; gap: 10px; }
-.brewcap-tag { padding: 6px 12px; background: #fff; }
-@media (min-width: 1920px) { .brewcap-h02, .teakind-h02 { font-size: 72px; } .brewcap-left { max-width: 650px; } .brewcap-item { width: 800px; } }
-@media (max-width: 991px) {
-  .brewcap-sticky { height: auto; }
-  .brewcap-section { position: static; height: auto; padding: 80px var(--page-gutter); }
-  .brewcap-content { flex-direction: column; gap: 40px; }
-  .brewcap-items { position: static; }
-  .brewcap-item { width: 100%; }
-  .brewcap-h04 { max-width: none; font-size: 35px; }
-  .brewcap-h02, .teakind-h02 { font-size: 48px; }
-  .teakind-h05 { font-size: 26px; } .teakind-h06 { font-size: 16px; }
-  .brewcap-icon { width: 160px; }
+/* --- 美好的沖泡方式: back to rooferplus.webflow.io's process timeline (user 2026-10-08: 「改回這個效果」, with its Step badge and bold title kept
+   「保留這個設計」 and the step's icon at the right 「icon 在紅圈處」): the title at the top left, the photograph at the bottom left, the steps at
+   the right on a hairline rail that fills in bronze as the page scrolls (lib/motion/animations.ts, brew-process); each step is a row —
+   a bronze badge 「步驟 n」, under it the title at the left, the text in the middle, the line icon at the right — with a hairline under it.
+   The ground is white, like 茶款介紹 above (「下面的美好的泡茶也是」). --- */
+.brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--pdp-gap, clamp(12px, 1.4vw, 24px)); align-items: start; margin: 0 calc(-1 * var(--page-gutter)); padding: clamp(72px, 8vw, 128px) var(--page-gutter) clamp(64px, 7vw, 112px); background: var(--bw-ground); }
+.brew-process > h2 { grid-column: 1 / span 5; grid-row: 1; font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); } /* five columns: the seven characters at 64px do not fit four */
+.brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
+.brew-process > .brew-steps { grid-column: 6 / span 7; grid-row: 1 / span 2; align-self: end; }
+/* the rail: a 15px dot level with the badge's middle and, under every dot but the last, a hairline down to the next one, filled in gold by
+   brew-process (scaleY 0 → 1); unlit steps (only once that has started) show a grey dot, a white badge and a stone icon, lighting with a 0.6s
+   ease. Each step is bramwel's 680 × 540 card on the stores' cream (「這個動態效果加…卡片設計」): the gold badge and the 48px title at the top
+   left, the text at the top right, the 180px icon at the bottom left, two white tags at the bottom right; 16px between cards. The reference's
+   red is the site's gold 金咖啡色 (「紅色改成金色」). */
+.brew-steps { --brew-pad: 40px; --brew-dot-y: 18px; --brew-gap: 16px; --brew-rail: rgb(31 31 31 / .16); list-style: none; margin: 0; padding: 0; }
+.brew-steps li { position: relative; display: grid; grid-template-columns: 15px minmax(0, 1fr); column-gap: 24px; align-items: start; padding: 0 0 var(--brew-gap); }
+.brew-steps li:last-child { padding-bottom: 0; }
+.brew-rail { grid-column: 1; display: block; }
+.brew-dot { position: absolute; z-index: 1; left: 0; top: calc(var(--brew-pad) + var(--brew-dot-y) - 7.5px); width: 15px; height: 15px; border-radius: 50%; background: var(--color-bronze); transition: background-color .6s ease; }
+.brew-line { position: absolute; left: 7px; top: calc(var(--brew-pad) + var(--brew-dot-y)); width: 1px; height: 100%; background: var(--brew-rail); } /* 100 % of the row, gap included, reaches the next dot */
+.brew-line-fill { display: block; width: 100%; height: 100%; background: var(--color-bronze); }
+.brew-card { grid-column: 2; display: flex; flex-direction: column; justify-content: space-between; min-height: 540px; padding: var(--brew-pad); border-radius: 2px; background: var(--bw-card); transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
+.brew-card:hover { background: #e8e6de; }
+.brew-card-top { display: flex; justify-content: space-between; gap: 24px; }
+.brew-card-head { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.brew-step-badge { padding: 9px 14px; border-radius: 4px; background: var(--color-bronze); color: #fff; font-size: 14px; line-height: 1.3; transition: background-color .6s ease, color .6s ease, box-shadow .6s ease; }
+.brew-steps h3 { max-width: 250px; font-size: 48px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; }
+.brew-steps p { max-width: 260px; margin: 0; padding-top: 4px; font-size: 16px; line-height: 1.6; color: #5a5a5a; }
+.brew-card-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.brew-icon { display: block; width: 180px; max-height: 240px; color: var(--color-bronze); transition: color .6s ease; }
+.brew-icon svg { display: block; width: 100%; height: auto; }
+.brew-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+.brew-tag { padding: 6px 12px; background: #fff; font-size: 14px; line-height: 1.2em; color: var(--bw-text); white-space: nowrap; }
+.is-brew-animated [data-brew-step]:not(.is-active) .brew-dot { background: rgb(31 31 31 / .3); }
+.is-brew-animated [data-brew-step]:not(.is-active) .brew-step-badge { background: #fff; color: var(--color-bronze); box-shadow: inset 0 0 0 1px rgb(31 31 31 / .12); }
+.is-brew-animated [data-brew-step]:not(.is-active) .brew-icon { color: var(--color-stone); }
+@media (max-width: 1279px) and (min-width: 768px) {
+  .brew-process > h2, .brew-process-media { grid-column: 1 / span 5; }
+  .brew-card { min-height: 460px; padding: 32px; }
+  .brew-steps { --brew-pad: 32px; }
+  .brew-steps h3 { font-size: 36px; }
+  .brew-icon { width: 140px; }
 }
 @media (max-width: 767px) {
-  .brewcap-item { height: 450px; }
-  .brewcap-h04 { max-width: 200px; font-size: 37px; }
-  .brewcap-h02, .teakind-h02 { font-size: 45px; }
+  .brew-process { display: block; padding: 56px var(--page-gutter) 48px; }
+  .brew-process-media { margin: 24px 0 8px; } /* above the steps, the full width (the reference's phone layout) */
+  .brew-steps { --brew-pad: 24px; --brew-dot-y: 16px; --brew-gap: 12px; }
+  .brew-steps li { column-gap: 14px; }
+  .brew-card { min-height: 0; padding: var(--brew-pad); }
+  .brew-card-top { flex-direction: column; gap: 16px; }
+  .brew-card-head { gap: 14px; }
+  .brew-step-badge { padding: 7px 12px; font-size: 13px; }
+  .brew-steps h3 { max-width: none; font-size: 28px; }
+  .brew-steps p { max-width: none; padding-top: 0; font-size: 15px; }
+  .brew-card-bottom { margin-top: 24px; }
+  .brew-icon { width: 96px; }
+}
+@media (min-width: 1920px) { .brew-process > h2, .teakind-h02 { font-size: 72px; } }
+@media (max-width: 991px) {
+  .brew-process > h2, .teakind-h02 { font-size: 48px; }
+  .teakind-h05 { font-size: 26px; } .teakind-h06 { font-size: 16px; }
+}
+@media (max-width: 767px) {
+  .brew-process > h2, .teakind-h02 { font-size: 45px; }
   .teakind-h05 { font-size: 23px; } .teakind-h06 { font-size: 18px; }
-  .brewcap-icon { width: 140px; }
 }
 @media (max-width: 479px) {
-  .brewcap-item { height: auto; padding: 24px; }
-  .brewcap-item-top { flex-direction: column; gap: 20px; }
-  .brewcap-item-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .brewcap-top-left .brewcap-bxs { display: none; }
-  .brewcap-top-right { max-width: none; }
-  .brewcap-h04 { font-size: 23px; }
-  .brewcap-h02, .teakind-h02 { font-size: 30px; }
+  .brew-process > h2, .teakind-h02 { font-size: 30px; }
   .teakind-h05 { font-size: 18px; } .teakind-h06 { font-size: 15px; }
-  .brewcap-icon { width: 96px; padding: 0; }
 }
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
