@@ -392,14 +392,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    companion piece, an underlined 「查看商品」 link and, 88px under it, the companion's photograph two columns wide (213 × 284 there, 3:4). */
 .product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
 .product-pair-large { grid-column: 1 / span 6; }
-.product-pair-caption { grid-column: 7 / span 2; padding-top: 60px; font-size: 16px; line-height: 1.3; }
-.product-pair-caption span { display: block; }
-.product-pair-caption-sub { color: var(--color-stone-deep); }
 .product-pair-side { grid-column: 9 / span 4; min-width: 0; padding-top: 150px; }
-.product-pair-heading { font-size: 16px; line-height: 1.3; font-weight: 500; }
-.product-pair-text { max-width: 360px; margin-top: 24px; font-size: 16px; line-height: 1.6; color: #5a5a5a; }
-.product-pair-link { display: inline-block; margin-top: 24px; padding-bottom: 2px; border-bottom: 1px solid currentColor; font-size: 16px; line-height: 1.3; color: var(--color-ink); text-decoration: none; }
-.product-pair-small { width: calc((100% - 3 * var(--pdp-gap)) / 4 * 2 + var(--pdp-gap)); margin-top: 88px; }
+.product-pair-small-link { display: block; width: calc((100% - 3 * var(--pdp-gap)) / 4 * 2 + var(--pdp-gap)); } /* the companion's photograph alone, two columns wide (the texts beside it went: 「刪」) */
+.product-pair-small { width: 100%; }
 /* Three portraits left for the foot of the page make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
    homepage (user 2026-10-01: 「商品內頁如果有多圖的情況也是用相同的邏輯處理」): two small ones on columns 1–2 and 3–4 stay under
    the header while the large one on columns 7–12 passes. */
@@ -439,7 +434,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-band-text a { display: inline-block; margin-top: 16px; padding-bottom: 2px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .product-column, .product-more { grid-column: 15 / span 10; }
-  .product-pair-caption { grid-column: 7 / span 1; }
   .product-pair-side { grid-column: 8 / span 5; }
 }
 @media (max-width: 767px) {
@@ -464,9 +458,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-spread-large { order: -1; }
   .product-spread-smalls .product-spread-text { max-width: none; margin-bottom: 12px; }
   .product-spread-smalls.is-centered { align-self: auto; padding-top: 0; }
-  .product-pair-caption { padding-top: 8px; }
   .product-pair-side { padding-top: 16px; }
-  .product-pair-small { width: 50%; margin-top: 24px; }
+  .product-pair-small-link { width: 50%; }
 }
 .product-edition { color: var(--color-stone-deep); margin-left: 20px; white-space: nowrap; }
 .product-variants { margin-top: var(--i-opt); border: 0; min-width: 0; }
@@ -1400,26 +1393,26 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .brew-process > .brew-steps { grid-column: 6 / span 7; grid-row: 1 / span 2; align-self: end; }
 /* the rail: a 15px dot level with the badge's middle and, under every dot but the last, a hairline down to the next one, filled in gold by
    brew-process (scaleY 0 → 1); unlit steps (only once that has started) show a grey dot, a white badge and a stone icon, lighting with a 0.6s
-   ease. Each step is bramwel's 680 × 540 card on the stores' cream (「這個動態效果加…卡片設計」): the gold badge and the 48px title at the top
-   left, the text at the top right, the 180px icon at the bottom left, two white tags at the bottom right; 16px between cards. The reference's
+   ease. Each step is bramwel's 680-wide card, half its height (270; 「卡片高度減半」), on the stores' cream (「這個動態效果加…卡片設計」): the gold badge and the 48px title at the top
+   left, the text at the top right, the 64px line icon at the bottom left (the first set again, 「用一開始的」), two white tags at the bottom right; 16px between cards. The reference's
    red is the site's gold 金咖啡色 (「紅色改成金色」). */
-.brew-steps { --brew-pad: 40px; --brew-dot-y: 18px; --brew-gap: 16px; --brew-rail: rgb(31 31 31 / .16); list-style: none; margin: 0; padding: 0; }
+.brew-steps { --brew-pad: 32px; --brew-dot-y: 18px; --brew-gap: 16px; --brew-rail: rgb(31 31 31 / .16); list-style: none; margin: 0; padding: 0; }
 .brew-steps li { position: relative; display: grid; grid-template-columns: 15px minmax(0, 1fr); column-gap: 40px; align-items: start; padding: 0 0 var(--brew-gap); } /* 40px between the rail and the card (user 2026-10-08: 「gap 分開一點」) */
 .brew-steps li:last-child { padding-bottom: 0; }
 .brew-rail { grid-column: 1; display: block; }
 .brew-dot { position: absolute; z-index: 1; left: 0; top: calc(var(--brew-pad) + var(--brew-dot-y) - 7.5px); width: 15px; height: 15px; border-radius: 50%; background: var(--color-bronze); transition: background-color .6s ease; }
 .brew-line { position: absolute; left: 7px; top: calc(var(--brew-pad) + var(--brew-dot-y)); width: 1px; height: 100%; background: var(--brew-rail); } /* 100 % of the row, gap included, reaches the next dot */
 .brew-line-fill { display: block; width: 100%; height: 100%; background: var(--color-bronze); }
-.brew-card { grid-column: 2; display: flex; flex-direction: column; justify-content: space-between; min-height: 540px; padding: var(--brew-pad); border-radius: 2px; background: var(--bw-card); transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
+.brew-card { grid-column: 2; display: flex; flex-direction: column; justify-content: space-between; min-height: 270px; padding: var(--brew-pad); border-radius: 2px; background: var(--bw-card); transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
 .brew-card:hover { background: #e8e6de; }
 .brew-card-top { display: flex; justify-content: space-between; gap: 24px; }
-.brew-card-head { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.brew-card-head { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .brew-step-badge { padding: 9px 14px; border-radius: 4px; background: var(--color-bronze); color: #fff; font-size: 14px; line-height: 1.3; transition: background-color .6s ease, color .6s ease, box-shadow .6s ease; }
 .brew-steps h3 { max-width: 250px; font-size: 48px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; }
 .brew-steps p { max-width: 260px; margin: 0; padding-top: 4px; font-size: 16px; line-height: 1.6; color: #5a5a5a; }
 .brew-card-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
-.brew-icon { display: block; width: 180px; max-height: 240px; color: var(--color-bronze); transition: color .6s ease; }
-.brew-icon svg { display: block; width: 100%; height: auto; }
+.brew-icon { display: block; width: 64px; height: 64px; color: var(--color-bronze); transition: color .6s ease; }
+.brew-icon svg { display: block; width: 100%; height: 100%; }
 .brew-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 .brew-tag { padding: 6px 12px; background: #fff; font-size: 14px; line-height: 1.2em; color: var(--bw-text); white-space: nowrap; }
 .is-brew-animated [data-brew-step]:not(.is-active) .brew-dot { background: rgb(31 31 31 / .3); }
@@ -1427,10 +1420,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .is-brew-animated [data-brew-step]:not(.is-active) .brew-icon { color: var(--color-stone); }
 @media (max-width: 1279px) and (min-width: 768px) {
   .brew-process > h2, .brew-process-media { grid-column: 1 / span 5; }
-  .brew-card { min-height: 460px; padding: 32px; }
-  .brew-steps { --brew-pad: 32px; }
+  .brew-card { min-height: 240px; padding: 28px; }
+  .brew-steps { --brew-pad: 28px; }
   .brew-steps h3 { font-size: 36px; }
-  .brew-icon { width: 140px; }
+  .brew-icon { width: 56px; height: 56px; }
 }
 @media (max-width: 767px) {
   .brew-process { display: block; padding: 56px 0 48px; }
@@ -1444,7 +1437,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .brew-steps h3 { max-width: none; font-size: 28px; }
   .brew-steps p { max-width: none; padding-top: 0; font-size: 15px; }
   .brew-card-bottom { margin-top: 24px; }
-  .brew-icon { width: 96px; }
+  .brew-icon { width: 48px; height: 48px; }
 }
 @media (min-width: 1920px) { .brew-process > h2, .teakind-h02 { font-size: 72px; } }
 @media (max-width: 991px) {

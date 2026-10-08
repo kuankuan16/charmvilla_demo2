@@ -14,16 +14,18 @@ import BrewProcess from "./BrewProcess";
 import { site, type Img } from "@/data/content";
 import { GOLDFISH_D } from "./goldfish-path";
 
-const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="180" height="180" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">{d}</svg>;
-/** one icon per brewing step, in the steps' order: pour (a stream into four ripples), open (the sachet, its top torn up along the dashed
- *  notch line), add the goldfish (the brand's goldfish inside three rings), steep (the glass with four levels and the bag as a diamond),
- *  enjoy (the cup under three rings of steam) */
+// the first icons again (user 2026-10-08: 「用一開始的」, after 「icon 小一點，精緻一點，或是可以重畫」): the 48-box line drawings of 2026-10-07
+// — 1.3 strokes with round caps — shown at 64px; the goldfish is the brand's own vector, stroked the same way (「小金魚改為線稿，跟其他的風格一樣」)
+const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
+const goldfish = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 1224 1028" width="64" height="64" aria-hidden="true" className="brew-icon-goldfish"><path d={GOLDFISH_D} fill="none" stroke="currentColor" strokeWidth="32" strokeLinejoin="round" /></svg>;
+/** one icon per brewing step, in the steps' order: pour (the kettle's spout over the cup), open (the sachet, the dashed tear line at the
+ *  notch), add the goldfish (the brand's vector goldfish), steep (the clock), enjoy (the cup on its saucer under three curls of steam) */
 const brewIcons = [
-  icon(<><ellipse cx="120" cy="150" rx="105" ry="48" /><ellipse cx="120" cy="150" rx="78" ry="36" /><ellipse cx="120" cy="150" rx="51" ry="24" /><ellipse cx="120" cy="150" rx="24" ry="11" /><path d="M120 12v138" /></>),
-  icon(<><rect x="48" y="24" width="144" height="192" /><rect x="66" y="42" width="108" height="156" /><path d="M48 72h144" strokeDasharray="6 6" /><rect x="48" y="24" width="144" height="48" transform="rotate(-12 48 72)" /></>),
-  icon(<><circle cx="120" cy="120" r="112" /><circle cx="120" cy="120" r="92" /><circle cx="120" cy="120" r="72" /><g transform="translate(40.5 53) scale(0.13)"><path d={GOLDFISH_D} strokeWidth="23" strokeLinejoin="round" /></g></>),
-  icon(<><path d="M60 36h120v152a32 32 0 0 1-32 32H92a32 32 0 0 1-32-32z" /><path d="M60 90h120M60 120h120M60 150h120M60 180h120" /><rect x="104" y="124" width="32" height="32" transform="rotate(45 120 140)" /></>),
-  icon(<><path d="M40 120h160v28a52 52 0 0 1-52 52h-56a52 52 0 0 1-52-52z" /><path d="M200 132h14a18 18 0 0 1 0 36h-14" /><circle cx="88" cy="74" r="26" /><circle cx="120" cy="60" r="26" /><circle cx="152" cy="74" r="26" /><path d="M40 212h160" /></>),
+  icon(<><path d="M13 22h22l-2.2 15.2a2 2 0 0 1-2 1.8H17.2a2 2 0 0 1-2-1.8z" /><path d="M35 25h2.5a3.5 3.5 0 0 1 0 7H34" /><path d="M9 7c5 0 7 3 7 7 0 3-2 4-2 8" /><path d="M20 10c0 2-1.5 3-1.5 5" /><circle cx="25" cy="13" r=".6" fill="currentColor" /></>),
+  icon(<><path d="M15 12h18v26H15z" /><path d="M15 12v-2h18v2" /><path d="M16 8.5h16M16 10.5h16" strokeWidth=".8" /><path d="M13 19h22" strokeDasharray="2 2.5" /><path d="M33 19l2.5-1.5v3z" fill="currentColor" stroke="none" /><path d="M20 27h8M20 31h8" strokeWidth=".9" /></>),
+  goldfish(),
+  icon(<><circle cx="24" cy="24" r="15" /><path d="M24 13v11l6 4" /><path d="M24 9v2M39 24h-2M24 39v-2M9 24h2" /></>),
+  icon(<><path d="M12 22h22v6a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z" /><path d="M34 25h2.5a3.5 3.5 0 0 1 0 7H34" /><path d="M9 41h30" /><path d="M18 8c0 2.5-2 3.5-2 6s2 3 2 5M24 6c0 2.5-2 3.5-2 6s2 3 2 5M30 8c0 2.5-2 3.5-2 6s2 3 2 5" /></>),
 ];
 
 /** the dry-leaf photograph of a tea, one scene for all of them (Nano Banana 2.1 after the rose oolong's, what each tea's dry leaf looks like

@@ -61,10 +61,11 @@ export default function ProductGallery({ name, views: baseViews, optionViews, in
         <div className="product-first">
           {/* the space above the thumbnails and the gap under them give way first when the text is long */}
           <span className="product-first-lead" aria-hidden="true" />
-          {views.length > 1 && <div ref={thumbs} className="product-thumbnails" role="group" aria-label={t(`${name}縮圖`, `Thumbnails of ${name}`)}>
+          {/* always shown, a single view included (user 2026-10-08: 「每一個商品都要有小縮圖」); only the arrows need more than one */}
+          <div ref={thumbs} className="product-thumbnails" role="group" aria-label={t(`${name}縮圖`, `Thumbnails of ${name}`)}>
             {views.map((v, i) => <button key={v.image.src || `placeholder-${i}`} type="button" className={v.placeholder ? `is-placeholder${v.tone === "grey" ? " is-grey" : ""}` : undefined} aria-label={t(`查看${v.label}`, `View ${v.label}`)} aria-pressed={i === active} onClick={() => setActive(i)}>{v.placeholder ? null : <Image src={v.image.src} alt="" width={200} height={240} sizes="100px" />}</button>)}
             <span className="product-thumb-frame" aria-hidden="true" style={{ transform: `translate(${frame[0]}px, ${frame[1]}px)` }} />
-          </div>}
+          </div>
           <span className="product-first-gap" aria-hidden="true" />
           {intro}
         </div>

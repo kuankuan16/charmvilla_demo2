@@ -197,12 +197,10 @@ export default async function ProductPage({ params }: Props) {
       {editorial}
       {pair && <section className="product-pair" aria-label={t("情境照", "In use")}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
-        <p className="product-pair-caption"><span className="tc">{product.name}</span><span className="product-pair-caption-sub tc">/ {category.name}</span></p>
+        {/* the reference's name/category lines and its 「同系列作品」 text went the same night (user 2026-10-08: 「刪」): the companion's small
+            photograph alone, linking to it */}
         {related[0] && <div className="product-pair-side">
-          <h2 className="product-pair-heading tc">{t("同系列作品", "From the same series")}</h2>
-          <p className="product-pair-text tc">{related[0].summary}</p>
-          <Link href={productHref(related[0], lang)} className="product-pair-link tc">{t("查看商品", "View product")}</Link>
-          <figure className="scene-fig product-pair-small" style={{ aspectRatio: "3 / 4" }}><Picture img={related[0].image} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 50vw" /></figure>
+          <Link href={productHref(related[0], lang)} className="product-pair-small-link" aria-label={t(`瀏覽 ${related[0].name}`, `View ${related[0].name}`)}><figure className="scene-fig product-pair-small" style={{ aspectRatio: "3 / 4" }}><Picture img={related[0].image} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 50vw" /></figure></Link>
         </div>}
       </section>}
       {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
