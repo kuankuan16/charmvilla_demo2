@@ -1,12 +1,12 @@
 "use client";
 // 茶款介紹 after the "Expertise Behind Bramwel" screen of bramwel-service-template.webflow.io (user 2026-10-08: 「Expertise Behind Bramwel 這一屏
-// 改介紹茶種」, its type and motion to be copied exactly): bramwel's curtain — five blocks of the screen's ground rising as it arrives (scrub 0.8;
-// 「這個效果要放在茶種那邊」) — then a 500vh sticky run on the white ground: the centred 64px heading, then a 100vh screen in
+// 改介紹茶種」, its type and motion to be copied exactly; bramwel's rising curtain and the screen's own ground were dropped the same night —
+// 「背景效果都刪掉」「也不用另外套不一樣的背景色」 — so it sits on the page's ground): a 500vh sticky run — the 64px heading at the left, then a 100vh screen in
 // which the row of 400 × 520 cards slides from 40vw to −70vw as the run scrolls (scrub 0.8), each card swelling from 0.8 to 1 and back as it
 // passes; the cards' tops are staggered (130 / 0 / 120 / 50 / 90). A card at rest is text alone on its olive cover — the tea's name in 32px
 // and its note (「一開始是文字而已，hover 的時候才會出現圖」「標題要跟裡面的茶種名稱一樣」「詳細的文字介紹放在一開始的列表上面」); hovering it
 // (desktop) lifts the cover's five blocks to show the dry-leaf photograph bare, with nothing written over it (「刪掉圖片上的文字與漸層黑」);
-// where there is no hover a tap (or Enter) toggles the cover. Reduced motion: no scrub, no curtain, the cards just sit in a row that scrolls
+// where there is no hover a tap (or Enter) toggles the cover. Reduced motion: no scrub, the cards just sit in a row that scrolls
 // sideways.
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -19,7 +19,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export type TeaKind = { name: string; text: string; image?: Img };
 const PAD = [130, 0, 120, 50, 90, 60];
-const CURTAIN = [40, 70, 100, 70, 40];
 /** 「紅玉紅茶（Red Jade／Ruby No.18）」→ the name, then what the brackets held as a second, smaller line, the brackets gone (user 2026-10-08:
  *  「（）內的字都換行變小字，並刪除（）」); full-width or ASCII brackets on either language's page */
 const splitName = (name: string): [string, string | undefined] => {
@@ -30,12 +29,11 @@ const splitName = (name: string): [string, string | undefined] => {
 // (bramwel's small label with a square dot above the heading — 「■ 茶款」 — is gone: user 2026-10-08 「刪」)
 export default function TeaKinds({ title, items }: { title: string; items: TeaKind[] }) {
   const { t } = useT();
-  const curtain = useRef<HTMLDivElement>(null);
   const sticky = useRef<HTMLDivElement>(null);
   const main = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const c = curtain.current, run = sticky.current, row = main.current;
-    if (!c || !run || !row) return;
+    const run = sticky.current, row = main.current;
+    if (!run || !row) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     ScrollTrigger.defaults({ scroller: window });
     if (process.env.NODE_ENV !== "production") (window as unknown as { __ST?: typeof ScrollTrigger }).__ST = ScrollTrigger;
@@ -43,10 +41,7 @@ export default function TeaKinds({ title, items }: { title: string; items: TeaKi
     const [from, to] = w <= 479 ? [50, -360] : w <= 767 ? [50, -240] : w <= 991 ? [50, -200] : [40, -70];
     const cards = Array.from(row.querySelectorAll<HTMLElement>(".teakind-pad"));
     const ctx = gsap.context(() => {
-      // paused timelines driven only by their scroll triggers (free-running ones would finish before the trigger takes them over)
-      const blocks = Array.from(c.querySelectorAll<HTMLElement>(".bw-curtain-block"));
-      gsap.timeline({ paused: true, scrollTrigger: { trigger: c, start: "clamp(top bottom)", end: "clamp(top top)", scrub: 0.8 } })
-        .to(blocks, { height: (i) => `${CURTAIN[i]}%`, duration: 1, ease: "sine.inOut" }, 0);
+      // a paused timeline driven only by its scroll trigger (a free-running one would finish before the trigger takes it over)
       const tl = gsap.timeline({ paused: true, defaults: { ease: "sine.inOut" }, scrollTrigger: { trigger: run, start: "clamp(10% bottom)", end: "clamp(80% top)", scrub: 0.8 } });
       tl.fromTo(row, { x: `${from}vw` }, { x: `${to}vw`, duration: 1.29 }, 0);
       cards.forEach((card, n) => {
@@ -62,7 +57,6 @@ export default function TeaKinds({ title, items }: { title: string; items: TeaKi
   }, [items.length]);
   return (
     <>
-      <div ref={curtain} className="bw-curtain" aria-hidden="true"><div className="bw-curtain-blocks">{CURTAIN.map((_, k) => <span key={k} className="bw-curtain-block" />)}</div></div>
       <div ref={sticky} className="teakind-sticky">
         <div className="teakind-head">
           <h2 id="tea-notes-title" className="teakind-h02 tc">{title}</h2>

@@ -1344,19 +1344,18 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    Its 14px/1.2 texts became 16px/1.6 the same day (「文字可以大一點點…行距要開一點」). The grounds were the stores' cream, then white
    (「這區塊改白色，下面的美好的泡茶也是」). The bramwel brewing screen itself lasted one evening: 美好的沖泡方式 went back to the rooferplus
    rail (see .brew-process below), so only 茶款介紹 is bramwel's now; the olive cover of a tea card keeps bramwel's cream text. */
-.tea-sheet { --bw-ground: #fff; --bw-card: #efeee8; --bw-text: #5a5a5a; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: var(--color-bronze); /* was the olive #6b6f45 (「綠色也是改成金色」) */ }
+.tea-sheet { --bw-card: #efeee8; --bw-text: #5a5a5a; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: var(--color-bronze); /* was the olive #6b6f45 (「綠色也是改成金色」) */ }
 .bw-mask { display: block; overflow: hidden; }
 .bw-mask-in { display: block; transition: transform .5s cubic-bezier(.87, 0, .13, 1); }
 
 /* --- the teas: the curtain, then a 500vh run on the cream ground — the heading block, then the sticky 100vh screen. bramwel's curtain
    (five blocks rising from the page's ground as the run arrives) stands at its top (user 2026-10-08: 「這個效果要放在茶種那邊」). --- */
-.bw-curtain { padding-top: 80px; margin: 0 calc(-1 * var(--page-gutter)); }
-.bw-curtain-blocks { display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; height: 200px; }
-.bw-curtain-block { display: block; height: 0; background: var(--bw-ground); }
-.teakind-sticky { position: relative; height: 500vh; margin: 0 calc(-1 * var(--page-gutter)); padding-top: 80px; background: var(--bw-ground); color: var(--color-ink); }
+/* no ground of its own and no curtain (user 2026-10-08: 「背景效果都刪掉」「也不用另外套不一樣的背景色」): the run sits on the page's ground; the
+   negative margins only let the row of cards slide across the whole width */
+.teakind-sticky { position: relative; height: 500vh; margin: 0 calc(-1 * var(--page-gutter)); padding-top: 80px; color: var(--color-ink); }
 .teakind-head { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; padding: 0 var(--page-gutter) 60px; } /* left, like 美好的沖泡方式 below (user 2026-10-08: 「齊左」); bramwel's small label above it is gone (「刪」) */
 .teakind-h02 { font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; text-align: left; }
-.teakind-section { position: sticky; top: 0; height: 100vh; padding-top: var(--header-h); overflow: hidden; background: var(--bw-ground); }
+.teakind-section { position: sticky; top: 0; height: 100vh; padding-top: var(--header-h); overflow: hidden; }
 .teakind-wrap { display: flex; flex-direction: column; justify-content: center; height: 100%; }
 .teakind-main { display: flex; gap: 64px; width: max-content; will-change: transform; }
 .teakind-pad { flex: none; }
@@ -1395,7 +1394,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    the right on a hairline rail that fills in bronze as the page scrolls (lib/motion/animations.ts, brew-process); each step is a row —
    a bronze badge 「步驟 n」, under it the title at the left, the text in the middle, the line icon at the right — with a hairline under it.
    The ground is white, like 茶款介紹 above (「下面的美好的泡茶也是」). --- */
-.brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--pdp-gap, clamp(12px, 1.4vw, 24px)); align-items: start; margin: 0 calc(-1 * var(--page-gutter)); padding: clamp(72px, 8vw, 128px) var(--page-gutter) clamp(64px, 7vw, 112px); background: var(--bw-ground); }
+.brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--pdp-gap, clamp(12px, 1.4vw, 24px)); align-items: start; padding: clamp(72px, 8vw, 128px) 0 clamp(64px, 7vw, 112px); } /* on the page's ground, inside the gutters (「背景效果都刪掉」「也不用另外套不一樣的背景色」) */
 .brew-process > h2 { grid-column: 1 / span 5; grid-row: 1; font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); } /* five columns: the seven characters at 64px do not fit four */
 .brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
 .brew-process > .brew-steps { grid-column: 6 / span 7; grid-row: 1 / span 2; align-self: end; }
@@ -1405,7 +1404,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    left, the text at the top right, the 180px icon at the bottom left, two white tags at the bottom right; 16px between cards. The reference's
    red is the site's gold 金咖啡色 (「紅色改成金色」). */
 .brew-steps { --brew-pad: 40px; --brew-dot-y: 18px; --brew-gap: 16px; --brew-rail: rgb(31 31 31 / .16); list-style: none; margin: 0; padding: 0; }
-.brew-steps li { position: relative; display: grid; grid-template-columns: 15px minmax(0, 1fr); column-gap: 24px; align-items: start; padding: 0 0 var(--brew-gap); }
+.brew-steps li { position: relative; display: grid; grid-template-columns: 15px minmax(0, 1fr); column-gap: 40px; align-items: start; padding: 0 0 var(--brew-gap); } /* 40px between the rail and the card (user 2026-10-08: 「gap 分開一點」) */
 .brew-steps li:last-child { padding-bottom: 0; }
 .brew-rail { grid-column: 1; display: block; }
 .brew-dot { position: absolute; z-index: 1; left: 0; top: calc(var(--brew-pad) + var(--brew-dot-y) - 7.5px); width: 15px; height: 15px; border-radius: 50%; background: var(--color-bronze); transition: background-color .6s ease; }
@@ -1434,7 +1433,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .brew-icon { width: 140px; }
 }
 @media (max-width: 767px) {
-  .brew-process { display: block; padding: 56px var(--page-gutter) 48px; }
+  .brew-process { display: block; padding: 56px 0 48px; }
   .brew-process-media { margin: 24px 0 8px; } /* above the steps, the full width (the reference's phone layout) */
   .brew-steps { --brew-pad: 24px; --brew-dot-y: 16px; --brew-gap: 12px; }
   .brew-steps li { column-gap: 14px; }
