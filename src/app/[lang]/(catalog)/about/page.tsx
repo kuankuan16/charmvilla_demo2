@@ -34,8 +34,9 @@ const ArrowLink = ({ href, label, lang }: { href: string; label: string; lang: L
 
 // About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面」; then 「關於我們的頁面內容參考 zema-template.webflow.io/our-story，
 // 補齊更像電商的功能」). The reference's order, with this brand's facts: the opening, the figures,
-// four chapters (each with a link), the range, the store's service terms (the reference's benefit badges), questions and answers,
-// and the sources every fact comes from (src/data/about.ts).
+// four chapters, the range, the store's service terms (the reference's benefit badges), questions and answers,
+// and the sources every fact comes from (src/data/about.ts). The chapters' shop links (欣賞全部作品, 選購小金魚茶包, 看最新消息) are gone;
+// the range of pieces stays (user 2026-10-08: 「把關於我們頁的導購按鈕都刪掉（但保留作品）」).
 export default async function AboutPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -76,7 +77,6 @@ export default async function AboutPage({ params }: Props) {
             {c.id === "world" && <div className="about-award-marks" role="group" aria-label={tea.honoursAria}>
               {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="200px" />)}
             </div>}
-            {c.cta && <p className="about-chapter-cta"><ArrowLink href={c.cta.href} label={c.cta.label} lang={lang} /></p>}
           </div>
         </section>
       ))}

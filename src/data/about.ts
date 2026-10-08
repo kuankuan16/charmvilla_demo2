@@ -14,7 +14,7 @@ import { getCommerce } from "./commerce";
 import { translator, type Locale } from "@/i18n/config";
 
 export type AboutRange = { id: string; image: Img; position?: string };
-export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; placeholder?: boolean /* a grey block instead of the image, the photograph still to be chosen */; side: "left" | "right"; cta?: AboutLink };
+export type AboutChapter = { id: string; index: string; title: string; body: string[]; quote?: { text: string; by: string }; image: Img; placeholder?: boolean /* a grey block instead of the image, the photograph still to be chosen */; side: "left" | "right" };
 export type AboutLink = { label: string; href: string };
 
 export const getAbout = (lang: Locale) => {
@@ -44,7 +44,6 @@ export const getAbout = (lang: Locale) => {
     chapters: [
       {
         id: "origin", index: "01", side: "right",
-        cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("起點：一個關於品牌的念頭", "Where it began"),
         body: [
           // the original wording is back (user 2026-10-05: 「加回原文」), as reported by Taiwan Panorama, July 2015
@@ -62,7 +61,6 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "goldfish", index: "02", side: "left",
-        cta: { label: t("選購小金魚茶包", "Shop the Goldfish Tea Bags"), href: "/collections/tea" },
         title: t("一尾小金魚", "A goldfish in the cup"),
         body: [
           t("2013 年 4 月，小金魚茶包開始設計並申請專利。魚與水本就自然相連，金魚在東方又象徵吉祥；金魚與茶，都帶著東方的韻味。同年中秋節第一次推出，還來不及舉辦發表會就已售罄，訂單一路排到年底。",
@@ -79,7 +77,6 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "world", index: "03", side: "right",
-        cta: { label: t("看最新消息", "Read the latest news"), href: "/news" },
         title: t("被世界看見", "Seen by the world"),
         body: [
           t("2014 年，小金魚茶包獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中，獲得德國 iF 設計大獎金獎。",
@@ -92,7 +89,6 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "everyday", index: "04", side: "left",
-        cta: { label: t("欣賞全部作品", "Explore all pieces"), href: "/collections/all" },
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
           t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，以及逐件手工完成的柴燒鳥形筷架。",
