@@ -17,6 +17,7 @@ import type { Product } from "@/data/catalog";
 import { Picture } from "@/components/ui";
 import BrewProcess from "./BrewProcess";
 import MotionScope from "./MotionScope";
+import TeaFilm from "./TeaFilm";
 
 const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
 /** the brand's own goldfish (public/brand/goldfish-gold.svg, one path on a 1184 × 988 box), filled in the icons' colour */
@@ -46,6 +47,11 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
           {notes.items.map((n) => <li key={n.name}><h3 className="tc">{paren(n.name)}</h3><p className="tc">{n.text}</p></li>)}
         </ol>
       </MotionScope>}
+      {/* the sunrise film between the two units (user 2026-10-08: 「參考 nexifye 放在『茶款介紹』這一屏的下面」): the same 20-second
+          backlit cup of goldfish tea on every tea box (Wan 3.0 from a Nano Banana 2.1 frame; ffmpeg 1080p/720p, muted) */}
+      {notes && brew && <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
+        label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
+        playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />}
       {brew && <BrewProcess>
         <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{brew.title}</h2>
         {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}

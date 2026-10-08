@@ -1314,7 +1314,16 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .tea-notes-list h3, .brew-steps h3 { font-size: 22px; font-weight: 500; line-height: 1.4; } /* larger, the text in ink (user 2026-10-08: 「這 2 屏的內文都用深色字，字級都可以再大一點」) */
 .tea-notes-list h3 small { display: block; margin-top: 3px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
 .tea-notes-list p, .brew-steps p { margin: 0; padding-top: 4px; font-size: 17px; line-height: 1.75; color: var(--color-ink); }
-.tea-sheet-unit + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
+.tea-sheet-unit + .brew-process, .tea-film + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
+/* the film between them after nexifye.webflow.io's video section (user 2026-10-08): edge to edge beyond the sheet's gutters, 100vh
+   (60vh on phones, 40vh on small phones), the video covering the band; a 56px frosted round button at the bottom right (40px on
+   small phones) pauses and resumes it. Round here on purpose: it sits on the film, not among the site's square buttons. */
+.tea-film { position: relative; height: 100svh; margin: clamp(96px, 10vw, 176px) calc(-1 * var(--page-gutter)) 0; background: var(--color-ink); overflow: hidden; }
+.tea-film-video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tea-film-control { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgb(0 0 0 / 0.25); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); color: var(--color-white); transition: background-color .2s, transform .2s; }
+.tea-film-control:hover { background: rgb(0 0 0 / 0.4); }
+.tea-film-control:active { transform: scale(.94); }
+.tea-film-control:focus-visible { outline: 2px solid var(--color-white); outline-offset: 3px; }
 .brew-process { grid-template-rows: auto 1fr; }
 .brew-process > h2 { grid-row: 1; }
 .brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
@@ -1338,6 +1347,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .brew-steps li { grid-template-columns: 15px 40px 1fr; row-gap: 4px; }
   .brew-steps p { grid-column: 3; }
 }
+@media (max-width: 479px) {
+  .tea-film { height: 40svh; }
+  .tea-film-control { width: 40px; height: 40px; }
+}
 @media (max-width: 767px) {
   .tea-sheet-unit, .brew-process { display: block; }
   .tea-notes-list { margin-top: 28px; }
@@ -1345,7 +1358,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .tea-notes-stack { --stack-top: calc(var(--header-h) + 16px); }
   .tea-notes-stack > h2 { position: static; }
   .tea-notes-stack .tea-notes-list li { padding: 28px 24px; }
-  .tea-sheet-unit + .brew-process { margin-top: 72px; }
+  .tea-sheet-unit + .brew-process, .tea-film + .brew-process { margin-top: 72px; }
+  .tea-film { height: 60svh; margin-top: 72px; }
   .brew-process-media { margin: 28px 0 12px; } /* above the steps, the full width (the reference's phone layout) */
   .brew-steps { --brew-dot-y: 36px; }
   .brew-steps li { grid-template-columns: 15px 36px 1fr; column-gap: 14px; row-gap: 4px; padding: 18px 0; }
