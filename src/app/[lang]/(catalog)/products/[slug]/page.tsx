@@ -11,7 +11,7 @@ import ProductGallery from "@/components/catalog/ProductGallery";
 import { ProductOptionProvider } from "@/components/catalog/ProductOption";
 import ProductCard from "@/components/catalog/ProductCard";
 import TeaPages from "@/components/catalog/TeaPages";
-import { alternatesFor, defaultLocale, isLocale, localeHref, siteUrl, translator } from "@/i18n/config";
+import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
 
 // The other categories by closeness, for 繼續觀看 when a category has fewer than four other pieces.
 const nearest: Record<string, string[]> = {
@@ -224,10 +224,8 @@ export default async function ProductPage({ params }: Props) {
       </section>
       <section className="product-band" aria-label={t("關於 CHARM VILLA", "About CHARM VILLA")}>
         <div className="product-band-image" aria-hidden="true"><Picture img={band} fill fit="cover" animate={false} sizes="100vw" /></div>
-        <div className="product-band-copy">
-          <p className="product-band-line">{about.slogan}</p>
-          <div className="product-band-text"><p className="tc">{about.intro}</p><Link href={localeHref(lang, "/about")} className="tc">{t("了解更多", "Learn more")}</Link></div>
-        </div>
+        {/* the slogan alone, large in the middle of the band (user 2026-10-08: 「居中放大」, then the introduction and its link 「刪」) */}
+        <p className="product-band-slogan"><span>{about.slogan}</span></p>
       </section>
     </article>
   );

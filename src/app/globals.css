@@ -424,15 +424,12 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-related .catalog-card-caption .catalog-card-soldout { border-left: 0; margin-left: 0; padding-left: 0; }
 .product-related .catalog-card-caption .catalog-card-soldout::before { content: " · "; }
 /* The brand band before the footer, after STINA's "Design by Tradition. Copenhagen by Heart." band: the darkened photograph full width and
-   about 800px tall at 1440, the copy sticky 40px under the header — the slogan at the left, the brand's introduction and an underlined 了解更多
-   link on columns 9–12. */
-.product-band { position: relative; min-height: clamp(480px, 55.7vw, 802px); margin: clamp(40px, 5vw, 80px) var(--page-gutter) var(--page-gutter); padding: 40px 0 clamp(320px, 36vw, 520px); color: #fcf7f1; background: var(--color-ink); overflow: hidden; } /* inside the page's gutters, with the same space under it (user 2026-10-08: 「新增左右下面的 padding 跟其他內容一樣」) */
+   about 800px tall at 1440, the slogan alone, large and centred (the introduction and its link were dropped: 「刪」). */
+.product-band { position: relative; min-height: clamp(480px, 55.7vw, 802px); margin: clamp(40px, 5vw, 80px) var(--page-gutter) var(--page-gutter); padding: 0; color: #fcf7f1; background: var(--color-ink); overflow: hidden; } /* inside the page's gutters, with the same space under it (user 2026-10-08: 「新增左右下面的 padding 跟其他內容一樣」) */
 .product-band-image { position: absolute; inset: 0; }
 .product-band-image::after { content: ""; position: absolute; inset: 0; background: rgb(0 0 0 / .42); }
-.product-band-copy { position: sticky; top: calc(var(--header-h) + 40px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.4vw, 24px); padding: 0 40px; }
-.product-band-line { grid-column: 1 / span 4; font-size: 16px; line-height: 1.3; }
-.product-band-text { grid-column: 9 / span 4; max-width: 400px; font-size: 16px; line-height: 1.3; }
-.product-band-text a { display: inline-block; margin-top: 16px; padding-bottom: 2px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; }
+.product-band-slogan { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 0 40px; text-align: center; pointer-events: none; } /* centred and large (user 2026-10-08: 「居中放大」) */
+.product-band-slogan span { max-width: 22ch; font-size: clamp(28px, 3.6vw, 52px); line-height: 1.2; font-weight: 500; letter-spacing: -.01em; text-wrap: balance; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .product-column, .product-more { grid-column: 15 / span 10; }
   .product-pair-side { grid-column: 8 / span 5; }
@@ -562,9 +559,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-related .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 14px; }
   .product-related .catalog-card h3 { font-size: 18px; }
   .product-related .catalog-card-caption { font-size: 15px; }
-  .product-band { min-height: 0; margin: 48px var(--page-gutter) var(--page-gutter); padding: 32px 0 240px; }
-  .product-band-copy { display: flex; flex-direction: column; gap: 24px; position: relative; top: auto; padding: 0 20px; } /* relative, not static: it must stack above the absolute photograph */
-  .product-band-text { max-width: none; }
+  .product-band { min-height: 320px; margin: 48px var(--page-gutter) var(--page-gutter); padding: 0; }
+  .product-band-slogan { padding: 0 20px; }
+  .product-band-slogan span { font-size: 26px; } /* relative, not static: it must stack above the absolute photograph */
   .catalog-footer { padding: 55px 20px 110px; }
   .catalog-footer-top { grid-template-columns: 1fr; gap: 45px; padding-bottom: 50px; }
   .catalog-footer nav { gap: 18px 25px; font-size: 15px; margin-top: 22px; }
@@ -1422,7 +1419,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .brew-steps h3 { font-size: 24px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; }
 .brew-steps p { max-width: 260px; margin: 0; padding-top: 4px; font-size: 16px; line-height: 1.6; color: #5a5a5a; }
 .brew-card-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
-.brew-icon { display: block; width: 64px; height: 64px; color: var(--color-bronze); transition: color .6s ease; }
+.brew-icon { display: block; width: 64px; height: 64px; margin-bottom: 14px; color: var(--color-bronze); transition: color .6s ease; } /* a little above the tags' baseline (user 2026-10-08: 「icon 再上移一點」) */
 .brew-icon svg { display: block; width: 100%; height: 100%; }
 .brew-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 .brew-tag { padding: 6px 12px; background: #fff; font-size: 14px; line-height: 1.2em; color: var(--bw-text); white-space: nowrap; }
