@@ -20,6 +20,12 @@ gsap.registerPlugin(ScrollTrigger);
 export type TeaKind = { name: string; text: string; image?: Img };
 const PAD = [130, 0, 120, 50, 90, 60];
 const CURTAIN = [40, 70, 100, 70, 40];
+/** 「紅玉紅茶（Red Jade／Ruby No.18）」→ the name, then what the brackets held as a second, smaller line, the brackets gone (user 2026-10-08:
+ *  「（）內的字都換行變小字，並刪除（）」); full-width or ASCII brackets on either language's page */
+const splitName = (name: string): [string, string | undefined] => {
+  const m = name.match(/^(.*?)\s*[（(]\s*(.+?)\s*[）)]\s*$/);
+  return m ? [m[1], m[2]] : [name, undefined];
+};
 
 export default function TeaKinds({ label, title, items }: { label: string; title: string; items: TeaKind[] }) {
   const { t } = useT();
@@ -64,7 +70,9 @@ export default function TeaKinds({ label, title, items }: { label: string; title
         <section className="teakind-section" aria-label={title}>
           <div className="teakind-wrap">
             <div ref={main} className="teakind-main">
-              {items.map((tea, i) => (
+              {items.map((tea, i) => {
+                const [name, sub] = splitName(tea.name);
+                return (
                 <div key={tea.name} className="teakind-pad" style={{ paddingTop: PAD[i % PAD.length] }}>
                   <article className="teakind-card" aria-label={tea.name} tabIndex={0}
                     onClick={(e) => e.currentTarget.classList.toggle("is-open")}
@@ -74,12 +82,13 @@ export default function TeaKinds({ label, title, items }: { label: string; title
                     {/* the olive cover at rest: the name and the note, the card's only text */}
                     <div className="teakind-cover">
                       <div className="teakind-blocks">{[0, 1, 2, 3, 4].map((k) => <span key={k} className="teakind-block" style={{ transitionDelay: `${[0.1, 0.16, 0.21, 0.16, 0.1][k]}s` }} />)}</div>
-                      <h3 className="teakind-h05 tc"><span className="bw-mask"><span className="bw-mask-in">{tea.name}</span></span></h3>
+                      <h3 className="teakind-h05 tc"><span className="bw-mask"><span className="bw-mask-in">{name}{sub && <small className="teakind-h05-sub">{sub}</small>}</span></span></h3>
                       <p className="teakind-cover-text tc"><span className="bw-mask"><span className="bw-mask-in">{tea.text}</span></span></p>
                     </div>
                   </article>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

@@ -1342,6 +1342,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .teakind-blocks { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
 .teakind-block { display: block; height: 100%; background: var(--bw-olive); transform-origin: top; transform: scaleY(1); transition: transform .5s cubic-bezier(.87, 0, .13, 1); }
 .teakind-h05 { position: relative; font-size: 32px; line-height: 1.2em; font-weight: 500; letter-spacing: -.04em; color: var(--bw-base); }
+.teakind-h05-sub { display: block; margin-top: 8px; font-size: 18px; line-height: 1.3; font-weight: 400; letter-spacing: 0; } /* what the brackets held, as a second smaller line (「（）內的字都換行變小字」) */
 .teakind-cover-text { position: relative; font-size: 16px; line-height: 1.6; color: var(--bw-base); }
 .teakind-card.is-open .teakind-block { transform: scaleY(0); }
 .teakind-card.is-open .teakind-h05 .bw-mask-in { transform: translateY(-110%); }
