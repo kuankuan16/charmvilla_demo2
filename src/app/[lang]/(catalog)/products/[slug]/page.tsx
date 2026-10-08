@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { products, getProducts, findProduct, getCategory, getCategoryProducts, productHref, formatPrice } from "@/data/catalog";
+import { products, getProducts, findProduct, getCategory, getCategoryProducts, productHref, categoryHref, formatPrice } from "@/data/catalog";
 import AddToCart from "@/components/cart/AddToCart";
-import { getContent, type Img } from "@/data/content";
+import { getContent, site, type Img } from "@/data/content";
+import { getAbout } from "@/data/about";
 import { Picture } from "@/components/ui";
 import ProductGallery from "@/components/catalog/ProductGallery";
 import { ProductOptionProvider } from "@/components/catalog/ProductOption";
 import ProductCard from "@/components/catalog/ProductCard";
 import TeaPages from "@/components/catalog/TeaPages";
-import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
+import { alternatesFor, defaultLocale, isLocale, localeHref, siteUrl, translator } from "@/i18n/config";
 
 // The other categories by closeness, for 繼續觀看 when a category has fewer than four other pieces.
 const nearest: Record<string, string[]> = {
@@ -156,7 +157,12 @@ export default async function ProductPage({ params }: Props) {
   const sameCategory = [...siblings.slice(at + 1), ...siblings.slice(0, Math.max(at, 0))];
   const others = (nearest[product.category] ?? []).map((id) => all.filter((p) => p.category === id));
   const fill = Array.from({ length: Math.max(0, ...others.map((l) => l.length)) }, (_, i) => others.flatMap((l) => l[i] ?? []));
-  const related = [...sameCategory, ...fill.flat()].slice(0, 4);
+  // three, as STINA's "Unsere Neuheiten" row (user 2026-10-08: 「全站商品頁的版型都參考這個」); the first is also the companion in the pair block
+  const related = [...sameCategory, ...fill.flat()].slice(0, 3);
+  // the brand band before the footer, after STINA's: the slogan, the introduction from the About page and a link to it, over the brand's
+  // installation photograph (CV-0215) darkened
+  const about = getAbout(lang);
+  const band = site("about-installation-2k.webp", t("展場裡，白色紙摺的金魚與花在枝條上懸著，背景是橘紅墨染的長幅", "In an exhibition, white paper goldfish and blossoms hang from a branch before a long panel of orange ink wash"), 2400, 1604);
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.filter((v) => !v.placeholder).map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
     // Offer only where the official list price is known; availability only where the official store says sold out (catalog.ts rule).
     ...(product.price && { offers: { "@type": "Offer", price: product.price.amount, priceCurrency: product.price.currency, url: `${siteUrl}${productHref(product, lang)}`, ...(product.soldOut && { availability: "https://schema.org/SoldOut" }) } }) };
@@ -211,7 +217,17 @@ export default async function ProductPage({ params }: Props) {
         {sharedLarge && <figure className="scene-fig product-spread-large" data-shape={shapeOf(sharedLarge)} style={{ aspectRatio: frameOf(sharedLarge) }}><Picture img={sharedLarge} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>}
       </section>}
       {teaPages}
-      <section className="product-related" aria-labelledby="related-title"><div className="product-related-heading"><h2 id="related-title" className="tc">{t("繼續觀看", "Explore more pieces")}</h2></div><div className="catalog-grid">{related.map((p, i) => <ProductCard key={p.slug} product={p} index={i} lang={lang} />)}</div></section>
+      <section className="product-related" aria-labelledby="related-title">
+        <div className="product-related-heading"><h2 id="related-title" className="tc">{t("繼續觀看", "Explore more pieces")}</h2><Link href={categoryHref(product.category, lang)} className="product-related-all tc">{t("所有商品", "All products")}</Link></div>
+        <div className="catalog-grid">{related.map((p, i) => <ProductCard key={p.slug} product={p} index={i} lang={lang} caption={getCategory(p.category, lang)?.name} />)}</div>
+      </section>
+      <section className="product-band" aria-label={t("關於 CHARM VILLA", "About CHARM VILLA")}>
+        <div className="product-band-image" aria-hidden="true"><Picture img={band} fill fit="cover" animate={false} sizes="100vw" /></div>
+        <div className="product-band-copy">
+          <p className="product-band-line">{about.slogan}</p>
+          <div className="product-band-text"><p className="tc">{about.intro}</p><Link href={localeHref(lang, "/about")} className="tc">{t("了解更多", "Learn more")}</Link></div>
+        </div>
+      </section>
     </article>
   );
 }
