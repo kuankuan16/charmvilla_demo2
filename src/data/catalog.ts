@@ -214,7 +214,7 @@ const buildCatalog = (lang: Locale) => {
       summary: t("把一片葉子的形，留在茶席上。", "A Hinoki wood tea spoon, shaped in the Ginkgo style."),
       detail: t("銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。", "A Hinoki wood tea spoon with a natural, mellow aroma. Gently hand wash to preserve the wood and craftsmanship; not dishwasher safe."),
       story: { title: t("一片葉子的轉譯", "A leaf, translated"), body: t("葉形來到茶席。銀杏的輪廓經由茶匙與木質呈現，既可近看造型，也能在取用之間，感受自然形態如何走入生活。", "A leaf shape arrives at the tea table. The ginkgo outline is rendered in a teaspoon and in wood: a form to look at closely and, in use, a way to sense how a natural shape enters daily life.") } },
-    { slug: "wooden-chopsticks", name: t("檜木筷子", "Hinoki Wood Chopsticks"), en: "HINOKI WOOD CHOPSTICKS", series: wooden, ids: ["CV-0243", "CV-0245", "CV-0227"],
+    { slug: "wooden-chopsticks", name: t("檜木筷子", "Hinoki Wood Chopsticks"), en: "HINOKI WOOD CHOPSTICKS", series: wooden, ids: ["CV-0227"] /* CV-0245 (birds on charcoal) off the page 2026-10-07 and CV-0243, the same scene, 2026-10-08 (user: 「刪」) */,
       summary: t("從一雙木筷，開始日常的一餐。", "Hinoki Wood Chopsticks · Rest sold separately"),
       detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Hinoki Wood Chopsticks, sold on their own. The Songbird Chopsticks Rest is sold separately."),
       story: { title: t("每日使用的線條", "A line used every day"), body: t("一雙筷子，常在手邊。從修長的外形看到木紋，熟悉的餐具也有可細讀之處；與鳥形筷架一同擺放，便形成餐桌上的小幅構圖。", "A pair of chopsticks is always within reach. From their long shape to the grain of the wood, even familiar tableware has something to read closely; set beside the Songbird Chopsticks Rest, they make a small composition on the table.") } },
@@ -329,9 +329,9 @@ const buildCatalog = (lang: Locale) => {
   // 桌面「金魚商品圖」裡使用者 2026-10-07 挑的那張：「大圖換成我剛剛挑的那張」；關於頁 01 也是同一張，各存一份）。
   // 它取代了橘牆圓桌的版本（scene-reunion-paper-gift-box-olive-sofa-orange-wall，PNG 留在桌面「金魚商品圖」），更早是直接上架的使用者照片
   // （腰封上的 M 壞掉）與深咖啡枯木那張（scene-reunion-paper-gift-box-driftwood.webp，使用者：「刪」；檔案留著，首頁茶葉禮盒的格子還在用）
-  // 團圓（美國版）的情境照：gallery.charmvilla.com 品牌素材 CV-0445「金色禮盒與小金魚茶包｜木桌光影」（使用者 2026-10-07：「用這張情境圖」）——
-  // 芥末黃松針盒配玻璃杯小金魚茶，和現在的盒子一致。橘盒的橄欖綠沙發照（scene-reunion-paper-gift-box-olive-sofa-pouch.webp）只留給首頁輪播
-  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-walnut-olive-chair-portrait.webp", t("赭橘色牆前的胡桃木圓桌，團圓禮盒的桐木盒與芥末黃松針盒蓋平放在斜陽裡，前方一杯雙層玻璃杯泡的小金魚茶與金色 CHARM VILLA 茶標籤，後方是橄欖綠毛圈扶手椅與一幅深藍畫", "On a round walnut table before a burnt-orange wall, the Reunion paulownia box with its mustard pine-sprig lid lies in low sun; in front, a double-walled glass of goldfish tea with its gold CHARM VILLA tag; an olive bouclé armchair and a navy painting behind"), 1856, 2304)];
+  // 團圓（美國版）曾有第二張情境照：先是 gallery CV-0445「金色禮盒與小金魚茶包｜木桌光影」（使用者 2026-10-07：「用這張情境圖」），
+  // 2026-10-08 換成胡桃木圓桌的直式新場景（scene-reunion-gift-box-us-walnut-olive-chair-portrait），同日使用者看了說「這張不對，刪」——
+  // 已移除（留在 git 歷史）。橘盒的橄欖綠沙發照（scene-reunion-paper-gift-box-olive-sofa-pouch.webp）只留給首頁輪播
   // 兩人喝茶的氛圍照（黑橡木圓桌、畫冊、兩杯玻璃杯小金魚茶；Nano Banana 2.1，照使用者給的五張攝影風格參考生成）：每個茶葉禮盒商品頁的
   // 情境照最後一張（使用者 2026-10-07：「放到情境照」「商品內容頁」）
   const twoPeopleTea = site("scene-two-people-tea-black-oak-table.webp", t("黑橡木圓桌上翻開的畫冊旁，兩杯玻璃杯泡的小金魚茶，一隻手拿著近處的杯子，對面另一個人的手靠著第二杯；後方是橄欖綠沙發", "Two glass cups of goldfish tea beside an open art book on a black oak table, one hand holding the near cup and another person's hand by the second; an olive sofa behind"), 1856, 2304);
@@ -486,7 +486,7 @@ const buildCatalog = (lang: Locale) => {
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
     // 沙發那張排第一，所以它也是卡片的 hover 圖（使用者 2026-10-07：「hover 換這張」）
     // the hands-and-mug photograph (2026-10-08) listed last, so an unlisted scene never sorts ahead of the sofa photograph that is the hover
-    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-walnut-olive-chair-portrait.webp", "/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"],
+    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);

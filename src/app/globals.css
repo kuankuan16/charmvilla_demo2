@@ -386,13 +386,20 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
    under the stage a large photograph as wide as the product image; beside it, from the left edge of the information column,
    the story text set a little down from the photograph's top (153px at 1440 on the reference) and, 70px under the text, a small
    photograph two columns wide, which stays under the header while the large one passes. */
-.product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); column-gap: var(--pdp-gap); padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
-.product-pair-large { grid-column: 1 / span 12; align-self: start; }
-.product-pair-side { --side-cols: 4.5; grid-column: 16 / span 9; min-width: 0; padding-top: clamp(56px, 10.6vw, 153px); }
-.product-pair[data-large=wide] .product-pair-side { padding-top: 0; } /* a landscape photograph is too low for the offset */
-.product-pair-side .product-story-text { width: calc((100% - (var(--side-cols) - 1) * var(--pdp-gap)) / var(--side-cols) * 3 + 2 * var(--pdp-gap)); margin-bottom: clamp(36px, 4.9vw, 70px); }
-.product-pair-side .product-story-text p { color: var(--color-stone-deep); }
-.product-pair-side .scene-fig { width: calc((100% - (var(--side-cols) - 1) * var(--pdp-gap)) / var(--side-cols) * 2 + var(--pdp-gap)); position: sticky; top: calc(var(--header-h) + var(--pdp-gap)); }
+/* The pair of a three-scene page, after the STINA page's "STINA / Hocker A — Teil derselben Kollektion" block (user 2026-10-08: 「這屏我想要
+   像[STINA]設計」), measured on the reference at 1440: the large photograph on columns 1–6; on column 7, 60px under its top, the piece's
+   name and its category as two 16px lines (the second grey); on columns 9–12, 150px under the top, 「同系列作品」, a grey line about the
+   companion piece, an underlined 「查看商品」 link and, 88px under it, the companion's photograph two columns wide (213 × 284 there, 3:4). */
+.product-pair { --pdp-gap: clamp(12px, 1.4vw, 24px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; padding: 0 var(--page-gutter) clamp(80px, 9vw, 140px); }
+.product-pair-large { grid-column: 1 / span 6; }
+.product-pair-caption { grid-column: 7 / span 2; padding-top: 60px; font-size: 16px; line-height: 1.3; }
+.product-pair-caption span { display: block; }
+.product-pair-caption-sub { color: var(--color-stone-deep); }
+.product-pair-side { grid-column: 9 / span 4; min-width: 0; padding-top: 150px; }
+.product-pair-heading { font-size: 16px; line-height: 1.3; font-weight: 500; }
+.product-pair-text { max-width: 360px; margin-top: 24px; font-size: 16px; line-height: 1.6; color: #5a5a5a; }
+.product-pair-link { display: inline-block; margin-top: 24px; padding-bottom: 2px; border-bottom: 1px solid currentColor; font-size: 16px; line-height: 1.3; color: var(--color-ink); text-decoration: none; }
+.product-pair-small { width: calc((100% - 3 * var(--pdp-gap)) / 4 * 2 + var(--pdp-gap)); margin-top: 88px; }
 /* Three portraits left for the foot of the page make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
    homepage (user 2026-10-01: 「商品內頁如果有多圖的情況也是用相同的邏輯處理」): two small ones on columns 1–2 and 3–4 stay under
    the header while the large one on columns 7–12 passes. */
@@ -412,7 +419,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-related h2 { font-size: clamp(23px, 1.85vw, 31px); font-weight: 500; line-height: 1.5; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .product-column, .product-more { grid-column: 15 / span 10; }
-  .product-pair-side { --side-cols: 5; grid-column: 15 / span 10; }
+  .product-pair-caption { grid-column: 7 / span 1; }
+  .product-pair-side { grid-column: 8 / span 5; }
 }
 @media (max-width: 767px) {
   .product-hero { display: block; padding: 0 0 14px; }
@@ -436,9 +444,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .product-spread-large { order: -1; }
   .product-spread-smalls .product-spread-text { max-width: none; margin-bottom: 12px; }
   .product-spread-smalls.is-centered { align-self: auto; padding-top: 0; }
-  .product-pair-side { padding-top: 22px; }
-  .product-pair-side .product-story-text { width: auto; margin-bottom: 26px; }
-  .product-pair-side .scene-fig { position: relative; top: auto; width: auto; }
+  .product-pair-caption { padding-top: 8px; }
+  .product-pair-side { padding-top: 16px; }
+  .product-pair-small { width: 50%; margin-top: 24px; }
 }
 .product-edition { color: var(--color-stone-deep); margin-left: 20px; white-space: nowrap; }
 .product-variants { margin-top: var(--i-opt); border: 0; min-width: 0; }

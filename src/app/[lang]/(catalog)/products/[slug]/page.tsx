@@ -63,12 +63,13 @@ export default async function ProductPage({ params }: Props) {
   // in rows on the same 12 columns (a portrait takes 4 columns, a landscape 6). The column takes one to three, as few as leave full rows.
   const spanOf = (img: Img) => (shapeOf(img) === "tall" ? 4 : 6);
   const fullRows = (list: Img[]) => { let row = 0; for (const img of list) { row += spanOf(img); if (row > 12) return false; if (row === 12) row = 0; } return row === 0; };
-  // Exactly three scenes follow …/products/liam and …/products/joana-longchair-xl-2-seater instead (user 2026-10-01: 「版型參考 liam」,
-  // 「情境照３張的版型」＋ the Joana page): one in the column, then a large one under the product image; beside it, from the left
-  // edge of the information column, the story text and under that a small one, which stays in view while the large one passes.
+  // Exactly three scenes follow the STINA page's "STINA / Hocker A — Teil derselben Kollektion" block instead (user 2026-10-01: 「版型參考
+  // liam」, 「情境照３張的版型」; user 2026-10-08, with that block: 「這屏我想要像[STINA]設計」): the first and the third in the column, the
+  // second large under the product image with the piece's name and category beside it and, from column 9, 「同系列作品」 — a line about
+  // the next piece of the category, a link to it and its photograph two columns wide (the small scene used to sit there).
   const pair = scenes.length === 3 ? scenes.slice(1) : null;
   const inColumn = pair ? 1 : scenes.length <= 3 ? scenes.length : [1, 2, 3].find((n) => fullRows(scenes.slice(n))) ?? 2;
-  const columnScenes = scenes.slice(0, inColumn), rest = pair ? [] : scenes.slice(inColumn);
+  const columnScenes = pair ? [scenes[0], pair[1]] : scenes.slice(0, inColumn), rest = pair ? [] : scenes.slice(inColumn);
   // Portraits that close the page in threes make a spread like the homepage's craft section, after the jakobsencopenhagen.com/en/
   // homepage (user 2026-10-01: 「商品內頁如果有多圖的情況也是用相同的邏輯處理」): the first one large at the right, the other two
   // small at the left, where they stay under the header while the large one passes. Anything else keeps its rows.
@@ -188,9 +189,15 @@ export default async function ProductPage({ params }: Props) {
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery></ProductOptionProvider>
       {editorial}
-      {pair && <section className="product-pair" data-large={shapeOf(pair[0])} aria-label={t("情境照", "In use")}>
+      {pair && <section className="product-pair" aria-label={t("情境照", "In use")}>
         <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
-        <div className="product-pair-side">{sideText}<figure className="scene-fig" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure></div>
+        <p className="product-pair-caption"><span className="tc">{product.name}</span><span className="product-pair-caption-sub tc">/ {category.name}</span></p>
+        {related[0] && <div className="product-pair-side">
+          <h2 className="product-pair-heading tc">{t("同系列作品", "From the same series")}</h2>
+          <p className="product-pair-text tc">{related[0].summary}</p>
+          <Link href={productHref(related[0], lang)} className="product-pair-link tc">{t("查看商品", "View product")}</Link>
+          <figure className="scene-fig product-pair-small" style={{ aspectRatio: "3 / 4" }}><Picture img={related[0].image} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 50vw" /></figure>
+        </div>}
       </section>}
       {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
         <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{sideText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
