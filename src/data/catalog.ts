@@ -388,6 +388,18 @@ const buildCatalog = (lang: Locale) => {
     "cloud-coaster": [coffeeTable, woodenSofa, woodenCloseup], "ginkgo-teaspoon-gift-box": [traySofa, woodenSofa, coffeeTable],
     "wooden-chopsticks": [woodenCloseup], // off the bird page (user 2026-10-05: 「刪」)
   };
+  // 每款茶葉禮盒的第一張情境照（也是卡片的 hover 圖）統一照團圓的 scene-reunion-gift-box-us-olive-sofa-pouch：橄欖綠毛圈沙發旁的核桃木桌、
+  // 盒子平放、金色茶包袋靠著盒子、幾粒茶葉與玫瑰花苞、右下角玻璃杯小金魚茶出血；各款以團圓那張為場景參考、自己核准的封面圖為盒子參考
+  // 生成（Nano Banana 2.1，1856 × 2304；使用者 2026-10-08：「每一個茶禮盒第一張情境圖都用這個模式，hover 也是這張」「幫我把沒有的補完」）
+  for (const [slug, zh, en] of [
+    ["spring-dawn", "春曉的淡藍紮染盒蓋，黃山雀與風鈴木金花刺繡", "the Spring Awakening box with its pale-blue tie-dyed lid, yellow tits and golden blossoms embroidered"],
+    ["winter-blossom", "暮雪的淡粉紮染盒蓋，梅枝刺繡", "the Snowy Twilight box with its pale-pink tie-dyed lid and embroidered plum branches"],
+    ["orchid", "蝴蝶蘭的米色盒蓋，紫紅蝴蝶蘭刺繡", "the Royal Orchid box with its beige lid and embroidered magenta orchids"],
+    ["purple-butterfly", "紫斑蝶的湖藍盒蓋，紫斑蝶刺繡", "the Sapphire Wings box with its lake-blue lid and embroidered purple crow butterflies"],
+    ["kyoto", "京都版的櫻花紙盒", "the Kyoto Artisanal Reserve paper box with its cherry-blossom sleeve"],
+    ["year-of-plenty", "年年有魚的紅色盒蓋，兩尾金魚刺繡", "the Year of Plenty box with its red lid and two embroidered goldfish"],
+    ["blossoming-prosperity", "花開富貴的紅色盒蓋，牡丹與金色蝴蝶刺繡", "the Prosperity in Bloom box with its red lid, embroidered peonies and golden butterflies"],
+  ] as const) sceneLead[`${slug}-gift-box`] = [site(`scene-${slug}-gift-box-olive-sofa-pouch.webp`, t(`橄欖綠毛圈沙發旁的核桃木桌上，${zh}，一包金色茶包袋靠著盒子，幾粒茶葉與玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶`, `On a walnut table beside an olive bouclé sofa, ${en}, a gold tea pouch leaning on the box, a few tea pearls and a rosebud, a glass of goldfish tea at the right`), 1856, 2304), ...(sceneLead[`${slug}-gift-box`] ?? [])];
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
   // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
   // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, and the front view for
@@ -469,7 +481,8 @@ const buildCatalog = (lang: Locale) => {
     "braided-leather-bag-pink": ["/media/gallery/CV-0424.webp", "/media/site/scene-pink-bag-armchair-olive-v2.webp", "/media/site/scene-pink-bag-olive-sofa-tea-tray.webp"], // 扶手椅照與手提行走照左右交換（使用者 2026-10-06）
     // 團圓繽紛紙盒：橄欖綠沙發情境照排第二張（故事區的大圖），卡片 hover 仍用 CV-0348
     // 沙發那張排第一，所以它也是卡片的 hover 圖（使用者 2026-10-07：「hover 換這張」）
-    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-two-people-tea-black-oak-table.webp"],
+    // the hands-and-mug photograph (2026-10-08) listed last, so an unlisted scene never sorts ahead of the sofa photograph that is the hover
+    "reunion-paper-gift-box": ["/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", "/media/site/scene-reunion-gift-box-us-oak-table-light.webp", "/media/site/scene-two-people-tea-black-oak-table.webp", "/media/site/scene-hands-speckled-mug-goldfish-tea-warm-light.webp"],
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
