@@ -16,9 +16,9 @@ import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
 import { Picture } from "@/components/ui";
 import BrewProcess from "./BrewProcess";
-import MotionScope from "./MotionScope";
 import TeaFilm from "./TeaFilm";
-import TeaNotesPanel from "./TeaNotesPanel";
+import TeaNotesCarousel from "./TeaNotesCarousel";
+import { site, type Img } from "@/data/content";
 import { GOLDFISH_D } from "./goldfish-path";
 
 const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
@@ -33,27 +33,26 @@ const brewIcons = [
   icon(<><path d="M12 22h22v6a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z" /><path d="M34 25h2.5a3.5 3.5 0 0 1 0 7H34" /><path d="M9 41h30" /><path d="M18 8c0 2.5-2 3.5-2 6s2 3 2 5M24 6c0 2.5-2 3.5-2 6s2 3 2 5M30 8c0 2.5-2 3.5-2 6s2 3 2 5" /></>),
 ];
 
+/** the dry-leaf photograph of a tea, in the manner of small Taiwanese tea houses' product photographs (Nano Banana 2.1; user 2026-10-08) */
+const leafPhoto = (name: string, t: (zh: string, en: string) => string): Img | undefined =>
+  /玫瑰烏龍|Rose Oolong/.test(name) ? site("tea-leaf-rose-oolong.webp", t("淺灰石板上一小堆玫瑰烏龍茶：緊實的深綠茶球混著粉紅玫瑰花瓣與幾顆玫瑰花苞", "A small heap of Rose Oolong on pale grey stone: tightly rolled dark-green tea pearls among pink rose petals and a few rosebuds"), 2528, 1696) : undefined;
+
 export default function TeaPages({ product, t }: { product: Product; t: (zh: string, en: string) => string }) {
   const notes = product.teaNotes, brew = product.brew;
   if (!notes && !brew) return null;
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      {/* 茶款介紹 since the afternoon of 2026-10-08, after the user's two-card reference (「茶款介紹改成像這樣的版面…把下面喝茶的影片縮小放上去」):
-          the title centred, then the sunrise film as a card at the left and the deep-coffee panel at the right that grows a tea card
-          wherever the pointer moves (TeaNotesPanel); the band sits on jakobsencopenhagen.com's beige (--color-sand, 「背景色參考…的米黃色」).
-          The film: the same 20-second backlit cup of goldfish tea on every tea box (Wan 3.0 from a Nano Banana 2.1 frame; ffmpeg 1080p/720p, muted). */}
-      {notes && <MotionScope className="tea-notes-hero">
-        <h2 id="tea-notes-title" className="tc" data-animation="moveUp" data-from="45" data-duration="0.5" data-ease="power2.out" data-start="top 80%">{notes.title}</h2>
-        <div className="tea-notes-duo">
-          <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
-            label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
-            playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />
-          <TeaNotesPanel items={notes.items} label={notes.title}
-            hintMouse={t("移動滑鼠，認識這盒裡的茶款", "Move your mouse to meet the teas in this box")}
-            hintTouch={t("點一下，認識這盒裡的茶款", "Tap to meet the teas in this box")} />
-        </div>
-      </MotionScope>}
+      {/* 茶款介紹 in the stores screen's manner (user 2026-10-08, evening: 「參考門市的設計手法，店面換成茶種資訊」「右邊最大的圖先幫我用影片試試看」):
+          the heading and the tea cards at the left, the sunrise film filling the right half (TeaNotesCarousel). Each card's photograph is
+          the dry leaves of that tea, learnt from wolftea.com and yoshantea.com's tea photographs; only 玫瑰烏龍茶 has one so far (a sample for
+          approval), the others show a grey 缺圖 block. The film: the same 20-second backlit cup of goldfish tea on every tea box (Wan 3.0
+          from a Nano Banana 2.1 frame; ffmpeg 1080p/720p, muted). */}
+      {notes && <TeaNotesCarousel title={notes.title} items={notes.items.map((n) => ({ ...n, image: leafPhoto(n.name, t) }))}>
+        <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
+          label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
+          playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />
+      </TeaNotesCarousel>}
       {brew && <BrewProcess>
         <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{brew.title}</h2>
         {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}

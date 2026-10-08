@@ -1314,38 +1314,53 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .brew-steps { list-style: none; margin: 0; padding: 0; }
 .brew-steps h3 { font-size: 22px; font-weight: 500; line-height: 1.4; } /* larger, the text in ink (user 2026-10-08: 「這 2 屏的內文都用深色字，字級都可以再大一點」) */
 .brew-steps p { margin: 0; padding-top: 4px; font-size: 17px; line-height: 1.75; color: var(--color-ink); }
-.tea-notes-hero + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
-/* 茶款介紹 (user 2026-10-08, after a two-card reference): a beige band — jakobsencopenhagen.com's page ground, --color-sand — across the
-   width, the title centred, then two cards of one height: the sunrise film at the left with its round frosted pause button, and the
-   deep-coffee panel at the right (TeaNotesPanel) where every ~110px of pointer travel grows the next tea's white card and the cards
-   stay. Square corners like the rest of the site. The panel's hint fades once the first card is out; a faint goldfish sits in its corner. */
-.tea-notes-hero { margin: clamp(56px, 6vw, 96px) calc(-1 * var(--page-gutter)) 0; padding: clamp(64px, 7vw, 112px) var(--page-gutter) clamp(72px, 8vw, 128px); background: var(--color-sand); }
-.tea-notes-hero > h2 { margin: 0 auto clamp(36px, 4vw, 56px); max-width: 18em; text-align: center; }
-.tea-notes-duo { display: grid; grid-template-columns: 1.45fr 1fr; gap: clamp(16px, 1.6vw, 24px); align-items: stretch; max-width: 1280px; margin: 0 auto; }
+.teas + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
+/* 茶款介紹 in the stores screen's manner (user 2026-10-08: 「參考門市的設計手法，店面換成茶種資訊」「右邊最大的圖先幫我用影片試試看」): on
+   jakobsencopenhagen.com's beige (--color-sand), the heading and a slider of tea cards at the left (photograph, the kind of tea, the
+   name, the note; the next card peeks in at the column's edge, a round arrow over it, a progress line under the slider), the sunrise film
+   filling the right half edge to edge like the stores' tall photograph. Square corners like the rest of the site. */
+.teas { display: grid; grid-template-columns: 55% 45%; min-height: 100svh; margin: clamp(56px, 6vw, 96px) calc(-1 * var(--page-gutter)) 0; background: var(--color-sand); color: var(--color-ink); overflow: hidden; }
+.teas-body { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: clamp(60px, 8vw, 120px) 0 clamp(60px, 7vw, 100px) var(--page-gutter); }
+.teas-heading { padding-right: clamp(32px, 4.2vw, 60px); }
+.teas-heading h2 { font-size: clamp(30px, 2.6vw, 40px); font-weight: 400; line-height: 1.2; letter-spacing: -.01em; }
+.teas-slider { position: relative; margin-top: clamp(36px, 4.2vw, 60px); }
+.teas-track { display: flex; gap: clamp(18px, 2.1vw, 30px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-right: clamp(32px, 4.2vw, 60px); outline-offset: 4px; }
+.teas-track::-webkit-scrollbar { display: none; }
+.teas-card { flex: 0 0 min(440px, 78%); scroll-snap-align: start; border: 1px solid rgb(31 31 31 / .12); background: var(--color-white); }
+.teas-card-image { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--color-field); }
+.teas-card-image img { transition: transform 1s cubic-bezier(.22, .8, .3, 1); }
+.teas-card:hover .teas-card-image img { transform: scale(1.04); }
+.teas-card-missing { display: grid; place-items: center; height: 100%; }
+.teas-card-missing span { font-size: 13px; letter-spacing: .14em; color: var(--color-stone-deep); }
+.teas-card-body { display: flex; flex-direction: column; min-height: 15rem; padding: clamp(22px, 2.4vw, 34px); }
+.teas-card-meta { font-size: 15px; color: rgb(31 31 31 / .72); }
+.teas-card h3 { margin-top: 10px; font-size: 22px; font-weight: 500; line-height: 1.3; }
+.teas-card h3 small { display: block; margin-top: 3px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
+.teas-card-info { margin-top: 14px; font-size: 17px; line-height: 1.75; color: var(--color-ink); }
+.teas-arrow { position: absolute; z-index: 2; top: calc(min(440px, 78%) * 2 / 3 / 2); display: grid; place-items: center; width: 90px; height: 90px; margin-top: -45px; border: 1px solid rgb(246 248 250 / .35); border-radius: 50%; background: rgb(31 31 31 / .55); color: var(--color-page); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .3s, color .3s; } /* round on purpose: it floats on a photograph, as at the stores */
+.teas-arrow--next { right: clamp(40px, 9%, 120px); }
+.teas-arrow--prev { left: clamp(14px, 2%, 28px); }
+.teas-arrow:hover, .teas-arrow:focus-visible { background: var(--color-page); color: var(--color-ink); }
+.teas-foot { margin-top: clamp(40px, 4.8vw, 70px); padding-right: clamp(32px, 4.2vw, 60px); }
+.teas-progress { height: 3px; background: rgb(31 31 31 / .12); overflow: hidden; }
+.teas-progress span { display: block; height: 100%; background: var(--color-gold); transform-origin: left; transition: transform .3s; }
+.teas-media { position: relative; min-height: 560px; }
+.teas-media .tea-film { position: absolute; inset: 0; aspect-ratio: auto; }
 .tea-film { position: relative; aspect-ratio: 3 / 2; background: var(--color-ink); overflow: hidden; }
 .tea-film-video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .tea-film-control { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgb(0 0 0 / 0.3); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); color: var(--color-white); transition: background-color .2s, transform .2s; } /* round on purpose: it sits on the film, not among the site's square buttons */
 .tea-film-control:hover { background: rgb(0 0 0 / 0.45); }
 .tea-film-control:active { transform: scale(.94); }
 .tea-film-control:focus-visible { outline: 2px solid var(--color-white); outline-offset: 3px; }
-.tea-notes-panel { position: relative; overflow: hidden; padding: clamp(28px, 3vw, 40px) clamp(24px, 2.6vw, 36px); background: #2a1c14; color: #f4eee5; user-select: none; touch-action: manipulation; }
-.tea-notes-hint { max-width: 12em; margin: 0; font-size: clamp(22px, 2vw, 28px); font-weight: 500; line-height: 1.35; transition: opacity .5s; }
-.tea-notes-hint-touch { display: none; }
-@media (hover: none), (pointer: coarse) { .tea-notes-hint-mouse { display: none; } .tea-notes-hint-touch { display: inline; } }
-.tea-notes-panel.is-started .tea-notes-hint { opacity: .3; }
-.tea-notes-mark { position: absolute; right: 7%; bottom: 7%; width: 36%; color: #f4eee5; opacity: .14; pointer-events: none; }
-.tea-notes-card { position: absolute; width: min(300px, 78%); padding: 20px 22px 22px; background: var(--color-white); color: var(--color-ink); box-shadow: 0 24px 48px -20px rgb(0 0 0 / 0.55); transform-origin: 12% 10%; animation: tea-card-grow .55s cubic-bezier(.2, .8, .2, 1) both; pointer-events: none; }
-.tea-notes-card h3 { margin: 0; font-size: 20px; font-weight: 500; line-height: 1.35; }
-.tea-notes-card h3 small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
-.tea-notes-card p { margin: 10px 0 0; font-size: 17px; line-height: 1.7; }
-@keyframes tea-card-grow { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) { .tea-notes-card { animation: none; } }
+.teas :focus-visible { outline-color: var(--color-ink); }
 @media (max-width: 1023px) {
-  .tea-notes-duo { grid-template-columns: 1fr; }
-  .tea-film { aspect-ratio: 16 / 9; }
-  .tea-notes-panel { min-height: 380px; }
+  .teas { grid-template-columns: 1fr; }
+  .teas-media { order: -1; min-height: 0; aspect-ratio: 16 / 9; }
+  .teas-body { padding: 48px var(--page-gutter) 56px; }
+  .teas-heading, .teas-track, .teas-foot { padding-right: 0; }
+  .teas-track { padding-right: var(--page-gutter); }
 }
-@media (max-width: 479px) { .tea-film-control { width: 40px; height: 40px; } .tea-notes-card { width: min(300px, 86%); } .tea-notes-card p { font-size: 16px; } }
+@media (max-width: 479px) { .tea-film-control { width: 40px; height: 40px; } .teas-arrow { width: 64px; height: 64px; margin-top: -32px; } }
 .brew-process { grid-template-rows: auto 1fr; }
 .brew-process > h2 { grid-row: 1; }
 .brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
@@ -1369,7 +1384,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 }
 @media (max-width: 767px) {
   .tea-sheet-unit, .brew-process { display: block; }
-  .tea-notes-hero + .brew-process { margin-top: 72px; }
+  .teas + .brew-process { margin-top: 72px; }
   .brew-process-media { margin: 28px 0 12px; } /* above the steps, the full width (the reference's phone layout) */
   .brew-steps { --brew-dot-y: 36px; }
   .brew-steps li { grid-template-columns: 15px 36px 1fr; column-gap: 14px; row-gap: 4px; padding: 18px 0; }
