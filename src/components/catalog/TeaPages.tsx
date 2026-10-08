@@ -8,10 +8,15 @@
 // 適合目前官網設計風格的樣式呈現」): its own screen under 茶款介紹 — the title at the top left, a photograph at the bottom left (「左下角的圖」),
 // the steps at the right on a hairline rail that fills in bronze as the page scrolls, each step's dot and icon turning bronze when the fill
 // reaches it (lib/motion/animations.ts, brew-process). Still no numbers and no rules between the steps: the rail is the one line.
+// 茶款介紹 since 2026-10-08 after nexifye.webflow.io's 「Strategic Guidance for High-Growth Startups」 (user: 「分析並高度學習…這一屏的動態
+// 效果，並推理適合目前官網設計風格的樣式呈現『茶款介紹』」): the title stays put at the left (sticky) and rises in once, 45px, 0.5s, power2.out;
+// at the right one card per tea, every card sticky at the same height, so each one slides up over the one before like a sheet of paper;
+// square corners like every button on the site, a hairline frame, no numbers (the reference's 「01 —」 is left out).
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
 import { Picture } from "@/components/ui";
 import BrewProcess from "./BrewProcess";
+import MotionScope from "./MotionScope";
 
 const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
 /** the brand's own goldfish (public/brand/goldfish-gold.svg, one path on a 1184 × 988 box), filled in the icons' colour */
@@ -35,12 +40,12 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      {notes && <div className="tea-sheet-unit">
-        <h2 id="tea-notes-title" className="tc">{notes.title}</h2>
+      {notes && <MotionScope className="tea-sheet-unit tea-notes-stack">
+        <h2 id="tea-notes-title" className="tc"><span className="tea-notes-title" data-animation="moveUp" data-from="45" data-duration="0.5" data-ease="power2.out" data-start="top 80%">{notes.title}</span></h2>
         <ol className="tea-notes-list">
           {notes.items.map((n) => <li key={n.name}><h3 className="tc">{paren(n.name)}</h3><p className="tc">{n.text}</p></li>)}
         </ol>
-      </div>}
+      </MotionScope>}
       {brew && <BrewProcess>
         <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{brew.title}</h2>
         {brew.image && <figure className="brew-process-media" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%"><Picture img={brew.image} fill fit="cover" animate={false} sizes="(min-width:768px) 31vw, 100vw" /></figure>}
