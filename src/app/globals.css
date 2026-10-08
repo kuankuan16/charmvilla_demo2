@@ -1394,27 +1394,28 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
    at the left, the questions at the right, one per row between hairlines with a round +/− button; the answer opens on click. */
-.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(96px, 11vw, 176px) var(--page-gutter) clamp(80px, 9vw, 140px); } /* more room above (user 2026-10-07: 「所有純文字頁的上面空間可以再留白多一點」) */
+.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(96px, 11vw, 176px) var(--page-gutter) clamp(80px, 9vw, 140px); background: #efeee8; }
+main:has(> .faq-page) { background: #efeee8; } /* the ground runs on below a short document (Prop 65) down to the footer */ /* the stores' ground (user 2026-10-08: 「所有純文字頁面的背景色改成…跟門市背景色一樣」) */ /* more room above (user 2026-10-07: 「所有純文字頁的上面空間可以再留白多一點」) */
 .faq-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
 .faq-head h1 { font-size: clamp(40px, 4.4vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
 .faq-intro { margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); } /* no max-width, so a short intro stays on one line (user 2026-10-07: 「不要換行」) */
-.faq-contact { display: inline-flex; align-items: center; margin-top: 36px; padding: 13px 26px; border-radius: 0; /* square (user 2026-10-07: 「按鈕都統一用沒有 R 角的」「我說聯絡我們，其他保留」— only this one) */ background: var(--color-ink); color: var(--color-page); font-size: 15px; letter-spacing: .04em; transition: opacity .2s; }
-.faq-contact:hover { opacity: .8; }
+.faq-contact { display: inline-flex; align-items: center; margin-top: 36px; padding: 16px 30px; border: 1px solid rgb(31 31 31 / .6); border-radius: 0; /* square (user 2026-10-07: 「按鈕都統一用沒有 R 角的」); outlined like the stores' map button, ink only on hover (user 2026-10-08: 「聯絡我們設計樣式跟這個一樣 hover 才反黑」) */ background: transparent; color: var(--color-ink); font-size: 16px; letter-spacing: .04em; transition: background .3s, color .3s; }
+.faq-contact:hover, .faq-contact:focus-visible { background: var(--color-ink); color: var(--color-page); }
 .faq-contact:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
 .faq-body { grid-column: 7 / span 6; }
 /* the group rows: full width between hairlines, a thin + at the right that turns into − when open (after squarespace.com) */
-.faq-group { border-top: 1px solid rgb(31 31 31 / .22); }
-.faq-group:last-child { border-bottom: 1px solid rgb(31 31 31 / .22); }
-.faq-group-summary { display: grid; grid-template-columns: 1fr 24px; column-gap: 24px; align-items: center; padding: 26px 0; cursor: pointer; list-style: none; }
+/* the rows as white blocks on the beige, a short gap between them, no rules (user 2026-10-08: 「文題列表變成白色塊」) */
+.faq-group { background: var(--color-white); }
+.faq-group + .faq-group { margin-top: 10px; }
+.faq-group-summary { display: grid; grid-template-columns: 1fr 24px; column-gap: 24px; align-items: center; padding: 26px 32px; cursor: pointer; list-style: none; }
 .faq-group-summary::-webkit-details-marker { display: none; }
 .faq-group-summary h2 { font-size: clamp(22px, 2vw, 30px); font-weight: 400; line-height: 1.3; letter-spacing: -.01em; }
-.faq-group-summary:hover h2 { color: var(--color-stone-deep); }
 .faq-group-summary:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
 .faq-plus { position: relative; width: 24px; height: 24px; }
 .faq-plus::before, .faq-plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 18px; height: 1px; background: var(--color-ink); transform: translate(-50%, -50%); transition: transform .25s; }
 .faq-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
 .faq-group[open] .faq-plus::after { transform: translate(-50%, -50%) rotate(0); }
-.faq-group-body { padding: 0 0 26px; }
+.faq-group-body { padding: 0 32px 26px; }
 /* a policy section's own text inside its row (the shipping, privacy, terms and Prop 65 pages) */
 .faq-text, .faq-list li { max-width: 62ch; font-size: 16px; line-height: 1.85; color: var(--color-stone-deep); }
 .faq-text + .faq-text, .faq-list, .faq-text + .faq-list, .faq-list + .faq-text { margin-top: 12px; }
@@ -1425,7 +1426,6 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .faq-item { border-top: 1px solid rgb(31 31 31 / .12); }
 .faq-item summary { display: grid; grid-template-columns: 1fr 28px; column-gap: 24px; align-items: center; padding: 18px 0; font-size: 17px; font-weight: 500; line-height: 1.5; cursor: pointer; list-style: none; }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary:hover span:first-child { color: var(--color-stone-deep); }
 .faq-item summary:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
 .faq-toggle { position: relative; width: 28px; height: 28px; border-radius: 50%; background: var(--color-ink); }
 .faq-toggle::before, .faq-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--color-page); transform: translate(-50%, -50%); transition: transform .25s; }
@@ -1440,7 +1440,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .faq-page { display: block; padding: 64px var(--page-gutter) 80px; }
   .faq-head { position: static; margin-bottom: 40px; }
   .faq-head h1 { font-size: 34px; }
-  .faq-group-summary { padding: 20px 0; column-gap: 16px; }
+  .faq-group-summary { padding: 20px 20px; column-gap: 16px; }
+  .faq-group-body { padding: 0 20px 20px; }
   .faq-group-summary h2 { font-size: 20px; }
   .faq-item summary { padding: 16px 0; font-size: 16px; column-gap: 16px; grid-template-columns: 1fr 26px; }
   .faq-toggle { width: 26px; height: 26px; }
