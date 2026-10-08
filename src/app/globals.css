@@ -1292,26 +1292,54 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 }
 
 /* The tea sheet (user 2026-10-07: 「『茶款介紹』與『沖泡方式』整合成一屏（並調整版型），放在目前商品的情境之下，推薦商品之上」, 「配圖都是錯誤的，
-   不要放」, 「拿掉線，標題都加大一點，內容改在另外一欄」): two units on one screen — the teas at the left, the brewing steps with bronze
-   icons (the goldfish one the brand's own vector) at the right; no rules, no small text, no numbers; every row is title | text. */
-.tea-sheet { margin: clamp(48px, 5vw, 80px) var(--page-gutter) clamp(72px, 8vw, 128px); }
-.tea-sheet-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(96px, 12vw, 220px); align-items: start; } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
-.tea-sheet-col { min-width: 0; }
+   不要放」, 「拿掉線，標題都加大一點，內容改在另外一欄」): the teas, then the brewing steps with bronze icons (the goldfish one the brand's
+   own vector); no rules, no small text, no numbers; every row is title | text. Since 2026-10-08 the brewing steps are their own screen after
+   rooferplus.webflow.io's 「A Process Designed for Precision」 (user: 「這一段我要改設計」), so the two units stack on the product page's
+   12 columns — titles in 1–4, rows in 6–12 — instead of sitting side by side: the title at the top left, the photograph at the bottom left
+   (its foot level with the last step, no sticky), the steps at the right on a hairline rail that fills in bronze with the scroll. */
+.tea-sheet { --pdp-gap: clamp(12px, 1.4vw, 24px); margin: clamp(48px, 5vw, 80px) var(--page-gutter) clamp(72px, 8vw, 128px); }
+.tea-sheet-unit, .brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--pdp-gap); align-items: start; }
+.tea-sheet-unit > h2, .brew-process > h2 { grid-column: 1 / span 4; }
 .tea-sheet h2 { font-size: clamp(30px, 2.6vw, 40px); font-weight: 400; line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; }
-.tea-notes-list, .brew-steps { list-style: none; margin: 28px 0 0; padding: 0; }
+.tea-notes-list, .brew-steps { list-style: none; margin: 0; padding: 0; }
+.tea-sheet-unit > .tea-notes-list { grid-column: 6 / span 7; }
 .tea-notes-list li { display: grid; grid-template-columns: 9em 1fr; column-gap: 20px; align-items: start; padding: 16px 0; } /* the text close to its title (user 2026-10-07: 「個別標題跟內文的 gap 要近一點」) */
+.tea-sheet-unit .tea-notes-list li:first-child { padding-top: 6px; } /* the first tea level with the title beside it */
 .tea-notes-list h3, .brew-steps h3 { font-size: 20px; font-weight: 500; line-height: 1.4; }
 .tea-notes-list h3 small { display: block; margin-top: 3px; font-size: 13px; font-weight: 400; letter-spacing: .02em; color: var(--color-stone-deep); }
 .tea-notes-list p, .brew-steps p { margin: 0; padding-top: 3px; font-size: 15px; line-height: 1.75; color: var(--color-stone-deep); }
-.brew-steps li { display: grid; grid-template-columns: 40px 6.5em 1fr; column-gap: 18px; align-items: start; padding: 16px 0; }
-.brew-icon { display: block; width: 40px; height: 40px; margin-top: -4px; color: var(--color-bronze); }
+.tea-sheet-unit + .brew-process { margin-top: clamp(96px, 10vw, 176px); } /* the two units clearly apart (user 2026-10-07: 「兩個群組要分開」) */
+.brew-process { grid-template-rows: auto 1fr; }
+.brew-process > h2 { grid-row: 1; }
+.brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
+.brew-process > .brew-steps { grid-column: 6 / span 7; grid-row: 1 / span 2; align-self: end; }
+/* the rail: a 9px dot level with each icon's middle and, under every dot but the last, a hairline down to the next one, filled in bronze by
+   brew-process (scaleY 0 → 1); unlit steps (only once that has started) show an empty dot and a stone icon, lighting with a 0.6s ease */
+.brew-steps { --brew-dot-y: 40px; --brew-rail: rgb(31 31 31 / 0.16); }
+.brew-steps li { position: relative; display: grid; grid-template-columns: 15px 40px 7em 1fr; column-gap: 20px; align-items: start; padding: 24px 0; }
+.brew-rail { display: block; }
+.brew-dot { position: absolute; z-index: 1; left: 3px; top: calc(var(--brew-dot-y) - 4.5px); width: 9px; height: 9px; border: 1px solid var(--color-bronze); border-radius: 50%; background: var(--color-bronze); transition: background-color .6s ease, border-color .6s ease; }
+.brew-line { position: absolute; left: 7px; top: var(--brew-dot-y); width: 1px; height: 100%; background: var(--brew-rail); }
+.brew-line-fill { display: block; width: 100%; height: 100%; background: var(--color-bronze); }
+.brew-icon { display: block; width: 40px; height: 40px; margin-top: -4px; color: var(--color-bronze); transition: color .6s ease; }
 .brew-icon svg { display: block; width: 100%; height: 100%; }
+.is-brew-animated [data-brew-step]:not(.is-active) .brew-dot { border-color: rgb(31 31 31 / 0.3); background: var(--color-page); }
+.is-brew-animated [data-brew-step]:not(.is-active) .brew-icon { color: var(--color-stone); }
+@media (max-width: 1279px) and (min-width: 768px) {
+  .tea-sheet-unit > h2, .brew-process > h2, .brew-process-media { grid-column: 1 / span 5; }
+  .tea-sheet-unit > .tea-notes-list, .brew-process > .brew-steps { grid-column: 7 / span 6; }
+  .brew-steps li { grid-template-columns: 15px 40px 1fr; row-gap: 4px; }
+  .brew-steps p { grid-column: 3; }
+}
 @media (max-width: 767px) {
-  .tea-sheet-grid { display: block; }
-  .tea-sheet-col + .tea-sheet-col { margin-top: 40px; }
-  .tea-notes-list li { grid-template-columns: 1fr; row-gap: 6px; padding: 14px 0; }
-  .brew-steps li { grid-template-columns: 36px 1fr; row-gap: 4px; gap: 14px; padding: 14px 0; }
-  .brew-steps p { grid-column: 2; }
+  .tea-sheet-unit, .brew-process { display: block; }
+  .tea-notes-list { margin-top: 28px; }
+  .tea-notes-list li, .tea-sheet-unit .tea-notes-list li:first-child { grid-template-columns: 1fr; row-gap: 6px; padding: 14px 0; }
+  .tea-sheet-unit + .brew-process { margin-top: 72px; }
+  .brew-process-media { margin: 28px 0 12px; } /* above the steps, the full width (the reference's phone layout) */
+  .brew-steps { --brew-dot-y: 36px; }
+  .brew-steps li { grid-template-columns: 15px 36px 1fr; column-gap: 14px; row-gap: 4px; padding: 18px 0; }
+  .brew-steps p { grid-column: 3; }
   .brew-icon { width: 36px; height: 36px; margin-top: 0; }
 }
 

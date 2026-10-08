@@ -46,8 +46,8 @@ export type Product = {
   soldOut?: boolean;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
-  /** How to brew (tea gift boxes, guide §4). */
-  brew?: { title: string; steps: { title: string; text: string }[] };
+  /** How to brew (tea gift boxes, guide §4); `image` sits at the bottom left of the steps. */
+  brew?: { title: string; steps: { title: string; text: string }[]; image?: Img };
   /** 茶款介紹: a note on each tea in the box (tea gift boxes, as on the official product pages). */
   teaNotes?: { title: string; items: { name: string; text: string }[] };
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
