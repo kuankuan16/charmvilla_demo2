@@ -110,6 +110,7 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - 「美好的沖泡方式」改採 Agasis Brand Identity 的 `All you need to launch` 架構：左側小字「美好的」與大字「沖泡方式」為 sticky，右側 01–05 細線列表搭配金色線稿 icon；各列依捲動由下方 32px 逐列淡入上移。
 - 本機視覺檢查確認 5 張卡片高度一致、茶葉裁切放大、`TEA / 01–05` 正確、無頁面橫向溢位；沖泡區 sticky 標題、列表列線、icon 與 stagger 動態正常。
 - `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
+- 程式提交：`b629f37`（`refine tea cards and brewing process`）。Vercel Preview `https://charmvilla-demo2-llxcrfa0g-tentenco.vercel.app`（deployment `dpl_9haegcNdXcddX7boPuShCqxAR5o4`）為 READY；線上代表商品頁已確認 `TEA / 01–05`、沖泡標題、零舊進度方塊與零水平溢位。尚未 push、未部署 Production。
 
 ## 其他未完成或未審工作
 
