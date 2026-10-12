@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `in_progress`（2026-10-12 17:40，Claude 已提交 `ce4067b` 並推送；倒熱水新照片暫不上線，等修茶標）
+Status: `in_progress`（2026-10-12 17:45，`ce4067b` 已上線 Production 並驗證；只剩倒熱水照片的茶標要修）
 
 開始新任務時以本模板取代下方欄位；完成並更新 handoff 後，恢復為 `idle`。
 
@@ -51,7 +51,8 @@ const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing
 | 6 | 本機 `npm run check`（Node 24） | Claude 17:15 重跑：exit 0，65 個靜態頁 | `completed` |
 | 7 | 使用者確認後 commit＋push `main` | `ce4067b`（程式＋禮盒圖＋QA）＋ docs commit | `completed` |
 | 8 | Production 驗證 | `vercel ls charmvilla-demo2 --scope tentenco` 最新 Production READY；中英文 1440／390 商品頁確認三件事、零水平溢位、圖片 200 | `pending` |
-| 9 | 補 handoff 與 QA 的線上證據，PLAN 重設為 idle | `CODEX_HANDOFF.md` 有 commit 與 deployment id | `pending` |
+| 9 | 補 handoff 線上證據 | `CODEX_HANDOFF.md` 有 commit 與 deployment id | `completed` |
+| 10 | 修倒熱水照片茶標（CHARM VILLA 空格、棉線到長邊中間），使用者看過再換上 | 放大檢查＋使用者同意 | `pending` |
 
 可用狀態：`pending`、`in_progress`、`blocked`、`completed`。
 
@@ -72,6 +73,6 @@ const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing
 ## Handoff
 
 - Last verified state（Claude 17:20）：`main` = `origin/main` = `1426122`，上方檔案未提交；10 個 `.claude/worktrees/*` 全部乾淨；Codex 最後動作 16:52，17:06 使用者問「好了嗎？」未獲回覆，判斷已停止。
-- Next safe action：驗 Production（步驟 8）→ 補 handoff（步驟 9）→ 修倒熱水照片的茶標（只改茶標，一次一張，先給使用者看）。
+- Next safe action：等使用者說要修時，只改倒熱水照片的茶標（一次一張，先給使用者看），通過後還原 `brewImage` 並提交。
 - 注意：不要讓 Codex 與 Claude 同時在這個工作樹改檔。
 - Other pending work：關於頁 02 職人圖（已在 `83a5d55` 配 `about-02.webp`，若使用者另有要求再做）；Shopify 待真實商店資料；`member-pages-wip` 需獨立審查。
