@@ -1,16 +1,25 @@
-# Claude Code → OpenAI Codex 接手文件
+# Agent 接手快照（Claude Code ⇄ OpenAI Codex）
 
-更新時間：2026-10-12（Asia/Taipei）
+更新時間：2026-10-12 17:20（Asia/Taipei）。檔名沿用 `CODEX_HANDOFF.md`，因為其他文件都連到這裡；內容是雙向的。
 
-這份文件是「時間點快照」，用來讓 Codex 接手 Claude Code 留下的主線、工作樹與未完成任務。每次開始工作仍要重新執行 Git 檢查；若本文件與最新使用者指示或 Git 現況不同，以後兩者為準。
+這份文件是「時間點快照」。2026-10-12 上午 Codex 從 Claude Code 接手；同日 17:20 再由 Claude Code 從 Codex 接回。每次開始工作仍要重新執行 Git 檢查；若本文件與最新使用者指示或 Git 現況不同，以後兩者為準。
+
+## 2026-10-12 17:20 Codex → Claude Code 接回（最新）
+
+- Git：`main` = `origin/main` = `1426122`。下方各段寫的「尚未 push、未部署 Production」已過期：`0eea455..1426122` 已全部推上 `origin/main`，Git 觸發的 Production `dpl_B4qbmZLBGhVpWbHME3B5sy8qgJbC`（14:49，READY）已上線。
+- Vercel：專案已從舊的 `kuankuan16s-projects` 移到 `tentenco/charmvilla-demo2`（projectId 不變，`orgId` 現為 `team_uIcYhBfO11q1gcwk3BB6OgPt`）。push `main` 會自動部署 Production，alias 是 `https://charmvilla-demo2.vercel.app`、`charmvilla-demo2-tentenco.vercel.app`、`charmvilla-demo2-git-main-tentenco.vercel.app`。`kuankuan16s-projects` 底下已查無此專案。
+- 未完成：Codex 16:52 後停止，留下三件「已做好、已本機驗證、未提交」的工作——沖泡區左圖右文＋點到點動畫與新倒熱水照、八張禮盒正面實拍新增為圖二、茶款介紹小標改商品名。檔案清單、證據與下一步全部寫在 [`docs/agent/PLAN.md`](agent/PLAN.md)。使用者當時已說「改完就直接發佈」，Claude 接手後先確認一次再推送。
+- Claude 已用 Node 24 重跑 `npm run check`：exit 0，65 個靜態頁。
+- 最新 Preview（含上述 WIP，未提交）：`https://charmvilla-demo2-jvhmx5nne-tentenco.vercel.app`（約 16:46 建立，READY，需 Vercel 登入；是否就是最終版本未查證）。
+- Claude 接手要知道的工具差異（影像生成、瀏覽器、Node、記憶位置）見 [`docs/agent/README.md`](agent/README.md) 的「Claude Code 與 Codex 的工具差異」。
 
 ## 接手結論
 
 - 目前應使用的專案根目錄是 `/Users/kuan/Documents/Codex/10-02-charmvilla-demo2`。
-- Git remote 是 `https://github.com/kuankuan16/charmvilla_demo2`；本次盤點已將根目錄 `main` fast-forward 到 `origin/main` 的 `0eea455b4e03d6b9567e5ae87838142c436a755b`。
+- Git remote 是 `https://github.com/kuankuan16/charmvilla_demo2`；10-12 上午 Codex 盤點時的基底是 `0eea455`，現行主線見上一節。
 - `CLAUDE.md` 只有 `@AGENTS.md`，所以 Claude 與 Codex 的共同規則應維護在根目錄 `AGENTS.md`，不另做兩份相互漂移的 agent 文件。
 - 共用 agent 工作區已整理到 `docs/agent/`：`README.md` 定義閱讀與維護順序，`PLAN.md` 保存可續接的多步任務，`LESSONS.md` 累積使用者糾正。穩定規則仍只升格到根目錄 `AGENTS.md`，時間點狀態仍留在本 handoff，避免多份文件互相漂移。
-- 本機 `.vercel/project.json` 已確認連到 `tentenco/charmvilla-demo2`（project `prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`，team `team_WwbxohHQlRJLjIfQJDEWpHFV`）。程式的 `siteUrl` 與歷史 QA 仍使用 `https://charmvilla-gallery-site.vercel.app`；正式發布前仍須確認 production alias 與最終 domain，不可僅憑舊 deploy log 推定。
+- 本機 `.vercel/project.json` 連到 `tentenco/charmvilla-demo2`（project `prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`，team `team_uIcYhBfO11q1gcwk3BB6OgPt`；舊的 `team_WwbxohHQlRJLjIfQJDEWpHFV` 已失效）。程式的 `siteUrl` 與歷史 QA 仍使用 `https://charmvilla-gallery-site.vercel.app`——那是另一個用 CLI 部署、沒有連 Git 的專案，未經使用者同意不要更新它。使用者實際檢視的是 `charmvilla-demo2.vercel.app`。絕對不要部署或修改 `www.charmvilla.com`（品牌正式網站）。
 - `.claude/` 內仍保留 Claude Code 工作樹作為歷史與復原依據；2026-10-12 的 About 未提交變更曾由 Codex 接手，但使用者後來明確取消 02＋03 合併，現行 `main` 已恢復四章並重新配置 02 圖片。
 
 ## 文件盤點與判讀
@@ -172,8 +181,9 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - 茶禮盒商品圖目前有明確的盒型、刺繡、無緞帶、三張情境圖與場景選擇歷史；修改前讀 `src/data/catalog.ts`、`src/data/tea-gifts.ts` 的最新註解與 `git log -- <file>`。
 - 視覺參考要轉譯成 CHARM VILLA 的品牌語彙，不能複製參考站商標、文案、影像或程式。
 
-## 建議的 Codex 接手順序
+## 建議的接手順序
 
+0. 先完成 `docs/agent/PLAN.md` 的發布步驟（確認→commit→push→驗 Production）。
 1. About 維持四章：02「一尾小金魚」使用 `about-02.webp` 手作照，03「被世界看見」使用 `CV-0169`；不要再套用舊的 02＋03 合併 commit。
 2. 將 `member-pages-wip` 視為獨立的大型 review／重做任務，不和 About 小改一起合併。
 3. 若要處理其他未合併分支，先比較它和最新 `main` 的實際差異，再判斷是否仍符合最新使用者決策。

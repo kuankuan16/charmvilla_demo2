@@ -32,3 +32,27 @@
 ## Lessons 的品質標準
 
 一條 lesson 要能改變下一次的具體行為。避免「要更小心」；改寫成「當商品事實沒有可追溯來源時，保留待確認狀態，不自行補寫或稱為核准文案」。若一條 lesson 已經穩定、跨任務適用且得到使用者同意，將它合併進 `AGENTS.md`，再從 `LESSONS.md` 移除重複內容。
+
+## Claude Code 與 Codex 的工具差異
+
+兩個 agent 讀同一份 `AGENTS.md` 與本資料夾，但手邊的工具與記憶不同。接手時照下表換成自己的工具，不要照抄另一邊的指令。
+
+| 項目 | Codex（到 2026-10-12 16:52） | Claude Code |
+| --- | --- | --- |
+| 個人記憶 | `~/.codex/memories/`（大多是 09 月其他資料夾的事）；影像規則在 `~/.codex/memories/skills/charmvilla-product-image-fidelity/SKILL.md` | `~/.claude/projects/-Users-kuan-Documents-Codex-10-02-charmvilla-demo2/memory/`：使用者的語氣、字級、茶標、刺繡、禮盒、情境照等大量規格，生圖前必讀 |
+| 對話紀錄（考古用） | `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl` | `~/.claude/projects/<專案>/*.jsonl` |
+| 影像生成 | 內建 imagegen；原始檔在 `~/.codex/generated_images` | 依使用者記憶一律用 Higgsfield CLI：保留參考商品用 `nano_banana_2_1`，純文字／憑空生成用 `gpt_image_2_5 --variant sunburst`；一次一張、先給使用者看 |
+| 瀏覽器 QA | ego-browser（截圖要用明確 viewport＋`raw:true`，先驗 `innerWidth`） | `ego-browser` skill 或 Claude in Chrome；同樣要驗實際 viewport |
+| Node 24 | 暫存的 Node 24 runtime | 本機預設 Node 20、沒有 nvm：`npx -y -p node@24 -c 'npm run check'`（實測 v24.19.0） |
+
+共同的部署事實（2026-10-12 查證）：
+
+- push `main` → Git 觸發 `tentenco/charmvilla-demo2` Production（`https://charmvilla-demo2.vercel.app`）。所以「push」就等於「上線」，只在使用者授權發布時做。
+- 只要 Preview、不要上線：`vercel deploy --yes --target preview --scope tentenco`（`.vercelignore` 已排除 `.env*` 與 `temp/`）。Preview 有 Vercel 登入保護。
+- `charmvilla-gallery-site`（`siteUrl`）是另一個沒連 Git 的專案；`www.charmvilla.com` 是品牌正式網站，絕對不碰。
+
+接手時已知、要問使用者才能定案的衝突：
+
+- 茶標材質（已定案）：使用者 2026-10-12 回覆「霧面金，不要像鏡子那樣亮（亮應該是打光造成的）」。Claude 記憶裡舊的「金色鋁箔」說法作廢；仍維持無孔、棉線黏在裡面。
+- 內文字級：10-12 使用者指定的內文層級是 17px（見 handoff），比 Claude 記憶裡 10-07／10-08 的 16px 新，以 17px 為準。
+- 沖泡區版型：Claude 記憶的「bramwel 奶黃卡片」（10-08）已被 10-12 的 Agasis 列表、再被「方案 01＋02 左圖右文」取代。
