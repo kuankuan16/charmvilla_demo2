@@ -207,14 +207,33 @@ function stack(el: HTMLElement): Cleanup {
 
 // 美好的沖泡方式 after agasis.webflow.io/services/brand-identity's "All you need to launch" (measured 2026-10-12):
 // the left heading stays sticky while the ruled rows at the right rise 32px and fade from 0 to 1 in a scrubbed, overlapping sequence.
+// A second scrub paints the fine vertical rail gold and activates its round nodes as each brewing step is reached.
 function brewProcess(el: HTMLElement): Cleanup {
   const list = el.querySelector<HTMLElement>("[data-brew-steps]");
   const steps = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-step]"));
   if (!list || steps.length < 2) return () => {};
   gsap.set(steps, { y: 32, opacity: 0 });
   const tl = gsap.timeline({ paused: true }).to(steps, { y: 0, opacity: 1, duration: .52, stagger: .17, ease: "none" });
-  const st = ScrollTrigger.create({ trigger: el, start: str(el, "data-start", "top 98%"), end: str(el, "data-end", "top 20%"), scrub: 1, animation: tl });
-  return () => { st.kill(); tl.kill(); gsap.set(steps, { clearProps: "transform,opacity" }); };
+  const reveal = ScrollTrigger.create({ trigger: el, start: str(el, "data-start", "top 98%"), end: str(el, "data-end", "top 20%"), scrub: 1, animation: tl });
+  const paintProgress = (progress: number) => {
+    list.style.setProperty("--brew-progress", progress.toFixed(4));
+    steps.forEach((step, index) => step.classList.toggle("is-progressed", progress + .015 >= index / (steps.length - 1)));
+  };
+  paintProgress(0);
+  const progress = ScrollTrigger.create({
+    trigger: list,
+    start: "top 74%",
+    end: "bottom 38%",
+    scrub: 1.1,
+    onUpdate: (self) => paintProgress(self.progress),
+    onRefresh: (self) => paintProgress(self.progress),
+  });
+  return () => {
+    reveal.kill(); progress.kill(); tl.kill();
+    list.style.removeProperty("--brew-progress");
+    steps.forEach((step) => step.classList.remove("is-progressed"));
+    gsap.set(steps, { clearProps: "transform,opacity" });
+  };
 }
 
 // Mouse-driven ambient drift (lerp .05, amplitude .005 × viewport width by default).

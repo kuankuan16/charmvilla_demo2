@@ -112,6 +112,8 @@ export default async function ProductPage({ params }: Props) {
   // A bracketed part of a name or label — 東方美人茶（白毫烏龍茶）, 紅玉紅茶（Red Jade／Ruby No.18）3 入, 重量（含盒） — goes on its own
   // small line under the rest (user 2026-10-07: 「括號內的文字都換行用小字呈現」).
   const smallParen = (text: string) => { const m = text.match(/^(.*?)\s*[（(]([^（）()]+)[）)]\s*(.*)$/); return m ? <>{m[1]}{m[3] && ` ${m[3]}`}<small className="product-paren">{m[2]}</small></> : text; };
+  // The compact tea-content list keeps only the tea name and quantity; aliases in parentheses are already explained in 茶款介紹.
+  const teaItem = (text: string) => text.replace(/\s*[（(][^（）()]+[）)]/g, "").replace(/\s+/g, " ").trim();
   // Each fact appears once (user 2026-10-07: 「不要一直重複一樣的資訊」, 「規格內的系列可以刪」): the series and one short fact in the
   // image's corner, three facts in the thin rows, and the specifications carry only what is left.
   const byLabel = (labels: string[]) => labels.map((l) => product.facts.find((f) => f.label === l)).filter((f): f is NonNullable<typeof f> => Boolean(f));
@@ -131,7 +133,10 @@ export default async function ProductPage({ params }: Props) {
   const specs = <section className="product-specs" aria-labelledby="specs-title">
     <h2 id="specs-title" className="tc">{specTitle}</h2>
     <dl className="product-keyfacts">
-      {specFacts.map((f) => <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{smallParen(item)}</li>)}</ul> : f.value}</dd></div>)}
+      {specFacts.map((f) => {
+        const isTeaContents = f.label === t("盒內茶款", "Tea selection") || f.label === t("茶款選擇（每盒擇一）", "Choose one tea variety");
+        return <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{isTeaContents ? teaItem(item) : smallParen(item)}</li>)}</ul> : isTeaContents ? teaItem(f.value) : f.value}</dd></div>;
+      })}
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
       {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
     </dl>

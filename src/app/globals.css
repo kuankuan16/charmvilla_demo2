@@ -431,7 +431,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-band-image { position: absolute; inset: 0; }
 .product-band-image::after { content: ""; position: absolute; inset: 0; background: rgb(0 0 0 / .42); }
 .product-band-slogan { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 0 40px; text-align: center; pointer-events: none; } /* centred and large (user 2026-10-08: 「居中放大」) */
-.product-band-slogan span { max-width: 22ch; font-size: clamp(28px, 3.6vw, 52px); line-height: 1.2; font-weight: 500; letter-spacing: -.01em; text-wrap: balance; }
+.product-band-slogan span { width: min(100%, 30ch); max-width: 30ch; font-size: clamp(28px, 3.6vw, 52px); line-height: 1.2; font-weight: 300; letter-spacing: -.01em; text-wrap: balance; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .product-column, .product-more { grid-column: 15 / span 10; }
   .product-pair-side { grid-column: 8 / span 5; }
@@ -1457,8 +1457,13 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
 .brew-kicker > span { width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--color-gold); }
 .brew-title { max-width: 520px; margin: 0; font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
-.brew-steps { grid-column: 6 / -1; list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .16); }
-.brew-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr) 72px; column-gap: 28px; align-items: start; min-height: 148px; padding: 32px 0; border-bottom: 1px solid rgb(31 31 31 / .16); will-change: transform, opacity; }
+.brew-steps { --brew-progress: 0; position: relative; grid-column: 6 / -1; list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .16); }
+.brew-steps::before, .brew-steps::after { content: ""; position: absolute; z-index: 0; top: 39px; bottom: 39px; left: 6px; width: 1px; transform-origin: 50% 0%; pointer-events: none; }
+.brew-steps::before { background: rgb(31 31 31 / .18); }
+.brew-steps::after { background: var(--color-gold); transform: scaleY(var(--brew-progress)); }
+.brew-steps li { display: grid; grid-template-columns: 20px 48px minmax(0, 1fr) 72px; column-gap: 20px; align-items: start; min-height: 148px; padding: 32px 0; border-bottom: 1px solid rgb(31 31 31 / .16); will-change: transform, opacity; }
+.brew-steps li::before { content: ""; position: relative; z-index: 1; grid-column: 1; width: 13px; height: 13px; margin-top: 1px; border-radius: 50%; background: #bebebb; transition: background-color .32s ease, box-shadow .32s ease; }
+.brew-steps li.is-progressed::before { background: var(--color-gold); box-shadow: 0 0 0 3px #efefed; }
 .brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
@@ -1467,7 +1472,7 @@ main:has(> .policy-page) { background: #efefed; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .brew-intro { grid-column: 1 / span 4; }
   .brew-steps { grid-column: 5 / -1; }
-  .brew-steps li { grid-template-columns: 42px minmax(0, 1fr) 56px; column-gap: 20px; }
+  .brew-steps li { grid-template-columns: 20px 42px minmax(0, 1fr) 56px; column-gap: 16px; }
   .brew-copy h3 { font-size: 23px; }
   .brew-icon { width: 54px; height: 54px; }
 }
@@ -1477,7 +1482,9 @@ main:has(> .policy-page) { background: #efefed; }
   .brew-intro { position: static; margin-bottom: 48px; }
   .brew-kicker { margin-bottom: 12px; font-size: 13px; }
   .brew-kicker > span { width: 7px; height: 7px; }
-  .brew-steps li { grid-template-columns: 34px minmax(0, 1fr) 46px; column-gap: 12px; min-height: 0; padding: 24px 0; }
+  .brew-steps::before, .brew-steps::after { top: 31px; bottom: 31px; left: 5px; }
+  .brew-steps li { grid-template-columns: 16px 30px minmax(0, 1fr) 46px; column-gap: 10px; min-height: 0; padding: 24px 0; }
+  .brew-steps li::before { width: 11px; height: 11px; }
   .brew-number { font-size: 13px; }
   .brew-copy h3 { font-size: 20px; }
   .brew-copy p { margin-top: 8px; font-size: 15px; line-height: 1.6; }
@@ -1495,6 +1502,11 @@ main:has(> .policy-page) { background: #efefed; }
 @media (max-width: 479px) {
   .brew-title, .teakind-h02 { font-size: 30px; }
   .teakind-h05 { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brew-steps { --brew-progress: 1; }
+  .brew-steps li::before { background: var(--color-gold); transition: none; }
 }
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
