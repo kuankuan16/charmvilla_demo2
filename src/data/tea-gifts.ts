@@ -103,8 +103,8 @@ export const teaGifts: TeaGift[] = [
   { officialId: 891, slug: "reunion-paper-gift-box", journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: reunionBoxes, dimensions: "", weight: 0, contents: fifteen, usd: 170, scene: "CV-0348",
     packaging: [
       { label: gold, text: { zh: "橘色紙盒搭配金色手工刺繡盒蓋。", en: "Orange paper box with a hand-embroidered gold lid." } },
-      { label: pink, text: { zh: "桐木盒搭配粉紅色手工刺繡盒蓋。", en: "Paulownia wood box with a hand-embroidered pink lid." }, placeholderViews: 2 /* off sale: grey blocks instead of the paulownia box's photographs (user 2026-10-07: 「粉紅色商品下架改成灰色塊」) */ },
-      { label: blue, text: { zh: "藍色紙盒搭配黃色手工刺繡盒蓋。", en: "Blue paper box with a hand-embroidered yellow lid." }, placeholderViews: 2 /* off sale too (user 2026-10-07: 「藍色也是」) */ },
+      { label: pink, text: { zh: "桐木盒搭配粉紅色手工刺繡盒蓋。", en: "Paulownia wood box with a hand-embroidered pink lid." }, placeholderViews: 2 /* still on sale; grey blocks until the client supplies photographs and details (2026-10-07 「粉紅色商品下架改成灰色塊」 was corrected 2026-10-12: 「沒有要下架，要請客戶補資料」) */ },
+      { label: blue, text: { zh: "藍色紙盒搭配黃色手工刺繡盒蓋。", en: "Blue paper box with a hand-embroidered yellow lid." }, placeholderViews: 2 /* same: on sale, awaiting the client's photographs and details (2026-10-12) */ },
     ],
     description: "CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包。所有包裝選項均含相同茶款組合，適合與親友共享或贈禮。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "不同茶款的小金魚在一方紙盒內團聚，象徵著團圓美好之意。", en: "Little goldfish carrying different teas gather in one paper box, a symbol of reunion and the joy of togetherness." } },
