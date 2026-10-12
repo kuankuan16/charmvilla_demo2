@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `idle`（2026-10-12 深夜：倒熱水照片 v5、關於頁 02 新照、引言去「」已發布。待使用者決定：上線前檢查的 5 項紅色問題——正式網域、美國站預設語言、台幣標價商品的美金價、購物車台灣運費文字、最新消息連到下架商品）
+Status: `idle`（2026-10-12 深夜：`bdc8c03` 上線前可直接修的項目已改好、尚未推送；客戶待回覆事項整理在 Claude 文件「CHARM VILLA 美國官網上線交接清單」https://claude.ai/code/artifact/0f0d7bdd-85b6-41e9-bfbf-152a36315269 ）
 
 開始新任務時以本模板取代下方欄位；完成並更新 handoff 後，恢復為 `idle`。
 
@@ -80,13 +80,13 @@ const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing
 ## 上線前待辦清單（2026-10-12 深夜，Claude 只讀程式盤點，未實測）
 
 需要使用者／客戶決定或提供：
-1. 正式網域（`src/i18n/config.ts` 的 `siteUrl` 仍是 charmvilla-gallery-site.vercel.app）。
+1. 網域切換時程與操作人（`siteUrl` 已改為 https://www.charmvilla.com；網域本身尚未從 charmvilla-com-temp-site 移過來，需使用者當下同意）。
 2. 美國站預設語言（目前無前綴 `/` 是中文、x-default 指向中文）。
 3. 美金價格：雲朵杯墊、銀杏茶匙、木筷（目前台幣）、柴燒鳥形筷架（無價）。
 4. 團圓粉紅色、藍色的照片與規格（沒有下架，待客戶補資料）；團圓本身缺尺寸、重量。
 5. 公司正式名稱與地址（政策頁、頁尾）。
 6. 最新消息中連到隱藏商品／系列的文章要下架或改寫（`news.ts`）。
 
-agent 可直接修（需使用者同意）：購物車台灣運費文字、網站介紹仍提皮件金飾、服務條款「FDA 認證」改寫、隱私權政策描述 Shopify／cookie、FAQ 不存在的門市頁、購物車「聯絡門市」、退換貨頁加更新日期、iPhone 主畫面圖示與 favicon、會員表單 +886 與國家選項。
+已修（`bdc8c03`）：購物車台灣運費文字、網站介紹提皮件金飾、FAQ 門市頁、購物車「聯絡門市」、品牌金魚圖示、會員表單 +1／美國。客戶原文不改、改列客戶確認：服務條款 FDA、隱私權政策描述 Shopify、退換貨頁更新日期。
 
 等 Shopify：每個茶款選項各自一個 variant、杯墊等四項的 mapping、新增地址資料格式、member-pages-wip 審查、電子報與 CCPA。
