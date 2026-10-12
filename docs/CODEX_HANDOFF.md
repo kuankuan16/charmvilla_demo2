@@ -92,6 +92,16 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 
 工作樹先保留，不需刪除；其中的 About branch 已無未提交修改。
 
+## 2026-10-12 茶款介紹改版
+
+- 依 Vizooli Home B 的「Working Process」版面邏輯重新設計商品頁「茶款介紹」，但只轉譯其構圖節奏：淺灰全幅背景、置中的小標與大標題、桌面三欄錯落卡片、卡片內的圖片／編號／進度標記／完整說明；未複製參考站的商標、文案、圖片或程式。
+- 保留 CHARM VILLA 既有核准茶葉照片與雙語內容，使用品牌金色作為識別點，並將原本依賴 hover 的說明改為直接可讀。
+- 桌面為三欄錯落排列，平板為兩欄，手機改成可鍵盤操作的橫向 snap 卡片，右側保留下一張卡片的預告。
+- 以中文 5 張卡與英文 2 張卡兩種資料量驗證；1440px、390px、鍵盤水平捲動與 reduced motion 均完成檢查，沒有頁面橫向溢位或卡片內容裁切。
+- `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
+- 程式提交：`cd18e3e`（`redesign tea notes after Vizooli process layout`）。尚未 push、未部署 Production。
+- Vercel Preview：`https://charmvilla-demo2-oo253y9bu-tentenco.vercel.app`，狀態 READY；已透過 Vercel protection bypass 確認中文與英文代表商品頁皆回應 200。專案啟用 Vercel Authentication，需具存取權的 Vercel 帳號登入。
+
 ## 其他未完成或未審工作
 
 ### `member-pages-wip`
