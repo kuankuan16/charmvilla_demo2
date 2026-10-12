@@ -10,7 +10,7 @@
 - Git remote 是 `https://github.com/kuankuan16/charmvilla_demo2`；本次盤點已將根目錄 `main` fast-forward 到 `origin/main` 的 `0eea455b4e03d6b9567e5ae87838142c436a755b`。
 - `CLAUDE.md` 只有 `@AGENTS.md`，所以 Claude 與 Codex 的共同規則應維護在根目錄 `AGENTS.md`，不另做兩份相互漂移的 agent 文件。
 - 本機 `.vercel/project.json` 連到 Vercel project `charmvilla-demo2`（team `team_WwbxohHQlRJLjIfQJDEWpHFV`），但程式的 `siteUrl` 與歷史 QA 使用 `https://charmvilla-gallery-site.vercel.app`。兩者命名不一致；正式發布前必須重新確認 project、alias、Git integration 與最終 domain，不可僅憑舊 deploy log 推定。
-- 根目錄主線本身乾淨，但 `.claude/` 內有 Claude Code 工作樹；其中一個在 2026-10-12 仍有進行中的未提交變更。
+- `.claude/` 內仍保留 Claude Code 工作樹作為歷史與復原依據；2026-10-12 的 About 未提交變更已由 Codex 驗證並整合回本機 `main`。
 
 ## 文件盤點與判讀
 
@@ -43,7 +43,7 @@
 - `public/media/`、`public/brand/`：現行網站影像、影片與官方品牌資產。
 - `src/app/globals.css`：大量全站與頁面樣式；改動前必須搜尋 selector 與所有斷點。
 
-## 2026-10-12 進行中的 Claude WIP
+## 2026-10-12 Claude WIP 接手結果
 
 工作樹實體路徑：
 
@@ -53,13 +53,13 @@
 
 基底：`0eea455`，與盤點時的 `origin/main` 相同。
 
-盤點時 Claude 背景程序仍在執行，以下 3 個檔案有未提交變更：
+盤點時 Claude session 已達使用上限，以下 3 個檔案留有未提交變更：
 
 - `src/app/[lang]/(catalog)/about/page.tsx`
 - `src/app/globals.css`
 - `src/data/about.ts`
 
-這批變更對應使用者 2026-10-12 的新指示：將 About 的 02「一尾小金魚」與 03「被世界看見」合併並重新潤稿。現有 diff 大致包含：
+這批變更對應使用者 2026-10-12 的指示：將 About 的 02「一尾小金魚」與 03「被世界看見」合併並重新潤稿。Codex 已完成以下內容：
 
 - 四章改成三章，原 04 重新編為 03。
 - 合併後標題為「一尾小金魚，被世界看見」。
@@ -68,7 +68,7 @@
 - 獎項標誌顯示條件由 `world` 移到 `goldfish`。
 - 標題加 `text-wrap: balance`，並移除 placeholder 樣式。
 
-接手前先執行：
+接手時已執行：
 
 ```bash
 git worktree list --porcelain
@@ -77,7 +77,17 @@ git -C .claude/worktrees/brewing-steps-redesign diff --check
 git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catalog)'/about/page.tsx src/data/about.ts src/app/globals.css
 ```
 
-不要在根目錄重做同一改動，也不要終止／刪除該工作樹。先確認 Claude session 已停止或由使用者明確決定交給 Codex，再在該工作樹完成文案、雙語、build 與桌機／手機視覺 QA。盤點時這批修改尚未 commit、尚未 merge、尚未 deploy，也沒有完成驗證紀錄。
+完成狀態：
+
+- 原工作樹 commit：`d33869a`（`refactor: merge About story chapters`）。
+- 已 cherry-pick 至本機 `main`：`f89f9ac`。
+- 已核對中文事實、英文忠實度、獎項 logo 與三章交錯版型。
+- `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
+- 已以 1440px 與 390px 實際截圖檢查 `/en/about`；標題、圖片、獎項標誌與手機版排列正常。
+- 本機 `next start` 對無語系前綴的 `/about` 會在 rewrite 與 `/zh` redirect 之間循環，但正式站同一路徑回應 200；這是本次 About 改動以外的既有 routing／本機執行差異，尚未另行修改。
+- 尚未 push，也尚未部署；只有獲得使用者發布授權後才能進入發布流程。
+
+工作樹先保留，不需刪除；其中的 About branch 已無未提交修改。
 
 ## 其他未完成或未審工作
 
@@ -125,11 +135,10 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 
 ## 建議的 Codex 接手順序
 
-1. 確認 Claude 背景工作已停止，保存 `worktree-tea-notes-stack` 的未提交 diff。
-2. 先完成 About 02＋03 合併：核對中文事實、英文忠實度、獎項 logo、三章交錯版型，以及 1440／390 實際畫面。
-3. 在該工作樹執行 `npm run check`；若成功，再決定 commit 與如何整合回最新 `main`。不要從根目錄覆蓋該 diff。
-4. 將 `member-pages-wip` 視為獨立的大型 review／重做任務，不和 About 小改一起合併。
-5. 只有使用者要求正式發布時，才檢查 Vercel 專案歸屬、部署、alias、代表路由與資產；Git push 與 Vercel Production 是兩個獨立狀態。
+1. About 02＋03 合併已完成並整合至本機 `main`；後續不要再從舊工作樹重做或重複 cherry-pick。
+2. 將 `member-pages-wip` 視為獨立的大型 review／重做任務，不和 About 小改一起合併。
+3. 若要處理其他未合併分支，先比較它和最新 `main` 的實際差異，再判斷是否仍符合最新使用者決策。
+4. 只有使用者要求正式發布時，才檢查 Vercel 專案歸屬、部署、alias、代表路由與資產；Git push 與 Vercel Production 是兩個獨立狀態。
 
 ## 驗證清單
 
