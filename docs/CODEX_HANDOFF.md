@@ -87,7 +87,7 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
 - 已以 1440px 與 390px 實際截圖檢查 `/en/about`；02 手作圖裁切、四章交錯、03 獎項標誌與手機版排列正常。
 - 本機 `next start` 對無語系前綴的 `/about` 會在 rewrite 與 `/zh` redirect 之間循環，但正式站同一路徑回應 200；這是本次 About 改動以外的既有 routing／本機執行差異，尚未另行修改。
-- 尚未 push、尚未部署至 Production。依使用者要求已建立 Vercel Preview `dpl_Bv8aVXDZij7qC8izmdJCJj84S2Ze`：`https://charmvilla-demo2-un1ru7o9l-tentenco.vercel.app`，狀態 READY；專案啟用 Vercel Authentication，需具存取權的 Vercel 帳號登入。
+- 尚未 push、尚未部署至 Production。最新 Vercel Preview 是 `dpl_J7VNa3dv4dH6rRVxKziw2TdxMeht`：`https://charmvilla-demo2-49d7ul1xe-tentenco.vercel.app`，狀態 READY；此版已縮小 iF Gold 標誌，使它與 Red Dot 標誌的視覺尺寸接近。專案啟用 Vercel Authentication，需具存取權的 Vercel 帳號登入。
 - 已透過 Vercel protection bypass 驗證 Preview `/about` 回應 200，HTML 包含 `about-02.webp`、「一尾小金魚」與「被世界看見」。
 
 工作樹先保留，不需刪除；其中的 About branch 已無未提交修改。
