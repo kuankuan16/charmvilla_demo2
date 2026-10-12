@@ -6,6 +6,7 @@
 
 ## 2026-10-12 17:20 Codex → Claude Code 接回（最新）
 
+- **晚間更新：** `91da6a3`：茶葉禮盒商品圖改用 `-even` 版（同一灰色漸層、同樣大小，作法見 `docs/qa/2026-10-12-gift-gallery-even/`）；茶款介紹標題在桌機吸附於選單下；倒熱水照片 v2（茶標正確寫 CHARM VILLA、細棉線）已上線。舊 v1 照片留在工作樹未提交、未被引用。
 - **17:45 更新：** Claude 提交 `ce4067b`（禮盒高清正面照新增為圖二、沖泡區左圖右文＋點到點動畫、茶款小標改商品名）與 docs commit，已 push；Production `dpl_3ENaukRujGJn3cAij6TrYtEZFWYg` READY，`charmvilla-demo2.vercel.app` 已確認。倒熱水新照片因茶標字樣少空格、棉線位置不對，使用者決定先不上線，沖泡區暫用 10-08 舊照片；詳見 `docs/agent/PLAN.md`。
 - Git：`main` = `origin/main` = `1426122`。下方各段寫的「尚未 push、未部署 Production」已過期：`0eea455..1426122` 已全部推上 `origin/main`，Git 觸發的 Production `dpl_B4qbmZLBGhVpWbHME3B5sy8qgJbC`（14:49，READY）已上線。
 - Vercel：專案已從舊的 `kuankuan16s-projects` 移到 `tentenco/charmvilla-demo2`（projectId 不變，`orgId` 現為 `team_uIcYhBfO11q1gcwk3BB6OgPt`）。push `main` 會自動部署 Production，alias 是 `https://charmvilla-demo2.vercel.app`、`charmvilla-demo2-tentenco.vercel.app`、`charmvilla-demo2-git-main-tentenco.vercel.app`。`kuankuan16s-projects` 底下已查無此專案。

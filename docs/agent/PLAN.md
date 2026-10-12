@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `in_progress`（2026-10-12 17:45，`ce4067b` 已上線 Production 並驗證；只剩倒熱水照片的茶標要修）
+Status: `idle`（2026-10-12 晚：`91da6a3` 商品圖統一、茶款標題吸附、倒熱水照片 v2 已推送；等 Production 驗證後無未完成步驟）
 
 開始新任務時以本模板取代下方欄位；完成並更新 handoff 後，恢復為 `idle`。
 
@@ -52,7 +52,7 @@ const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing
 | 7 | 使用者確認後 commit＋push `main` | `ce4067b`（程式＋禮盒圖＋QA）＋ docs commit | `completed` |
 | 8 | Production 驗證 | `vercel ls charmvilla-demo2 --scope tentenco` 最新 Production READY；中英文 1440／390 商品頁確認三件事、零水平溢位、圖片 200 | `pending` |
 | 9 | 補 handoff 線上證據 | `CODEX_HANDOFF.md` 有 commit 與 deployment id | `completed` |
-| 10 | 修倒熱水照片茶標（CHARM VILLA 空格、棉線到長邊中間），使用者看過再換上 | 放大檢查＋使用者同意 | `pending` |
+| 10 | 修倒熱水照片茶標，使用者看過再換上 | v2 已上（`91da6a3`），使用者「可以」；棉線約在長邊 2/3、茶標偏大，已告知 | `completed` |
 
 可用狀態：`pending`、`in_progress`、`blocked`、`completed`。
 
