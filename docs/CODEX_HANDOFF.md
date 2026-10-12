@@ -119,6 +119,7 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - 商品頁底部英文品牌標語最大寬度由 22ch 增至 30ch，字重由 500 降至 300。禮盒規格的「盒內茶款／茶款選擇」刪除括號中的英文與別名小字，只保留茶名與數量；茶款介紹仍保留完整名稱。
 - `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 與 Next production build 通過。瀏覽器確認沖泡進度 01–03 金色、04–05 灰色的中段狀態、五款禮盒茶名無別名小字、標語 300 字重與零水平溢位。
 - 紫斑蝶商品的「關於臺灣的紫斑蝶」並非已確認的品牌原始文案：它由 Claude Fable 5.1 在 `d00bf091`（2026-10-07）加入，提交說明稱該批資料來自使用者提供的兩份 PDF，但專案未保留該段的 PDF 頁碼或逐句來源。自然史背景多可對應官方機構資料，但「禮盒刺繡確為端紫斑蝶」目前無可追溯品牌來源；未取得使用者決定前不得宣稱為核准文案，也不要自行擴寫。
+- 本輪程式提交：`d8094e0`（`add brewing progress and refine product copy`）。Vercel Preview `https://charmvilla-demo2-7wb8nox0n-tentenco.vercel.app`（deployment `dpl_4dAoFHpPnciFehk676iy99SZvmz6`）為 READY；線上代表商品頁已確認 3 個進度節點隨目前捲動位置轉金、別名小字移除、圓點小標、300 字重品牌標語與零水平溢位。尚未 push、未部署 Production。
 
 ## 其他未完成或未審工作
 
