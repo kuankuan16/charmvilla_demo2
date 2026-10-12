@@ -34,7 +34,7 @@ const ArrowLink = ({ href, label, lang }: { href: string; label: string; lang: L
 
 // About (user 2026-10-05: 「根據目前的設計風格…自動幫我完成 about 頁面」; then 「關於我們的頁面內容參考 zema-template.webflow.io/our-story，
 // 補齊更像電商的功能」). The reference's order, with this brand's facts: the opening, the figures,
-// four chapters, the range, the store's service terms (the reference's benefit badges), questions and answers,
+// three chapters (four until 2026-10-12, when 02 and 03 were merged: 「０２跟０３合併」), the range, the store's service terms (the reference's benefit badges), questions and answers,
 // and the sources every fact comes from (src/data/about.ts). The chapters' shop links (欣賞全部作品, 選購小金魚茶包, 看最新消息) are gone;
 // the range of pieces stays (user 2026-10-08: 「把關於我們頁的導購按鈕都刪掉（但保留作品）」).
 export default async function AboutPage({ params }: Props) {
@@ -64,17 +64,18 @@ export default async function AboutPage({ params }: Props) {
 
       {about.chapters.map((c) => (
         <section key={c.id} className={`about-chapter about-chapter--${c.side}`} aria-labelledby={`about-${c.id}`}>
-          <figure className={`about-chapter-image${c.placeholder ? " is-placeholder" : ""}`} style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
-            {/* a grey block where the photograph is still to be chosen (user 2026-10-07: 「用灰色塊先取代」) */}
-            {c.placeholder ? <span className="about-placeholder-label tc">{t("缺圖", "No image yet")}</span> : <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />}
+          {/* every chapter has its photograph now: the grey 缺圖 blocks of 2026-10-07 went as 01 got its image (2026-10-08) and 02 joined 03 (2026-10-12) */}
+          <figure className="about-chapter-image" style={{ aspectRatio: c.image.w / c.image.h > 1.2 ? "3 / 2" : "4 / 5" }}>
+            <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" />
           </figure>
           <div className="about-chapter-text">
             <p className="about-chapter-index">{c.index}</p>
             <h2 id={`about-${c.id}`} className="tc">{c.title}</h2>
             {c.body.map((p) => <p key={p} className="tc">{p}</p>)}
             {c.quote && <blockquote className="about-quote"><p className="tc">{c.quote.text}</p><cite className="tc">{c.quote.by}</cite></blockquote>}
-            {/* the two award marks under the 03 text, larger, without captions (user 2026-10-05: 「刪除說明字，並加大 logo」「得獎 logo 加在這段文字之下」) */}
-            {c.id === "world" && <div className="about-award-marks" role="group" aria-label={tea.honoursAria}>
+            {/* the two award marks under the text that tells of the awards, larger, without captions (user 2026-10-05: 「刪除說明字，並加大 logo」
+                「得獎 logo 加在這段文字之下」) — the old 03, part of 02 since the two were merged on 2026-10-12 */}
+            {c.id === "goldfish" && <div className="about-award-marks" role="group" aria-label={tea.honoursAria}>
               {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="200px" />)}
             </div>}
           </div>
