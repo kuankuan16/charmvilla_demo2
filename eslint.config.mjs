@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Claude Code keeps complete nested worktrees (including generated .next output) here.
+    // They are independent checkouts and must not be linted as part of this root project.
+    ".claude/**",
     "docs/research/**/source/**",
   ]),
 ]);
