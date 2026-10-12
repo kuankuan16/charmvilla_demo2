@@ -18,3 +18,8 @@ scripts
 .windsurf
 out
 .vercel
+
+# Preview builds use the project's Vercel environment, never local credentials.
+.env*
+!.env.example
+temp/

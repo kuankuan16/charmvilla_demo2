@@ -1,6 +1,6 @@
 // Under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 follows Vizooli's sticky card process, then 美好的沖泡方式
-// follows Agasis' "All you need to launch" split screen (user 2026-10-12): a sticky two-size heading at the left and 01–05 ruled rows at
-// the right, each paired with a fine line icon and a scroll-scrubbed rise/fade. Earlier forms remain in git history. The brewing icons are
+// combines proposal 02's left photograph/right guide with proposal 01's point-to-point progress (user 2026-10-12).
+// Rules begin at the copy column; stationary nodes connect only as far as the final node. The brewing icons are
 // the ones redrawn in
 // the manner of bramwel's capability icons (「icon 照這個風格…重新畫一遍像似的」): a 240 box, 3px strokes, a few plain geometric shapes
 // repeated and overlapped — the goldfish is the brand's own vector, stroked the same way (「小金魚改為線稿，跟其他的風格一樣」, 2026-10-07).
@@ -10,6 +10,7 @@ import TeaKinds from "./TeaKinds";
 import BrewProcess from "./BrewProcess";
 import { site, type Img } from "@/data/content";
 import { GOLDFISH_D } from "./goldfish-path";
+import { Picture } from "@/components/ui";
 
 // the first icons again (user 2026-10-08: 「用一開始的」, after 「icon 小一點，精緻一點，或是可以重畫」): the 48-box line drawings of 2026-10-07
 // — 1.3 strokes with round caps — shown at 64px; the goldfish is the brand's own vector, stroked the same way (「小金魚改為線稿，跟其他的風格一樣」)
@@ -50,19 +51,27 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      {notes && <TeaKinds title={notes.title} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
+      {notes && <TeaKinds title={notes.title} productName={product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
-        <header className="brew-intro">
-          <p className="brew-kicker tc"><span aria-hidden="true" />{t("美好的", "A beautiful")}</p>
-          <h2 id="brew-title" className="brew-title tc">{t("沖泡方式", "way to brew")}</h2>
-        </header>
-        <ol className="brew-steps" data-brew-steps="">
-          {brew.steps.map((s, i) => <li key={s.title} data-brew-step="">
-            <span className="brew-number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
-            <div className="brew-copy"><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></div>
-            <span className="brew-icon" aria-hidden="true">{brewIcons[i] ?? brewIcons[4]}</span>
-          </li>)}
-        </ol>
+        {brew.image && <figure className="brew-visual">
+          <Picture img={brew.image} fill animate={false} sizes="(max-width: 767px) 100vw, (max-width: 1279px) 40vw, 530px" />
+        </figure>}
+        <div className="brew-guide">
+          <header className="brew-intro">
+            <p className="brew-kicker tc"><span aria-hidden="true" />{t("美好的", "A beautiful")}</p>
+            <h2 id="brew-title" className="brew-title tc">{t("沖泡方式", "way to brew")}</h2>
+          </header>
+          <ol className="brew-steps" data-brew-steps="">
+            {brew.steps.map((s, i) => <li key={s.title} data-brew-step="">
+              <span className="brew-node" data-brew-node="" aria-hidden="true" />
+              <div className="brew-step-content" data-brew-reveal="">
+                <span className="brew-number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <div className="brew-copy"><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></div>
+                <span className="brew-icon" aria-hidden="true">{brewIcons[i] ?? brewIcons[4]}</span>
+              </div>
+            </li>)}
+          </ol>
+        </div>
       </BrewProcess>}
     </section>
   );

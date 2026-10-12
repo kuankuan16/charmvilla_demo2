@@ -13,6 +13,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import type { ProductView } from "@/data/catalog";
+import { imageFit } from "@/data/content";
 import { useT } from "@/i18n/LocaleProvider";
 import { useProductOption } from "./ProductOption";
 
@@ -46,7 +47,7 @@ export default function ProductGallery({ name, views: baseViews, optionViews, in
       <div className="product-stage">
         <div className="product-main-image" role="region" aria-label={t(`${name}圖片`, `Images of ${name}`)}>
           {/* quality 90 and a half-window source: this image must stay crisp on large and high-density screens */}
-          {views.map((v, i) => <div key={v.image.src || `placeholder-${i}`} className={`product-slide${v.placeholder ? " product-slide--placeholder" : ""}${v.tone === "grey" ? " is-grey" : ""}`} data-active={i === active} aria-hidden={i !== active}>
+          {views.map((v, i) => <div key={v.image.src || `placeholder-${i}`} className={`product-slide${imageFit(v.image) === "contain" ? " product-slide--contained" : ""}${v.placeholder ? " product-slide--placeholder" : ""}${v.tone === "grey" ? " is-grey" : ""}`} data-active={i === active} aria-hidden={i !== active}>
             {/* a beige block where the photograph is still to be chosen (user 2026-10-07: 「其他先用米黃色塊取代表示要再挑圖」) */}
             {v.placeholder ? <span className="product-placeholder-label tc">{v.label}</span> : <Image src={v.image.src} alt={v.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" quality={90} priority={i === 0} />}
           </div>)}
@@ -63,7 +64,7 @@ export default function ProductGallery({ name, views: baseViews, optionViews, in
           <span className="product-first-lead" aria-hidden="true" />
           {/* always shown, a single view included (user 2026-10-08: 「每一個商品都要有小縮圖」); only the arrows need more than one */}
           <div ref={thumbs} className="product-thumbnails" role="group" aria-label={t(`${name}縮圖`, `Thumbnails of ${name}`)}>
-            {views.map((v, i) => <button key={v.image.src || `placeholder-${i}`} type="button" className={v.placeholder ? `is-placeholder${v.tone === "grey" ? " is-grey" : ""}` : undefined} aria-label={t(`查看${v.label}`, `View ${v.label}`)} aria-pressed={i === active} onClick={() => setActive(i)}>{v.placeholder ? null : <Image src={v.image.src} alt="" width={200} height={240} sizes="100px" />}</button>)}
+            {views.map((v, i) => <button key={v.image.src || `placeholder-${i}`} type="button" className={v.placeholder ? `is-placeholder${v.tone === "grey" ? " is-grey" : ""}` : imageFit(v.image) === "contain" ? "is-contained" : undefined} aria-label={t(`查看${v.label}`, `View ${v.label}`)} aria-pressed={i === active} onClick={() => setActive(i)}>{v.placeholder ? null : <Image src={v.image.src} alt="" width={200} height={240} sizes="100px" />}</button>)}
             <span className="product-thumb-frame" aria-hidden="true" style={{ transform: `translate(${frame[0]}px, ${frame[1]}px)` }} />
           </div>
           <span className="product-first-gap" aria-hidden="true" />

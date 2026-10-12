@@ -53,7 +53,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover: string; angle: string }; views?: ProductView[] }[]; choiceLabel?: string };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string }; views?: ProductView[] }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -273,6 +273,8 @@ const buildCatalog = (lang: Locale) => {
 
   const studioLabel = t("棚拍商品照", "Studio photograph");
   const studioAlt = (name: string) => t(`${name}・棚拍商品照`, `${name}, studio photograph`);
+  // User 2026-10-12: real HD front photographs on the site's pale grey studio ground, in the SECOND slot; covers stay unchanged.
+  const studioImage = (file: string, alt: string): Img => ({ ...site(file, alt), ...(file.startsWith("official-gift-front-") ? { cutout: true } : {}) });
   // Homepage featured grid: studio shots generated 2026-09-30 in the white bag's language (output/featured-editorial-2026-09-30).
   const featuredFiles: Record<string, string> = {
     // ginkgo: the 896 px featured shot filled the frame (user 2026-10-05: 「太滿，縮小一點商品的比例」); the 2K cover is used everywhere (v5: the product about 64 % of the width, after 「再大一點」)
@@ -490,16 +492,29 @@ const buildCatalog = (lang: Locale) => {
     "bird-chopstick-rest": ["/media/site/scene-bird-rest-gift-box-v2.webp", "/media/site/scene-oak-table-bird-rests.webp", "/media/site/scene-bird-rest-tray-closeup.webp"],
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
+  // Latest instruction ADDS the real front view in slot 2. Existing cover, angled view and unboxed view remain in order after it.
+  const officialFronts: Record<string, string> = {
+    "spring-dawn-gift-box": "official-gift-front-spring-dawn-gift-box-blue-cutout-v3.webp",
+    "winter-blossom-gift-box": "official-gift-front-winter-blossom-gift-box-cutout-v3.webp",
+    "orchid-gift-box": "official-gift-front-orchid-gift-box-gold-cutout-v3.webp",
+    "purple-butterfly-gift-box": "official-gift-front-purple-butterfly-gift-box-cutout-v3.webp",
+    "year-of-plenty-gift-box": "official-gift-front-year-of-plenty-gift-box-cutout-v3.webp",
+    "blossoming-prosperity-gift-box": "official-gift-front-blossoming-prosperity-gift-box-cutout-v3.webp",
+  };
+  for (const [slug, file] of Object.entries(officialFronts)) studioExtra[slug] = [
+    { file, zh: "正面實拍", en: "Official front view", enAlt: "official front photograph of the complete gift box with its ribbon and embroidery" },
+    ...(studioExtra[slug] ?? []),
+  ];
   const withListing = (p: Product): Product => {
     const file = (studioListing as Record<string, string>)[p.slug];
-    const studio = file ? site(file, studioAlt(p.name)) : undefined;
+    const studio = file ? studioImage(file, studioAlt(p.name)) : undefined;
     const sceneId = listingScene[p.slug];
     const lead = [...(p.slug === "bird-chopstick-rest" ? [] : sceneLead[p.slug] ?? []), listingSceneSite[p.slug], ...(sceneAfterLead[p.slug] ?? []), sceneId ? gallery(sceneId, t(`${p.name}・情境照`, `${p.name}, in context`)) : undefined].filter((x): x is Img => Boolean(x));
     // A product without a studio photograph yet (the diamond stud) keeps its own first image as cover and only view.
     const views: ProductView[] = studio
       ? [{ label: t("正面", "Front view"), image: studio }, ...(studioExtra[p.slug] ?? []).map((v) => v.placeholder
         ? { label: t(v.zh, v.en), image: { src: "", alt: t(v.zh, v.enAlt), w: 4, h: 5 }, placeholder: true }
-        : { label: t(v.zh, v.en), image: site(v.file, `${p.name}${t("・", ", ")}${t(v.zh, v.enAlt)}`) })]
+        : { label: t(v.zh, v.en), image: studioImage(v.file, `${p.name}${t("・", ", ")}${t(v.zh, v.enAlt)}`) })]
       : p.views.slice(0, 1);
     const shown = new Set(views.map((v) => v.image.src));
     // the bird rest keeps its own photograph first; the new interior follows it
@@ -532,11 +547,12 @@ const buildCatalog = (lang: Locale) => {
   const bySlug = new Map(listed.map((p) => [p.slug, p]));
   // …or grey blocks while that option is off sale (the Reunion box's 粉紅色 and 藍色; user 2026-10-07: 「粉紅色商品下架改成灰色塊」「藍色也是」)
   const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("缺圖", "No image yet"), image: { src: "", alt: t("缺圖", "No image yet"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
-  // …or a lid colour's own photographs (春曉 pink): its cover and angled view, then the same unboxed view as the base lid (user 2026-10-08)
-  const lidViews = (p: Product, lv: { cover: string; angle: string }): ProductView[] => [
-    { label: t("正面", "Front view"), image: site(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) },
-    { label: t("斜角", "Angled view"), image: site(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) },
-    ...p.views.filter((v) => /開箱|Unboxed/.test(v.label)),
+  // Pink lids keep their existing cover, add their HD front in slot 2, and retain their existing angle/unboxed views.
+  const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string }): ProductView[] => [
+    lv.cover ? { label: t("正面", "Front view"), image: site(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) } : p.views[0],
+    ...(lv.front ? [{ label: t("正面實拍", "Official front view"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・正面實拍", "pink lid, official front photograph with its ribbon and embroidery")}`) }] : []),
+    ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: site(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : p.views.slice(2)),
+    ...(lv.angle ? p.views.filter((v) => /開箱|Unboxed/.test(v.label)) : []),
   ];
   const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews || c.lidViews)
     ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.placeholderViews ? { ...c, views: greyViews(c.placeholderViews) } : c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c.lidViews ? { ...c, views: lidViews(p, c.lidViews) } : c) } } : p);

@@ -278,6 +278,9 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-slide { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .product-slide[data-active=true] { opacity: 1; pointer-events: auto; }
 .product-slide img { object-fit: cover; }
+/* Official HD front photos (view 2) retain the full real box on the existing studio photographs' pale grey ground. */
+.product-slide--contained { background: linear-gradient(135deg, #e9e5e3, #e0dcda); }
+.product-slide--contained img { object-fit: contain; padding: 20%; }
 /* a beige block where the photograph is still to be chosen (user 2026-10-07: 「其他先用米黃色塊取代表示要再挑圖」) */
 .product-slide--placeholder { display: grid; place-items: center; background: #efe7d6; }
 .product-placeholder-label { font-size: 13px; letter-spacing: .14em; color: var(--color-stone-deep); }
@@ -302,6 +305,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-thumbnails button { width: var(--thumb); aspect-ratio: 5 / 6; background: var(--color-white); cursor: pointer; }
 .product-thumbnails button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
 .product-thumbnails img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.product-thumbnails .is-contained { background: linear-gradient(135deg, #e9e5e3, #e0dcda); }
+.product-thumbnails .is-contained img { object-fit: contain; padding: 20%; }
 .product-thumb-frame { position: absolute; left: 0; top: 0; width: var(--thumb); aspect-ratio: 5 / 6; pointer-events: none; transition: transform .5s var(--pdp-ease); }
 .product-thumb-frame::after { content: ""; position: absolute; inset: -4px; border: 1px solid var(--color-ink); }
 /* vertical rhythm of the information block (user 2026-10-01: 「調整上下間距，目前太緊」): open by default, short windows tighter.
@@ -1448,43 +1453,51 @@ main:has(> .policy-page) { background: #efefed; }
   .teakind-main { scroll-behavior: auto; }
 }
 
-/* --- 美好的沖泡方式：2026-10-12 轉譯 Agasis「All you need to launch」。
-   與茶款介紹共用全幅淺灰底和 1270px 內容邊界；左側小標＋大標題 sticky，右側 01–05 以細線分隔，
-   每列在捲動時由下方 32px 漸進至原位，右端搭配品牌金色線稿 icon。 --- */
+/* --- 美好的沖泡方式：2026-10-12 使用者選定方案 01 點到點動畫＋02 左圖右文。
+   橫線從文字欄開始；每段軸線只連接相鄰的靜止節點，最後一點之後不畫線。
+   每列只讓內容淡入上移，避免節點跟著位移而偏離軸線；手機依標題、照片、步驟排列。 --- */
 .brew-process { margin: 0 calc(-1 * var(--page-gutter)); padding: clamp(96px, 9vw, 144px) var(--page-gutter) clamp(112px, 10vw, 160px); background: #efefed; }
 .brew-process-inner { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); max-width: 1270px; margin: 0 auto; align-items: start; }
-.brew-intro { grid-column: 1 / span 5; position: sticky; top: clamp(88px, 10vh, 132px); align-self: start; }
+.brew-visual { grid-column: 1 / span 5; position: sticky; top: clamp(88px, 10vh, 132px); margin: 0; aspect-ratio: 2 / 3; }
+.brew-guide { grid-column: 7 / -1; min-width: 0; }
+.brew-intro { margin-bottom: 48px; }
 .brew-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
 .brew-kicker > span { width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--color-gold); }
 .brew-title { max-width: 520px; margin: 0; font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
-.brew-steps { --brew-progress: 0; position: relative; grid-column: 6 / -1; list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .16); }
-.brew-steps::before, .brew-steps::after { content: ""; position: absolute; z-index: 0; top: 39px; bottom: 39px; left: 6px; width: 1px; transform-origin: 50% 0%; pointer-events: none; }
-.brew-steps::before { background: rgb(31 31 31 / .18); }
-.brew-steps::after { background: var(--color-gold); transform: scaleY(var(--brew-progress)); }
-.brew-steps li { display: grid; grid-template-columns: 20px 48px minmax(0, 1fr) 72px; column-gap: 20px; align-items: start; min-height: 148px; padding: 32px 0; border-bottom: 1px solid rgb(31 31 31 / .16); will-change: transform, opacity; }
-.brew-steps li::before { content: ""; position: relative; z-index: 1; grid-column: 1; width: 13px; height: 13px; margin-top: 1px; border-radius: 50%; background: #bebebb; transition: background-color .32s ease, box-shadow .32s ease; }
-.brew-steps li.is-progressed::before { background: var(--color-gold); box-shadow: 0 0 0 3px #efefed; }
+.brew-steps { --brew-progress: 0; --brew-segment-progress: 0; --brew-node-size: 13px; --brew-row-padding: 32px; --brew-number-width: 48px; --brew-column-gap: 20px; position: relative; list-style: none; margin: 0; padding: 0; }
+.brew-steps li { position: relative; display: grid; grid-template-columns: 20px minmax(0, 1fr); column-gap: var(--brew-column-gap); align-items: start; min-height: 148px; }
+.brew-steps li:not(:last-child)::before, .brew-steps li:not(:last-child)::after { content: ""; position: absolute; z-index: 0; top: calc(var(--brew-row-padding) + 1px + var(--brew-node-size) / 2); left: calc((var(--brew-node-size) - 1px) / 2); width: 1px; height: 100%; transform-origin: 50% 0%; pointer-events: none; }
+.brew-steps li::before { background: rgb(31 31 31 / .18); }
+.brew-steps li::after { background: var(--color-gold); transform: scaleY(var(--brew-segment-progress)); }
+.brew-node { position: relative; z-index: 1; width: var(--brew-node-size); height: var(--brew-node-size); margin-top: calc(var(--brew-row-padding) + 1px); border-radius: 50%; background: #bebebb; transition: background-color .32s ease, box-shadow .32s ease; }
+.brew-steps li.is-progressed .brew-node { background: var(--color-gold); box-shadow: 0 0 0 3px #efefed; }
+.brew-step-content { position: relative; display: grid; grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 56px; column-gap: var(--brew-column-gap); padding: var(--brew-row-padding) 0; will-change: transform, opacity; }
+.brew-step-content::before, .brew-steps li:last-child .brew-step-content::after { content: ""; position: absolute; left: calc(var(--brew-number-width) + var(--brew-column-gap)); right: 0; height: 1px; background: rgb(31 31 31 / .16); }
+.brew-step-content::before { top: 0; }
+.brew-steps li:last-child .brew-step-content::after { bottom: 0; }
 .brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
-.brew-icon { display: block; justify-self: end; width: 64px; height: 64px; color: var(--color-gold); }
+.brew-icon { display: block; justify-self: end; width: 54px; height: 54px; color: var(--color-gold); }
 .brew-icon svg { display: block; width: 100%; height: 100%; }
 @media (max-width: 1279px) and (min-width: 768px) {
-  .brew-intro { grid-column: 1 / span 4; }
-  .brew-steps { grid-column: 5 / -1; }
-  .brew-steps li { grid-template-columns: 20px 42px minmax(0, 1fr) 56px; column-gap: 16px; }
+  .brew-visual { grid-column: 1 / span 5; }
+  .brew-guide { grid-column: 6 / -1; }
+  .brew-steps { --brew-number-width: 36px; --brew-column-gap: 14px; }
   .brew-copy h3 { font-size: 23px; }
   .brew-icon { width: 54px; height: 54px; }
 }
 @media (max-width: 767px) {
   .brew-process { padding-top: 72px; padding-bottom: 96px; }
-  .brew-process-inner { display: block; }
-  .brew-intro { position: static; margin-bottom: 48px; }
+  .brew-process-inner { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .brew-guide { display: contents; }
+  .brew-intro { grid-column: 1; grid-row: 1; margin-bottom: 32px; }
+  .brew-visual { grid-column: 1; grid-row: 2; position: static; aspect-ratio: 4 / 5; margin-bottom: 40px; }
   .brew-kicker { margin-bottom: 12px; font-size: 13px; }
   .brew-kicker > span { width: 7px; height: 7px; }
-  .brew-steps::before, .brew-steps::after { top: 31px; bottom: 31px; left: 5px; }
-  .brew-steps li { grid-template-columns: 16px 30px minmax(0, 1fr) 46px; column-gap: 10px; min-height: 0; padding: 24px 0; }
-  .brew-steps li::before { width: 11px; height: 11px; }
+  .brew-steps { grid-column: 1; grid-row: 3; --brew-node-size: 11px; --brew-row-padding: 24px; --brew-number-width: 30px; --brew-column-gap: 10px; }
+  .brew-steps li { grid-template-columns: 16px minmax(0, 1fr); min-height: 0; }
+  .brew-step-content { grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 46px; }
   .brew-number { font-size: 13px; }
   .brew-copy h3 { font-size: 20px; }
   .brew-copy p { margin-top: 8px; font-size: 17px; line-height: 1.6; }
@@ -1505,8 +1518,8 @@ main:has(> .policy-page) { background: #efefed; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brew-steps { --brew-progress: 1; }
-  .brew-steps li::before { background: var(--color-gold); transition: none; }
+  .brew-steps { --brew-progress: 1; --brew-segment-progress: 1; }
+  .brew-node { background: var(--color-gold); transition: none; }
 }
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button

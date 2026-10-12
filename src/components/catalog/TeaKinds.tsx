@@ -3,7 +3,6 @@
 // （使用者 2026-10-12）。桌機保留參考頁的三欄錯落白卡，並以同樣的 sticky 節奏讓卡片隨捲動逐張往上收齊；
 // 手機改為可左右滑動且露出下一張卡片。參考站的品牌文字、抽象圖與紅色識別不沿用，改放既有茶款內容與照片。
 import type { Img } from "@/data/content";
-import { useT } from "@/i18n/LocaleProvider";
 import { Picture } from "@/components/ui";
 
 export type TeaKind = { name: string; text: string; image?: Img };
@@ -14,14 +13,13 @@ const splitName = (name: string): [string, string | undefined] => {
   return m ? [m[1], m[2]] : [name, undefined];
 };
 
-export default function TeaKinds({ title, items }: { title: string; items: TeaKind[] }) {
-  const { t } = useT();
+export default function TeaKinds({ title, productName, items }: { title: string; productName: string; items: TeaKind[] }) {
   const countClass = `teakind-main--${Math.min(items.length, 6)}`;
 
   return (
     <section className="teakind-sticky" aria-labelledby="tea-notes-title">
       <header className="teakind-head">
-        <p className="teakind-kicker tc"><span aria-hidden="true" />{t("小金魚茶包", "GOLDFISH TEA BAGS")}</p>
+        <p className="teakind-kicker tc"><span aria-hidden="true" />{productName}</p>
         <h2 id="tea-notes-title" className="teakind-h02 tc" data-animation="split" data-split="lines" data-duration="0.9" data-start="top 88%">{title}</h2>
       </header>
 

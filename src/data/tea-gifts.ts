@@ -29,8 +29,8 @@ export type TeaGift = {
   choices?: { label: string; contents: TeaContents; price?: number }[];
   /** lid colours sold with every tea choice (春曉 Blue/Pink, 蝴蝶蘭 Gold/Pink): each tea × lid is a Shopify variant */
   lid?: Bi[];
-  /** studio views of a lid colour that has its own photographs (春曉 pink: cover + end angle; the unboxed view is shared), by lid index */
-  lidViews?: Record<number, { cover: string; angle: string }>;
+  /** Per-lid studio views: preserve existing covers; HD front is added in view 2 (user 2026-10-12); unboxed view is shared. */
+  lidViews?: Record<number, { cover?: string; angle?: string; front?: string }>;
   /** packaging options with the same contents and price (團圓 Gold/Pink/Blue) */
   packaging?: { label: Bi; text: Bi; viewsFrom?: string; placeholderViews?: number }[];
   /** the US list price in USD (the lowest option); a box without it is priced from the Taiwan store (official-prices.json, TWD) */
@@ -136,7 +136,7 @@ export const teaGifts: TeaGift[] = [
   // (Nano Banana 2.1 after the user's reference photo, the string retouched to fall behind the far rim; user 2026-10-08: 「取代全站這張圖」)
   // 春曉粉紅盒蓋的商品圖（使用者 2026-10-08：「粉紅色版封面…根據目前官網的商品圖生成 2 張商品圖，第 3 張共用 12 入的圖」）：以藍色盒蓋的封面與斜角圖
   // 為底、只換布色（粉紅＋淡黃紮染）與緞帶色（淡粉），刺繡與金字不動（Nano Banana 2.1，照使用者的實拍）；選到粉紅盒蓋時商品圖切換成這組
-  { officialId: 850, slug: "spring-dawn-gift-box", lidViews: { 1: { cover: "studio-spring-dawn-gift-box-pink-cover.webp", angle: "studio-spring-dawn-gift-box-pink-end-angle.webp" } }, storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", en: "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
+  { officialId: 850, slug: "spring-dawn-gift-box", lidViews: { 1: { cover: "studio-spring-dawn-gift-box-pink-cover.webp", angle: "studio-spring-dawn-gift-box-pink-end-angle.webp", front: "official-gift-front-spring-dawn-gift-box-pink-cutout-v3.webp" } }, storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", en: "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
     description: "CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。", en: "As dawn breaks, morning sunlight washes the sky into a soft, translucent veil. Yellow tits sing their morning song amid the golden blossoms of a trumpet tree, weaving a spring scene that invites you to linger." } },
     notice: [competitionPricing, tieDyeColors],
@@ -146,7 +146,7 @@ export const teaGifts: TeaGift[] = [
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "時至暮冬，即將迎來初春日子，總會令人聯想起櫻花遍土盛放的景色。在暮冬曉春之際，櫻雪互映的模樣，願能為您帶來初春新露時分清雅恬淡的美好。", en: "As the last days of winter give way to early spring, we picture cherry blossoms opening across the landscape. Where blossom meets snow, Snowy Twilight captures the quiet grace of that fleeting season. May it bring you the fresh, gentle beauty of spring's first light." } },
     notice: [competitionPricing, tieDyeColors],
     en: { name: "Snowy Twilight", description: "Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Inspired by the meeting of cherry blossoms and snow, the collection offers a quiet tea moment for yourself or someone special.", summary: "12 Goldfish Tea Bags per box · First Prize Rose Oolong Tea or Third Prize Oriental Beauty Tea" } },
-  { officialId: 960, slug: "orchid-gift-box", sceneFile: "scene-orchid-gift-box.webp", name: "蝴蝶蘭", english: "ROYAL ORCHID", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, shelfLife: "2 年", contents: [], lid: [gold, pink], usd: 300,
+  { officialId: 960, slug: "orchid-gift-box", lidViews: { 1: { front: "official-gift-front-orchid-gift-box-pink-cutout-v3.webp" } }, sceneFile: "scene-orchid-gift-box.webp", name: "蝴蝶蘭", english: "ROYAL ORCHID", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, shelfLife: "2 年", contents: [], lid: [gold, pink], usd: 300,
     choices: [{ label: firstRose, price: 300 }, { label: thirdBeauty, price: 340 }].map(c => ({ ...c, contents: [count(c.label, 18)] })),
     description: "CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。",
     notice: [competitionPricing, embroideryNote],

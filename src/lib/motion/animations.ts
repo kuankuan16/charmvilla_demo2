@@ -206,33 +206,46 @@ function stack(el: HTMLElement): Cleanup {
 }
 
 // 美好的沖泡方式 after agasis.webflow.io/services/brand-identity's "All you need to launch" (measured 2026-10-12):
-// the left heading stays sticky while the ruled rows at the right rise 32px and fade from 0 to 1 in a scrubbed, overlapping sequence.
-// A second scrub paints the fine vertical rail gold and activates its round nodes as each brewing step is reached.
+// User 2026-10-12: proposal 02's left photograph/right guide with proposal 01's point-to-point progress.
+// Reveal only row content; stationary nodes anchor each rail segment. Measure real node distances because bilingual rows differ in height.
 function brewProcess(el: HTMLElement): Cleanup {
   const list = el.querySelector<HTMLElement>("[data-brew-steps]");
   const steps = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-step]"));
+  const nodes = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-node]"));
+  const content = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-reveal]"));
   if (!list || steps.length < 2) return () => {};
-  gsap.set(steps, { y: 32, opacity: 0 });
-  const tl = gsap.timeline({ paused: true }).to(steps, { y: 0, opacity: 1, duration: .52, stagger: .17, ease: "none" });
-  const reveal = ScrollTrigger.create({ trigger: el, start: str(el, "data-start", "top 98%"), end: str(el, "data-end", "top 20%"), scrub: 1, animation: tl });
+  gsap.set(content, { y: 32, opacity: 0 });
+  const tl = gsap.timeline({ paused: true }).to(content, { y: 0, opacity: 1, duration: .52, stagger: .17, ease: "none" });
+  const reveal = ScrollTrigger.create({ trigger: list, start: str(el, "data-start", "top 98%"), end: str(el, "data-end", "top 20%"), scrub: 1, animation: tl });
+  const nodePositions = () => nodes.map((node, index) => steps[index].offsetTop + node.offsetTop + node.offsetHeight / 2);
+  let positions = nodePositions();
   const paintProgress = (progress: number) => {
     list.style.setProperty("--brew-progress", progress.toFixed(4));
-    steps.forEach((step, index) => step.classList.toggle("is-progressed", progress + .015 >= index / (steps.length - 1)));
+    const travel = (positions[positions.length - 1] - positions[0]) * progress;
+    steps.forEach((step, index) => {
+      const distance = positions[index] - positions[0];
+      step.classList.toggle("is-progressed", travel + .5 >= distance);
+      if (index < steps.length - 1) {
+        const segment = (travel - distance) / (positions[index + 1] - positions[index]);
+        step.style.setProperty("--brew-segment-progress", gsap.utils.clamp(0, 1, segment).toFixed(4));
+      }
+    });
   };
   paintProgress(0);
   const progress = ScrollTrigger.create({
     trigger: list,
-    start: "top 74%",
-    end: "bottom 38%",
+    start: () => `${positions[0]}px 74%`,
+    end: () => `${positions[positions.length - 1]}px 38%`,
     scrub: 1.1,
     onUpdate: (self) => paintProgress(self.progress),
+    onRefreshInit: () => { positions = nodePositions(); },
     onRefresh: (self) => paintProgress(self.progress),
   });
   return () => {
     reveal.kill(); progress.kill(); tl.kill();
     list.style.removeProperty("--brew-progress");
-    steps.forEach((step) => step.classList.remove("is-progressed"));
-    gsap.set(steps, { clearProps: "transform,opacity" });
+    steps.forEach((step) => { step.classList.remove("is-progressed"); step.style.removeProperty("--brew-segment-progress"); });
+    gsap.set(content, { clearProps: "transform,opacity" });
   };
 }
 
