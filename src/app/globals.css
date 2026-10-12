@@ -1199,7 +1199,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-chapter--right .about-chapter-image { grid-column: 7 / span 6; grid-row: 1; }
 .about-chapter--right .about-chapter-text { grid-column: 2 / span 4; grid-row: 1; }
 .about-chapter-index { font-size: 13px; letter-spacing: .14em; color: rgb(31 31 31 / .64); }
-.about-chapter h2 { margin: 14px 0 22px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; line-height: 1.3; text-wrap: balance; } /* balanced, so a two-line title never leaves one character alone on its second line (一尾小金魚，／被世界看見) */
+.about-chapter h2 { margin: 14px 0 22px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; line-height: 1.3; }
 .about-chapter-text > p:not(.about-chapter-index) { font-size: 17px; line-height: 1.95; color: rgb(31 31 31 / .82); }
 .about-chapter-text > p + p { margin-top: 16px; }
 .about-quote { margin-top: 30px; padding-left: 20px; border-left: 2px solid var(--color-gold); }

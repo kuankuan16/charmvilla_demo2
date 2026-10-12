@@ -62,26 +62,32 @@ export const getAbout = (lang: Locale) => {
         image: site("about-scene-01-paper-goldfish-exhibition.webp", t("展場裡懸著一群白色薄紙摺的小金魚，前景一尾虛化、中景的摺痕與魚鰭清楚；背景是藍色墨染的板子與黑色反光地面", "A shoal of white tissue-paper goldfish hung in an exhibition, one blurred in the foreground and the folds and fins of the others sharp; behind them a panel of blue ink wash and a black reflective floor"), 2528, 1696),
       },
       {
-        // 02 and 03 are one chapter since 2026-10-12 (user: 「０２跟０３合併，並將文案重新潤稿過」): 一尾小金魚 (the making) and 被世界看見 (the awards,
-        // the patents, the press, Kyoto) run as three paragraphs — the birth, the craft, the recognition — with every fact kept and only the
-        // wording polished; the quote and, under it, the two award marks close the text. The photograph is the old 03's: the old 02 showed a
-        // grey block (「用灰色塊先取代」, 2026-10-07), and its files about-scene-02-goldfish-cup.webp and about-craft.webp stay on file.
         id: "goldfish", index: "02", side: "left",
-        title: t("一尾小金魚，被世界看見", "A goldfish in the cup, seen by the world"),
+        title: t("一尾小金魚", "A goldfish in the cup"),
         body: [
-          t("2013 年 4 月，小金魚茶包開始設計並申請專利。魚離不開水，金魚在東方又是吉祥的象徵；讓金魚游進茶裡，兩種東方韻味便在一只杯中相遇。同年中秋首次推出，發表會還來不及舉辦就已售罄，訂單一路排到年底。",
-            "Design work on the goldfish tea bag began in April 2013, and a patent was filed. Fish and water belong together, and in Chinese the name of the goldfish echoes words for treasure and abundance, carrying wishes of happiness, peace, and prosperity. First released for that year's Mid-Autumn Festival, it sold out before a launch event could be held, and orders ran to the end of the year."),
-          t("每一尾小金魚要走過 16 道工序，其中 9 道只能靠雙手完成。茶包以食品等級不織布製作，全程不使用任何化學黏劑；左右不對稱的魚鰭，讓牠一遇熱水便舒展開來，在杯中游動。所用的茶葉皆通過 SGS 檢測。",
-            "Each goldfish takes 16 steps to make, nine of them possible only by hand. The bag is made of food-grade non-woven fabric with no chemical adhesive, and its asymmetric fins let it unfurl and swim the moment it meets hot water. Every tea used is SGS-tested."),
-          t("隔年，這尾小金魚開始被世界看見：2014 年獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中脫穎而出，拿下德國 iF 設計大獎金獎。如今它在全球 34 個國家取得設計專利，登上 Bored Panda、Contemporist 等國際媒體，品牌也在京都寺町開設門市。",
-            "The following year, the world began to notice. In 2014 the goldfish tea bag won the Red Dot Award for Communication Design; in March 2015 it was chosen from 1,624 selected entries for an iF Design Award Gold. Today it holds design patents in 34 countries and has appeared in international media such as Bored Panda and Contemporist, and the brand has a store on Teramachi in Kyoto."),
+          t("2013 年 4 月，小金魚茶包開始設計並申請專利。魚與水本就自然相連，金魚在東方又象徵吉祥；金魚與茶，都帶著東方的韻味。同年中秋節第一次推出，還來不及舉辦發表會就已售罄，訂單一路排到年底。",
+            "Design work on the goldfish tea bag began in April 2013, and a patent was filed. Fish and water belong together. In Chinese, the name of the goldfish echoes words for treasure and abundance, carrying wishes of happiness, peace, and prosperity. Launched for the Mid-Autumn Festival that year, it sold out before a launch event could be held, with orders running to the end of the year."),
+          t("每一尾小金魚要經過 16 道工序，其中 9 道必須靠手工完成。茶包以食品等級不織布製作，過程不使用任何化學黏劑；左右不對稱的魚鰭，讓牠在熱水裡舒展、游動。所使用的茶葉皆通過 SGS 檢測。",
+            "Each goldfish passes through 16 steps, nine of them by hand. The bag is made of food-grade non-woven fabric with no chemical adhesive, and its asymmetric fins let it unfurl and swim in hot water. Every tea used is SGS-tested."),
         ],
         quote: { text: t("「我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。」", "“We love tea culture, and we want a simple way to share it with the world.”"), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
+        // 02 改用手作過程照，直接呼應 16 道工序與 9 道手作（使用者 2026-10-12：「取消合併，再幫我重新配圖」「挑適合 02 的圖」）。
+        image: site("about-02.webp", t("職人雙手縫製小金魚茶包，木桌上放著裁好的不織布、棉線、茶葉與完成的小金魚", "An artisan sewing a goldfish tea bag by hand, with cut non-woven fabric, cotton thread, tea leaves and finished goldfish on the wooden table"), 1361, 1824),
+      },
+      {
+        id: "world", index: "03", side: "right",
+        title: t("被世界看見", "Seen by the world"),
+        body: [
+          t("2014 年，小金魚茶包獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中，獲得德國 iF 設計大獎金獎。",
+            "In 2014 the goldfish tea bag won the Red Dot Award for Communication Design; in March 2015, from 1,624 selected entries, it won an iF Design Award Gold."),
+          t("如今小金魚茶包在全球 34 個國家取得設計專利，也曾登上 Bored Panda、Contemporist 等國際媒體；品牌並在京都寺町開設門市。",
+            "Today the goldfish tea bag holds design patents in 34 countries and has appeared in international media such as Bored Panda and Contemporist; the brand also has a store on Teramachi in Kyoto."),
+        ],
         // the brand's photograph of one paper goldfish on a mirror among white blossoms (CV-0169; user 2026-10-05: 「換」 for the school of fish, CV-0166)
         image: gallery("CV-0169", t("一尾白色紙金魚停在鏡面上，倒影與白色花叢", "A single white paper goldfish on a mirror, its reflection among white blossoms"), 1200, 1800),
       },
       {
-        id: "everyday", index: "03", side: "right",
+        id: "everyday", index: "04", side: "left",
         title: t("從茶杯到日常", "From the cup to everyday life"),
         body: [
           t("從小金魚茶包出發，CHARM VILLA 把同樣的工藝精神延伸到更多日常物件：檜木的杯墊、茶匙與筷子，以及逐件手工完成的柴燒鳥形筷架。",
