@@ -1349,7 +1349,7 @@ main:has(> .policy-page) { background: #efefed; }
 }
 .teakind-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 .teakind-kicker { display: flex; align-items: center; gap: 9px; margin: 0; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
-.teakind-kicker > span { width: 8px; height: 8px; background: var(--color-gold); }
+.teakind-kicker > span { width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold); }
 .teakind-h02 { max-width: 900px; font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -.04em; text-align: center; }
 .teakind-section { max-width: 1270px; margin: clamp(64px, 6vw, 92px) auto 0; }
 .teakind-main { position: relative; height: 1320px; margin: 0; padding: 0; list-style: none; }
@@ -1455,7 +1455,7 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-process-inner { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); max-width: 1270px; margin: 0 auto; align-items: start; }
 .brew-intro { grid-column: 1 / span 5; position: sticky; top: clamp(88px, 10vh, 132px); align-self: start; }
 .brew-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
-.brew-kicker > span { width: 8px; height: 8px; flex: none; background: var(--color-gold); }
+.brew-kicker > span { width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--color-gold); }
 .brew-title { max-width: 520px; margin: 0; font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
 .brew-steps { grid-column: 6 / -1; list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .16); }
 .brew-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr) 72px; column-gap: 28px; align-items: start; min-height: 148px; padding: 32px 0; border-bottom: 1px solid rgb(31 31 31 / .16); will-change: transform, opacity; }
