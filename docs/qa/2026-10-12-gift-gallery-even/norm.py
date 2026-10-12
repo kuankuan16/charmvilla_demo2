@@ -21,6 +21,8 @@ def product_mask(a,bg,thr=0.085,clip=None):
     r=a/np.maximum(bg,1)
     spread=r.max(2)-r.min(2); mean=r.mean(2)
     m=(spread>thr)|(mean>1.04+(thr-0.085))|(mean<0.55)
+    shadowlike=(mean<0.985)&(spread<0.11)&(mean>0.55)
+    m&=~shadowlike
     if clip: cm=np.zeros_like(m); cm[clip[1]:clip[3],clip[0]:clip[2]]=True; m&=cm
     m=ndi.binary_opening(m,iterations=2); m=ndi.binary_closing(m,iterations=4)
     lab,n=ndi.label(m)
@@ -56,12 +58,16 @@ def run(src,dst,target_w,max_h,cutout=False,preview=None,thr=0.085,clip=None):
         out=target_bg(OW,OH)
         px=(OW-crop.width)//2; py=(OH-crop.height)//2
         A=np.asarray(crop).astype(float); al=A[...,3:]/255
-        # faint contact shadow: blurred alpha, offset down-right, multiply the ground
-        sh=Image.fromarray((al[...,0]*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(OW*0.018))
-        shadow=np.zeros((OH,OW)); sa=np.asarray(sh)/255.
-        ox,oy=px+int(OW*0.008),py+int(OW*0.022)
-        shadow[oy:oy+sa.shape[0],ox:ox+sa.shape[1]]=sa[:OH-oy,:OW-ox]
-        out=out*(1-0.16*shadow[...,None])
+        # soft natural shadow: pad before blurring so it never ends at a hard edge; a wide faint ambient layer plus a tight contact layer
+        P=int(OW*0.12)
+        A8=np.zeros((crop.height+2*P,crop.width+2*P)); A8[P:P+crop.height,P:P+crop.width]=al[...,0]
+        def layer(sigma,dy,opa):
+            b=ndi.gaussian_filter(A8,sigma); full=np.zeros((OH,OW))
+            y0,x0=py-P+dy,px-P
+            ys,xs=max(0,y0),max(0,x0); ye,xe=min(OH,y0+b.shape[0]),min(OW,x0+b.shape[1])
+            full[ys:ye,xs:xe]=b[ys-y0:ye-y0,xs-x0:xe-x0]; return full*opa
+        shade=layer(OW*0.035,int(OW*0.018),0.11)+layer(OW*0.006,int(OW*0.004),0.10)
+        out=out*(1-np.clip(shade,0,0.3)[...,None])
         reg=out[py:py+crop.height,px:px+crop.width]
         out[py:py+crop.height,px:px+crop.width]=A[...,:3]*al+reg*(1-al)
         Image.fromarray(np.clip(out,0,255).astype(np.uint8)).save(dst,quality=92,method=6)
@@ -73,7 +79,7 @@ def run(src,dst,target_w,max_h,cutout=False,preview=None,thr=0.085,clip=None):
     ratio=np.clip(a/np.maximum(bg,1),0,1.0)        # ground + shadow as a multiplier of the old ground
     yy,xx=np.mgrid[0:H,0:W]; dist=np.minimum.reduce([xx,yy,W-1-xx,H-1-yy])/(0.12*min(W,H)); wgt=np.clip(dist,0,1); wgt=wgt*wgt*(3-2*wgt)
     ratio=1+(ratio-1)*wgt[...,None]
-    soft=ndi.gaussian_filter(m.astype(float),1.2)
+    soft=ndi.gaussian_filter(ndi.binary_erosion(m,iterations=1).astype(float),2.0)
     # scale both layers, centring the product's box in the frame
     def scaled(arr):
         img=Image.fromarray(arr.astype(np.float32)) if arr.ndim==2 else None
