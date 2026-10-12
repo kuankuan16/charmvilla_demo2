@@ -1207,6 +1207,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .about-quote cite { display: block; margin-top: 10px; font-size: 13px; font-style: normal; color: rgb(31 31 31 / .64); }
 .about-award-marks { display: flex; align-items: center; gap: clamp(28px, 3vw, 48px); margin-top: 36px; }
 .about-award-marks img { width: auto; height: clamp(64px, 5.6vw, 92px); }
+.about-award-marks img.is-if { height: clamp(46px, 4.05vw, 67px); }
 .about-range { padding: clamp(80px, 8vw, 140px) var(--page-gutter) 0; }
 .about-range h2 { margin-bottom: 28px; font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; }
 /* one equal column per category, the row filling the content width (user 2026-10-07: 「均分內容總寬度」, three categories left) */

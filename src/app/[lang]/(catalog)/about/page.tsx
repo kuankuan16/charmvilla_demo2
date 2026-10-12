@@ -74,7 +74,7 @@ export default async function AboutPage({ params }: Props) {
             {c.quote && <blockquote className="about-quote"><p className="tc">{c.quote.text}</p><cite className="tc">{c.quote.by}</cite></blockquote>}
             {/* the two award marks under the 03 text, larger, without captions (user 2026-10-05: 「刪除說明字，並加大 logo」「得獎 logo 加在這段文字之下」) */}
             {c.id === "world" && <div className="about-award-marks" role="group" aria-label={tea.honoursAria}>
-              {tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="200px" />)}
+              {tea.awards.map((a) => <Image key={a.image.src} className={a.image.src.includes("if-gold-award") ? "is-if" : undefined} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} sizes="200px" />)}
             </div>}
           </div>
         </section>
