@@ -12,9 +12,20 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 本檔是 Claude Code 與 OpenAI Codex 共用的專案入口。`CLAUDE.md` 以 `@AGENTS.md` 引用本檔；不要另外建立互相矛盾的 agent 規則。
 
+## Agent 工作契約
+
+本節規範工作方式；穩定專案事實仍以下方各節為準。共用文件的用途與維護方式見 [`docs/agent/README.md`](docs/agent/README.md)。
+
+1. **先理解，再動手。** 多檔、跨頁、風險較高或需求仍有關鍵歧義的任務，先用 2–3 句重述目標、邊界與完成條件；若方向會造成實質差異，取得使用者選擇後再實作。將步驟與每一步的驗證方式寫入 [`docs/agent/PLAN.md`](docs/agent/PLAN.md)。暫停或換 session 前一定更新接續點。
+2. **只做能解決問題的最小改動。** 不新增未被要求的 dependency、rename 或重構。需要取捨時同時考慮 UX（使用者）、DX（下一位開發者）與 AX（下一位 agent）。刪除或覆寫前先確認來源與可回復方式。
+3. **多 agent 不重疊。** 只有在執行環境與上層指示允許時才拆分；explorer 只讀、worker 修改、reviewer 只回報。每個任務都要有單一範圍、完成條件與短交接，同一時間不可讓兩個 agent 修改同一檔案；採用報告前先驗證關鍵主張。
+4. **對 bug 負責。** 先依使用者步驟重現，再修根因，最後重跑同一路徑。無法重現時清楚列出缺少的條件；不得以吞錯、關閉規則或隱藏訊息假裝修好。同一步驟連續失敗兩次時，在 `PLAN.md` 記錄嘗試與證據，停止盲試並重新規劃。
+5. **驗證後才說完成。** 自己讀完測試輸出；UI 變更必須在實際頁面檢查正常、邊界與失敗狀態。未執行的檢查要明說，不能當成通過。回報需包含：採用的作法、刻意未做的範圍，以及原因。
+6. **把修正變成可重用知識。** 使用者糾正行為或決策時，在 [`docs/agent/LESSONS.md`](docs/agent/LESSONS.md) 最上方加入「遇到 X，應做 Y」；相同錯誤再發生，就重寫成更明確、可執行的規則。穩定到足以約束所有任務時，經使用者同意再升格到本檔。
+
 ## 每次開始工作前
 
-1. 先讀本檔，再讀 [`docs/CODEX_HANDOFF.md`](docs/CODEX_HANDOFF.md)。後者記錄目前主線、工作樹與未完成任務；開始前必須用 Git 重新驗證，不能把時間點快照當成永久事實。
+1. 先讀本檔，再依 [`docs/agent/README.md`](docs/agent/README.md) 的順序讀取 `PLAN.md`、`LESSONS.md` 與 [`docs/CODEX_HANDOFF.md`](docs/CODEX_HANDOFF.md)。後者記錄目前主線、工作樹與未完成任務；開始前必須用 Git 重新驗證，不能把時間點快照當成永久事實。
 2. 執行 `git fetch --all --prune`、`git status --short --branch`、`git worktree list --porcelain`，確認主線、未提交檔案與其他 agent 是否仍在工作。
 3. 寫任何 Next.js 程式前，依任務閱讀 `node_modules/next/dist/docs/` 內與目前安裝版本相符的文件。此專案是 Next.js 16.3.8 App Router，不可依賴舊版 Next.js 記憶。路由相關至少檢查：
    - `01-app/01-getting-started/02-project-structure.md`
