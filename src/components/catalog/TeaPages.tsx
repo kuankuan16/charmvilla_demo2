@@ -1,16 +1,13 @@
-// Under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 after bramwel-service-template.webflow.io's "Expertise Behind Bramwel"
-// screen (user 2026-10-08: 「Expertise Behind Bramwel 這一屏改介紹茶種」; TeaKinds, one card per tea), then 美好的沖泡方式 back on rooferplus.webflow.io's
-// process timeline (BrewProcess + lib/motion/animations.ts brew-process; the same day: 「改回這個效果」 after one evening as bramwel's
-// "Comprehensive capabilities…" card stack, with the reference's Step badge and bold title kept 「保留這個設計」 and the step's icon at the
-// right of each row 「icon 在紅圈處」). The earlier forms of this sheet (2026-10-07 one sheet; 2026-10-08 the nexifye stack, the two-card
-// panel, the stores-style carousel with the sunrise film, the bramwel stack) are in git history. The brewing icons are the ones redrawn in
+// Under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 follows Vizooli's sticky card process, then 美好的沖泡方式
+// follows Agasis' "All you need to launch" split screen (user 2026-10-12): a sticky two-size heading at the left and 01–05 ruled rows at
+// the right, each paired with a fine line icon and a scroll-scrubbed rise/fade. Earlier forms remain in git history. The brewing icons are
+// the ones redrawn in
 // the manner of bramwel's capability icons (「icon 照這個風格…重新畫一遍像似的」): a 240 box, 3px strokes, a few plain geometric shapes
 // repeated and overlapped — the goldfish is the brand's own vector, stroked the same way (「小金魚改為線稿，跟其他的風格一樣」, 2026-10-07).
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
 import TeaKinds from "./TeaKinds";
 import BrewProcess from "./BrewProcess";
-import TeaFilm from "./TeaFilm";
 import { site, type Img } from "@/data/content";
 import { GOLDFISH_D } from "./goldfish-path";
 
@@ -47,39 +44,23 @@ const leafPhoto = (name: string, t: (zh: string, en: string) => string): Img | u
   return hit && site(hit[1], t(hit[2], hit[3]), hit[4], hit[5]);
 };
 
-/** two short tags per brewing step, in the steps' order (the card's bottom right) */
-const stepTags = (t: (zh: string, en: string) => string) => [[t("150 mL", "150 mL"), t("95°C", "95°C")], [t("沿缺口", "At the notch"), t("取出", "Lift out")], [t("輕壓", "Press gently"), t("浮起", "Let it float")], [t("5 分鐘", "5 minutes"), t("茶色漸深", "Colour deepens")], [t("茶香", "Fragrance"), t("留一段時間", "A little time")]];
-
 export default function TeaPages({ product, t }: { product: Product; t: (zh: string, en: string) => string }) {
   const notes = product.teaNotes, brew = product.brew;
   if (!notes && !brew) return null;
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
-  const tags = stepTags(t);
   return (
     <section className="tea-sheet" aria-label={title}>
       {notes && <TeaKinds title={notes.title} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
-        <h2 id="brew-title" className="tc" data-animation="split" data-split="chars" data-duration="0.9" data-stagger-interval="0.06" data-start="top 88%">{t("美好的沖泡方式", "A beautiful way to brew")}</h2>
-        {/* the 20-second sunrise film at the bottom left instead of the photograph (user 2026-10-08: 「改成剛剛的影片」; brew.image stays on file) */}
-        <div className="brew-process-media brew-process-media--film" data-animation="moveUp" data-from="100" data-duration="1.2" data-ease="power2.out" data-start="top 90%">
-          <TeaFilm src="/media/video/goldfish-tea-sunrise-1080.mp4" srcSmall="/media/video/goldfish-tea-sunrise-720.mp4" poster="/media/video/goldfish-tea-sunrise-poster.webp"
-            label={t("清晨的一杯小金魚茶：逆光下，她捧著冒著熱氣的茶杯，走進晨霧裡的草地", "A cup of goldfish tea at sunrise: backlit, she holds the steaming cup, then walks out into the misty meadow")}
-            playLabel={t("播放影片", "Play the film")} pauseLabel={t("暫停影片", "Pause the film")} />
-        </div>
+        <header className="brew-intro">
+          <p className="brew-kicker tc"><span aria-hidden="true" />{t("美好的", "A beautiful")}</p>
+          <h2 id="brew-title" className="brew-title tc">{t("沖泡方式", "way to brew")}</h2>
+        </header>
         <ol className="brew-steps" data-brew-steps="">
           {brew.steps.map((s, i) => <li key={s.title} data-brew-step="">
-            <span className="brew-rail" aria-hidden="true"><span className="brew-dot" />{i < brew.steps.length - 1 && <span className="brew-line"><span className="brew-line-fill" /></span>}</span>
-            {/* the card is bramwel's (「這個動態效果加…卡片設計」): the badge and the title at the top left, the text at the top right, the icon at the bottom left, two tags at the bottom right */}
-            <article className="brew-card">
-              <div className="brew-card-top">
-                <div className="brew-card-head"><span className="brew-step-badge tc">{t(`步驟 ${i + 1}`, `Step ${i + 1}`)}</span><h3 className="tc">{s.title}</h3></div>
-                <p className="tc">{s.text}</p>
-              </div>
-              <div className="brew-card-bottom">
-                <span className="brew-icon" aria-hidden="true">{brewIcons[i] ?? brewIcons[4]}</span>
-                <div className="brew-tags">{(tags[i] ?? []).map((tag) => <span key={tag} className="brew-tag tc">{tag}</span>)}</div>
-              </div>
-            </article>
+            <span className="brew-number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <div className="brew-copy"><h3 className="tc">{s.title}</h3><p className="tc">{s.text}</p></div>
+            <span className="brew-icon" aria-hidden="true">{brewIcons[i] ?? brewIcons[4]}</span>
           </li>)}
         </ol>
       </BrewProcess>}

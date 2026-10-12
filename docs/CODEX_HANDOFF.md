@@ -102,6 +102,15 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - 程式提交：`cd18e3e`（`redesign tea notes after Vizooli process layout`）。尚未 push、未部署 Production。
 - Vercel Preview：`https://charmvilla-demo2-oo253y9bu-tentenco.vercel.app`，狀態 READY；已透過 Vercel protection bypass 確認中文與英文代表商品頁皆回應 200。專案啟用 Vercel Authentication，需具存取權的 Vercel 帳號登入。
 
+### 2026-10-12 茶款與沖泡區第二輪調整
+
+- 茶款卡片改為 CSS sticky：依 Vizooli Working Process 的捲動節奏，錯落卡片會逐張上滑並吸附到同一上緣；卡片進度方塊已移除。
+- 卡片標示採 `TEA / 01` 至 `TEA / 05`；編號為品牌金色、200 字重的大字。茶葉照片裁切放大至 `scale(1.24)`，卡片桌面高度 500px、手機 490px，說明文字統一 16px，茶名與段落間距 18px。
+- 「茶款介紹」及同層級「沖泡方式」標題縮小；FAQ、運送退換貨、隱私權、服務條款與 Prop 65 等純文字頁統一為茶款區的 `#efefed` 背景，既有進度方塊已刪除。
+- 「美好的沖泡方式」改採 Agasis Brand Identity 的 `All you need to launch` 架構：左側小字「美好的」與大字「沖泡方式」為 sticky，右側 01–05 細線列表搭配金色線稿 icon；各列依捲動由下方 32px 逐列淡入上移。
+- 本機視覺檢查確認 5 張卡片高度一致、茶葉裁切放大、`TEA / 01–05` 正確、無頁面橫向溢位；沖泡區 sticky 標題、列表列線、icon 與 stagger 動態正常。
+- `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
+
 ## 其他未完成或未審工作
 
 ### `member-pages-wip`

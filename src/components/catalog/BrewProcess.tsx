@@ -1,7 +1,7 @@
 "use client";
-// The 美好的沖泡方式 screen (TeaPages) with its motion: no PageShell runs on a product page, so this boots the declarative animations
-// (lib/motion/animations.ts: brew-process on this element, the title's split and the photograph's moveUp inside it) against the window,
-// which is what scrolls there — as CollectionBrowser does. Back after one evening as bramwel's card stack (user 2026-10-08: 「改回這個效果」).
+// The 美好的沖泡方式 screen (TeaPages) with its motion: product pages do not mount PageShell, so this boots the section's
+// scroll-scrubbed row reveals against the window. The 2026-10-12 layout follows Agasis' "All you need to launch": a sticky title
+// at the left and ruled rows that rise 32px while fading in at the right.
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,5 +19,5 @@ export default function BrewProcess({ children }: { children: ReactNode }) {
     document.fonts.ready.then(() => { if (alive) ScrollTrigger.refresh(); });
     return () => { alive = false; dispose?.(); context.revert(); };
   }, []);
-  return <div ref={root} className="brew-process" data-animation="brew-process" id="brew-title-anchor">{children}</div>;
+  return <section ref={root} className="brew-process" data-animation="brew-process" id="brew-title-anchor"><div className="brew-process-inner">{children}</div></section>;
 }

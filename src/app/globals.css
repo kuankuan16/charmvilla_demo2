@@ -500,7 +500,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .catalog-footer-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 40px; padding: 26px 0; border-top: 1px solid rgb(255 255 255 / .16); font-size: 13px; line-height: 1.9; color: rgb(255 255 255 / .78); }
 .catalog-footer-legal nav { margin-top: 0; font-size: 13px; gap: 10px 24px; }
 /* Shopping guide and privacy pages (2026-10-02): one reading column on the 12-column grid, contents list at the left. */
-.policy-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap, 20px); padding: 60px var(--page-gutter) 120px; }
+.policy-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap, 20px); padding: 60px var(--page-gutter) 120px; background: #efefed; }
+main:has(> .policy-page) { background: #efefed; }
 .policy-head { grid-column: 1 / span 12; margin-bottom: 50px; }
 .policy-head h1 { font-size: clamp(37px, 3.99vw, 59px); line-height: 1.3; }
 .policy-intro { max-width: 640px; margin-top: 18px; font-size: 17px; line-height: 2; }
@@ -1335,40 +1336,42 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* Tea sheet tokens remain shared by the brewing cards below. 茶款介紹 itself was replaced by the Vizooli-inspired layout on 2026-10-12. */
 .tea-sheet { --bw-card: #efeee8; --bw-text: #5a5a5a; --bw-base: #fcf7f1; --bw-gray: #d5d5d5; --bw-olive: var(--color-bronze); /* was the olive #6b6f45 (「綠色也是改成金色」) */ }
 
-/* --- 茶款介紹：2026-10-12 改採 vizooli Home B「Working Process」的資訊建築。
-   淺灰整屏、置中標題、三欄錯落白卡、大量留白、小圖／序號／進度方塊／內文；品牌紅改為 CHARM VILLA 金。
-   不複製參考站素材或文案。舊版 500vh sticky 橫向捲動與 hover 翻面已移除，茶款內容現在直接可讀。 --- */
+/* --- 茶款介紹：2026-10-12 改採 vizooli Home B「Working Process」的資訊建築與 sticky 卡片節奏。
+   淺灰整屏、置中標題、三欄錯落白卡；卡片以不同起點進場，捲動後逐張吸附到同一條上緣，較後的卡片覆上較早的卡片。
+   品牌紅改為 CHARM VILLA 金，不複製參考站素材或文案。手機保留可預覽下一張的橫向捲動。 --- */
 .teakind-sticky {
   position: relative;
   margin: 0 calc(-1 * var(--page-gutter));
   padding: clamp(88px, 8vw, 136px) var(--page-gutter) clamp(104px, 10vw, 168px);
-  overflow: hidden;
+  overflow: clip;
   color: var(--color-ink);
   background: #efefed;
 }
 .teakind-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 .teakind-kicker { display: flex; align-items: center; gap: 9px; margin: 0; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
 .teakind-kicker > span { width: 8px; height: 8px; background: var(--color-gold); }
-.teakind-h02 { max-width: 900px; font-size: 64px; line-height: 1.05; font-weight: 500; letter-spacing: -.045em; text-align: center; }
+.teakind-h02 { max-width: 900px; font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -.04em; text-align: center; }
 .teakind-section { max-width: 1270px; margin: clamp(64px, 6vw, 92px) auto 0; }
-.teakind-main { position: relative; height: 1260px; margin: 0; padding: 0; list-style: none; }
-.teakind-pad { position: absolute; width: calc((100% - 24px) / 3); }
-.teakind-pad:nth-child(1) { left: 0; top: 0; }
-.teakind-pad:nth-child(2) { left: calc((100% - 24px) / 3 + 12px); top: 24px; }
-.teakind-pad:nth-child(3) { right: 0; top: 236px; }
-.teakind-pad:nth-child(4) { left: calc((100% - 24px) / 3 + 12px); top: 568px; }
-.teakind-pad:nth-child(5) { left: 0; top: 696px; }
-.teakind-pad:nth-child(6) { right: 0; top: 756px; }
-.teakind-main--1, .teakind-main--2, .teakind-main--3 { height: 760px; }
+.teakind-main { position: relative; height: 1320px; margin: 0; padding: 0; list-style: none; }
+.teakind-pad { position: absolute; bottom: 0; width: calc((100% - 24px) / 3); }
+.teakind-pad:nth-child(1) { left: 0; top: 0; z-index: 1; }
+.teakind-pad:nth-child(2) { left: calc((100% - 24px) / 3 + 12px); top: 24px; z-index: 2; }
+.teakind-pad:nth-child(3) { right: 0; top: 236px; z-index: 3; }
+.teakind-pad:nth-child(4) { left: calc((100% - 24px) / 3 + 12px); top: 568px; z-index: 4; }
+.teakind-pad:nth-child(5) { left: 0; top: 696px; z-index: 5; }
+.teakind-pad:nth-child(6) { right: 0; top: 756px; z-index: 6; }
+.teakind-main--1, .teakind-main--2, .teakind-main--3 { height: 800px; }
 .teakind-main--1 .teakind-pad:nth-child(1) { left: calc((100% - 24px) / 3 + 12px); }
 .teakind-main--2 .teakind-pad:nth-child(1) { left: calc((100% - 24px) / 6); }
 .teakind-main--2 .teakind-pad:nth-child(2) { left: auto; right: calc((100% - 24px) / 6); }
-.teakind-main--4 { height: 1100px; }
-.teakind-main--5 { height: 1240px; }
+.teakind-main--4 { height: 1140px; }
+.teakind-main--5 { height: 1300px; }
 .teakind-card {
+  position: sticky;
+  top: clamp(88px, 10vh, 132px);
   display: flex;
   flex-direction: column;
-  height: 460px;
+  height: 500px;
   padding: 24px;
   border-radius: 14px;
   overflow: hidden;
@@ -1376,25 +1379,24 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   box-shadow: 0 1px 0 rgb(31 31 31 / .025);
 }
 .teakind-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
-.teakind-img { position: relative; width: clamp(116px, 10vw, 136px); aspect-ratio: 3 / 2; flex: none; overflow: hidden; background: var(--color-field); }
+.teakind-img { position: relative; width: clamp(152px, 12vw, 176px); aspect-ratio: 3 / 2; flex: none; overflow: hidden; background: var(--color-field); }
+.teakind-img img { transform: scale(1.24); }
 .teakind-missing { display: grid; place-items: center; height: 100%; background: #e3e2dc; }
 .teakind-missing span { font-size: 15px; color: var(--color-stone-deep); }
 .teakind-step { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #686864; white-space: nowrap; }
-.teakind-progress { display: flex; justify-content: flex-end; gap: 3px; margin-top: -2px; }
-.teakind-progress > span { display: block; width: 8px; height: 8px; background: #ddddda; }
-.teakind-progress > span.is-active { background: var(--color-gold); }
-.teakind-card-copy { display: flex; flex: 1; flex-direction: column; justify-content: flex-end; padding-top: 64px; }
-.teakind-index { font-size: 40px; line-height: 1; font-weight: 400; letter-spacing: -.045em; }
+.teakind-card-copy { display: flex; flex: 1; flex-direction: column; justify-content: flex-end; padding-top: 40px; }
+.teakind-index { font-size: 64px; line-height: .9; font-weight: 200; letter-spacing: -.06em; color: var(--color-gold); }
 .teakind-rule { display: block; height: 1px; margin: 22px 0 20px; background: rgb(31 31 31 / .13); }
 .teakind-h05 { font-size: 25px; line-height: 1.15; font-weight: 500; letter-spacing: -.025em; color: var(--color-ink); }
-.teakind-h05-sub { display: block; margin-top: 6px; font-size: 15px; line-height: 1.35; font-weight: 400; letter-spacing: 0; color: #62625e; }
-.teakind-cover-text { margin-top: 10px; font-size: 15px; line-height: 1.55; font-weight: 400; color: #5a5a57; }
+.teakind-h05-sub { display: block; margin-top: 8px; font-size: 16px; line-height: 1.4; font-weight: 400; letter-spacing: 0; color: #62625e; }
+.teakind-cover-text { margin-top: 18px; font-size: 16px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
 
 @media (max-width: 1023px) and (min-width: 768px) {
   .teakind-section { max-width: 820px; }
   .teakind-main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; height: auto; padding-bottom: 72px; }
   .teakind-pad, .teakind-main--1 .teakind-pad:nth-child(1), .teakind-main--2 .teakind-pad:nth-child(1), .teakind-main--2 .teakind-pad:nth-child(2) { position: static; width: auto; }
   .teakind-pad:nth-child(even) { transform: translateY(72px); }
+  .teakind-card { position: relative; top: auto; }
 }
 
 @media (max-width: 767px) {
@@ -1402,7 +1404,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .teakind-head { gap: 10px; }
   .teakind-kicker { font-size: 13px; }
   .teakind-kicker > span { width: 7px; height: 7px; }
-  .teakind-h02 { font-size: 45px; }
+  .teakind-h02 { font-size: 36px; }
   .teakind-section { margin-top: 46px; margin-right: calc(-1 * var(--page-gutter)); overflow: hidden; }
   .teakind-main, .teakind-main--1, .teakind-main--2, .teakind-main--3, .teakind-main--4, .teakind-main--5 {
     position: static;
@@ -1423,22 +1425,22 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
     flex: 0 0 min(300px, calc(100vw - 64px));
     scroll-snap-align: start;
   }
-  .teakind-card { height: 420px; padding: 20px; border-radius: 12px; }
-  .teakind-img { width: 124px; }
+  .teakind-card { position: relative; top: auto; height: 490px; padding: 20px; border-radius: 12px; }
+  .teakind-img { width: 148px; }
   .teakind-step { font-size: 13px; }
-  .teakind-card-copy { padding-top: 48px; }
-  .teakind-index { font-size: 34px; }
+  .teakind-card-copy { padding-top: 32px; }
+  .teakind-index { font-size: 54px; }
   .teakind-h05 { font-size: 23px; }
-  .teakind-cover-text { font-size: 15px; }
+  .teakind-cover-text { font-size: 16px; }
 }
 
 @media (max-width: 479px) {
-  .teakind-h02 { font-size: 36px; }
+  .teakind-h02 { font-size: 30px; }
   .teakind-pad, .teakind-main--1 .teakind-pad:nth-child(1), .teakind-main--2 .teakind-pad:nth-child(1), .teakind-main--2 .teakind-pad:nth-child(2) {
     width: calc(100vw - 62px);
     flex-basis: calc(100vw - 62px);
   }
-  .teakind-card { height: 420px; }
+  .teakind-card { height: 490px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1446,91 +1448,61 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
   .teakind-main { scroll-behavior: auto; }
 }
 
-/* --- 美好的沖泡方式: back to rooferplus.webflow.io's process timeline (user 2026-10-08: 「改回這個效果」, with its Step badge and bold title kept
-   「保留這個設計」 and the step's icon at the right 「icon 在紅圈處」): the title at the top left, the photograph at the bottom left, the steps at
-   the right on a hairline rail that fills in bronze as the page scrolls (lib/motion/animations.ts, brew-process); each step is a row —
-   a bronze badge 「步驟 n」, under it the title at the left, the text in the middle, the line icon at the right — with a hairline under it.
-   The ground is white, like 茶款介紹 above (「下面的美好的泡茶也是」). --- */
-.brew-process { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--pdp-gap, clamp(12px, 1.4vw, 24px)); align-items: start; padding: clamp(72px, 8vw, 128px) 0 clamp(64px, 7vw, 112px); } /* on the page's ground, inside the gutters (「背景效果都刪掉」「也不用另外套不一樣的背景色」) */
-.brew-process > h2 { grid-column: 1 / span 5; grid-row: 1; font-size: 64px; line-height: 1.1em; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); } /* five columns: the seven characters at 64px do not fit four */
-.brew-process-media { position: relative; grid-column: 1 / span 4; grid-row: 2; align-self: end; aspect-ratio: 4 / 5; margin: 40px 0 0; overflow: hidden; background: var(--color-field); }
-.brew-process-media--film { aspect-ratio: 3 / 4; } /* the sunrise film instead of the photograph (user 2026-10-08: 「改成剛剛的影片」), in a portrait frame (「影片直式４：３的比例」): the 16:9 film is cropped to its middle */
-.brew-process-media .tea-film { position: absolute; inset: 0; aspect-ratio: auto; }
-.tea-film { position: relative; aspect-ratio: 16 / 9; background: var(--color-ink); overflow: hidden; }
-.tea-film-video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.tea-film-control { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgb(0 0 0 / 0.3); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); color: var(--color-white); transition: background-color .2s, transform .2s; } /* round on purpose: it sits on the film, not among the site's square buttons */
-.tea-film-control:hover { background: rgb(0 0 0 / 0.45); }
-.tea-film-control:active { transform: scale(.94); }
-.tea-film-control:focus-visible { outline: 2px solid var(--color-white); outline-offset: 3px; }
-.brew-process > .brew-steps { grid-column: 6 / span 7; grid-row: 1 / span 2; align-self: end; }
-/* the rail: a 15px dot level with the badge's middle and, under every dot but the last, a hairline down to the next one, filled in gold by
-   brew-process (scaleY 0 → 1); unlit steps (only once that has started) show a grey dot, a white badge and a stone icon, lighting with a 0.6s
-   ease. Each step is bramwel's 680-wide card, half its height (270; 「卡片高度減半」), on the stores' cream (「這個動態效果加…卡片設計」): the gold badge and the 24px title on one line at the top
-   left, the text at the top right, the 64px line icon at the bottom left (the first set again, 「用一開始的」), two white tags at the bottom right; 16px between cards. The reference's
-   red is the site's gold 金咖啡色 (「紅色改成金色」). */
-.brew-steps { --brew-pad: 32px; --brew-dot-y: 18px; --brew-gap: 16px; --brew-rail: rgb(31 31 31 / .16); list-style: none; margin: 0; padding: 0; }
-.brew-steps li { position: relative; display: grid; grid-template-columns: 15px minmax(0, 1fr); column-gap: 40px; align-items: start; padding: 0 0 var(--brew-gap); } /* 40px between the rail and the card (user 2026-10-08: 「gap 分開一點」) */
-.brew-steps li:last-child { padding-bottom: 0; }
-.brew-rail { grid-column: 1; display: block; }
-.brew-dot { position: absolute; z-index: 1; left: 0; top: calc(var(--brew-pad) + var(--brew-dot-y) - 7.5px); width: 15px; height: 15px; border-radius: 50%; background: var(--color-bronze); transition: background-color .6s ease; }
-.brew-line { position: absolute; left: 7px; top: calc(var(--brew-pad) + var(--brew-dot-y)); width: 1px; height: 100%; background: var(--brew-rail); } /* 100 % of the row, gap included, reaches the next dot */
-.brew-line-fill { display: block; width: 100%; height: 100%; background: var(--color-bronze); }
-.brew-card { grid-column: 2; display: flex; flex-direction: column; justify-content: space-between; min-height: 270px; padding: var(--brew-pad); border-radius: 2px; background: var(--bw-card); transition: background-color .6s cubic-bezier(.37, 0, .63, 1); }
-.brew-card:hover { background: #e8e6de; }
-.brew-card-top { display: flex; justify-content: space-between; gap: 24px; }
-.brew-card-head { display: flex; align-items: center; gap: 16px; } /* the badge and the title on one line (user 2026-10-08: 「標題文字、縮小改跟步驟同一行」) */
-.brew-step-badge { padding: 9px 14px; border-radius: 4px; background: var(--color-bronze); color: #fff; font-size: 14px; line-height: 1.3; transition: background-color .6s ease, color .6s ease, box-shadow .6s ease; }
-.brew-steps h3 { font-size: 24px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; }
-.brew-steps p { max-width: 260px; margin: 0; padding-top: 4px; font-size: 16px; line-height: 1.6; color: #5a5a5a; }
-.brew-card-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
-.brew-icon { display: block; width: 64px; height: 64px; margin-bottom: 14px; color: var(--color-bronze); transition: color .6s ease; } /* a little above the tags' baseline (user 2026-10-08: 「icon 再上移一點」) */
+/* --- 美好的沖泡方式：2026-10-12 轉譯 Agasis「All you need to launch」。
+   與茶款介紹共用全幅淺灰底和 1270px 內容邊界；左側小標＋大標題 sticky，右側 01–05 以細線分隔，
+   每列在捲動時由下方 32px 漸進至原位，右端搭配品牌金色線稿 icon。 --- */
+.brew-process { margin: 0 calc(-1 * var(--page-gutter)); padding: clamp(96px, 9vw, 144px) var(--page-gutter) clamp(112px, 10vw, 160px); background: #efefed; }
+.brew-process-inner { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); max-width: 1270px; margin: 0 auto; align-items: start; }
+.brew-intro { grid-column: 1 / span 5; position: sticky; top: clamp(88px, 10vh, 132px); align-self: start; }
+.brew-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
+.brew-kicker > span { width: 8px; height: 8px; flex: none; background: var(--color-gold); }
+.brew-title { max-width: 520px; margin: 0; font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -.04em; color: var(--color-ink); }
+.brew-steps { grid-column: 6 / -1; list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(31 31 31 / .16); }
+.brew-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr) 72px; column-gap: 28px; align-items: start; min-height: 148px; padding: 32px 0; border-bottom: 1px solid rgb(31 31 31 / .16); will-change: transform, opacity; }
+.brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
+.brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
+.brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
+.brew-icon { display: block; justify-self: end; width: 64px; height: 64px; color: var(--color-gold); }
 .brew-icon svg { display: block; width: 100%; height: 100%; }
-.brew-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
-.brew-tag { padding: 6px 12px; background: #fff; font-size: 14px; line-height: 1.2em; color: var(--bw-text); white-space: nowrap; }
-.is-brew-animated [data-brew-step]:not(.is-active) .brew-dot { background: rgb(31 31 31 / .3); }
-.is-brew-animated [data-brew-step]:not(.is-active) .brew-step-badge { background: #fff; color: var(--color-bronze); box-shadow: inset 0 0 0 1px rgb(31 31 31 / .12); }
-.is-brew-animated [data-brew-step]:not(.is-active) .brew-icon { color: var(--color-stone); }
 @media (max-width: 1279px) and (min-width: 768px) {
-  .brew-process > h2, .brew-process-media { grid-column: 1 / span 5; }
-  .brew-card { min-height: 240px; padding: 28px; }
-  .brew-steps { --brew-pad: 28px; }
-  .brew-steps h3 { font-size: 22px; }
-  .brew-icon { width: 56px; height: 56px; }
+  .brew-intro { grid-column: 1 / span 4; }
+  .brew-steps { grid-column: 5 / -1; }
+  .brew-steps li { grid-template-columns: 42px minmax(0, 1fr) 56px; column-gap: 20px; }
+  .brew-copy h3 { font-size: 23px; }
+  .brew-icon { width: 54px; height: 54px; }
 }
 @media (max-width: 767px) {
-  .brew-process { display: block; padding: 56px 0 48px; }
-  .brew-process-media { margin: 24px 0 8px; } /* above the steps, the full width (the reference's phone layout) */
-  .brew-steps { --brew-pad: 24px; --brew-dot-y: 16px; --brew-gap: 12px; }
-  .brew-steps li { column-gap: 14px; }
-  .brew-card { min-height: 0; padding: var(--brew-pad); }
-  .brew-card-top { flex-direction: column; gap: 16px; }
-  .brew-card-head { gap: 12px; }
-  .brew-step-badge { padding: 7px 12px; font-size: 13px; }
-  .brew-steps h3 { font-size: 20px; }
-  .brew-steps p { max-width: none; padding-top: 0; font-size: 15px; }
-  .brew-card-bottom { margin-top: 24px; }
-  .brew-icon { width: 48px; height: 48px; }
+  .brew-process { padding-top: 72px; padding-bottom: 96px; }
+  .brew-process-inner { display: block; }
+  .brew-intro { position: static; margin-bottom: 48px; }
+  .brew-kicker { margin-bottom: 12px; font-size: 13px; }
+  .brew-kicker > span { width: 7px; height: 7px; }
+  .brew-steps li { grid-template-columns: 34px minmax(0, 1fr) 46px; column-gap: 12px; min-height: 0; padding: 24px 0; }
+  .brew-number { font-size: 13px; }
+  .brew-copy h3 { font-size: 20px; }
+  .brew-copy p { margin-top: 8px; font-size: 15px; line-height: 1.6; }
+  .brew-icon { width: 44px; height: 44px; }
 }
-@media (min-width: 1920px) { .brew-process > h2, .teakind-h02 { font-size: 72px; } }
+@media (min-width: 1920px) { .brew-title, .teakind-h02 { font-size: 64px; } }
 @media (max-width: 991px) {
-  .brew-process > h2, .teakind-h02 { font-size: 48px; }
+  .brew-title, .teakind-h02 { font-size: 44px; }
   .teakind-h05 { font-size: 24px; }
 }
 @media (max-width: 767px) {
-  .brew-process > h2 { font-size: 45px; }
-  .teakind-h02 { font-size: 40px; }
+  .brew-title, .teakind-h02 { font-size: 36px; }
   .teakind-h05 { font-size: 23px; }
 }
 @media (max-width: 479px) {
-  .brew-process > h2 { font-size: 30px; }
-  .teakind-h02 { font-size: 36px; }
+  .brew-title, .teakind-h02 { font-size: 30px; }
   .teakind-h05 { font-size: 22px; }
 }
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
    at the left, the questions at the right, one per row between hairlines with a round +/− button; the answer opens on click. */
-.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(96px, 11vw, 176px) var(--page-gutter) clamp(80px, 9vw, 140px); background: #efeee8; }
-main:has(> .faq-page) { background: #efeee8; } /* the ground runs on below a short document (Prop 65) down to the footer */ /* the stores' ground (user 2026-10-08: 「所有純文字頁面的背景色改成…跟門市背景色一樣」) */ /* more room above (user 2026-10-07: 「所有純文字頁的上面空間可以再留白多一點」) */
+.faq-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(96px, 11vw, 176px) var(--page-gutter) clamp(80px, 9vw, 140px); background: #efefed; }
+main:has(> .faq-page) { background: #efefed; } /* FAQ 與各政策純文字頁統一使用茶款介紹的淺灰背景；短文件也延伸到底部 */
+.catalog-shell:has(> main > .faq-page), .catalog-shell:has(> main > .policy-page),
+.catalog-shell:has(> main > .faq-page) [data-header]:not(.menu--opened), .catalog-shell:has(> main > .policy-page) [data-header]:not(.menu--opened) { background: #efefed; }
 .faq-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
 .faq-head h1 { font-size: clamp(40px, 4.4vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
 .faq-intro { margin-top: 22px; font-size: 16px; line-height: 1.8; color: var(--color-stone-deep); } /* no max-width, so a short intro stays on one line (user 2026-10-07: 「不要換行」) */

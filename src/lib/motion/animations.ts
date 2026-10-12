@@ -205,28 +205,16 @@ function stack(el: HTMLElement): Cleanup {
   return () => { st.kill(); gsap.set(holder, { clearProps: "transform" }); cards.forEach((c) => { gsap.set(c, { clearProps: "transform" }); c.style.zIndex = ""; c.classList.remove("is-active"); }); };
 }
 
-// 美好的沖泡方式 after rooferplus.webflow.io's process timeline (its IX3 data, read 2026-10-08; back on 2026-10-08 evening after one evening as
-// bramwel's card stack): the hairline between each step's dot and the next fills top-down, linear, scrubbed with a 1.3 s catch-up, one segment
-// after another, and stays filled; a step lights (bronze dot, filled badge and bronze icon, through CSS transitions on .is-active) when the
-// fill reaches its dot, the first one from the start. Reversible. The reference's range, "30% bottom" → "50% top", finishes after the last
-// step has left the middle of the window, so it ends here as the list's foot passes 55%. Without this (reduced motion) the CSS shows every
-// step lit and the rail full.
-//   [data-animation=brew-process] > [data-brew-steps] > [data-brew-step]* (each but the last with a .brew-line-fill)
+// 美好的沖泡方式 after agasis.webflow.io/services/brand-identity's "All you need to launch" (measured 2026-10-12):
+// the left heading stays sticky while the ruled rows at the right rise 32px and fade from 0 to 1 in a scrubbed, overlapping sequence.
 function brewProcess(el: HTMLElement): Cleanup {
   const list = el.querySelector<HTMLElement>("[data-brew-steps]");
   const steps = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-step]"));
-  const fills = steps.slice(0, -1).map((s) => s.querySelector<HTMLElement>(".brew-line-fill"));
-  if (!list || steps.length < 2 || fills.some((f) => !f)) return () => {};
-  const segments = fills as HTMLElement[];
-  el.classList.add("is-brew-animated");
-  gsap.set(segments, { scaleY: 0, transformOrigin: "50% 0%" });
-  let lit = -1;
-  const light = (n: number) => { if (n === lit) return; lit = n; steps.forEach((s, i) => s.classList.toggle("is-active", i <= n)); };
-  light(0);
-  const tl = gsap.timeline({ paused: true, defaults: { ease: "none", duration: 1 }, onUpdate: () => light(Math.min(steps.length - 1, Math.floor(tl.time() + 0.02))) });
-  segments.forEach((f, i) => tl.to(f, { scaleY: 1 }, i));
-  const st = ScrollTrigger.create({ trigger: list, start: str(el, "data-start", "top 80%"), end: str(el, "data-end", "bottom 55%"), scrub: 1.3, animation: tl });
-  return () => { st.kill(); tl.kill(); gsap.set(segments, { clearProps: "transform" }); el.classList.remove("is-brew-animated"); steps.forEach((s) => s.classList.remove("is-active")); };
+  if (!list || steps.length < 2) return () => {};
+  gsap.set(steps, { y: 32, opacity: 0 });
+  const tl = gsap.timeline({ paused: true }).to(steps, { y: 0, opacity: 1, duration: .52, stagger: .17, ease: "none" });
+  const st = ScrollTrigger.create({ trigger: el, start: str(el, "data-start", "top 98%"), end: str(el, "data-end", "top 20%"), scrub: 1, animation: tl });
+  return () => { st.kill(); tl.kill(); gsap.set(steps, { clearProps: "transform,opacity" }); };
 }
 
 // Mouse-driven ambient drift (lerp .05, amplitude .005 × viewport width by default).
