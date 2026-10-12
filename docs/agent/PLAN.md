@@ -76,3 +76,17 @@ const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing
 - Next safe action：等使用者說要修時，只改倒熱水照片的茶標（一次一張，先給使用者看），通過後還原 `brewImage` 並提交。
 - 注意：不要讓 Codex 與 Claude 同時在這個工作樹改檔。
 - Other pending work：關於頁 02 職人圖（已在 `83a5d55` 配 `about-02.webp`，若使用者另有要求再做）；Shopify 待真實商店資料；`member-pages-wip` 需獨立審查。
+
+## 上線前待辦清單（2026-10-12 深夜，Claude 只讀程式盤點，未實測）
+
+需要使用者／客戶決定或提供：
+1. 正式網域（`src/i18n/config.ts` 的 `siteUrl` 仍是 charmvilla-gallery-site.vercel.app）。
+2. 美國站預設語言（目前無前綴 `/` 是中文、x-default 指向中文）。
+3. 美金價格：雲朵杯墊、銀杏茶匙、木筷（目前台幣）、柴燒鳥形筷架（無價）。
+4. 團圓粉紅色、藍色的照片與規格（沒有下架，待客戶補資料）；團圓本身缺尺寸、重量。
+5. 公司正式名稱與地址（政策頁、頁尾）。
+6. 最新消息中連到隱藏商品／系列的文章要下架或改寫（`news.ts`）。
+
+agent 可直接修（需使用者同意）：購物車台灣運費文字、網站介紹仍提皮件金飾、服務條款「FDA 認證」改寫、隱私權政策描述 Shopify／cookie、FAQ 不存在的門市頁、購物車「聯絡門市」、退換貨頁加更新日期、iPhone 主畫面圖示與 favicon、會員表單 +886 與國家選項。
+
+等 Shopify：每個茶款選項各自一個 variant、杯墊等四項的 mapping、新增地址資料格式、member-pages-wip 審查、電子報與 CCPA。
