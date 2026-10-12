@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "zh";
 export const isLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);
 export const htmlLang: Record<Locale, string> = { zh: "zh-Hant", en: "en" };
-export const siteUrl = "https://charmvilla-gallery-site.vercel.app";
+export const siteUrl = "https://www.charmvilla.com"; // the US site's production domain (user 2026-10-12); moving the domain itself is a separate, approved step
 /** t("中文", "English") for one locale: the Chinese source sits next to its English version at the point of use. */
 export type T = (zh: string, en: string) => string;
 // Every string from t() gets a half-width space where Chinese meets a letter or digit (spaceCjk), so copy written as

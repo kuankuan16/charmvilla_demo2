@@ -60,7 +60,7 @@ const build = (lang: Locale) => {
       { id: "delivery-time", ...qa(["配送需要多久？", "How long does delivery take?"],
         ["訂單從加州出貨。美國境內標準配送通常需要 3–7 個工作天，視您所在的地區而定。可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。", "Orders ship from California. Standard US delivery typically takes 3–7 business days, depending on your location. Available shipping options are shown at checkout, and we will send a tracking link once your order ships."]) },
       { id: "store", ...qa(["你們有實體店面嗎？", "Do you have a physical store?"],
-        ["我們的美國商店為線上商店。CHARMVILLA 在台灣與日本的門市資訊，請見「門市」頁面。", "Our US store is online. For CHARMVILLA locations in Taiwan and Japan, visit our Boutique page."]) },
+        ["我們的美國商店為線上商店。CHARMVILLA 在台灣與日本的門市資訊，請見首頁的「門市」介紹。", "Our US store is online. For CHARMVILLA locations in Taiwan and Japan, see Our Stores on our home page."]) },
       { id: "gifting", ...qa(["商品適合送禮嗎？有提供提袋嗎？", "Are your products suitable for gifting, and do you offer gift bags?"],
         ["我們的茶禮盒很適合用來致謝、慶祝，或分享相聚的時光。請查看商品說明，或與我們聯絡，確認您選購的款式是否附有搭配的提袋。", "Our tea gift boxes are a thoughtful choice for thank-yous, celebrations, and time shared together. Check the product details or contact us to confirm whether a matching gift bag is included with your selection."]) },
       { id: "corporate", ...qa(["有企業送禮或大量訂購服務嗎？", "Do you offer corporate gifting or bulk order services?"],

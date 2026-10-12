@@ -72,7 +72,7 @@ export default function AccountClient() {
               <form className="account-form" onSubmit={(e) => submit(e, "/api/account/register", "POST", load)}>
                 {nameFields(["reg-last", "reg-first"])}
                 <label className="tc">Email <span className="account-req">{required}</span><input id="reg-email" name="email" type="email" autoComplete="email" required /></label>
-                <label className="tc">{t("手機", "Mobile")}<input id="reg-phone" name="phone" type="tel" autoComplete="tel" placeholder="+886…" /></label>
+                <label className="tc">{t("手機", "Mobile")}<input id="reg-phone" name="phone" type="tel" autoComplete="tel" placeholder="+1…" /></label>
                 <label className="tc">{t("密碼", "Password")} <span className="account-req">{t("（必填，至少 8 個字元）", "(required, at least 8 characters)")}</span><input id="reg-password" name="password" type="password" autoComplete="new-password" required minLength={8} /></label>
                 <label className="account-check tc"><input id="reg-marketing" name="acceptsMarketing" type="checkbox" /> {t("願意收到新品與活動通知", "I would like to receive news of new pieces and events")}</label>
                 {/* 2026-10-02: the privacy notice and the terms are shown and agreed to before any personal data is sent (個資法 §8). */}
@@ -152,7 +152,7 @@ export default function AccountClient() {
         <form className="account-form" onSubmit={(e) => submit(e, "/api/account/addresses", "POST", () => { setNotice({ kind: "ok", text: t("已新增地址。", "Address added.") }); load(); })}>
           <h2 className="tc account-subtitle">{t("新增地址", "Add an address")}</h2>
           {nameFields()}
-          <label className="tc">{t("國家／地區", "Country/region")}<input name="country" placeholder="Taiwan / United States / Japan" required /></label>
+          <label className="tc">{t("國家／地區", "Country/region")}<input name="country" placeholder="United States" defaultValue="United States" required /></label>
           <div className="account-row"><label className="tc">{t("縣市／州", "State/province")}<input name="province" /></label><label className="tc">{t("郵遞區號", "Postal code")}<input name="zip" /></label></div>
           <label className="tc">{t("市區", "City")}<input name="city" /></label>
           <label className="tc">{t("地址", "Address")}<input name="address1" required /></label>

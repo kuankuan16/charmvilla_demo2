@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(siteUrl),
     title,
-    description: t("藝術即生活。走進 CHARM VILLA 的日常藝廊，從皮革、金飾到茶與器物，細看材質、手作與生活的關係。",
-      "Art as Life. Step into CHARM VILLA's everyday gallery: from leather and gold to tea and objects for the table, look closely at how material, handwork and daily life relate."),
+    description: t("藝術即生活。走進 CHARM VILLA 的日常藝廊，從小金魚茶包禮盒、香氛到柴燒器物，細看材質、手作與生活的關係。",
+      "Art as Life. Step into CHARM VILLA's everyday gallery: from Goldfish Tea Bag gift boxes and scents to wood-fired objects for the table, look closely at how material, handwork and daily life relate."),
     openGraph: { title, images: ["/media/site/scene-red-giftbox-tea-hinoki-bird.webp"], locale: t("zh_TW", "en") },
   };
 }
