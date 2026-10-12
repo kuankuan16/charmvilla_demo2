@@ -10,7 +10,7 @@
 - Git remote 是 `https://github.com/kuankuan16/charmvilla_demo2`；本次盤點已將根目錄 `main` fast-forward 到 `origin/main` 的 `0eea455b4e03d6b9567e5ae87838142c436a755b`。
 - `CLAUDE.md` 只有 `@AGENTS.md`，所以 Claude 與 Codex 的共同規則應維護在根目錄 `AGENTS.md`，不另做兩份相互漂移的 agent 文件。
 - 本機 `.vercel/project.json` 連到 Vercel project `charmvilla-demo2`（team `team_WwbxohHQlRJLjIfQJDEWpHFV`），但程式的 `siteUrl` 與歷史 QA 使用 `https://charmvilla-gallery-site.vercel.app`。兩者命名不一致；正式發布前必須重新確認 project、alias、Git integration 與最終 domain，不可僅憑舊 deploy log 推定。
-- `.claude/` 內仍保留 Claude Code 工作樹作為歷史與復原依據；2026-10-12 的 About 未提交變更已由 Codex 驗證並整合回本機 `main`。
+- `.claude/` 內仍保留 Claude Code 工作樹作為歷史與復原依據；2026-10-12 的 About 未提交變更曾由 Codex 接手，但使用者後來明確取消 02＋03 合併，現行 `main` 已恢復四章並重新配置 02 圖片。
 
 ## 文件盤點與判讀
 
@@ -59,7 +59,7 @@
 - `src/app/globals.css`
 - `src/data/about.ts`
 
-這批變更對應使用者 2026-10-12 的指示：將 About 的 02「一尾小金魚」與 03「被世界看見」合併並重新潤稿。Codex 已完成以下內容：
+這批變更原先對應使用者 2026-10-12 的指示：將 About 的 02「一尾小金魚」與 03「被世界看見」合併並重新潤稿。原工作樹的內容包括：
 
 - 四章改成三章，原 04 重新編為 03。
 - 合併後標題為「一尾小金魚，被世界看見」。
@@ -77,13 +77,15 @@ git -C .claude/worktrees/brewing-steps-redesign diff --check
 git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catalog)'/about/page.tsx src/data/about.ts src/app/globals.css
 ```
 
-完成狀態：
+後續決策與目前狀態：
 
 - 原工作樹 commit：`d33869a`（`refactor: merge About story chapters`）。
-- 已 cherry-pick 至本機 `main`：`f89f9ac`。
-- 已核對中文事實、英文忠實度、獎項 logo 與三章交錯版型。
+- 曾 cherry-pick 至本機 `main`：`f89f9ac`，但這個三章版本已被後續使用者指示取代，不得再重複套用。
+- 使用者隨後明確要求「取消合併，再幫我重新配圖」「挑適合 02 的圖」；本機 `main` commit `83a5d55` 已恢復四章。
+- 02「一尾小金魚」改用 `public/media/site/about-02.webp`，畫面是雙手製作茶包、裁片、棉線與茶葉，呼應 16 道工序與 9 道手作；不再顯示缺圖 placeholder。
+- 03「被世界看見」繼續使用 `CV-0169` 鏡面紙金魚照，Red Dot／iF 標誌仍顯示在 03 文字下方；04 恢復原編號與左右交錯位置。
 - `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
-- 已以 1440px 與 390px 實際截圖檢查 `/en/about`；標題、圖片、獎項標誌與手機版排列正常。
+- 已以 1440px 與 390px 實際截圖檢查 `/en/about`；02 手作圖裁切、四章交錯、03 獎項標誌與手機版排列正常。
 - 本機 `next start` 對無語系前綴的 `/about` 會在 rewrite 與 `/zh` redirect 之間循環，但正式站同一路徑回應 200；這是本次 About 改動以外的既有 routing／本機執行差異，尚未另行修改。
 - 尚未 push，也尚未部署；只有獲得使用者發布授權後才能進入發布流程。
 
@@ -97,6 +99,8 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - 提交訊息已明載「尚未檢查」。
 - 相對主線有約 56 個檔案、2,503 行新增，重做會員註冊、登入、啟用、重設密碼、地址、訂單、偏好與 Shopify customer/admin 支援。
 - 風險高：主線之後已修改相同 account／Shopify／CSS 區域，且真實 Shopify 仍未串接。不可直接 merge；應先做安全、session/cookie、API error、雙語、未設定模式與真實商店相容性 review，再逐段移植。
+- Codex 曾在隔離工作樹 `.claude/worktrees/codex-member-pages-review` 建立本機 review branch `codex/member-pages-review`，以目前 `main` 為基底試套 `ebce79e`；沒有合併回 `main`。
+- 試套時 `AccountClient.tsx` 有 modify/delete 衝突，`src/data/commerce.ts` 與較新的美國政策文案衝突；保留現行政策後，型別檢查仍因兩個會員頁引用已不存在的 `company` 欄位而失敗。審查在使用者改回 About 任務時暫停，該 review branch 不可視為可合併版本。
 
 ### Shopify 正式串接
 
@@ -135,7 +139,7 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 
 ## 建議的 Codex 接手順序
 
-1. About 02＋03 合併已完成並整合至本機 `main`；後續不要再從舊工作樹重做或重複 cherry-pick。
+1. About 維持四章：02「一尾小金魚」使用 `about-02.webp` 手作照，03「被世界看見」使用 `CV-0169`；不要再套用舊的 02＋03 合併 commit。
 2. 將 `member-pages-wip` 視為獨立的大型 review／重做任務，不和 About 小改一起合併。
 3. 若要處理其他未合併分支，先比較它和最新 `main` 的實際差異，再判斷是否仍符合最新使用者決策。
 4. 只有使用者要求正式發布時，才檢查 Vercel 專案歸屬、部署、alias、代表路由與資產；Git push 與 Vercel Production 是兩個獨立狀態。
