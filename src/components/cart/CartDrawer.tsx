@@ -12,7 +12,12 @@ export default function CartDrawer() {
   const { lang, t } = useT();
   useEffect(() => { const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") cart.setOpen(false); }; document.addEventListener("keydown", onKey); return () => document.removeEventListener("keydown", onKey); }, [cart]);
   useEffect(() => { document.documentElement.classList.toggle("cart--open", cart.open); return () => document.documentElement.classList.remove("cart--open"); }, [cart.open]);
-  const free = cart.currency === "TWD" && cart.subtotal >= 2000;
+  const currencyTotals = Array.from(cart.lines.reduce((totals, line) => {
+    if (!line.onRequest) totals.set(line.currency, (totals.get(line.currency) ?? 0) + line.unitAmount * line.quantity);
+    return totals;
+  }, new Map<string, number>()));
+  const mixedCurrencies = currencyTotals.length > 1;
+  const free = !mixedCurrencies && cart.currency === "TWD" && cart.subtotal >= 2000;
   return (
     <div className={`cart-root ${cart.open ? "is-open" : ""}`} aria-hidden={!cart.open}>
       <button type="button" className="cart-backdrop" aria-label={t("關閉購物車", "Close bag")} onClick={() => cart.setOpen(false)} tabIndex={cart.open ? 0 : -1} />
@@ -43,8 +48,10 @@ export default function CartDrawer() {
             </ul>
             <footer className="cart-foot">
               {cart.error && <p className="cart-error tc" role="alert">{cart.error}</p>}
-              <div className="cart-subtotal"><span className="tc">{t("小計", "Subtotal")}</span><strong>{cart.formatPrice(cart.subtotal, cart.currency)}</strong></div>
-              <p className="cart-note tc">{cart.currency === "TWD" ? (free ? t("台灣宅配免運費。", "Free home delivery in Taiwan.") : t("台灣宅配運費 NT$ 120，滿 NT$ 2,000 免運。", "Home delivery in Taiwan NT$ 120; free for orders of NT$ 2,000 or more.")) : cart.currency === "USD" ? (cart.subtotal > 99 ? t("美國境內免運費。", "Complimentary US shipping.") : t("美國訂單滿 US$ 99 免運費；未達則於結帳時依地址與配送方式計算運費。", "Complimentary shipping on US orders over $99; below that, shipping is calculated at checkout by address and service.")) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
+              <div className="cart-subtotal"><span className="tc">{t("小計", "Subtotal")}</span><strong>{currencyTotals.map(([currency, amount]) => cart.formatPrice(amount, currency)).join(" + ")}</strong></div>
+              <p className="cart-note tc">{mixedCurrencies
+                ? t("購物車內含不同幣別，金額分開列示，不合併換算。正式結帳時將依購買市場顯示可售商品與幣別。", "Your bag contains different currencies, so the subtotals are shown separately without conversion. Available products and currency will follow your market when checkout opens.")
+                : cart.currency === "TWD" ? (free ? t("台灣宅配免運費。", "Free home delivery in Taiwan.") : t("台灣宅配運費 NT$ 120，滿 NT$ 2,000 免運。", "Home delivery in Taiwan NT$ 120; free for orders of NT$ 2,000 or more.")) : cart.currency === "USD" ? (cart.subtotal > 99 ? t("美國境內免運費。", "Complimentary US shipping.") : t("美國訂單滿 US$ 99 免運費；未達則於結帳時依地址與配送方式計算運費。", "Complimentary shipping on US orders over $99; below that, shipping is calculated at checkout by address and service.")) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
               {cart.mode === "shopify" && cart.checkoutUrl
                 ? <a href={cart.checkoutUrl} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
                 : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Online checkout is not open yet")}>{t("前往結帳", "Go to checkout")}</button>}
