@@ -70,7 +70,7 @@ export const getAbout = (lang: Locale) => {
           t("每一尾小金魚要經過 16 道工序，其中 9 道必須靠手工完成。茶包以食品等級不織布製作，過程不使用任何化學黏劑；左右不對稱的魚鰭，讓牠在熱水裡舒展、游動。所使用的茶葉皆通過 SGS 檢測。",
             "Each goldfish passes through 16 steps, nine of them by hand. The bag is made of food-grade non-woven fabric with no chemical adhesive, and its asymmetric fins let it unfurl and swim in hot water. Every tea used is SGS-tested."),
         ],
-        quote: { text: t("「我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。」", "“We love tea culture, and we want a simple way to share it with the world.”"), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
+        quote: { text: t("我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。", "We love tea culture, and we want a simple way to share it with the world."), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
         // 02 改用手作過程照，直接呼應 16 道工序與 9 道手作（使用者 2026-10-12：「取消合併，再幫我重新配圖」「挑適合 02 的圖」）。
         image: site("about-02.webp", t("職人雙手縫製小金魚茶包，木桌上放著裁好的不織布、棉線、茶葉與完成的小金魚", "An artisan sewing a goldfish tea bag by hand, with cut non-woven fabric, cotton thread, tea leaves and finished goldfish on the wooden table"), 1361, 1824),
       },
