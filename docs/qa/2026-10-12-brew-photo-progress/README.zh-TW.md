@@ -41,3 +41,10 @@
 - 使用者再給四張實拍：長條平放、霧面金、兩端壓紋、CHARM VILLA 有空格、細棉線壓在長邊下面。
 - 以第一版為底、`docs/reference/tea-tag-reference-3-string-under-foil.png` 與桌面「茶標籤位置-玻璃杯-1.png」為參考，Higgsfield Nano Banana 2.1 只改茶標與棉線（2 點）；提示詞見 [image-tag-prompt-v2.txt](image-tag-prompt-v2.txt)。
 - 輸出 `scene-brewing-hot-water-goldfish-tag-walnut-v2.webp`，1696×2528。放大檢查：字樣有空格、霧面金、無孔、兩端壓紋、棉線變細並接在長邊。未完全符合：棉線接在長邊約 2/3 處而非正中間；茶標約為杯口 1.5 倍（規格 0.85 倍）。已告知使用者，使用者同意上線（「可以」）。
+
+## 2026-10-12 深夜：全新 v5（已上線）
+
+- 使用者給熱水壺參考（黑色霧面細嘴壺）與光影參考（暗室、一道暖金斜光），要求「重生！不一樣的、令人讚歎的」。茶標規格補充：扁平薄片、兩端直邊無鋸齒、縮到 2/3。
+- 不附上一版成品，只附光影、熱水壺、圈形把手玻璃杯、泡開小金魚、扁平茶標五張參考；Nano Banana 2.1 4K（3 點）。提示詞見 [image-prompt-v5-sunbeam.txt](image-prompt-v5-sunbeam.txt)。
+- 光影參考是手機截圖，AI 把「造訪網站」按鈕畫進畫面底部；裁掉底部與左側暗處移除，維持 2:3，輸出 `scene-brewing-gooseneck-dark-oak-sunbeam.webp` 2048×3072。
+- 檢查：茶標扁平、直邊、長度約杯身寬、CHARM VILLA；棉線接長邊偏左（非正中）已告知；使用者「好 發布」。

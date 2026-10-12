@@ -180,14 +180,13 @@ const brewSteps = (t: (zh: string, en: string) => string) => [
   { title: t("浸泡", "Steep"), text: t("浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。", "Steep for about 5 minutes as the tea's color deepens and the goldfish takes shape.") },
   { title: t("享用", "Enjoy"), text: t("聞一聞茶香，啜飲一口，為自己留一段時間。", "Enjoy the fragrance, take a sip, and make a little time for yourself.") },
 ];
-// User 2026-10-12: proposal 02's left photograph, with the site's photography style and a visible hot-water pouring gesture.
-// Latest correction: the cup must contain the goldfish tea bag. Imagegen edit uses real wet tea-bag photographs for body, tail and string.
-// v2 (user 2026-10-12, with four photographs of the real tag: 「茶葉標籤不對」「棉線也太粗了」): only the tag and string were redone after
-// docs/reference/tea-tag-reference-3-string-under-foil.png — a flat matte-gold strip reading CHARM VILLA, crimped ends, a fine string under
-// its long edge, no hole (Nano Banana 2.1). The October 8 asset is retained; see docs/qa/2026-10-12-brew-photo-progress.
-const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing-hot-water-goldfish-tag-walnut-v2.webp",
-  t("午後暖光下，一隻手將深灰色水壺中的熱水倒入圓肚玻璃杯，金色茶湯裡是一尾透出玫瑰花瓣與茶葉的小金魚茶包；杯子放在胡桃木桌的雲朵木杯墊上，右側桌面平放著細棉線連接、印有 CHARM VILLA 的霧金色長條茶標，後方是橄欖綠扶手椅",
-    "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table, a flat matte gold CHARM VILLA tea tag on the table to the right, joined by a fine cotton string, an olive-green armchair behind in warm afternoon light"), 1696, 2528);
+// User 2026-10-12, after the kettle and light references (「熱水壺參考」「光影參考」「重生！我要看到不一樣的！令人讚歎的！」): a new photograph,
+// not an edit — a dark room, one shaft of warm sun across a black-oak table, a matte black gooseneck kettle held by its back handle, the
+// loop-handle glass teacup with the brewed goldfish, and the flat matte-gold tag (straight crimped ends, about the cup's width; 「茶標籤是扁的」).
+// Nano Banana 2.1 at 4K, cropped to drop UI copied from the light reference. Earlier versions stay in docs/qa/2026-10-12-brew-photo-progress.
+const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing-gooseneck-dark-oak-sunbeam.webp",
+  t("昏暗的房間裡，一道暖金色斜陽落在黑橡木圓桌上；一隻手握著黑色霧面細嘴壺，熱水從細長壺嘴注入有把手的玻璃茶杯，杯中泡開的小金魚茶包透出玫瑰花瓣，蒸氣在逆光裡升起；杯旁平放著印有 CHARM VILLA 的霧金色扁平茶標",
+    "In a dim room a shaft of warm golden sun falls across a round black-oak table; a hand holds a matte black gooseneck kettle and pours hot water into a glass teacup with a loop handle, where a brewed goldfish tea bag shows its rose petals and steam rises through the backlight; beside the cup lies a flat matte gold CHARM VILLA tea tag"), 2048, 3072);
 
 // 茶款介紹 under the specifications, as on the official product pages (user 2026-10-07, with the wording for the four main teas);
 // 金萱 and 花果茶 are condensed from the official store's descriptions. A competition tea describes its base tea, plus the note on the competitions.

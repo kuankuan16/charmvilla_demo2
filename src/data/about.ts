@@ -72,7 +72,9 @@ export const getAbout = (lang: Locale) => {
         ],
         quote: { text: t("我們深愛茶文化，想用簡單的方式將茶文化推廣至國外。", "We love tea culture, and we want a simple way to share it with the world."), by: t("蘇靜媚，2015 年專訪", "Su Ching-mei, in a 2015 interview") },
         // 02 改用手作過程照，直接呼應 16 道工序與 9 道手作（使用者 2026-10-12：「取消合併，再幫我重新配圖」「挑適合 02 的圖」）。
-        image: site("about-02.webp", t("職人雙手縫製小金魚茶包，木桌上放著裁好的不織布、棉線、茶葉與完成的小金魚", "An artisan sewing a goldfish tea bag by hand, with cut non-woven fabric, cotton thread, tea leaves and finished goldfish on the wooden table"), 1361, 1824),
+        // 同日再換（「要換 about 02 的圖…有職人感，符合內容，並巧妙避開小金魚茶包容易出錯的破綻」）：新生成的手工填茶情境，完成的小金魚不入鏡、
+        // 沒有膠水（內文寫不使用化學黏劑），光線沿用官網攝影風格（Nano Banana 2.1）；about-02.webp 保留在 repo。
+        image: site("about-02-artisan-filling-tea-v2.webp", t("暖陽斜照的木桌上，職人用小銅匙把乾茶葉放到攤平的不織布上，旁邊是一疊裁好的不織布、一碗茶葉、一捲細棉線、剪刀與小銅秤", "In warm slanting sun, an artisan uses a small brass scoop to place dry tea leaves on a flat piece of non-woven fabric, beside a stack of cut pieces, a bowl of tea, a spool of fine cotton thread, scissors and a small brass scale"), 1792, 2400),
       },
       {
         id: "world", index: "03", side: "right",
