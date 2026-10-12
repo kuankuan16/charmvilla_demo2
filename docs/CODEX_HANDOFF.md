@@ -9,7 +9,7 @@
 - 目前應使用的專案根目錄是 `/Users/kuan/Documents/Codex/10-02-charmvilla-demo2`。
 - Git remote 是 `https://github.com/kuankuan16/charmvilla_demo2`；本次盤點已將根目錄 `main` fast-forward 到 `origin/main` 的 `0eea455b4e03d6b9567e5ae87838142c436a755b`。
 - `CLAUDE.md` 只有 `@AGENTS.md`，所以 Claude 與 Codex 的共同規則應維護在根目錄 `AGENTS.md`，不另做兩份相互漂移的 agent 文件。
-- 本機 `.vercel/project.json` 連到 Vercel project `charmvilla-demo2`（team `team_WwbxohHQlRJLjIfQJDEWpHFV`），但程式的 `siteUrl` 與歷史 QA 使用 `https://charmvilla-gallery-site.vercel.app`。兩者命名不一致；正式發布前必須重新確認 project、alias、Git integration 與最終 domain，不可僅憑舊 deploy log 推定。
+- 本機 `.vercel/project.json` 已確認連到 `tentenco/charmvilla-demo2`（project `prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`，team `team_WwbxohHQlRJLjIfQJDEWpHFV`）。程式的 `siteUrl` 與歷史 QA 仍使用 `https://charmvilla-gallery-site.vercel.app`；正式發布前仍須確認 production alias 與最終 domain，不可僅憑舊 deploy log 推定。
 - `.claude/` 內仍保留 Claude Code 工作樹作為歷史與復原依據；2026-10-12 的 About 未提交變更曾由 Codex 接手，但使用者後來明確取消 02＋03 合併，現行 `main` 已恢復四章並重新配置 02 圖片。
 
 ## 文件盤點與判讀
@@ -87,7 +87,8 @@ git -C .claude/worktrees/brewing-steps-redesign diff -- src/app/'[lang]'/'(catal
 - `npm run check` 通過：ESLint 0 errors／8 個既有 warnings、TypeScript 通過、Next production build 通過並產生 65 個靜態頁面。
 - 已以 1440px 與 390px 實際截圖檢查 `/en/about`；02 手作圖裁切、四章交錯、03 獎項標誌與手機版排列正常。
 - 本機 `next start` 對無語系前綴的 `/about` 會在 rewrite 與 `/zh` redirect 之間循環，但正式站同一路徑回應 200；這是本次 About 改動以外的既有 routing／本機執行差異，尚未另行修改。
-- 尚未 push，也尚未部署；只有獲得使用者發布授權後才能進入發布流程。
+- 尚未 push、尚未部署至 Production。依使用者要求已建立 Vercel Preview `dpl_Bv8aVXDZij7qC8izmdJCJj84S2Ze`：`https://charmvilla-demo2-un1ru7o9l-tentenco.vercel.app`，狀態 READY；專案啟用 Vercel Authentication，需具存取權的 Vercel 帳號登入。
+- 已透過 Vercel protection bypass 驗證 Preview `/about` 回應 200，HTML 包含 `about-02.webp`、「一尾小金魚」與「被世界看見」。
 
 工作樹先保留，不需刪除；其中的 About branch 已無未提交修改。
 
