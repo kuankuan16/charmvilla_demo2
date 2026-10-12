@@ -1,0 +1,9 @@
+Edit image 1 only where the tea tag and its cotton string are. Keep every other pixel of image 1 unchanged: the hand, the dark kettle, the pouring water and steam, the round glass cup, the brewed goldfish tea bag inside it, the cloud-shaped wooden coaster, the walnut table, the olive armchair, the light and the framing.
+
+Replace the current small folded tent-shaped tag with the real CHARM VILLA tea tag, exactly like image 2 and image 3:
+- a long, narrow, FLAT strip lying flat on the walnut table to the right of the cup, about 4.5 to 1 (length to width), its length about 0.85 times the cup's rim diameter;
+- matte gold finish with a soft satin sheen from the window light only, no mirror shine, no bright foil glare; fine ribbed heat-seal crimp texture across both short ends;
+- the words "CHARM VILLA" (two words, with a clear space between CHARM and VILLA) in thin white uppercase geometric sans-serif, large, filling about 85 % of the tag's length, reading along the length, centred;
+- the tag is a sealed sachet: no hole, no eyelet, no knot, no loop on its face.
+
+The cotton string: very thin fine white cotton thread, about one third of the current thickness, like image 2 and image 3. It starts at the goldfish tea bag's mouth inside the cup, goes over the cup rim, falls onto the table and runs flat and fairly taut to the tag, where it disappears under the MIDDLE of the tag's long edge that faces the cup (glued inside the sachet). No string reaches a short end or a corner of the tag.

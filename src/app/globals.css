@@ -1396,6 +1396,15 @@ main:has(> .policy-page) { background: #efefed; }
 .teakind-h05-sub { display: block; margin-top: 8px; font-size: 17px; line-height: 1.4; font-weight: 400; letter-spacing: 0; color: #62625e; }
 .teakind-cover-text { margin-top: 18px; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
 
+/* While the cards gather under the header, the section title stays in view above them (user 2026-10-12: 「茶種介紹定位的時候，希望可以看到標題」).
+   The title band sticks under the site header and the cards stick under the band; short windows keep the earlier behaviour. */
+@media (min-width: 1024px) and (min-height: 760px) {
+  .teakind-sticky { --teakind-head-h: 136px; }
+  .teakind-head { position: sticky; top: var(--header-h); z-index: 10; justify-content: center; height: var(--teakind-head-h); margin: -16px calc(-1 * var(--page-gutter)) 0; padding: 0 var(--page-gutter); background: #efefed; }
+  .teakind-section { margin-top: calc(clamp(64px, 6vw, 92px) - 20px); }
+  .teakind-card { top: calc(var(--header-h) + var(--teakind-head-h) + 8px); }
+}
+
 @media (max-width: 1023px) and (min-width: 768px) {
   .teakind-section { max-width: 820px; }
   .teakind-main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; height: auto; padding-bottom: 72px; }

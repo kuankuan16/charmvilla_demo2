@@ -1,0 +1,771 @@
+[
+  {
+    "mode": "desktop-mid",
+    "url": "/products/reunion-paper-gift-box",
+    "viewport": [
+      1440,
+      1200
+    ],
+    "lang": "zh-Hant",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "午後暖光下，一隻手將深灰色水壺中的熱水倒入圓肚玻璃杯，金色茶湯裡是一尾透出玫瑰花瓣與茶葉的小金魚茶包；杯子放在胡桃木桌的雲朵木杯墊上，後方是橄欖綠扶手椅",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "progress": "0.6402",
+    "segments": [
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "0.5436"
+      },
+      {
+        "endpointError": 0,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(227, 161, 60)",
+      "rgb(224, 163, 69)",
+      "rgb(224, 163, 69)",
+      "rgb(190, 190, 187)",
+      "rgb(190, 190, 187)"
+    ]
+  },
+  {
+    "mode": "desktop-end-keyboard",
+    "url": "/products/reunion-paper-gift-box",
+    "viewport": [
+      1440,
+      1200
+    ],
+    "lang": "zh-Hant",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "午後暖光下，一隻手將深灰色水壺中的熱水倒入圓肚玻璃杯，金色茶湯裡是一尾透出玫瑰花瓣與茶葉的小金魚茶包；杯子放在胡桃木桌的雲朵木杯墊上，後方是橄欖綠扶手椅",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "progress": "1.0000",
+    "segments": [
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0,
+        "progress": "1.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(210, 174, 117)",
+      "rgb(202, 181, 146)"
+    ]
+  },
+  {
+    "mode": "desktop-reverse",
+    "url": "/products/reunion-paper-gift-box",
+    "viewport": [
+      1440,
+      1200
+    ],
+    "lang": "zh-Hant",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "午後暖光下，一隻手將深灰色水壺中的熱水倒入圓肚玻璃杯，金色茶湯裡是一尾透出玫瑰花瓣與茶葉的小金魚茶包；杯子放在胡桃木桌的雲朵木杯墊上，後方是橄欖綠扶手椅",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "progress": "0.0000",
+    "segments": [
+      {
+        "endpointError": 0.00037500000007639755,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00037500000007639755,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "0.8421",
+      "0.5152",
+      "0.1883",
+      "0"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(208, 176, 126)",
+      "rgb(208, 176, 126)",
+      "rgb(195, 186, 170)",
+      "rgb(191, 189, 184)"
+    ]
+  },
+  {
+    "mode": "mobile-image",
+    "url": "/products/reunion-paper-gift-box",
+    "viewport": [
+      390,
+      844
+    ],
+    "lang": "zh-Hant",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "午後暖光下，一隻手將深灰色水壺中的熱水倒入圓肚玻璃杯，金色茶湯裡是一尾透出玫瑰花瓣與茶葉的小金魚茶包；杯子放在胡桃木桌的雲朵木杯墊上，後方是橄欖綠扶手椅",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "progress": "0.0128",
+    "segments": [
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "0.0399"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "0.4551",
+      "0.1282",
+      "0",
+      "0",
+      "0"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(197, 185, 163)",
+      "rgb(197, 185, 163)",
+      "rgb(190, 190, 185)",
+      "rgb(190, 190, 187)"
+    ]
+  },
+  {
+    "mode": "mobile-steps",
+    "url": "/products/reunion-paper-gift-box",
+    "viewport": [
+      390,
+      844
+    ],
+    "lang": "zh-Hant",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "午後暖光下，一隻手將深灰色水壺中的熱水倒入圓肚玻璃杯，金色茶湯裡是一尾透出玫瑰花瓣與茶葉的小金魚茶包；杯子放在胡桃木桌的雲朵木杯墊上，後方是橄欖綠扶手椅",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "progress": "0.5158",
+    "segments": [
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "0.9827"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "0.9998"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(190, 190, 187)",
+      "rgb(190, 190, 187)",
+      "rgb(190, 190, 187)"
+    ]
+  },
+  {
+    "mode": "browser-errors",
+    "lang": "zh",
+    "events": []
+  },
+  {
+    "mode": "desktop-mid",
+    "url": "/en/products/reunion-paper-gift-box",
+    "viewport": [
+      1440,
+      1200
+    ],
+    "lang": "en",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table in warm afternoon light, an olive-green armchair behind",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "progress": "0.6116",
+    "segments": [
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "0.3815"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(224, 163, 69)",
+      "rgb(206, 177, 130)",
+      "rgb(206, 177, 130)",
+      "rgb(190, 190, 187)",
+      "rgb(190, 190, 187)"
+    ]
+  },
+  {
+    "mode": "desktop-end-keyboard",
+    "url": "/en/products/reunion-paper-gift-box",
+    "viewport": [
+      1440,
+      1200
+    ],
+    "lang": "en",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table in warm afternoon light, an olive-green armchair behind",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "progress": "1.0000",
+    "segments": [
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999627107,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.0003749999999911324,
+        "progress": "1.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(210, 174, 117)",
+      "rgb(202, 181, 146)"
+    ]
+  },
+  {
+    "mode": "desktop-reverse",
+    "url": "/en/products/reunion-paper-gift-box",
+    "viewport": [
+      1440,
+      1200
+    ],
+    "lang": "en",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table in warm afternoon light, an olive-green armchair behind",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "progress": "0.0000",
+    "segments": [
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00037500000007639755,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00037500000007639755,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00037500000007639755,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "0.8421",
+      "0.5152",
+      "0.1883",
+      "0"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(208, 176, 126)",
+      "rgb(208, 176, 126)",
+      "rgb(195, 186, 170)",
+      "rgb(191, 189, 184)"
+    ]
+  },
+  {
+    "mode": "mobile-image",
+    "url": "/en/products/reunion-paper-gift-box",
+    "viewport": [
+      390,
+      844
+    ],
+    "lang": "en",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table in warm afternoon light, an olive-green armchair behind",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "progress": "0.0000",
+    "segments": [
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": 0.0004375000000891305,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": -0.0002500000000509317,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "0.061",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(204, 179, 138)",
+      "rgb(204, 179, 138)",
+      "rgb(193, 188, 176)",
+      "rgb(190, 190, 186)"
+    ]
+  },
+  {
+    "mode": "mobile-steps",
+    "url": "/en/products/reunion-paper-gift-box",
+    "viewport": [
+      390,
+      844
+    ],
+    "lang": "en",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table in warm afternoon light, an olive-green armchair behind",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "progress": "0.4645",
+    "segments": [
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "1.0000"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "0.9091"
+      },
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "0.0000"
+      },
+      {
+        "endpointError": -0.0002500000000509317,
+        "progress": "0.0000"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "0.9997"
+    ],
+    "reduced": false,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(190, 190, 187)",
+      "rgb(190, 190, 187)",
+      "rgb(190, 190, 187)"
+    ]
+  },
+  {
+    "mode": "browser-errors",
+    "lang": "en",
+    "events": []
+  },
+  {
+    "mode": "mobile-reduced",
+    "url": "/en/products/reunion-paper-gift-box",
+    "viewport": [
+      390,
+      844
+    ],
+    "lang": "en",
+    "overflow": false,
+    "imageLoaded": true,
+    "source": "/_next/image?url=%2Fmedia%2Fsite%2Fscene-brewing-hot-water-goldfish-walnut.webp&w=3840&q=75",
+    "alt": "A hand pours hot water from a dark grey kettle into a round glass cup of golden tea containing a goldfish-shaped tea bag with visible rose petals and tea leaves, on a cloud-shaped wooden coaster on a walnut table in warm afternoon light, an olive-green armchair behind",
+    "fontSizes": [
+      "17px",
+      "17px",
+      "17px",
+      "17px",
+      "17px"
+    ],
+    "nodes": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "progress": "1",
+    "segments": [
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "1"
+      },
+      {
+        "endpointError": 0.00006250000001273293,
+        "progress": "1"
+      },
+      {
+        "endpointError": 0.00043749999997544364,
+        "progress": "1"
+      },
+      {
+        "endpointError": -0.0002500000000509317,
+        "progress": "1"
+      }
+    ],
+    "rules": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lastRail": "none",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "reduced": true,
+    "nodeColors": [
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)",
+      "rgb(228, 160, 56)"
+    ]
+  }
+]

@@ -5,6 +5,42 @@ import { getContent, gallery, site, type Img } from "./content";
 import type { Locale } from "../i18n/config";
 import { sizeText } from "./measure";
 
+// Tea gift box gallery photographs that have a normalised `-even.webp` copy (same grey ground and box size; user 2026-10-12).
+const evenGalleryFiles = [
+  "listing-tea-blossoming-prosperity-gift-box-v4.webp",
+  "official-gift-front-blossoming-prosperity-gift-box-cutout-v3.webp",
+  "studio-blossoming-prosperity-gift-box-angle-v2.webp",
+  "gift-box-unboxed-18.webp",
+  "listing-tea-orchid-gift-box-v4.webp",
+  "official-gift-front-orchid-gift-box-gold-cutout-v3.webp",
+  "official-gift-front-orchid-gift-box-pink-cutout-v3.webp",
+  "studio-orchid-gift-box-angle-v2.webp",
+  "listing-tea-purple-butterfly-gift-box-v4.webp",
+  "official-gift-front-purple-butterfly-gift-box-cutout-v3.webp",
+  "studio-purple-butterfly-gift-box-angle-v2.webp",
+  "listing-tea-spring-dawn-gift-box-v4.webp",
+  "official-gift-front-spring-dawn-gift-box-blue-cutout-v3.webp",
+  "studio-spring-dawn-gift-box-end-angle.webp",
+  "gift-box-unboxed-12-v2.webp",
+  "studio-spring-dawn-gift-box-pink-cover.webp",
+  "official-gift-front-spring-dawn-gift-box-pink-cutout-v3.webp",
+  "studio-spring-dawn-gift-box-pink-end-angle.webp",
+  "listing-tea-winter-blossom-gift-box-v4.webp",
+  "official-gift-front-winter-blossom-gift-box-cutout-v3.webp",
+  "studio-winter-blossom-gift-box-end-angle.webp",
+  "listing-tea-year-of-plenty-gift-box-v4.webp",
+  "official-gift-front-year-of-plenty-gift-box-cutout-v3.webp",
+  "studio-year-of-plenty-gift-box-angle-v2.webp",
+  "listing-tea-kyoto-gift-box-v3.webp",
+  "studio-kyoto-gift-box-official.webp",
+  "studio-kyoto-gift-box-unboxed-6.webp",
+  "listing-tea-reunion-gift-box-us-v1.webp",
+  "studio-reunion-gift-box-us-closed-angle.webp",
+  "listing-tea-reunion-paulownia-gift-box-v4.webp",
+  "studio-reunion-paulownia-gift-box-closed-angle-v2.webp",
+  "studio-reunion-paulownia-gift-box-unboxed-v5.webp",
+];
+
 // Product facts come from the existing approved content and asset manifest.
 // No inferred prices, stock, metal purity, gemstone grades, sizes or tea brewing times. Prices, metal and sizes added
 // 2026-10-02 are copied from www.charmvilla.com.tw product pages (read that day); where the official page could not be
@@ -274,7 +310,14 @@ const buildCatalog = (lang: Locale) => {
   const studioLabel = t("棚拍商品照", "Studio photograph");
   const studioAlt = (name: string) => t(`${name}・棚拍商品照`, `${name}, studio photograph`);
   // User 2026-10-12: real HD front photographs on the site's pale grey studio ground, in the SECOND slot; covers stay unchanged.
-  const studioImage = (file: string, alt: string): Img => ({ ...site(file, alt), ...(file.startsWith("official-gift-front-") ? { cutout: true } : {}) });
+  // Later the same day (「統一商品圖中禮盒的大小…4張圖要視覺上是一樣大的」「圖二的俯視圖…放大，並加入一點淡淡的陰影」「圖三…不要大到出血」
+  // 「統一4張背景圖的漸層灰色，不要有的偏黃，有的偏紅」): every tea gift box gallery photograph has an `-even` copy, re-composed from the
+  // original pixels (not regenerated) on one neutral grey gradient #e8e7e5 → #dbdad8, the box scaled to the same visible area, its shadow
+  // kept and the HD fronts given a faint one. Originals stay beside them; the script and contact sheets are in docs/qa/2026-10-12-gift-gallery-even.
+  const evenGallery = new Set(evenGalleryFiles);
+  const studioImage = (file: string, alt: string): Img => evenGallery.has(file)
+    ? site(file.replace(/\.webp$/, "-even.webp"), alt)
+    : { ...site(file, alt), ...(file.startsWith("official-gift-front-") ? { cutout: true } : {}) };
   // Homepage featured grid: studio shots generated 2026-09-30 in the white bag's language (output/featured-editorial-2026-09-30).
   const featuredFiles: Record<string, string> = {
     // ginkgo: the 896 px featured shot filled the frame (user 2026-10-05: 「太滿，縮小一點商品的比例」); the 2K cover is used everywhere (v5: the product about 64 % of the width, after 「再大一點」)
@@ -549,9 +592,9 @@ const buildCatalog = (lang: Locale) => {
   const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("缺圖", "No image yet"), image: { src: "", alt: t("缺圖", "No image yet"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
   // Pink lids keep their existing cover, add their HD front in slot 2, and retain their existing angle/unboxed views.
   const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string }): ProductView[] => [
-    lv.cover ? { label: t("正面", "Front view"), image: site(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) } : p.views[0],
+    lv.cover ? { label: t("正面", "Front view"), image: studioImage(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) } : p.views[0],
     ...(lv.front ? [{ label: t("正面實拍", "Official front view"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・正面實拍", "pink lid, official front photograph with its ribbon and embroidery")}`) }] : []),
-    ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: site(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : p.views.slice(2)),
+    ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : p.views.slice(2)),
     ...(lv.angle ? p.views.filter((v) => /開箱|Unboxed/.test(v.label)) : []),
   ];
   const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews || c.lidViews)
