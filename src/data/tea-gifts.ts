@@ -292,7 +292,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
     const choiceLabel = gift.packaging?.some((o) => o.lidViews) ? t("選擇盒蓋顏色", "Choose your lid color") : gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("選擇茶款（每盒擇一）", "Choose your tea");
     return {
       slug: gift.slug, category: "tea", name, english: gift.english,
-      summary: (en && gift.en.summary) || t(`${gift.pieces} 入／盒 · ${mix}`, `${gift.pieces} Goldfish Tea Bags per box · ${mix}`),
+      summary: (en && gift.en.summary) || t(`${gift.pieces} 入／盒${gift.setOf ? ` · ${gift.setOf} 盒一組` : ""} · ${mix}`, `${gift.pieces} Goldfish Tea Bags per box${gift.setOf ? ` · Set of ${gift.setOf} boxes` : ""} · ${mix}`) /* set size in the card line (2026-10-13, 雪花三盒組) */,
       description: en ? gift.en.description : gift.description, image,
       views: [...(gift.scene || generated || journalScene ? [{ label: t("禮盒情境", "Gift box scene"), image }] : []), { label: t("官方商品圖", "Official product image"), image: official }],
       facts: [
