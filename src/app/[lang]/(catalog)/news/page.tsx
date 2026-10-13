@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return { title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表、禮盒預購與期間限定活動。", "Launches, gift-box pre-orders and limited-time events."), alternates: alternatesFor(lang, "/news") };
+  return { title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表與期間限定活動。", "Launches and limited-time events."), alternates: alternatesFor(lang, "/news") };
 }
 
 // The list after verin-template.webflow.io/news (user 2026-10-06: 「最新消息清單頁，喜歡這個版型」): the title with a short line under
@@ -26,7 +26,6 @@ export default async function NewsPage({ params }: Props) {
     <section className="news-page" aria-labelledby="news-title">
       <header className="news-head">
         <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}</h1>
-        <p className="tc">{t("新品發表、禮盒預購與期間限定活動，CHARM VILLA 的近況都在這裡。", "Launches, gift-box pre-orders and limited-time events: the latest from CHARM VILLA.")}</p>
       </header>
       <ul className="news-grid">
         {getNews(lang).map((n) => (
