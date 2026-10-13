@@ -31,7 +31,9 @@ export default function NewsletterPopup() {
 
   // Trigger: first of the timer or the half-page scroll. It waits (retrying) while the preloader, cart or menu is up, or on /account.
   useEffect(() => {
-    if (readSeen()) return;
+    // ?newsletter in the address previews the popup again: opens after 1.5 s even if it was already seen (user 2026-10-13: 「我要再看一次」)
+    const preview = new URLSearchParams(window.location.search).has("newsletter");
+    if (readSeen() && !preview) return;
     let done = false;
     let retry: number | undefined;
     const tryOpen = () => {
@@ -44,7 +46,7 @@ export default function NewsletterPopup() {
       }
       done = true;
       cleanup();
-      if (readSeen()) return;
+      if (readSeen() && !preview) return;
       returnFocus.current = document.activeElement as HTMLElement | null;
       setOpen(true);
     };
@@ -55,7 +57,7 @@ export default function NewsletterPopup() {
       const max = el.scrollHeight - el.clientHeight;
       if (max > 0 && el.scrollTop / max > 0.5) tryOpen();
     };
-    const timer = window.setTimeout(tryOpen, DELAY_MS);
+    const timer = window.setTimeout(tryOpen, preview ? 1500 : DELAY_MS);
     document.addEventListener("scroll", onScroll, { capture: true, passive: true });
     function cleanup() {
       window.clearTimeout(timer);

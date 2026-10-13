@@ -9,7 +9,7 @@ import { translator, type Locale } from "../i18n/config";
 export type NewsBlock = string | { list: string[] } | { links: { label: string; href: string }[] } | { heading: string };
 // `focus` is the card photograph's object-position, used where the list crops it wider than it is (the list cards are about 1.3 : 1)
 // `whole`: the article shows the card picture uncropped (a printed piece such as an invitation) on `ground`, its paper colour
-export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; focus?: string; whole?: boolean; ground?: string; hero: Img; body: NewsBlock[] };
+export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; focus?: string; whole?: boolean; ground?: string; hero: Img; /** the article page image when it differs from the list card (fills the 4:5 frame) */ story?: Img; body: NewsBlock[] };
 
 const build = (lang: Locale): NewsEntry[] => {
   const t = translator(lang);
@@ -52,6 +52,7 @@ const build = (lang: Locale): NewsEntry[] => {
       card: site("news-la-popup-showmore-2026-card3.webp", t("CHARM VILLA 2026 新品發表邀請卡：淺灰紙上燙金 CHARM VILLA 字標，中央是壓凸的皮革包與 Show more! 字樣，下方列出台北、洛杉磯 The Scholart Selection、京都三場的日期與地點", "CHARM VILLA 2026 launch invitation: the gold CHARM VILLA wordmark on pale grey paper, an embossed leather bag and the words Show more!, with the Taipei, Los Angeles (The Scholart Selection) and Kyoto dates and venues below"), 2498, 1665),
       focus: "50% 50%", whole: true, ground: "#f0f1f2", // list card: a landscape cut of the invitation (wordmark to LEATHER BAG) so no text is cropped (user 2026-10-13)
       hero: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963),
+      story: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963), // the article shows the whole invitation, 4:5 like its frame, so no edges (user 2026-10-13: 「展開換回原卡片，注意不要有不自然的切邊」)
       body: [
         t("CHARM VILLA 洛杉磯快閃展，2026 年 10 月 17 日至 12 月 31 日於 The Scholart Selection 展出。", "The CHARM VILLA pop-up in Los Angeles runs from October 17 to December 31, 2026, at The Scholart Selection."),
         { list: [t("地點・The Scholart Selection，417 S Mission Dr, San Gabriel, CA 91776", "Venue · The Scholart Selection, 417 S Mission Dr, San Gabriel, CA 91776")] },

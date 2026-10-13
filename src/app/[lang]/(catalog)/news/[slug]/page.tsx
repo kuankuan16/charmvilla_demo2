@@ -34,7 +34,7 @@ export default async function NewsArticle({ params }: Props) {
   return (
     <article className="news-article">
       <div className="news-story">
-        <div className="news-story-media"><div className="news-story-image" style={n.ground ? { background: n.ground } : undefined}><Picture img={n.card} fill fit={n.whole ? "contain" : "cover"} animate={false} sizes="(min-width:768px) 46vw, 100vw" /></div></div>
+        <div className="news-story-media"><div className="news-story-image" style={n.ground ? { background: n.ground } : undefined}><Picture img={n.story ?? n.card} fill fit={n.story ? "cover" : n.whole ? "contain" : "cover"} animate={false} sizes="(min-width:768px) 46vw, 100vw" /></div></div>
         <div className="news-story-text">
           <nav className="news-crumbs tc" aria-label={t("麵包屑", "Breadcrumb")}><Link href={localeHref(lang, "/news")}>{t("最新消息", "News")}</Link><span aria-hidden="true">/</span><span aria-current="page">{n.title}</span></nav>
           <div className="news-story-main">
