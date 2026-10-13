@@ -10,13 +10,13 @@ import { translator, type Locale } from "@/i18n/config";
 // price stands alone, as on the collection pages.
 export default function ProductCard({ product, index = 0, animated = false, lang, caption }: { product: Product; index?: number; animated?: boolean; lang: Locale; caption?: string }) {
   const t = translator(lang);
-  const price = product.price && <>{formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="catalog-card-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</>;
+  const price = !product.price && product.priceTbd ? <>{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</> : product.price && <>{formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="catalog-card-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</>;
   return (
     <article className="catalog-card" data-catalog-card={product.slug} data-animation={animated ? "moveUp" : undefined} data-delay={animated ? (index % 3) * .1 : undefined}>
       <Link href={productHref(product, lang)} aria-label={t(`瀏覽 ${product.name}`, `View ${product.name}`)}>
         <div className={`catalog-card-image catalog-card-image--${product.category} catalog-card-image--${product.image.cutout ? "cutout" : "scene"}`}><Picture img={product.image} fill fit={imageFit(product.image)} animate={animated} sizes="(min-width:1280px) 25vw, (min-width:768px) 33vw, 50vw" />{product.hoverImage && <div className="catalog-card-hover" aria-hidden="true"><Picture img={product.hoverImage} fill fit="cover" animate={false} sizes="(min-width:1280px) 25vw, (min-width:768px) 33vw, 50vw" /></div>}</div>
         <h3 className="tc">{product.name}</h3>
-        {caption ? <p className="catalog-card-caption"><span className="tc">{caption}</span>{price && <span className="catalog-card-caption-price"> · {price}</span>}</p> : product.price && <p className="catalog-card-price">{price}</p>}
+        {caption ? <p className="catalog-card-caption"><span className="tc">{caption}</span>{price && <span className="catalog-card-caption-price"> · {price}</span>}</p> : price && <p className="catalog-card-price">{price}</p>}
       </Link>
     </article>
   );

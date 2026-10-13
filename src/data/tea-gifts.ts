@@ -53,6 +53,8 @@ export type TeaGift = {
   soldOut?: boolean;
   /** made to order: a 預購 / Pre-order label beside the price and a 加入預購 / Pre-order button (ship timing still to come from the client) */
   preOrder?: boolean;
+  /** no price yet: 價格待訂 / Price to be announced instead of a price, and no bag button (user 2026-10-13: 「US$130 幫我用價格代訂，不要自己亂寫」) */
+  priceTbd?: boolean;
   /** not sold on the US store: kept out of every listing, menu, sitemap and product page (404), data kept */
   hidden?: boolean;
   variant?: { group: string; label: string };
@@ -168,11 +170,11 @@ export const teaGifts: TeaGift[] = [
   // 2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8）（使用者 2026-10-13：「F1–F8 你先根據目前的官網推理，我再請客戶修改，先上 demo2」）。
   // officialId 9001 只是暫定的唯一值，台灣官網沒有這個商品編號（沒有官方商品圖、也不連到台灣官網）。
   // 兩色盒蓋同內容同價，用 packaging（選色＝切換圖庫）：橘色是預設圖庫，藍綠色用自己的 4 張圖（含自己的紙盒開箱圖，不用 12 入木盒的開箱圖）。
-  { officialId: 9001, slug: "christmas-gift-box", preOrder: true, sceneFile: "scene-christmas-gift-box-two-boxes-window-light.webp", name: "聖誕佳禮", english: "CHRISTMAS DELIGHT", series: "2026 聖誕節限定商品", pieces: 12, box: paperDrawerEmbroidered, dimensions: longBox, weight: 300, shelfLife: "1 年", contents: reunion, usd: 130,
+  { officialId: 9001, slug: "christmas-gift-box", preOrder: true, sceneFile: "scene-christmas-gift-box-two-boxes-window-light.webp", name: "聖誕佳禮", english: "CHRISTMAS DELIGHT", series: "2026 聖誕節限定商品", pieces: 12, box: paperDrawerEmbroidered, dimensions: longBox, weight: 300, shelfLife: "1 年", contents: reunion, priceTbd: true,
     packaging: [
       { label: { zh: "橘色", en: "Orange" }, text: { zh: "橘色盒蓋，紅色小金魚刺繡搭配拐杖糖。", en: "Orange lid with a red embroidered goldfish and a candy cane." } },
       { label: { zh: "藍綠色", en: "Teal" }, text: { zh: "藍綠色盒蓋，綠色小金魚刺繡搭配聖誕襪。", en: "Teal lid with a green embroidered goldfish and a Christmas stocking." },
-        lidViews: { cover: "studio-christmas-gift-box-teal-cover.webp", front: "studio-christmas-gift-box-teal-front.webp", angle: "studio-christmas-gift-box-teal-angle.webp", unboxed: "studio-christmas-gift-box-teal-unboxed.webp" } },
+        lidViews: { cover: "studio-christmas-gift-box-teal-cover-v3.webp", front: "studio-christmas-gift-box-teal-front-v3.webp", angle: "studio-christmas-gift-box-teal-angle-v3.webp", unboxed: "studio-christmas-gift-box-teal-unboxed-v3.webp" } },
     ],
     description: "CHARM VILLA「聖誕佳禮」禮盒內含 12 包金魚茶包，四款茶各 3 包，以抽屜式紙盒搭配刺繡織布盒蓋呈現。可選擇橘色或藍綠色盒蓋，為佳節送上一份溫暖的心意。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開抽屜，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。", en: "Gold baubles and snowflakes hang across the lid as a little goldfish swims into the season with a candy cane or a Christmas stocking. Slide open the drawer to find twelve Goldfish Tea Bags, ready for warm winter hours with the people who matter most." } },
@@ -297,10 +299,11 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       ...(gift.slug !== "fruit-infusion-gift-box" ? { brew: { title: t("沖泡方式", "How to brew"), steps: brewSteps(t), image: brewImage(t) } } : {}),
       ...(gift.soldOut ? { soldOut: true } : {}),
       ...(gift.preOrder ? { preOrder: true } : {}),
+      ...(gift.priceTbd ? { priceTbd: true } : {}),
       ...(gift.hidden ? { hidden: true } : {}),
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,
       officialUrl: `https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=${gift.officialId}`,
-      price,
+      price: gift.priceTbd ? undefined : price,
       giftBox: { pieces: gift.pieces, series: v(gift.series), contents: gift.contents, choices: bagChoices, choiceLabel },
     };
   });

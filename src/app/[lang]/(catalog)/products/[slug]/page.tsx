@@ -195,6 +195,7 @@ export default async function ProductPage({ params }: Props) {
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
+          {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="product-preorder tc">{t("預購", "Pre-order")}</span>}</p>}
           {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="product-preorder tc">{t("預購", "Pre-order")}</span>}</p>}
           <p className="product-description tc">{product.description}</p>
           {keyLines}
