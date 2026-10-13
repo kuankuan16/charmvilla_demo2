@@ -389,6 +389,8 @@ const buildCatalog = (lang: Locale) => {
   // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
   const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("雙手捧著一杯泡開的小金魚茶", "Two hands holding a cup of brewed goldfish tea"), 1856, 2304);
   for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity", "christmas"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
+  // 聖誕佳禮：酒紅牆斜窗光的情境照（使用者 2026-10-13 給三張聖誕參考圖「/lifestyleshot」；Nano Banana 2.1）成為頁尾那組的大圖
+  sceneExtra["christmas-gift-box"] = [...(sceneExtra["christmas-gift-box"] ?? []), site("scene-christmas-gift-box-burgundy-sunbeam.webp", t("聖誕佳禮兩色禮盒與一杯小金魚茶", "Christmas Delight gift boxes in both colors with a cup of goldfish tea"), 1856, 2304)];
   // 年年有魚：米白圓桌斜陽照（禮盒無緞帶、青瓷咖啡杯裡泡開的小金魚、尤加利，標籤藏在杯後；Nano Banana 2.1，照使用者給的 EAU 書那張的色調）放進商品頁，
   // 排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「放入內容頁」，之後「右取代左」——胡桃木桌白瓷杯金標籤那張換成這張）
   sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-cream-table-sun-celadon-cup.webp", t("年年有魚禮盒與一杯小金魚茶", "The Abundance & Prosperity gift box with a cup of goldfish tea"), 1856, 2304)];
@@ -594,7 +596,7 @@ const buildCatalog = (lang: Locale) => {
     "kyoto-gift-box": ["scene-kyoto-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
     "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
-    "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", twoPeople, mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
+    "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", "scene-christmas-gift-box-burgundy-sunbeam.webp", mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden

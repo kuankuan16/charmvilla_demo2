@@ -16,3 +16,5 @@
 `gallery-8.jpg` 是 8 張總覽；`prompt-*.txt` 是提示詞；`normpoly.py`／`cutpoly.py` 是框選正規化與去背腳本。
 
 情境照更新：沙發照的茶包用錯（全金色鋁箔袋；使用者「包裝袋錯誤」，正確是上金下白、印 www.charmvilla.com 的茶包），改用 `scene-christmas-gift-box-two-boxes-window-light.webp`（兩色禮盒、窗光、金緞帶、松枝、紅吊飾、空白卡片；依使用者四張聖誕參考圖的克制配色與送禮情境，提示詞 prompt-scene-xmas.txt）。沙發照檔案保留但不引用。
+
+第二張情境照：`scene-christmas-gift-box-burgundy-sunbeam.webp`（使用者三張聖誕參考圖「/lifestyleshot」：酒紅牆、斜窗光、松枝影、紅金吊飾；第一版盒子被畫成直立、布面在側面，重生一次改為平放盒蓋朝上）。
