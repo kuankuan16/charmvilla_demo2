@@ -5,7 +5,8 @@
 import type { Img } from "@/data/content";
 import { Picture } from "@/components/ui";
 
-export type TeaKind = { name: string; text: string; image?: Img };
+/** `term`: a glossary card (比賽獲獎茶 explains a term, not a tea in the box): its label replaces TEA / 0N and the big number is dropped (user 2026-10-13) */
+export type TeaKind = { name: string; text: string; image?: Img; term?: string };
 
 /** 「紅玉紅茶（Red Jade／Ruby No.18）」→ 主名稱＋較小的第二行；全形、半形括號皆適用。 */
 const splitName = (name: string): [string, string | undefined] => {
@@ -37,11 +38,11 @@ export default function TeaKinds({ title, productName, items }: { title: string;
                         ? <Picture img={tea.image} fill fit="cover" animate={false} sizes="(max-width: 767px) 148px, 176px" />
                         : <div className="teakind-missing" aria-hidden="true"><span>{index}</span></div>}
                     </div>
-                    <span className="teakind-step" aria-hidden="true">TEA / {index}</span>
+                    <span className="teakind-step tc" aria-hidden="true">{tea.term ?? `TEA / ${index}`}</span>
                   </div>
 
                   <div className="teakind-card-copy">
-                    <span className="teakind-index" aria-hidden="true">{index}</span>
+                    <span className="teakind-index" aria-hidden="true" style={tea.term ? { visibility: "hidden" } : undefined}>{index}</span>
                     <span className="teakind-rule" aria-hidden="true" />
                     <h3 className="teakind-h05 tc">{name}{sub && <small className="teakind-h05-sub">{sub}</small>}</h3>
                     <p className="teakind-cover-text tc">{tea.text}</p>
