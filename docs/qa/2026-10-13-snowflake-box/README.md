@@ -1,6 +1,8 @@
 # 雪花兩入盒（三盒一組）商品圖（2026-10-13）
 
 依舊款實拍（棕色貼紙）重做，貼紙改為全透明；Nano Banana 2.1 4K，構圖光影參考網站心有愛三盒照、春曉斜角與正面圖；norm.py 灰底。
-- `studio-snowflake-gift-box-set-of-3.webp`：三盒一組封面（0.45），左上加「× 3」三盒線稿圖示（Pillow 繪製）；生成圖上方殘影已用背景擦除。
-- `studio-snowflake-gift-box-angle.webp`、`-front.webp`：單盒，依使用者「單盒的都太大，希望有多一點留白」改用 0.36。
+- `studio-snowflake-gift-box-set-of-3-v2.webp`：三盒一組封面（0.45），左上加「× 3」三盒線稿圖示（Pillow 繪製）；生成圖上方殘影已用背景擦除。
+- `studio-snowflake-gift-box-angle-v2.webp`、`-front.webp`：單盒，依使用者「單盒的都太大，希望有多一點留白」改用 0.36。
 尚未上架：商品名稱、價格、茶款等待確認。
+
+v2（使用者「縮小透明圓形貼紙，並刪除所有文字」）：三張以 AI 編輯只改貼紙（約 1.5 cm、全透明、無字），封面暫不加三入圖示（原「× 3」線稿使用者覺得太醜），候選樣式待選。

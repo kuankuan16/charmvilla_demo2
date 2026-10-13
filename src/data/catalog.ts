@@ -527,8 +527,8 @@ const buildCatalog = (lang: Locale) => {
   // 雪花迷人禮（三盒組）（2026-10-13 agent 推理暫定，待客戶確認）：只用自己的 3 張，順序 三盒封面（studio-listing.json）→ 斜角 → 正面；
   // 已是灰底正規化版（不需 -even2），不加入任何開箱圖或其他盒的圖
   studioExtra["snowflake-gift-box"] = [
-    { file: "studio-snowflake-gift-box-angle.webp", zh: "斜角", en: "Angled view", enAlt: "one box seen at an angle" },
-    { file: "studio-snowflake-gift-box-front.webp", zh: "正面", en: "Front view", enAlt: "one box seen from the front" },
+    { file: "studio-snowflake-gift-box-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "one box seen at an angle" },
+    { file: "studio-snowflake-gift-box-front-v2.webp", zh: "正面", en: "Front view", enAlt: "one box seen from the front" },
   ];
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
