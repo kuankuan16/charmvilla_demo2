@@ -18,6 +18,6 @@ export default function AddToCart({ product }: { product: Product }) {
       {/* the chosen packaging in one line (user 2026-10-07: the 包裝選項 texts 「可以精簡呈現在這區」) */}
       {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}
     </fieldset>}
-    <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1, option)} disabled={cart.busy || missing || product.soldOut}>{product.soldOut ? t("已售罄", "Sold out") : missing ? (product.giftBox?.choiceLabel?.includes("包裝") || product.giftBox?.choiceLabel?.includes("packaging") ? t("請先選擇包裝", "Choose your packaging") : product.giftBox?.choiceLabel === t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") ? t("請先選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("請先選擇茶款", "Choose your tea")) : t("加入購物車", "Add to bag")}</button>
+    <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1, option)} disabled={cart.busy || missing || product.soldOut}>{product.soldOut ? t("已售罄", "Sold out") : missing ? (product.giftBox?.choiceLabel?.includes("包裝") || product.giftBox?.choiceLabel?.includes("packaging") ? t("請先選擇包裝", "Choose your packaging") : product.giftBox?.choiceLabel === t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") ? t("請先選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("請先選擇茶款", "Choose your tea")) : product.preOrder ? t("加入預購", "Pre-order") : t("加入購物車", "Add to bag")}</button>
   </>;
 }

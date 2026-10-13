@@ -80,6 +80,8 @@ export type Product = {
   price?: { amount: number; currency: "TWD" | "USD" };
   /** Marked sold out on the official store; the price stays visible and the bag button is disabled. */
   soldOut?: boolean;
+  /** Made to order: labelled 預購 / Pre-order beside the price, card and bag button. */
+  preOrder?: boolean;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
   /** How to brew (tea gift boxes, guide §4); `image` sits at the bottom left of the steps. */

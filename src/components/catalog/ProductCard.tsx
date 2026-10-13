@@ -10,7 +10,7 @@ import { translator, type Locale } from "@/i18n/config";
 // price stands alone, as on the collection pages.
 export default function ProductCard({ product, index = 0, animated = false, lang, caption }: { product: Product; index?: number; animated?: boolean; lang: Locale; caption?: string }) {
   const t = translator(lang);
-  const price = product.price && <>{formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="catalog-card-soldout tc">{t("售罄", "Sold out")}</span>}</>;
+  const price = product.price && <>{formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="catalog-card-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</>;
   return (
     <article className="catalog-card" data-catalog-card={product.slug} data-animation={animated ? "moveUp" : undefined} data-delay={animated ? (index % 3) * .1 : undefined}>
       <Link href={productHref(product, lang)} aria-label={t(`瀏覽 ${product.name}`, `View ${product.name}`)}>

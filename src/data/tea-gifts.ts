@@ -51,6 +51,8 @@ export type TeaGift = {
   story?: { title: Bi; body: Bi; more?: { title: Bi; body: Bi } };
   /** marked sold out on the official store: the price stays, the bag button is disabled */
   soldOut?: boolean;
+  /** made to order: a 預購 / Pre-order label beside the price and a 加入預購 / Pre-order button (ship timing still to come from the client) */
+  preOrder?: boolean;
   /** not sold on the US store: kept out of every listing, menu, sitemap and product page (404), data kept */
   hidden?: boolean;
   variant?: { group: string; label: string };
@@ -146,7 +148,7 @@ export const teaGifts: TeaGift[] = [
     description: "CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。",
     notice: [competitionPricing, embroideryNote],
     en: { name: "Royal Orchid", description: "Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a hand-embroidered fabric lid. The orchid-inspired collection offers a gift for celebrations and meaningful occasions. Choose your tea and a Gold or Pink lid.", summary: "18 Goldfish Tea Bags per box · First-Prize Rose Oolong Tea or Third-Prize Oriental Beauty Tea" } },
-  { officialId: 88, slug: "purple-butterfly-gift-box", sceneFile: "scene-purple-butterfly-gift-box.webp", name: "紫斑蝶", english: "SAPPHIRE WINGS", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, shelfLife: "2 年", contents: [count(secondBeauty, 18)], usd: 425,
+  { officialId: 88, slug: "purple-butterfly-gift-box", preOrder: true /* user 2026-10-13: 「紫斑蝶先加預購標示」 */, sceneFile: "scene-purple-butterfly-gift-box.webp", name: "紫斑蝶", english: "SAPPHIRE WINGS", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, shelfLife: "2 年", contents: [count(secondBeauty, 18)], usd: 425,
     description: "CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。",
     story: {
       title: { zh: "故事", en: "Story" },
@@ -277,6 +279,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       })(),
       ...(gift.slug !== "fruit-infusion-gift-box" ? { brew: { title: t("沖泡方式", "How to brew"), steps: brewSteps(t), image: brewImage(t) } } : {}),
       ...(gift.soldOut ? { soldOut: true } : {}),
+      ...(gift.preOrder ? { preOrder: true } : {}),
       ...(gift.hidden ? { hidden: true } : {}),
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,
       officialUrl: `https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=${gift.officialId}`,
