@@ -17,7 +17,7 @@ export default function AddToCart({ product }: { product: Product }) {
   // Display-only pieces (客戶答覆 B1–B4, 2026-10-12) have no options and no button at all — not a disabled one.
   if (product.displayOnly) return null;
   return <>
-    {choices && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}</legend>
+    {choices && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}{product.teaTbd && <span className="product-tbd tc"> {t("茶款待確認", "Teas to be confirmed")}</span>}</legend>
       <div>{choices.map((c, i) => <label key={c.label} className="tc" title={c.note}><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{c.price && c.price !== product.price?.amount ? `・${formatPrice(c.price, product.price?.currency)}` : ""}</label>)}</div>
       {/* the chosen packaging in one line (user 2026-10-07: the 包裝選項 texts 「可以精簡呈現在這區」) */}
       {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}

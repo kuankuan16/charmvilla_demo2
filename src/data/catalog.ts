@@ -85,6 +85,7 @@ export type Product = {
    *  Shopify inventory replaces it, it equals the allowance unless tea-gifts.ts overrides it (preOrderLeft). Absent: no count is shown. */
   preOrderRemaining?: number;
   priceTbd?: boolean;
+  teaTbd?: boolean;
   /** Shown but not sold at launch (客戶答覆 B1–B4, 2026-10-12): no price (NT$ or US$), no bag / pre-order buttons, no Offer in JSON-LD; photographs and text stay. */
   displayOnly?: boolean;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */

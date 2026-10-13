@@ -734,6 +734,8 @@ main:has(> .policy-page) { background: #efefed; }
 .catalog-card-price { margin-top: 8px; font-size: 15px; font-weight: 500; }
 /* sold out on the official store (2026-10-05): a word beside the price, not colour alone */
 /* display-only pieces marked sold out: the same quiet tag, standing alone without a price before it (user 2026-10-13) */
+/* draft facts flagged in red (茶款待確認; user 2026-10-13 「用紅字」); 4.5:1+ on the page ground */
+.product-tbd { margin-left: .5em; color: #c0392b; font-weight: 500; }
 .catalog-card-soldtag, .product-soldtag { margin-left: 0 !important; }
 .catalog-card-caption .catalog-card-soldtag { margin-left: 1em !important; } /* after the category line: no「·」, just a wider gap (user 2026-10-13) */
 .catalog-card-preorder, .product-preorder { display: inline-block; margin-left: .75em; padding: 1px 8px; border: 1px solid currentColor; border-radius: 2px; font-size: 13px; letter-spacing: .08em; line-height: 1.6; vertical-align: .15em; }

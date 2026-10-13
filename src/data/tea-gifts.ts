@@ -59,6 +59,8 @@ export type TeaGift = {
   preOrderLeft?: number;
   /** no price yet: 價格待訂 / Price to be announced instead of a price, and no bag button (user 2026-10-13: 「US$130 幫我用價格代訂，不要自己亂寫」) */
   priceTbd?: boolean;
+  /** the tea options are drafts: a red 茶款待確認 / Teas to be confirmed beside the choice label (user 2026-10-13) */
+  teaTbd?: boolean;
   /** not sold on the US store: kept out of every listing, menu, sitemap and product page (404), data kept */
   hidden?: boolean;
   variant?: { group: string; label: string };
@@ -190,7 +192,7 @@ export const teaGifts: TeaGift[] = [
   // 雪花迷人禮（三盒組）：2026-10-13 agent 推理暫定，待客戶確認（使用者 2026-10-13：「先上架」）。名稱、盒型、尺寸、重量、茶款與文案皆為暫定值，
   // 價格未定（priceTbd：顯示「價格待訂」、購物按鈕停用）；預購但不設額度、不顯示剩餘數。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
   // 每盒 2 包同一種茶、三盒一組，寫法同已隱藏的心有愛（heart-gift-box）。圖庫只用自己的 3 張（catalog.ts），沒有專屬情境照。
-  { officialId: 9002, slug: "snowflake-gift-box", preOrder: true, name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], priceTbd: true,
+  { officialId: 9002, slug: "snowflake-gift-box", preOrder: true, teaTbd: true, name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], priceTbd: true,
     choices: [rose, honey].map(label => ({ label, contents: [count(label, 2)] })),
     description: "CHARM VILLA「雪花迷人禮」每盒 2 包金魚茶包，三盒一組。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。",
     en: { name: "Snowflake Charming Gift (Set of 3)", description: "Snowflake Charming Gift is a set of three CHARM VILLA boxes, each holding two Goldfish Tea Bags of your selected tea. The white boxes carry rose-gold foil snowflakes and an embossed goldfish, sealed with a clear sticker — easy to share with friends during the holidays.", summary: "2 Goldfish Tea Bags per box · Set of 3 boxes · Choose one tea" } },
@@ -333,6 +335,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       ...(gift.preOrder ? { preOrder: true } : {}),
       ...(preOrderRemaining !== undefined ? { preOrderRemaining } : {}),
       ...(gift.priceTbd ? { priceTbd: true } : {}),
+      ...(gift.teaTbd ? { teaTbd: true } : {}),
       ...(gift.hidden ? { hidden: true } : {}),
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,
       officialUrl: `https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=${gift.officialId}`,
