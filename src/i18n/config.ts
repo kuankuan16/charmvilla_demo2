@@ -1,9 +1,9 @@
-// Two locales. Chinese (the source copy) lives at the unprefixed URL; English lives under /en.
-// src/proxy.ts rewrites unprefixed requests to the internal /zh segment, so every route is rendered from app/[lang].
+// Two locales. English, the US store's default (user 2026-10-13), lives at the unprefixed URL; Chinese (the source copy) lives
+// under /zh. src/proxy.ts rewrites unprefixed requests to the internal /en segment, so every route is rendered from app/[lang].
 import { keepBrand, spaceCjk } from "../lib/text/spacing";
 export const locales = ["zh", "en"] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "zh";
+export const defaultLocale: Locale = "en";
 export const isLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);
 export const htmlLang: Record<Locale, string> = { zh: "zh-Hant", en: "en" };
 export const siteUrl = "https://www.charmvilla.com"; // the US site's production domain (user 2026-10-12); moving the domain itself is a separate, approved step
@@ -18,16 +18,16 @@ const passthrough = ["/media/", "/brand/", "/api/", "/_next/"];
 /** Locale-aware internal href. Hash-only, external and asset hrefs pass through unchanged. */
 export const localeHref = (lang: Locale, href: string): string => {
   if (lang === defaultLocale || !href.startsWith("/") || passthrough.some((p) => href.startsWith(p))) return href;
-  if (href === "/") return "/en";
-  if (href.startsWith("/#")) return `/en${href.slice(1)}`;
-  return `/en${href}`;
+  if (href === "/") return "/zh";
+  if (href.startsWith("/#")) return `/zh${href.slice(1)}`;
+  return `/zh${href}`;
 };
-/** Path without its locale prefix ("/en/collections/tea" → "/collections/tea"). */
+/** Path without its locale prefix ("/zh/collections/tea" → "/collections/tea"). */
 export const stripLocale = (pathname: string): string => pathname.replace(/^\/(?:en|zh)(?=\/|$)/, "") || "/";
 /** The same page in another locale. */
 export const switchLocalePath = (pathname: string, to: Locale): string => localeHref(to, stripLocale(pathname));
 /** hreflang alternates for a locale-neutral path ("/collections/tea"). */
 export const alternatesFor = (lang: Locale, path: string) => ({
   canonical: localeHref(lang, path),
-  languages: { "zh-Hant": localeHref("zh", path), en: localeHref("en", path), "x-default": localeHref("zh", path) },
+  languages: { "zh-Hant": localeHref("zh", path), en: localeHref("en", path), "x-default": localeHref("en", path) },
 });

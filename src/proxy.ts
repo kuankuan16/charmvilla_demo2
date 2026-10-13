@@ -1,19 +1,20 @@
-// Locale routing. Chinese is served at the unprefixed URL and English under /en; both are rendered from app/[lang].
-//   /collections/tea     → rewritten to /zh/collections/tea (the URL in the browser does not change)
-//   /en/collections/tea  → served as is
-//   /zh/collections/tea  → redirected to /collections/tea so the Chinese page has one address
+// Locale routing. English (the US store's default, user 2026-10-13) is served at the unprefixed URL and Chinese under /zh;
+// both are rendered from app/[lang].
+//   /collections/tea     → rewritten to /en/collections/tea (the URL in the browser does not change)
+//   /zh/collections/tea  → served as is
+//   /en/collections/tea  → redirected to /collections/tea so the English page has one address (old /en links keep working)
 // No Accept-Language redirect: the language is changed only with the switch in the header.
 import { NextResponse, type NextRequest } from "next/server";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  if (pathname === "/en" || pathname.startsWith("/en/")) return NextResponse.next();
+  if (pathname === "/zh" || pathname.startsWith("/zh/")) return NextResponse.next();
   const url = request.nextUrl.clone();
-  if (pathname === "/zh" || pathname.startsWith("/zh/")) {
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
     url.pathname = pathname.slice(3) || "/";
     return NextResponse.redirect(url, 308);
   }
-  url.pathname = `/zh${pathname === "/" ? "" : pathname}`;
+  url.pathname = `/en${pathname === "/" ? "" : pathname}`;
   return NextResponse.rewrite(url);
 }
 

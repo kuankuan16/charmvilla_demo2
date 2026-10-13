@@ -607,7 +607,8 @@ const catalogs: Partial<Record<Locale, ReturnType<typeof buildCatalog>>> = {};
 /** The catalogue in one language (built once per language). */
 export const getCatalog = (lang: Locale = "zh") => (catalogs[lang] ??= buildCatalog(lang));
 
-const prefix = (lang: Locale) => (lang === "en" ? "/en" : "");
+// English is unprefixed, Chinese under /zh; called without a language the href is the locale-neutral path (for alternates, the sitemap)
+const prefix = (lang?: Locale) => (lang === "zh" ? "/zh" : "");
 // Chinese (source) catalogue under the original names, for code that is not locale-aware.
 export const categories = getCatalog("zh").categories;
 export const products: Product[] = getCatalog("zh").products;
@@ -615,8 +616,8 @@ export const getProducts = (lang: Locale = "zh") => getCatalog(lang).products;
 export const getCategories = (lang: Locale = "zh") => getCatalog(lang).categories;
 export const isSellable = (p: Product) => Boolean(p.price || p.shopify?.variantId);
 export const formatPrice = (amount: number, currency = "TWD") => currency === "TWD" ? `NT$ ${amount.toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
-export const productHref = (product: Product | string, lang: Locale = "zh") => `${prefix(lang)}/products/${typeof product === "string" ? product : product.slug}`;
-export const categoryHref = (category: string, lang: Locale = "zh") => `${prefix(lang)}/collections/${category}`;
+export const productHref = (product: Product | string, lang?: Locale) => `${prefix(lang)}/products/${typeof product === "string" ? product : product.slug}`;
+export const categoryHref = (category: string, lang?: Locale) => `${prefix(lang)}/collections/${category}`;
 export const findProduct = (slug: string, lang: Locale = "zh") => getProducts(lang).find((p) => p.slug === slug);
 export const getCategory = (id: string, lang: Locale = "zh") => getCategories(lang).find((c) => c.id === id);
 export const getCategoryProducts = (id: string, lang: Locale = "zh") => id === "all" ? getProducts(lang) : getProducts(lang).filter((p) => p.category === id);

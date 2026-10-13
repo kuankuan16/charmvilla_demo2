@@ -41,7 +41,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     document.addEventListener("keydown", onKey);
     return () => { document.removeEventListener("pointerdown", onPointer); document.removeEventListener("keydown", onKey); };
   }, [langOpen]);
-  const thisLanguage = { code: lang, name: zh ? "繁體中文" : "English", href: pathname, current: true };
+  const thisLanguage = { code: lang, name: zh ? "繁體中文" : "English", href: switchLocalePath(pathname, lang), current: true };
   const otherLanguage = { code: other, name: zh ? "English" : "繁體中文", href: switchHref, current: false };
   const languages = zh ? [thisLanguage, otherLanguage] : [otherLanguage, thisLanguage]; // always 繁體中文, then English
   const panelRef = useRef<HTMLDivElement>(null);

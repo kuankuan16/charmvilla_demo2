@@ -46,7 +46,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - Node 版本：`.nvmrc` 的 Node 24。
 - 技術：Next.js 16.3.8、React 19.2.4、TypeScript、Tailwind CSS 4、GSAP、Lenis。
-- 路由：所有頁面由 `src/app/[lang]` 產生。中文是無前綴網址，英文在 `/en`；`src/proxy.ts` 將無前綴網址 rewrite 到內部 `/zh`，並將公開 `/zh/...` 308 redirect 回無前綴網址。禁止加入瀏覽器語言自動跳轉。
+- 路由：所有頁面由 `src/app/[lang]` 產生。英文是預設語言、無前綴網址，中文在 `/zh`（使用者 2026-10-13 改）；`src/proxy.ts` 將無前綴網址 rewrite 到內部 `/en`，並將舊的公開 `/en/...` 308 redirect 回無前綴網址。禁止加入瀏覽器語言自動跳轉。
 - 文案：中文是 source of truth。雙語規則見 `.translation/project-brief.md`、`.translation/style-guide.md`、`.translation/decisions.md`、`.translation/protected-terms.txt`。新增可見文案時，必須同時補上中文與英文，沿用 `t("中文", "English")`、`translator(lang)` 或 `useT()` 的既有模式。
 - 商品、內容與影像資料主要在 `src/data/`；頁面與元件不可另藏一份互相漂移的商品事實。`src/data/catalog.ts`、`tea-gifts.ts`、`commerce.ts` 的註解記錄大量已核准決策，修改前先讀相鄰註解。
 - UI 位於 `src/components/`；全站樣式集中在 `src/app/globals.css`。變更共用 CSS 前先搜尋所有 selector 使用處，並檢查中文／英文、桌機／手機與 reduced-motion。
