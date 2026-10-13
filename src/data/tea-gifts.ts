@@ -72,7 +72,6 @@ const wood = "桐木盒、織布盒蓋";
 const woodTieDye = "桐木盒搭配紮染布面盒蓋，飾以手工刺繡";
 const woodEmbroidered = "桐木盒搭配手工刺繡布面盒蓋";
 const paperKyoto = "高密度紙盒搭配連體盒蓋與封口封條";
-const reunionBoxes = "橘色紙盒搭配金色手工刺繡盒蓋";
 const longBox = "28.6 × 11.7 × 9 cm";    // 11.3 × 4.6 × 3.5 in
 const smallBox = "20.5 × 18.5 × 6.9 cm"; // 8.1 × 7.3 × 2.7 in
 const squareBox = "28 × 19 × 9 cm";      // 11.0 × 7.5 × 3.5 in
@@ -89,7 +88,6 @@ const english: Record<string, string> = {
   [woodTieDye]: "Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery",
   [woodEmbroidered]: "Paulownia wood box with a hand-embroidered fabric lid",
   [paperKyoto]: "High-density paper box with an attached lid and closure seal",
-  [reunionBoxes]: "Orange paper box with a hand-embroidered gold lid",
   "紙盒": "Paper box", "繽紛紙紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid", "繽紛紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid",
   "2 年": "2 years", "1 年": "1 year",
   "繽紛紙盒・12 入": "Paper box · 12 tea bags", "桐木木盒・12 入": "Paulownia box · 12 tea bags",
@@ -100,7 +98,7 @@ const embroideryNote: Bi = { zh: "盒蓋上的手工刺繡，為禮盒增添立�
 
 export const teaGifts: TeaGift[] = [
   // 團圓 Joyful Reunion: one listing (the US store listed three packaging options; only the gold lid is on sale) (the Taiwan store's two 12-bag boxes were separate listings)
-  { officialId: 891, slug: "reunion-paper-gift-box", journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: reunionBoxes, dimensions: "", weight: 0, contents: fifteen, usd: 170, scene: "CV-0348",
+  { officialId: 891, slug: "reunion-paper-gift-box", journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: woodEmbroidered /* user 2026-10-13: 「說明的部分改成桐木盒就好」 */, dimensions: "", weight: 0, contents: fifteen, usd: 170, scene: "CV-0348",
     // Pink and blue packaging are off sale (user 2026-10-13: 「粉紅色跟藍色目前都先下架，還沒有商品可以賣」, reversing 10-12); only the
     // gold-lid box is sold, so there is no packaging chooser. The pink and blue options, with their grey placeholder views, are in git history.
     description: "CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包，適合與親友共享或贈禮。",
