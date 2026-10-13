@@ -589,7 +589,7 @@ const buildCatalog = (lang: Locale) => {
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
   // listing of its own; user 2026-10-07: 「在團圓頁選『粉紅色』時切換」)
   const bySlug = new Map(listed.map((p) => [p.slug, p]));
-  // …or grey blocks while the client's photographs and details are awaited (the Reunion box's 粉紅色 and 藍色 stay on sale; user 2026-10-12: 「沒有要下架，要請客戶補資料」)
+  // …or grey blocks while the client's photographs and details are awaited (used by the Reunion box's 粉紅色 and 藍色 until 2026-10-13, when both went off sale; kept for options awaiting photographs)
   const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("缺圖", "No image yet"), image: { src: "", alt: t("缺圖", "No image yet"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
   // Pink lids keep their existing cover, add their HD front in slot 2, and retain their existing angle/unboxed views.
   const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string }): ProductView[] => [
