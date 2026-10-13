@@ -394,7 +394,7 @@ const buildCatalog = (lang: Locale) => {
   // 兩張情境照，兩張都以小圖呈現 — 頁尾「兩小一大」的那兩張小圖，大圖是該款自己的情境照（使用者 2026-10-08：「這張加入所有茶類的內容頁」,
   // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
   const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("雙手捧著一杯泡開的小金魚茶", "Two hands holding a cup of brewed goldfish tea"), 1856, 2304);
-  for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity", "christmas"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
+  for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity", "christmas", "snowflake"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
   // 蝴蝶蘭：兩人在橄欖綠扶手椅旁對飲、杯中各有小金魚茶包，禮盒是焦點（使用者 2026-10-13 選定：「上情境」）
   sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-two-friends-tea.webp", t("兩個人在扶手椅旁享用小金魚茶，桌上是粉紅色蝴蝶蘭禮盒", "Two people enjoying goldfish tea by the armchairs, the pink Royal Orchid gift box on the table"), 2784, 3456)];
   // 春曉：藍色與粉紅盒蓋並列的窗光照（使用者 2026-10-13：「幫我生一張 春曉 的雙封面情境照/heroimage」，4K）
@@ -524,6 +524,12 @@ const buildCatalog = (lang: Locale) => {
     { file: "studio-christmas-gift-box-orange-angle-v3.webp", zh: "橘色盒蓋・斜角", en: "Orange lid, angled view", enAlt: "orange lid, angled view" },
     { file: "studio-christmas-gift-box-orange-unboxed-v3.webp", zh: "橘色盒蓋・開箱 12 入", en: "Orange lid, unboxed · 12 tea bags", enAlt: "orange lid, the drawer opened to show 12 tea bags" },
   ];
+  // 雪花迷人禮（三盒組）（2026-10-13 agent 推理暫定，待客戶確認）：只用自己的 3 張，順序 三盒封面（studio-listing.json）→ 斜角 → 正面；
+  // 已是灰底正規化版（不需 -even2），不加入任何開箱圖或其他盒的圖
+  studioExtra["snowflake-gift-box"] = [
+    { file: "studio-snowflake-gift-box-angle.webp", zh: "斜角", en: "Angled view", enAlt: "one box seen at an angle" },
+    { file: "studio-snowflake-gift-box-front.webp", zh: "正面", en: "Front view", enAlt: "one box seen from the front" },
+  ];
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = {
@@ -595,11 +601,11 @@ const buildCatalog = (lang: Locale) => {
     // it has none), and the hands with the mug. The other scenes stay in sceneExtra, unlisted.
     const three = teaThree[p.slug];
     const chosen = three ? three.map((file) => scenes.find((img) => img.src === `/media/site/${file}`)).filter((x): x is Img => Boolean(x)) : [];
-    const shownScenes = chosen.length === 3 ? chosen : scenes;
+    const shownScenes = three && chosen.length === three.length ? chosen : scenes;
     return { ...p, image: views[0].image, hoverImage: shownScenes[0], views, scenes: shownScenes };
   };
   const twoPeople = "scene-two-people-tea-black-oak-table.webp", mug = "scene-hands-speckled-mug-goldfish-tea-warm-light.webp";
-  const teaThree: Record<string, [string, string, string]> = {
+  const teaThree: Record<string, string[]> = { // 多數三張；雪花迷人禮還沒有專屬情境照，只放兩張共用照（hover 用兩人喝茶照）
     "reunion-paper-gift-box": ["scene-reunion-gift-box-us-olive-sofa-pouch.webp", twoPeople, mug],
     "spring-dawn-gift-box": ["scene-spring-dawn-gift-box-blue-pink-sunbeam.webp", "scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", mug], // 藍、粉兩色並列窗光照領頭、也是清單 hover（使用者 2026-10-13：「發布在 demo2 並更新 hover 圖」）
     "winter-blossom-gift-box": ["scene-winter-blossom-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
@@ -609,6 +615,7 @@ const buildCatalog = (lang: Locale) => {
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
     "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
     "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", "scene-christmas-gift-box-burgundy-sunbeam.webp", mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
+    "snowflake-gift-box": [twoPeople, mug], // 2026-10-13 先上架：沒有專屬情境照，只用兩張共用照
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden

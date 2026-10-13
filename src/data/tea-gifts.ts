@@ -80,6 +80,7 @@ const woodTieDye = "桐木盒搭配紮染布面盒蓋，飾以手工刺繡";
 const woodEmbroidered = "桐木盒搭配手工刺繡布面盒蓋";
 const paperKyoto = "高密度紙盒搭配連體盒蓋與封口封條";
 const paperDrawerEmbroidered = "抽屜式紙盒搭配織布盒蓋，飾以刺繡"; // 聖誕佳禮：2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8）
+const paperSnowflake = "紙盒，燙金雪花與壓紋小金魚，透明封口貼紙"; // 雪花迷人禮：2026-10-13 agent 推理暫定，待客戶確認
 const longBox = "28.6 × 11.7 × 9 cm";    // 11.3 × 4.6 × 3.5 in
 const smallBox = "20.5 × 18.5 × 6.9 cm"; // 8.1 × 7.3 × 2.7 in
 const squareBox = "28 × 19 × 9 cm";      // 11.0 × 7.5 × 3.5 in
@@ -97,6 +98,7 @@ const english: Record<string, string> = {
   [woodEmbroidered]: "Paulownia wood box with a hand-embroidered fabric lid",
   [paperKyoto]: "High-density paper box with an attached lid and closure seal",
   [paperDrawerEmbroidered]: "Paper drawer box with a woven-fabric lid featuring embroidery",
+  [paperSnowflake]: "Paper box with rose-gold foil snowflakes, an embossed goldfish and a clear seal sticker",
   "紙盒": "Paper box", "繽紛紙紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid", "繽紛紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid",
   "繽紛紙盒・12 入": "Paper box · 12 tea bags", "桐木木盒・12 入": "Paulownia box · 12 tea bags",
 };
@@ -185,6 +187,13 @@ export const teaGifts: TeaGift[] = [
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開抽屜，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。", en: "Gold baubles and snowflakes hang across the lid as a little goldfish swims into the season with a candy cane or a Christmas stocking. Slide open the drawer to find twelve Goldfish Tea Bags, ready for warm winter hours with the people who matter most." } },
     notice: [embroideryNote], // 出貨時間改用全部預購商品共用的 preOrderShipping（客戶答覆 B7，2026-10-12；取代原本暫定的「12 月上旬起陸續出貨」）
     en: { name: "Christmas Delight", description: "Christmas Delight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags, three each of four tea varieties, presented in a paper drawer box with an embroidered woven-fabric lid. Choose an Orange or Teal lid for a warm holiday gift.", summary: "12 Goldfish Tea Bags per box · Four-tea assortment" } },
+  // 雪花迷人禮（三盒組）：2026-10-13 agent 推理暫定，待客戶確認（使用者 2026-10-13：「先上架」）。名稱、盒型、尺寸、重量、茶款與文案皆為暫定值，
+  // 價格未定（priceTbd：顯示「價格待訂」、購物按鈕停用）；預購但不設額度、不顯示剩餘數。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
+  // 每盒 2 包同一種茶、三盒一組，寫法同已隱藏的心有愛（heart-gift-box）。圖庫只用自己的 3 張（catalog.ts），沒有專屬情境照。
+  { officialId: 9002, slug: "snowflake-gift-box", preOrder: true, name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], priceTbd: true,
+    choices: [rose, honey].map(label => ({ label, contents: [count(label, 2)] })),
+    description: "CHARM VILLA「雪花迷人禮」每盒 2 包金魚茶包，三盒一組。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。",
+    en: { name: "Snowflake Charming Gift (Set of 3)", description: "Snowflake Charming Gift is a set of three CHARM VILLA boxes, each holding two Goldfish Tea Bags of your selected tea. The white boxes carry rose-gold foil snowflakes and an embossed goldfish, sealed with a clear sticker — easy to share with friends during the holidays.", summary: "2 Goldfish Tea Bags per box · Set of 3 boxes · Choose one tea" } },
   { officialId: 1072, slug: "small-moon-tea-gift-box", hidden: true, sceneFile: "scene-small-moon-tea-gift-box.webp", name: "小鮮月禮盒｜純茶包", english: "SMALL MOON / TEA", series: "2026 中秋節限定商品", pieces: 6, box: "紙盒", dimensions: smallBox, weight: 99, contents: [count(rose, 3), count(honey, 3)], description: "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
     en: { name: "Small Moon Gift Box | Tea Only", description: "A Mid-Autumn gesture kept among six goldfish: three of Rose Oolong Tea and three of Rose & Honey-Scented Black Tea. The gathering begins with opening the box and pouring a cup of hot water." } },
   { officialId: 994, slug: "full-moon-tea-gift-box", hidden: true, journalStory: 301, name: "大盈月禮盒｜純茶包", english: "FULL MOON / TEA", series: "2026 中秋節限定商品", pieces: 18, box: wood, dimensions: squareBox, weight: 400, contents: eighteen, sceneFile: "CV-0357-tag2.webp" /* the brand's CV-0357 with the real gold foil tag (2026-10-05) */, description: "花鳥與枝葉鋪展在織布盒蓋上，桐木盒收藏十八尾小金魚。從盒上的一幅風景，到杯中的一段茶時，讓團聚與欣賞一同發生。", note: "本款為純茶包禮盒，不含茶點與茶具；緞帶顏色隨機出貨。",

@@ -112,5 +112,13 @@
   "full-moon-tea-gift-box": {
     "handle": "",
     "variantId": ""
+  },
+  "snowflake-gift-box": {
+    "handle": "",
+    "variantId": "",
+    "variants": {
+      "Rose Oolong Tea": "",
+      "Rose & Honey-Scented Black Tea": ""
+    }
   }
 }
