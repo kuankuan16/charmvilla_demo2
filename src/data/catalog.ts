@@ -515,7 +515,7 @@ const buildCatalog = (lang: Locale) => {
   // 聖誕佳禮（2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8））：橘色盒蓋是預設圖庫，照其他 12 入禮盒的順序 封面（studio-listing.json）→ 正面實拍 → 斜角 → 開箱。
   // 紙盒，所以開箱用自己的 12 入圖，不在上面 12 入木盒（gift-box-unboxed-12-v2）的迴圈裡；藍綠色盒蓋的 4 張在 tea-gifts.ts 的 packaging.lidViews
   studioExtra["christmas-gift-box"] = [
-    { file: "studio-christmas-gift-box-orange-front-v3.webp", zh: "橘色盒蓋・正面實拍", en: "Orange lid, front view", enAlt: "orange lid, front photograph" },
+    { file: "studio-christmas-gift-box-orange-front-v4.webp", zh: "橘色盒蓋・正面實拍", en: "Orange lid, front view", enAlt: "orange lid, front photograph" },
     { file: "studio-christmas-gift-box-orange-angle-v3.webp", zh: "橘色盒蓋・斜角", en: "Orange lid, angled view", enAlt: "orange lid, angled view" },
     { file: "studio-christmas-gift-box-orange-unboxed-v3.webp", zh: "橘色盒蓋・開箱 12 入", en: "Orange lid, unboxed · 12 tea bags", enAlt: "orange lid, the drawer opened to show 12 tea bags" },
   ];

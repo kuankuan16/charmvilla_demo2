@@ -18,3 +18,5 @@
 情境照更新：沙發照的茶包用錯（全金色鋁箔袋；使用者「包裝袋錯誤」，正確是上金下白、印 www.charmvilla.com 的茶包），改用 `scene-christmas-gift-box-two-boxes-window-light.webp`（兩色禮盒、窗光、金緞帶、松枝、紅吊飾、空白卡片；依使用者四張聖誕參考圖的克制配色與送禮情境，提示詞 prompt-scene-xmas.txt）。沙發照檔案保留但不引用。
 
 第二張情境照：`scene-christmas-gift-box-burgundy-sunbeam.webp`（使用者三張聖誕參考圖「/lifestyleshot」：酒紅牆、斜窗光、松枝影、紅金吊飾；第一版盒子被畫成直立、布面在側面，重生一次改為平放盒蓋朝上）。
+
+正面圖 v4（使用者截圖指出 v3 正面外盒左邊斜、右下缺口）：實拍透視校正無法拉直鏡頭弧形變形，改為 AI 生成（實拍為商品參考、春曉正面圖為構圖光影參考，提示詞 v3/*-front.txt），norm 0.45。

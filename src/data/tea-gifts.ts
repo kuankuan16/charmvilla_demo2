@@ -180,7 +180,7 @@ export const teaGifts: TeaGift[] = [
     packaging: [
       { label: { zh: "橘色", en: "Orange" }, text: { zh: "橘色盒蓋，紅色小金魚刺繡搭配拐杖糖。", en: "Orange lid with a red embroidered goldfish and a candy cane." } },
       { label: { zh: "藍綠色", en: "Teal" }, text: { zh: "藍綠色盒蓋，綠色小金魚刺繡搭配聖誕襪。", en: "Teal lid with a green embroidered goldfish and a Christmas stocking." },
-        lidViews: { cover: "studio-christmas-gift-box-teal-cover-v3.webp", front: "studio-christmas-gift-box-teal-front-v3.webp", angle: "studio-christmas-gift-box-teal-angle-v3.webp", unboxed: "studio-christmas-gift-box-teal-unboxed-v3.webp" } },
+        lidViews: { cover: "studio-christmas-gift-box-teal-cover-v3.webp", front: "studio-christmas-gift-box-teal-front-v4.webp", angle: "studio-christmas-gift-box-teal-angle-v3.webp", unboxed: "studio-christmas-gift-box-teal-unboxed-v3.webp" } },
     ],
     description: "CHARM VILLA「聖誕佳禮」禮盒內含 12 包金魚茶包，四款茶各 3 包，以抽屜式紙盒搭配刺繡織布盒蓋呈現。可選擇橘色或藍綠色盒蓋，為佳節送上一份溫暖的心意。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開抽屜，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。", en: "Gold baubles and snowflakes hang across the lid as a little goldfish swims into the season with a candy cane or a Christmas stocking. Slide open the drawer to find twelve Goldfish Tea Bags, ready for warm winter hours with the people who matter most." } },
