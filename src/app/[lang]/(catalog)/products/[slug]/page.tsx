@@ -167,7 +167,7 @@ export default async function ProductPage({ params }: Props) {
   // the brand band before the footer, after STINA's: the slogan, the introduction from the About page and a link to it, over the brand's
   // installation photograph (CV-0215) darkened
   const about = getAbout(lang);
-  const band = site("about-installation-2k.webp", t("展場裡，白色紙摺的金魚與花在枝條上懸著，背景是橘紅墨染的長幅", "In an exhibition, white paper goldfish and blossoms hang from a branch before a long panel of orange ink wash"), 2400, 1604);
+  const band = site("about-installation-2k.webp", t("展場裡懸掛的白色紙摺金魚與花", "White paper goldfish and blossoms hanging in an exhibition"), 2400, 1604);
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.filter((v) => !v.placeholder).map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
     // Offer only where the official list price is known; availability only where the official store says sold out (catalog.ts rule).
     ...(product.price && { offers: { "@type": "Offer", price: product.price.amount, priceCurrency: product.price.currency, url: `${siteUrl}${productHref(product, lang)}`, ...(product.soldOut && { availability: "https://schema.org/SoldOut" }) } }) };

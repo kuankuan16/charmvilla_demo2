@@ -30,8 +30,8 @@ const build = (lang: Locale) => {
     // the heads, since the supplied crop left none.
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：兩張舞者提白包的小圖換成鳥形筷架禮盒與茶几上的雲朵杯墊
     smalls: [
-      site("scene-bird-rest-gift-box-v2.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a gray-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1688, 2110),
-      site("scene-coffee-table-tea-coasters-tagfix.webp", t("陽光斜照的米白石灰咖啡桌上，一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster, and beside it another cloud coaster and the ginkgo teaspoon"), 1792, 2240),
+      site("scene-bird-rest-gift-box-v2.webp", t("白色禮盒上的一隻鳥形筷架", "A Songbird Chopsticks Rest on a white CHARM VILLA gift box"), 1688, 2110),
+      site("scene-coffee-table-tea-coasters-tagfix.webp", t("雲朵杯墊上的小金魚茶，旁邊是銀杏茶匙", "Goldfish tea on a Cloud Coaster beside the Ginkgo Style Tea Spoon"), 1792, 2240),
     ] as Img[],
     items: [
       {
@@ -46,8 +46,8 @@ const build = (lang: Locale) => {
         // 2026-10-08 (user: 「取代全站」): the ottoman-tray photograph gave way, here and on the About hero, to the olive leather armchair
         // scene — orange and navy books, the cloud coaster and the loop-handle glass teacup, an orange abstract painting behind (Nano Banana 2.1,
         // the whole room generated in one go rather than edited; string hidden behind the far rim, no tag)
-        image: site("scene-olive-armchair-books-goldfish-tea.webp", t("橄欖綠皮革扶手椅上疊著一本橘色、一本深藍色的書，書上放著雲朵檜木杯墊與一杯玻璃杯小金魚茶，茶湯在橘色書皮上映出光斑；牆邊靠著一幅橘色筆觸的抽象畫",
-          "On an olive-green leather armchair, an orange book on a navy one, a cloud-shaped hinoki coaster and a glass cup of goldfish tea on top, the tea casting a glow on the orange cover; an orange abstract painting leans against the wall behind"), 1856, 2304),
+        image: site("scene-olive-armchair-books-goldfish-tea.webp", t("疊起的書上，雲朵杯墊承著一杯小金魚茶",
+          "Goldfish tea on a Cloud Coaster, resting on stacked books"), 1856, 2304),
       },
       {
         id: "leather",
@@ -72,8 +72,8 @@ const build = (lang: Locale) => {
         cta: { label: t("看香味是喜悅的記憶", "Explore scents"), href: "/collections/scents" },
         // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
         // with their engraved logos (also on the coaster and teaspoon pages)
-        image: site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARMVILLA，旁邊是毛圈布沙發與橡木長凳",
-          "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARMVILLA, beside a bouclé sofa and an oak bench"), 1792, 2240),
+        image: site("scene-wooden-interior-sunlit.webp", t("陽光下的雲朵杯墊與銀杏茶匙",
+          "The Cloud Coaster and Ginkgo Style Tea Spoon in sunlight"), 1792, 2240),
       },
     ] as CraftMoment[],
   };

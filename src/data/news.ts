@@ -46,9 +46,9 @@ const build = (lang: Locale): NewsEntry[] => {
       tag: t("活動快訊", "Events"), title: t("「杯中金魚」\u200b期間限定茶席", "Goldfish in a Cup: A Limited-Time Tea Experience"),
       summary: t("8 月 15 日起，於誠品生活南西。", "From August 15 at eslite spectrum Nanxi."),
       // the tea-table scene with fluted glasses (user 2026-10-06: 「取代這張」); its tag laid flat on the cloth per the tag spec
-      card: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("暖光茶席上，一隻手托著黑色鎚紋鐵托盤，直條紋玻璃杯裡泡著一尾小金魚茶包，金色 CHARM VILLA 茶標平放在桌布上；後方幾杯茶在柔焦裡", "At a sunlit tea table a hand holds a hammered black iron tray with a goldfish tea bag steeping in a fluted glass, the gold CHARM VILLA tag lying flat on the cloth, more cups soft-focus behind"), 1792, 2240),
+      card: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("茶席上的一杯小金魚茶與金色茶標", "A glass of goldfish tea and its gold tag at a tea table"), 1792, 2240),
       focus: "50% 76%",
-      hero: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("暖光茶席上，一隻手托著黑色鎚紋鐵托盤，直條紋玻璃杯裡泡著一尾小金魚茶包，金色 CHARM VILLA 茶標平放在桌布上；後方幾杯茶在柔焦裡", "At a sunlit tea table a hand holds a hammered black iron tray with a goldfish tea bag steeping in a fluted glass, the gold CHARM VILLA tag lying flat on the cloth, more cups soft-focus behind"), 1792, 2240),
+      hero: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("茶席上的一杯小金魚茶與金色茶標", "A glass of goldfish tea and its gold tag at a tea table"), 1792, 2240),
       body: [
         t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "Beginning August 15, discover Goldfish in a Cup, a limited-time tea experience at eslite spectrum Nanxi."),
         { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },

@@ -348,7 +348,7 @@ const buildCatalog = (lang: Locale) => {
     // a new lifestyle scene (user 2026-10-05: 「我現在要做豐盛點心盤的生品情境照」): the stand with a few petits fours and goldfish tea on an oak table, olive sofa in front
     // v3 (user 2026-10-05): the bottom tier widened to the real piece's 38 : 71 : 100 and the painting navy; v2: an orange wall, a white gold-rimmed cup, a piped-cream tartlet, a fiddle-leaf fig
     "prosperity-dessert-stand": site("scene-dessert-stand-oak-table-tea-v3.webp", t("燒橘色牆面的溫暖客廳，牆上一幅海軍藍的畫，橡木圓桌上的豐盛點心盤擺著幾樣小點心，旁邊一杯白瓷金邊杯泡的小金魚茶，後方是琴葉榕，前景是橄欖綠毛圈沙發", "In a warm room with a burnt-orange wall and a navy painting, the Abundance Dessert Tray on a round oak table with a few petits fours, goldfish tea in a white gold-rimmed cup, a fiddle-leaf fig behind and an olive bouclé sofa in front"), 1792, 2240),
-    "bird-chopstick-rest": site("scene-bird-rest-gift-box-v2.webp", t("暖色斜陽下，一隻灰藍柴燒鳥形筷架停在印著金色 CHARMVILLA 的白色禮盒上，上方帶綠芽的樹枝投下影子", "In low warm sun a gray-blue wood-fired Songbird Chopsticks Rest on a white box lettered CHARMVILLA in gold, a budding branch casting shadows"), 1688, 2110) /* levelled 2.5° (user 2026-10-05: 「修正照片的水平線」) */,
+    "bird-chopstick-rest": site("scene-bird-rest-gift-box-v2.webp", t("白色禮盒上的一隻鳥形筷架", "A Songbird Chopsticks Rest on a white CHARM VILLA gift box"), 1688, 2110) /* levelled 2.5° (user 2026-10-05: 「修正照片的水平線」) */,
   };
   // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
   // (scene-white-bag-over-shoulder-ink-green) and the bag in the air on ink green (gallery CV-0450) — are off the site; the files
@@ -358,7 +358,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
     // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
-    "bird-chopstick-rest": [site("scene-bird-rest-tray-closeup.webp", t("深色古銅托盤上，一雙檜木筷架在青瓷色鳥形筷架上，後方小鳥停在備長炭上", "On a dark bronze tray, hinoki chopsticks resting on a celadon Songbird Chopsticks Rest, another bird perched on binchotan behind"), 2040, 1360) /* CV-0240 re-staged on the oak scene's tray (2026-10-05) */, site("scene-oak-table-bird-rests.webp", t("橡木圓桌上的金屬托盤裡，四隻柴燒鳥形筷架、備長炭與一雙檜木筷", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a tray on an oak coffee table"), 1792, 2240)],
+    "bird-chopstick-rest": [site("scene-bird-rest-tray-closeup.webp", t("檜木筷子擱在鳥形筷架上", "Hinoki Wood Chopsticks resting on a Songbird Chopsticks Rest"), 2040, 1360) /* CV-0240 re-staged on the oak scene's tray (2026-10-05) */, site("scene-oak-table-bird-rests.webp", t("托盤上的鳥形筷架與檜木筷子", "Songbird Chopsticks Rests and Hinoki Wood Chopsticks on a tray"), 1792, 2240)],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
     site("scene-pink-bag-armchair-olive-v2.webp", t("編織提把皮革包・粉紅色，放在橄欖綠布面單椅上；背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶與 CHARM VILLA 茶標", "Braided Leather Bag in pink on an olive bouclé armchair; an orange field painting behind, and on an oak side table in front a glass of goldfish tea with its CHARM VILLA tag"), 1760, 2336)],
@@ -380,21 +380,21 @@ const buildCatalog = (lang: Locale) => {
   // 已移除（留在 git 歷史）。橘盒的橄欖綠沙發照（scene-reunion-paper-gift-box-olive-sofa-pouch.webp）只留給首頁輪播
   // 兩人喝茶的氛圍照（黑橡木圓桌、畫冊、兩杯玻璃杯小金魚茶；Nano Banana 2.1，照使用者給的五張攝影風格參考生成）：每個茶葉禮盒商品頁的
   // 情境照最後一張（使用者 2026-10-07：「放到情境照」「商品內容頁」）
-  const twoPeopleTea = site("scene-two-people-tea-black-oak-table.webp", t("黑橡木圓桌上翻開的畫冊旁，兩杯玻璃杯泡的小金魚茶，一隻手拿著近處的杯子，對面另一個人的手靠著第二杯；後方是橄欖綠沙發", "Two glass cups of goldfish tea beside an open art book on a black oak table, one hand holding the near cup and another person's hand by the second; an olive sofa behind"), 1856, 2304);
+  const twoPeopleTea = site("scene-two-people-tea-black-oak-table.webp", t("兩個人一起享用小金魚茶", "Two people sharing goldfish tea"), 1856, 2304);
   // 雙手捧米白斑點陶杯的小金魚茶照（Nano Banana 2.1，照使用者的參考照光影加入茶包）：和兩人喝茶照一起是每個茶葉禮盒商品頁共用的最後
   // 兩張情境照，兩張都以小圖呈現 — 頁尾「兩小一大」的那兩張小圖，大圖是該款自己的情境照（使用者 2026-10-08：「這張加入所有茶類的內容頁」,
   // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
-  const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves"), 1856, 2304);
+  const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("雙手捧著一杯泡開的小金魚茶", "Two hands holding a cup of brewed goldfish tea"), 1856, 2304);
   for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
   // 年年有魚：米白圓桌斜陽照（禮盒無緞帶、青瓷咖啡杯裡泡開的小金魚、尤加利，標籤藏在杯後；Nano Banana 2.1，照使用者給的 EAU 書那張的色調）放進商品頁，
   // 排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「放入內容頁」，之後「右取代左」——胡桃木桌白瓷杯金標籤那張換成這張）
-  sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-cream-table-sun-celadon-cup.webp", t("米白圓桌上一道斜射的陽光，年年有魚的紅色刺繡禮盒旁，青瓷咖啡杯裡泡開一尾小金魚茶包，後方一小瓶尤加利投下葉影", "A hard beam of sun across a cream round table: beside the Year of Plenty box with its red embroidered lid, a goldfish tea bag steeps in a celadon cup; a sprig of eucalyptus behind throws its leaf shadow"), 1856, 2304)];
+  sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-cream-table-sun-celadon-cup.webp", t("年年有魚禮盒與一杯小金魚茶", "The Abundance & Prosperity gift box with a cup of goldfish tea"), 1856, 2304)];
   // 春曉：手持玻璃杯的俯角照（胡桃木桌、打開的畫冊、橄欖綠沙發；Nano Banana 2.1，照使用者給的三張編輯攝影參考——暖斜光、淺景深、手入鏡——
   // 延續全站風格）放進商品頁，排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「高度學習這幾張圖，並延續全站的攝影風格，重新生成一張…
   // 的商品圖」，兩版中選了亮光的第一版：「放進商品說明頁」）
-  sceneExtra["spring-dawn-gift-box"] = [...(sceneExtra["spring-dawn-gift-box"] ?? []), site("scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", t("俯角的胡桃木桌：春曉禮盒斜放在打開的畫冊旁，前方雲朵杯墊上一杯玻璃杯小金魚茶，一隻手握著杯把，旁邊靠著金色茶包袋，後方是橄欖綠毛圈沙發", "Looking down on a walnut table: the Spring Awakening box lies at an angle beside an open art book; in front, a hand holds a glass cup of goldfish tea on a cloud coaster, a gold tea pouch beside it, an olive bouclé sofa behind"), 1856, 2304)];
+  sceneExtra["spring-dawn-gift-box"] = [...(sceneExtra["spring-dawn-gift-box"] ?? []), site("scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", t("春曉禮盒與雲朵杯墊上的一杯小金魚茶", "The Spring Awakening gift box with goldfish tea on a Cloud Coaster"), 1856, 2304)];
   // 橄欖綠沙發旁的核桃木桌那張（盒子已換成松針盒）也放進商品頁，排在木桌光影之後（使用者 2026-10-07：「放上商品圖的內容頁」）
-  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-olive-sofa-pouch.webp", t("橄欖綠毛圈沙發旁的核桃木桌上，團圓禮盒的桐木盒與芥末黃松針盒蓋、一包茶包袋、幾粒茶葉與玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶", "On a walnut table beside an olive bouclé sofa, the Reunion paulownia box with its mustard pine-sprig lid, a tea pouch, a few tea leaves and rosebuds, and a glass cup of goldfish tea at the right"), 1856, 2304)];
+  sceneExtra["reunion-paper-gift-box"] = [...(sceneExtra["reunion-paper-gift-box"] ?? []), site("scene-reunion-gift-box-us-olive-sofa-pouch.webp", t("團圓禮盒與一杯小金魚茶", "The Joyful Reunion gift box with a glass of goldfish tea"), 1856, 2304)];
   // 藍色包放在橄欖綠扶手椅上的客廳，橘色系的畫、藤編茶几（使用者 2026-10-06：「放進商品內容頁（要大張）」）
   sceneExtra["braided-leather-bag-blue"] = [...(sceneExtra["braided-leather-bag-blue"] ?? []), site("scene-blue-bag-olive-armchair-rattan.webp", t("暖色客廳一角，橄欖綠毛圈布扶手椅上靠著藍色編織提把皮革包；牆上是橘色系的抽象大圓弧畫，椅子左邊是一張藤編茶几", "A warm corner of a living room: the blue Braided Leather Bag rests on an olive bouclé armchair, an orange arched abstract painting on the wall and a woven rattan side table to the left"), 1520, 2688)];
   // 白包肩背近拍：深藍薄紗襯衫、側光照出荔枝紋（使用者 2026-10-06：「放上官網」）
@@ -411,13 +411,13 @@ const buildCatalog = (lang: Locale) => {
   // they lead the scenes of the pieces they show.
   // 2026-10-02 (user: 「這張商品的情境照要換室內擺飾…喜歡他光影的呈現」, logos where the real pieces carry them): a new sunlit interior
   // replaces the black tray table by the sofa (scene-wooden-tray-table-sofa.webp, still in git).
-  const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光從窗邊斜射在米白色圓形石灰桌面上，雲朵杯墊、梅花形木盒與銀杏茶匙各自刻著 CHARMVILLA，旁邊是毛圈布沙發與橡木長凳", "Low sun through a window across a round off-white plaster table: a cloud coaster, a plum-blossom wooden box and a ginkgo teaspoon, each engraved CHARMVILLA, beside a bouclé sofa and an oak bench"), 1792, 2240);
-  const woodenCloseup = site("scene-wooden-tray-table-closeup-v2.webp", t("木筷擱在鳥形筷架上，旁邊一片刻著 CHARMVILLA 的雲朵杯墊，黑色托盤邊几，後方是橄欖綠毛呢沙發", "Wooden chopsticks on a Songbird Chopsticks Rest beside a Cloud Coaster engraved CHARMVILLA on a black tray table, an olive bouclé sofa behind"));
+  const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光下的雲朵杯墊與銀杏茶匙", "The Cloud Coaster and Ginkgo Style Tea Spoon in sunlight"), 1792, 2240);
+  const woodenCloseup = site("scene-wooden-tray-table-closeup-v2.webp", t("檜木筷子擱在鳥形筷架上，旁邊是雲朵杯墊", "Hinoki Wood Chopsticks on a Songbird Chopsticks Rest beside a Cloud Coaster"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
-  const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("陽光斜照的米白石灰咖啡桌上，書上一只玻璃杯泡著小金魚茶包，杯下墊著雲朵杯墊；旁邊另一片雲朵杯墊與銀杏茶匙，各自刻著 CHARMVILLA", "Low sun across an off-white plaster coffee table: a glass cup of goldfish tea on a cloud coaster on a book, and beside it another cloud coaster and the ginkgo teaspoon, each engraved CHARMVILLA"), 1792, 2240);
+  const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("雲朵杯墊上的小金魚茶，旁邊是銀杏茶匙", "Goldfish tea on a Cloud Coaster beside the Ginkgo Style Tea Spoon"), 1792, 2240);
   // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05: 「換剛剛那張」 on the spoon's
   // ottoman photograph, which stays in the repo)
-  const traySofa = site("scene-wooden-tray-table-sofa-v4.webp", t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的梅花木盒、雲朵杯墊與銀杏茶匙", "A black tray table by an olive sofa: a plum-blossom box, a Cloud Coaster and a Ginkgo Style Tea Spoon, each engraved CHARMVILLA"), 1376, 2048);
+  const traySofa = site("scene-wooden-tray-table-sofa-v4.webp", t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Style Tea Spoon on a tray table"), 1376, 2048);
   const sceneLead: Record<string, Img[]> = {
     // the only scene of the Raw Gold earring, so its listing card has a hover image too. The user's chosen model (dark green
     // satin), the goldfish outline taken from the brand's own silhouette, matte gold generated
@@ -442,14 +442,14 @@ const buildCatalog = (lang: Locale) => {
   // 盒子平放、金色茶包袋靠著盒子、幾粒茶葉與玫瑰花苞、右下角玻璃杯小金魚茶出血；各款以團圓那張為場景參考、自己核准的封面圖為盒子參考
   // 生成（Nano Banana 2.1，1856 × 2304；使用者 2026-10-08：「每一個茶禮盒第一張情境圖都用這個模式，hover 也是這張」「幫我把沒有的補完」）
   for (const [slug, zh, en] of [
-    ["spring-dawn", "春曉的淡藍紮染盒蓋，黃山雀與風鈴木金花刺繡", "the Spring Awakening box with its pale-blue tie-dyed lid, yellow tits and golden blossoms embroidered"],
-    ["winter-blossom", "暮雪的淡粉紮染盒蓋，梅枝刺繡", "the Snowy Twilight box with its pale-pink tie-dyed lid and embroidered plum branches"],
-    ["orchid", "蝴蝶蘭的米色盒蓋，紫紅蝴蝶蘭刺繡", "the Royal Orchid box with its beige lid and embroidered magenta orchids"],
-    ["purple-butterfly", "紫斑蝶的湖藍盒蓋，紫斑蝶刺繡", "the Sapphire Wings box with its lake-blue lid and embroidered purple crow butterflies"],
-    ["kyoto", "京都版的櫻花紙盒", "the Kyoto Artisanal Reserve paper box with its cherry-blossom sleeve"],
-    ["year-of-plenty", "年年有魚的紅色盒蓋，兩尾金魚刺繡", "the Abundance & Prosperity box with its red lid and two embroidered goldfish"],
-    ["blossoming-prosperity", "花開富貴的紅色盒蓋，牡丹與金色蝴蝶刺繡", "the Prosperity in Bloom box with its red lid, embroidered peonies and golden butterflies"],
-  ] as const) sceneLead[`${slug}-gift-box`] = [site(`scene-${slug}-gift-box-olive-sofa-pouch.webp`, t(`橄欖綠毛圈沙發旁的核桃木桌上，${zh}，一包金色茶包袋靠著盒子，幾粒茶葉與玫瑰花苞，右邊一杯玻璃杯泡的小金魚茶`, `On a walnut table beside an olive bouclé sofa, ${en}, a gold tea pouch leaning on the box, a few tea pearls and a rosebud, a glass of goldfish tea at the right`), 1856, 2304), ...(sceneLead[`${slug}-gift-box`] ?? [])];
+    ["spring-dawn", "春曉禮盒", "the Spring Awakening gift box"],
+    ["winter-blossom", "暮雪禮盒", "the Snowy Twilight gift box"],
+    ["orchid", "蝴蝶蘭禮盒", "the Royal Orchid gift box"],
+    ["purple-butterfly", "紫斑蝶禮盒", "the Sapphire Wings gift box"],
+    ["kyoto", "京都職人手作禮盒", "the Kyoto Artisanal Reserve gift box"],
+    ["year-of-plenty", "年年有魚禮盒", "the Abundance & Prosperity gift box"],
+    ["blossoming-prosperity", "花開富貴禮盒", "the Prosperity in Bloom gift box"],
+  ] as const) sceneLead[`${slug}-gift-box`] = [site(`scene-${slug}-gift-box-olive-sofa-pouch.webp`, t(`${zh}與一杯小金魚茶`, `${en[0].toUpperCase()}${en.slice(1)} with a glass of goldfish tea`), 1856, 2304), ...(sceneLead[`${slug}-gift-box`] ?? [])];
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
   // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
   // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, and the front view for

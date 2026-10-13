@@ -136,7 +136,7 @@ export const teaGifts: TeaGift[] = [
   // (Nano Banana 2.1 after the user's reference photo, the string retouched to fall behind the far rim; user 2026-10-08: 「取代全站這張圖」)
   // 春曉粉紅盒蓋的商品圖（使用者 2026-10-08：「粉紅色版封面…根據目前官網的商品圖生成 2 張商品圖，第 3 張共用 12 入的圖」）：以藍色盒蓋的封面與斜角圖
   // 為底、只換布色（粉紅＋淡黃紮染）與緞帶色（淡粉），刺繡與金字不動（Nano Banana 2.1，照使用者的實拍）；選到粉紅盒蓋時商品圖切換成這組
-  { officialId: 850, slug: "spring-dawn-gift-box", lidViews: { 1: { cover: "studio-spring-dawn-gift-box-pink-cover.webp", angle: "studio-spring-dawn-gift-box-pink-end-angle.webp", front: "official-gift-front-spring-dawn-gift-box-pink-cutout-v3.webp" } }, storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "暖陽斜照下，雙手捧著米白斑點陶杯，杯中泡開的小金魚茶包透出粉紅玫瑰花瓣與深色茶葉", en: "In low warm sunlight, two hands hold a cream speckled stoneware mug; the brewed goldfish tea bag inside shows its pink rose petals and dark tea leaves" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
+  { officialId: 850, slug: "spring-dawn-gift-box", lidViews: { 1: { cover: "studio-spring-dawn-gift-box-pink-cover.webp", angle: "studio-spring-dawn-gift-box-pink-end-angle.webp", front: "official-gift-front-spring-dawn-gift-box-pink-cutout-v3.webp" } }, storyFile: { file: "scene-hands-speckled-mug-goldfish-tea-warm-light.webp", alt: { zh: "雙手捧著一杯泡開的小金魚茶", en: "Two hands holding a cup of brewed goldfish tea" } }, name: "春曉", english: "SPRING AWAKENING", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), lid: [blue, pink], usd: 230,
     description: "CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。", en: "As dawn breaks, morning sunlight washes the sky into a soft, translucent veil. Yellow tits sing their morning song amid the golden blossoms of a trumpet tree, weaving a spring scene that invites you to linger." } },
     notice: [competitionPricing, tieDyeColors],
@@ -185,8 +185,8 @@ const brewSteps = (t: (zh: string, en: string) => string) => [
 // loop-handle glass teacup with the brewed goldfish, and the flat matte-gold tag (straight crimped ends, about the cup's width; 「茶標籤是扁的」).
 // Nano Banana 2.1 at 4K, cropped to drop UI copied from the light reference. Earlier versions stay in docs/qa/2026-10-12-brew-photo-progress.
 const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing-gooseneck-dark-oak-sunbeam.webp",
-  t("昏暗的房間裡，一道暖金色斜陽落在黑橡木圓桌上；一隻手握著黑色霧面細嘴壺，熱水從細長壺嘴注入有把手的玻璃茶杯，杯中泡開的小金魚茶包透出玫瑰花瓣，蒸氣在逆光裡升起；杯旁平放著印有 CHARM VILLA 的霧金色扁平茶標",
-    "In a dim room a shaft of warm golden sun falls across a round black-oak table; a hand holds a matte black gooseneck kettle and pours hot water into a glass teacup with a loop handle, where a brewed goldfish tea bag shows its rose petals and steam rises through the backlight; beside the cup lies a flat matte gold CHARM VILLA tea tag"), 2048, 3072);
+  t("熱水倒入玻璃杯，杯中的小金魚茶包泡開",
+    "Hot water poured over a goldfish tea bag in a glass teacup"), 2048, 3072);
 
 // 茶款介紹 under the specifications, as on the official product pages (user 2026-10-07, with the wording for the four main teas);
 // 金萱 and 花果茶 are condensed from the official store's descriptions. A competition tea describes its base tea, plus the note on the competitions.

@@ -30,7 +30,7 @@ export const getAbout = (lang: Locale) => {
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：白包照換成方凳托盤上的小金魚茶
     // v4 again (user 2026-10-07: 「換回原本的」 after a v5 that redrew the cup, the goldfish and the tag; v5 stays in git history)
-    hero: site("scene-olive-armchair-books-goldfish-tea.webp", t("橄欖綠皮革扶手椅上疊著一本橘色、一本深藍色的書，書上放著雲朵檜木杯墊與一杯玻璃杯小金魚茶，茶湯在橘色書皮上映出光斑；牆邊靠著一幅橘色筆觸的抽象畫", "On an olive-green leather armchair, an orange book on a navy one, a cloud-shaped hinoki coaster and a glass cup of goldfish tea on top, the tea casting a glow on the orange cover; an orange abstract painting leans against the wall behind"), 1856, 2304),
+    hero: site("scene-olive-armchair-books-goldfish-tea.webp", t("疊起的書上，雲朵杯墊承著一杯小金魚茶", "Goldfish tea on a Cloud Coaster, resting on stacked books"), 1856, 2304),
     // the shop-like additions after zema-template.webflow.io/our-story (user 2026-10-05: 「補齊更像電商的功能」): a link under each chapter (the
     // button under the intro was removed: 「刪」),
     // the store's service terms, questions and answers. All facts come from
@@ -59,7 +59,7 @@ export const getAbout = (lang: Locale) => {
         // the brand's own photograph of its paper-goldfish installation (341.JPG), re-shot as a 2K studio image by Nano Banana 2.1 with the
         // composition kept (user 2026-10-08: 「用 Higgsfield…enhance，把它變成是…更有質感的 studio shot，然後 2K 的 image。放進官網」); it replaces
         // the grey block of 2026-10-07. The design-fair booth photograph (about-scene-01-exhibition-panel.webp) stays on file.
-        image: site("about-scene-01-paper-goldfish-exhibition.webp", t("展場裡懸著一群白色薄紙摺的小金魚，前景一尾虛化、中景的摺痕與魚鰭清楚；背景是藍色墨染的板子與黑色反光地面", "A shoal of white tissue-paper goldfish hung in an exhibition, one blurred in the foreground and the folds and fins of the others sharp; behind them a panel of blue ink wash and a black reflective floor"), 2528, 1696),
+        image: site("about-scene-01-paper-goldfish-exhibition.webp", t("展場裡懸掛的白色紙摺小金魚", "White paper goldfish hanging in an exhibition"), 2528, 1696),
       },
       {
         id: "goldfish", index: "02", side: "left",
@@ -74,7 +74,7 @@ export const getAbout = (lang: Locale) => {
         // 02 改用手作過程照，直接呼應 16 道工序與 9 道手作（使用者 2026-10-12：「取消合併，再幫我重新配圖」「挑適合 02 的圖」）。
         // 同日再換（「要換 about 02 的圖…有職人感，符合內容，並巧妙避開小金魚茶包容易出錯的破綻」）：新生成的手工填茶情境，完成的小金魚不入鏡、
         // 沒有膠水（內文寫不使用化學黏劑），光線沿用官網攝影風格（Nano Banana 2.1）；about-02.webp 保留在 repo。
-        image: site("about-02-artisan-filling-tea-v2.webp", t("暖陽斜照的木桌上，職人用小銅匙把乾茶葉放到攤平的不織布上，旁邊是一疊裁好的不織布、一碗茶葉、一捲細棉線、剪刀與小銅秤", "In warm slanting sun, an artisan uses a small brass scoop to place dry tea leaves on a flat piece of non-woven fabric, beside a stack of cut pieces, a bowl of tea, a spool of fine cotton thread, scissors and a small brass scale"), 1792, 2400),
+        image: site("about-02-artisan-filling-tea-v2.webp", t("職人把茶葉放到不織布上，手作小金魚茶包", "An artisan fills a goldfish tea bag with tea leaves by hand"), 1792, 2400),
       },
       {
         id: "world", index: "03", side: "right",
@@ -86,7 +86,7 @@ export const getAbout = (lang: Locale) => {
             "Today the goldfish tea bag holds design patents in 34 countries and has appeared in international media such as Bored Panda and Contemporist; the brand also has a store on Teramachi in Kyoto."),
         ],
         // the brand's photograph of one paper goldfish on a mirror among white blossoms (CV-0169; user 2026-10-05: 「換」 for the school of fish, CV-0166)
-        image: gallery("CV-0169", t("一尾白色紙金魚停在鏡面上，倒影與白色花叢", "A single white paper goldfish on a mirror, its reflection among white blossoms"), 1200, 1800),
+        image: gallery("CV-0169", t("鏡面上的一尾白色紙金魚", "A white paper goldfish on a mirror"), 1200, 1800),
       },
       {
         id: "everyday", index: "04", side: "left",
@@ -101,21 +101,21 @@ export const getAbout = (lang: Locale) => {
         // generated scene (user 2026-10-07); the red gift box scene scene-red-giftbox-tea-hinoki-bird.webp stays in the repo.
         // v2 (user 2026-10-07: 「這張刪掉杯墊與其他商品」, then 「加回其他商品，注意『盤子下面不要再放杯墊』」): the pieces are back on the
         // table but the saucer stands directly on the wood; only the table top changed between versions (local edits, composited back)
-        image: site("about-scene-04-everyday-pieces-v2.webp", t("橄欖綠沙發旁的胡桃木邊桌：白瓷杯小金魚茶放在白瓷盤上，旁邊一片雲朵杯墊、銀杏茶匙，一雙檜木筷擱在柴燒鳥形筷架上", "A walnut side table by an olive sofa: goldfish tea in a white cup on its saucer, a Cloud Coaster, a Ginkgo Style Tea Spoon and hinoki chopsticks on a wood-fired Songbird Chopsticks Rest"), 1856, 2304),
+        image: site("about-scene-04-everyday-pieces-v2.webp", t("小金魚茶旁的雲朵杯墊、銀杏茶匙、檜木筷子與鳥形筷架", "Goldfish tea with the Cloud Coaster, Ginkgo Style Tea Spoon, Hinoki Wood Chopsticks and Songbird Chopsticks Rest"), 1856, 2304),
       },
     ] satisfies AboutChapter[],
     rangeTitle: t("作品", "The pieces"),
     range: [
-      { id: "tea", image: site("scene-oak-table-goldfish-tea-chair.webp", t("暗暖光線下的橡木長桌，一杯小金魚茶與金色 CHARM VILLA 茶標，桌邊是胡桃木扶手椅", "In low warm light a cup of goldfish tea and its gold CHARM VILLA tag on an oak table, a walnut armchair at its edge"), 1792, 2240) },
+      { id: "tea", image: site("scene-oak-table-goldfish-tea-chair.webp", t("一杯小金魚茶與金色茶標", "A cup of goldfish tea with its gold tag"), 1792, 2240) },
       // the same picture as the menu's Scents preview (user 2026-10-05: 「改成選單的香氛那一張」)
-      { id: "scents", image: site("scene-wooden-tray-table-sofa-v4.webp", t("橄欖綠沙發旁的黑色托盤邊几，刻著 CHARMVILLA 的梅花木盒、雲朵杯墊與銀杏茶匙", "A black tray table by an olive sofa: a plum-blossom box, a Cloud Coaster and a Ginkgo Style Tea Spoon, each engraved CHARMVILLA"), 1376, 2048) },
+      { id: "scents", image: site("scene-wooden-tray-table-sofa-v4.webp", t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Style Tea Spoon on a tray table"), 1376, 2048) },
       { id: "jewelry", image: site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉，耳垂上的鑽石垂墜小金魚耳環", "A black-and-white profile wearing the diamond goldfish drop earring"), 1792, 2240) },
       // the black-and-white portrait of the man in black holding the white bag (user 2026-10-05: 「改成男生黑白，黑衣服張」), framed on face, hand and bag
       { id: "bags", image: { src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：穿黑衣的男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man in black, arms over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720 }, position: "65% 50%" },
       // a scene instead of the studio shot, the same picture as the menu's Abundance preview (user 2026-10-05: 「用情境照」)
       { id: "abundance", image: site("scene-dessert-stand-fireplace-lounge-v2.webp", t("夜晚的酒廊，大理石層架與壁爐火光前，深色桌上的豐盛點心盤擺著幾樣精緻小點心，旁邊一杯紅茶、巧克力與閃電泡芙", "A lounge at night, backlit marble shelves and a fire behind: on a dark table the Abundance Dessert Tray with a few refined petits fours, a cup of tea, chocolates and an éclair"), 1792, 2240) },
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
-      { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("深色古銅托盤上的四隻柴燒鳥形筷架、備長炭與一雙檜木筷，近看", "Four wood-fired Songbird Chopsticks Rests, binchotan and hinoki chopsticks on a dark bronze tray, close up"), 1792, 2240) },
+      { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("托盤上的鳥形筷架與檜木筷子特寫", "A close-up of Songbird Chopsticks Rests and Hinoki Wood Chopsticks"), 1792, 2240) },
     ] satisfies AboutRange[],
     // the US store's Shipping & Returns Policy and FAQ (commerce.ts, user's document 2026-10-07)
     benefits: [
