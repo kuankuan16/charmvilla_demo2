@@ -56,10 +56,10 @@ const buildContent = (lang: Locale) => {
       t("藝術的日常尺度\n來自職人的極致琢磨", "Art in everyday life\nRefined by the artisan's\u00A0hand"),
       // 2026-10-02, the user's own rewrite of both paragraphs (the awards and patents now told in the copy; the first word's
       // 「一」 restored where the pasted text had lost it).
-      t("一段在指間交織的編織，一道掠過耳畔的光影，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃，而在極致工藝融入生活的靈動時刻：被配戴、被捧起、被細細品嘗，成為日常節奏的一部分。",
-        "Leather woven between the fingers. A glimmer of light beside the ear. A little goldfish slowly unfurling in tea. At CHARM VILLA, we believe beauty comes alive when exceptional craft becomes part of everyday life: worn, held and savored."),
-      t("每一件作品，都由職人以時間磨礪皮革、黃金與茶葉，將手的溫度與極致比例賦予形體。這份對原創工藝的堅守，讓小金魚茶包榮獲德國 Red Dot 紅點傳達設計獎與 iF 設計大獎，並取得全球 34 國專利。當藝術走出展覽，躍上肩頭、掠過耳畔、躍入茶湯，卓越的國際榮譽便落實為可被觸摸的日常尺度，讓美成為生活的本質。",
-        "Our artisans take time to refine leather, gold and tea, giving each creation the warmth of the hand and a carefully considered form. This dedication to original design has brought the goldfish tea bag international recognition, including the Red Dot Award: Communication Design and the iF Design Award, along with design patents in 34 countries. As each piece moves from display into daily life, art becomes something we can touch and enjoy."),
+      t("一縷在杯中升起的茶香，一片在掌心溫潤的木紋，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃，而在極致工藝融入生活的靈動時刻：被捧起、被使用、被細細品嘗，成為日常節奏的一部分。",
+        "A curl of tea fragrance rising from the cup. Wood grain warm in the palm. A little goldfish slowly unfurling in tea. At CHARM VILLA, we believe beauty comes alive when exceptional craft becomes part of everyday life: held, used and savored."),
+      t("每一件作品，都由職人以時間磨礪茶葉、木材與紙，將手的溫度與極致比例賦予形體。這份對原創工藝的堅守，讓小金魚茶包榮獲德國 Red Dot 紅點傳達設計獎與 iF 設計大獎，並取得全球 34 國專利。當藝術走出展覽，捧在手心、放上餐桌、躍入茶湯，卓越的國際榮譽便落實為可被觸摸的日常尺度，讓美成為生活的本質。",
+        "Our artisans take time to refine tea, wood and paper, giving each creation the warmth of the hand and a carefully considered form. This dedication to original design has brought the goldfish tea bag international recognition, including the Red Dot Award: Communication Design and the iF Design Award, along with design patents in 34 countries. As each piece moves from display into daily life, art becomes something we can touch and enjoy."),
     ],
     awards: t("小金魚茶包榮獲 2014 德國紅點傳達設計獎（Red Dot Winner）與 2015 德國 iF 設計大獎（iF DESIGN AWARD）。",
       "The goldfish tea bag received the Red Dot Award: Communication Design 2014 (Red Dot Winner) and the iF DESIGN AWARD 2015, both in Germany."),
