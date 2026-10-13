@@ -315,7 +315,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       teaNotes: (() => {
         const names = gift.choices ? gift.choices.flatMap(c => c.contents.map(x => x.name)) : gift.contents.map(c => c.name);
         const keys = [...new Set(names.map(teaNoteKey))];
-        const items: { name: string; text: string; term?: string }[] = keys.map(k => { const n = teaNotes[k]; if (!n) throw new Error(`tea-gifts: no 茶款介紹 for "${k}"`); return { name: v(k), text: lt(n) }; });
+        const items: { name: string; text: string; term?: string }[] = keys.map(k => { const n = teaNotes[k]; if (!n) throw new Error(`tea-gifts: no 茶款介紹 for "${k}"`); return { name: v(names.find(x => teaNoteKey(x) === k) ?? k), text: lt(n) }; }); // the card names the tea as the box lists it (頭等獎玫瑰烏龍茶, 貳等獎東方美人茶…; user 2026-10-13: 茶款介紹與禮盒內容名稱要一致)
         if (names.some(isCompetitionTea)) items.push({ name: t("比賽獲獎茶", "Competition-winning teas"), text: lt(competitionNote), term: t("得獎茶", "Award-winning") });
         return { title: t("茶款介紹", "About the teas"), items };
       })(),
