@@ -603,7 +603,7 @@ const buildCatalog = (lang: Locale) => {
     "reunion-paper-gift-box": ["scene-reunion-gift-box-us-olive-sofa-pouch.webp", twoPeople, mug],
     "spring-dawn-gift-box": ["scene-spring-dawn-gift-box-blue-pink-sunbeam.webp", "scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", mug], // 藍、粉兩色並列窗光照領頭、也是清單 hover（使用者 2026-10-13：「發布在 demo2 並更新 hover 圖」）
     "winter-blossom-gift-box": ["scene-winter-blossom-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
-    "orchid-gift-box": ["scene-orchid-gift-box-gold-pink-sunbeam.webp", "scene-orchid-gift-box-two-friends-tea.webp", "scene-orchid-gift-box-olive-sofa-pouch.webp"], // 兩人對飲照成為頁尾大圖（使用者 2026-10-13：「上情境」） // 金、粉兩色並列的窗光照領頭、也是清單 hover（使用者 2026-10-13：「hover 換雙封面」）；沙發照退為第二張
+    "orchid-gift-box": ["scene-orchid-gift-box-gold-pink-sunbeam.webp", "scene-orchid-gift-box-olive-sofa-pouch.webp", "scene-orchid-gift-box-two-friends-tea.webp"], // 兩人對飲照與沙發照左右交換（使用者 2026-10-13：「左右交換」） // 金、粉兩色並列的窗光照領頭、也是清單 hover（使用者 2026-10-13：「hover 換雙封面」）；沙發照退為第二張
     "purple-butterfly-gift-box": ["scene-purple-butterfly-gift-box-olive-sofa-pouch.webp", "scene-purple-butterfly-gift-box.webp", mug],
     "kyoto-gift-box": ["scene-kyoto-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
