@@ -72,7 +72,7 @@ const wood = "桐木盒、織布盒蓋";
 const woodTieDye = "桐木盒搭配紮染布面盒蓋，飾以手工刺繡";
 const woodEmbroidered = "桐木盒搭配手工刺繡布面盒蓋";
 const paperKyoto = "高密度紙盒搭配連體盒蓋與封口封條";
-const reunionBoxes = "依包裝選項：橘色紙盒、桐木盒或藍色紙盒，皆搭配手工刺繡盒蓋";
+const reunionBoxes = "橘色紙盒搭配金色手工刺繡盒蓋";
 const longBox = "28.6 × 11.7 × 9 cm";    // 11.3 × 4.6 × 3.5 in
 const smallBox = "20.5 × 18.5 × 6.9 cm"; // 8.1 × 7.3 × 2.7 in
 const squareBox = "28 × 19 × 9 cm";      // 11.0 × 7.5 × 3.5 in
@@ -89,7 +89,7 @@ const english: Record<string, string> = {
   [woodTieDye]: "Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery",
   [woodEmbroidered]: "Paulownia wood box with a hand-embroidered fabric lid",
   [paperKyoto]: "High-density paper box with an attached lid and closure seal",
-  [reunionBoxes]: "By packaging option: orange paper box, paulownia wood box or blue paper box, each with a hand-embroidered lid",
+  [reunionBoxes]: "Orange paper box with a hand-embroidered gold lid",
   "紙盒": "Paper box", "繽紛紙紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid", "繽紛紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid",
   "2 年": "2 years", "1 年": "1 year",
   "繽紛紙盒・12 入": "Paper box · 12 tea bags", "桐木木盒・12 入": "Paulownia box · 12 tea bags",
@@ -99,17 +99,14 @@ const tieDyeColors: Bi = { zh: "紮染盒蓋的色彩依實品為準，可能與
 const embroideryNote: Bi = { zh: "盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。", en: "The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation." };
 
 export const teaGifts: TeaGift[] = [
-  // 團圓 Joyful Reunion: one listing with the three packaging options of the US store (the Taiwan store's two 12-bag boxes were separate listings)
+  // 團圓 Joyful Reunion: one listing (the US store listed three packaging options; only the gold lid is on sale) (the Taiwan store's two 12-bag boxes were separate listings)
   { officialId: 891, slug: "reunion-paper-gift-box", journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: reunionBoxes, dimensions: "", weight: 0, contents: fifteen, usd: 170, scene: "CV-0348",
-    packaging: [
-      { label: gold, text: { zh: "橘色紙盒搭配金色手工刺繡盒蓋。", en: "Orange paper box with a hand-embroidered gold lid." } },
-      { label: pink, text: { zh: "桐木盒搭配粉紅色手工刺繡盒蓋。", en: "Paulownia wood box with a hand-embroidered pink lid." }, placeholderViews: 2 /* still on sale; grey blocks until the client supplies photographs and details (2026-10-07 「粉紅色商品下架改成灰色塊」 was corrected 2026-10-12: 「沒有要下架，要請客戶補資料」) */ },
-      { label: blue, text: { zh: "藍色紙盒搭配黃色手工刺繡盒蓋。", en: "Blue paper box with a hand-embroidered yellow lid." }, placeholderViews: 2 /* same: on sale, awaiting the client's photographs and details (2026-10-12) */ },
-    ],
-    description: "CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包。所有包裝選項均含相同茶款組合，適合與親友共享或贈禮。",
+    // Pink and blue packaging are off sale (user 2026-10-13: 「粉紅色跟藍色目前都先下架，還沒有商品可以賣」, reversing 10-12); only the
+    // gold-lid box is sold, so there is no packaging chooser. The pink and blue options, with their grey placeholder views, are in git history.
+    description: "CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包，適合與親友共享或贈禮。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "不同茶款的小金魚在一方禮盒內團聚，象徵著團圓美好之意。", en: "Little goldfish filled with different teas gather in one gift box, celebrating reunion and the joy of being together." } },
-    notice: [{ zh: "三款包裝均含相同的 15 包茶款組合。" + embroideryNote.zh, en: "All three options contain the same 15-bag tea assortment. " + embroideryNote.en }],
-    en: { name: "Joyful Reunion", description: "Joyful Reunion is a CHARM VILLA gift set containing 15 Goldfish Tea Bags: three each of five tea varieties. Every packaging option contains the same assortment, offering a selection to enjoy together or give as a gift." } },
+    notice: [embroideryNote],
+    en: { name: "Joyful Reunion", description: "Joyful Reunion is a CHARM VILLA gift set containing 15 Goldfish Tea Bags: three each of five tea varieties, a selection to enjoy together or give as a gift." } },
   { officialId: 64, slug: "reunion-paulownia-gift-box", hidden: true, journalStory: 308, name: "團圓｜桐木木盒", english: "REUNION / PAULOWNIA BOX", series: "經典商品", pieces: 12, box: wood, dimensions: longBox, weight: 407, contents: reunion, sceneFile: "CV-0350-tag2.webp" /* the brand's CV-0350 with the real gold foil tag (2026-10-05) */, description: "織布的經緯與桐木的紋理，在一只盒上相接。四款台灣茶各自成形，讓一份茶禮，也成為值得收藏的日常物件。",
     en: { name: "Reunion | Paulownia Box", description: "The weave of the fabric and the grain of paulownia meet on a single box. Four Taiwanese teas each take their own form, making a gift of tea an everyday object worth keeping." } },
   { officialId: 954, slug: "year-of-plenty-gift-box", /* journal-319 (the oak table, a bowl and a green cloth) and CV-0356-tag2 (the red box with its ribbon, a gold-rimmed cup) removed — user 2026-10-08: 「刪」 */ name: "年年有魚", english: "ABUNDANCE & PROSPERITY", series: "經典商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, contents: eighteen, usd: 220 /* the brand's CV-0356 with the real gold foil tag (2026-10-05) */,
