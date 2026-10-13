@@ -398,6 +398,8 @@ const buildCatalog = (lang: Locale) => {
   for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity", "christmas", "snowflake"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
   // 蝴蝶蘭：兩人在橄欖綠扶手椅旁對飲、杯中各有小金魚茶包，禮盒是焦點（使用者 2026-10-13 選定：「上情境」）
   sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-two-friends-tea.webp", t("兩個人在扶手椅旁享用小金魚茶，桌上是粉紅色蝴蝶蘭禮盒", "Two people enjoying goldfish tea by the armchairs, the pink Royal Orchid gift box on the table"), 2784, 3456)];
+  // 雪花三盒組：照紫斑蝶沙發照的構圖，三盒同斜角（使用者 2026-10-13）
+  sceneExtra["snowflake-gift-box"] = [...(sceneExtra["snowflake-gift-box"] ?? []), site("scene-snowflake-gift-box-olive-sofa-pouch.webp", t("胡桃木邊桌上的三盒雪花迷人禮，旁邊是茶包與一杯小金魚茶", "Three Snowflake Charming Gift boxes on a walnut side table, with a tea pouch and a cup of goldfish tea"), 2784, 3456)];
   // 春曉：藍色與粉紅盒蓋並列的窗光照（使用者 2026-10-13：「幫我生一張 春曉 的雙封面情境照/heroimage」，4K）
   sceneExtra["spring-dawn-gift-box"] = [...(sceneExtra["spring-dawn-gift-box"] ?? []), site("scene-spring-dawn-gift-box-blue-pink-sunbeam.webp", t("陽光下並列的藍色與粉紅色盒蓋春曉禮盒，旁邊是一杯小金魚茶", "Spring Awakening gift boxes with blue and pink lids side by side in the sun, beside a cup of goldfish tea"), 2784, 3456)];
   // 蝴蝶蘭：金色與粉紅盒蓋並列的情境照（使用者 2026-10-13：「一次擺2種顏色封面的禮盒示意」/luxuryshot；窗光、木桌、背景柔焦植物、盒子加厚、4K）
@@ -616,7 +618,7 @@ const buildCatalog = (lang: Locale) => {
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
     "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
     "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", "scene-christmas-gift-box-burgundy-sunbeam.webp", mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
-    "snowflake-gift-box": [twoPeople, mug], // 2026-10-13 先上架：沒有專屬情境照，只用兩張共用照
+    "snowflake-gift-box": ["scene-snowflake-gift-box-olive-sofa-pouch.webp", twoPeople, mug], // 沙發照領頭、也是清單 hover（使用者 2026-10-13：「用這個做情境圖」→「好」）
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
