@@ -18,12 +18,12 @@ const build = (lang: Locale) => {
   return {
     // user 2026-10-02: the heading and the four artisans' lines 換 the user's title and two paragraphs (the category links go too;
     // the last sentence was cut off in the paste and ends 「本質。」 as the user confirmed). The items below keep only their photographs' role.
-    heading: [t("始於手溫", "Begun in the warmth of the hand"), t("形於日常", "Shaped in the everyday")],
+    heading: [t("始於手溫", "Made by hand"), t("形於日常", "Brought to life every day")],
     body: [
       t("物質本無言語，直到職人的手與時間在此重逢。從一折紙的流動、落刀前對皮革紋理的叩問，到金屬與木石在磨礪中的減法，我們在反覆琢磨的細節裡，將生命的溫度悄然刻入形體。",
-        "Material has no words of its own until the artisan's hands and time meet in it. From the flow of a single fold of paper and the question put to the grain of leather before the blade comes down, to what metal, wood and stone lose as they are honed, we press the warmth of life quietly into form through details worked over again and again."),
+        "Materials find their expression through the artisan's hands and the time spent working them. A fold gives paper movement; the grain of leather guides a cut; metal, wood and stone reveal their form through careful shaping. With each refinement, the warmth of the hand becomes part of the piece."),
       t("當作品走出展台，躍上肩頭、掠過耳畔、躍入茶湯，藝術便不再遙遠，而是轉化為一種可被觸摸的棲居姿態，凝練為生活最純粹的本質。",
-        "When a piece leaves the display for the shoulder, the ear and the tea, art is no longer far away. It becomes a way of living you can touch."),
+        "Worn over a shoulder, catching the light beside an ear, or unfurling in a cup of tea, each creation brings art into reach: a quiet, tangible part of everyday life."),
     ],
     // The two small photographs at the left of the first row (user 2026-10-02: the leather and goldsmith photographs
     // 換 these two). Cut from the user's side-by-side image to 4:5; 100 px of the plain studio ground continued above

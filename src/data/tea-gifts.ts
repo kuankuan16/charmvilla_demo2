@@ -81,9 +81,9 @@ const blue: Bi = { zh: "藍色", en: "Blue" }, pink: Bi = { zh: "粉紅色", en:
 
 // English wording for the shared vocabulary. Every Chinese value used above must have an entry (checked at build).
 const english: Record<string, string> = {
-  [rose]: "Rose Oolong Tea", [honey]: "Rose & Honey-Scented Black Tea", [ruby]: "Ruby Black Tea (Red Jade / Ruby No.18)",
+  [rose]: "Rose Oolong Tea", [honey]: "Rose & Honey-Scented Black Tea", [ruby]: "Ruby Black Tea (Red Jade / Ruby No. 18)",
   [beauty]: "Oriental Beauty Tea (White Tip Oolong)", [jinxuan]: "Jin Xuan Oolong Tea (Golden Lily)", [fruit]: "Fruit & Herbal Tea",
-  [firstRose]: "First Prize Rose Oolong Tea", [secondBeauty]: "Second Prize Oriental Beauty Tea", [thirdBeauty]: "Third Prize Oriental Beauty Tea",
+  [firstRose]: "First-Prize Rose Oolong Tea", [secondBeauty]: "Second-Prize Oriental Beauty Tea", [thirdBeauty]: "Third-Prize Oriental Beauty Tea",
   "經典商品": "Classic Gift Boxes", "珍稀商品": "Rare Gift Boxes", "2026 中秋節限定商品": "2026 Mid-Autumn Gift Boxes",
   [wood]: "Paulownia wood box, woven-fabric lid", "織布盒蓋、繽紛紙盒（日本製）": "Woven-fabric lid, patterned paper box (made in Japan)",
   [woodTieDye]: "Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery",
@@ -94,7 +94,7 @@ const english: Record<string, string> = {
   "2 年": "2 years", "1 年": "1 year",
   "繽紛紙盒・12 入": "Paper box · 12 tea bags", "桐木木盒・12 入": "Paulownia box · 12 tea bags",
 };
-const competitionPricing: Bi = { zh: "價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。", en: "Prices are subject to change and will be adjusted based on the official pricing from the tea competitions (held twice a year)." };
+const competitionPricing: Bi = { zh: "價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。", en: "Prices are subject to change based on the official pricing of the tea competitions held twice a year." };
 const tieDyeColors: Bi = { zh: "紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。", en: "Actual tie-dyed lid colors may differ from the product images." };
 const embroideryNote: Bi = { zh: "盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。", en: "The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation." };
 
@@ -107,7 +107,7 @@ export const teaGifts: TeaGift[] = [
       { label: blue, text: { zh: "藍色紙盒搭配黃色手工刺繡盒蓋。", en: "Blue paper box with a hand-embroidered yellow lid." }, placeholderViews: 2 /* same: on sale, awaiting the client's photographs and details (2026-10-12) */ },
     ],
     description: "CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包。所有包裝選項均含相同茶款組合，適合與親友共享或贈禮。",
-    story: { title: { zh: "故事", en: "Story" }, body: { zh: "不同茶款的小金魚在一方紙盒內團聚，象徵著團圓美好之意。", en: "Little goldfish carrying different teas gather in one paper box, a symbol of reunion and the joy of togetherness." } },
+    story: { title: { zh: "故事", en: "Story" }, body: { zh: "不同茶款的小金魚在一方禮盒內團聚，象徵著團圓美好之意。", en: "Little goldfish filled with different teas gather in one gift box, celebrating reunion and the joy of being together." } },
     notice: [{ zh: "三款包裝均含相同的 15 包茶款組合。" + embroideryNote.zh, en: "All three options contain the same 15-bag tea assortment. " + embroideryNote.en }],
     en: { name: "Joyful Reunion", description: "Joyful Reunion is a CHARM VILLA gift set containing 15 Goldfish Tea Bags: three each of five tea varieties. Every packaging option contains the same assortment, offering a selection to enjoy together or give as a gift." } },
   { officialId: 64, slug: "reunion-paulownia-gift-box", hidden: true, journalStory: 308, name: "團圓｜桐木木盒", english: "REUNION / PAULOWNIA BOX", series: "經典商品", pieces: 12, box: wood, dimensions: longBox, weight: 407, contents: reunion, sceneFile: "CV-0350-tag2.webp" /* the brand's CV-0350 with the real gold foil tag (2026-10-05) */, description: "織布的經緯與桐木的紋理，在一只盒上相接。四款台灣茶各自成形，讓一份茶禮，也成為值得收藏的日常物件。",
@@ -117,7 +117,7 @@ export const teaGifts: TeaGift[] = [
     en: { name: "Abundance & Prosperity", description: "Abundance & Prosperity is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box with a hand-embroidered fabric lid. Four tea varieties are included in every box, making it a thoughtful assortment for shared tea moments and festive gifting.", summary: "18 Goldfish Tea Bags per box · Four-tea assortment" } },
   { officialId: 1053, slug: "blossoming-prosperity-gift-box", sceneFile: "scene-blossoming-prosperity-gift-box.webp", /* journalStory 329 (the white cup by a lamp) off the page (user 2026-10-08: 「刪」) */ name: "花開富貴", english: "PROSPERITY IN BLOOM", series: "經典商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, contents: eighteen, usd: 220,
     description: "CHARM VILLA「花開富貴」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。固定的四款茶組合匯集玫瑰烏龍茶、紅玉紅茶、金萱烏龍茶與東方美人茶，適合在慶祝與相聚時分享。", notice: [embroideryNote],
-    en: { name: "Prosperity in Bloom", description: "Prosperity in Bloom is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box with a hand-embroidered fabric lid. Its fixed four-tea assortment brings together Rose Oolong, Ruby Black, Jin Xuan Oolong, and Oriental Beauty for a gift to share at celebrations and gatherings.", summary: "18 Goldfish Tea Bags per box · Four-tea assortment" } },
+    en: { name: "Prosperity in Bloom", description: "Prosperity in Bloom is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box with a hand-embroidered fabric lid. Its assortment brings together Rose Oolong, Ruby Black, Jin Xuan Oolong, and Oriental Beauty for a gift to share at celebrations and gatherings.", summary: "18 Goldfish Tea Bags per box · Four-tea assortment" } },
   { officialId: 104, slug: "spring-blossoms-gift-box", hidden: true, sceneFile: "scene-spring-blossoms-gift-box.webp", journalStory: 325, name: "花滿富春", english: "SPRING BLOSSOMS", series: "經典商品", pieces: 18, box: wood, dimensions: rareBox, weight: 400, contents: eighteen, description: "金魚游過牡丹花間，花葉與魚形構成盒上的風景。四款茶盛入十八尾手作小金魚，從盒中的陳列走向杯裡的舒展。",
     en: { name: "Spring Blossoms", description: "Goldfish swim among peonies; blossom, leaf and fish form the scenery on the lid. Four teas fill eighteen handmade goldfish, moving from their arrangement in the box to their unfurling in the cup." } },
   { officialId: 692, slug: "kyoto-gift-box", /* journalScene 320 (the box on an oak desk by a pencil and an envelope) and journalStory 309 (on an oak bench by a tote and keys) both off the page (user 2026-10-08: 「刪」) */ name: "京都版", english: "KYOTO ARTISANAL RESERVE", series: "經典商品", pieces: 6, box: paperKyoto, dimensions: smallBox, weight: 99, contents: [], usd: 60,
@@ -140,17 +140,17 @@ export const teaGifts: TeaGift[] = [
     description: "CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。", en: "As dawn breaks, morning sunlight washes the sky into a soft, translucent veil. Yellow tits sing their morning song amid the golden blossoms of a trumpet tree, weaving a spring scene that invites you to linger." } },
     notice: [competitionPricing, tieDyeColors],
-    en: { name: "Spring Awakening", description: "Spring Awakening is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Its spring-dawn inspiration brings a sense of renewal to a tea moment or a thoughtful gift. Choose your tea and a Blue or Pink lid.", summary: "12 Goldfish Tea Bags per box · First Prize Rose Oolong Tea or Third Prize Oriental Beauty Tea" } },
+    en: { name: "Spring Awakening", description: "Spring Awakening is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Its spring-dawn inspiration brings a sense of renewal to a tea moment or a thoughtful gift. Choose your tea and a Blue or Pink lid.", summary: "12 Goldfish Tea Bags per box · First-Prize Rose Oolong Tea or Third-Prize Oriental Beauty Tea" } },
   { officialId: 582, slug: "winter-blossom-gift-box", /* journalStory 303 (the armchair by the window) off the page (user 2026-10-08: 「刪」) */ name: "暮雪", english: "SNOWY TWILIGHT", series: "珍稀商品", pieces: 12, box: woodTieDye, dimensions: longBox, weight: 350, contents: [], choices: twelve(230, 260), usd: 230,
     description: "CHARM VILLA「暮雪」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。靈感來自櫻花與白雪相遇的景緻，為自己或珍視的人留下一段靜謐的品茶時光。",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "時至暮冬，即將迎來初春日子，總會令人聯想起櫻花遍土盛放的景色。在暮冬曉春之際，櫻雪互映的模樣，願能為您帶來初春新露時分清雅恬淡的美好。", en: "As the last days of winter give way to early spring, we picture cherry blossoms opening across the landscape. Where blossom meets snow, Snowy Twilight captures the quiet grace of that fleeting season. May it bring you the fresh, gentle beauty of spring's first light." } },
     notice: [competitionPricing, tieDyeColors],
-    en: { name: "Snowy Twilight", description: "Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Inspired by the meeting of cherry blossoms and snow, the collection offers a quiet tea moment for yourself or someone special.", summary: "12 Goldfish Tea Bags per box · First Prize Rose Oolong Tea or Third Prize Oriental Beauty Tea" } },
+    en: { name: "Snowy Twilight", description: "Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Inspired by the meeting of cherry blossoms and snow, the collection offers a quiet tea moment for yourself or someone special.", summary: "12 Goldfish Tea Bags per box · First-Prize Rose Oolong Tea or Third-Prize Oriental Beauty Tea" } },
   { officialId: 960, slug: "orchid-gift-box", lidViews: { 1: { front: "official-gift-front-orchid-gift-box-pink-cutout-v3.webp" } }, sceneFile: "scene-orchid-gift-box.webp", name: "蝴蝶蘭", english: "ROYAL ORCHID", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, shelfLife: "2 年", contents: [], lid: [gold, pink], usd: 300,
     choices: [{ label: firstRose, price: 300 }, { label: thirdBeauty, price: 340 }].map(c => ({ ...c, contents: [count(c.label, 18)] })),
     description: "CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。",
     notice: [competitionPricing, embroideryNote],
-    en: { name: "Royal Orchid", description: "Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a hand-embroidered fabric lid. The orchid-inspired collection offers a gift for celebrations and meaningful occasions. Choose your tea and a Gold or Pink lid.", summary: "18 Goldfish Tea Bags per box · First Prize Rose Oolong Tea or Third Prize Oriental Beauty Tea" } },
+    en: { name: "Royal Orchid", description: "Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a hand-embroidered fabric lid. The orchid-inspired collection offers a gift for celebrations and meaningful occasions. Choose your tea and a Gold or Pink lid.", summary: "18 Goldfish Tea Bags per box · First-Prize Rose Oolong Tea or Third-Prize Oriental Beauty Tea" } },
   { officialId: 88, slug: "purple-butterfly-gift-box", sceneFile: "scene-purple-butterfly-gift-box.webp", name: "紫斑蝶", english: "SAPPHIRE WINGS", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, shelfLife: "2 年", contents: [count(secondBeauty, 18)], usd: 425,
     description: "CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。",
     story: {
@@ -160,11 +160,11 @@ export const teaGifts: TeaGift[] = [
       more: {
         title: { zh: "關於臺灣的紫斑蝶", en: "About Taiwan's purple crow butterflies" },
         body: { zh: "在臺灣，許多溫暖的地方都有機會看見紫斑蝶。研究紀錄顯示，牠們會在初春北返、春末初夏及秋季南遷等時期形成大規模蝶道，並在南部溫暖、避風的山谷群聚越冬。這片緩緩流動的紫色蝶河，常與墨西哥帝王斑蝶的壯麗越冬景觀並提。\n\n臺灣目前常見四種紫斑蝶。另有曾棲息於臺灣的大紫斑蝶特有亞種，已多年未見，更提醒我們珍惜蝶群賴以生存的棲地。為協助紫斑蝶安全飛越林內一帶的國道，保育措施包括設置防護網，並在遷徙蝶量達到管制門檻時暫時封閉部分車道，為蝶群留出回家的路。\n\nCHARM VILLA 貳等獎東方美人茶禮盒上所繡的是名為「端紫斑蝶」（Euploea mulciber）的紫斑蝶種。在外觀特徵上，端紫斑蝶的前翅可見明亮的藍紫色光澤，後翅則綴著散落的白點與白色細紋。\n\n紫斑蝶背景資料參考：茂林國家風景區管理處；交通部高速公路局；國立自然科學博物館；美國自然史博物館",
-          en: "Purple crow butterflies thrive in Taiwan's warm landscapes. Recorded migration patterns include a northward journey in early spring, movement in late spring and early summer, and a southward journey in autumn to sheltered wintering valleys. Their great winter gatherings are often compared with those of monarch butterflies in Mexico.\n\nFour purple crow species are commonly found in Taiwan today. Another, the Great Crow's endemic Taiwanese subspecies, has not been seen for decades—a reminder of how much these delicate lives depend on their habitats. Along a migration route at Linnei, conservation measures include protective netting and temporary motorway lane closures to help butterflies cross safely.\n\nThe butterfly embroidered on the Sapphire Wings gift box is the Striped Blue Crow (Euploea mulciber), known in Chinese as 端紫斑蝶. Its forewings catch the light in brilliant blue-violet, while white spots and fine pale markings decorate its hindwings.\n\nButterfly background references: Maolin National Scenic Area; National Freeway Bureau; National Museum of Natural Science; American Museum of Natural History" },
+          en: "Purple crow butterflies thrive in Taiwan's warm landscapes. Recorded migration patterns include a northward journey in early spring, movement in late spring and early summer, and a southward journey in autumn to sheltered wintering valleys. Their great winter gatherings are often compared with those of monarch butterflies in Mexico.\n\nFour purple crow species are commonly found in Taiwan today. Another, the Great Crow's endemic Taiwanese subspecies, has not been seen for decades—a reminder of how much these delicate lives depend on their habitats. Along a migration route at Linnei, conservation measures include protective netting and temporary highway lane closures to help butterflies cross safely.\n\nThe butterfly embroidered on the Sapphire Wings gift box is the Striped Blue Crow (Euploea mulciber), known in Chinese as 端紫斑蝶. Its forewings catch the light in brilliant blue-violet, while white spots and fine pale markings decorate its hindwings.\n\nButterfly background references: Maolin National Scenic Area; National Freeway Bureau; National Museum of Natural Science; American Museum of Natural History" },
       },
     },
     notice: [competitionPricing, { zh: "限量供應，採預購製作。", en: "Limited availability; crafted upon pre-order." }, embroideryNote],
-    en: { name: "Sapphire Wings", description: "Sapphire Wings is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of Second Prize Oriental Beauty Tea. A Paulownia wood box with a hand-embroidered fabric lid presents this single-tea selection in a butterfly-inspired gift collection.", summary: "18 Goldfish Tea Bags per box · Second Prize Oriental Beauty Tea" } },
+    en: { name: "Sapphire Wings", description: "Sapphire Wings is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of Second-Prize Oriental Beauty Tea. A Paulownia wood box with a hand-embroidered fabric lid presents this single-tea selection in a butterfly-inspired gift collection.", summary: "18 Goldfish Tea Bags per box · Second-Prize Oriental Beauty Tea" } },
   { officialId: 1072, slug: "small-moon-tea-gift-box", hidden: true, sceneFile: "scene-small-moon-tea-gift-box.webp", name: "小鮮月禮盒｜純茶包", english: "SMALL MOON / TEA", series: "2026 中秋節限定商品", pieces: 6, box: "紙盒", dimensions: smallBox, weight: 99, contents: [count(rose, 3), count(honey, 3)], description: "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
     en: { name: "Small Moon Gift Box | Tea Only", description: "A Mid-Autumn gesture kept among six goldfish: three of Rose Oolong Tea and three of Rose & Honey-Scented Black Tea. The gathering begins with opening the box and pouring a cup of hot water." } },
   { officialId: 994, slug: "full-moon-tea-gift-box", hidden: true, journalStory: 301, name: "大盈月禮盒｜純茶包", english: "FULL MOON / TEA", series: "2026 中秋節限定商品", pieces: 18, box: wood, dimensions: squareBox, weight: 400, contents: eighteen, sceneFile: "CV-0357-tag2.webp" /* the brand's CV-0357 with the real gold foil tag (2026-10-05) */, description: "花鳥與枝葉鋪展在織布盒蓋上，桐木盒收藏十八尾小金魚。從盒上的一幅風景，到杯中的一段茶時，讓團聚與欣賞一同發生。", note: "本款為純茶包禮盒，不含茶點與茶具；緞帶顏色隨機出貨。",
@@ -174,7 +174,7 @@ export const teaGifts: TeaGift[] = [
 // How to brew (the US document and FAQ, 2026-10-07; guide §4 before). English is the document's wording; the Chinese is a faithful translation.
 // Not shown on the fruit & herbal tea box (user 2026-10-06: 「花果茶禮盒先不放」).
 const brewSteps = (t: (zh: string, en: string) => string) => [
-  { title: t("注入熱水", "Pour the Water"), text: t("將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。", "Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Use a clear glass cup to enjoy the goldfish's shape.") },
+  { title: t("注入熱水", "Pour the Hot Water"), text: t("將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。", "Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Use a clear glass cup to enjoy the goldfish's shape.") },
   { title: t("打開包裝", "Open the Package"), text: t("沿著缺口將包裝完整撕開，取出小金魚茶包。", "Tear the package fully open at the notch and lift out the goldfish tea bag.") },
   { title: t("放入小金魚", "Add Your Goldfish"), text: t("將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。", "Add the tea bag to the water. Using a teaspoon or stirrer, gently submerge the tea bag, then let it float.") },
   { title: t("浸泡", "Steep"), text: t("浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。", "Steep for about 5 minutes as the tea's color deepens and the goldfish takes shape.") },
@@ -192,22 +192,22 @@ const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing
 // 金萱 and 花果茶 are condensed from the official store's descriptions. A competition tea describes its base tea, plus the note on the competitions.
 const teaNotes: Record<string, Bi> = {
   [rose]: { zh: "取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。",
-    en: "Fresh organic rose petals from Nantou, Taiwan, paired with carefully selected oolong leaves. A golden amber liquor carrying a mellow rose fragrance, smooth on the palate with a long finish." },
+    en: "Carefully selected oolong leaves meet organic rose petals from Nantou, Taiwan. The tea brews to a golden amber, with a mellow rose fragrance, a smooth flavor and a lingering finish." },
   [honey]: { zh: "蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。",
-    en: "Organic rose petals added to honey-scented black tea: the rich sweetness of rose alongside the natural, mellow sweetness of the tea." },
+    en: "Organic rose petals bring a rich floral fragrance to honey-scented black tea, complementing its naturally mellow sweetness." },
   [ruby]: { zh: "台灣特有茶種台茶 18 號，又名紅玉。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。",
-    en: "Taiwan's own cultivar, TTES No. 18, known as Ruby. A bright, clear, vivid red liquor, rich and smooth, with natural notes of cinnamon, mint and a light floral scent." },
+    en: "Ruby, also known as TTES No. 18, is a Taiwanese tea cultivar. It brews to a clear, vivid red, with a rich, smooth flavor and natural notes of cinnamon, mint and delicate flowers." },
   [beauty]: { zh: "又稱白毫烏龍茶。茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。",
-    en: "Also known as white-tip oolong. Tea leafhoppers feed on the young buds, giving the tea its natural honeyed, fruity floral aroma and a full, smooth sweetness." },
+    en: "Also known as white-tip oolong, Oriental Beauty develops its distinctive aroma as tea leafhoppers feed on the young buds. It has natural notes of honey, fruit and flowers, with a rich, smooth sweetness." },
   [jinxuan]: { zh: "茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。",
-    en: "A bright golden, clear liquor; lightly roasted and mellow with a natural milky note, smooth and refreshing, gentle in character." },
+    en: "Lightly roasted and mellow, Jin Xuan brews to a clear, golden hue with a naturally milky aroma. Its smooth, refreshing flavor makes for a gentle cup." },
   [fruit]: { zh: "無咖啡因。以蘋果、木瓜、蜜桃、西洋梨、鳳梨與芒果為甜蜜基底，佐以矢車菊與檸檬香茅的清雅香氣，再點綴玫瑰果的甘酸，入喉溫潤甜美。",
     en: "Caffeine-free. A sweet base of apple, papaya, peach, pear, pineapple and mango, with the light fragrance of cornflower and lemongrass and a touch of tart rosehip; warm and sweet on the palate." },
 };
 const teaNoteKey = (name: string) => name.includes("玫瑰烏龍") ? rose : name.includes("東方美人") ? beauty : name;
 const isCompetitionTea = (name: string) => /等獎/.test(name);
 const competitionNote: Bi = { zh: "每年由政府協辦冬夏兩季評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。",
-  en: "Each winter and summer, government-supported competitions judge the dry leaf and the brewed leaf, the aroma of the leaf and the liquor, and the color of the liquor, and award each grade with rigor." };
+  en: "At government-supported tea competitions held in summer and winter, judges carefully assess the dry and brewed leaves, the aroma of the leaves and tea, and the color of the infusion before awarding grades." };
 
 export const teaGiftProductsFor = (lang: Locale): Product[] => {
   const en = lang === "en";
@@ -249,7 +249,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       views: [...(gift.scene || generated || journalScene ? [{ label: t("禮盒情境", "Gift box scene"), image }] : []), { label: t("官方商品圖", "Official product image"), image: official }],
       facts: [
         { label: t("系列", "Series"), value: v(gift.series) },
-        { label: t("販售單位", "Sold as"), value: gift.setOf
+        { label: t("販售單位", "Contents"), value: gift.setOf
           ? t(`1 組 ${gift.setOf} 盒（每盒小金魚茶包 ${gift.pieces} 入）`, `1 set of ${gift.setOf} boxes (${gift.pieces} Goldfish Tea Bags each)`)
           : t(`1 盒／小金魚茶包 ${gift.pieces} 入`, `1 box / ${gift.pieces} Goldfish Tea Bags`) },
         { label: gift.choices ? t("茶款選擇（每盒擇一）", "Choose one tea variety") : t("盒內茶款", "Tea selection"), value: contents,
@@ -262,15 +262,15 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
         ...(gift.weight ? [{ label: t("重量（含盒）", "Weight (with box)"), value: t(`約 ${gift.weight} 公克${gift.setOf ? "／盒" : ""}`, `About ${gift.weight} g${gift.setOf ? " per box" : ""}`) }] : []),
         { label: t("保存期限", "Shelf life"), value: v(gift.shelfLife || "1 年") },
         // the FAQ: the tea bag and the tea testing, true of every box
-        { label: t("茶包材質", "Tea bag"), value: t("食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測", "Food-grade non-woven fabric, made without chemical adhesives; the teas are SGS-tested") },
-        ...(notices.length ? [{ label: t("產品須知", "Product notice"), value: notices.join(" "), items: notices }] : []),
+        { label: t("茶包材質", "Tea bag material"), value: t("食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測", "Food-grade non-woven fabric, made without chemical adhesives; the teas are SGS-tested") },
+        ...(notices.length ? [{ label: t("產品須知", "Please note"), value: notices.join(" "), items: notices }] : []),
       ],
       story: gift.story
         ? { title: lt(gift.story.title), body: lt(gift.story.body), image: journalStory, ...(gift.story.more ? { more: { title: lt(gift.story.more.title), body: lt(gift.story.more.body) } } : {}) }
         : {
-          title: t("一盒風景，一席茶時", "A box of scenery, a time for tea"),
+          title: t("一盒風景，一席茶時", "A little beauty, a moment for tea"),
           body: t("先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",
-            "Look first at the texture of the lid, then at the folds of the goldfish. From handwork at the fingertips to the unfurling in water, each small thing invites a slower pace of looking. Once the box is opened, art enters daily life with the time spent drinking tea together."),
+            "Look closely at the texture of the lid and the folds of each goldfish. From the care of the maker's hands to the way the tea bag unfurls in water, every detail invites you to slow down. Open the box, share a cup, and let art become part of the moment."),
           image: journalStory,
         },
       teaNotes: (() => {

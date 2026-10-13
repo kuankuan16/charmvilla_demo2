@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `idle`（2026-10-12 深夜：`bdc8c03` 上線前可直接修的項目已改好、尚未推送；客戶待回覆事項整理在 Claude 文件「CHARM VILLA 美國官網上線交接清單」https://claude.ai/code/artifact/0f0d7bdd-85b6-41e9-bfbf-152a36315269 ）
+Status: `idle`（2026-10-13：依 Google 文件「English Copy Review & Recommended Changes」改好英文文案，已提交、尚未推送；需客戶決定的項目見對話回報與交接清單。前一批 `bdc8c03` 也尚未推送）
 
 開始新任務時以本模板取代下方欄位；完成並更新 handoff 後，恢復為 `idle`。
 

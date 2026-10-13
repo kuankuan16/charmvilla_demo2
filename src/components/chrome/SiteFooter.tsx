@@ -37,10 +37,10 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
           ))}
         </nav>
         <div className="footer-news">
-          <p className="footer-news-title tc">{t("訂閱電子報", "Stay in the loop")}</p>
-          <p className="footer-news-text tc">{t("新品、限定禮盒與活動消息，第一時間寄給你。", "New pieces, limited gift boxes and events, straight to your inbox.")}</p>
+          <p className="footer-news-title tc">{t("訂閱電子報", "News from CHARM VILLA")}</p>
+          <p className="footer-news-text tc">{t("新品、限定禮盒與活動消息，第一時間寄給你。", "Be the first to discover new pieces, limited-edition gift boxes and upcoming events.")}</p>
           <NewsletterForm />
-          <p className="footer-label footer-news-note">{t("不寄垃圾信，只有新品與活動消息。", "No spam. Only new pieces and events.")}</p>
+          <p className="footer-label footer-news-note">{t("不寄垃圾信，只有新品與活動消息。", "Only new pieces and event news. No spam.")}</p>
         </div>
       </div>
       <div className="footer-bottom">

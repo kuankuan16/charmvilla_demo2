@@ -53,13 +53,13 @@ const buildContent = (lang: Locale) => {
   // English (Copy Review 2026-10-02): the official slogan, word for word, as the heading; the two paragraphs from the review.
   const manifesto = {
     paragraphs: [
-      t("藝術的日常尺度\n來自職人的極致琢磨", "Enjoy a charming life and a charming world in CHARM VILLA"),
+      t("藝術的日常尺度\n來自職人的極致琢磨", "Art in everyday life\nRefined by the artisan's\u00A0hand"),
       // 2026-10-02, the user's own rewrite of both paragraphs (the awards and patents now told in the copy; the first word's
       // 「一」 restored where the pasted text had lost it).
       t("一段在指間交織的編織，一道掠過耳畔的光影，一尾在茶湯中緩緩舒展的小金魚。CHARM VILLA 相信，真正的美不在遠處的展櫃，而在極致工藝融入生活的靈動時刻：被配戴、被捧起、被細細品嘗，成為日常節奏的一部分。",
-        "A goldfish takes shape in your cup. A braided leather handle rests in your hand. An earring catches the light as you turn. At CHARM VILLA, small details bring charm to the things you wear, carry and share."),
+        "Leather woven between the fingers. A glimmer of light beside the ear. A little goldfish slowly unfurling in tea. At CHARM VILLA, we believe beauty comes alive when exceptional craft becomes part of everyday life: worn, held and savored."),
       t("每一件作品，都由職人以時間磨礪皮革、黃金與茶葉，將手的溫度與極致比例賦予形體。這份對原創工藝的堅守，讓小金魚茶包榮獲德國 Red Dot 紅點傳達設計獎與 iF 設計大獎，並取得全球 34 國專利。當藝術走出展覽，躍上肩頭、掠過耳畔、躍入茶湯，卓越的國際榮譽便落實為可被觸摸的日常尺度，讓美成為生活的本質。",
-        "Our artisans shape paper, leather, metal and wood with care, refining the details that make each piece distinctive. That care helped the goldfish tea bag win the Red Dot Award: Communication Design and the iF Design Award in Germany, and earn design patents in 34 countries. Given as a gift or enjoyed in your own daily life, these creations invite you to notice beauty in familiar moments and share it with others."),
+        "Our artisans take time to refine leather, gold and tea, giving each creation the warmth of the hand and a carefully considered form. This dedication to original design has brought the goldfish tea bag international recognition, including the Red Dot Award: Communication Design and the iF Design Award, along with design patents in 34 countries. As each piece moves from display into daily life, art becomes something we can touch and enjoy."),
     ],
     awards: t("小金魚茶包榮獲 2014 德國紅點傳達設計獎（Red Dot Winner）與 2015 德國 iF 設計大獎（iF DESIGN AWARD）。",
       "The goldfish tea bag received the Red Dot Award: Communication Design 2014 (Red Dot Winner) and the iF DESIGN AWARD 2015, both in Germany."),
@@ -244,7 +244,7 @@ const buildContent = (lang: Locale) => {
             name: t("CHARM VILLA 晶華門市", "CHARM VILLA Regent Taipei"),
             addr: t("台北市中山區中山北路二段 39 巷 3 號 B1（麗晶精品）", "B1, Regent Galleria, No. 3, Ln. 39, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei"),
             hours: t("10:00–21:00・全年無休", "10:00–21:00 · Open every day"),
-            phone: { label: "02-2542-0303", tel: "+886225420303" }, // www.charmvilla.com.tw, 2026-10-02
+            phone: { label: t("02-2542-0303", "+886 2 2542 0303"), tel: "+886225420303" }, // www.charmvilla.com.tw, 2026-10-02
             href: "https://goo.gl/maps/agJHzfM2VE82",
             image: site("store-regent-2k.webp", t("CHARM VILLA 晶華門市入口與陳列", "The entrance and displays of CHARM VILLA at Regent Taipei"), 2560, 1536), // charmvilla.jp photo, enhanced to 2K with Higgsfield upscale (2026-10-02); the sign redrawn from the wordmark where the upscale misspelt it
             intro: {
@@ -258,7 +258,7 @@ const buildContent = (lang: Locale) => {
             name: t("CHARM VILLA 京都門市", "CHARM VILLA Kyoto"),
             addr: t("京都市中京區寺町通二條・山本町 442", "442 Yamamoto-cho, Teramachi-dori Nijo, Nakagyo-ku, Kyoto"),
             hours: t("週六・週日 11:00–18:00", "Saturday and Sunday 11:00–18:00"),
-            phone: { label: "075-606-5507", tel: "+81756065507" }, // charmvilla.jp, 2026-10-02
+            phone: { label: t("075-606-5507", "+81 75 606 5507"), tel: "+81756065507" }, // charmvilla.jp, 2026-10-02
             href: "https://goo.gl/maps/WBdsELDfMx52",
             image: site("store-kyoto-2k.webp", t("CHARM VILLA 京都門市的長桌與水墨牆面", "The long table and ink-painting wall of CHARM VILLA in Kyoto"), 2560, 1536), // charmvilla.jp photo, enhanced to 2K (2026-10-02)
             intro: {
@@ -282,7 +282,7 @@ const buildContent = (lang: Locale) => {
       labelZh: t("最新消息", ""),
       items: [
         { date: t("8 月 11 日", "Aug 11"), tag: t("禮盒預購", "Pre-order"), text: t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales.") },
-        { date: t("7 月 2 日", "Jul 2"), tag: t("活動快訊", "Events"), text: t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "From August 15, a limited-time tea table, Goldfish in a Cup, opens at eslite spectrum Nanxi.") },
+        { date: t("7 月 2 日", "Jul 2"), tag: t("活動快訊", "Events"), text: t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "Beginning August 15, discover Goldfish in a Cup, a limited-time tea experience at eslite spectrum Nanxi.") },
       ],
     },
     instagram: "https://www.instagram.com/charmvilla/",

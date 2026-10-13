@@ -23,7 +23,7 @@ const build = (lang: Locale) => {
     { id: "about", heading: t("關於 Charm Villa 與我們的理念", "About Charm Villa & Our Mission"), items: [
       { id: "unique", ...qa(["Charm Villa 的茶有什麼特別之處？", "What is unique about Charm Villa's tea?"],
         ["我們的小金魚茶包把台灣茶與優雅的設計結合在一起。茶葉浸泡時，金魚會在杯中慢慢成形——一份可以觀看、品嚐與分享的小小樂趣。", "Our Goldfish Tea Bags bring Taiwanese tea and graceful design together. As the tea steeps, the goldfish takes shape in your cup—a small pleasure to watch, taste, and share."]) },
-      { id: "us-model", ...qa(["你們在美國的營運模式是什麼？", "What is your operating model in the US?"],
+      { id: "us-model", ...qa(["你們在美國的營運模式是什麼？", "Who operates the US store?"],
         ["我們是 CHARMVILLA 在美國的授權獨立經銷商，直接進口商品，並從加州出貨。", "We are CHARMVILLA's authorized independent distributor in the US. We import directly and ship orders from California."]) },
       { id: "contact", ...qa(["如果還有其他問題，要怎麼聯絡你們？", "How do I contact you if I have more questions?"],
         [`無論是挑選禮物或既有訂單的協助，歡迎來信 ${email}，我們很樂意為您服務。`, `For help choosing a gift or with an existing order, email us at ${email}. We would be happy to hear from you.`]) },
@@ -78,7 +78,7 @@ const build = (lang: Locale) => {
   // Shipping & Returns Policy (/policy)
   const policy: PolicyDoc = {
     title: t("運送與退換貨政策", "Shipping & Returns Policy"),
-    intro: t("關於運費、配送時間與退換貨規定，您需要知道的一切。", "Everything you need to know about our shipping rates, delivery times, and returns guidelines."),
+    intro: t("關於運費、配送時間與退換貨規定，您需要知道的一切。", "Everything you need to know about our shipping rates, delivery times, and return guidelines."),
     sections: [
       { id: "returns", heading: t("退換貨與退款政策", "Return & Refund Policy"), blocks: [
         t("在 Charm Villa，我們以產品的品質、安全與完整為優先。由於我們同時販售易腐的茶品與手工茶具，退換貨政策依商品類別而有所不同。", "At Charm Villa, we prioritize the quality, safety, and integrity of our products. Because we offer both perishable teas and artisan teaware, our return policy varies by product category."),
@@ -102,7 +102,7 @@ const build = (lang: Locale) => {
         t(`若退貨或損壞商品的退款獲得核准，款項將在 10 個工作天內自動退回您原本的付款方式。請留意，您的銀行或信用卡公司可能需要一些時間處理並入帳。若退款核准後已超過 15 個工作天仍未收到，請來信 ${email}。`, `If a refund is approved for a return or a damaged item, you will be automatically refunded on your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund. If more than 15 business days have passed since we approved your refund, please contact us at ${email}.`),
       ] },
       { id: "processing", heading: t("運送與處理時間", "Shipping & Processing Times"), blocks: [
-        t("我們會用心準備您的 Charm Villa 體驗。在工作日，太平洋時間中午 12:00 前成立的訂單，大多會在當天細心包裝並出貨；中午之後的訂單則於下一個工作日（週一至週五）出貨。訂單寄出後，您會收到含追蹤資訊的確認信。", "We take great care in preparing your Charm Villa experience. During the business week, most orders are beautifully packaged and shipped the same day if placed before 12:00 PM (noon) PST. Orders received after this time will embark on their journey the next business day (Monday through Friday). Once your order is dispatched, you will receive a confirmation email containing your tracking information."),
+        t("我們會用心準備您的 Charm Villa 體驗。在工作日，太平洋時間中午 12:00 前成立的訂單，大多會在當天細心包裝並出貨；中午之後的訂單則於下一個工作日（週一至週五）出貨。訂單寄出後，您會收到含追蹤資訊的確認信。", "Most orders placed before noon Pacific Time, Monday through Friday, are packed and shipped the same day. Orders placed after noon ship the next business day. Once your order ships, we will email your tracking information."),
       ] },
       { id: "address", heading: t("地址正確性", "Address Accuracy"), blocks: [
         t("請確認結帳時輸入的收件地址正確無誤。因顧客提供的地址錯誤而送達他處的包裹，或物流商標示為「已送達」但未收到的包裹，Charm Villa 恕不負責。", "Please ensure your shipping address is entered correctly at checkout. Charm Villa is not responsible for packages delivered to incorrect addresses provided by the customer, or for packages marked as \"Delivered\" by the carrier but not received."),
@@ -167,7 +167,7 @@ const build = (lang: Locale) => {
         t("依您的所在地，您可能有權存取我們持有的您的個人資料、將其轉移至新的服務，以及要求更正、更新或刪除您的個人資料。由於您的資料儲存於 Shopify，若您希望行使這些權利，請透過下方的電子郵件與我們聯絡。我們會透過 Shopify 管理後台處理您的請求，確保您的資料被妥善匯出或自其伺服器刪除。", "Depending on where you live, you may have the right to access the Personal Information we hold about you, to port it to a new service, and to ask that your Personal Information be corrected, updated, or erased. Because your data is stored in Shopify, if you wish to exercise these rights, please contact us at the email below. We will then process your request through our Shopify administrative dashboard to ensure your data is appropriately exported or deleted from their servers."),
       ] },
       { id: "retention", heading: t("7. 資料保存", "7. Data Retention"), blocks: [
-        t("當您透過本站下單，我們會將您的訂單資訊保存在 Shopify 的紀錄中作為我們的紀錄，直到您要求我們刪除為止。", "When you place an order through the Site, we will maintain your Order Information in our Shopify records for our records unless and until you ask us to delete this information."),
+        t("當您透過本站下單，我們會將您的訂單資訊保存在 Shopify 的紀錄中作為我們的紀錄，直到您要求我們刪除為止。", "When you place an order through the Site, we will retain your Order Information in Shopify unless and until you ask us to delete this information."),
       ] },
       { id: "contact", heading: t("8. 聯絡我們", "8. Contact Us"), blocks: [
         t(`如需進一步了解我們的隱私權做法、有任何疑問或希望提出申訴，請來信 ${email}。`, `For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us at ${email}.`),
@@ -194,7 +194,7 @@ const build = (lang: Locale) => {
         t("變更：我們產品的價格可能不經通知而變更。我們保留隨時不經通知修改或終止本服務（或其任何部分或內容）的權利。", "Modifications: Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice."),
         t("手工差異：部分商品，例如我們的手工陶瓷筷架，均為手工製作。基於手工製作的特性，顏色、釉面、質地與尺寸上的細微差異屬正常且可預期。這些獨特的差異不構成瑕疵，您實際收到的產品可能與本站顯示的圖片略有不同。", "Handmade Variations: Certain items, such as our artisan ceramic chopstick rests, are handmade. Due to the nature of artisan crafting, slight variations in color, glaze, texture, and size are normal and expected. These unique variations do not constitute a defect, and the actual product you receive may differ slightly from the images displayed on our Site."),
         t("正確性：我們已盡力準確呈現商店中產品的顏色與圖片，但無法保證您的電腦螢幕所顯示的任何顏色都準確無誤。", "Accuracy: We have made every effort to display as accurately as possible the colors and images of our products that appear at the store. We cannot guarantee that your computer monitor's display of any color will be accurate."),
-        t("供應：所有產品說明或產品定價，我們可自行決定隨時變更，不另行通知。我們保留隨時停售任何產品的權利。", "Availability: All descriptions of products or product pricing are subject to change at anytime without notice, at our sole discretion. We reserve the right to discontinue any product at any time."),
+        t("供應：所有產品說明或產品定價，我們可自行決定隨時變更，不另行通知。我們保留隨時停售任何產品的權利。", "Availability: All descriptions of products or product pricing are subject to change at any time without notice, at our sole discretion. We reserve the right to discontinue any product at any time."),
       ] },
       { id: "billing", heading: t("4. 帳單與帳戶資訊", "4. Billing and Account Information"), blocks: [
         t("我們保留拒絕您所下任何訂單的權利。我們可自行決定限制或取消每人、每戶或每筆訂單的購買數量。這些限制可能包括由同一顧客帳號、同一張信用卡下的訂單，及／或使用相同帳單及／或收件地址的訂單。您同意為在我們商店的所有購買提供最新、完整且正確的購買與帳戶資訊。", "We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household, or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. You agree to provide current, complete, and accurate purchase and account information for all purchases made at our store."),
@@ -206,7 +206,7 @@ const build = (lang: Locale) => {
         t("在任何情況下，Charm Villa 及我們的董事、主管、員工、關係企業、代理人、承包商、實習生、供應商、服務提供者或授權人，均不對因您使用本服務或透過本服務取得的任何產品而產生的任何傷害、損失、索賠，或任何直接、間接、附帶、懲罰性、特殊或衍生性損害負責，包括但不限於利潤損失、收入損失、儲蓄損失、資料遺失、替換成本或任何類似損害，無論其依據為契約、侵權（包括過失）、嚴格責任或其他。", "In no case shall Charm Villa, our directors, officers, employees, affiliates, agents, contractors, interns, suppliers, service providers, or licensors be liable for any injury, loss, claim, or any direct, indirect, incidental, punitive, special, or consequential damages of any kind, including, without limitation lost profits, lost revenue, lost savings, loss of data, replacement costs, or any similar damages, whether based in contract, tort (including negligence), strict liability or otherwise, arising from your use of any of the Service or any products procured using the Service."),
       ] },
       { id: "indemnification", heading: t("7. 賠償", "7. Indemnification"), blocks: [
-        t("您同意就任何第三方因您違反本服務條款、或違反任何法律或第三方權利而提出的索賠或要求（包括合理的律師費），對 Charm Villa 及我們的母公司、子公司、關係企業、合作夥伴、主管、董事、代理人、承包商、授權人、服務提供者、分包商、供應商、實習生與員工進行賠償、抗辯並使其免受損害。", "You agree to indemnify, defend and hold harmless Charm Villa and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns and employees, harmless from any claim or demand, including reasonable attorneys' fees, made by any third-party due to or arising out of your breach of these Terms of Service or your violation of any law or the rights of a third-party."),
+        t("您同意就任何第三方因您違反本服務條款、或違反任何法律或第三方權利而提出的索賠或要求（包括合理的律師費），對 Charm Villa 及我們的母公司、子公司、關係企業、合作夥伴、主管、董事、代理人、承包商、授權人、服務提供者、分包商、供應商、實習生與員工進行賠償、抗辯並使其免受損害。", "You agree to indemnify, defend and hold harmless Charm Villa and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns and employees from any claim or demand, including reasonable attorneys' fees, made by any third-party due to or arising out of your breach of these Terms of Service or your violation of any law or the rights of a third-party."),
       ] },
       { id: "law", heading: t("8. 準據法", "8. Governing Law"), blocks: [
         t("本服務條款以及我們向您提供服務的任何個別協議，均依美國加州法律規範與解釋，不適用其法律衝突規定。", "These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions."),

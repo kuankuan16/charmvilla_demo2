@@ -25,7 +25,7 @@ async function api<T>(path: string, init?: RequestInit): Promise<{ ok: boolean; 
 export default function AccountClient() {
   const { lang, t } = useT();
   const zh = lang === "zh";
-  const NOT_CONNECTED = t("會員系統將於 Shopify 串接完成後啟用。", "The member area is not open yet.");
+  const NOT_CONNECTED = t("會員系統將於 Shopify 串接完成後啟用。", "Customer accounts are not available yet.");
   const status = zh ? statusZh : statusEn;
   const required = t("（必填）", "(required)");
   // Chinese forms ask for the family name first; English forms for the given name first.

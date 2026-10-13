@@ -26,7 +26,7 @@ export const getAbout = (lang: Locale) => {
     slogan: "Enjoy a charming life and a charming world in CHARM\u00A0VILLA.",
     intro: t(
       "CHARM VILLA 是 2013 年由創意總監蘇靜媚創立的設計品牌。從一尾在茶杯裡舒展的小金魚茶包開始，我們把工藝、茶與設計帶進日常：送禮的時刻、一杯茶的時間，還有每天配戴、使用的物件。",
-      "CHARM VILLA is a design brand founded in 2013 by creative director Su Ching-mei. It began with a goldfish tea bag that unfurls in the cup, and it brings craft, tea and design into everyday life: the moment of giving, the time of a cup of tea, and the pieces worn and used each day."),
+      "Founded in 2013 by creative director Su Ching-mei, CHARM VILLA is a design brand that brings craft, tea and design into everyday life. It began with a goldfish tea bag unfurling in a cup, and continues through the gifts we share and the pieces we wear and use each day."),
     // a portrait now (user 2026-10-05: 「刪掉改成剛剛的橘色畫布那一張，並更換適合直式配圖的版面」); about-hero.webp stays in the repo
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：白包照換成方凳托盤上的小金魚茶
     // v4 again (user 2026-10-07: 「換回原本的」 after a v5 that redrew the cup, the goldfish and the tag; v5 stays in git history)
@@ -50,7 +50,7 @@ export const getAbout = (lang: Locale) => {
           t("創辦人蘇靜媚曾在德國科隆參展，聽見外國人看著台灣館說：「台灣是複製大王。」台灣有那麼多優秀的設計人才，為什麼沒有響亮的品牌？",
             "At an exhibition in Cologne, founder Su Ching-mei heard visitors to the Taiwan Pavilion call Taiwan a land of imitation. Taiwan had so many talented designers; why did it have no brands of renown?"),
           t("這個念頭成了 CHARM VILLA 的起點：以打造迷人的家居生活為出發點，用設計說台灣自己的故事。",
-            "That question became the starting point of CHARM VILLA: to begin from a charming home life, and to tell Taiwan's own story through design."),
+            "That question became the starting point of CHARM VILLA: to bring charm to life at home and tell Taiwan's own story through design."),
         ],
         // a generated scene in the site's photography (user 2026-10-07: 「01～04 的配圖，只有 03 不變…自動幫我生成」); the installation
         // photograph about-installation-2k.webp (CV-0215) stays in the repo
@@ -78,7 +78,7 @@ export const getAbout = (lang: Locale) => {
       },
       {
         id: "world", index: "03", side: "right",
-        title: t("被世界看見", "Seen by the world"),
+        title: t("被世界看見", "International recognition"),
         body: [
           t("2014 年，小金魚茶包獲得德國紅點傳達設計獎；2015 年 3 月，再從 1,624 件入選作品中，獲得德國 iF 設計大獎金獎。",
             "In 2014 the goldfish tea bag won the Red Dot Award for Communication Design; in March 2015, from 1,624 selected entries, it won an iF Design Award Gold."),

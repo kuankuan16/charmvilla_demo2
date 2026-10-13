@@ -120,7 +120,7 @@ export default async function ProductPage({ params }: Props) {
   const plainFacts = product.facts.filter((f) => !(f.items && f.items.length > 1));
   // no caption in the image's corner any more (user 2026-10-07: 「刪除產品圖左下角的字」); its two facts are not repeated elsewhere, so they return to the specifications
   const caption = null;
-  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Sold as"), t("盒型與材質", "Packaging"), t("保存期限", "Shelf life")]) : plainFacts.filter((f) => f.label !== t("系列", "Series")).slice(0, 3);
+  const keyRows = product.category === "tea" ? byLabel([t("販售單位", "Contents"), t("盒型與材質", "Packaging"), t("保存期限", "Shelf life")]) : plainFacts.filter((f) => f.label !== t("系列", "Series")).slice(0, 3);
   const keyLines = keyRows.length > 0 && <ul className="product-keylines">{keyRows.map((f) => <li key={f.label}><span className="tc">{f.label}</span><span className="tc">{f.value}</span></li>)}</ul>;
   const shownAbove = new Set(keyRows.map((f) => f.label).concat(t("系列", "Series")));
   const specFacts = product.facts.filter((f) => !shownAbove.has(f.label));
@@ -138,9 +138,9 @@ export default async function ProductPage({ params }: Props) {
         return <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{isTeaContents ? teaItem(item) : smallParen(item)}</li>)}</ul> : isTeaContents ? teaItem(f.value) : f.value}</dd></div>;
       })}
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
-      {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
+      {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Goldfish Tea Bag design awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
     </dl>
-    {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格；盒色與供應款式請以官方商店選項為準。", "Teaware, sweets and decorative props shown in the photos are not included. Please refer to the box contents listed above. Box color and available styles follow the options in the official store.")}</p>}
+    {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。", "Teaware, sweets and decorative props shown in the photographs are not included. Please see the contents listed above.")}{product.giftBox.choices && product.giftBox.choices.length > 1 && t("盒色與款式請見本頁選項。", " Available box colors and styles are shown in the selection options on this page.")}</p>}
   </section>;
   // 茶款介紹 (tea gift boxes): each tea in the box with its note, in the same row style right after the specifications — it counts as
   // part of them (user 2026-10-07: 「加入目前官網的商品介紹頁」, then 「茶款也算在規格裡好了」).
@@ -216,7 +216,7 @@ export default async function ProductPage({ params }: Props) {
       </section>}
       {teaPages}
       <section className="product-related" aria-labelledby="related-title">
-        <div className="product-related-heading"><h2 id="related-title" className="tc">{t("繼續觀看", "Explore more pieces")}</h2><Link href={categoryHref(product.category, lang)} className="product-related-all tc">{t("所有商品", "All products")}</Link></div>
+        <div className="product-related-heading"><h2 id="related-title" className="tc">{t("繼續觀看", "Explore more pieces")}</h2><Link href={categoryHref(product.category, lang)} className="product-related-all tc">{t("所有商品", product.category === "tea" ? "All tea gifts" : "All products")}</Link></div>
         <div className="catalog-grid">{related.map((p, i) => <ProductCard key={p.slug} product={p} index={i} lang={lang} caption={getCategory(p.category, lang)?.name} />)}</div>
       </section>
       <section className="product-band" aria-label={t("關於 CHARM VILLA", "About CHARM VILLA")}>
