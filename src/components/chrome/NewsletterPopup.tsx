@@ -102,7 +102,7 @@ export default function NewsletterPopup() {
       <div className="news-pop-veil" onClick={close} aria-hidden="true" />
       <div ref={panelRef} className="news-pop-panel" role="dialog" aria-modal="true" aria-labelledby="news-pop-title" tabIndex={-1}>
         <div className="news-pop-media">
-          <Image src="/media/site/scene-orchid-gift-box-gold-pink-sunbeam.webp" alt="" fill sizes="500px" className="object-cover" />
+          <Image src="/media/site/about-scene-04-everyday-pieces-v2.webp" alt="" fill sizes="500px" className="object-cover" /* the everyday-pieces side table, as in the menu (user 2026-10-13: 「用這張當電子報圖」) */ />
         </div>
         <div className="news-pop-body">
           <button type="button" className="news-pop-close" onClick={close} aria-label={t("關閉電子報視窗", "Close newsletter")}>
