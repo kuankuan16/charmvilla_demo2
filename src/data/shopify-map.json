@@ -29,18 +29,18 @@
     "handle": "",
     "variantId": "",
     "variants": {
-      "First-Prize Rose Oolong Tea / Blue": "",
-      "First-Prize Rose Oolong Tea / Pink": "",
-      "Third-Prize Oriental Beauty Tea / Blue": "",
-      "Third-Prize Oriental Beauty Tea / Pink": ""
+      "Rose Oolong Tea / Blue": "",
+      "Rose Oolong Tea / Pink": "",
+      "Oriental Beauty Tea (White Tip Oolong) / Blue": "",
+      "Oriental Beauty Tea (White Tip Oolong) / Pink": ""
     }
   },
   "winter-blossom-gift-box": {
     "handle": "",
     "variantId": "",
     "variants": {
-      "First-Prize Rose Oolong Tea": "",
-      "Third-Prize Oriental Beauty Tea": ""
+      "Rose Oolong Tea": "",
+      "Oriental Beauty Tea (White Tip Oolong)": ""
     }
   },
   "orchid-gift-box": {
