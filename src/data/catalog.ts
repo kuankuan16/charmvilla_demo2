@@ -91,7 +91,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string }; views?: ProductView[] }[]; choiceLabel?: string };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string }; views?: ProductView[] }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -387,7 +387,7 @@ const buildCatalog = (lang: Locale) => {
   // 兩張情境照，兩張都以小圖呈現 — 頁尾「兩小一大」的那兩張小圖，大圖是該款自己的情境照（使用者 2026-10-08：「這張加入所有茶類的內容頁」,
   // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
   const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("雙手捧著一杯泡開的小金魚茶", "Two hands holding a cup of brewed goldfish tea"), 1856, 2304);
-  for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
+  for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity", "christmas"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
   // 年年有魚：米白圓桌斜陽照（禮盒無緞帶、青瓷咖啡杯裡泡開的小金魚、尤加利，標籤藏在杯後；Nano Banana 2.1，照使用者給的 EAU 書那張的色調）放進商品頁，
   // 排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「放入內容頁」，之後「右取代左」——胡桃木桌白瓷杯金標籤那張換成這張）
   sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-cream-table-sun-celadon-cup.webp", t("年年有魚禮盒與一杯小金魚茶", "The Abundance & Prosperity gift box with a cup of goldfish tea"), 1856, 2304)];
@@ -502,6 +502,13 @@ const buildCatalog = (lang: Locale) => {
   studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
   studioExtra["reunion-paulownia-gift-box"] = studioExtra["reunion-paulownia-gift-box"].map((v) => v.file === "gift-box-unboxed-12-v2.webp"
     ? { file: "studio-reunion-paulownia-gift-box-unboxed-v5.webp" /* v5：照實拍的相機角度與透視重生（使用者 2026-10-07：「粉紅色那一款上有透視錯誤，請再重新生成一張參考實拍」）；v4 把盒蓋改薄 */, zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid in front of it" } : v);
+  // 聖誕佳禮（2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8））：橘色盒蓋是預設圖庫，照其他 12 入禮盒的順序 封面（studio-listing.json）→ 正面實拍 → 斜角 → 開箱。
+  // 紙盒，所以開箱用自己的 12 入圖，不在上面 12 入木盒（gift-box-unboxed-12-v2）的迴圈裡；藍綠色盒蓋的 4 張在 tea-gifts.ts 的 packaging.lidViews
+  studioExtra["christmas-gift-box"] = [
+    { file: "studio-christmas-gift-box-orange-front.webp", zh: "橘色盒蓋・正面實拍", en: "Orange lid, front view", enAlt: "orange lid, front photograph" },
+    { file: "studio-christmas-gift-box-orange-angle.webp", zh: "橘色盒蓋・斜角", en: "Orange lid, angled view", enAlt: "orange lid, angled view" },
+    { file: "studio-christmas-gift-box-orange-unboxed.webp", zh: "橘色盒蓋・開箱 12 入", en: "Orange lid, unboxed · 12 tea bags", enAlt: "orange lid, the drawer opened to show 12 tea bags" },
+  ];
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
   const sceneOmit: Record<string, string[]> = {
@@ -586,6 +593,7 @@ const buildCatalog = (lang: Locale) => {
     "kyoto-gift-box": ["scene-kyoto-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
     "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
+    "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", twoPeople, mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
@@ -596,7 +604,13 @@ const buildCatalog = (lang: Locale) => {
   // Pink lids keep their existing cover, add their HD front in slot 2, and retain their existing angle/unboxed views.
   // A lid view the option does not have is left out rather than borrowed from the default lid (2026-10-13: 蝴蝶蘭粉紅色 showed the
   // gold box's cover and angled view); so 蝴蝶蘭粉紅色 shows its real pink front photograph and the shared unboxed view (no lid in it).
-  const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string }): ProductView[] => [
+  // `lid` (聖誕佳禮的藍綠色) names the lid in the alt text and brings the option's own unboxed view; without it the pink-lid wording and the shared unboxed view stay as before.
+  const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string }): ProductView[] => lv.lid ? [
+    ...(lv.cover ? [{ label: t("正面", "Front view"), image: studioImage(lv.cover, `${p.name}${t("・", ", ")}${lv.lid}${t("・封面", ", front view")}`) }] : []),
+    ...(lv.front ? [{ label: t("正面實拍", "Front photograph"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${lv.lid}${t("・正面實拍", ", front photograph")}`) }] : []),
+    ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${lv.lid}${t("・斜角", ", angled view")}`) }] : []),
+    ...(lv.unboxed ? [{ label: t("開箱", "Unboxed"), image: studioImage(lv.unboxed, `${p.name}${t("・", ", ")}${lv.lid}${t("・開箱 12 入", ", opened to show 12 tea bags")}`) }] : []),
+  ] : [
     ...(lv.cover ? [{ label: t("正面", "Front view"), image: studioImage(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) }] : []),
     ...(lv.front ? [{ label: t("正面實拍", "Official front view"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・正面實拍", "pink lid, official front photograph with its ribbon and embroidery")}`) }] : []),
     ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : []),

@@ -41,7 +41,7 @@ const lineAttributes = (product: Product, option?: number) => {
   const en = findProduct(product.slug, "en");
   const label = option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label;
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
-  const key = legend.includes("packaging") ? "Packaging" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
+  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid color" ? "Lid color" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
   const attrs = [...(label ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
   return attrs.length ? { attributes: attrs } : {};
 };

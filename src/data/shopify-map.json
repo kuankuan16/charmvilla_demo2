@@ -2,7 +2,7 @@
   "_how": "Paste values from Shopify admin (Products -> product -> variant -> copy 'gid://shopify/ProductVariant/...'). Never invent a GID: empty strings mean 'not in Shopify yet' and the piece cannot be added to the bag in shopify mode. One product = one entry keyed by the site slug.",
   "_variants": "Products sold with options (tea, tea x lid colour) get one variant GID per option in 'variants', keyed by the option's English label exactly as the product page shows it (product.giftBox.choices in the English catalogue). Each option has its own Shopify price and stock, so never reuse one GID for several options. Products without options use 'variantId' (optioned products keep an empty 'variantId' for the older readers). The older shape { handle, variantId } (or a bare GID string) is still read: for an optioned product it is used only when 'variants' is absent.",
   "_currency_note": "The US store sells in USD only. In shopify mode the bag and checkout prices come from Shopify (cart buyerIdentity countryCode US); the prices in src/data are what the product pages show, so a price change has to be made in both places until a Storefront product query is added.",
-  "_listed_note": "The first 12 entries are the products listed on the US site (getProducts('en')). The entries after them are gift boxes hidden on the US site; they stay so their slugs keep resolving if a box comes back.",
+  "_listed_note": "The first 13 entries are the products listed on the US site (getProducts('en')). The entries after them are gift boxes hidden on the US site; they stay so their slugs keep resolving if a box comes back.",
   "reunion-paper-gift-box": {
     "handle": "",
     "variantId": ""
@@ -72,6 +72,14 @@
   "wooden-chopsticks": {
     "handle": "",
     "variantId": ""
+  },
+  "christmas-gift-box": {
+    "handle": "",
+    "variantId": "",
+    "variants": {
+      "Orange": "",
+      "Teal": ""
+    }
   },
   "reunion-paulownia-gift-box": {
     "handle": "",
