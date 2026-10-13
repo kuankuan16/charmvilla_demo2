@@ -6,7 +6,7 @@ import { translator, type Locale } from "../i18n/config";
 
 // Chinese titles carry a zero-width space (\u200b) at their natural pause: titles wrap only there (word-break: keep-all),
 // so a phrase such as 開放 is never split across lines.
-export type NewsBlock = string | { list: string[] } | { links: { label: string; href: string }[] };
+export type NewsBlock = string | { list: string[] } | { links: { label: string; href: string }[] } | { heading: string };
 // `focus` is the card photograph's object-position, used where the list crops it wider than it is (the list cards are about 1.3 : 1)
 // `whole`: the article shows the card picture uncropped (a printed piece such as an invitation) on `ground`, its paper colour
 export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; focus?: string; whole?: boolean; ground?: string; hero: Img; body: NewsBlock[] };
@@ -49,15 +49,15 @@ const build = (lang: Locale): NewsEntry[] => {
       slug: "la-popup-scholart-selection-2026", date: "2026-10-17", dateLabel: t("2026 年 10 月 17 日至 12 月 31 日", "October 17 – December 31, 2026"),
       tag: t("活動快訊", "Events"), title: t("CHARM VILLA 洛杉磯快閃展", "CHARM VILLA Pop-up in Los Angeles"),
       summary: t("10 月 17 日至 12 月 31 日，於 San Gabriel 的 The Scholart Selection。", "October 17 to December 31 at The Scholart Selection, San Gabriel."),
-      card: site("news-la-popup-scholart-2026.webp", t("CHARM VILLA 2026 新品發表邀請卡：淺灰紙上燙金 CHARM VILLA 字標，中央是編織提把與圓片組成的包款線稿，下方列出台北、洛杉磯 The Scholart Selection、京都三場的日期與地點", "CHARM VILLA 2026 launch invitation: gold-foil CHARM VILLA lettering on pale gray paper above a line drawing of a bag of linked discs with a braided handle, followed by the dates and venues in Taipei, The Scholart Selection in Los Angeles, and Kyoto"), 1280, 1963),
+      card: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡：淺灰紙上燙金 CHARM VILLA 字標，中央是壓凸的皮革包與 Show more! 字樣，下方列出台北、洛杉磯 The Scholart Selection、京都三場的日期與地點", "CHARM VILLA 2026 launch invitation: the gold CHARM VILLA wordmark on pale grey paper, an embossed leather bag and the words Show more!, with the Taipei, Los Angeles (The Scholart Selection) and Kyoto dates and venues below"), 1570, 1963),
       focus: "50% 33%", whole: true, ground: "#f0f1f2",
-      hero: site("news-la-popup-scholart-2026.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1280, 1963),
+      hero: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963),
       body: [
         t("CHARM VILLA 洛杉磯快閃展，2026 年 10 月 17 日至 12 月 31 日於 The Scholart Selection 展出。", "The CHARM VILLA pop-up in Los Angeles runs from October 17 to December 31, 2026, at The Scholart Selection."),
         { list: [t("地點・The Scholart Selection，417 S Mission Dr, San Gabriel, CA 91776", "Venue · The Scholart Selection, 417 S Mission Dr, San Gabriel, CA 91776")] },
-        t("開幕活動", "Opening event"),
+        { heading: t("開幕活動", "Opening event") },
         { list: [t("2026 年 10 月 17 日（星期六）下午 2:00–5:00（洛杉磯時間）", "Saturday, October 17, 2026 · 2:00–5:00 PM (Los Angeles time)")] },
-        t("一般開放時間", "Regular hours"),
+        { heading: t("一般開放時間", "Regular hours") },
         { list: [t("星期二至星期日・上午 10:00–下午 5:00", "Tuesday to Sunday · 10:00 AM–5:00 PM"), t("星期一休館", "Closed on Mondays")] },
       ],
     },

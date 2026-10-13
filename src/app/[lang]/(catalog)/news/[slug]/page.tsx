@@ -43,6 +43,7 @@ export default async function NewsArticle({ params }: Props) {
             <span className="news-story-rule" aria-hidden="true" />
             <div className="news-article-body">
               {n.body.map((b, i) => typeof b === "string" ? <p key={i} className="tc">{b}</p>
+                : "heading" in b ? <p key={i} className="tc font-bold">{b.heading /* bold sub-heading (user 2026-10-13: 「開幕活動一般開放時間 加粗」) */}</p>
                 : "list" in b ? <ul key={i}>{b.list.map((x) => <li key={x} className="tc">{x}</li>)}</ul>
                 : <p key={i} className="news-article-links">{b.links.map((l) => <Link key={l.href} href={l.href.startsWith("/media/") ? l.href : localeHref(lang, l.href)} className="tc">{l.label}</Link>)}</p>)}
             </div>
