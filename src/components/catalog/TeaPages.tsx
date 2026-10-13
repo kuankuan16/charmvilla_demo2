@@ -103,7 +103,8 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   return (
     <section className="tea-sheet" aria-label={title}>
-      {notes && <TeaKinds title={notes.title} productName={product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
+      {/* 京都版 holds one tea chosen from four (user 2026-10-13: 「京都版後面備註 4 選 1」) */}
+      {notes && <TeaKinds title={notes.title} productName={product.slug === "kyoto-gift-box" ? `${product.name}${t("（4 選 1）", " (choose 1 of 4)")}` : product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
         {brew.image && <figure className="brew-visual">
           <Picture img={brew.image} fill animate={false} sizes="(max-width: 767px) 100vw, (max-width: 1279px) 40vw, 530px" />
