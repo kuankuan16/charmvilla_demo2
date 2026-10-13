@@ -153,10 +153,10 @@ export const teaGifts: TeaGift[] = [
     notice: [tieDyeColors],
     en: { name: "Snowy Twilight", description: "Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Inspired by the meeting of cherry blossoms and snow, the collection offers a quiet tea moment for yourself or someone special.", summary: "12 Goldfish Tea Bags per box · Rose Oolong Tea or Oriental Beauty Tea" } },
   { officialId: 960, slug: "orchid-gift-box", preOrder: true, preOrderLimit: 10, lidViews: { 1: { front: "official-gift-front-orchid-gift-box-pink-cutout-v3.webp" } }, sceneFile: "scene-orchid-gift-box.webp", name: "蝴蝶蘭", english: "ROYAL ORCHID", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, contents: [], lid: [gold, pink], usd: 300,
-    choices: [{ label: firstRose, price: 300 }, { label: thirdBeauty, price: 340 }].map(c => ({ ...c, contents: [count(c.label, 18)] })),
+    /* not competition teas (user 2026-10-13: 「蝴蝶蘭也是」, as 春曉、暮雪; client answer B5) */ choices: [{ label: rose, price: 300 }, { label: beauty, price: 340 }].map(c => ({ ...c, contents: [count(c.label, 18)] })),
     description: "CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。",
-    notice: [competitionPricing, embroideryNote],
-    en: { name: "Royal Orchid", description: "Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a hand-embroidered fabric lid. The orchid-inspired collection offers a gift for celebrations and meaningful occasions. Choose your tea and a Gold or Pink lid.", summary: "18 Goldfish Tea Bags per box · First-Prize Rose Oolong Tea or Third-Prize Oriental Beauty Tea" } },
+    notice: [embroideryNote],
+    en: { name: "Royal Orchid", description: "Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a hand-embroidered fabric lid. The orchid-inspired collection offers a gift for celebrations and meaningful occasions. Choose your tea and a Gold or Pink lid.", summary: "18 Goldfish Tea Bags per box · Rose Oolong Tea or Oriental Beauty Tea" } },
   { officialId: 88, slug: "purple-butterfly-gift-box", preOrder: true /* user 2026-10-13: 「紫斑蝶先加預購標示」 */, preOrderLimit: 10, sceneFile: "scene-purple-butterfly-gift-box.webp", name: "紫斑蝶", english: "SAPPHIRE WINGS", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, contents: [count(secondBeauty, 18)], usd: 425,
     description: "CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。",
     story: {

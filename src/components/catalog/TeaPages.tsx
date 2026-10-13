@@ -99,7 +99,7 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   return (
     <section className="tea-sheet" aria-label={title}>
       {/* 京都版 holds one tea chosen from four (user 2026-10-13: 「京都版後面備註 4 選 1」) */}
-      {notes && <TeaKinds title={notes.title} productName={product.slug === "kyoto-gift-box" ? `${product.name}${t("（4 選 1）", " (choose 1 of 4)")}` : (product.slug === "winter-blossom-gift-box" || product.slug === "spring-dawn-gift-box") /* 「暮雪也要備註2選1」「春曉也是一樣的邏輯處理」 */ ? `${product.name}${t("（2 選 1）", " (choose 1 of 2)")}` : product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
+      {notes && <TeaKinds title={notes.title} productName={product.slug === "kyoto-gift-box" ? `${product.name}${t("（4 選 1）", " (choose 1 of 4)")}` : ["winter-blossom-gift-box", "spring-dawn-gift-box", "orchid-gift-box"].includes(product.slug) /* 「暮雪也要備註2選1」「春曉也是一樣的邏輯處理」 */ ? `${product.name}${t("（2 選 1）", " (choose 1 of 2)")}` : product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
         {brew.image && <figure className="brew-visual">
           <Picture img={brew.image} fill animate={false} sizes="(max-width: 767px) 100vw, (max-width: 1279px) 40vw, 530px" />
