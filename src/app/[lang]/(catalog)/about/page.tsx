@@ -26,6 +26,8 @@ const icons: Record<string, React.ReactNode> = {
   payment: <path d="M3 6.5h18v11H3zM3 10h18M6.5 14.5h4" />,
   delivery: <path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM12 7.5V12l3 2" />,
   returns: <path d="M8 8.5H4.5V5M4.8 8.3A8 8 0 1 1 4 13" />,
+  // an envelope, the same line weight (user 2026-10-13: 「加入 email 的icon」)
+  contact: <path d="M3 6.5h18v11H3zM3.5 7l8.5 6.5L20.5 7" />,
 };
 
 const ArrowLink = ({ href, label, lang }: { href: string; label: string; lang: Locale }) => (

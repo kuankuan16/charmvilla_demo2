@@ -618,7 +618,7 @@ const buildCatalog = (lang: Locale) => {
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
     "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
     "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", "scene-christmas-gift-box-burgundy-sunbeam.webp", mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
-    "snowflake-gift-box": ["scene-snowflake-gift-box-olive-sofa-pouch.webp", twoPeople, mug], // 沙發照領頭、也是清單 hover（使用者 2026-10-13：「用這個做情境圖」→「好」）
+    "snowflake-gift-box": ["scene-snowflake-gift-box-olive-sofa-pouch.webp", mug, twoPeople], // 沙發照領頭、也是清單 hover（使用者 2026-10-13：「用這個做情境圖」→「好」）；兩人照與捧杯照左右交換（「左右交換」）
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden
