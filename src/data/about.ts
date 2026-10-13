@@ -74,7 +74,9 @@ export const getAbout = (lang: Locale) => {
         // 02 改用手作過程照，直接呼應 16 道工序與 9 道手作（使用者 2026-10-12：「取消合併，再幫我重新配圖」「挑適合 02 的圖」）。
         // 同日再換（「要換 about 02 的圖…有職人感，符合內容，並巧妙避開小金魚茶包容易出錯的破綻」）：新生成的手工填茶情境，完成的小金魚不入鏡、
         // 沒有膠水（內文寫不使用化學黏劑），光線沿用官網攝影風格（Nano Banana 2.1）；about-02.webp 保留在 repo。
-        image: site("about-02-artisan-filling-tea-v2.webp", t("職人把茶葉放到不織布上，手作小金魚茶包", "An artisan fills a goldfish tea bag with tea leaves by hand"), 1792, 2400),
+        // 10-13 再換成使用者提供的品牌照（「換這張」「把它變高清並刪除下面的 logo」）：Nano Banana 2.1 只擦掉 CHARM VILLA 字樣與倒影並放大到 4K，
+        // 提示詞與前後對照見 docs/qa/2026-10-13-about-02-brand-photo；about-02-artisan-filling-tea-v2.webp 留在 repo。
+        image: site("about-02-goldfish-tea-bags-red-ink-hd.webp", t("黑色亮面桌上的一排白色小金魚茶包", "A row of white goldfish tea bags on a glossy black table"), 2880, 1932),
       },
       {
         id: "world", index: "03", side: "right",
