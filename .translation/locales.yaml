@@ -1,9 +1,12 @@
+# 2026-10-13: English (US) is the default locale at the unprefixed URL; Chinese, the source copy, lives under /zh.
 source: zh-Hant-TW
+source_url_prefix: /zh
+source_html_lang: zh-Hant
 targets:
   - locale: en
-    url_prefix: /en
+    url_prefix: ""
     html_lang: en
 default:
-  locale: zh-Hant-TW
+  locale: en
   url_prefix: ""
-  html_lang: zh-Hant
+  html_lang: en

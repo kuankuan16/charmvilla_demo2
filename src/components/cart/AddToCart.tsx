@@ -12,12 +12,14 @@ export default function AddToCart({ product }: { product: Product }) {
   const choices = product.giftBox?.choices;
   const { option, setOption } = useProductOption(); // shared with the gallery (ProductOption.tsx)
   const missing = Boolean(choices) && option === undefined;
+  // No list price yet (the bird chopstick rest): the button waits instead of putting a priceless line in the bag (2026-10-13 commerce audit).
+  const noPrice = !product.price;
   return <>
     {choices && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}</legend>
       <div>{choices.map((c, i) => <label key={c.label} className="tc" title={c.note}><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{c.price && c.price !== product.price?.amount ? `・${formatPrice(c.price, product.price?.currency)}` : ""}</label>)}</div>
       {/* the chosen packaging in one line (user 2026-10-07: the 包裝選項 texts 「可以精簡呈現在這區」) */}
       {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}
     </fieldset>}
-    <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1, option)} disabled={cart.busy || missing || product.soldOut}>{product.soldOut ? t("已售罄", "Sold out") : missing ? (product.giftBox?.choiceLabel?.includes("包裝") || product.giftBox?.choiceLabel?.includes("packaging") ? t("請先選擇包裝", "Choose your packaging") : product.giftBox?.choiceLabel === t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") ? t("請先選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("請先選擇茶款", "Choose your tea")) : product.preOrder ? t("加入預購", "Pre-order") : t("加入購物車", "Add to bag")}</button>
+    <button type="button" className="product-buy tc" onClick={() => cart.add(product, 1, option)} disabled={cart.busy || missing || product.soldOut || noPrice}>{product.soldOut ? t("已售罄", "Sold out") : noPrice ? t("價格確認中", "Price coming soon") : missing ? (product.giftBox?.choiceLabel?.includes("包裝") || product.giftBox?.choiceLabel?.includes("packaging") ? t("請先選擇包裝", "Choose your packaging") : product.giftBox?.choiceLabel === t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") ? t("請先選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("請先選擇茶款", "Choose your tea")) : product.preOrder ? t("加入預購", "Pre-order") : t("加入購物車", "Add to bag")}</button>
   </>;
 }

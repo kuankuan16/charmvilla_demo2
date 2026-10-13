@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
+import Image from "next/image";
 import { getContent } from "@/data/content";
 import { useT } from "@/i18n/LocaleProvider";
 import { localeHref } from "@/i18n/config";
@@ -25,6 +26,9 @@ export default function Hero() {
   const [active, setActive] = useState(0);
   const hoverRef = useRef(false);
   const focusRef = useRef(false);
+  // The visible pause control (WCAG 2.2.2): while paused the photographs stay where they are; arrows, swipe and links still work.
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(false);
   const touchStart = useRef<number | null>(null);
 
   useEffect(() => {
@@ -75,7 +79,7 @@ export default function Hero() {
     const tick = () => {
       if (document.hidden || !visible) return;
       if (!media.matches) render();
-      if (!media.matches && !hoverRef.current && !focusRef.current && !busy && performance.now() > nextAt && document.documentElement.classList.contains("is-loaded")) rotate(1);
+      if (!media.matches && !hoverRef.current && !focusRef.current && !pausedRef.current && !busy && performance.now() > nextAt && document.documentElement.classList.contains("is-loaded")) rotate(1);
     };
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
@@ -94,9 +98,16 @@ export default function Hero() {
     document.addEventListener("visibilitychange", onVisibility);
     gsap.ticker.add(tick);
     render();
+    // The heading is split into letters by the motion engine (SplitText), which puts an aria-label on each plain <span>; those
+    // spans are aria-hidden here and the full words are in a screen-reader-only copy, so the stray labels are removed.
+    const title = el.querySelector(".orbit-title");
+    const stripLabels = () => title?.querySelectorAll("[aria-label]").forEach((node) => node.removeAttribute("aria-label"));
+    const labels = new MutationObserver(stripLabels);
+    if (title) labels.observe(title, { subtree: true, attributes: true, attributeFilter: ["aria-label"] });
+    stripLabels();
     return () => {
       advance.current = () => {};
-      tween?.kill(); gsap.ticker.remove(tick); observer.disconnect(); resize.disconnect();
+      tween?.kill(); gsap.ticker.remove(tick); observer.disconnect(); resize.disconnect(); labels.disconnect();
       media.removeEventListener("change", onMotionChange);
       document.removeEventListener("visibilitychange", onVisibility);
     };
@@ -141,14 +152,21 @@ export default function Hero() {
           {hero.slides.map((slide, i) => (
             <div key={slide.id} data-orbit-card="" data-active={active === i} className={`orbit-card orbit-card--${slide.id}`} aria-hidden={active !== i}>
               <Link href={localeHref(lang, slide.href)} tabIndex={active === i ? 0 : -1} aria-label={t(`探索${slide.label}`, `Explore the ${slide.label}`)} className="orbit-photo-link" onPointerEnter={() => { hoverRef.current = true; }} onPointerLeave={() => { hoverRef.current = false; }}>
-                <img src={slide.src} alt={slide.alt} width={slide.w} height={slide.h} fetchPriority={i === 0 ? "high" : "auto"} loading="eager" draggable={false} />
+                {/* sizes follow .orbit-card's widths in globals.css; only the first photograph is preloaded */}
+                <Image src={slide.src} alt={slide.alt} width={slide.w} height={slide.h} sizes="(max-width: 767px) min(60vw, 340px), (max-width: 1023px) 38vw, 31vw" preload={i === 0} fetchPriority={i === 0 ? "high" : undefined} loading={i === 0 ? undefined : "eager"} draggable={false} />
               </Link>
             </div>
           ))}
         </div>
       </div>
-      <h1 className="orbit-title" data-hero-reveal=""><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">EVERYDAY</span><span data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">LUXURIES</span></h1>
+      {/* the split letters are visual only; the sr-only copy comes last so `.orbit-title > span + span` spacing is unchanged */}
+      <h1 className="orbit-title" data-hero-reveal=""><span aria-hidden="true" data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">EVERYDAY</span><span aria-hidden="true" data-animation="split" data-split="chars" data-from="150" data-duration="1.5" data-ease="power4.out">LUXURIES</span><span className="sr-only">Everyday Luxuries</span></h1>
       <p className="orbit-statement tc" data-hero-reveal=""><span>{hero.subtitle}</span></p>
+      <button type="button" className="orbit-pause tc" data-hero-reveal=""
+        aria-label={paused ? t("繼續播放輪播", "Play the carousel") : t("暫停輪播", "Pause the carousel")}
+        onClick={() => { pausedRef.current = !pausedRef.current; setPaused(pausedRef.current); }}>
+        <span className={`orbit-pause-icon${paused ? " is-paused" : ""}`} aria-hidden="true" />
+      </button>
     </section>
   );
 }

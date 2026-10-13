@@ -24,7 +24,8 @@ promise outcomes.
 - Alt text: describe what is visible, product first, no "image of".
 
 ## Mechanics
-- Numbers, units and dimensions exactly as the source (`28.6 × 11.7 × 9 cm`, `NT$ 2,000`).
+- Numbers, units and dimensions exactly as the source (`28.6 × 11.7 × 9 cm`, `$230`); US prices are in USD.
+- Spelling: American (*color*, *flavor*, *catalog*, *inquiries*), since 2026-10-13.
 - Dates: `Aug 11`, `Oct 3`; times `10:00–21:00`.
 - Counts of tea bags: "12 per box", "3 × Taiwan Rose Oolong Tea".
 - Separator in product names: Chinese 「｜」 becomes ` | `, 「・」 becomes ` · `.

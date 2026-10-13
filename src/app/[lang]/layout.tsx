@@ -11,6 +11,9 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: 
 const notoTC = Noto_Sans_TC({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-noto-tc", display: "swap" });
 
 type Props = { params: Promise<{ lang: string }> };
+// Where the share image is fetched from: Vercel's production host for this project (charmvilla-demo2.vercel.app now, the custom
+// domain once it is attached), else siteUrl. www.charmvilla.com still serves the old store, which has no such file.
+const ogBase = process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : siteUrl;
 // Hides the preloader before first paint once it has played in this tab (key: INTRO_SEEN in components/engine/Preloader.tsx).
 const introSeenScript = `try{if(sessionStorage.getItem("cv-intro-seen"))document.documentElement.classList.add("intro-seen")}catch(e){}`;
 
@@ -25,7 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: t("藝術即生活。走進 CHARM VILLA 的日常藝廊，從小金魚茶包禮盒、香氛到柴燒器物，細看材質、手作與生活的關係。",
       "Art as Life. Step into CHARM VILLA's everyday gallery: from Goldfish Tea Bag gift boxes and scents to wood-fired objects for the table, look closely at how material, handwork and daily life relate."),
-    openGraph: { title, images: ["/media/site/scene-red-giftbox-tea-hinoki-bird.webp"], locale: t("zh_TW", "en") },
+    // A 1200 × 630 JPG cut from the red gift box scene (scene-red-giftbox-tea-hinoki-bird.webp, the whole box in frame), the size
+    // and format every share preview accepts. Absolute on the host that serves this deployment's production (see ogBase), so a link
+    // shared from demo2 shows the image today, while canonical and hreflang keep pointing at siteUrl through metadataBase.
+    openGraph: { title, images: [{ url: `${ogBase}/media/site/og-charm-villa-1200x630.jpg`, width: 1200, height: 630, alt: t("刺繡金魚紅色禮盒與一杯小金魚茶", "The red embroidered goldfish gift box with a cup of goldfish tea") }],
+      locale: t("zh_TW", "en_US"), alternateLocale: t("en_US", "zh_TW") },
   };
 }
 

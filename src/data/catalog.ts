@@ -594,11 +594,13 @@ const buildCatalog = (lang: Locale) => {
   // …or grey blocks while the client's photographs and details are awaited (used by the Reunion box's 粉紅色 and 藍色 until 2026-10-13, when both went off sale; kept for options awaiting photographs)
   const greyViews = (n: number): ProductView[] => Array.from({ length: n }, () => ({ label: t("缺圖", "No image yet"), image: { src: "", alt: t("缺圖", "No image yet"), w: 4, h: 5 }, placeholder: true, tone: "grey" as const }));
   // Pink lids keep their existing cover, add their HD front in slot 2, and retain their existing angle/unboxed views.
+  // A lid view the option does not have is left out rather than borrowed from the default lid (2026-10-13: 蝴蝶蘭粉紅色 showed the
+  // gold box's cover and angled view); so 蝴蝶蘭粉紅色 shows its real pink front photograph and the shared unboxed view (no lid in it).
   const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string }): ProductView[] => [
-    lv.cover ? { label: t("正面", "Front view"), image: studioImage(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) } : p.views[0],
+    ...(lv.cover ? [{ label: t("正面", "Front view"), image: studioImage(lv.cover, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・封面", "pink lid, front view")}`) }] : []),
     ...(lv.front ? [{ label: t("正面實拍", "Official front view"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・正面實拍", "pink lid, official front photograph with its ribbon and embroidery")}`) }] : []),
-    ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : p.views.slice(2)),
-    ...(lv.angle ? p.views.filter((v) => /開箱|Unboxed/.test(v.label)) : []),
+    ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : []),
+    ...p.views.filter((v) => /開箱|Unboxed/.test(v.label)),
   ];
   const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews || c.lidViews)
     ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.placeholderViews ? { ...c, views: greyViews(c.placeholderViews) } : c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c.lidViews ? { ...c, views: lidViews(p, c.lidViews) } : c) } } : p);

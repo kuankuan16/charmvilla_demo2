@@ -5,8 +5,9 @@
 //               hosted checkout (checkoutUrl), where Markets decide currency, taxes, shipping and payment.
 // The UI (drawer, add-to-cart) is identical in both modes.
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { getProducts, findProduct, formatPrice, type Product } from "@/data/catalog";
+import { findProduct, formatPrice, type Product } from "@/data/catalog";
 import type { Cart as ShopifyCart } from "@/lib/shopify/types";
+import { variantFor, productForVariant } from "@/lib/shopify/variants";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
 import type { Locale } from "@/i18n/config";
@@ -25,10 +26,25 @@ const LOCAL_KEY = "cv-cart", ID_KEY = "cv-cart-id";
 const MODE: "local" | "shopify" = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify" ? "shopify" : "local";
 
 // Lines are named from the site catalogue in the page language; the stored cart itself is language-neutral (slugs / variant ids).
-const linesFromShopify = (cart: ShopifyCart | null, lang: Locale): CartLine[] => (cart?.lines.edges ?? []).map(({ node }) => {
-  const local = getProducts(lang).find((p) => p.shopify?.variantId === node.merchandise.id);
-  return { key: node.id, slug: local?.slug ?? null, name: local?.name ?? node.merchandise.product.title, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id };
+// The variant GID tells which product and which option (tea, tea × lid colour) the line is (src/lib/shopify/variants.ts).
+const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string, en: string) => string): CartLine[] => (cart?.lines.edges ?? []).map(({ node }) => {
+  const hit = productForVariant(node.merchandise.id);
+  const local = hit ? findProduct(hit.slug, lang) : undefined;
+  const choice = hit?.option === undefined ? undefined : local?.giftBox?.choices?.[hit.option];
+  const name = local ? (choice ? `${local.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : local.name) : node.merchandise.product.title;
+  return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id };
 });
+
+// Line attributes travel to Shopify checkout, the order and the order emails, so they are in English (the US store's language).
+// The option itself is the variant; the attribute only repeats it in words. Pre-order lines are marked so the warehouse can tell them apart.
+const lineAttributes = (product: Product, option?: number) => {
+  const en = findProduct(product.slug, "en");
+  const label = option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label;
+  const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
+  const key = legend.includes("packaging") ? "Packaging" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
+  const attrs = [...(label ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
+  return attrs.length ? { attributes: attrs } : {};
+};
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const { lang, t } = useT();
@@ -66,7 +82,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const add = useCallback(async (product: Product, quantity = 1, option?: number) => {
     if (product.soldOut) return;
     setOpen(true);
-    if (MODE === "shopify") { if (!product.shopify?.variantId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece cannot be added to the bag for now.")); return; } const tea = option === undefined ? undefined : findProduct(product.slug, "zh")?.giftBox?.choices?.[option]?.label; await call("POST", { lines: [{ merchandiseId: product.shopify.variantId, quantity, ...(tea ? { attributes: [{ key: "茶款", value: tea }] } : {}) }] }); return; }
+    if (MODE === "shopify") {
+      const merchandiseId = variantFor(product.slug, option); // one GID per option (src/data/shopify-map.json)
+      if (!merchandiseId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece cannot be added to the bag for now.")); return; }
+      await call("POST", { lines: [{ merchandiseId, quantity, ...lineAttributes(product, option) }] }); return;
+    }
     setLocalLines((ls) => { const i = ls.findIndex((l) => l.slug === product.slug && l.option === option); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
   }, [call, t]);
   const update = useCallback(async (key: string, quantity: number) => {
@@ -79,7 +99,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => ls.filter((l) => lineKey(l) !== key));
   }, [call]);
 
-  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; return p ? [{ key: lineKey(l), slug: p.slug, name: choice ? `${p.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
+  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang, t) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; return p ? [{ key: lineKey(l), slug: p.slug, name: choice ? `${p.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   const subtotal = lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = lines[0]?.currency ?? "TWD";

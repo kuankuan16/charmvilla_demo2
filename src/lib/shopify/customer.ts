@@ -1,5 +1,5 @@
 import { storefront, ShopifyError, firstUserError } from "./client";
-import { CUSTOMER_QUERY, CUSTOMER_CREATE, TOKEN_CREATE, TOKEN_DELETE, CUSTOMER_RECOVER, CUSTOMER_UPDATE, ADDRESS_CREATE, ADDRESS_UPDATE, ADDRESS_DELETE, ADDRESS_DEFAULT } from "./queries";
+import { CUSTOMER_QUERY, CUSTOMER_CREATE, TOKEN_CREATE, TOKEN_DELETE, CUSTOMER_RECOVER, CUSTOMER_RESET_BY_URL, CUSTOMER_ACTIVATE_BY_URL, CUSTOMER_UPDATE, ADDRESS_CREATE, ADDRESS_UPDATE, ADDRESS_DELETE, ADDRESS_DEFAULT } from "./queries";
 import type { Customer, Address, UserError } from "./types";
 
 export type AddressInput = { firstName?: string; lastName?: string; company?: string; address1?: string; address2?: string; city?: string; province?: string; zip?: string; country?: string; phone?: string };
@@ -23,6 +23,19 @@ export const me = async (token: string) => (await storefront<{ customer: Custome
 export async function recover(email: string) {
   const d = await storefront<{ customerRecover: { customerUserErrors: UserError[] } }>(CUSTOMER_RECOVER, { email });
   const m = firstUserError(d.customerRecover.customerUserErrors); if (m) throw new ShopifyError(m, 400);
+}
+type TokenPayload = { customerAccessToken: { accessToken: string; expiresAt: string } | null; customerUserErrors: UserError[] };
+/** Set a new password from the emailed reset link; signs the customer in. */
+export async function resetByUrl(resetUrl: string, password: string) {
+  const d = await storefront<{ customerResetByUrl: TokenPayload }>(CUSTOMER_RESET_BY_URL, { resetUrl, password });
+  if (!d.customerResetByUrl.customerAccessToken) fail(d.customerResetByUrl.customerUserErrors, "重設密碼失敗");
+  return d.customerResetByUrl.customerAccessToken!;
+}
+/** Activate an account (created by the shop or invited) from the emailed link, choosing a password; signs the customer in. */
+export async function activateByUrl(activationUrl: string, password: string) {
+  const d = await storefront<{ customerActivateByUrl: TokenPayload }>(CUSTOMER_ACTIVATE_BY_URL, { activationUrl, password });
+  if (!d.customerActivateByUrl.customerAccessToken) fail(d.customerActivateByUrl.customerUserErrors, "帳號啟用失敗");
+  return d.customerActivateByUrl.customerAccessToken!;
 }
 export async function updateProfile(token: string, customer: { firstName?: string; lastName?: string; phone?: string; email?: string; password?: string; acceptsMarketing?: boolean }) {
   const d = await storefront<{ customerUpdate: { customer: Customer | null; customerUserErrors: UserError[] } }>(CUSTOMER_UPDATE, { token, customer });

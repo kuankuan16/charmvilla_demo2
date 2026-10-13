@@ -427,7 +427,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-related .catalog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 20px; }
 .product-related .catalog-card-image { aspect-ratio: 3 / 4; }
 .product-related .catalog-card h3 { margin-top: 12px; font-size: 24px; font-weight: 400; line-height: 1.15; }
-.product-related .catalog-card-caption { margin-top: 4px; font-size: 16px; line-height: 1.3; color: rgb(31 31 31 / .5); }
+.product-related .catalog-card-caption { margin-top: 4px; font-size: 16px; line-height: 1.3; color: #5f6163; } /* 5.8:1 on --color-page, 5.2:1 on --color-paper (was 3.2:1, launch QA 2026-10-13) */
 .product-related .catalog-card-caption .catalog-card-soldout { border-left: 0; margin-left: 0; padding-left: 0; }
 .product-related .catalog-card-caption .catalog-card-soldout::before { content: " · "; }
 /* The brand band before the footer, after STINA's "Design by Tradition. Copenhagen by Heart." band: the darkened photograph full width and
@@ -618,6 +618,18 @@ main:has(> .policy-page) { background: #efefed; }
 .orbit-statement { position: absolute; z-index: 16; top: 14%; right: var(--page-gutter); margin: 0; font-size: clamp(21px, 2.08vw, 46px); font-weight: 500; line-height: 1.7; letter-spacing: -.045em; text-align: right; pointer-events: none; }
 .orbit-statement span { display: block; }
 .orbit-hero .orbit-photo-link:focus-visible { outline-offset: 6px; }
+/* Pause / play for the rotating photographs (WCAG 2.2.2), bottom right on the title's baseline. */
+.orbit-pause { position: absolute; z-index: 16; right: var(--page-gutter); bottom: 11.5%; display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid #29251e; border-radius: 50%; background: rgb(246 248 250 / .72); color: #29251e; transition: background-color .2s, color .2s, transform .15s; }
+.orbit-pause:hover { background: #29251e; color: var(--color-page); }
+.orbit-pause:active { transform: scale(.94); }
+.orbit-pause:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
+.orbit-pause:disabled { opacity: .4; cursor: not-allowed; background: rgb(246 248 250 / .72); color: #29251e; transform: none; }
+.orbit-pause-icon { position: relative; display: block; width: 12px; height: 14px; }
+.orbit-pause-icon::before, .orbit-pause-icon::after { content: ""; position: absolute; top: 0; bottom: 0; width: 4px; background: currentColor; }
+.orbit-pause-icon::before { left: 0; }
+.orbit-pause-icon::after { right: 0; }
+.orbit-pause-icon.is-paused::before { left: 2px; width: 0; height: 0; bottom: auto; background: none; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent currentColor; }
+.orbit-pause-icon.is-paused::after { display: none; }
 .is-loading:not(.is-revealing) .orbit-stage { opacity: 0; transform: scale(.76); }
 .is-revealing .orbit-stage, .is-loaded .orbit-stage { opacity: 1; transform: scale(1); transition: opacity 1.3s, transform 1.7s cubic-bezier(.16,1,.3,1); }
 @media (max-width: 1023px) and (min-width: 768px) {
@@ -634,9 +646,10 @@ main:has(> .policy-page) { background: #efefed; }
   .orbit-brush { mask-image: var(--brush-sp); }
   .orbit-statement { right: var(--page-gutter); top: 11%; font-size: clamp(18px, 4.73vw, 28px); line-height: 1.5; }
   .orbit-title { left: var(--page-gutter); bottom: 21%; font-size: 12.4vw; line-height: .9; }
+  .orbit-pause { bottom: 21%; width: 44px; height: 44px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .orbit-stage, .orbit-photo-link img { transition: none !important; }
+  .orbit-stage, .orbit-photo-link img, .orbit-pause { transition: none !important; }
 }
 
 /* Header shares the content edges at every viewport size. */
@@ -792,6 +805,8 @@ main:has(> .policy-page) { background: #efefed; }
 .account-form label { display: grid; gap: 6px; font-size: 15px; letter-spacing: .03em; color: var(--color-stone-deep); }
 .account-form input:not([type=checkbox]) { border: 0; border-bottom: 1px solid #1f1f1f50; border-radius: 0; min-height: 40px; background: transparent; color: var(--color-ink); padding: 8px 0; font-size: 17px; }
 .account-form input:focus { outline: none; border-bottom-color: var(--color-ink); }
+/* keyboard focus gets a clear frame as well as the darker rule (launch QA 2026-10-13: the rule alone was hard to see); checkboxes included */
+.account-form input:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; border-bottom-width: 2px; }
 .account-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .account-check { display: flex !important; align-items: center; gap: 10px; color: var(--color-ink) !important; font-size: 15px !important; }
 .account-form .catalog-button { justify-self: start; min-width: 200px; }
@@ -1481,21 +1496,21 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-steps li::after { background: var(--color-gold); transform: scaleY(var(--brew-segment-progress)); }
 .brew-node { position: relative; z-index: 1; width: var(--brew-node-size); height: var(--brew-node-size); margin-top: calc(var(--brew-row-padding) + 1px); border-radius: 50%; background: #bebebb; transition: background-color .32s ease, box-shadow .32s ease; }
 .brew-steps li.is-progressed .brew-node { background: var(--color-gold); box-shadow: 0 0 0 3px #efefed; }
-.brew-step-content { position: relative; display: grid; grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 56px; column-gap: var(--brew-column-gap); padding: var(--brew-row-padding) 0; will-change: transform, opacity; }
+.brew-step-content { position: relative; display: grid; grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 64px; column-gap: var(--brew-column-gap); padding: var(--brew-row-padding) 0; will-change: transform, opacity; }
 .brew-step-content::before, .brew-steps li:last-child .brew-step-content::after { content: ""; position: absolute; left: calc(var(--brew-number-width) + var(--brew-column-gap)); right: 0; height: 1px; background: rgb(31 31 31 / .16); }
 .brew-step-content::before { top: 0; }
 .brew-steps li:last-child .brew-step-content::after { bottom: 0; }
 .brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
-.brew-icon { display: block; justify-self: end; width: 54px; height: 54px; color: var(--color-gold); }
+.brew-icon { display: block; justify-self: end; width: 64px; height: 64px; color: var(--color-gold); }
 .brew-icon svg { display: block; width: 100%; height: 100%; }
 @media (max-width: 1279px) and (min-width: 768px) {
   .brew-visual { grid-column: 1 / span 5; }
   .brew-guide { grid-column: 6 / -1; }
   .brew-steps { --brew-number-width: 36px; --brew-column-gap: 14px; }
   .brew-copy h3 { font-size: 23px; }
-  .brew-icon { width: 54px; height: 54px; }
+  .brew-icon { width: 60px; height: 60px; }
 }
 @media (max-width: 767px) {
   .brew-process { padding-top: 72px; padding-bottom: 96px; }
@@ -1507,11 +1522,11 @@ main:has(> .policy-page) { background: #efefed; }
   .brew-kicker > span { width: 7px; height: 7px; }
   .brew-steps { grid-column: 1; grid-row: 3; --brew-node-size: 11px; --brew-row-padding: 24px; --brew-number-width: 30px; --brew-column-gap: 10px; }
   .brew-steps li { grid-template-columns: 16px minmax(0, 1fr); min-height: 0; }
-  .brew-step-content { grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 46px; }
+  .brew-step-content { grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 54px; }
   .brew-number { font-size: 13px; }
   .brew-copy h3 { font-size: 20px; }
   .brew-copy p { margin-top: 8px; font-size: 17px; line-height: 1.6; }
-  .brew-icon { width: 44px; height: 44px; }
+  .brew-icon { width: 52px; height: 52px; }
 }
 @media (min-width: 1920px) { .brew-title, .teakind-h02 { font-size: 64px; } }
 @media (max-width: 991px) {

@@ -1,11 +1,9 @@
 {
-  "_how": "For each sellable product paste the Shopify product handle and the variant GID (Shopify admin → Products → variant → copy 'gid://shopify/ProductVariant/…'). Leave empty until the store exists; empty entries fall back to the local cart.",
-  "_currency_note": "Prices shown on the site in shopify mode come from the Storefront API (Shopify Markets decides TWD/USD/JPY); the TWD list in official-prices.json is only the local-mode fallback.",
+  "_how": "Paste values from Shopify admin (Products -> product -> variant -> copy 'gid://shopify/ProductVariant/...'). Never invent a GID: empty strings mean 'not in Shopify yet' and the piece cannot be added to the bag in shopify mode. One product = one entry keyed by the site slug.",
+  "_variants": "Products sold with options (tea, tea x lid colour) get one variant GID per option in 'variants', keyed by the option's English label exactly as the product page shows it (product.giftBox.choices in the English catalogue). Each option has its own Shopify price and stock, so never reuse one GID for several options. Products without options use 'variantId' (optioned products keep an empty 'variantId' for the older readers). The older shape { handle, variantId } (or a bare GID string) is still read: for an optioned product it is used only when 'variants' is absent.",
+  "_currency_note": "The US store sells in USD only. In shopify mode the bag and checkout prices come from Shopify (cart buyerIdentity countryCode US); the prices in src/data are what the product pages show, so a price change has to be made in both places until a Storefront product query is added.",
+  "_listed_note": "The first 12 entries are the products listed on the US site (getProducts('en')). The entries after them are gift boxes hidden on the US site; they stay so their slugs keep resolving if a box comes back.",
   "reunion-paper-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "reunion-paulownia-gift-box": {
     "handle": "",
     "variantId": ""
   },
@@ -17,11 +15,69 @@
     "handle": "",
     "variantId": ""
   },
-  "spring-blossoms-gift-box": {
+  "kyoto-gift-box": {
+    "handle": "",
+    "variantId": "",
+    "variants": {
+      "Rose Oolong Tea": "",
+      "Rose & Honey-Scented Black Tea": "",
+      "Ruby Black Tea (Red Jade / Ruby No. 18)": "",
+      "Oriental Beauty Tea (White Tip Oolong)": ""
+    }
+  },
+  "spring-dawn-gift-box": {
+    "handle": "",
+    "variantId": "",
+    "variants": {
+      "First-Prize Rose Oolong Tea / Blue": "",
+      "First-Prize Rose Oolong Tea / Pink": "",
+      "Third-Prize Oriental Beauty Tea / Blue": "",
+      "Third-Prize Oriental Beauty Tea / Pink": ""
+    }
+  },
+  "winter-blossom-gift-box": {
+    "handle": "",
+    "variantId": "",
+    "variants": {
+      "First-Prize Rose Oolong Tea": "",
+      "Third-Prize Oriental Beauty Tea": ""
+    }
+  },
+  "orchid-gift-box": {
+    "handle": "",
+    "variantId": "",
+    "variants": {
+      "First-Prize Rose Oolong Tea / Gold": "",
+      "First-Prize Rose Oolong Tea / Pink": "",
+      "Third-Prize Oriental Beauty Tea / Gold": "",
+      "Third-Prize Oriental Beauty Tea / Pink": ""
+    }
+  },
+  "purple-butterfly-gift-box": {
     "handle": "",
     "variantId": ""
   },
-  "kyoto-gift-box": {
+  "cloud-coaster": {
+    "handle": "",
+    "variantId": ""
+  },
+  "bird-chopstick-rest": {
+    "handle": "",
+    "variantId": ""
+  },
+  "ginkgo-teaspoon-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "wooden-chopsticks": {
+    "handle": "",
+    "variantId": ""
+  },
+  "reunion-paulownia-gift-box": {
+    "handle": "",
+    "variantId": ""
+  },
+  "spring-blossoms-gift-box": {
     "handle": "",
     "variantId": ""
   },
@@ -38,22 +94,6 @@
     "variantId": ""
   },
   "tea-to-share-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "spring-dawn-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "winter-blossom-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "orchid-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "purple-butterfly-gift-box": {
     "handle": "",
     "variantId": ""
   },

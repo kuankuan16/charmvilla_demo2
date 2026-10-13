@@ -23,7 +23,8 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
       { href: localeHref(lang, "/account"), label: t("會員", "Account") }] },
     // the US store's FAQ and policies (commerce.ts, user's document 2026-10-07)
     { label: t("購物說明", "Help"), links: getCommerce(lang).footer.help.map((l) => ({ href: l.href.startsWith("mailto:") ? l.href : localeHref(lang, l.href), label: l.label })) },
-    { label: t("條款", "Legal"), links: getCommerce(lang).footer.legal.map((l) => ({ href: localeHref(lang, l.href), label: l.label })) },
+    // the accessibility statement is appended here (its own route file, launch QA 2026-10-13) so commerce.ts's legal list stays as written
+    { label: t("條款", "Legal"), links: [...getCommerce(lang).footer.legal.map((l) => ({ href: localeHref(lang, l.href), label: l.label })), { href: localeHref(lang, "/accessibility"), label: t("無障礙聲明", "Accessibility") }] },
   ];
   return (
     <footer className="catalog-footer site-footer-v2">

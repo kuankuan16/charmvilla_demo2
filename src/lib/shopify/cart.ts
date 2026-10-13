@@ -12,10 +12,18 @@ function unwrap<K extends string>(data: Payload<K>, key: K): Cart {
 }
 
 export const getCart = async (id: string, buyerIp?: string) => (await storefront<{ cart: Cart | null }>(CART_QUERY, { id }, buyerIp)).cart;
-export const createCart = async (lines: LineInput[], buyerIp?: string) => unwrap(await storefront<Payload<"cartCreate">>(CART_CREATE, { input: { lines } }, buyerIp), "cartCreate");
+type BuyerIdentity = { customerAccessToken?: string; email?: string; countryCode?: string };
+/** The US store sells to the United States only, in USD: every cart is created and re-identified with this country. */
+export const STORE_COUNTRY = "US";
+export const createCart = async (lines: LineInput[], buyerIp?: string, buyerIdentity?: BuyerIdentity) => unwrap(await storefront<Payload<"cartCreate">>(CART_CREATE, { input: { lines, ...(buyerIdentity ? { buyerIdentity } : {}) } }, buyerIp), "cartCreate");
 export const addLines = async (cartId: string, lines: LineInput[], buyerIp?: string) => unwrap(await storefront<Payload<"cartLinesAdd">>(CART_LINES_ADD, { cartId, lines }, buyerIp), "cartLinesAdd");
 export const updateLines = async (cartId: string, lines: { id: string; quantity: number }[], buyerIp?: string) => unwrap(await storefront<Payload<"cartLinesUpdate">>(CART_LINES_UPDATE, { cartId, lines }, buyerIp), "cartLinesUpdate");
 export const removeLines = async (cartId: string, lineIds: string[], buyerIp?: string) => unwrap(await storefront<Payload<"cartLinesRemove">>(CART_LINES_REMOVE, { cartId, lineIds }, buyerIp), "cartLinesRemove");
-/** Attach the logged-in customer (and optional country for Shopify Markets pricing) to the cart. */
-export const setBuyerIdentity = async (cartId: string, identity: { customerAccessToken?: string; email?: string; countryCode?: string }, buyerIp?: string) =>
+/** Attach the logged-in customer (and the country for Shopify Markets pricing) to the cart. */
+export const setBuyerIdentity = async (cartId: string, identity: BuyerIdentity, buyerIp?: string) =>
   unwrap(await storefront<Payload<"cartBuyerIdentityUpdate">>(CART_BUYER_IDENTITY, { cartId, buyerIdentity: identity }, buyerIp), "cartBuyerIdentityUpdate");
+/** After sign-in: tie the visitor's existing cart to the customer so checkout starts with their details. Never fails the sign-in. */
+export const attachCustomer = async (cartId: string | undefined, customerAccessToken: string, buyerIp?: string) => {
+  if (!cartId) return;
+  await setBuyerIdentity(cartId, { customerAccessToken, countryCode: STORE_COUNTRY }, buyerIp).catch(() => null);
+};

@@ -5,17 +5,17 @@ Status: approved for working use by the site owner's request of 2026-10-01 (「�
 
 - **Product**: CHARM VILLA brand website and shop (`charmvilla-gallery-site`), a headless storefront.
 - **Source locale**: `zh-Hant-TW` (Traditional Chinese, Taiwan). The Chinese copy is the approved source of truth.
-- **Target locale**: `en` (international English with British spelling: *colour*, *flavour*, *catalogue*, *enquiries*.
-  One exception: the site's existing English labels say "JEWELRY", so that word keeps its US spelling and *jewellery* is
-  not used).
-- **Audience**: gift buyers and design-minded visitors outside Taiwan (US, Japan, Europe); visitors to the Regent Taipei
-  and Kyoto stores; press and stockists.
+- **Target locale**: `en` (US English with American spelling: *color*, *flavor*, *catalog*, *inquiries*, *authorized*;
+  the US store, prices in USD. Updated 2026-10-13; British spelling was the rule before the US store).
+- **Audience**: gift buyers and design-minded visitors in the United States (the US online store, shipped from California);
+  press and stockists. The Taiwan and Japan stores are listed for reference only.
 - **Purpose**: let an English reader browse, understand and buy the same pieces. No new claims, prices or offers.
 - **Surfaces**: page copy, navigation, product names and specifications, calls to action, form labels, error and status
   text, image alt text, accessible names, page titles and descriptions, JSON-LD strings.
-- **Routing**: Chinese at the unprefixed URL (`/collections/tea`), English under `/en` (`/en/collections/tea`).
-  Slugs are shared and never translated. Every page is rendered from `src/app/[lang]`; `src/proxy.ts` rewrites the
-  unprefixed URL to the internal `/zh` segment and redirects `/zh/...` to the unprefixed URL.
+- **Routing** (user 2026-10-13): English, the default, at the unprefixed URL (`/collections/tea`); Chinese under `/zh`
+  (`/zh/collections/tea`). Slugs are shared and never translated. Every page is rendered from `src/app/[lang]`;
+  `src/proxy.ts` rewrites the unprefixed URL to the internal `/en` segment and 308-redirects the old public `/en/...` URLs
+  to the unprefixed URL.
 - **Where the strings live**: next to the Chinese source as `t("中文", "English")` — data in `src/data/*.ts`
   (`getContent(lang)`, `getCatalog(lang)`, `getCraftMoments(lang)`), interface text inline in each component
   (`translator(lang)` on the server, `useT()` in client components). Checks: `docs/qa/2026-10-01-bilingual/`.

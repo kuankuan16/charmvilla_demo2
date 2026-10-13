@@ -9,18 +9,13 @@ import { localeHref } from "@/i18n/config";
 import type { Customer, Address } from "@/lib/shopify/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
+import { api, cartIdInBrowser } from "./account-api";
 
 type Tab = "login" | "register" | "recover";
 type Section = "profile" | "addresses" | "orders";
 const money = (m: { amount: string; currencyCode: string }) => m.currencyCode === "TWD" ? `NT$ ${Number(m.amount).toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency: m.currencyCode }).format(Number(m.amount));
 const statusZh: Record<string, string> = { PAID: "已付款", PENDING: "待付款", AUTHORIZED: "已授權", REFUNDED: "已退款", PARTIALLY_REFUNDED: "部分退款", VOIDED: "已取消", FULFILLED: "已出貨", UNFULFILLED: "備貨中", PARTIALLY_FULFILLED: "部分出貨" };
 const statusEn: Record<string, string> = { PAID: "Paid", PENDING: "Payment pending", AUTHORIZED: "Authorized", REFUNDED: "Refunded", PARTIALLY_REFUNDED: "Partially refunded", VOIDED: "Canceled", FULFILLED: "Shipped", UNFULFILLED: "Being prepared", PARTIALLY_FULFILLED: "Partially shipped" };
-
-async function api<T>(path: string, init?: RequestInit): Promise<{ ok: boolean; status: number; data: T & { message?: string; error?: string } }> {
-  const res = await fetch(path, { ...init, headers: { "Content-Type": "application/json", ...(init?.headers || {}) } });
-  const data = (await res.json().catch(() => ({}))) as T & { message?: string; error?: string };
-  return { ok: res.ok, status: res.status, data };
-}
 
 export default function AccountClient() {
   const { lang, t } = useT();
@@ -50,6 +45,8 @@ export default function AccountClient() {
     if (!configured) { setNotice({ kind: "error", text: NOT_CONNECTED }); return; }
     const form = new FormData(e.currentTarget); const payload: Record<string, unknown> = {};
     form.forEach((v, k) => { if (k === "remember" || k === "consent") return; payload[k] = k === "acceptsMarketing" || k === "makeDefault" ? v === "on" : String(v); });
+    // signing in ties the bag already in this browser to the customer (cart buyer identity, country US; CartProvider keeps the id)
+    if (path === "/api/account/login" || path === "/api/account/register") { const id = cartIdInBrowser(); if (id) payload.cartId = id; }
     setBusy(true);
     const { ok, data } = await api<{ ok?: boolean }>(path, { method, body: JSON.stringify(payload) });
     setBusy(false);

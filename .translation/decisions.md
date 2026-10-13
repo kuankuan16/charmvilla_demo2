@@ -1,5 +1,12 @@
 # Translation decisions
 
+Newest first where an entry replaces an older one; the older entries are kept as history.
+
+- 2026-10-13 — Routing reversed for the US store: English at the unprefixed URL, Chinese under `/zh`; old `/en/...` URLs
+  308-redirect to the unprefixed URL. Replaces the 2026-10-01 routing entry below.
+- 2026-10-13 — Spelling: American (color, flavor, catalog, inquiries, authorized), matching the US store and the English
+  already on the site. Replaces the 2026-10-01 British spelling entry below.
+
 - 2026-10-01 — Chinese stays at the unprefixed URL, English lives under `/en`; slugs are shared.
 - 2026-10-01 — English product names are the title-cased forms of the English labels already on the site
   (`REUNION / PAPER BOX` → `Reunion | Paper Box`). The Chinese name is not shown on English pages.
