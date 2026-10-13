@@ -44,7 +44,7 @@ export default function StoreCarousel() {
   const mood = site("scene-chair-magazine-goldfish-tea-wood-fired-birds-v3.webp", t("午後陽光下，椅子上的一杯小金魚茶與鳥形筷架", "Goldfish tea and Songbird Chopsticks Rests on a chair in afternoon sun"), 1856, 2304);
 
   return (
-    <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("分店介紹", "Our Stores")}>
+    <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("台灣與日本門市", "Our stores in Taiwan and Japan")}>
       <div className="stores-media"><Picture img={mood} fill fit="cover" animate={false} sizes="(min-width:768px) 45vw, 100vw" /></div>
       <div className="stores-body">
         <header className="stores-heading"><h2>{visit.storesHeading}</h2>{visit.storesSub && <p className="tc">{visit.storesSub}</p>}</header>

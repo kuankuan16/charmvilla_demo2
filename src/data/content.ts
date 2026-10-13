@@ -27,7 +27,7 @@ export const sections = [
   { id: "bags", label: "Interwoven Collection", zh: "交織系列" },
   { id: "abundance", label: "Abundance Collection", zh: "豐盛系列" },
   { id: "wood-fired", label: "Wood-Fired Collection", zh: "柴燒系列" },
-  { id: "visit", label: "Our Stores", zh: "門市" },
+  { id: "visit", label: "Stores in Taiwan & Japan", zh: "台日門市" },
 ] as const;
 
 const buildContent = (lang: Locale) => {
@@ -234,7 +234,7 @@ const buildContent = (lang: Locale) => {
     index: "7:",
     heading: "VISIT US:",
     storesHeading: "Our Stores",
-    storesSub: t("分店介紹", ""),
+    storesSub: t("台灣與日本門市・美國僅提供線上購買", "In Taiwan and Japan. In the US, we sell online only."), // user 2026-10-13: no US store
     tabs: [
       {
         id: "shops", label: "門市", labelEn: "SHOPS",

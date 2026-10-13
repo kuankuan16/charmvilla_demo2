@@ -93,7 +93,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const brandLinks = [
     { href: sectionHref("about"), label: t("關於 CHARM VILLA", "About CHARM VILLA") },
     { href: localeHref(lang, "/news"), label: t("最新消息", "News") },
-    { href: sectionHref("visit"), label: t("門市資訊", "Our Stores") },
+    { href: sectionHref("visit"), label: t("台日門市", "Stores in Taiwan & Japan") },
   ];
   const serviceLinks = [
     { href: sectionHref("account"), label: t("會員", "Account") },
@@ -141,7 +141,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
               ))}
             </ul>
           </div>
-          <a href={sectionHref("visit")} className="header-stores" aria-label={t("門市資訊", "Store information")} title={t("門市資訊", "Store information")} onClick={() => setOpen(false)}>
+          <a href={sectionHref("visit")} className="header-stores" aria-label={t("台灣與日本門市", "Our stores in Taiwan and Japan")} title={t("台灣與日本門市", "Our stores in Taiwan and Japan")} onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
           </a>
           <Link href={localeHref(lang, "/account")} aria-label={t("會員", "Account")} title={t("會員", "Account")} onClick={() => setOpen(false)}>

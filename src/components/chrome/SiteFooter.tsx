@@ -19,7 +19,7 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
     { label: t("作品", "Collections"), links: [{ href: categoryHref("all", lang), label: t("全部作品", "All Pieces") }, ...getCategories(lang).map((c) => ({ href: categoryHref(c.id, lang), label: c.name }))] },
     { label: t("品牌", "Company"), links: [
       { href: homeHref, label: t("首頁", "Home") }, { href: localeHref(lang, "/about"), label: t("關於", "About") },
-      { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: storesHref, label: t("門市", "Our Stores") },
+      { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: storesHref, label: t("台日門市", "Stores in Taiwan & Japan") },
       { href: localeHref(lang, "/account"), label: t("會員", "Account") }] },
     // the US store's FAQ and policies (commerce.ts, user's document 2026-10-07)
     { label: t("購物說明", "Help"), links: getCommerce(lang).footer.help.map((l) => ({ href: l.href.startsWith("mailto:") ? l.href : localeHref(lang, l.href), label: l.label })) },
