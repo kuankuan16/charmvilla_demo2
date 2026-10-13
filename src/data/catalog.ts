@@ -395,8 +395,8 @@ const buildCatalog = (lang: Locale) => {
   // 「我想要每一個茶葉禮盒這２張共用，而且都是小圖呈現」）；春曉的故事照也是它，去重
   const handsMug = site("scene-hands-speckled-mug-goldfish-tea-warm-light.webp", t("雙手捧著一杯泡開的小金魚茶", "Two hands holding a cup of brewed goldfish tea"), 1856, 2304);
   for (const s of ["reunion-paper", "spring-dawn", "winter-blossom", "orchid", "purple-butterfly", "kyoto", "year-of-plenty", "blossoming-prosperity", "christmas"]) sceneExtra[`${s}-gift-box`] = [...(sceneExtra[`${s}-gift-box`] ?? []), twoPeopleTea, handsMug];
-  // 蝴蝶蘭：金色與粉紅盒蓋並列的情境照（使用者 2026-10-13：「我想要有一張情境圖是一次擺2種顏色封面的禮盒示意」/luxuryshot）
-  sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-gold-pink-walnut.webp", t("金色與粉紅色盒蓋的蝴蝶蘭禮盒並列，旁邊是一杯小金魚茶", "Royal Orchid gift boxes with gold and pink lids side by side, beside a cup of goldfish tea"), 1856, 2304)];
+  // 蝴蝶蘭：金色與粉紅盒蓋並列的情境照（使用者 2026-10-13：「一次擺2種顏色封面的禮盒示意」/luxuryshot；窗光、木桌、背景柔焦植物、盒子加厚、4K）
+  sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-gold-pink-sunbeam.webp", t("陽光下並列的金色與粉紅色盒蓋蝴蝶蘭禮盒，旁邊是一杯小金魚茶", "Royal Orchid gift boxes with gold and pink lids side by side in the sun, beside a cup of goldfish tea"), 2784, 3456)];
   // 聖誕佳禮：酒紅牆斜窗光的情境照（使用者 2026-10-13 給三張聖誕參考圖「/lifestyleshot」；Nano Banana 2.1）成為頁尾那組的大圖
   sceneExtra["christmas-gift-box"] = [...(sceneExtra["christmas-gift-box"] ?? []), site("scene-christmas-gift-box-burgundy-sunbeam.webp", t("聖誕佳禮兩色禮盒與一杯小金魚茶", "Christmas Delight gift boxes in both colors with a cup of goldfish tea"), 1856, 2304)];
   // 年年有魚：米白圓桌斜陽照（禮盒無緞帶、青瓷咖啡杯裡泡開的小金魚、尤加利，標籤藏在杯後；Nano Banana 2.1，照使用者給的 EAU 書那張的色調）放進商品頁，
@@ -599,7 +599,7 @@ const buildCatalog = (lang: Locale) => {
     "reunion-paper-gift-box": ["scene-reunion-gift-box-us-olive-sofa-pouch.webp", twoPeople, mug],
     "spring-dawn-gift-box": ["scene-spring-dawn-gift-box-olive-sofa-pouch.webp", "scene-spring-dawn-gift-box-hand-glass-cup-book-walnut.webp", mug],
     "winter-blossom-gift-box": ["scene-winter-blossom-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
-    "orchid-gift-box": ["scene-orchid-gift-box-olive-sofa-pouch.webp", "scene-orchid-gift-box-gold-pink-walnut.webp", mug], // 金、粉兩色並列（使用者 2026-10-13「一次擺 2 種顏色封面的禮盒示意」）取代 896px 舊圖
+    "orchid-gift-box": ["scene-orchid-gift-box-gold-pink-sunbeam.webp", "scene-orchid-gift-box-olive-sofa-pouch.webp", mug], // 金、粉兩色並列的窗光照領頭、也是清單 hover（使用者 2026-10-13：「hover 換雙封面」）；沙發照退為第二張
     "purple-butterfly-gift-box": ["scene-purple-butterfly-gift-box-olive-sofa-pouch.webp", "scene-purple-butterfly-gift-box.webp", mug],
     "kyoto-gift-box": ["scene-kyoto-gift-box-olive-sofa-pouch.webp", twoPeople, mug],
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
