@@ -4,13 +4,21 @@
 import { useState, type FormEvent } from "react";
 import { useT } from "@/i18n/LocaleProvider";
 
-export default function NewsletterForm() {
+// The one submit path for every newsletter form (this footer form and NewsletterPopup): until the mailing list is connected it
+// only shows the honest "not open yet" note.
+export function useNewsletterSubmit() {
   const { t } = useT();
   const [note, setNote] = useState<string | null>(null);
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setNote(t("電子報將於 Shopify 串接完成後開放訂閱。", "The newsletter is not open yet."));
   };
+  return { note, submit };
+}
+
+export default function NewsletterForm() {
+  const { t } = useT();
+  const { note, submit } = useNewsletterSubmit();
   return (
     <form className="footer-news-form" onSubmit={submit}>
       <label className="sr-only" htmlFor="footer-email">Email</label>

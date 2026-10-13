@@ -3,6 +3,7 @@ import { Outfit, Noto_Sans_TC } from "next/font/google";
 import "../globals.css";
 import { CartProvider } from "@/components/cart/CartProvider";
 import CartDrawer from "@/components/cart/CartDrawer";
+import NewsletterPopup from "@/components/chrome/NewsletterPopup";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { getCommerce, company } from "@/data/commerce";
 import { locales, defaultLocale, isLocale, htmlLang, siteUrl, translator } from "@/i18n/config";
@@ -50,7 +51,7 @@ export default async function RootLayout({ children, params }: Props & { childre
     sameAs: ["https://www.charmvilla.com.tw/", "https://www.facebook.com/CHARMVILLA8/", "https://www.instagram.com/charmvilla/"] };
   return (
     <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`} suppressHydrationWarning>
-      <body className="bg-page text-ink"><script dangerouslySetInnerHTML={{ __html: introSeenScript }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} /><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /></CartProvider></LocaleProvider></body>
+      <body className="bg-page text-ink"><script dangerouslySetInnerHTML={{ __html: introSeenScript }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} /><LocaleProvider lang={lang}><CartProvider>{children}<CartDrawer /><NewsletterPopup /></CartProvider></LocaleProvider></body>
     </html>
   );
 }
