@@ -96,7 +96,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string }; views?: ProductView[] }[]; choiceLabel?: string };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string; scene?: string }; views?: ProductView[] }[]; choiceLabel?: string };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -620,7 +620,8 @@ const buildCatalog = (lang: Locale) => {
   // A lid view the option does not have is left out rather than borrowed from the default lid (2026-10-13: 蝴蝶蘭粉紅色 showed the
   // gold box's cover and angled view); so 蝴蝶蘭粉紅色 shows its real pink front photograph and the shared unboxed view (no lid in it).
   // `lid` (聖誕佳禮的藍綠色) names the lid in the alt text and brings the option's own unboxed view; without it the pink-lid wording and the shared unboxed view stay as before.
-  const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string }): ProductView[] => lv.lid ? [
+  const lidScene = (p: Product, lv: { scene?: string }): ProductView[] => lv.scene ? [{ label: t("情境", "Scene"), image: site(lv.scene, `${p.name}${t("・粉紅色盒蓋・情境", ", pink lid, in a scene")}`, 2784, 3456) }] : [];
+  const lidViews = (p: Product, lv: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string; scene?: string }): ProductView[] => lv.lid ? [
     ...(lv.cover ? [{ label: t("正面", "Front view"), image: studioImage(lv.cover, `${p.name}${t("・", ", ")}${lv.lid}${t("・封面", ", front view")}`) }] : []),
     ...(lv.front ? [{ label: t("正面實拍", "Front photograph"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${lv.lid}${t("・正面實拍", ", front photograph")}`) }] : []),
     ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${lv.lid}${t("・斜角", ", angled view")}`) }] : []),
@@ -630,6 +631,7 @@ const buildCatalog = (lang: Locale) => {
     ...(lv.front ? [{ label: t("正面實拍", "Official front view"), image: studioImage(lv.front, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・正面實拍", "pink lid, official front photograph with its ribbon and embroidery")}`) }] : []),
     ...(lv.angle ? [{ label: t("斜角", "Angled view"), image: studioImage(lv.angle, `${p.name}${t("・", ", ")}${t("粉紅色盒蓋・斜角", "pink lid, the box closed, seen from its short end at an angle")}`) }] : []),
     ...p.views.filter((v) => /開箱|Unboxed/.test(v.label)),
+    ...lidScene(p, lv),
   ];
   const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews || c.lidViews)
     ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.placeholderViews ? { ...c, views: greyViews(c.placeholderViews) } : c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c.lidViews ? { ...c, views: lidViews(p, c.lidViews) } : c) } } : p);

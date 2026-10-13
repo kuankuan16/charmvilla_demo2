@@ -30,7 +30,7 @@ export type TeaGift = {
   /** lid colours sold with every tea choice (春曉 Blue/Pink, 蝴蝶蘭 Gold/Pink): each tea × lid is a Shopify variant */
   lid?: Bi[];
   /** Per-lid studio views: preserve existing covers; HD front is added in view 2 (user 2026-10-12); unboxed view is shared. */
-  lidViews?: Record<number, { cover?: string; angle?: string; front?: string }>;
+  lidViews?: Record<number, { cover?: string; angle?: string; front?: string; scene?: string }>;
   /** packaging options with the same contents and price (團圓 Gold/Pink/Blue) */
   packaging?: { label: Bi; text: Bi; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string } }[];
   /** the US list price in USD (the lowest option); a box without it is priced from the Taiwan store (official-prices.json, TWD) */
@@ -152,7 +152,7 @@ export const teaGifts: TeaGift[] = [
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "時至暮冬，即將迎來初春日子，總會令人聯想起櫻花遍土盛放的景色。在暮冬曉春之際，櫻雪互映的模樣，願能為您帶來初春新露時分清雅恬淡的美好。", en: "As the last days of winter give way to early spring, we picture cherry blossoms opening across the landscape. Where blossom meets snow, Snowy Twilight captures the quiet grace of that fleeting season. May it bring you the fresh, gentle beauty of spring's first light." } },
     notice: [tieDyeColors],
     en: { name: "Snowy Twilight", description: "Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Inspired by the meeting of cherry blossoms and snow, the collection offers a quiet tea moment for yourself or someone special.", summary: "12 Goldfish Tea Bags per box · First-Prize Rose Oolong Tea or Oriental Beauty Tea" } },
-  { officialId: 960, slug: "orchid-gift-box", preOrder: true, preOrderLimit: 10, lidViews: { 1: { front: "official-gift-front-orchid-gift-box-pink-cutout-v3.webp" } }, sceneFile: "scene-orchid-gift-box.webp", name: "蝴蝶蘭", english: "ROYAL ORCHID", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, contents: [], lid: [gold, pink], usd: 300,
+  { officialId: 960, slug: "orchid-gift-box", preOrder: true, preOrderLimit: 10, lidViews: { 1: { front: "official-gift-front-orchid-gift-box-pink-cutout-v3.webp", scene: "scene-orchid-gift-box-two-friends-tea.webp" /* the pink box in the two-friends scene, shown in the gallery while 粉紅色 is chosen (user 2026-10-13: 「蝴蝶蘭切換粉紅色的情境照」) */ } }, sceneFile: "scene-orchid-gift-box.webp", name: "蝴蝶蘭", english: "ROYAL ORCHID", series: "珍稀商品", pieces: 18, box: woodEmbroidered, dimensions: squareBox, weight: 400, contents: [], lid: [gold, pink], usd: 300,
     /* rose option is the First-Prize Rose Oolong, the Oriental Beauty plain (user 2026-10-13: 「以上幾個的玫瑰烏龍茶都要改成頭等獎玫瑰烏龍茶」; earlier user 2026-10-13: 「蝴蝶蘭也是」, as 春曉、暮雪; client answer B5) */ choices: [{ label: firstRose, price: 300 }, { label: beauty, price: 340 }].map(c => ({ ...c, contents: [count(c.label, 18)] })),
     description: "CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。",
     notice: [embroideryNote],
