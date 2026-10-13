@@ -10,7 +10,8 @@ import { translator, type Locale } from "@/i18n/config";
 // price stands alone, as on the collection pages.
 export default function ProductCard({ product, index = 0, animated = false, lang, caption }: { product: Product; index?: number; animated?: boolean; lang: Locale; caption?: string }) {
   const t = translator(lang);
-  const price = !product.price && product.priceTbd ? <>{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</> : product.price && <>{formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="catalog-card-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</>;
+  // display-only pieces (客戶答覆 B1–B4, 2026-10-12): no price line at all
+  const price = product.displayOnly ? null : !product.price && product.priceTbd ? <>{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</> : product.price && <>{formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="catalog-card-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="catalog-card-preorder tc">{t("預購", "Pre-order")}</span>}</>;
   return (
     <article className="catalog-card" data-catalog-card={product.slug} data-animation={animated ? "moveUp" : undefined} data-delay={animated ? (index % 3) * .1 : undefined}>
       <Link href={productHref(product, lang)} aria-label={t(`瀏覽 ${product.name}`, `View ${product.name}`)}>

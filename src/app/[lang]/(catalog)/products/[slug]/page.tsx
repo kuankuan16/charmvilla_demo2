@@ -127,6 +127,8 @@ export default async function ProductPage({ params }: Props) {
   const origin = product.facts.find((f) => f.label === t("產地", "Made in"));
   const originNote = origin && <p className="product-origin tc">{t(`${origin.value}製作。`, `Made in ${origin.value}.`)}</p>;
   // the second, outlined button leads to the brewing steps; other products have none (user 2026-10-07: 「移除常見問題」)
+  // 預購 with the shared allowance left (客戶答覆 B7, 2026-10-12); a pre-order without an allowance (聖誕佳禮) shows the plain label
+  const preOrderLabel = product.preOrderRemaining !== undefined ? t(`預購・剩餘 ${product.preOrderRemaining} 盒`, `Pre-order · ${product.preOrderRemaining} left`) : t("預購", "Pre-order");
   const secondAction = product.brew ? { href: "#brew-title", label: t("查看沖泡方式", "How to brew") } : null;
   // Back in the column, after the button, as before 2026-10-07 (user 2026-10-07: 「商品規格我喜歡放在原本的位置」; the three thin key rows and
   // the magazine-page specifications of that morning are gone again).
@@ -174,7 +176,8 @@ export default async function ProductPage({ params }: Props) {
   const offerUrl = `${siteUrl}${productHref(product, lang)}`;
   const availability = `https://schema.org/${product.soldOut ? "SoldOut" : product.preOrder ? "PreOrder" : "InStock"}`;
   const optionPrices = product.price ? (product.giftBox?.choices ?? []).map((c) => c.price ?? product.price!.amount) : [];
-  const offers = product.price?.currency !== "USD" ? undefined
+  // display-only pieces (客戶答覆 B1–B4) are not offered for sale
+  const offers = product.displayOnly || product.price?.currency !== "USD" ? undefined
     : new Set(optionPrices).size > 1
       ? { "@type": "AggregateOffer", lowPrice: Math.min(...optionPrices), highPrice: Math.max(...optionPrices), offerCount: optionPrices.length, priceCurrency: "USD", availability, url: offerUrl }
       : { "@type": "Offer", price: product.price.amount, priceCurrency: "USD", availability, url: offerUrl };
@@ -195,14 +198,15 @@ export default async function ProductPage({ params }: Props) {
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
-          {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="product-preorder tc">{t("預購", "Pre-order")}</span>}</p>}
-          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="product-preorder tc">{t("預購", "Pre-order")}</span>}</p>}
+          {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="product-preorder tc">{preOrderLabel}</span>}</p>}
+          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="product-preorder tc">{preOrderLabel}</span>}</p>}
           <p className="product-description tc">{product.description}</p>
           {keyLines}
           {originNote}
           {variants.length > 1 && <fieldset className="product-variants"><legend className="tc">{product.category === "bags" ? t("選擇顏色", "Choose a color") : t("同系列盒型", "Boxes in this series")}</legend><div>{variants.map((v) => <Link key={v.slug} href={productHref(v, lang)} aria-current={v.slug === slug ? "page" : undefined} className="tc">{v.variant?.label}</Link>)}</div></fieldset>}
           {/* user 2026-10-01: every product page carries the ink add-to-bag button; a piece without a list price goes into the bag as "price on request" */}
-          <div className="product-actions"><AddToCart product={product} />{secondAction && <a className="product-buy product-buy--secondary tc" href={secondAction.href}>{secondAction.label}</a>}</div>
+          {/* display-only pieces (客戶答覆 B1–B4) leave the whole button area out */}
+          {!product.displayOnly && <div className="product-actions"><AddToCart product={product} />{secondAction && <a className="product-buy product-buy--secondary tc" href={secondAction.href}>{secondAction.label}</a>}</div>}
         </div>} caption={caption}>
         {specs}
         {!pair && !textAboveSmalls && sideText}

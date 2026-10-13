@@ -6,7 +6,7 @@ import { useCart } from "./CartProvider";
 import { productHref, categoryHref } from "@/data/catalog";
 import { localeHref } from "@/i18n/config";
 import { useT } from "@/i18n/LocaleProvider";
-import { supportEmail } from "@/data/commerce";
+import { supportEmail, freeShippingMin } from "@/data/commerce";
 
 export default function CartDrawer() {
   const cart = useCart();
@@ -51,9 +51,12 @@ export default function CartDrawer() {
               <div className="cart-subtotal"><span className="tc">{t("小計", "Subtotal")}</span><strong>{currencyTotals.map(([currency, amount]) => cart.formatPrice(amount, currency)).join(" + ")}</strong></div>
               {/* sales tax is worked out by Shopify at checkout from the delivery address (2026-10-13 commerce audit) */}
               {!mixedCurrencies && cart.currency === "USD" && <p className="cart-note tc">{t("稅金於結帳時計算。", "Taxes are calculated at checkout.")}</p>}
+              {/* free shipping: US$199 or more, 199 included, to the contiguous 48 states (client's final answers 2026-10-12, D1) */}
               <p className="cart-note tc">{mixedCurrencies
                 ? t("購物車內含不同幣別，金額分開列示，不合併換算。正式結帳時將依購買市場顯示可售商品與幣別。", "Your bag contains different currencies, so the subtotals are shown separately without conversion. Available products and currency will follow your market when checkout opens.")
-                : cart.currency === "USD" ? (cart.subtotal > 99 ? t("美國境內免運費。", "Complimentary US shipping.") : t("美國訂單滿 US$ 99 免運費；未達則於結帳時依地址與配送方式計算運費。", "Complimentary shipping on US orders over $99; below that, shipping is calculated at checkout by address and service.")) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
+                : cart.currency === "USD" ? (cart.subtotal >= freeShippingMin
+                  ? t("此訂單配送至美國本土相連 48 州可享免運。", "This order qualifies for complimentary shipping to the contiguous United States (48 states).")
+                  : t(`訂單金額滿 US$ ${freeShippingMin}（含）配送至美國本土相連 48 州免運；未達則於結帳時依地址與配送方式計算運費。`, `Complimentary shipping on orders of US$${freeShippingMin} or more to the contiguous United States (48 states); below that, shipping is calculated at checkout by address and service.`)) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
               {cart.mode === "shopify" && cart.checkoutUrl
                 ? <a href={cart.checkoutUrl} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
                 : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Online checkout is not open yet")}>{t("前往結帳", "Go to checkout")}</button>}

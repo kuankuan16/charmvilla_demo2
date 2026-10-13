@@ -14,6 +14,8 @@ export default function AddToCart({ product }: { product: Product }) {
   const missing = Boolean(choices) && option === undefined;
   // No list price yet (the bird chopstick rest): the button waits instead of putting a priceless line in the bag (2026-10-13 commerce audit).
   const noPrice = !product.price;
+  // Display-only pieces (客戶答覆 B1–B4, 2026-10-12) have no options and no button at all — not a disabled one.
+  if (product.displayOnly) return null;
   return <>
     {choices && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}</legend>
       <div>{choices.map((c, i) => <label key={c.label} className="tc" title={c.note}><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{c.price && c.price !== product.price?.amount ? `・${formatPrice(c.price, product.price?.currency)}` : ""}</label>)}</div>

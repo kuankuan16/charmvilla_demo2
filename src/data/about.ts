@@ -103,27 +103,28 @@ export const getAbout = (lang: Locale) => {
         // generated scene (user 2026-10-07); the red gift box scene scene-red-giftbox-tea-hinoki-bird.webp stays in the repo.
         // v2 (user 2026-10-07: 「這張刪掉杯墊與其他商品」, then 「加回其他商品，注意『盤子下面不要再放杯墊』」): the pieces are back on the
         // table but the saucer stands directly on the wood; only the table top changed between versions (local edits, composited back)
-        image: site("about-scene-04-everyday-pieces-v2.webp", t("小金魚茶旁的雲朵杯墊、銀杏茶匙、檜木筷子與鳥形筷架", "Goldfish tea with the Cloud Coaster, Ginkgo Style Tea Spoon, Hinoki Wood Chopsticks and Songbird Chopsticks Rest"), 1856, 2304),
+        image: site("about-scene-04-everyday-pieces-v2.webp", t("小金魚茶旁的雲朵杯墊、銀杏茶匙、檜木筷子與鳥形筷架", "Goldfish tea with the Cloud Coaster, Ginkgo Teaspoon, Hinoki Wood Chopsticks and Songbird Chopstick Rest"), 1856, 2304),
       },
     ] satisfies AboutChapter[],
     rangeTitle: t("作品", "The pieces"),
     range: [
       { id: "tea", image: site("scene-oak-table-goldfish-tea-chair.webp", t("一杯小金魚茶與金色茶標", "A cup of goldfish tea with its gold tag"), 1792, 2240) },
       // the same picture as the menu's Scents preview (user 2026-10-05: 「改成選單的香氛那一張」)
-      { id: "scents", image: site("scene-wooden-tray-table-sofa-v4.webp", t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Style Tea Spoon on a tray table"), 1376, 2048) },
+      { id: "scents", image: site("scene-wooden-tray-table-sofa-v4.webp", t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Teaspoon on a tray table"), 1376, 2048) },
       { id: "jewelry", image: site("scene-diamond-goldfish-earring-profile-bw.webp", t("黑白側臉，耳垂上的鑽石垂墜小金魚耳環", "A black-and-white profile wearing the diamond goldfish drop earring"), 1792, 2240) },
       // the black-and-white portrait of the man in black holding the white bag (user 2026-10-05: 「改成男生黑白，黑衣服張」), framed on face, hand and bag
       { id: "bags", image: { src: "/media/hero/male-embracing-white-bag-v2-hd.webp", alt: t("黑白照片：穿黑衣的男子雙臂環過頭頂，指間提著白色編織提把皮革包", "Black-and-white photograph of a man in black, arms over his head, the white Braided Leather Bag hanging from his fingers"), w: 2560, h: 1720 }, position: "65% 50%" },
       // a scene instead of the studio shot, the same picture as the menu's Abundance preview (user 2026-10-05: 「用情境照」)
       { id: "abundance", image: site("scene-dessert-stand-fireplace-lounge-v2.webp", t("夜晚的酒廊，大理石層架與壁爐火光前，深色桌上的豐盛點心盤擺著幾樣精緻小點心，旁邊一杯紅茶、巧克力與閃電泡芙", "A lounge at night, backlit marble shelves and a fire behind: on a dark table the Abundance Dessert Tray with a few refined petits fours, a cup of tea, chocolates and an éclair"), 1792, 2240) },
       // the songbird rests on a tray on the oak coffee table (user 2026-10-05: 「並取代這張」 for CV-0242)
-      { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("托盤上的鳥形筷架與檜木筷子特寫", "A close-up of Songbird Chopsticks Rests and Hinoki Wood Chopsticks"), 1792, 2240) },
+      { id: "wood-fired", image: site("scene-oak-table-bird-rests-close.webp", t("托盤上的鳥形筷架與檜木筷子特寫", "A close-up of Songbird Chopstick Rests and Hinoki Wood Chopsticks"), 1792, 2240) },
     ] satisfies AboutRange[],
-    // the US store's Shipping & Returns Policy and FAQ (commerce.ts, user's document 2026-10-07)
+    // the US store's Shipping & Returns Policy and FAQ (commerce.ts, user's document 2026-10-07); shipping, delivery and returns
+    // follow the client's final answers 2026-10-12 (D1 US$199 to the contiguous 48 states, D2/D3 dispatch, D4 non-tea returns)
     benefits: [
-      { id: "shipping", title: t("滿 US$ 99 免運", "Free shipping over $99"), text: t("未達則依結帳時的地址與配送方式計算運費。", "Below that, shipping is calculated at checkout by address and service."), href: "/policy#us-shipping" },
-      { id: "delivery", title: t("3–7 個工作天送達", "Delivered in 3–7 business days"), text: t("從加州出貨；出貨後寄送追蹤連結給您。", "Ships from California; a tracking link follows once your order ships."), href: "/policy#processing" },
-      { id: "returns", title: t("陶瓷商品 14 天內可退", "14-day returns on ceramics"), text: t("茶品為食品，售出後恕不退換；損壞或錯誤訂單請於 7 天內告知。", "Tea is a food product and is not returnable; report damage or errors within 7 days."), href: "/policy#returns" },
+      { id: "shipping", title: t("滿 US$ 199 免運", "Free shipping on US$199 or more"), text: t("配送至美國本土相連 48 州；未達則依結帳時的地址與配送方式計算運費。", "To the contiguous United States (48 states). Below that, shipping is calculated at checkout by address and service."), href: "/policy#us-shipping" },
+      { id: "delivery", title: t("現貨 1–2 個工作天出貨", "In-stock orders ship in 1–2 business days"), text: t("從加州出貨，出貨後通常另需 3–7 個工作天送達；週末及美國聯邦假日不出貨。", "From California. Delivery typically takes an additional 3–7 business days after dispatch; no dispatch on weekends or U.S. federal holidays."), href: "/policy#processing" },
+      { id: "returns", title: t("非茶商品 30 天內可申請退貨", "30-day returns on non-tea items"), text: t("茶品為食品，售出後恕不退換；損壞或錯誤訂單請於 7 天內告知。", "Tea is a food product and is not returnable; report damage or errors within 7 days."), href: "/policy#returns" },
       { id: "contact", title: t("來信 us@charmvilla.com", "Email us@charmvilla.com"), text: t("挑選禮物或既有訂單的協助，我們很樂意為您服務。", "For help choosing a gift or with an existing order."), href: "/faq" },
     ] satisfies { id: string; title: string; text: string; href: string }[],
     faqTitle: t("常見問題", "Frequently asked questions"),

@@ -17,6 +17,10 @@ import { localeHref, switchLocalePath, htmlLang, type Locale } from "@/i18n/conf
 import CartButton from "@/components/cart/CartButton";
 import { getScroller } from "@/lib/motion/scroller";
 
+// Sign-in and sign-up are not open until the store runs on Shopify (client's final answers 2026-10-12, E6): the account icon and
+// menu link are hidden in local commerce mode; /account itself still opens when visited directly.
+const accountOpen = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify";
+
 export default function Header({ innerPage = false }: { innerPage?: boolean }) {
   const [open, setOpen] = useState(false);
   const { lang, t } = useT();
@@ -96,7 +100,7 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
     { href: sectionHref("visit"), label: t("台日門市", "Stores in Taiwan & Japan") },
   ];
   const serviceLinks = [
-    { href: sectionHref("account"), label: t("會員", "Account") },
+    ...(accountOpen ? [{ href: sectionHref("account"), label: t("會員", "Account") }] : []),
     { href: localeHref(lang, "/faq"), label: t("常見問題", "FAQ") },
     { href: localeHref(lang, "/policy"), label: t("運送與退換貨", "Shipping & Returns") },
   ];
@@ -144,9 +148,9 @@ export default function Header({ innerPage = false }: { innerPage?: boolean }) {
           <a href={sectionHref("visit")} className="header-stores" aria-label={t("台灣與日本門市", "Our stores in Taiwan and Japan")} title={t("台灣與日本門市", "Our stores in Taiwan and Japan")} onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
           </a>
-          <Link href={localeHref(lang, "/account")} aria-label={t("會員", "Account")} title={t("會員", "Account")} onClick={() => setOpen(false)}>
+          {accountOpen && <Link href={localeHref(lang, "/account")} aria-label={t("會員", "Account")} title={t("會員", "Account")} onClick={() => setOpen(false)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
-          </Link>
+          </Link>}
           <CartButton />
         </div>
       </div>

@@ -4,7 +4,7 @@ import "../globals.css";
 import { CartProvider } from "@/components/cart/CartProvider";
 import CartDrawer from "@/components/cart/CartDrawer";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
-import { getCommerce } from "@/data/commerce";
+import { getCommerce, company } from "@/data/commerce";
 import { locales, defaultLocale, isLocale, htmlLang, siteUrl, translator } from "@/i18n/config";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
@@ -44,7 +44,9 @@ export default async function RootLayout({ children, params }: Props & { childre
   const lang = isLocale(raw) ? raw : defaultLocale;
   // The seller for search engines (schema.org Organization): the US store's contact (commerce.ts, user's document 2026-10-07).
   const { email } = getCommerce(lang);
-  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "CHARM VILLA", url: siteUrl, email,
+  // legalName and address: the US company that operates the store (client's final answers 2026-10-12, A1).
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "CHARM VILLA", legalName: company.legalName, url: siteUrl, email,
+    address: { "@type": "PostalAddress", streetAddress: company.street, addressLocality: company.locality, addressRegion: company.region, postalCode: company.postalCode, addressCountry: company.country },
     sameAs: ["https://www.charmvilla.com.tw/", "https://www.facebook.com/CHARMVILLA8/", "https://www.instagram.com/charmvilla/"] };
   return (
     <html lang={htmlLang[lang]} className={`${outfit.variable} ${notoTC.variable}`} suppressHydrationWarning>

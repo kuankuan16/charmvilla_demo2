@@ -30,8 +30,8 @@ const build = (lang: Locale) => {
     // the heads, since the supplied crop left none.
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：兩張舞者提白包的小圖換成鳥形筷架禮盒與茶几上的雲朵杯墊
     smalls: [
-      site("scene-bird-rest-gift-box-v2.webp", t("白色禮盒上的一隻鳥形筷架", "A Songbird Chopsticks Rest on a white CHARM VILLA gift box"), 1688, 2110),
-      site("scene-coffee-table-tea-coasters-tagfix.webp", t("雲朵杯墊上的小金魚茶，旁邊是銀杏茶匙", "Goldfish tea on a Cloud Coaster beside the Ginkgo Style Tea Spoon"), 1792, 2240),
+      site("scene-bird-rest-gift-box-v2.webp", t("白色禮盒上的一隻鳥形筷架", "A Songbird Chopstick Rest on a white CHARM VILLA gift box"), 1688, 2110),
+      site("scene-coffee-table-tea-coasters-tagfix.webp", t("雲朵杯墊上的小金魚茶，旁邊是銀杏茶匙", "Goldfish tea on a Cloud Coaster beside the Ginkgo Teaspoon"), 1792, 2240),
     ] as Img[],
     items: [
       {
@@ -67,13 +67,13 @@ const build = (lang: Locale) => {
       },
       {
         id: "teaware",
-        craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Style Tea Spoon and Cloud Coaster"),
+        craft: t("木作職人 · 銀杏茶匙與杯墊", "Woodworker · Ginkgo Teaspoon and Cloud Coaster"),
         quote: [t("做木的人，", "Following the grain,"), t("順著木紋把一片葉子鋸出來。", "the woodworker shapes a leaf from wood.")],
         cta: { label: t("看香味是喜悅的記憶", "Explore scents"), href: "/collections/scents" },
         // user 2026-10-02: the breakfast table 換 the tray-table scene, then that scene 換 a sunlit interior of the same pieces
         // with their engraved logos (also on the coaster and teaspoon pages)
         image: site("scene-wooden-interior-sunlit.webp", t("陽光下的雲朵杯墊與銀杏茶匙",
-          "The Cloud Coaster and Ginkgo Style Tea Spoon in sunlight"), 1792, 2240),
+          "The Cloud Coaster and Ginkgo Teaspoon in sunlight"), 1792, 2240),
       },
     ] as CraftMoment[],
   };

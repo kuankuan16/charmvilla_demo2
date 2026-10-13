@@ -41,17 +41,24 @@ const build = (lang: Locale): NewsEntry[] => {
       ],
     },
     // 2026-10-02 (user: 「刪」): the Monocle interview entry was removed; its URL redirects to /news (next.config.ts).
+    // 2026-10-13 (client's answer A2, user: 「幫我直接更新」): the eslite spectrum Nanxi "Goldfish in a Cup" entry is replaced by
+    // the Los Angeles pop-up; its old URL redirects here (next.config.ts). Facts only from A2: dates, venue, opening event, hours.
+    // The card is the Piece of Light launch invitation from gallery.charmvilla.com/show-more.html#invitations (inv01, 2026-09-30),
+    // which lists 10/17 The Scholart Selection; the list crops it to the bag, the article shows it whole on its paper colour.
     {
-      slug: "goldfish-in-a-cup-eslite-nanxi", date: "2026-07-02", dateLabel: t("2026 年 7 月 2 日", "July 2, 2026"),
-      tag: t("活動快訊", "Events"), title: t("「杯中金魚」\u200b期間限定茶席", "Goldfish in a Cup: A Limited-Time Tea Experience"),
-      summary: t("8 月 15 日起，於誠品生活南西。", "From August 15 at eslite spectrum Nanxi."),
-      // the tea-table scene with fluted glasses (user 2026-10-06: 「取代這張」); its tag laid flat on the cloth per the tag spec
-      card: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("茶席上的一杯小金魚茶與金色茶標", "A glass of goldfish tea and its gold tag at a tea table"), 1792, 2240),
-      focus: "50% 76%",
-      hero: site("scene-fluted-glass-goldfish-tea-hand-v2.webp", t("茶席上的一杯小金魚茶與金色茶標", "A glass of goldfish tea and its gold tag at a tea table"), 1792, 2240),
+      slug: "la-popup-scholart-selection-2026", date: "2026-10-17", dateLabel: t("2026 年 10 月 17 日至 12 月 31 日", "October 17 – December 31, 2026"),
+      tag: t("活動快訊", "Events"), title: t("CHARM VILLA 洛杉磯快閃展", "CHARM VILLA Pop-up in Los Angeles"),
+      summary: t("10 月 17 日至 12 月 31 日，於 San Gabriel 的 The Scholart Selection。", "October 17 to December 31 at The Scholart Selection, San Gabriel."),
+      card: site("news-la-popup-scholart-2026.webp", t("CHARM VILLA 2026 新品發表邀請卡：淺灰紙上燙金 CHARM VILLA 字標，中央是編織提把與圓片組成的包款線稿，下方列出台北、洛杉磯 The Scholart Selection、京都三場的日期與地點", "CHARM VILLA 2026 launch invitation: gold-foil CHARM VILLA lettering on pale gray paper above a line drawing of a bag of linked discs with a braided handle, followed by the dates and venues in Taipei, The Scholart Selection in Los Angeles, and Kyoto"), 1280, 1963),
+      focus: "50% 33%", whole: true, ground: "#f0f1f2",
+      hero: site("news-la-popup-scholart-2026.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1280, 1963),
       body: [
-        t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "Beginning August 15, discover Goldfish in a Cup, a limited-time tea experience at eslite spectrum Nanxi."),
-        { links: [{ label: t("看小金魚茶包", "View the Goldfish Tea Bags"), href: "/collections/tea" }] },
+        t("CHARM VILLA 洛杉磯快閃展，2026 年 10 月 17 日至 12 月 31 日於 The Scholart Selection 展出。", "The CHARM VILLA pop-up in Los Angeles runs from October 17 to December 31, 2026, at The Scholart Selection."),
+        { list: [t("地點・The Scholart Selection，417 S Mission Dr, San Gabriel, CA 91776", "Venue · The Scholart Selection, 417 S Mission Dr, San Gabriel, CA 91776")] },
+        t("開幕活動", "Opening event"),
+        { list: [t("2026 年 10 月 17 日（星期六）下午 2:00–5:00（洛杉磯時間）", "Saturday, October 17, 2026 · 2:00–5:00 PM (Los Angeles time)")] },
+        t("一般開放時間", "Regular hours"),
+        { list: [t("星期二至星期日・上午 10:00–下午 5:00", "Tuesday to Sunday · 10:00 AM–5:00 PM"), t("星期一休館", "Closed on Mondays")] },
       ],
     },
   ];

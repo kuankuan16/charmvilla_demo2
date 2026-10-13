@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   // Retired product URLs, in both languages. English is unprefixed and Chinese lives under /zh (user 2026-10-13); the "/en" entries
   // only catch old links from before that change (src/proxy.ts then 308s /en/... to the unprefixed address).
-  redirects: async () => ["", "/en"].flatMap(prefix => [
+  redirects: async () => ["", "/en", "/zh"].flatMap(prefix => [
     ...["rose-jinxuan", "lychee-ruby", "honey-oriental-beauty", "osmanthus-baozhong", "roselle-roasted-oolong"].map(flavor => ({ source: `${prefix}/products/goldfish-tea-${flavor}`, destination: `${prefix}/collections/tea`, permanent: true })),
     ...["goldfish-diamond-drop"].map(slug => ({ source: `${prefix}/products/${slug}`, destination: `${prefix}/products/diamond-goldfish-earrings`, permanent: true })),
     ...["goldfish-diamond-stud", "bezel-diamond-goldfish-earrings", "single-diamond-goldfish-earrings"].map(slug => ({ source: `${prefix}/products/${slug}`, destination: `${prefix}/products/diamond-goldfish-stud-earrings`, permanent: true })),
@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     { source: `${prefix}/products/prosperity-stand-gift-box`, destination: `${prefix}/products/prosperity-dessert-stand`, permanent: true }, // one product on the official store (user 2026-10-05: 「照官網的」)
     { source: `${prefix}/products/wooden-coaster-teaspoon`, destination: `${prefix}/products/cloud-coaster`, permanent: true },
     { source: `${prefix}/news/monocle-interview`, destination: `${prefix}/news`, permanent: false }, // entry removed (user 2026-10-02: 「刪」)
-  ]),
+  ]).concat(["", "/zh"].map(prefix => ({ source: `${prefix}/news/goldfish-in-a-cup-eslite-nanxi`, destination: `${prefix}/news/la-popup-scholart-selection-2026`, permanent: false }))), // eslite Nanxi entry replaced by the LA pop-up (client's answer A2, 2026-10-13)
   // Only the production domain may be indexed. Every other host (charmvilla-demo2.vercel.app, Vercel previews, localhost) gets
   // noindex on every response, pages and files alike; robots.txt stays Allow so crawlers can fetch the pages and see this header.
   // Done here rather than in src/proxy.ts because the proxy skips media, sitemap.xml and robots.txt, and the host test needs no code.

@@ -82,7 +82,12 @@ export type Product = {
   soldOut?: boolean;
   /** Made to order: labelled 預購 / Pre-order beside the price, card and bag button. */
   preOrder?: boolean;
+  /** Pre-order boxes left in the product's one shared allowance (客戶答覆 B7, 2026-10-12): shown as 預購・剩餘 N 盒 beside the price. Until
+   *  Shopify inventory replaces it, it equals the allowance unless tea-gifts.ts overrides it (preOrderLeft). Absent: no count is shown. */
+  preOrderRemaining?: number;
   priceTbd?: boolean;
+  /** Shown but not sold at launch (客戶答覆 B1–B4, 2026-10-12): no price (NT$ or US$), no bag / pre-order buttons, no Offer in JSON-LD; photographs and text stay. */
+  displayOnly?: boolean;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
   /** How to brew (tea gift boxes, guide §4); `image` sits at the bottom left of the steps. */
@@ -245,17 +250,17 @@ const buildCatalog = (lang: Locale) => {
       summary: t("一杯茶的旁邊，木紋靜靜相伴。", "Beside a cup of tea, wood grain keeps quiet company."),
       detail: t("雲朵形狀的檜木杯墊，把木質的紋理與自然溫潤的香氣帶到茶杯旁。一組六片，拿起一片感受表面，也觀察每一片的輪廓。", "Cloud-shaped hinoki coasters bring natural wood grain and a gentle aroma to your tea table. Each set includes six pieces; pick one up to feel its surface and trace its softly curved outline."),
       story: { title: t("茶杯旁的木紋", "Wood grain beside the cup"), body: t("手先於目光感受材質。每一次放下茶杯，杯墊表面的紋理與雲朵的輪廓，便一次次回到注意之中。", "Feel the wood beneath your fingers. Each time you set down your cup, the natural grain and cloud-shaped outline invite another moment of attention.") } },
-    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopsticks Rest"), en: "SONGBIRD CHOPSTICKS REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256"] /* CV-0248 replaced by scene-bird-rest-gift-box; CV-0239 (birds on a heap of charcoal) removed (user 2026-10-05: 「刪」) */,
+    { slug: "bird-chopstick-rest", name: t("鳥形筷架", "Songbird Chopstick Rest"), en: "SONGBIRD CHOPSTICK REST", series: t("柴燒系列", "Wood-Fired Collection"), ids: ["CV-0256"] /* CV-0248 replaced by scene-bird-rest-gift-box; CV-0239 (birds on a heap of charcoal) removed (user 2026-10-05: 「刪」) */,
       summary: t("讓一雙筷子，有一處停歇。", "Individually handcrafted, with natural variations in color."),
       detail: t("以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。", "A little bird rests between the table and your chopsticks, adding a graceful detail to each place setting and a quiet pause to everyday meals."),
       story: { title: t("餐具之間，一隻鳥", "A bird among the tableware"), body: t("筷子放下時，鳥形的輪廓便與修長的線條相遇。一件小器物改變了桌面的構圖，也讓用餐間的停頓有了可看的細節。", "Set your chopsticks down beside the bird's gently shaped outline. This small piece brings balance to the table and a detail to enjoy between bites.") } },
-    { slug: "ginkgo-teaspoon-gift-box", name: t("銀杏茶匙", "Ginkgo Style Tea Spoon"), en: "GINKGO STYLE TEA SPOON", series: wooden, ids: ["CV-0231", "CV-0234", "CV-0229"],
+    { slug: "ginkgo-teaspoon-gift-box", name: t("銀杏茶匙", "Ginkgo Teaspoon"), en: "GINKGO TEASPOON", series: wooden, ids: ["CV-0231", "CV-0234", "CV-0229"],
       summary: t("把一片葉子的形，留在茶席上。", "A hinoki wood teaspoon in the shape of a ginkgo leaf."),
       detail: t("銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。", "The outline of a ginkgo leaf becomes a hinoki wood teaspoon, with a grain that reveals new details each time you look. Presented in a gift box, it brings a thoughtful touch to the tea table."),
       story: { title: t("一片葉子的轉譯", "A leaf, translated"), body: t("葉形來到茶席。銀杏的輪廓經由茶匙與木質呈現，既可近看造型，也能在取用之間，感受自然形態如何走入生活。", "A ginkgo leaf finds a new form in wood. Look closely at its outline and grain, then enjoy a small expression of nature each time you use it.") } },
     { slug: "wooden-chopsticks", name: t("檜木筷子", "Hinoki Wood Chopsticks"), en: "HINOKI WOOD CHOPSTICKS", series: wooden, ids: ["CV-0227"] /* CV-0245 (birds on charcoal) off the page 2026-10-07 and CV-0243, the same scene, 2026-10-08 (user: 「刪」) */,
       summary: t("從一雙木筷，開始日常的一餐。", "Hinoki Wood Chopsticks · Rest sold separately"),
-      detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Natural wood grain follows the slender lines of these hinoki chopsticks. Pair them with the Songbird Chopsticks Rest for a quiet, considered detail at the table."),
+      detail: t("沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。", "Natural wood grain follows the slender lines of these hinoki chopsticks. Pair them with the Songbird Chopstick Rest for a quiet, considered detail at the table."),
       story: { title: t("每日使用的線條", "A line used every day"), body: t("一雙筷子，常在手邊。從修長的外形看到木紋，熟悉的餐具也有可細讀之處；與鳥形筷架一同擺放，便形成餐桌上的小幅構圖。", "Even the most familiar tableware rewards a closer look. Follow the slender shape and natural grain of these chopsticks, then pair them with a bird-shaped rest to create a small composition at the table.") } },
   ];
   // Only facts a buyer needs first (user 2026-10-05). Rows marked Shopify follow the Shopify product descriptions quoted in the
@@ -281,7 +286,7 @@ const buildCatalog = (lang: Locale) => {
       { label: t("販售單位", "Contents"), value: t("6 片／組", "Set of 6 coasters") },
       { label: t("材質", "Material"), value: t("台灣一級檜木", "Taiwan cypress (hinoki), first grade") },
       { label: t("尺寸", "Size"), value: sizeText([8, 10], lang) },
-      { label: t("包裝", "Packaging"), value: t("外盒盒蓋以傳統織布機手工梭織", "Box lid hand-woven on a traditional loom") },
+      { label: t("包裝", "Packaging"), value: t("盒蓋表面覆以傳統織布機手工織成的布料", "Box lid covered in fabric handwoven on a traditional loom.") }, // 客戶核准英文（答覆 B8，2026-10-12）：硬質盒蓋外覆手織布，不是整個盒蓋用編織做成
       { label: t("清潔方式", "Care"), value: t("請輕柔手洗，不可使用洗碗機", "Gently hand wash only; not dishwasher safe.") },
     ] },
     "wooden-chopsticks": { price: 680, facts: [
@@ -298,6 +303,8 @@ const buildCatalog = (lang: Locale) => {
       handWash,
     ] },
   };
+  // 雲朵杯墊、銀杏茶匙、檜木筷子、鳥形筷架：上線只展示、不販售（客戶答覆 B1–B4，2026-10-12）。teawareOfficial 的台灣售價保留在資料裡備查，但不輸出成 price。
+  const displayOnlySlugs = new Set(["cloud-coaster", "ginkgo-teaspoon-gift-box", "wooden-chopsticks", "bird-chopstick-rest"]);
   const teawareProducts: Product[] = tablewareEntries.map((p) => ({
     slug: p.slug, category: (p.series === prosperity ? "abundance" : p.slug === "bird-chopstick-rest" ? "wood-fired" : "scents") as CategoryId, name: p.name, english: p.en, summary: p.summary, description: p.detail,
     image: gallery(p.ids[0], p.name), views: p.ids.map((id, i) => ({ label: i ? t(`細節 ${i}`, `Detail ${i}`) : t("商品全貌", "Full view"), image: gallery(id, p.name) })),
@@ -306,7 +313,7 @@ const buildCatalog = (lang: Locale) => {
       ...(teawareOfficial[p.slug]?.facts ?? []),
       ...(teawareFacts[p.slug] ?? []),
     ],
-    ...(teawareOfficial[p.slug] ? { price: { amount: teawareOfficial[p.slug].price, currency: "TWD" as const } } : {}),
+    ...(displayOnlySlugs.has(p.slug) ? { displayOnly: true } : teawareOfficial[p.slug] ? { price: { amount: teawareOfficial[p.slug].price, currency: "TWD" as const } } : {}),
     story: { title: p.story.title, body: p.story.body, image: p.ids[1] ? gallery(p.ids[1], p.name) : undefined },
   }));
 
@@ -351,7 +358,7 @@ const buildCatalog = (lang: Locale) => {
     // a new lifestyle scene (user 2026-10-05: 「我現在要做豐盛點心盤的生品情境照」): the stand with a few petits fours and goldfish tea on an oak table, olive sofa in front
     // v3 (user 2026-10-05): the bottom tier widened to the real piece's 38 : 71 : 100 and the painting navy; v2: an orange wall, a white gold-rimmed cup, a piped-cream tartlet, a fiddle-leaf fig
     "prosperity-dessert-stand": site("scene-dessert-stand-oak-table-tea-v3.webp", t("燒橘色牆面的溫暖客廳，牆上一幅海軍藍的畫，橡木圓桌上的豐盛點心盤擺著幾樣小點心，旁邊一杯白瓷金邊杯泡的小金魚茶，後方是琴葉榕，前景是橄欖綠毛圈沙發", "In a warm room with a burnt-orange wall and a navy painting, the Abundance Dessert Tray on a round oak table with a few petits fours, goldfish tea in a white gold-rimmed cup, a fiddle-leaf fig behind and an olive bouclé sofa in front"), 1792, 2240),
-    "bird-chopstick-rest": site("scene-bird-rest-gift-box-v2.webp", t("白色禮盒上的一隻鳥形筷架", "A Songbird Chopsticks Rest on a white CHARM VILLA gift box"), 1688, 2110) /* levelled 2.5° (user 2026-10-05: 「修正照片的水平線」) */,
+    "bird-chopstick-rest": site("scene-bird-rest-gift-box-v2.webp", t("白色禮盒上的一隻鳥形筷架", "A Songbird Chopstick Rest on a white CHARM VILLA gift box"), 1688, 2110) /* levelled 2.5° (user 2026-10-05: 「修正照片的水平線」) */,
   };
   // 2026-10-01 evening (user, with a screenshot of the white bag page: 「刪」): the two ink-green scenes — the figure looking back
   // (scene-white-bag-over-shoulder-ink-green) and the bag in the air on ink green (gallery CV-0450) — are off the site; the files
@@ -361,7 +368,7 @@ const buildCatalog = (lang: Locale) => {
   // 2026-10-01 (user: 「先幫我把目前有的都放上官網」): scenes that follow a product's existing scenes.
   const sceneExtra: Record<string, Img[]> = {
     // the brand's own photographs from the asset library (user 2026-10-02: 「更多的官網素材可以從這個網站抓」), two angles the page did not have yet
-    "bird-chopstick-rest": [site("scene-bird-rest-tray-closeup.webp", t("檜木筷子擱在鳥形筷架上", "Hinoki Wood Chopsticks resting on a Songbird Chopsticks Rest"), 2040, 1360) /* CV-0240 re-staged on the oak scene's tray (2026-10-05) */, site("scene-oak-table-bird-rests.webp", t("托盤上的鳥形筷架與檜木筷子", "Songbird Chopsticks Rests and Hinoki Wood Chopsticks on a tray"), 1792, 2240)],
+    "bird-chopstick-rest": [site("scene-bird-rest-tray-closeup.webp", t("檜木筷子擱在鳥形筷架上", "Hinoki Wood Chopsticks resting on a Songbird Chopstick Rest"), 2040, 1360) /* CV-0240 re-staged on the oak scene's tray (2026-10-05) */, site("scene-oak-table-bird-rests.webp", t("托盤上的鳥形筷架與檜木筷子", "Songbird Chopstick Rests and Hinoki Wood Chopsticks on a tray"), 1792, 2240)],
     "braided-leather-bag-pink": [// v3 (user 2026-10-02: the painting and the foreground changed — a deep-blue field painting, an olive bouclé ottoman with a
     // tray, a glass of goldfish tea on a cloud coaster; the bag and chair untouched)
     site("scene-pink-bag-armchair-olive-v2.webp", t("編織提把皮革包・粉紅色，放在橄欖綠布面單椅上；背後是橘色色塊的畫，前景橡木小邊几上一杯小金魚茶與 CHARM VILLA 茶標", "Braided Leather Bag in pink on an olive bouclé armchair; an orange field painting behind, and on an oak side table in front a glass of goldfish tea with its CHARM VILLA tag"), 1760, 2336)],
@@ -416,13 +423,13 @@ const buildCatalog = (lang: Locale) => {
   // they lead the scenes of the pieces they show.
   // 2026-10-02 (user: 「這張商品的情境照要換室內擺飾…喜歡他光影的呈現」, logos where the real pieces carry them): a new sunlit interior
   // replaces the black tray table by the sofa (scene-wooden-tray-table-sofa.webp, still in git).
-  const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光下的雲朵杯墊與銀杏茶匙", "The Cloud Coaster and Ginkgo Style Tea Spoon in sunlight"), 1792, 2240);
-  const woodenCloseup = site("scene-wooden-tray-table-closeup-v2.webp", t("檜木筷子擱在鳥形筷架上，旁邊是雲朵杯墊", "Hinoki Wood Chopsticks on a Songbird Chopsticks Rest beside a Cloud Coaster"));
+  const woodenSofa = site("scene-wooden-interior-sunlit.webp", t("陽光下的雲朵杯墊與銀杏茶匙", "The Cloud Coaster and Ginkgo Teaspoon in sunlight"), 1792, 2240);
+  const woodenCloseup = site("scene-wooden-tray-table-closeup-v2.webp", t("檜木筷子擱在鳥形筷架上，旁邊是雲朵杯墊", "Hinoki Wood Chopsticks on a Songbird Chopstick Rest beside a Cloud Coaster"));
   // after the user's coffee-table reference (2026-10-02: the vase and a book 換 our pieces, plus a cup of goldfish tea, the tag correct)
-  const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("雲朵杯墊上的小金魚茶，旁邊是銀杏茶匙", "Goldfish tea on a Cloud Coaster beside the Ginkgo Style Tea Spoon"), 1792, 2240);
+  const coffeeTable = site("scene-coffee-table-tea-coasters-tagfix.webp", t("雲朵杯墊上的小金魚茶，旁邊是銀杏茶匙", "Goldfish tea on a Cloud Coaster beside the Ginkgo Teaspoon"), 1792, 2240);
   // the tray table by the olive sofa, box, coaster and spoon engraved CHARMVILLA (user 2026-10-05: 「換剛剛那張」 on the spoon's
   // ottoman photograph, which stays in the repo)
-  const traySofa = site("scene-wooden-tray-table-sofa-v4.webp", t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Style Tea Spoon on a tray table"), 1376, 2048);
+  const traySofa = site("scene-wooden-tray-table-sofa-v4.webp", t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Teaspoon on a tray table"), 1376, 2048);
   const sceneLead: Record<string, Img[]> = {
     // the only scene of the Raw Gold earring, so its listing card has a hover image too. The user's chosen model (dark green
     // satin), the goldfish outline taken from the brand's own silhouette, matte gold generated
@@ -635,7 +642,7 @@ export const categories = getCatalog("zh").categories;
 export const products: Product[] = getCatalog("zh").products;
 export const getProducts = (lang: Locale = "zh") => getCatalog(lang).products;
 export const getCategories = (lang: Locale = "zh") => getCatalog(lang).categories;
-export const isSellable = (p: Product) => Boolean(p.price || p.shopify?.variantId);
+export const isSellable = (p: Product) => !p.displayOnly && Boolean(p.price || p.shopify?.variantId);
 export const formatPrice = (amount: number, currency = "TWD") => currency === "TWD" ? `NT$ ${amount.toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
 export const productHref = (product: Product | string, lang?: Locale) => `${prefix(lang)}/products/${typeof product === "string" ? product : product.slug}`;
 export const categoryHref = (category: string, lang?: Locale) => `${prefix(lang)}/collections/${category}`;

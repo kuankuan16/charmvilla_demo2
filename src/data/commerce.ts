@@ -12,11 +12,27 @@ export type PolicySection = { id: string; heading: string; blocks: PolicyBlock[]
 export type PolicyDoc = { title: string; intro?: string; updated?: string; sections: PolicySection[] };
 
 export const supportEmail = "us@charmvilla.com";
+// The US company behind the store, shown publicly (client's final answers 2026-10-12, A1): the footer, the FAQ, the policies'
+// contact lines and the Organization JSON-LD in [lang]/layout.tsx all read it from here.
+export const company = {
+  legalName: "Haoying LLC", street: "25509 Industrial Blvd, Ste G5", locality: "Hayward", region: "CA", postalCode: "94545", country: "US",
+  line: "Haoying LLC, 25509 Industrial Blvd, Ste G5, Hayward, CA 94545, USA",
+} as const;
+// Free shipping (client's final answers 2026-10-12, D1): orders of US$199 or more, US$199 itself included, to the contiguous
+// 48 states. CartDrawer uses this same number for its note.
+export const freeShippingMin = 199;
 
 const build = (lang: Locale) => {
   const t = translator(lang);
   const qa = (q: [string, string], a: [string, string]) => ({ q: t(...q), a: t(...a) });
   const email = supportEmail;
+  const operator = company.line;
+  // D2/D3 (client's final answers 2026-10-12): the approved English for dispatch and delivery, replacing the earlier
+  // "before noon, same day" promise, and the pre-order schedule (B7) that is shown separately.
+  const dispatch = t("現貨訂單於 1–2 個工作天內出貨，出貨後通常另需 3–7 個工作天送達。週末及美國聯邦假日不出貨。",
+    "In-stock orders ship within 1–2 business days. Delivery typically takes an additional 3–7 business days after dispatch. We do not dispatch orders on weekends or U.S. federal holidays.");
+  const preorder = t("預購商品依商品頁標示的時程出貨，預計最晚於 2026 年 11 月下旬。",
+    "Pre-order items ship on the schedule shown on their product pages, expected by late November 2026.");
 
   // Frequently Asked Questions (/faq). Each answer keeps the document's order; `highlights` are the ones the About page repeats.
   const faqGroups: { id: string; heading: string; items: ({ id: string } & ReturnType<typeof qa>)[] }[] = [
@@ -24,7 +40,7 @@ const build = (lang: Locale) => {
       { id: "unique", ...qa(["Charm Villa 的茶有什麼特別之處？", "What is unique about Charm Villa's tea?"],
         ["我們的小金魚茶包把台灣茶與優雅的設計結合在一起。茶葉浸泡時，金魚會在杯中慢慢成形——一份可以觀看、品嚐與分享的小小樂趣。", "Our Goldfish Tea Bags bring Taiwanese tea and graceful design together. As the tea steeps, the goldfish takes shape in your cup—a small pleasure to watch, taste, and share."]) },
       { id: "us-model", ...qa(["你們在美國的營運模式是什麼？", "Who operates the US store?"],
-        ["我們是 CHARMVILLA 在美國的授權獨立經銷商，直接進口商品，並從加州出貨。", "We are CHARMVILLA's authorized independent distributor in the US. We import directly and ship orders from California."]) },
+        [`我們是 CHARMVILLA 在美國的授權獨立經銷商，直接進口商品，並從加州出貨。美國商店由 ${operator} 經營。`, `We are CHARMVILLA's authorized independent distributor in the US. We import directly and ship orders from California. The US store is operated by ${operator}.`]) },
       { id: "contact", ...qa(["如果還有其他問題，要怎麼聯絡你們？", "How do I contact you if I have more questions?"],
         [`無論是挑選禮物或既有訂單的協助，歡迎來信 ${email}，我們很樂意為您服務。`, `For help choosing a gift or with an existing order, email us at ${email}. We would be happy to hear from you.`]) },
     ] },
@@ -56,9 +72,9 @@ const build = (lang: Locale) => {
     ] },
     { id: "orders", heading: t("訂單、運送與送禮", "Orders, Shipping & Gifting"), items: [
       { id: "shipping-cost", ...qa(["運費怎麼計算？", "How is shipping calculated?"],
-        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase."]) },
+        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states)."]) },
       { id: "delivery-time", ...qa(["配送需要多久？", "How long does delivery take?"],
-        ["訂單從加州出貨。美國境內標準配送通常需要 3–7 個工作天，視您所在的地區而定。可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。", "Orders ship from California. Standard US delivery typically takes 3–7 business days, depending on your location. Available shipping options are shown at checkout, and we will send a tracking link once your order ships."]) },
+        [`訂單從加州出貨。${dispatch}${preorder}可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。`, `Orders ship from California. ${dispatch} ${preorder} Available shipping options are shown at checkout, and we will send a tracking link once your order ships.`]) },
       { id: "store", ...qa(["你們有實體店面嗎？", "Do you have a physical store?"],
         ["我們的美國商店為線上商店。CHARMVILLA 在台灣與日本的門市資訊，請見首頁的「台日門市」介紹。", "Our US store is online. For CHARMVILLA locations in Taiwan and Japan, see Stores in Taiwan & Japan on our home page."]) },
       { id: "gifting", ...qa(["商品適合送禮嗎？有提供提袋嗎？", "Are your products suitable for gifting, and do you offer gift bags?"],
@@ -78,6 +94,8 @@ const build = (lang: Locale) => {
   // Shipping & Returns Policy (/policy)
   const policy: PolicyDoc = {
     title: t("運送與退換貨政策", "Shipping & Returns Policy"),
+    // D5 (client 2026-10-12): the date the final policies are actually published on the site. Change it to the launch date at launch.
+    updated: t("最後更新：2026 年 10 月 13 日", "Last Updated: October 13, 2026"),
     intro: t("關於運費、配送時間與退換貨規定，您需要知道的一切。", "Everything you need to know about our shipping rates, delivery times, and return guidelines."),
     sections: [
       { id: "returns", heading: t("退換貨與退款政策", "Return & Refund Policy"), blocks: [
@@ -86,11 +104,18 @@ const build = (lang: Locale) => {
       { id: "returns-tea", heading: t("茶品與消耗性商品", "Teas & Consumable Items"), blocks: [
         t("由於我們的特選茶品屬於可食用且易腐的商品，我們遵守嚴格的食品安全標準。因此，所有茶品與消耗性商品的銷售均為最終交易。商品一經寄出，在一般情況下，我們無法接受退貨、換貨或退款。", "Because our specialty teas are ingestible and perishable, we adhere to strict food safety standards. Therefore, all sales of tea and consumable products are final. We cannot accept returns, exchanges, or issue refunds for these items under standard circumstances once they have been dispatched."),
       ] },
-      { id: "returns-ceramics", heading: t("陶瓷與茶具", "Ceramics & Teaware"), blocks: [
-        t("我們希望您喜愛您的手工陶瓷作品。若您對非易腐的陶瓷商品（例如筷架）不完全滿意，我們接受自收到商品起 14 天內的退貨。可退貨的陶瓷商品必須：", "We want you to love your handmade ceramic pieces. If you are not completely satisfied with your non-perishable ceramic items (such as chopstick rests), we accept returns within 14 days of delivery. To be eligible for a return, your ceramic item must be:"),
-        { list: [t("未使用且未清洗。", "Unused and unwashed."), t("與收到時完全相同的原始狀態。", "In the exact original condition that you received it."), t("保有原始包裝。", "In its original packaging.")] },
-        t(`如需為陶瓷商品申請退貨，請來信 ${email} 並附上您的訂單編號。`, `To initiate a return for a ceramic item, please contact us at ${email} with your order number.`),
-        t("請注意：非瑕疵商品的退貨運費由顧客負擔。退回易碎的陶瓷商品時，強烈建議使用可追蹤的物流服務或購買運送保險；退貨運送途中損壞或遺失的商品，我們無法退款。", "Please note: Customers are responsible for paying all return shipping costs for non-defective items. We highly recommend using a trackable shipping service or purchasing shipping insurance when returning fragile ceramics, as we cannot issue refunds for items damaged or lost in return transit."),
+      // D4 (client's final answers 2026-10-12): the non-tea return policy, replacing the earlier 14-day ceramics policy. It applies
+      // once non-tea items go on sale; at launch they are display-only (B1–B4). The id stays so existing links keep working.
+      { id: "returns-ceramics", heading: t("非茶商品（茶具、陶瓷與配件）", "Non-Tea Items (Teaware, Ceramics & Accessories)"), blocks: [
+        t("此政策於非茶商品開始販售時適用；上線初期，這些商品僅供展示。", "This policy applies once our non-tea items go on sale. At launch, these items are shown for display only."),
+        t("您可於收到商品後 30 天內提出退貨申請。可退貨的商品必須：", "You may request a return within 30 days of delivery. To be eligible for a return, your item must be:"),
+        { list: [t("未使用且無損壞。", "Unused and undamaged."), t("保留原包裝及所有配件。", "In its original packaging, with all included accessories.")] },
+        t("您可以拆開包裝檢查商品。", "You are welcome to open the packaging to inspect your item."),
+        t(`退貨前請先來信 ${email} 並附上您的訂單編號；退貨獲准後，請於 7 天內將商品寄回。`, `Before sending anything back, please contact us at ${email} with your order number. Once your return is approved, please ship the item back within 7 days.`),
+        t("因個人意願改變而退貨時，退回運費由顧客負擔，原已支付的出貨運費恕不退還。我們不收取重新入庫費，也不會追扣原訂單享有的免運費用。", "For returns due to a change of mind, the customer pays the return shipping, and the original shipping charges are non-refundable. We do not charge a restocking fee, and we do not deduct the value of complimentary shipping from your refund."),
+        t("若商品損壞、有瑕疵或寄錯，必要的運費由我們負擔，並為您更換商品或退款。", "If your item arrives damaged or defective, or you receive the wrong item, we will cover the necessary shipping costs and offer a replacement or a refund."),
+        t("退回的商品經我們檢查後，款項將退回您原本的付款方式。", "Once we receive and inspect your return, your refund will be issued to your original payment method."),
+        t("寄回易碎商品時，強烈建議使用可追蹤的物流服務或購買運送保險；退貨運送途中損壞或遺失的商品，我們無法退款。", "We highly recommend using a trackable shipping service or purchasing shipping insurance when returning fragile items, as we cannot issue refunds for items damaged or lost in return transit."),
       ] },
       { id: "damages", heading: t("損壞與訂單問題", "Damages & Order Issues"), blocks: [
         t("雖然茶品無法接受一般退貨，但您的體驗對我們非常重要。若您的訂單有任何部分在送達時損壞、有瑕疵，或收到錯誤的商品，我們會負責處理到好。收到包裹時請仔細檢查。", "While we cannot accept standard returns on tea, your experience is deeply important to us. If any part of your order arrives damaged, defective, or if you receive the incorrect item, we are here to make it right. Please inspect your package carefully upon receipt."),
@@ -102,15 +127,19 @@ const build = (lang: Locale) => {
         t(`若退貨或損壞商品的退款獲得核准，款項將在 10 個工作天內自動退回您原本的付款方式。請留意，您的銀行或信用卡公司可能需要一些時間處理並入帳。若退款核准後已超過 15 個工作天仍未收到，請來信 ${email}。`, `If a refund is approved for a return or a damaged item, you will be automatically refunded on your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund. If more than 15 business days have passed since we approved your refund, please contact us at ${email}.`),
       ] },
       { id: "processing", heading: t("運送與處理時間", "Shipping & Processing Times"), blocks: [
-        t("我們會用心準備您的 Charm Villa 體驗。在工作日，太平洋時間中午 12:00 前成立的訂單，大多會在當天細心包裝並出貨；中午之後的訂單則於下一個工作日（週一至週五）出貨。訂單寄出後，您會收到含追蹤資訊的確認信。", "Most orders placed before noon Pacific Time, Monday through Friday, are packed and shipped the same day. Orders placed after noon ship the next business day. Once your order ships, we will email your tracking information."),
+        // D2/D3 (client 2026-10-12): replaces "Most orders placed before noon Pacific Time ... are shipped the same day".
+        dispatch,
+        preorder,
+        t("訂單寄出後，您會收到含追蹤資訊的確認信。", "Once your order ships, we will email your tracking information."),
       ] },
       { id: "address", heading: t("地址正確性", "Address Accuracy"), blocks: [
         t("請確認結帳時輸入的收件地址正確無誤。因顧客提供的地址錯誤而送達他處的包裹，或物流商標示為「已送達」但未收到的包裹，Charm Villa 恕不負責。", "Please ensure your shipping address is entered correctly at checkout. Charm Villa is not responsible for packages delivered to incorrect addresses provided by the customer, or for packages marked as \"Delivered\" by the carrier but not received."),
       ] },
       { id: "us-shipping", heading: t("美國運費與配送時間", "US Shipping & Delivery Estimates"), blocks: [
         { list: [
-          t("免運費：訂單金額超過 US$ 99 即享免運。", "Complimentary Shipping: Provided on all orders exceeding $99."),
-          t("標準運費：訂單未達 US$ 99 時，運費依您的地區與選擇的配送方式於結帳時計算並顯示。", "Standard Shipping: For orders under $99, shipping rates are calculated and displayed at checkout based on your location and selected service."),
+          // D1 (client 2026-10-12): US$199 or more, 199 included, to the contiguous 48 states (was: over $99)
+          t("免運費：訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。", "Complimentary Shipping: Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states)."),
+          t("標準運費：訂單未達 US$ 199，或不符合免運條件時，運費依您的地區與選擇的配送方式於結帳時計算並顯示。", "Standard Shipping: For orders under US$199, or orders not eligible for complimentary shipping, shipping rates are calculated and displayed at checkout based on your location and selected service."),
         ] },
       ] },
       { id: "delays", heading: t("配送預估與物流延誤", "Delivery Estimates & Carrier Delays"), blocks: [
@@ -119,13 +148,18 @@ const build = (lang: Locale) => {
       { id: "lost", heading: t("運送途中遺失", "Lost in Transit"), blocks: [
         t(`若您的包裹不幸在運送途中遺失，請來信 ${email}。雖然我們無法為物流商的疏失負責，但我們會代您與物流商密切聯繫，協助找回包裹或提出申訴，以提供合適的解決方案。`, `In the unfortunate event that your package is lost in transit, please contact us at ${email}. While we cannot take responsibility for carrier errors, we will work closely with the carrier on your behalf to locate your shipment or file a claim to provide a suitable resolution.`),
       ] },
+      // A1 (client 2026-10-12): the operator of the US store. Not a return address: returns are arranged by email first.
+      { id: "contact", heading: t("聯絡我們", "Contact Us"), blocks: [
+        t(`Charm Villa 美國商店由 ${operator} 經營。關於運送或退換貨的問題，請來信 ${email}。`, `Charm Villa's US store is operated by ${operator}. For questions about shipping or returns, please contact us at ${email}.`),
+      ] },
     ],
   };
 
   // Privacy Policy (/privacy)
   const privacy: PolicyDoc = {
     title: t("隱私權政策", "Privacy Policy"),
-    updated: t("最後更新：2026 年 6 月 13 日", "Last Updated: Jun 13, 2026"),
+    // D5 (client 2026-10-12): the date the final policies are actually published on the site. Change it to the launch date at launch.
+    updated: t("最後更新：2026 年 10 月 13 日", "Last Updated: October 13, 2026"),
     intro: t("本隱私權政策說明 Charm Villa 在您造訪本網站或於本站購物時，如何蒐集、使用與揭露您的個人資料。", "This Privacy Policy describes how Charm Villa (\"we\", \"us\", or \"our\") collects, uses, and discloses your Personal Information when you visit or make a purchase from our website (the \"Site\")."),
     sections: [
       { id: "platform", heading: t("1. 資料的蒐集與儲存（我們的平台）", "1. How We Collect and Store Data (Our Platform)"), blocks: [
@@ -162,6 +196,8 @@ const build = (lang: Locale) => {
           t("防止跨站請求偽造（CSRF）攻擊，確保您的資料安全。", "Prevent cross-site request forgery (CSRF) attacks to keep your data safe."),
         ] },
         t("我們不使用任何非必要的追蹤、分析或廣告 Cookie（例如 Google Analytics 或 Meta Pixel）。由於本站僅依賴嚴格必要的 Cookie，因此不需要也不會顯示 Cookie 同意橫幅。", "We do not use any non-essential tracking, analytics, or advertising cookies (such as Google Analytics or Meta Pixel). Because our Site relies solely on strictly necessary cookies, we do not require or display a cookie consent banner."),
+        // D7 (client 2026-10-12, checked against the code 2026-10-13): the bag is kept in localStorage (CartProvider.tsx), not a cookie.
+        t("您的購物車內容會儲存在您瀏覽器的本機儲存空間（local storage），讓您再次造訪時仍能看到；這些資訊只留在您的裝置上，不會用於追蹤。", "Your shopping bag is saved in your browser's local storage on your device, so it is still there when you return. This information stays on your device and is not used for tracking."),
       ] },
       { id: "rights", heading: t("6. 您的資料權利（GDPR 與 CCPA）", "6. Your Data Rights (GDPR & CCPA)"), blocks: [
         t("依您的所在地，您可能有權存取我們持有的您的個人資料、將其轉移至新的服務，以及要求更正、更新或刪除您的個人資料。由於您的資料儲存於 Shopify，若您希望行使這些權利，請透過下方的電子郵件與我們聯絡。我們會透過 Shopify 管理後台處理您的請求，確保您的資料被妥善匯出或自其伺服器刪除。", "Depending on where you live, you may have the right to access the Personal Information we hold about you, to port it to a new service, and to ask that your Personal Information be corrected, updated, or erased. Because your data is stored in Shopify, if you wish to exercise these rights, please contact us at the email below. We will then process your request through our Shopify administrative dashboard to ensure your data is appropriately exported or deleted from their servers."),
@@ -171,6 +207,8 @@ const build = (lang: Locale) => {
       ] },
       { id: "contact", heading: t("8. 聯絡我們", "8. Contact Us"), blocks: [
         t(`如需進一步了解我們的隱私權做法、有任何疑問或希望提出申訴，請來信 ${email}。`, `For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us at ${email}.`),
+        // A1 (client 2026-10-12)
+        t(`Charm Villa 美國商店由 ${operator} 經營。`, `Charm Villa's US store is operated by ${operator}.`),
       ] },
     ],
   };
@@ -178,7 +216,8 @@ const build = (lang: Locale) => {
   // Terms of Service (/terms)
   const terms: PolicyDoc = {
     title: t("服務條款", "Terms of Service"),
-    updated: t("最後更新：2026 年 6 月 13 日", "Last Updated: Jun 13, 2026"),
+    // D5 (client 2026-10-12): the date the final policies are actually published on the site. Change it to the launch date at launch.
+    updated: t("最後更新：2026 年 10 月 13 日", "Last Updated: October 13, 2026"),
     intro: t("歡迎來到 Charm Villa。本服務條款（「本條款」）規範您對 Charm Villa 網站（「本站」）的存取與使用，以及向 Charm Villa（「我們」）購買商品的行為。造訪本站及／或向我們購買商品，即表示您使用我們的「服務」，並同意受以下條款約束。若您不同意本協議的全部條款與條件，則不得存取本網站或使用任何服務。", "Welcome to Charm Villa. These Terms of Service (\"Terms\") govern your access to and use of the Charm Villa website (the \"Site\") and the purchase of products from Charm Villa (\"we\", \"us\", or \"our\"). By visiting our Site and/or purchasing something from us, you engage in our \"Service\" and agree to be bound by the following Terms. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services."),
     sections: [
       { id: "health", heading: t("1. 健康、食品安全與產品免責聲明", "1. Health, Food Safety & Product Disclaimers"), blocks: [
@@ -216,6 +255,8 @@ const build = (lang: Locale) => {
       ] },
       { id: "contact", heading: t("10. 聯絡資訊", "10. Contact Information"), blocks: [
         t(`關於服務條款的問題，請來信 ${email}。`, `Questions about the Terms of Service should be sent to us at ${email}.`),
+        // A1 (client 2026-10-12)
+        t(`Charm Villa 美國商店由 ${operator} 經營。`, `Charm Villa's US store is operated by ${operator}.`),
       ] },
     ],
   };

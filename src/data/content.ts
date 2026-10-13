@@ -36,15 +36,15 @@ const buildContent = (lang: Locale) => {
   const hero = {
     title: "EVERYDAY LUXURIES",
     subtitle: t("藝術即生活", "Art as Life"),
-    image: site("scene-red-giftbox-tea-hinoki-bird.webp", t("紅色刺繡禮盒旁的小金魚茶，前景是雲朵杯墊、銀杏茶匙與鳥形筷架", "Goldfish tea beside a red embroidered gift box, with the Cloud Coaster, Ginkgo Style Tea Spoon and Songbird Chopsticks Rest"), 1510, 1993), // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
+    image: site("scene-red-giftbox-tea-hinoki-bird.webp", t("紅色刺繡禮盒旁的小金魚茶，前景是雲朵杯墊、銀杏茶匙與鳥形筷架", "Goldfish tea beside a red embroidered gift box, with the Cloud Coaster, Ginkgo Teaspoon and Songbird Chopstick Rest"), 1510, 1993), // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）
     // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）；輪播三張換成小金魚茶包禮盒、香氛系列、柴燒系列的情境照
     // （使用者 2026-10-07：「把首頁真皮包包跟金飾的 Banner 圖，換成小金魚茶包禮盒、香氛系列、柴燒系列的情境照」）
     // 茶葉禮盒那張換成橄欖綠沙發的情境照（使用者 2026-10-07：「換其他情境照」；枯木那張從此沒人用，檔案移除）；盒子再改成現在的芥末黃松針桐木盒，
     // 只重畫盒子那一塊（「換成現在的商品」）；橘盒版留在 git 歷史
     slides: [
       { id: "tea", src: "/media/site/scene-reunion-gift-box-us-olive-sofa-pouch.webp", alt: t("團圓禮盒與一杯小金魚茶", "The Joyful Reunion gift box with a glass of goldfish tea"), w: 1856, h: 2304, label: t("小金魚茶包禮盒", "Goldfish Tea Gifts"), en: "Tea gifts", href: "/collections/tea" },
-      { id: "scents", src: "/media/site/scene-wooden-tray-table-sofa-v4.webp", alt: t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Style Tea Spoon on a tray table"), w: 1376, h: 2048, label: t("香味是喜悅的記憶", "Scents"), en: "Scents", href: "/collections/scents" },
-      { id: "wood-fired", src: "/media/site/scene-oak-table-bird-rests.webp", alt: t("托盤上的鳥形筷架與檜木筷子", "Songbird Chopsticks Rests and Hinoki Wood Chopsticks on a tray"), w: 1792, h: 2240, label: t("柴燒系列", "Wood-Fired Collection"), en: "Wood-fired", href: "/collections/wood-fired" },
+      { id: "scents", src: "/media/site/scene-wooden-tray-table-sofa-v4.webp", alt: t("雲朵杯墊與銀杏茶匙放在托盤邊几上", "The Cloud Coaster and Ginkgo Teaspoon on a tray table"), w: 1376, h: 2048, label: t("香味是喜悅的記憶", "Scents"), en: "Scents", href: "/collections/scents" },
+      { id: "wood-fired", src: "/media/site/scene-oak-table-bird-rests.webp", alt: t("托盤上的鳥形筷架與檜木筷子", "Songbird Chopstick Rests and Hinoki Wood Chopsticks on a tray"), w: 1792, h: 2240, label: t("柴燒系列", "Wood-Fired Collection"), en: "Wood-fired", href: "/collections/wood-fired" },
     ],
   };
 
@@ -282,7 +282,8 @@ const buildContent = (lang: Locale) => {
       labelZh: t("最新消息", ""),
       items: [
         { date: t("8 月 11 日", "Aug 11"), tag: t("禮盒預購", "Pre-order"), text: t("2026 中秋限定禮盒開放預購，燙金魚鱗紙盒限量登場。", "Pre-orders open for the 2026 Mid-Autumn limited gift boxes, with a limited paper box in gold-foil fish scales.") },
-        { date: t("7 月 2 日", "Jul 2"), tag: t("活動快訊", "Events"), text: t("8 月 15 日起，於誠品生活南西展開「杯中金魚」期間限定茶席。", "Beginning August 15, discover Goldfish in a Cup, a limited-time tea experience at eslite spectrum Nanxi.") },
+        // 2026-10-13 (client's answer A2): the eslite spectrum Nanxi line became the Los Angeles pop-up
+        { date: t("10 月 17 日", "Oct 17"), tag: t("活動快訊", "Events"), text: t("10 月 17 日至 12 月 31 日，CHARM VILLA 洛杉磯快閃展於 San Gabriel 的 The Scholart Selection 展出。", "From October 17 to December 31, the CHARM VILLA pop-up in Los Angeles at The Scholart Selection, San Gabriel.") },
       ],
     },
     instagram: "https://www.instagram.com/charmvilla/",

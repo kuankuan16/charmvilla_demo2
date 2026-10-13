@@ -4,10 +4,14 @@
 // official PNG so it stays sharp at this size). The homepage and every inner page render this component.
 import Link from "next/link";
 import { getCategories, categoryHref } from "@/data/catalog";
-import { getCommerce } from "@/data/commerce";
+import { getCommerce, company } from "@/data/commerce";
 import SocialLinks from "@/components/ui/SocialLinks";
 import NewsletterForm from "./NewsletterForm";
 import { localeHref, translator, type Locale } from "@/i18n/config";
+
+// Sign-in and sign-up are not open until the store runs on Shopify (client's final answers 2026-10-12, E6): the Account link
+// is hidden in local commerce mode; /account itself still opens when visited directly.
+const accountOpen = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify";
 
 export default function SiteFooter({ lang, home = false }: { lang: Locale; home?: boolean }) {
   const t = translator(lang);
@@ -20,7 +24,7 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
     { label: t("品牌", "Company"), links: [
       { href: homeHref, label: t("首頁", "Home") }, { href: localeHref(lang, "/about"), label: t("關於", "About") },
       { href: localeHref(lang, "/news"), label: t("最新消息", "News") }, { href: storesHref, label: t("台日門市", "Stores in Taiwan & Japan") },
-      { href: localeHref(lang, "/account"), label: t("會員", "Account") }] },
+      ...(accountOpen ? [{ href: localeHref(lang, "/account"), label: t("會員", "Account") }] : [])] },
     // the US store's FAQ and policies (commerce.ts, user's document 2026-10-07)
     { label: t("購物說明", "Help"), links: getCommerce(lang).footer.help.map((l) => ({ href: l.href.startsWith("mailto:") ? l.href : localeHref(lang, l.href), label: l.label })) },
     // the accessibility statement is appended here (its own route file, launch QA 2026-10-13) so commerce.ts's legal list stays as written
@@ -45,7 +49,11 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
         </div>
       </div>
       <div className="footer-bottom">
-        <p className="tc">© 2026 CHARM&nbsp;VILLA. {t("版權所有。", "All rights reserved.")}</p>
+        <div>
+          <p className="tc">© 2026 CHARM&nbsp;VILLA. {t("版權所有。", "All rights reserved.")}</p>
+          {/* the US company behind the store, with the store's email (client's final answers 2026-10-12, A1) */}
+          <p className="footer-company tc mt-1">{company.line} · <a href={`mailto:${getCommerce(lang).email}`} className="underline underline-offset-4">{getCommerce(lang).email}</a></p>
+        </div>
         <SocialLinks lang={lang} className="footer-social" />
       </div>
       <Link href={homeHref} className="footer-wordmark" aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}>

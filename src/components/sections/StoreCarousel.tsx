@@ -41,7 +41,7 @@ export default function StoreCarousel() {
   // further store photographs, and repeating a card's photograph beside it would show the same picture twice
   // 真皮包與金飾的情境照全站隱藏（使用者 2026-10-07，美國市場不販售）：長榻照（毯子上有白包）換成官網茶誌的倒茶照；
   // 2026-10-08 換成 Y 字椅上的小金魚茶照（雜誌、白襯衫、兩隻柴燒鳥形筷架；Nano Banana 2.1 4K，棉線修到杯後；使用者：「上架」「換成門市的左邊大圖」）；雜誌標題原本是真雜誌 UNCONDITIONAL，改成品牌字樣 CHARM VILLA（使用者：「把封面標題換『CHARM VILLA』」）；v3 補回被擦掉的「Spring」、擦掉三處 AI 亂碼小字（使用者：「這張照片修理了嗎？」）
-  const mood = site("scene-chair-magazine-goldfish-tea-wood-fired-birds-v3.webp", t("午後陽光下，椅子上的一杯小金魚茶與鳥形筷架", "Goldfish tea and Songbird Chopsticks Rests on a chair in afternoon sun"), 1856, 2304);
+  const mood = site("scene-chair-magazine-goldfish-tea-wood-fired-birds-v3.webp", t("午後陽光下，椅子上的一杯小金魚茶與鳥形筷架", "Goldfish tea and Songbird Chopstick Rests on a chair in afternoon sun"), 1856, 2304);
 
   return (
     <div className="stores" aria-roledescription={t("輪播", "carousel")} aria-label={t("台灣與日本門市", "Our stores in Taiwan and Japan")}>
