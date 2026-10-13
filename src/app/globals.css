@@ -733,6 +733,8 @@ main:has(> .policy-page) { background: #efefed; }
 .product-price { margin: var(--i-price) 0 0; font-size: clamp(17px, 1.27vw, 21px); font-weight: 400; letter-spacing: .02em; }
 .catalog-card-price { margin-top: 8px; font-size: 15px; font-weight: 500; }
 /* sold out on the official store (2026-10-05): a word beside the price, not colour alone */
+/* display-only pieces marked sold out: the same quiet tag, standing alone without a price before it (user 2026-10-13) */
+.catalog-card-soldtag, .product-soldtag { margin-left: 0 !important; }
 .catalog-card-preorder, .product-preorder { display: inline-block; margin-left: .75em; padding: 1px 8px; border: 1px solid currentColor; border-radius: 2px; font-size: 13px; letter-spacing: .08em; line-height: 1.6; vertical-align: .15em; }
 .catalog-card-soldout, .product-soldout { margin-left: .75em; padding-left: .75em; border-left: 1px solid rgb(31 31 31 / .24); color: rgb(31 31 31 / .64); font-weight: 400; }
 /* Add to cart */

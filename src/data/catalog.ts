@@ -312,7 +312,7 @@ const buildCatalog = (lang: Locale) => {
       ...(teawareOfficial[p.slug]?.facts ?? []),
       ...(teawareFacts[p.slug] ?? []),
     ],
-    ...(displayOnlySlugs.has(p.slug) ? { displayOnly: true } : teawareOfficial[p.slug] ? { price: { amount: teawareOfficial[p.slug].price, currency: "TWD" as const } } : {}),
+    ...(displayOnlySlugs.has(p.slug) ? { displayOnly: true, soldOut: true /* user 2026-10-13: 「這幾個商品改為售完，並加入售完標籤」 */ } : teawareOfficial[p.slug] ? { price: { amount: teawareOfficial[p.slug].price, currency: "TWD" as const } } : {}),
     story: { title: p.story.title, body: p.story.body, image: p.ids[1] ? gallery(p.ids[1], p.name) : undefined },
   }));
 
