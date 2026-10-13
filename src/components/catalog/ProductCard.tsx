@@ -17,7 +17,7 @@ export default function ProductCard({ product, index = 0, animated = false, lang
       <Link href={productHref(product, lang)} aria-label={t(`瀏覽 ${product.name}`, `View ${product.name}`)}>
         <div className={`catalog-card-image catalog-card-image--${product.category} catalog-card-image--${product.image.cutout ? "cutout" : "scene"}`}><Picture img={product.image} fill fit={imageFit(product.image)} animate={animated} sizes="(min-width:1280px) 25vw, (min-width:768px) 33vw, 50vw" />{product.hoverImage && <div className="catalog-card-hover" aria-hidden="true"><Picture img={product.hoverImage} fill fit="cover" animate={false} sizes="(min-width:1280px) 25vw, (min-width:768px) 33vw, 50vw" /></div>}</div>
         <h3 className="tc">{product.name}</h3>
-        {caption ? <p className="catalog-card-caption"><span className="tc">{caption}</span>{price && <span className="catalog-card-caption-price"> · {price}</span>}</p> : price && <p className="catalog-card-price">{price}</p>}
+        {caption ? <p className="catalog-card-caption"><span className="tc">{caption}</span>{price && <span className="catalog-card-caption-price">{product.displayOnly ? null : " · "}{price}</span>}</p> : price && <p className="catalog-card-price">{price}</p>}
       </Link>
     </article>
   );

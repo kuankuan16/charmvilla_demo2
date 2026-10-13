@@ -735,6 +735,7 @@ main:has(> .policy-page) { background: #efefed; }
 /* sold out on the official store (2026-10-05): a word beside the price, not colour alone */
 /* display-only pieces marked sold out: the same quiet tag, standing alone without a price before it (user 2026-10-13) */
 .catalog-card-soldtag, .product-soldtag { margin-left: 0 !important; }
+.catalog-card-caption .catalog-card-soldtag { margin-left: 1em !important; } /* after the category line: no「·」, just a wider gap (user 2026-10-13) */
 .catalog-card-preorder, .product-preorder { display: inline-block; margin-left: .75em; padding: 1px 8px; border: 1px solid currentColor; border-radius: 2px; font-size: 13px; letter-spacing: .08em; line-height: 1.6; vertical-align: .15em; }
 .catalog-card-soldout, .product-soldout { margin-left: .75em; padding-left: .75em; border-left: 1px solid rgb(31 31 31 / .24); color: rgb(31 31 31 / .64); font-weight: 400; }
 /* Add to cart */
