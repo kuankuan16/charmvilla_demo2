@@ -49,8 +49,8 @@ const build = (lang: Locale): NewsEntry[] => {
       slug: "la-popup-scholart-selection-2026", date: "2026-10-17", dateLabel: t("2026 年 10 月 17 日至 12 月 31 日", "October 17 – December 31, 2026"),
       tag: t("活動快訊", "Events"), title: t("CHARM VILLA 洛杉磯快閃展", "CHARM VILLA Pop-up in Los Angeles"),
       summary: t("10 月 17 日至 12 月 31 日，於 San Gabriel 的 The Scholart Selection。", "October 17 to December 31 at The Scholart Selection, San Gabriel."),
-      card: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡：淺灰紙上燙金 CHARM VILLA 字標，中央是壓凸的皮革包與 Show more! 字樣，下方列出台北、洛杉磯 The Scholart Selection、京都三場的日期與地點", "CHARM VILLA 2026 launch invitation: the gold CHARM VILLA wordmark on pale grey paper, an embossed leather bag and the words Show more!, with the Taipei, Los Angeles (The Scholart Selection) and Kyoto dates and venues below"), 1570, 1963),
-      focus: "50% 33%", whole: true, ground: "#f0f1f2",
+      card: site("news-la-popup-showmore-2026-card3.webp", t("CHARM VILLA 2026 新品發表邀請卡：淺灰紙上燙金 CHARM VILLA 字標，中央是壓凸的皮革包與 Show more! 字樣，下方列出台北、洛杉磯 The Scholart Selection、京都三場的日期與地點", "CHARM VILLA 2026 launch invitation: the gold CHARM VILLA wordmark on pale grey paper, an embossed leather bag and the words Show more!, with the Taipei, Los Angeles (The Scholart Selection) and Kyoto dates and venues below"), 2498, 1665),
+      focus: "50% 50%", whole: true, ground: "#f0f1f2", // list card: a landscape cut of the invitation (wordmark to LEATHER BAG) so no text is cropped (user 2026-10-13)
       hero: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963),
       body: [
         t("CHARM VILLA 洛杉磯快閃展，2026 年 10 月 17 日至 12 月 31 日於 The Scholart Selection 展出。", "The CHARM VILLA pop-up in Los Angeles runs from October 17 to December 31, 2026, at The Scholart Selection."),
