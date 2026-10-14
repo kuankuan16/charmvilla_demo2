@@ -31,8 +31,17 @@ const build = (lang: Locale) => {
   // "before noon, same day" promise, and the pre-order schedule (B7) that is shown separately.
   const dispatch = t("現貨訂單於 1–2 個工作天內出貨，出貨後通常另需 3–7 個工作天送達。週末及美國聯邦假日不出貨。",
     "In-stock orders ship within 1–2 business days. Delivery typically takes an additional 3–7 business days after dispatch. We do not dispatch orders on weekends or U.S. federal holidays.");
-  const preorder = t("預購商品依商品頁標示的時程出貨，預計最晚於 2026 年 11 月下旬。",
-    "Pre-order items ship on the schedule shown on their product pages, expected by late November 2026.");
+  // Client reply 2026-10-14 §6: 「預計最晚於 2026 年 11 月底前出貨」 (was late November, B7)
+  const preorder = t("預購商品依商品頁標示的時程出貨，預計最晚於 2026 年 11 月底前。",
+    "Pre-order items ship on the schedule shown on their product pages, expected by the end of November 2026.");
+  // Client reply 2026-10-14 §7–§8 (English is our translation of the client's Chinese, pending their review): the Christmas order
+  // cut-off, Alaska and Hawaii, and military/diplomatic addresses
+  const christmas = t("聖誕節下單截止日：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單，以便在聖誕節前送達。阿拉斯加與夏威夷的運送時效須另行確認，不適用此截止日。",
+    "Christmas order deadline: for delivery before Christmas to the contiguous 48 states, please order by December 15, 2026. Delivery times to Alaska and Hawaii must be confirmed separately, and this deadline does not apply to them.");
+  const remote = t("阿拉斯加與夏威夷：可以寄送，運費於結帳時另計，不適用 US$ 199 免運。",
+    "Alaska & Hawaii: We ship to Alaska and Hawaii. Shipping is charged at checkout, and the US$199 complimentary shipping offer does not apply.");
+  const military = t("APO／FPO／DPO 軍郵及外交郵件地址：上線初期暫不寄送。",
+    "APO/FPO/DPO addresses: At launch, we are not able to ship to military or diplomatic addresses.");
 
   // Frequently Asked Questions (/faq). Each answer keeps the document's order; `highlights` are the ones the About page repeats.
   const faqGroups: { id: string; heading: string; items: ({ id: string } & ReturnType<typeof qa>)[] }[] = [
@@ -72,9 +81,9 @@ const build = (lang: Locale) => {
     ] },
     { id: "orders", heading: t("訂單、運送與送禮", "Orders, Shipping & Gifting"), items: [
       { id: "shipping-cost", ...qa(["運費怎麼計算？", "How is shipping calculated?"],
-        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states)."]) },
+        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。寄往阿拉斯加與夏威夷的運費另計，不適用免運；上線初期暫不寄送 APO／FPO／DPO 地址。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states). Shipping to Alaska and Hawaii is charged separately and is not eligible for complimentary shipping; at launch, we do not ship to APO/FPO/DPO addresses."]) },
       { id: "delivery-time", ...qa(["配送需要多久？", "How long does delivery take?"],
-        [`訂單從加州出貨。${dispatch}${preorder}可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。`, `Orders ship from California. ${dispatch} ${preorder} Available shipping options are shown at checkout, and we will send a tracking link once your order ships.`]) },
+        [`訂單從加州出貨。${dispatch}${preorder}${christmas}可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。`, `Orders ship from California. ${dispatch} ${preorder} ${christmas} Available shipping options are shown at checkout, and we will send a tracking link once your order ships.`]) },
       { id: "store", ...qa(["你們有實體店面嗎？", "Do you have a physical store?"],
         ["我們的美國商店為線上商店。CHARMVILLA 在台灣與日本的門市資訊，請見首頁的「台日門市」介紹。", "Our US store is online. For CHARMVILLA locations in Taiwan and Japan, see Stores in Taiwan & Japan on our home page."]) },
       { id: "gifting", ...qa(["商品適合送禮嗎？有提供提袋嗎？", "Are your products suitable for gifting, and do you offer gift bags?"],
@@ -130,7 +139,17 @@ const build = (lang: Locale) => {
         // D2/D3 (client 2026-10-12): replaces "Most orders placed before noon Pacific Time ... are shipped the same day".
         dispatch,
         preorder,
+        christmas,
         t("訂單寄出後，您會收到含追蹤資訊的確認信。", "Once your order ships, we will email your tracking information."),
+      ] },
+      // Client reply 2026-10-14 §6: full payment at order; cancel before shipping for a full refund; after shipping, the tea policy
+      { id: "preorders", heading: t("預購付款與取消", "Pre-Order Payment & Cancellation"), blocks: [
+        { list: [
+          t("預購商品於下單時收取全額款項。", "Pre-orders are charged in full when you place your order."),
+          t("預購商品預計最晚於 2026 年 11 月底前出貨。", "Pre-orders are expected to ship by the end of November 2026."),
+          t(`出貨前可申請取消並獲得全額退款，請來信 ${email} 並附上您的訂單編號。`, `You may cancel a pre-order for a full refund before it ships. Please email us at ${email} with your order number.`),
+          t("出貨後依上方「茶品與消耗性商品」的退換貨政策處理。", "Once shipped, pre-orders follow our Teas & Consumable Items return policy above."),
+        ] },
       ] },
       { id: "address", heading: t("地址正確性", "Address Accuracy"), blocks: [
         t("請確認結帳時輸入的收件地址正確無誤。因顧客提供的地址錯誤而送達他處的包裹，或物流商標示為「已送達」但未收到的包裹，Charm Villa 恕不負責。", "Please ensure your shipping address is entered correctly at checkout. Charm Villa is not responsible for packages delivered to incorrect addresses provided by the customer, or for packages marked as \"Delivered\" by the carrier but not received."),
@@ -140,6 +159,8 @@ const build = (lang: Locale) => {
           // D1 (client 2026-10-12): US$199 or more, 199 included, to the contiguous 48 states (was: over $99)
           t("免運費：訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。", "Complimentary Shipping: Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states)."),
           t("標準運費：訂單未達 US$ 199，或不符合免運條件時，運費依您的地區與選擇的配送方式於結帳時計算並顯示。", "Standard Shipping: For orders under US$199, or orders not eligible for complimentary shipping, shipping rates are calculated and displayed at checkout based on your location and selected service."),
+          remote,
+          military,
         ] },
       ] },
       { id: "delays", heading: t("配送預估與物流延誤", "Delivery Estimates & Carrier Delays"), blocks: [
