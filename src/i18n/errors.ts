@@ -7,6 +7,7 @@ const english: Record<string, string> = {
   unauthorized: "Please sign in first.",
   not_configured: "This is not open yet.",
   server_error: "Something went wrong. Please try again.",
+  preorder_full: "Not enough pre-order boxes are left for this quantity.",
 };
 const cjk = /[\u3400-\u9fff]/;
 

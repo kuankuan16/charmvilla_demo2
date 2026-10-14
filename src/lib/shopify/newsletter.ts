@@ -1,31 +1,10 @@
 // Newsletter sign-ups go to the Shopify customer list, marked as accepting email marketing (user 2026-10-14: 「電子報用 Shopify」),
 // so the brand sends with Shopify Email and members and subscribers are one list. Marketing consent can only be written with the
-// Admin API, so this uses a server-only Admin token (never NEXT_PUBLIC_):
-//   SHOPIFY_ADMIN_ACCESS_TOKEN  custom app → Admin API access token, scopes read_customers + write_customers
-// SHOPIFY_STORE_DOMAIN and SHOPIFY_API_VERSION are shared with the Storefront client (config.ts).
-import { shopifyConfig, NOT_CONFIGURED } from "./config";
+// Admin API (admin.ts: the server-only SHOPIFY_ADMIN_ACCESS_TOKEN, scopes read_customers + write_customers).
+import { admin } from "./admin";
 import { ShopifyError } from "./client";
 
-const adminToken = () => process.env.SHOPIFY_ADMIN_ACCESS_TOKEN ?? "";
-export const isNewsletterConfigured = () => Boolean(shopifyConfig.domain && adminToken());
-
-type GraphQLResponse<T> = { data?: T; errors?: { message: string }[] };
 type UserErrors = { userErrors: { field?: string[] | null; message: string }[] };
-
-async function admin<T>(query: string, variables: Record<string, unknown>): Promise<T> {
-  if (!isNewsletterConfigured()) throw new ShopifyError("電子報尚未串接：請先填入 SHOPIFY_STORE_DOMAIN 與 SHOPIFY_ADMIN_ACCESS_TOKEN。", 503, NOT_CONFIGURED);
-  const res = await fetch(`https://${shopifyConfig.domain}/admin/api/${shopifyConfig.version}/graphql.json`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-Shopify-Access-Token": adminToken() },
-    body: JSON.stringify({ query, variables }),
-    cache: "no-store",
-  });
-  const json = (await res.json().catch(() => ({}))) as GraphQLResponse<T>;
-  if (!res.ok) throw new ShopifyError(`Shopify 回應 ${res.status}`, res.status === 429 ? 429 : 502);
-  if (json.errors?.length) throw new ShopifyError(json.errors[0].message, 502);
-  if (!json.data) throw new ShopifyError("Shopify 沒有回傳資料", 502);
-  return json.data;
-}
 
 const FIND = `query FindCustomer($q: String!) { customers(first: 1, query: $q) { nodes { id emailMarketingConsent { marketingState } } } }`;
 const CREATE = `mutation NewsletterCreate($input: CustomerInput!) { customerCreate(input: $input) { customer { id } userErrors { field message } } }`;

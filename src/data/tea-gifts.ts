@@ -55,7 +55,7 @@ export type TeaGift = {
   preOrder?: boolean;
   /** 預購額度（盒）：所有茶款與盒蓋顏色共用一個額度，不分規格（客戶答覆 B7，2026-10-12）。沒有額度的預購商品（聖誕佳禮）不顯示剩餘數 */
   preOrderLimit?: number;
-  /** 剩餘可預購數量的覆寫值；目前沒有庫存系統，未填時剩餘＝preOrderLimit。之後由 Shopify 庫存（共用額度）取代 */
+  /** 剩餘可預購數量的覆寫值；未填時剩餘＝preOrderLimit。Shopify 串接後由 src/lib/shopify/preorder.ts（額度－已下單盒數）即時取代 */
   preOrderLeft?: number;
   /** no price yet: 價格待訂 / Price to be announced instead of a price, and no bag button (user 2026-10-13: 「US$130 幫我用價格代訂，不要自己亂寫」) */
   priceTbd?: boolean;

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { products, getProducts, findProduct, getCategory, getCategoryProducts, productHref, categoryHref, formatPrice } from "@/data/catalog";
+import PreOrderLeft from "@/components/catalog/PreOrderLeft";
 import AddToCart from "@/components/cart/AddToCart";
 import { getContent, site, type Img } from "@/data/content";
 import { getAbout } from "@/data/about";
@@ -130,9 +131,7 @@ export default async function ProductPage({ params }: Props) {
   const origin = product.facts.find((f) => f.label === t("產地", "Made in"));
   const originNote = origin && <p className="product-origin tc">{t(`${origin.value}製作。`, `Made in ${origin.value}.`)}</p>;
   // the second, outlined button leads to the brewing steps; other products have none (user 2026-10-07: 「移除常見問題」)
-  // 預購 with the shared allowance left (客戶答覆 B7, 2026-10-12); a pre-order without an allowance (聖誕佳禮) shows the plain label
-  // the count shows only when 10 or fewer remain (user 2026-10-13: 「剩餘超過10盒的都不要顯示…小於等於10才顯示出來，營造飢餓行銷感」); larger counts stay in the data / back office
-  const preOrderLabel = product.preOrderRemaining !== undefined && product.preOrderRemaining <= 10 ? t(`預購・剩餘 ${product.preOrderRemaining} 盒`, `Pre-order · ${product.preOrderRemaining} left`) : t("預購", "Pre-order");
+  // 預購 with the shared allowance left (客戶答覆 B7): PreOrderLeft, which reads the live count once Shopify is connected
   const secondAction = product.brew ? { href: "#brew-title", label: t("查看沖泡方式", "How to brew") } : null;
   // Back in the column, after the button, as before 2026-10-07 (user 2026-10-07: 「商品規格我喜歡放在原本的位置」; the three thin key rows and
   // the magazine-page specifications of that morning are gone again).
@@ -206,9 +205,9 @@ export default async function ProductPage({ params }: Props) {
           {/* a set sold only as a set: its unit under the name (client tea-names review 2026-10-13 §2) */}
           {product.giftBox?.mixBoxes && <p className="product-setline tc">{t(`${product.giftBox.mixBoxes} 盒一組 · 每盒 ${product.giftBox.pieces} 包`, `Set of ${product.giftBox.mixBoxes} boxes · ${product.giftBox.pieces} tea bags per box`)}</p>}
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
-          {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="product-preorder tc">{preOrderLabel}</span>}</p>}
+          {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <PreOrderLeft product={product} />}</p>}
           {product.displayOnly && product.soldOut && <p className="product-price"><span className="product-preorder product-soldtag tc">{t("售完", "Sold out")}</span></p>}
-          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <span className="product-preorder tc">{preOrderLabel}</span>}</p>}
+          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <PreOrderLeft product={product} />}</p>}
           <p className="product-description tc">{product.description}</p>
           {keyLines}
           {originNote}

@@ -70,10 +70,19 @@
 
 ## 電子報（Shopify 顧客名單，2026-10-14 使用者：「電子報用 Shopify」）
 - 頁尾表單與電子報跳窗都送到 `/api/newsletter`（`src/lib/shopify/newsletter.ts`）。訂閱者存成 Shopify 顧客，勾選「接受電子郵件行銷」（SUBSCRIBED、單次確認），並加上標籤 `newsletter`；已經是顧客（會員或買過的人）就只補上同意與標籤，不重複建立。之後用 Shopify Email 寄信。
-- 寫入行銷同意只能用 Admin API，所以要另外一個**只放在伺服器**的 token：Shopify 後台 → 設定 → 應用程式 → 開發應用程式 → 建立 custom app → Admin API 權限勾 `read_customers`、`write_customers` → 安裝後取得 Admin API access token，填進 Vercel 環境變數 `SHOPIFY_ADMIN_ACCESS_TOKEN`（不可加 `NEXT_PUBLIC_`，不可放進前端）。另外也要有 `SHOPIFY_STORE_DOMAIN`。
+- 寫入行銷同意只能用 Admin API，所以要另外一個**只放在伺服器**的 token：Shopify 後台 → 設定 → 應用程式 → 開發應用程式 → 建立 custom app → Admin API 權限勾 `read_customers`、`write_customers`、`read_orders`（最後一項給預購剩餘數量用，見下節） → 安裝後取得 Admin API access token，填進 Vercel 環境變數 `SHOPIFY_ADMIN_ACCESS_TOKEN`（不可加 `NEXT_PUBLIC_`，不可放進前端）。另外也要有 `SHOPIFY_STORE_DOMAIN`。
 - 沒填 token 時 API 回 503 `not_configured`，表單顯示「電子報將於 Shopify 串接完成後開放訂閱。」，什麼都不存。
 - 表單有隱藏欄位 `company` 擋機器人：有填就回成功但不存。沒有做頻率限制；若上線後出現大量假訂閱，再加 Vercel Firewall 規則或驗證。
 - 上線前用一個測試信箱實際訂閱一次，到 Shopify 後台 → 顧客 確認出現、行銷狀態是「已訂閱」、有 `newsletter` 標籤。
+
+## 預購剩餘數量（客戶答覆 B7：每個商品一個共用額度，隨訂單減少）
+- Shopify 的庫存是每個 variant 各算各的，沒辦法讓同一商品的幾個茶款／盒蓋顏色共用一個數量，所以由網站計算：**剩餘＝額度（`src/data/tea-gifts.ts` 的 `preOrderLimit`）－已下單盒數**。已下單盒數用 Admin API 讀訂單（`src/lib/shopify/preorder.ts`），取每個品項的 `currentQuantity`，所以取消訂單、刪除或退款的品項會把數量還回來。
+- 額度：團圓、京都版 100；年年有魚、花開富貴 20；春曉、暮雪、蝴蝶蘭、紫斑蝶 10。聖誕禮盒、聖誕心意禮還沒有額度，只顯示「預購」。
+- 商品頁的標籤（`PreOrderLeft`）讀 `/api/preorder`，最多 30 秒更新一次；剩 10 盒以下才顯示數字（使用者 2026-10-13），0 盒顯示售罄、按鈕停用。
+- 加入購物車與改數量時（`/api/cart` POST／PATCH）再算一次最新數字，整個購物車的盒數超過剩餘就擋下來（409 `preorder_full`，「這款預購只剩 N 盒」）。讀不到數字時（沒填 token、Shopify 暫時異常）不擋，避免整站不能買。
+- 只計算 `PREORDER_COUNT_SINCE`（預設 2026-10-17）之後的訂單，上線前的測試訂單不會被扣掉；上線日改了就改這個環境變數。`read_orders` 只看得到最近 60 天的訂單，預購期間超過 60 天要另外申請 `read_all_orders`。
+- Shopify 後台：這些預購商品的 variant 設成「缺貨時繼續銷售」或不追蹤庫存，數量控管交給網站。仍有一個小縫：兩個人同時結帳最後幾盒時，可能多賣 1–2 盒，因為額度檢查在加入購物車時，不在 Shopify 結帳頁。
+- 上線前測試：用測試訂單買 1 盒紫斑蝶（`PREORDER_COUNT_SINCE` 暫時設成當天），確認 30 秒內商品頁從「剩餘 10 盒」變成「剩餘 9 盒」；取消訂單後回到 10。
 
 ## 程式對應
 - `src/lib/shopify/`：`client.ts`（Storefront GraphQL）、`queries.ts`、`cart.ts`（含 `setBuyerIdentity`、`attachCustomer`、`STORE_COUNTRY = "US"`）、`customer.ts`（含 `resetByUrl`、`activateByUrl`）、`session.ts`（customerAccessToken 存 httpOnly cookie）、`variants.ts`（選項 ↔ variant）。
