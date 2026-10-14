@@ -27,6 +27,8 @@
 | `bird-chopstick-rest` | — | 沒有價格，按鈕顯示「Price coming soon」並停用 |
 | `ginkgo-teaspoon-gift-box` | — | 仍是 NT$ 760，待客戶給美金價 |
 | `wooden-chopsticks` | — | 仍是 NT$ 680，待客戶給美金價 |
+| `christmas-gift-box` 聖誕禮盒（限量版） | 橘／藍綠盒蓋（同價，2 個 variant 或 1 個 variant＋屬性，待定） | 價格待訂（2026-10-14 客戶：售價、茶款、盒子、預購數量後續補上） |
+| `snowflake-gift-box` 聖誕心意禮（限量版） | **1 個 variant**（三盒一組 $60）；每盒選的茶以 line attribute `Teas`（看得到）＋`_mix`（隱藏，網站用來顯示）帶進訂單，不為茶款建 variant | $60 |
 
 `shopify-map.json` 裡排在這 12 個後面的是美國站隱藏的台灣禮盒，保留 slug 以免日後恢復時找不到；不用在美國商店建立。
 

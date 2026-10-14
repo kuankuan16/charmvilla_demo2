@@ -399,13 +399,13 @@ const buildCatalog = (lang: Locale) => {
   // 蝴蝶蘭：兩人在橄欖綠扶手椅旁對飲、杯中各有小金魚茶包，禮盒是焦點（使用者 2026-10-13 選定：「上情境」）
   sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-two-friends-tea.webp", t("兩個人在扶手椅旁享用小金魚茶，桌上是粉紅色蝴蝶蘭禮盒", "Two people enjoying goldfish tea by the armchairs, the pink Royal Orchid gift box on the table"), 2784, 3456)];
   // 雪花三盒組：照紫斑蝶沙發照的構圖，三盒同斜角（使用者 2026-10-13）
-  sceneExtra["snowflake-gift-box"] = [...(sceneExtra["snowflake-gift-box"] ?? []), site("scene-snowflake-gift-box-olive-sofa-pouch-v2.webp", t("胡桃木邊桌上的三盒雪花迷人禮，旁邊是茶包與一杯小金魚茶", "Three Snowflake Charming Gift boxes on a walnut side table, with a tea pouch and a cup of goldfish tea"), 2784, 3456)];
+  sceneExtra["snowflake-gift-box"] = [...(sceneExtra["snowflake-gift-box"] ?? []), site("scene-snowflake-gift-box-olive-sofa-pouch-v2.webp", t("胡桃木邊桌上的三盒聖誕心意禮，旁邊是茶包與一杯小金魚茶", "Three Christmas Charming Gift boxes on a walnut side table, with a tea pouch and a cup of goldfish tea"), 2784, 3456)];
   // 春曉：藍色與粉紅盒蓋並列的窗光照（使用者 2026-10-13：「幫我生一張 春曉 的雙封面情境照/heroimage」，4K）
   sceneExtra["spring-dawn-gift-box"] = [...(sceneExtra["spring-dawn-gift-box"] ?? []), site("scene-spring-dawn-gift-box-blue-pink-sunbeam.webp", t("陽光下並列的藍色與粉紅色盒蓋春曉禮盒，旁邊是一杯小金魚茶", "Spring Awakening gift boxes with blue and pink lids side by side in the sun, beside a cup of goldfish tea"), 2784, 3456)];
   // 蝴蝶蘭：金色與粉紅盒蓋並列的情境照（使用者 2026-10-13：「一次擺2種顏色封面的禮盒示意」/luxuryshot；窗光、木桌、背景柔焦植物、盒子加厚、4K）
   sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-gold-pink-sunbeam.webp", t("陽光下並列的金色與粉紅色盒蓋蝴蝶蘭禮盒，旁邊是一杯小金魚茶", "Royal Orchid gift boxes with gold and pink lids side by side in the sun, beside a cup of goldfish tea"), 2784, 3456)];
   // 聖誕佳禮：酒紅牆斜窗光的情境照（使用者 2026-10-13 給三張聖誕參考圖「/lifestyleshot」；Nano Banana 2.1）成為頁尾那組的大圖
-  sceneExtra["christmas-gift-box"] = [...(sceneExtra["christmas-gift-box"] ?? []), site("scene-christmas-gift-box-burgundy-sunbeam.webp", t("聖誕佳禮兩色禮盒與一杯小金魚茶", "Christmas Delight gift boxes in both colors with a cup of goldfish tea"), 1856, 2304)];
+  sceneExtra["christmas-gift-box"] = [...(sceneExtra["christmas-gift-box"] ?? []), site("scene-christmas-gift-box-burgundy-sunbeam.webp", t("兩色盒蓋的聖誕禮盒（限量版）與一杯小金魚茶", "Christmas Giftbox (Limited Edition) in both lid colors with a cup of goldfish tea"), 1856, 2304)];
   // 年年有魚：米白圓桌斜陽照（禮盒無緞帶、青瓷咖啡杯裡泡開的小金魚、尤加利，標籤藏在杯後；Nano Banana 2.1，照使用者給的 EAU 書那張的色調）放進商品頁，
   // 排在共用的兩張之後、成為頁尾那組的大圖（使用者 2026-10-08：「放入內容頁」，之後「右取代左」——胡桃木桌白瓷杯金標籤那張換成這張）
   sceneExtra["year-of-plenty-gift-box"] = [...(sceneExtra["year-of-plenty-gift-box"] ?? []), site("scene-year-of-plenty-cream-table-sun-celadon-cup.webp", t("年年有魚禮盒與一杯小金魚茶", "The Abundance & Prosperity gift box with a cup of goldfish tea"), 1856, 2304)];
