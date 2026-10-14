@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `delivered`（主任務完成；queue 1 待處理）
+Status: `delivered`（主任務與 queue 1 都已交付）
 Updated: 2026-10-15
 
 ## Active task
@@ -30,7 +30,7 @@ Updated: 2026-10-15
 
 | 順位／收到時間 | 使用者要求 | 已知授權、限制與完成條件 |
 | --- | --- | --- |
-| 1／2026-10-15 | 寄信給 kuan@tenten.co，分享使用者這次用 Agent 完成這個設計的過程，讓他學習 | 使用者明確授權寄出；從 erik@tenten.co（`gws-tenten`）寄，先 `auth status` 確認帳號；內容只寫有證據的流程（研究報告→選方向→工作樹實作→整合、Ego 檢視、微調→全商品驗證→部署），不含秘密；寄出後讀回狀態 |
+| 1／2026-10-15（已交付） | 寄信給 kuan@tenten.co，分享使用者這次用 Agent 完成這個設計的過程，讓他學習 | 使用者明確授權寄出。`gws-tenten auth status` 確認 `user: erik@tenten.co` 後以 `gmail +send` 寄出，純文字、不含秘密；回傳 message id `1a13c45a1dc11a59`，label `SENT`。內容：研究報告→選方向→工作樹實作→整合、Ego 檢視、微調→全商品驗證→部署，以及可學的作法；信末註明由 agent 依指示整理寄出 |
 
 ## Attempts and decisions
 
@@ -49,6 +49,6 @@ Updated: 2026-10-15
 
 ## Resume
 
-- 下一個安全動作：處理 queue 1（`gws-tenten auth status` → 寄信給 kuan@tenten.co → 讀回 SENT）。主任務無待辦。
+- 下一個安全動作：無待辦；queue 已清空。若使用者要清理 `.claude/worktrees/brew-cup`（已合併），先確認 port 3027 服務與該工作樹沒有其他執行者。
 - 已修改檔案、分支與其他執行者：全部在 `main` 並已 push；工作樹 `brew-cup` 已合併但未刪。
 - 需保留的服務／瀏覽器／使用者測試資料：port 3026／3027 服務、localhost 購物車。
