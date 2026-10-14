@@ -92,7 +92,7 @@ const paperSnowflake = "高密度紙盒，燙金雪花與壓紋小金魚，透�
 const longBox = "28.6 × 11.7 × 9 cm";    // 11.3 × 4.6 × 3.5 in
 const smallBox = "20.5 × 18.5 × 6.9 cm"; // 8.1 × 7.3 × 2.7 in
 // 聖誕心意禮每小盒：京都版長度減半、寬高不變（客戶回覆 2026-10-14 §2）
-const halfSmallBox = "10.25 × 18.5 × 6.9 cm";
+const halfSmallBox = "18.5 × 10.25 × 6.9 cm"; // length and width the other way round (user 2026-10-14: 「尺寸長寬應該顛倒」)
 const squareBox = "28 × 19 × 9 cm";      // 11.0 × 7.5 × 3.5 in
 const rareBox = "27.7 × 19.1 × 9.6 cm";
 // 聖誕禮盒的綜合選項（客戶回覆 2026-10-14 §1）：玫瑰烏龍、金萱烏龍、紅玉紅茶、東方美人各 3 包
