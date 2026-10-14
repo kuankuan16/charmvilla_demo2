@@ -219,9 +219,11 @@ const brewSteps = (t: (zh: string, en: string) => string) => [
 // not an edit — a dark room, one shaft of warm sun across a black-oak table, a matte black gooseneck kettle held by its back handle, the
 // loop-handle glass teacup with the brewed goldfish, and the flat matte-gold tag (straight crimped ends, about the cup's width; 「茶標籤是扁的」).
 // Nano Banana 2.1 at 4K, cropped to drop UI copied from the light reference. Earlier versions stay in docs/qa/2026-10-12-brew-photo-progress.
-const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing-gooseneck-dark-oak-sunbeam.webp",
-  t("熱水倒入玻璃杯，杯中的小金魚茶包泡開",
-    "Hot water poured over a goldfish tea bag in a glass teacup"), 2048, 3072);
+// 2026-10-14: same light and style, the kettle now stands beside the cup and the table is warm walnut (user: 「改成熱水壺放在茶杯旁邊，
+// 其他不動只改桌面顏色」, then 「泡茶的圖可以換了」); Nano Banana 2.1 4K from the photo above. The pouring version stays in the repo.
+const brewImage = (t: (zh: string, en: string) => string) => site("scene-brewing-gooseneck-beside-cup-walnut-sunbeam.webp",
+  t("熱水壺放在玻璃茶杯旁，杯中的小金魚茶包已經泡開",
+    "A gooseneck kettle beside a glass teacup with a brewed goldfish tea bag"), 2048, 3053);
 
 // 茶款介紹 under the specifications, as on the official product pages (user 2026-10-07, with the wording for the four main teas);
 // 金萱 and 花果茶 are condensed from the official store's descriptions. A competition tea describes its base tea, plus the note on the competitions.
