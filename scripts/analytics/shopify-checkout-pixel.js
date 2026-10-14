@@ -23,6 +23,7 @@ function setup(attrs) {
   window.gtag("js", new Date());
   window.gtag("config", GA_MEASUREMENT_ID, {
     send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false,
+    page_location: "https://account.charmvilla.us/checkout", page_referrer: "https://www.charmvilla.com/", page_title: "Checkout | CHARM VILLA",
     ...(attrs.cv_ga_client_id__ ? { client_id: attrs.cv_ga_client_id__ } : {}),
     ...(attrs.cv_ga_session_id__ ? { session_id: attrs.cv_ga_session_id__ } : {}),
     ...(attrs.cv_ga_debug__ === "1" ? { debug_mode: true } : {}),

@@ -10,6 +10,10 @@
 - Shopify server-only 憑證、Commerce mode、hosted accounts、GA4 ID 與公開 consent Storefront token 已設於 production／preview。
 - Preview：charmvilla-demo2-rlt5psye6-tentenco.vercel.app，實際加購／結帳通過。
 
+- Git：功能 c767233、整合既有圖片 QA 96e9207，均已推送 origin/main。
+- Git Production：dpl_9kJSkQvwSSZyHpLpTN8R2zfYtnzE，READY、aliasAssigned=true，www／apex／demo2 aliases 已指向，對應 96e9207。
+- 最終正式域名 `SHOPIFY_VERIFY_URL=https://www.charmvilla.com npm run shopify:verify` 全部通過，測試 cart 清空。
+
 ## 檢查結果
 
 - Node 24 `npm run check` 通過；0 errors，原有 lint warnings 不阻擋建置。
@@ -20,8 +24,8 @@
 - 正式站購物車 1→2→1→0 實際 Shopify 更新及追蹤增量正確，cart-events.json；本輪 QA cart 已清空。
 - 正式結帳商品 Kyoto US$60、variant 53771465687404，信用卡／PayPal／Google Pay 選項可用；Shopify Payments 顯示 Accepting payments／Receiving payouts。
 - 配送 read-only 核對：美國 Domestic，Express $30、UPS 7 services 滿 $199 免運。未修改商店稅務、金流、配送政策或商品發佈狀態。
-- Pixel 217153900 connected，Analytics-only Required；初版發現 `customerPrivacy` ReferenceError，改為 Custom Pixel API `api.customerPrivacy` 後，version 2 已送出 begin_checkout，USD60／數量1／真實 variant／原 GA session ID 正確，且無 runtime error。
-- GA DebugView 已收到 page_view／view_item；新事件處理有延遲。GA 銷售收益總覽、購物歷程、結帳流程、工作階段重要事件發生率可使用。
+- Pixel 217153900 connected，Analytics-only Required；初版發現 `customerPrivacy` ReferenceError，改為 Custom Pixel API `api.customerPrivacy` 後，修正後已送出 begin_checkout，USD60／數量1／真實 variant／原 GA session ID 正確，且無 runtime error。
+- GA DebugView 已實際收到 page_view／view_item／view_item_list／add_to_cart／remove_from_cart／view_cart／begin_checkout；證據 ga-debug-checkout.png、ga-debug-checkout.txt、ga-debug-cart.txt。真實商品清單點選 select_item 與 SPA 新頁 page_view 也正確。GA 銷售收益總覽、購物歷程、結帳流程、工作階段重要事件發生率可使用。
 
 ## SEO 提交
 
@@ -32,6 +36,8 @@
 - GSC verified property https://www.charmvilla.com/：sitemap 2026-10-15 重新提交成功，讀取成功、56 discovered pages。
 - 首頁原已收錄；首頁及 /zh/products/kyoto-gift-box 均成功 request indexing（priority crawl queue）。不宣稱立即收錄。
 - 已連結 GA4 property 559053952／stream16130398768 至同一 Search Console property。
+
+- 後續補強 gtag config 的預設 page_location／page_referrer 清洗（含自動 user_engagement），避免 Shopify sandbox URL 或 query token 出現在自動事件；Shopify pixel 已同步保存。Node 24 check 0 errors／7 既有 warnings、analytics 8/8 再次通過。
 
 ## 測試界線
 

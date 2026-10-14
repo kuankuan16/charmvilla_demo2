@@ -46,12 +46,13 @@ function bootstrap() {
   window.gtag("consent", "update", { analytics_storage: "granted" });
   window.gtag("js", new Date());
   window.gtag("set", "linker", { domains: ["www.charmvilla.com", "account.charmvilla.us", "zcs0bg-10.myshopify.com", "shop.app"] });
-  window.gtag("config", GA_ID, { send_page_view: false, ignore_referrer: commerceReferrer(document.referrer), allow_google_signals: false, allow_ad_personalization_signals: false, ...(debugMode() ? { debug_mode: true } : {}) });
+  window.gtag("config", GA_ID, { send_page_view: false, page_location: cleanUrl(location.href, true), page_referrer: cleanUrl(document.referrer), ignore_referrer: commerceReferrer(document.referrer), allow_google_signals: false, allow_ad_personalization_signals: false, ...(debugMode() ? { debug_mode: true } : {}) });
   const script = document.createElement("script"); script.async = true; script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`; script.id = "cv-ga4"; document.head.append(script);
 }
 export function track(name: string, params: Record<string, unknown> = {}) {
   if (!analyticsEnabled() || consent() !== "granted" || /\/(account|tasks)(\/|$)/.test(location.pathname)) return false;
   bootstrap();
+  window.gtag?.("set", { page_location: cleanUrl(location.href, true), page_referrer: cleanUrl(document.referrer) });
   window.gtag?.("event", name, { ...params, send_to: GA_ID, page_location: cleanUrl(location.href, true), page_referrer: cleanUrl(document.referrer), ...(debugMode() ? { debug_mode: true } : {}) });
   return true;
 }

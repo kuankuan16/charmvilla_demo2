@@ -51,6 +51,6 @@ GA4「報表 → 提升銷售量」已有「電子商務購買、購物歷程、
 
 ## 驗證及界線
 
-已在正式站測到同意前／撤回後不載入 GA、Shopify analytics 同意、瀏覽／加購／增減／移除，以及 checkout 的 begin_checkout payload。GA DebugView 已收到瀏覽事件；其他新事件與正式報表可能有處理延遲。
+已在正式站測到同意前／撤回後不載入 GA、Shopify analytics 同意、瀏覽／加購／增減／移除，以及 checkout 的 begin_checkout payload。GA DebugView 已實際收到 page_view、view_item、view_item_list、add_to_cart、remove_from_cart、view_cart 與 begin_checkout；select_item 的真實點選 payload 也已驗證。正式彙總報表仍有處理延遲。
 
 沒有付款或製造假 purchase。購買金額、交易去重、無 order 不送、同意雙重檢查與 checkout stages 以離線 fixture 測試驗證。第一次真實付款後應以 Shopify order ID 對照 GA4 transaction_id。瀏覽器追蹤仍受使用者同意、阻擋器和關閉頁面影響，Shopify 訂單是財務依據。退款／取消訂單的伺服器端同步未包含在此瀏覽器 pixel，不能把 GA4 收益當成退款後淨營收。

@@ -15,6 +15,9 @@ function event() {
 test('Purchase uses discounted merchandise value, separates shipping/tax, stable variant ID and no PII', async () => {
   const p = pixel(); await p.subscriptions.checkout_completed(event()); const e = p.events()[0];
   assert.equal(e[1], 'purchase'); assert.equal(e[2].value, 110); assert.equal(e[2].tax, 7); assert.equal(e[2].shipping, 10); assert.equal(e[2].transaction_id, '12345'); assert.equal(e[2].items[0].price, 55); assert.equal(e[2].items[0].item_id, '123'); assert.equal(e[2].session_id, '789');
+  const config = p.context.window.dataLayer.find(a => a[0] === 'config')[2];
+  assert.equal(config.page_location, 'https://account.charmvilla.us/checkout');
+  assert.equal(config.page_referrer, 'https://www.charmvilla.com/');
   const payload = JSON.stringify(e); assert.ok(!payload.includes('must-not-send')); assert.ok(!payload.includes('private')); assert.ok(!payload.includes('token'));
 });
 test('Repeated purchase events and thank-you reloads are deduplicated', async () => {

@@ -32,4 +32,3 @@
 - Vercel 實際 API 查核：專案 `prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`、team `team_uIcYhBfO11q1gcwk3BB6OgPt` 的 Git link 已自動更新為 `tentenco/charmvilla_demo2`，repoId `1399251640`、productionBranch `main`。GitHub repo 使用底線，Vercel project 名稱仍為 `charmvilla-demo2`，不要混淆。
 - Vercel 最新既有 Production deployment `dpl_FDTy4aF72HUG4oYZK4FGTf47hhFa` 的 API 狀態為 `READY`；本次沒有建立 Preview／Production、沒有 push，亦未用新推送實測部署觸發或做網站 UI 驗證。
 - 本次只修改 Git remote 與本機交接文件，未修改應用程式／資產，未執行 lint、typecheck、build。開始時 12 個工作樹均乾淨；其他歷史 WIP 保留。下方 10-12／10-13 的 Git 與待發布狀態均為歷史紀錄，不能代替本節或即時查核。
-
