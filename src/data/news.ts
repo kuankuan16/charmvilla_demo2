@@ -57,7 +57,9 @@ const build = (lang: Locale): NewsEntry[] => {
       hero: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963),
       story: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963), // the article shows the whole invitation, 4:5 like its frame, so no edges (user 2026-10-13: 「展開換回原卡片，注意不要有不自然的切邊」)
       body: [
-        t("CHARM VILLA 洛杉磯快閃展，2026 年 10 月 17 日至 12 月 31 日於 The Scholart Selection 展出。", "The CHARM VILLA pop-up in Los Angeles runs from October 17 to December 31, 2026, at The Scholart Selection."),
+        // more inviting (user 2026-10-14: 「改寫更引人入勝一點，吸引人想去看，字級17px」), using only known facts: the 2026 launch tour
+        // (Taipei 10/3 → Los Angeles 10/17 → Kyoto, the invitation), the Braided Leather Bag and its Show more! concept, the dates and the venue
+        t("CHARM VILLA 2026 新品發表巡迴，從台北來到洛杉磯。以「Show more!」為概念的全新編織提把皮革包，將在 The Scholart Selection 與你見面，邀請你近距離欣賞三股編織提把與皮革的細節。10 月 17 日至 12 月 31 日，歡迎親自走一趟。", "After Taipei, the CHARM VILLA 2026 launch tour comes to Los Angeles. Our new Braided Leather Bag, created around the idea of Show more!, makes its appearance at The Scholart Selection. Come see its three-strand braided handle and leather details up close, from October 17 to December 31, 2026."),
       ],
       // the same wording as the bullets they replace (地點・…, 開幕活動, 一般開放時間), each split at its own separator into label / value / detail
       facts: [

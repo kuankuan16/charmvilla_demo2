@@ -1197,7 +1197,7 @@ main:has(> .policy-page) { background: #efefed; }
 .news-story h1, .news-card-title, .news-more-title { word-break: keep-all; overflow-wrap: anywhere; }
 .news-story-rule { display: block; width: 64px; height: 1px; margin: 32px 0; background: var(--color-gold); }
 .news-article-body { font-size: 17px; line-height: 1.9; }
-.news-article-body > p:first-child { font-size: 20px; line-height: 1.75; }
+.news-article-body > p:first-child { font-size: 17px; line-height: 1.9; } /* the opening paragraph at body size (user 2026-10-14: 「字級17px」) */
 .news-article-body p + p, .news-article-body ul, .news-article-body ul + p { margin-top: 16px; }
 .news-article-body ul { list-style: disc; padding-left: 1.3em; }
 .news-article-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px !important; }
