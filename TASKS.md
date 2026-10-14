@@ -3,7 +3,7 @@
 使用者 2026-10-14 要求建立，完成就打勾。網站上的預覽頁：https://charmvilla-demo2.vercel.app/zh/tasks （由本檔產生，改完推上 main 就會更新）。
 只發佈到 demo2，不動 www.charmvilla.com。
 
-## 等 Tenten（預計 10/17 串好金流）
+## 等 Tenten（預計 10/15 串好 Shopify，使用者 2026-10-14 改）
 
 - [ ] 在 Vercel 填入 `SHOPIFY_STORE_DOMAIN`、`SHOPIFY_STOREFRONT_ACCESS_TOKEN`
 - [ ] 在 Vercel 填入 `SHOPIFY_ADMIN_ACCESS_TOKEN`（權限 read_customers、write_customers、read_orders）
@@ -20,6 +20,8 @@
 - [ ] Markets 只開美國／USD、免運 US$199 本土 48 州、稅金、金流、通知信連結、結帳頁品牌樣式
 
 ## 串好後要測試
+
+下面每一項都已經用模擬的 Shopify 自動測試通過（`npm run test`，2026-10-14）；串好真的商店後，還要用真的商店再走一次。
 
 - [ ] 用測試訂單買 1 盒紫斑蝶，確認「剩餘 10 盒」變成 9 盒；取消後回到 10
 - [ ] 加入購物車：無選項、有茶款／盒蓋選項、聖誕心意禮混搭三盒、預購商品
@@ -74,6 +76,8 @@
 - [ ] 上線前用真的測試訂單走一次完整流程
 
 ## 已完成（2026-10-14）
+
+- [x] 結帳流程自動測試：模擬 Shopify＋API 測試＋Chrome 中英文瀏覽器測試（`npm run test`），並修好測出來的問題（地址錯誤被當成未登入、購物車失效後不能再加、Shopify 移除的商品還留在購物車、數量上限、更新中不能按結帳、英文頁在自架 `next start` 無限轉址）
 
 - [x] 商品卡片價格寫「起」、聖誕心意禮卡片寫「/ 3 盒一組」
 - [x] 購物車預購商品顯示出貨時間

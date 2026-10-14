@@ -52,7 +52,7 @@
 - 程式：`src/lib/shopify/variants.ts`（`variantFor` 選項 → GID、`productForVariant` GID → 商品＋選項，供購物車顯示名稱）。
 
 ## Line attribute（結帳頁、訂單、通知信看得到）
-- 一律英文：選項以 `Tea`（有盒蓋顏色時 `Tea / Lid color`，包裝選項時 `Packaging`，聖誕禮盒的盒蓋圖案 `Lid`）加英文選項文字送出；聖誕心意禮用 `Teas`（看得到）＋`_mix`（隱藏）。
+- 一律英文：選項以 `Tea`（有盒蓋顏色時 `Tea / Lid color`，包裝選項時 `Packaging`，聖誕禮盒「茶款 × 盒蓋圖案」用 `Tea / Lid`，只有盒蓋圖案時 `Lid`）加英文選項文字送出；聖誕心意禮用 `Teas`（看得到）＋`_mix`（隱藏）。
 - 預購商品（目前紫斑蝶 `purple-butterfly-gift-box`，`preOrder: true`）加 `Pre-order: Yes`，讓倉庫分得出預購訂單。
 
 ## Shopify 後台要做的設定
@@ -83,6 +83,14 @@
 - 只計算 `PREORDER_COUNT_SINCE`（預設 2026-10-17）之後的訂單，上線前的測試訂單不會被扣掉；上線日改了就改這個環境變數。`read_orders` 只看得到最近 60 天的訂單，預購期間超過 60 天要另外申請 `read_all_orders`。
 - Shopify 後台：這些預購商品的 variant 設成「缺貨時繼續銷售」或不追蹤庫存，數量控管交給網站。仍有一個小縫：兩個人同時結帳最後幾盒時，可能多賣 1–2 盒，因為額度檢查在加入購物車時，不在 Shopify 結帳頁。
 - 上線前測試：用測試訂單買 1 盒紫斑蝶（`PREORDER_COUNT_SINCE` 暫時設成當天），確認 30 秒內商品頁從「剩餘 10 盒」變成「剩餘 9 盒」；取消訂單後回到 10。
+
+## 自動測試（模擬 Shopify，2026-10-14）
+- 指令（Node 24）：`npm run test`（全部）、`npm run test:api`、`npm run test:e2e`；`-- --no-build` 沿用上次的測試 build。
+- `tests/run.mjs` 會：產生測試用對照表（`tests/.generated/`，假的 variant GID，價格與選項從網站型錄讀，已被 ignore）→ 用 shopify 模式與 local 模式各 build 一份到 `.next/test-*` → 啟動模擬 Shopify（`tests/mock-shopify/server.mjs`）和三個 `next start`（接模擬商店／沒填 Shopify／local 模式）→ 跑 `node --test` → 全部關掉。
+- 只在測試 build 生效：`CV_TEST_BUILD`、`CV_TEST_SHOPIFY_MAP`（`next.config.ts`，有 `VERCEL` 時一律忽略）、`SHOPIFY_STORE_DOMAIN` 可填完整網址（`http://127.0.0.1:…`）、`PREORDER_CACHE_MS`。Vercel 上不要設這些。
+- 瀏覽器測試用 Playwright（已在 devDependencies）＋本機的 Google Chrome（`channel: "chrome"`），不用另外下載瀏覽器。
+- 模擬到的：Storefront 購物車（建立、加入、合併、改數量、移除、buyerIdentity、庫存不足的 warnings、userErrors、checkoutUrl）、傳統客戶帳戶（註冊、登入登出、個人資料、地址、訂單列表、忘記密碼、重設、啟用、電子報訂戶註冊時寄啟用信）、Admin（找顧客、建立、行銷同意、標籤、訂單分頁與取消／退款）。
+- 模擬不到、一定要真的商店測：真正的結帳頁與付款、稅金與運費、Markets／幣別、通知信內容與連結、Shopify 真正的錯誤文字與頻率限制、`read_orders` 60 天限制、兩人同時買最後幾盒的超賣縫。
 
 ## 程式對應
 - `src/lib/shopify/`：`client.ts`（Storefront GraphQL）、`queries.ts`、`cart.ts`（含 `setBuyerIdentity`、`attachCustomer`、`STORE_COUNTRY = "US"`）、`customer.ts`（含 `resetByUrl`、`activateByUrl`）、`session.ts`（customerAccessToken 存 httpOnly cookie）、`variants.ts`（選項 ↔ variant）。

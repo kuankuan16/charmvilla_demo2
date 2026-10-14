@@ -18,6 +18,7 @@ const money = (n) => `${Number(n).toFixed(1)}`;
 
 export async function makeFixture() {
   const { getProducts } = await import("../../src/data/catalog.ts");
+  const { preOrderShipping } = await import("../../src/data/tea-gifts.ts");
   const realMap = JSON.parse(readFileSync(path.join(ROOT, "src/data/shopify-map.json"), "utf8"));
   const map = { _test: "GENERATED FOR TESTS ONLY (tests/support/fixture.mjs). Fake GIDs. Never copy into src/data/shopify-map.json." };
   const variants = {}; // gid → what the mock store sells
@@ -46,14 +47,14 @@ export async function makeFixture() {
     }
     products[p.slug] = info;
   }
-  return { map, variants, products };
+  return { map, variants, products, preOrderShipping };
 }
 
 export async function writeFixture() {
   const fixture = await makeFixture();
   mkdirSync(GENERATED, { recursive: true });
   writeFileSync(MAP_FILE, JSON.stringify(fixture.map, null, 2));
-  writeFileSync(CATALOG_FILE, JSON.stringify({ variants: fixture.variants, products: fixture.products }, null, 2));
+  writeFileSync(CATALOG_FILE, JSON.stringify({ variants: fixture.variants, products: fixture.products, preOrderShipping: fixture.preOrderShipping }, null, 2));
   return fixture;
 }
 

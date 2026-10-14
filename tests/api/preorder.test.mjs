@@ -16,7 +16,6 @@ test("fixture sanity: the products under test have an allowance", () => {
 test("no orders: every allowance is whole", async () => {
   const l = await left();
   for (const [slug, p] of Object.entries(fixture.products)) if (p.limit !== undefined) assert.equal(l[slug], p.limit, slug);
-  assert.equal(l["snowflake-gift-box"], undefined, "a pre-order without an allowance has no count");
 });
 
 test("orders take boxes; cancelled, refunded and pre-launch orders give them back; options share one allowance", async () => {
@@ -81,17 +80,41 @@ test("sold out: the message says so", async () => {
   assert.equal(r.status, 409); assert.match(r.data.message, /額滿/);
 });
 
-test("products without an allowance are never held back", async () => {
-  const r = await new Client().post("/api/cart", { lines: [line("snowflake-gift-box", undefined, 50)] });
-  assert.equal(r.status, 200);
-});
-
 test("fail open: when the Admin API is down the bag still works", async () => {
   await mock.config({ adminDown: true });
   const r = await new Client().post("/api/cart", { lines: [line(BUTTERFLY, undefined, limit(BUTTERFLY) + 1)] });
   assert.equal(r.status, 200);
   const p = await new Client().get("/api/preorder");
   assert.equal(p.status, 502, "the count itself reports the outage so pages keep their static number");
+});
+
+test("Christmas Charming Gift: the allowance counts sets — one set line of quantity 1 is 1 of it, never 3 boxes", async () => {
+  const SNOW = "snowflake-gift-box";
+  assert.ok(limit(SNOW) > 0, "the set has an allowance");
+  await mock.orders([order([{ variantId: variant(SNOW), handle: SNOW, quantity: limit(SNOW) - 1 }])]);
+  assert.equal((await left())[SNOW], 1);
+  const k = new Client();
+  const mixAttrs = [{ key: "Teas", value: "Rose Oolong Tea × 3" }, { key: "_mix", value: "3,0,0,0,0" }, { key: "Pre-order", value: "Yes" }];
+  let r = await k.post("/api/cart", { lines: [line(SNOW, undefined, 2, mixAttrs)] });
+  assert.equal(r.status, 409); assert.match(r.data.message, /只剩 1 組/);
+  r = await k.post("/api/cart", { lines: [line(SNOW, undefined, 1, mixAttrs)] });
+  assert.equal(r.status, 200, "one set fits the one set left");
+  // a second, different mix is another line of the same product: counted together
+  r = await k.post("/api/cart", { id: r.data.cart.id, lines: [line(SNOW, undefined, 1, [{ key: "Teas", value: "Ruby Black Tea × 3" }, { key: "_mix", value: "0,0,3,0,0" }])] });
+  assert.equal(r.status, 409);
+});
+
+test("Christmas Giftbox: six tea × lid options share one allowance", async () => {
+  const XMAS = "christmas-gift-box";
+  const opts = fixture.products[XMAS].options;
+  assert.equal(opts.length, 6);
+  await mock.orders([order(opts.map((o) => ({ variantId: o.variantId, handle: XMAS, quantity: 10 })))]);
+  assert.equal((await left())[XMAS], limit(XMAS) - 60);
+  let r = await new Client().post("/api/cart", { lines: [line(XMAS, 0, 99)] });
+  assert.equal(r.status, 200);
+  await mock.orders([order([{ variantId: opts[5].variantId, handle: XMAS, quantity: limit(XMAS) - 60 - 5 }])]);
+  r = await new Client().post("/api/cart", { lines: [line(XMAS, 2, 6)] });
+  assert.equal(r.status, 409, "5 left across all six options");
 });
 
 test("not configured: 503, the pages keep the number in the data", async () => {

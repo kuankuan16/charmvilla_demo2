@@ -14,8 +14,8 @@ const REUNION = "reunion-paper-gift-box", DAWN = "spring-dawn-gift-box", SNOW = 
 const prefix = (lang) => (lang === "zh" ? "/zh" : "");
 const usd = (n) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 const T = {
-  en: { empty: "Your bag is empty.", preorder: "Pre-orders are expected to ship by late November 2026.", free: "qualifies for complimentary shipping", below: "Complimentary shipping on orders of US$199", soldOut: "Sold out", signIn: "Sign in", signOut: "Sign out", hello: "Hello", stock: "Only 1 items", checkout: "Go to checkout", localNote: "Online checkout is not open yet" },
-  zh: { empty: "購物車是空的。", preorder: "預購商品預計最晚於 2026 年 11 月下旬出貨。", free: "可享免運", below: "訂單金額滿 US$ 199", soldOut: "已售罄", signIn: "登入", signOut: "登出", hello: "您好", stock: "部分商品的數量已依目前庫存調整。", checkout: "前往結帳", localNote: "線上結帳即將開放" },
+  en: { empty: "Your bag is empty.", preorder: fixture.preOrderShipping.en, free: "qualifies for complimentary shipping", below: "Complimentary shipping on orders of US$199", soldOut: "Sold out", signIn: "Sign in", signOut: "Sign out", hello: "Hello", stock: "Only 1 items", checkout: "Go to checkout", localNote: "Online checkout is not open yet" },
+  zh: { empty: "購物車是空的。", preorder: fixture.preOrderShipping.zh, free: "可享免運", below: "訂單金額滿 US$ 199", soldOut: "已售罄", signIn: "登入", signOut: "登出", hello: "您好", stock: "部分商品的數量已依目前庫存調整。", checkout: "前往結帳", localNote: "線上結帳即將開放" },
 };
 
 /** A fresh browser tab that records console errors, page errors and failed requests; the newsletter pop-up is marked as seen. */
@@ -216,6 +216,40 @@ for (const lang of ["en", "zh"]) {
     await context.close();
   });
 }
+
+for (const lang of ["en", "zh"]) test(`[${lang}] Christmas Giftbox: tea × lid option, its price, Tea / Lid attribute; the Charming Gift counts sets`, async () => {
+  const XMAS = "christmas-gift-box";
+  const { context, page, problems } = await open();
+  await page.goto(`${BASE}${prefix(lang)}/products/${XMAS}`);
+  const opt = fixture.products[XMAS].options[3];
+  await page.locator(`label:has(input[name="tea-${XMAS}"])`).nth(3).click();
+  await addFromPage(page);
+  assert.equal(await lines(page).first().locator(".cart-line-price").innerText(), usd(opt.price));
+  assert.equal(await lines(page).first().locator(".cart-line-preorder").innerText(), T[lang].preorder);
+  const [cart] = await cartState();
+  assert.equal(cart.lines[0].merchandiseId, opt.variantId);
+  assert.deepEqual(cart.lines[0].attributes, [{ key: "Tea / Lid", value: opt.label }, { key: "Pre-order", value: "Yes" }]);
+  await closeBag(page);
+  await page.goto(`${BASE}${prefix(lang)}/products/${SNOW}`);
+  const tag = page.locator(".product-preorder").first();
+  await tag.waitFor();
+  const text = await tag.innerText();
+  assert.ok(text.includes(String(fixture.products[SNOW].limit)), text);
+  if (lang === "zh") assert.match(text, /組/);
+  assert.deepEqual(problems, []);
+  await context.close();
+});
+
+test("newsletter pop-up: opens by itself in shopify mode, never in local mode", async () => {
+  for (const [base, expected] of [[BASE, true], [LOCAL_BASE, false]]) {
+    const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    const page = await context.newPage();
+    await page.goto(`${base}/collections/tea`);
+    const shown = await page.locator(".news-pop-panel").waitFor({ timeout: 12000 }).then(() => true, () => false); // opens after 8 s
+    assert.equal(shown, expected, base);
+    await context.close();
+  }
+});
 
 test("[en] the footer newsletter form subscribes through Shopify", async () => {
   const { context, page } = await open();
