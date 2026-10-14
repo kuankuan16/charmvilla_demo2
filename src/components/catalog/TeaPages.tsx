@@ -1,9 +1,7 @@
 // Under the scene photographs of a tea gift box, before 繼續觀看: 茶款介紹 follows Vizooli's sticky card process, then 美好的沖泡方式
 // combines proposal 02's left photograph/right guide with proposal 01's point-to-point progress (user 2026-10-12).
 // Rules begin at the copy column; stationary nodes connect only as far as the final node. The brewing icons are
-// the ones redrawn in
-// the manner of bramwel's capability icons (「icon 照這個風格…重新畫一遍像似的」): a 240 box, 3px strokes, a few plain geometric shapes
-// repeated and overlapped — the goldfish is the brand's own vector, stroked the same way (「小金魚改為線稿，跟其他的風格一樣」, 2026-10-07).
+// described where they are drawn below (the goldfish is the logo's vector, outlined like the rest, 「小金魚改為線稿，跟其他的風格一樣」, 2026-10-07).
 import type { ReactNode } from "react";
 import type { Product } from "@/data/catalog";
 import TeaKinds from "./TeaKinds";
@@ -12,64 +10,72 @@ import { site, type Img } from "@/data/content";
 import { GOLDFISH_D } from "./goldfish-path";
 import { Picture } from "@/components/ui";
 
-// Redrawn again 2026-10-13 after six instruction-sheet references (「在分析並學習重新畫一次泡茶的插畫」). What they share and these keep:
-// one cup that never moves — bottom centre, same size in every step — with only the action above it changing; thin even
-// lines and no filled shapes; plain cues (the stream, a ↓ arrow, a dashed tear line, steam); heat and time drawn as a
-// thermometer and a stopwatch (a number in the badge would be unreadable at 64px; the copy gives 95°C and 5 minutes); lots of air. The cup is the brand's glass teacup (wide mouth, narrow foot, C-loop handle) standing
-// on a line, not a saucer; the goldfish is the brand's own vector, stroked at the same weight.
-const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
-/** the brand goldfish centred on (x, y), `size` wide, outlined at the icons' weight */
-const fish = (x: number, y: number, size: number) => {
-  const k = size / 838;
-  return <path d={GOLDFISH_D} transform={`translate(${x - 564 * k} ${y - 538.5 * k}) scale(${k})`} strokeWidth={1.3 / k} />;
+// Redrawn 2026-10-14 (「我要重畫」) after four tea and kitchen icon sets: front view, one even stroke with round ends, simple outlines,
+// almost no inner detail (one highlight in the glass), motion told by small marks — the stream, steam waves, an arrow — and lots of
+// air. No thermometer; the gooseneck kettle is bigger than the cup and steam rises while it pours (「不用溫度計」「熱水壺要比茶杯大」
+// 「倒熱水的時候可以有煙」). Then 「線條太粗了，改細」 (2.2 → 1.5 on the 64 box), the sachet drawn after the real one (flat, nearly square,
+// a seal strip across the top torn off at the notch, the gold top / white bottom split as a line 40% down, a soft bowed bottom), the
+// goldfish the logo's own vector (「小金魚茶包用 logo 的向量金魚圖」) and a plain stopwatch (「時鐘再簡化」). The cup is the brand's glass
+// teacup (wide mouth, narrow foot, C-loop handle, a short line under it, no saucer) at the same place and size in steps 1, 3, 4 and 5.
+const SW = 1.5;
+const icon = (d: ReactNode) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" strokeWidth={SW} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{d}</svg>;
+/** the logo goldfish centred on (x, y), `w` wide, outlined at the icons' weight (the width is divided by the scale rather than using
+ *  non-scaling-stroke, which would also ignore the icon's own viewBox scaling and draw the fish thinner than everything else) */
+const fish = (x: number, y: number, w: number, sw = SW) => {
+  const k = w / 838;
+  return <path d={GOLDFISH_D} transform={`translate(${x - 564 * k} ${y - 538.5 * k}) scale(${k})`} strokeWidth={sw / k} />;
 };
-/** the same glass teacup in every step; `tea` draws the surface of the liquid */
-const cup = (tea = false) => <>
-  <ellipse cx="32" cy="35" rx="14" ry="2.2" />
-  <path d="M18 35L21.2 52.4Q21.6 55 24.2 55H39.8Q42.4 55 42.8 52.4L46 35" />
-  <path d="M45.3 39.2C52.5 38.6 52.6 49.4 43.4 49.6" />
-  <path d="M15 58H49" />
-  <path d="M22.4 39.5l1.4 9.5" strokeOpacity=".5" />
-  {tea && <path d="M19.2 41.5Q32 44.2 44.8 41.5" />}
-</>;
-/** a stopwatch at the top right, its hand at five minutes (the copy beside it gives the number) */
-const stopwatch = <g>
-  <circle cx="51" cy="14" r="8.5" /><path d="M51 3.4v2.1M49 3.4h4M57.4 7.6l1.2-1.2" />
-  <path d="M51 14l2.7-4.7" /><path d="M51 14V5.5A8.5 8.5 0 0 1 55.25 6.64Z" strokeWidth=".9" />
-</g>;
-/** one icon per brewing step, in the steps' order: pour (gooseneck kettle, a thermometer), open (the sachet torn at the notch), add the
- *  goldfish (falling in), steep (the goldfish in the tea, a stopwatch), enjoy (steam) */
+/** the same glass teacup in steps 1, 3, 4 and 5, slightly reduced so the kettle can be the bigger object; `inside` is drawn in the cup's
+ *  own coordinates (the water line, the goldfish); the highlight is left out when the goldfish sits behind it */
+const CS = .86;
+/** `big`: steps 4 and 5 have nothing above the cup, so the cup is drawn larger there (bottom kept on the same line) and the icons
+ *  fill the box as fully as steps 1–3 (user 2026-10-14: 「04 跟 05 比例都可以放大，整體的視覺上跟前三張圖一樣滿」); `tx` places it */
+const cup = (inside: ReactNode, highlight = true, big = false, tx?: number) => { const k = big ? CS * 1.3 : CS; return <g transform={`translate(${tx ?? (big ? -6 : 1.26)} ${big ? 60 - 59.6 * k : 8.4}) scale(${k})`} strokeWidth={SW / k}>
+  <path d="M9 37H37" /><path d="M9.4 37C9.4 47 13.4 55 20.6 56H25.4C32.6 55 36.6 47 36.6 37" />
+  <path d="M36 40.6C44.4 39.4 46 51.6 33.4 52" /><path d="M16 59.6H30" />
+  {highlight && <path d="M13.4 40.4C13.5 42 13.9 43.6 14.6 45" />}
+  {inside}
+</g>; };
+const hotWater = <path d="M10.6 45Q23 47.4 35.4 45" />;
+const brewed = (big = false) => <><path d="M9.8 40.2Q23 42.4 36.2 40.2" />{fish(23.4, 47.6, 13.5, SW / (big ? CS * 1.3 : CS))}</>;
+/** a steam wave rising from (x, y), `h` tall */
+const steam = (x: number, y: number, h: number) => <path d={`M${x} ${y}c-2.4-${h / 6}-2.4-${h / 3} 0-${h / 2}s2.4-${h / 3} 0-${h / 2}`} />;
+/** one icon per brewing step, in the steps' order: pour (a tilted gooseneck kettle, the stream, steam), open (the seal strip torn off at
+ *  the notch, the goldfish lifted out), add the goldfish (dropping into the hot water), steep (a stopwatch at five minutes, the goldfish
+ *  in the tea), enjoy (steam) */
 const brewIcons = [
   icon(<>
-    {cup()}
-    <g transform="rotate(-26 45 16)">
-      <path d="M37 24l1.7-12.5Q39.1 10.5 40.6 10.5h9.8Q51.9 10.5 52.3 12L54 24Q54 26 52 26H39Q37 26 37 24Z" />
-      <path d="M41.2 10.5Q45.5 7 49.8 10.5" /><circle cx="45.5" cy="7.4" r=".9" />
-      <path d="M53.3 14.2C58.6 14.2 58.8 22.8 53.6 22.8" />
-      <path d="M37.7 22.6C32 23 33.6 13 28.4 12.6L27 12.8" />
+    {cup(hotWater)}
+    <g transform="translate(44.6 19.4) rotate(-34)">
+      <path d="M-11 11Q-12.6 11 -12.3 9.4L-9 -9.4Q-8.7 -11 -7 -11H7Q8.7 -11 9 -9.4L12.3 9.4Q12.6 11 11 11Z" />
+      <path d="M-6.6 -11Q0 -17 6.6 -11" /><path d="M-1.4 -15.4V-16.8H1.4V-15.4" />
+      <path d="M9.6 -6.6C18.4 -7.4 19.4 6.4 11.6 7.4" />
+      <path d="M-12 7.4C-17.6 6.6 -16.4 -9.6 -19 -13.6Q-21 -16.6 -24 -13.4" />
     </g>
-    <path d="M27.6 20.6C28.6 25 29.6 29.5 30.2 34.6" />
-    <rect x="8" y="5" width="4" height="13" rx="2" /><circle cx="10" cy="20.6" r="3" /><path d="M10 11v7M13.6 8h1.8M13.6 11h1.8M13.6 14h1.8" />
+    <path d="M16.8 24.1C16.2 27.7 19.6 38 19.6 46.6" />
+    {steam(11, 38.4, 8)}{steam(27.4, 38.4, 8)}
   </>),
   icon(<>
-    <path d="M34 12H19V56H45V20" />
-    <path d="M19 20H34" strokeDasharray="2.4 2" />
-    <path d="M34 20L35.5 11L45.5 7.8L45 20" />
-    {fish(32, 38, 15)}
+    <mask id="brew-open" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="35" fill="#fff" /></mask>
+    <g mask="url(#brew-open)">{fish(29, 25, 24)}</g>
+    <path d="M19 35V54.6Q19 56.4 21 56.6Q31 57.6 41 56.6Q43 56.4 43 54.6V37.2L41.4 36.2L43 35.2M19 35H43" />
+    <path d="M19 42.4H43" /><path d="M19 36.4l1.2.8-1.2.8" />
+    <g transform="rotate(-14 51 12)"><path d="M41 8.4H62.4V12.8H41Z" /><path d="M41 10.6H62.4" /></g>
+    <path d="M44.6 33.4Q47.6 26 50.4 20.6" strokeDasharray="1.6 2.4" />
+    <path d="M10 30V18M6.8 21.2L10 18l3.2 3.2" />
   </>),
   icon(<>
-    {cup()}
-    {fish(32, 15, 17)}
-    <path d="M51 8v13M47.8 18l3.2 3.6 3.2-3.6" />
+    {cup(hotWater)}
+    {fish(23, 21, 21) /* smaller over the cup (user 2026-10-14: 「03 的小金魚比例要縮小」) */}
+    <path d="M52 9V24M48.8 20.8L52 24l3.2-3.2" />
   </>),
   icon(<>
-    {cup(true)}
-    {fish(31, 47.5, 12)}
-    {stopwatch}
+    {cup(brewed(true), false, true)}
+    <circle cx="51" cy="17" r="8.5" /><path d="M51 17L54.2 11.9M49.3 6.2h3.4M51 6.2V8.5" />
   </>),
   icon(<>
-    {cup(true)}
-    <path d="M26 28c-2-2.4-2-4.6 0-7s2-4.6 0-7M32 26c-2-2.4-2-4.6 0-7s2-4.6 0-7M38 28c-2-2.4-2-4.6 0-7s2-4.6 0-7" />
+    {cup(brewed(true), false, true, 1.2)}
+    {steam(20, 30, 14)}{steam(27, 27, 17)}{steam(34, 30, 14)}
   </>),
 ];
 
