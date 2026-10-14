@@ -7,6 +7,7 @@ import { productHref, categoryHref } from "@/data/catalog";
 import { localeHref } from "@/i18n/config";
 import { useT } from "@/i18n/LocaleProvider";
 import { supportEmail, freeShippingMin } from "@/data/commerce";
+import { preOrderShipping } from "@/data/tea-gifts";
 
 export default function CartDrawer() {
   const cart = useCart();
@@ -34,6 +35,8 @@ export default function CartDrawer() {
                   <div className="cart-line-body">
                     <p className="tc cart-line-name">{l.slug ? <Link href={productHref(l.slug, lang)} onClick={() => cart.setOpen(false)}>{l.name}</Link> : l.name}</p>
                     <p className="cart-line-price">{l.onRequest ? t("價格洽詢", "Price on request") : cart.formatPrice(l.unitAmount, l.currency)}</p>
+                    {/* pre-order lines carry their shipping time in the bag (pre-launch shopper review, user 2026-10-14) */}
+                    {l.preOrder && <p className="cart-line-preorder tc">{lang === "en" ? preOrderShipping.en : preOrderShipping.zh}</p>}
                     <div className="cart-line-tools">
                       <div className="cart-qty" role="group" aria-label={t("數量", "Quantity")}>
                         <button type="button" onClick={() => cart.update(l.key, l.quantity - 1)} disabled={cart.busy || l.quantity <= 1} aria-label={t("減少數量", "Decrease quantity")}>−</button>

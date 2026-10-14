@@ -109,7 +109,9 @@ const english: Record<string, string> = {
 const competitionPricing: Bi = { zh: "價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。", en: "Prices are subject to change based on the official pricing of the tea competitions held twice a year." };
 const tieDyeColors: Bi = { zh: "紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。", en: "Actual tie-dyed lid colors may differ from the product images." };
 // 預購出貨時間（客戶答覆 B7／D3，2026-10-12）：每個 preOrder 禮盒的產品須知第一條
-const preOrderShipping: Bi = { zh: "預購商品預計最晚於 2026 年 11 月下旬出貨。", en: "Pre-orders are expected to ship by late November 2026." };
+// tea is final sale (return policy, commerce.ts): said on the page too, not only in the policy (pre-launch shopper review 2026-10-14)
+const teaFinalSale: Bi = { zh: "茶品屬於食品，售出後恕不退換，詳見退換貨政策。", en: "Tea is a final sale and cannot be returned; see our return policy." };
+export const preOrderShipping: Bi = { zh: "預購商品預計最晚於 2026 年 11 月下旬出貨。", en: "Pre-orders are expected to ship by late November 2026." };
 const embroideryNote: Bi = { zh: "盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。", en: "The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation." };
 
 export const teaGifts: TeaGift[] = [
@@ -285,7 +287,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       : describeContents(gift.contents);
     const mix = gift.mix ? t("每盒一種茶，可混搭", "one tea per box, mix and match") : gift.choices ? t("單一茶款，整盒擇一", "one tea, chosen per box") : gift.contents.length > 1 ? t("綜合茶款", "assorted teas") : t("單一茶款", "single tea");
     const note = en ? gift.en.note : gift.note;
-    const notices = [...(gift.preOrder ? [lt(preOrderShipping)] : []), ...(gift.notice?.map(lt) ?? []), ...(note ? [note] : [])];
+    const notices = [...(gift.preOrder ? [lt(preOrderShipping)] : []), ...(gift.notice?.map(lt) ?? []), ...(note ? [note] : []), lt(teaFinalSale)];
     // shared pre-order allowance left (客戶答覆 B7): the data override, else the full allowance until Shopify inventory replaces it
     const preOrderRemaining = gift.preOrder && gift.preOrderLimit !== undefined ? Math.max(0, gift.preOrderLeft ?? gift.preOrderLimit) : undefined;
     // USD on the US catalogue; the Taiwan list price (TWD) only for the hidden boxes

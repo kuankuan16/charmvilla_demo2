@@ -508,6 +508,8 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-mix-step button:disabled { opacity: .35; cursor: default; }
 .product-mix-step span { min-width: 30px; text-align: center; font-size: 16px; }
 .product-mix .product-choice-note { margin-top: 10px; }
+.product-checkout-note { margin-top: 10px; font-size: 13px; line-height: 1.6; color: var(--color-stone-deep); }
+.cart-line-preorder { margin-top: 2px; font-size: 13px; line-height: 1.5; color: var(--color-stone-deep); }
 .product-visit h2 { font-size: clamp(37px,3.99vw,59px); line-height: 1.5; margin: 20px 0; font-weight: 500; }
 /* Spec rows keep a hairline so label and value can be read across (user 2026-09-30: 方便對照). */
 .product-visit { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; padding: 80px var(--page-gutter) 100px; scroll-margin-top: 110px; }

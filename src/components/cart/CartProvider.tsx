@@ -12,7 +12,7 @@ import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
 import type { Locale } from "@/i18n/config";
 
-export type CartLine = { key: string; slug: string | null; name: string; image: { src: string; alt: string } | null; quantity: number; unitAmount: number; currency: string; variantId?: string; /** no list price yet: shown as "price on request", left out of the subtotal */ onRequest?: boolean };
+export type CartLine = { key: string; slug: string | null; name: string; image: { src: string; alt: string } | null; quantity: number; unitAmount: number; currency: string; variantId?: string; /** no list price yet: shown as "price on request", left out of the subtotal */ onRequest?: boolean; /** a pre-order line: the bag says so with its shipping time */ preOrder?: boolean };
 type Ctx = {
   mode: "local" | "shopify"; ready: boolean; open: boolean; busy: boolean; error: string | null;
   lines: CartLine[]; count: number; subtotal: number; currency: string; checkoutUrl: string | null;
@@ -37,7 +37,7 @@ const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string
   const mix = local?.giftBox?.mixBoxes ? mixFromAttrs(node.attributes) : undefined;
   const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : choice?.label;
   const name = local ? (picked ? `${local.name}${t(`（${picked}）`, ` (${picked})`)}` : local.name) : node.merchandise.product.title;
-  return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id };
+  return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id, ...(local?.preOrder ? { preOrder: true } : {}) };
 });
 
 // Line attributes travel to Shopify checkout, the order and the order emails, so they are in English (the US store's language).
@@ -108,7 +108,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => ls.filter((l) => lineKey(l) !== key));
   }, [call]);
 
-  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang, t) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; const picked = l.mix ? mixText(p, l.mix, t("、", ", "), t(" × ", " × ")) : choice?.label; return p ? [{ key: lineKey(l), slug: p.slug, name: picked ? `${p.name}${t(`（${picked}）`, ` (${picked})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
+  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang, t) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; const picked = l.mix ? mixText(p, l.mix, t("、", ", "), t(" × ", " × ")) : choice?.label; return p ? [{ key: lineKey(l), slug: p.slug, name: picked ? `${p.name}${t(`（${picked}）`, ` (${picked})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price, ...(p.preOrder ? { preOrder: true } : {}) }] : []; }), [localLines, shopifyCart, lang, t]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   const subtotal = lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = lines[0]?.currency ?? "TWD";

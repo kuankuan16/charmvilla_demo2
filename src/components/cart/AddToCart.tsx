@@ -44,5 +44,7 @@ export default function AddToCart({ product }: { product: Product }) {
       {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}
     </fieldset>}
     <button type="button" className="product-buy tc" onClick={() => (boxes ? cart.add(product, 1, undefined, mix) : cart.add(product, 1, option))} disabled={cart.busy || missing || product.soldOut || noPrice}>{product.soldOut ? t("已售罄", "Sold out") : noPrice ? (product.priceTbd ? t("價格待訂", "Price to be announced") : t("價格確認中", "Price coming soon")) : missing && boxes ? t(`還要選 ${boxes - picked} 盒`, `Choose ${boxes - picked} more ${boxes - picked === 1 ? "box" : "boxes"}`) : missing ? (product.giftBox?.choiceLabel === t("選擇盒蓋", "Choose your lid") ? t("請先選擇盒蓋", "Choose your lid") : product.giftBox?.choiceLabel?.includes("包裝") || product.giftBox?.choiceLabel?.includes("packaging") ? t("請先選擇包裝", "Choose your packaging") : product.giftBox?.choiceLabel === t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") ? t("請先選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("請先選擇茶款", "Choose your tea")) : product.preOrder ? t("加入預購", "Pre-order") : t("加入購物車", "Add to bag")}</button>
+    {/* checkout not open yet: said at the button, not only at the foot of the bag (pre-launch shopper review, user 2026-10-14) */}
+    {cart.mode === "local" && !product.soldOut && product.price && <p className="product-checkout-note tc">{t("線上結帳即將開放，目前可先加入購物車。", "Online checkout is opening soon. You can add pieces to your bag now.")}</p>}
   </>;
 }
