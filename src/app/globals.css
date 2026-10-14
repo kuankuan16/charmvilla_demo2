@@ -1559,6 +1559,7 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-step-content::before { top: 0; }
 .brew-steps li:last-child .brew-step-content::after { bottom: 0; }
 .brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
+.brew-number { visibility: hidden; } /* the 01–05 numbers go; the column stays so the rail, nodes and text keep their places (user 2026-10-14: 「把數字拿掉」) */
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
 .brew-icon { display: block; justify-self: end; width: 88px; height: 88px; /* 72 → 88 for the finer 3/4-view drawings (2026-10-14) */ color: #a6a6a2; transition: color .45s ease; }
