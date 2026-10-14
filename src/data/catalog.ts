@@ -530,11 +530,12 @@ const buildCatalog = (lang: Locale) => {
   studioExtra["reunion-paulownia-gift-box"] = studioExtra["reunion-paulownia-gift-box"].map((v) => v.file === "gift-box-unboxed-12-v2.webp"
     ? { file: "studio-reunion-paulownia-gift-box-unboxed-v5.webp" /* v5：照實拍的相機角度與透視重生（使用者 2026-10-07：「粉紅色那一款上有透視錯誤，請再重新生成一張參考實拍」）；v4 把盒蓋改薄 */, zh: "開箱・12 入", en: "Unboxed · 12 tea bags", enAlt: "the box opened to show 12 gold tea bags, the lid in front of it" } : v);
   // 聖誕佳禮（2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8））：橘色盒蓋是預設圖庫，照其他 12 入禮盒的順序 封面（studio-listing.json）→ 正面實拍 → 斜角 → 開箱。
-  // 紙盒，所以開箱用自己的 12 入圖，不在上面 12 入木盒（gift-box-unboxed-12-v2）的迴圈裡；藍綠色盒蓋的 4 張在 tea-gifts.ts 的 packaging.lidViews
+  // 開箱用自己的 12 入圖，不在上面 12 入木盒（gift-box-unboxed-12-v2）的迴圈裡；藍綠色盒蓋的 4 張在 tea-gifts.ts 的 lidViews。
+  // 客戶 2026-10-14 §1 說是「木盒搭配刺繡布面上蓋」：這些 10-13 生成圖的盒身是否相符，待使用者確認（未重生）
   studioExtra["christmas-gift-box"] = [
     { file: "studio-christmas-gift-box-orange-front-v4.webp", zh: "橘色盒蓋・正面實拍", en: "Orange lid, front view", enAlt: "orange lid, front photograph" },
     { file: "studio-christmas-gift-box-orange-angle-v3.webp", zh: "橘色盒蓋・斜角", en: "Orange lid, angled view", enAlt: "orange lid, angled view" },
-    { file: "studio-christmas-gift-box-orange-unboxed-v3.webp", zh: "橘色盒蓋・開箱 12 入", en: "Orange lid, unboxed · 12 tea bags", enAlt: "orange lid, the drawer opened to show 12 tea bags" },
+    { file: "studio-christmas-gift-box-orange-unboxed-v3.webp", zh: "橘色盒蓋・開箱 12 入", en: "Orange lid, unboxed · 12 tea bags", enAlt: "orange lid, the box opened to show 12 tea bags" },
   ];
   // 雪花迷人禮（三盒組）（2026-10-13 agent 推理暫定，待客戶確認）：只用自己的 3 張，順序 三盒封面（studio-listing.json）→ 斜角 → 正面；
   // 已是灰底正規化版（不需 -even2），不加入任何開箱圖或其他盒的圖

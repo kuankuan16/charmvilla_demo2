@@ -32,7 +32,9 @@ export default function PreOrderLeft({ product }: { product: Product }) {
   const { t } = useT();
   const left = usePreOrderLeft(product);
   if (left === 0) return <span className="product-soldout tc">{t("售罄", "Sold out")}</span>;
-  return <span className="product-preorder tc">{left !== undefined ? t(`預購・剩餘 ${left} 盒`, `Pre-order · ${left} left`) : t("預購", "Pre-order")}</span>;
+  // a set sold as several boxes (聖誕心意禮) counts its allowance in sets (client reply 2026-10-14 §2: 200 sets)
+  const unit = product.giftBox?.mixBoxes ? "組" : "盒";
+  return <span className="product-preorder tc">{left !== undefined ? t(`預購・剩餘 ${left} ${unit}`, `Pre-order · ${left} left`) : t("預購", "Pre-order")}</span>;
 }
 
 /** The card's tag on collection pages: 預購, or 售罄 once the shared allowance is used up (no count on cards). */

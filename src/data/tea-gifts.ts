@@ -30,13 +30,15 @@ export type TeaGift = {
   /** lid colours sold with every tea choice (春曉 Blue/Pink, 蝴蝶蘭 Gold/Pink): each tea × lid is a Shopify variant */
   lid?: Bi[];
   /** Per-lid studio views: preserve existing covers; HD front is added in view 2 (user 2026-10-12); unboxed view is shared. */
-  lidViews?: Record<number, { cover?: string; angle?: string; front?: string; scene?: string }>;
+  lidViews?: Record<number, { cover?: string; angle?: string; front?: string; scene?: string; unboxed?: string; /** names the lid in the alt text and brings `unboxed` (聖誕禮盒) */ lidName?: Bi }>;
   /** packaging options with the same contents and price (團圓 Gold/Pink/Blue) */
   packaging?: { label: Bi; text: Bi; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string } }[];
   /** the US list price in USD (the lowest option); a box without it is priced from the Taiwan store (official-prices.json, TWD) */
   usd?: number;
   setOf?: number;          // sold as a set of this many boxes (心有愛: NT$810 buys 3 boxes)
   weight: number;          // grams, box included (official product page, 「約 … 公克」); 0 where unknown
+  /** the weight is the client's estimate: 「約 … 公克（估計值）」 (團圓, client reply 2026-10-14 §3) */
+  weightEstimated?: boolean;
   ingredients?: Bi;
   scene?: string;          // AI scene from the asset gallery (CV-xxxx) used as the listing image
   journalScene?: number;   // tea-journal photo (people-free) showing this box, used as the listing image
@@ -53,7 +55,7 @@ export type TeaGift = {
   soldOut?: boolean;
   /** made to order: a 預購 / Pre-order label beside the price and a 加入預購 / Pre-order button; ships by late November 2026 (客戶答覆 B7，2026-10-12) */
   preOrder?: boolean;
-  /** 預購額度（盒）：所有茶款與盒蓋顏色共用一個額度，不分規格（客戶答覆 B7，2026-10-12）。沒有額度的預購商品（聖誕佳禮）不顯示剩餘數 */
+  /** 預購額度（盒）：所有茶款與盒蓋顏色共用一個額度，不分規格（客戶答覆 B7，2026-10-12）。沒有額度的預購商品不顯示剩餘數 */
   preOrderLimit?: number;
   /** 剩餘可預購數量的覆寫值；未填時剩餘＝preOrderLimit。Shopify 串接後由 src/lib/shopify/preorder.ts（額度－已下單盒數）即時取代 */
   preOrderLeft?: number;
@@ -67,6 +69,8 @@ export type TeaGift = {
   hidden?: boolean;
   variant?: { group: string; label: string };
   // summary: the count line on cards and the page; tea: Shopify's tea names for this box where they differ from the shared dictionary
+  /** the Chinese count line on cards and the page, where the generated one would be wrong (聖誕禮盒: an assortment or one tea) */
+  summary?: string;
   en: { name: string; description: string; note?: string; summary?: string; tea?: Record<string, string> };
 };
 
@@ -83,12 +87,17 @@ const wood = "桐木盒、織布盒蓋";
 const woodTieDye = "桐木盒搭配紮染布面盒蓋，飾以手工刺繡";
 const woodEmbroidered = "桐木盒搭配手工刺繡布面盒蓋";
 const paperKyoto = "高密度紙盒搭配連體盒蓋與封口封條";
-const paperDrawerEmbroidered = "抽屜式紙盒搭配織布盒蓋，飾以刺繡"; // 聖誕佳禮：2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8）
-const paperSnowflake = "紙盒，燙金雪花與壓紋小金魚，透明封口貼紙"; // 雪花迷人禮：2026-10-13 agent 推理暫定，待客戶確認
+const woodEmbroideredLid = "木盒搭配刺繡布面盒蓋"; // 聖誕禮盒：客戶回覆 2026-10-14 §1「木盒搭配刺繡布面上蓋」（取代 10-13 agent 推理的抽屜式紙盒）
+const paperSnowflake = "高密度紙盒，燙金雪花與壓紋小金魚，透明封口貼紙"; // 聖誕心意禮：材質同京都版（客戶回覆 2026-10-14 §2）；燙金雪花等裝飾是 10-13 依商品圖寫的
 const longBox = "28.6 × 11.7 × 9 cm";    // 11.3 × 4.6 × 3.5 in
 const smallBox = "20.5 × 18.5 × 6.9 cm"; // 8.1 × 7.3 × 2.7 in
+// 聖誕心意禮每小盒：京都版長度減半、寬高不變（客戶回覆 2026-10-14 §2）
+const halfSmallBox = "10.25 × 18.5 × 6.9 cm";
 const squareBox = "28 × 19 × 9 cm";      // 11.0 × 7.5 × 3.5 in
 const rareBox = "27.7 × 19.1 × 9.6 cm";
+// 聖誕禮盒的綜合選項（客戶回覆 2026-10-14 §1）：玫瑰烏龍、金萱烏龍、紅玉紅茶、東方美人各 3 包
+const assortment = "綜合茶款";
+const christmasMix = [rose, jinxuan, ruby, beauty].map(name => count(name, 3));
 const blue: Bi = { zh: "藍色", en: "Blue" }, pink: Bi = { zh: "粉紅色", en: "Pink" }, gold: Bi = { zh: "金色", en: "Gold" };
 
 // English wording for the shared vocabulary. Every Chinese value used above must have an entry (checked at build).
@@ -101,8 +110,9 @@ const english: Record<string, string> = {
   [woodTieDye]: "Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery",
   [woodEmbroidered]: "Paulownia wood box with a hand-embroidered fabric lid",
   [paperKyoto]: "High-density paper box with an attached lid and closure seal",
-  [paperDrawerEmbroidered]: "Paper drawer box with a woven-fabric lid featuring embroidery",
-  [paperSnowflake]: "Paper box with rose-gold foil snowflakes, an embossed goldfish and a clear seal sticker",
+  [woodEmbroideredLid]: "Wooden box with an embroidered fabric lid",
+  [paperSnowflake]: "High-density paper box with rose-gold foil snowflakes, an embossed goldfish and a clear seal sticker",
+  [assortment]: "Tea Assortment",
   "紙盒": "Paper box", "繽紛紙紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid", "繽紛紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid",
   "繽紛紙盒・12 入": "Paper box · 12 tea bags", "桐木木盒・12 入": "Paulownia box · 12 tea bags",
 };
@@ -111,12 +121,16 @@ const tieDyeColors: Bi = { zh: "紮染盒蓋的色彩依實品為準，可能與
 // 預購出貨時間（客戶答覆 B7／D3，2026-10-12）：每個 preOrder 禮盒的產品須知第一條
 // tea is final sale (return policy, commerce.ts): said on the page too, not only in the policy (pre-launch shopper review 2026-10-14)
 const teaFinalSale: Bi = { zh: "茶品屬於食品，售出後恕不退換，詳見退換貨政策。", en: "Tea is a final sale and cannot be returned; see our return policy." };
-export const preOrderShipping: Bi = { zh: "預購商品預計最晚於 2026 年 11 月下旬出貨。", en: "Pre-orders are expected to ship by late November 2026." };
+// 客戶回覆 2026-10-14 §6：「預計最晚於 2026 年 11 月底前出貨」（取代 B7 的「11 月下旬」）；下單時收全額，出貨前可取消並全額退款，出貨後依茶品退換貨政策
+export const preOrderShipping: Bi = { zh: "預購商品預計最晚於 2026 年 11 月底前出貨。", en: "Pre-orders are expected to ship by the end of November 2026." };
+const preOrderTerms: Bi = { zh: "預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。", en: "Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies." };
+// 客戶回覆 2026-10-14 §7：聖誕下單截止日（只適用美國本土 48 州）
+const christmasCutoff: Bi = { zh: "聖誕節前送達：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單；阿拉斯加與夏威夷不適用此截止日。", en: "For delivery before Christmas, please order by December 15, 2026 (contiguous 48 states). This date does not apply to Alaska or Hawaii." };
 const embroideryNote: Bi = { zh: "盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。", en: "The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation." };
 
 export const teaGifts: TeaGift[] = [
   // 團圓 Joyful Reunion: one listing (the US store listed three packaging options; only the gold lid is on sale) (the Taiwan store's two 12-bag boxes were separate listings)
-  { officialId: 891, slug: "reunion-paper-gift-box", preOrder: true, preOrderLimit: 100, journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: woodEmbroidered /* user 2026-10-13: 「說明的部分改成桐木盒就好」 */, dimensions: "", weight: 0, contents: fifteen, usd: 170, scene: "CV-0348",
+  { officialId: 891, slug: "reunion-paper-gift-box", preOrder: true, preOrderLimit: 100, journalStory: 301, name: "團圓", english: "JOYFUL REUNION", series: "經典商品", pieces: 15, box: woodEmbroidered /* user 2026-10-13: 「說明的部分改成桐木盒就好」 */, /* client reply 2026-10-14 §3: 274 × 149 × 90 mm; weight estimated as (年年有魚 18 入 400 g + 暮雪 12 入 350 g) ÷ 2 */ dimensions: "27.4 × 14.9 × 9 cm", weight: 375, weightEstimated: true, contents: fifteen, usd: 170, scene: "CV-0348",
     // Pink and blue packaging are off sale (user 2026-10-13: 「粉紅色跟藍色目前都先下架，還沒有商品可以賣」, reversing 10-12); only the
     // gold-lid box is sold, so there is no packaging chooser. Approved option names if the colours return (客戶答覆 E4，2026-10-12):
     // "Gold Gift Box" / "Pink Gift Box" / "Blue Gift Box" — show only the colours actually on sale. The pink and blue options, with their grey placeholder views, are in git history.
@@ -181,26 +195,29 @@ export const teaGifts: TeaGift[] = [
     },
     notice: [competitionPricing, { zh: "限量供應，採預購製作。", en: "Limited availability; crafted upon pre-order." }, embroideryNote],
     en: { name: "Sapphire Wings", description: "Sapphire Wings is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of Second-Prize Oriental Beauty Tea. A Paulownia wood box with a hand-embroidered fabric lid presents this single-tea selection in a butterfly-inspired gift collection.", summary: "18 Goldfish Tea Bags per box · Second-Prize Oriental Beauty Tea" } },
-  // 聖誕佳禮 Christmas Delight（新品）：以下名稱、系列、內容、價格、盒型、尺寸、重量、保存期限、預購出貨時間、故事與 officialId 皆為
-  // 2026-10-13 agent 推理暫定，待客戶確認（確認表 F1–F8）（使用者 2026-10-13：「F1–F8 你先根據目前的官網推理，我再請客戶修改，先上 demo2」）。
+  // 聖誕禮盒（限量版）（原「聖誕佳禮」）：價格、茶款、盒型、尺寸、重量與預購額度依客戶回覆 2026-10-14 §1（「CHARM VILLA｜產品規格與預購寄送確認」）；
+  // 故事、盒蓋顏色對應（拐杖糖＝橘、聖誕襪＝藍綠）與商品圖仍是 2026-10-13 agent 推理暫定（使用者 2026-10-13：「F1–F8 你先根據目前的官網推理，我再請客戶修改，先上 demo2」）。
   // officialId 9001 只是暫定的唯一值，台灣官網沒有這個商品編號（沒有官方商品圖、也不連到台灣官網）。
-  // 兩色盒蓋同內容同價，用 packaging（選色＝切換圖庫）：橘色是預設圖庫，藍綠色用自己的 4 張圖（含自己的紙盒開箱圖，不用 12 入木盒的開箱圖）。
-  { officialId: 9001, slug: "christmas-gift-box", preOrder: true, sceneFile: "scene-christmas-gift-box-two-boxes-window-light.webp", /* names from the client (user 2026-10-14, reply to the 10/13 report item 1: 「原「聖誕佳禮」請改為 聖誕禮盒（限量版）」 / "Christmas Giftbox (Limited Edition)"); price, teas, box, size and pre-order count still to come */ name: "聖誕禮盒（限量版）", english: "CHRISTMAS GIFTBOX (LIMITED EDITION)", series: "2026 聖誕節限定商品", pieces: 12, box: paperDrawerEmbroidered, dimensions: longBox, weight: 300, contents: reunion, priceTbd: true, // 不在客戶答覆 B7 的額度清單內：預購但不設額度、不顯示剩餘數
-    packaging: [
-      { label: { zh: "拐杖糖", en: "Candy Cane" }, text: { zh: "橘色盒蓋，紅色小金魚刺繡搭配拐杖糖。", en: "Orange lid with a red embroidered goldfish and a candy cane." } },
-      { label: { zh: "聖誕襪", en: "Stocking" }, text: { zh: "藍綠色盒蓋，綠色小金魚刺繡搭配聖誕襪。", en: "Teal lid with a green embroidered goldfish and a Christmas stocking." },
-        lidViews: { cover: "studio-christmas-gift-box-teal-cover-v3.webp", front: "studio-christmas-gift-box-teal-front-v4.webp", angle: "studio-christmas-gift-box-teal-angle-v3.webp", unboxed: "studio-christmas-gift-box-teal-unboxed-v3.webp" } },
-    ],
-    description: "CHARM VILLA「聖誕禮盒（限量版）」禮盒內含 12 包金魚茶包，四款茶各 3 包，以抽屜式紙盒搭配刺繡織布盒蓋呈現。可選擇聖誕襪或拐杖糖盒蓋，為佳節送上一份溫暖的心意。",
-    story: { title: { zh: "故事", en: "Story" }, body: { zh: "金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開抽屜，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。", en: "Gold baubles and snowflakes hang across the lid as a little goldfish swims into the season with a candy cane or a Christmas stocking. Slide open the drawer to find twelve Goldfish Tea Bags, ready for warm winter hours with the people who matter most." } },
-    notice: [embroideryNote], // 出貨時間改用全部預購商品共用的 preOrderShipping（客戶答覆 B7，2026-10-12；取代原本暫定的「12 月上旬起陸續出貨」）
-    en: { name: "Christmas Giftbox (Limited Edition)", description: "Christmas Giftbox (Limited Edition) is a CHARM VILLA gift set containing 12 Goldfish Tea Bags, three each of four tea varieties, presented in a paper drawer box with an embroidered woven-fabric lid. Choose the Stocking or Candy Cane lid for a warm holiday gift.", summary: "12 Goldfish Tea Bags per box · Four-tea assortment" } },
+  // 茶款 × 盒蓋，一個選單（同春曉的 lid）：橘色是預設圖庫，藍綠色用自己的 4 張圖（含自己的開箱圖）。
+  { officialId: 9001, slug: "christmas-gift-box", preOrder: true, /* client reply 2026-10-14 §1: one allowance of 200 boxes shared by every tea and lid */ preOrderLimit: 200, sceneFile: "scene-christmas-gift-box-two-boxes-window-light.webp", /* names from the client (user 2026-10-14, reply to the 10/13 report item 1: 「原「聖誕佳禮」請改為 聖誕禮盒（限量版）」 / "Christmas Giftbox (Limited Edition)") */ name: "聖誕禮盒（限量版）", english: "CHRISTMAS GIFTBOX (LIMITED EDITION)", series: "2026 聖誕節限定商品", pieces: 12,
+    // client reply 2026-10-14 §1: US$125 a box, the same for all three teas; wooden box with an embroidered fabric lid, size and weight as 暮雪 (Snowy Twilight)
+    box: woodEmbroideredLid, dimensions: longBox, weight: 350, contents: [], usd: 125,
+    choices: [{ label: assortment, contents: christmasMix }, { label: rose, contents: [count(rose, 12)] }, { label: beauty, contents: [count(beauty, 12)] }].map(c => ({ ...c, price: 125 })),
+    // Stocking / Candy Cane lids sold with every tea (each tea × lid a Shopify variant). The orange (Candy Cane) lid is the default gallery; the teal (Stocking) lid has its own 4 views.
+    lid: [{ zh: "拐杖糖", en: "Candy Cane" }, { zh: "聖誕襪", en: "Stocking" }],
+    lidViews: { 1: { cover: "studio-christmas-gift-box-teal-cover-v3.webp", front: "studio-christmas-gift-box-teal-front-v4.webp", angle: "studio-christmas-gift-box-teal-angle-v3.webp", unboxed: "studio-christmas-gift-box-teal-unboxed-v3.webp", lidName: { zh: "聖誕襪", en: "Stocking" } } },
+    description: "CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方美人茶各 3 包），或單一茶款玫瑰烏龍茶、東方美人茶各 12 包，以木盒搭配刺繡布面盒蓋呈現。可選擇聖誕襪或拐杖糖盒蓋，為佳節送上一份溫暖的心意。",
+    summary: "12 入／盒 · 綜合茶款或單一茶款",
+    story: { title: { zh: "故事", en: "Story" }, body: { zh: "金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開盒蓋，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。", en: "Gold baubles and snowflakes hang across the lid as a little goldfish swims into the season with a candy cane or a Christmas stocking. Lift the lid to find twelve Goldfish Tea Bags, ready for warm winter hours with the people who matter most." } },
+    notice: [christmasCutoff, embroideryNote],
+    en: { name: "Christmas Giftbox (Limited Edition)", description: "Christmas Giftbox (Limited Edition) is a CHARM VILLA gift set containing 12 Goldfish Tea Bags: a tea assortment (three each of Rose Oolong, Jin Xuan Oolong, Ruby Black, and Oriental Beauty) or twelve of Rose Oolong or Oriental Beauty, presented in a wooden box with an embroidered fabric lid. Choose the Stocking or Candy Cane lid for a warm holiday gift.", summary: "12 Goldfish Tea Bags per box · Tea assortment or a single tea" } },
   // 雪花迷人禮（三盒組）：2026-10-13 agent 推理暫定，待客戶確認（使用者 2026-10-13：「先上架」）。名稱、盒型、尺寸、重量、茶款與文案皆為暫定值，
   // 價格與茶款已由使用者轉達（2026-10-14：「三件一組 $60」「茶款（5 選 1）」玫瑰烏龍、東方美人、紅玉、金萱、玫瑰蜜香）；預購、額度待客戶提供（2026-10-14）。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
   // 每盒 2 包同一種茶、三盒一組，寫法同已隱藏的心有愛（heart-gift-box）。圖庫只用自己的 3 張（catalog.ts），沒有專屬情境照。
-  { officialId: 9002, slug: "snowflake-gift-box", /* pre-order (user 2026-10-14: 「根據客戶要求改成預購」; client: 「預購數量後續補上」), reversing 10-13 「不用預購」; no allowance yet, so no count shown */ preOrder: true, /* teas mixed freely across the three boxes, one tea per box (user 2026-10-14: 「可以自由混搭茶種（最多３種，每盒同一種口味）」) */ mix: true, /* names from the client (user 2026-10-14, reply item 2: 「原「雪花迷人禮」請改為 聖誕心意禮（限量版）」 / "Christmas Charming Gift (Limited Edition)"; sold only as a set of three, US$60) */ name: "聖誕心意禮（限量版）", english: "CHRISTMAS CHARMING GIFT (LIMITED EDITION)", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, /* size and weight left out: they were borrowed from 心有愛 (10 × 6.5 × 7.5 cm, 20 g), but it is a different box (user 2026-10-14: 「不同盒子，在問客戶了」); the rows return when the client answers */ dimensions: "", weight: 0, contents: [], usd: 60,
+  { officialId: 9002, slug: "snowflake-gift-box", /* pre-order (user 2026-10-14: 「根據客戶要求改成預購」), reversing 10-13 「不用預購」; client reply 2026-10-14 §2: 200 sets (600 boxes) shared by every option */ preOrder: true, preOrderLimit: 200, /* teas mixed freely across the three boxes, one tea per box (user 2026-10-14: 「可以自由混搭茶種（最多３種，每盒同一種口味）」) */ mix: true, /* names from the client (user 2026-10-14, reply item 2: 「原「雪花迷人禮」請改為 聖誕心意禮（限量版）」 / "Christmas Charming Gift (Limited Edition)"; sold only as a set of three, US$60) */ name: "聖誕心意禮（限量版）", english: "CHRISTMAS CHARMING GIFT (LIMITED EDITION)", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, /* client reply 2026-10-14 §2: each box is the Kyoto box at half the length, same width and height; weight with tea bags 1/3 of Kyoto (99 g ÷ 3) */ dimensions: halfSmallBox, weight: 33, contents: [], usd: 60,
     choices: [rose, beauty, ruby, jinxuan, honey].map(label => ({ label, contents: [count(label, 2)], price: 60 })),
     description: "CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，三盒一組。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。",
+    notice: [christmasCutoff],
     en: { name: "Christmas Charming Gift (Limited Edition)", description: "Christmas Charming Gift (Limited Edition) is a set of three CHARM VILLA boxes, each holding two Goldfish Tea Bags of your selected tea. The white boxes carry rose-gold foil snowflakes and an embossed goldfish, sealed with a clear sticker — easy to share with friends during the holidays.", summary: "Set of 3 boxes · 2 tea bags per box · Mix and match teas" } },
   { officialId: 1072, slug: "small-moon-tea-gift-box", hidden: true, sceneFile: "scene-small-moon-tea-gift-box.webp", name: "小鮮月禮盒｜純茶包", english: "SMALL MOON / TEA", series: "2026 中秋節限定商品", pieces: 6, box: "紙盒", dimensions: smallBox, weight: 99, contents: [count(rose, 3), count(honey, 3)], description: "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
     en: { name: "Small Moon Gift Box | Tea Only", description: "A Mid-Autumn gesture kept among six goldfish: three of Rose Oolong Tea and three of Rose & Honey-Scented Black Tea. The gathering begins with opening the box and pouring a cup of hot water." } },
@@ -245,8 +262,9 @@ const teaNotes: Record<string, Bi> = {
 };
 const teaNoteKey = (name: string) => name.includes("玫瑰烏龍") ? rose : name.includes("東方美人") ? beauty : name;
 const isCompetitionTea = (name: string) => /等獎/.test(name);
-const competitionNote: Bi = { zh: "每年由政府協辦冬夏兩季評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。",
-  en: "At government-supported tea competitions held in summer and winter, judges carefully assess the dry and brewed leaves, the aroma of the leaves and tea, and the color of the infusion before awarding grades." };
+// No competition names or years: only that Taiwan holds tea competitions every year; each tea keeps its confirmed grade (client reply 2026-10-14 §4)
+const competitionNote: Bi = { zh: "台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。",
+  en: "Taiwan holds tea competitions every year, where judges carefully assess the dry and brewed leaves, the aroma of the leaves and tea, and the color of the infusion before awarding grades." };
 
 // 保存期限（客戶答覆 B6，2026-10-12）：自茶葉生產日期起算；含玫瑰烏龍茶或玫瑰蜜香紅茶（含比賽獲獎的玫瑰烏龍茶）1 年，不含 2 年。
 // 綜合盒只要含任一款即整盒 1 年；可選茶款的盒子依選項各自判定，選項之間不同時分開寫。依實際茶款判定，不看商品名稱。
@@ -285,24 +303,30 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
     const contents = gift.choices
       ? gift.choices.map(c => describeContents(c.contents)).join(t("；或 ", "; or "))
       : describeContents(gift.contents);
+    // an assortment option (聖誕禮盒「綜合茶款」) lists what is in it
+    const choiceName = (c: { label: string; contents: TeaContents }) => c.contents.length > 1 ? `${vt(c.label)}${t("：", ": ")}${describeContents(c.contents)}` /* not in brackets: the page drops bracketed aliases from tea lists */ : vt(c.label);
     const mix = gift.mix ? t("每盒一種茶，可混搭", "one tea per box, mix and match") : gift.choices ? t("單一茶款，整盒擇一", "one tea, chosen per box") : gift.contents.length > 1 ? t("綜合茶款", "assorted teas") : t("單一茶款", "single tea");
     const note = en ? gift.en.note : gift.note;
-    const notices = [...(gift.preOrder ? [lt(preOrderShipping)] : []), ...(gift.notice?.map(lt) ?? []), ...(note ? [note] : []), lt(teaFinalSale)];
+    const notices = [...(gift.preOrder ? [lt(preOrderShipping), lt(preOrderTerms)] : []), ...(gift.notice?.map(lt) ?? []), ...(note ? [note] : []), lt(teaFinalSale)];
     // shared pre-order allowance left (客戶答覆 B7): the data override, else the full allowance until Shopify inventory replaces it
     const preOrderRemaining = gift.preOrder && gift.preOrderLimit !== undefined ? Math.max(0, gift.preOrderLeft ?? gift.preOrderLimit) : undefined;
     // USD on the US catalogue; the Taiwan list price (TWD) only for the hidden boxes
     const price = gift.usd !== undefined
       ? { amount: gift.usd, currency: "USD" as const }
       : { amount: (officialPrices.prices as Record<string, number>)[String(gift.officialId)], currency: "TWD" as const };
+    // a lid with `lidName` is named in the alt text (and brings its own unboxed view); the others keep the pink-lid wording
+    const lidViewsOf = (lv?: NonNullable<TeaGift["lidViews"]>[number]) => lv && (({ lidName, ...rest }) => lidName ? { ...rest, lid: t(`${lidName.zh}款盒蓋`, `${lidName.en.toLowerCase()} lid`) } : rest)(lv);
     // What the bag button offers: each tea × lid colour (the Shopify variants), each packaging option, or each tea
     const bagChoices = gift.packaging
       ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount, note: lt(p.text), viewsFrom: p.viewsFrom, placeholderViews: p.placeholderViews, lidViews: p.lidViews && { ...p.lidViews, lid: t(`${p.label.zh}款盒蓋`, `${p.label.en.toLowerCase()} lid`) } })) // the text shows under the chooser once chosen (user 2026-10-07: 「可以精簡呈現在這區」), no longer a specification row
-      : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map((l, li) => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price, lidViews: l ? gift.lidViews?.[li] : undefined })));
-    // lid colours with the same contents and price (聖誕佳禮 Orange/Teal) are named as such, not as packaging
-    const choiceLabel = gift.packaging?.some((o) => o.lidViews) ? t("選擇盒蓋", "Choose your lid") /* client §6: 「Choose your lid」 with Stocking / Candy Cane */ : gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : gift.mix ? t("選擇茶款", "Choose your teas") /* client §2 */ : t("選擇茶款（每盒擇一）", "Choose your tea");
+      : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map((l, li) => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price, lidViews: l ? lidViewsOf(gift.lidViews?.[li]) : undefined })));
+    // lid options with the same contents and price are named as such, not as packaging. 聖誕禮盒 sells tea × lid in one list, so its
+    // label names both (the client asked for "Choose your lid" for the lid menu, 2026-10-14 §1; a separate lid menu needs AddToCart changes)
+    const christmasLids = gift.lidViews && Object.values(gift.lidViews).some((lv) => lv.lidName);
+    const choiceLabel = gift.packaging?.some((o) => o.lidViews) ? t("選擇盒蓋", "Choose your lid") /* client §6: 「Choose your lid」 with Stocking / Candy Cane */ : gift.packaging ? t("選擇包裝", "Choose your packaging") : christmasLids ? t("選擇茶款與盒蓋", "Choose your tea and lid") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : gift.mix ? t("選擇茶款", "Choose your teas") /* client §2 */ : t("選擇茶款（每盒擇一）", "Choose your tea");
     return {
       slug: gift.slug, category: "tea", name, english: gift.english,
-      summary: (en && gift.en.summary) || t(`${gift.pieces} 入／盒${gift.setOf ? ` · ${gift.setOf} 盒一組` : ""} · ${mix}`, `${gift.pieces} Goldfish Tea Bags per box${gift.setOf ? ` · Set of ${gift.setOf} boxes` : ""} · ${mix}`) /* set size in the card line (2026-10-13, 雪花三盒組) */,
+      summary: (en ? gift.en.summary : gift.summary) || t(`${gift.pieces} 入／盒${gift.setOf ? ` · ${gift.setOf} 盒一組` : ""} · ${mix}`, `${gift.pieces} Goldfish Tea Bags per box${gift.setOf ? ` · Set of ${gift.setOf} boxes` : ""} · ${mix}`) /* set size in the card line (2026-10-13, 雪花三盒組) */,
       description: en ? gift.en.description : gift.description, image,
       views: [...(gift.scene || generated || journalScene ? [{ label: t("禮盒情境", "Gift box scene"), image }] : []), { label: t("官方商品圖", "Official product image"), image: official }],
       facts: [
@@ -315,14 +339,14 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
           : t(`1 盒／小金魚茶包 ${gift.pieces} 入`, `1 box / ${gift.pieces} Goldfish Tea Bags`) },
         ...(gift.mix ? [{ label: t("選茶方式", "Tea selection"), value: t(`每盒選一種茶，${gift.setOf} 盒可以混搭。`, "Choose one tea variety for each box. Mix and match across the three boxes.") }] : []),
         gift.choices
-          ? { label: t("可選茶款", "Available teas"), value: gift.choices.map(c => vt(c.label)).join(t("、", "; ")), items: gift.choices.map(c => vt(c.label)) }
+          ? { label: t("可選茶款", "Available teas"), value: gift.choices.map(choiceName).join(t("、", "; ")), items: gift.choices.map(choiceName) }
           // one tea per line (user 2026-10-06: 「內容物用點列」)
           : { label: t("盒內茶款", "Tea selection"), value: contents, items: gift.contents.map(c => describeContents([c])) },
-        ...(gift.lid ? [{ label: t("盒蓋顏色", "Lid options"), value: gift.lid.map(lt).join(t("或", " or ")) }] : []),
+        ...(gift.lid ? [{ label: christmasLids ? t("盒蓋款式", "Lid options") : t("盒蓋顏色", "Lid options"), value: gift.lid.map(lt).join(t("或", " or ")) }] : []),
         { label: t("盒型與材質", "Packaging"), value: v(gift.box) },
         ...(gift.dimensions ? [{ label: t("外盒尺寸（長 × 寬 × 高）", "Box dimensions (L × W × H)"), value: sizeText(gift.dimensions.replace(" cm", "").split(" × ").map(Number), lang) }] : []),
         ...(gift.ingredients ? [{ label: t("成分", "Ingredients"), value: lt(gift.ingredients) }] : []),
-        ...(gift.weight ? [{ label: t("重量（含盒）", "Weight (with box)"), value: t(`約 ${gift.weight} 公克${gift.setOf ? "／盒" : ""}`, `About ${gift.weight} g${gift.setOf ? " per box" : ""}`) }] : []),
+        ...(gift.weight ? [{ label: t("重量（含盒）", "Weight (with box)"), value: t(`約 ${gift.weight} 公克${gift.setOf ? "／盒" : ""}${gift.weightEstimated ? "（估計值）" : ""}`, `About ${gift.weight} g${gift.setOf ? " per box" : ""}${gift.weightEstimated ? " (estimated)" : ""}`) }] : []),
         { label: t("保存期限", "Shelf life"), value: shelfLifeOf(gift, en, vt) },
         // the FAQ: the tea bag and the tea testing, true of every box
         { label: t("茶包材質", "Tea bag material"), value: t("食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測", "Food-grade non-woven fabric, made without chemical adhesives; the teas are SGS-tested") },
