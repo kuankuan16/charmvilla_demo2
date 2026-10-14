@@ -1335,6 +1335,8 @@ main:has(> .policy-page) { background: #efefed; }
 .policy-qa h3 { font-size: 19px; line-height: 1.5; font-weight: 500; margin-bottom: 6px; }
 /* a product story with several paragraphs, and its second titled text (紫斑蝶) */
 .product-story-text p + p { margin-top: 12px; }
+/* sources under a story text: small grey note (紫斑蝶, user 2026-10-14: 「用備註灰色小字呈現」) */
+.product-story-source { font-size: 13px !important; line-height: 1.7 !important; color: var(--color-stone-deep) !important; }
 .product-story-more { margin-top: 28px; margin-bottom: 8px; font-size: 19px; line-height: 1.5; font-weight: 500; }
 
 /* Product page, below the first screen: a magazine inner page after jakobsencopenhagen.com/de/produkte/stina-ecksitzinsel-3-sitzer

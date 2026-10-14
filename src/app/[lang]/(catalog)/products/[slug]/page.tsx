@@ -85,10 +85,10 @@ export default async function ProductPage({ params }: Props) {
   // on the ginkgo teaspoon page's three-scene layout 「所有茶葉禮盒的情境照部分都跟…版型設計一樣」), so it is written once
   const storyInPair = Boolean(pair);
   const storyInColumn = product.category === "tea" && !storyInPair;
-  const storyRows = storyInColumn || storyInPair ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: paragraphs(product.story.more.body, "m") }] : [])];
+  const storyRows = storyInColumn || storyInPair ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: [...paragraphs(product.story.more.body, "m"), ...(product.story.more.source ? [<p key="src" className="product-story-source tc">{product.story.more.source}</p>] : [])] }] : [])];
   // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
   // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
-  const sideText = storyInPair ? <div className="product-story-text"><h2 className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}</div> : null;
+  const sideText = storyInPair ? <div className="product-story-text"><h2 className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{[...paragraphs(product.story.more.body, "m"), ...(product.story.more.source ? [<p key="src" className="product-story-source tc">{product.story.more.source}</p>] : [])]}</>}</div> : null;
   // Tea gift boxes (user 2026-10-08, with the STINA page's "Teil derselben Kollektion" block: 「都放下面一點的排序」「像這樣呈現」): the story
   // leaves the specifications and sits at the foot of the column as that block — the title in ink and the text in grey at one size, a
   // blank line between — with the column's first scene photograph 80px under it; its second titled text (紫斑蝶) follows in the same type.
@@ -98,7 +98,7 @@ export default async function ProductPage({ params }: Props) {
     <div className="product-story-text">
       <h2 className="tc">{product.story.title}</h2>
       {paragraphs(product.story.body, "s")}
-      {product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{paragraphs(product.story.more.body, "m")}</>}
+      {product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{[...paragraphs(product.story.more.body, "m"), ...(product.story.more.source ? [<p key="src" className="product-story-source tc">{product.story.more.source}</p>] : [])]}</>}
     </div>
   </div>;
   const teaPages = product.category === "tea" && <TeaPages product={product} t={t} />;

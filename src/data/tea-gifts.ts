@@ -48,7 +48,7 @@ export type TeaGift = {
   /** the document's Product Notice bullets */
   notice?: Bi[];
   /** the box's own story from the document; `more` is a second titled text (紫斑蝶: about Taiwan's purple crow butterflies) */
-  story?: { title: Bi; body: Bi; more?: { title: Bi; body: Bi } };
+  story?: { title: Bi; body: Bi; more?: { title: Bi; body: Bi; source?: Bi } };
   /** marked sold out on the official store: the price stays, the bag button is disabled */
   soldOut?: boolean;
   /** made to order: a 預購 / Pre-order label beside the price and a 加入預購 / Pre-order button; ships by late November 2026 (客戶答覆 B7，2026-10-12) */
@@ -171,8 +171,10 @@ export const teaGifts: TeaGift[] = [
         en: "Each winter, Taiwan's purple crow butterflies trace a violet river across the island's skies. Their dark wings, adorned with blue and white, shimmer between violet and sapphire as they turn in flight—like a constellation briefly brought within reach. CHARM VILLA captures their graceful silhouettes in a gift collection of fine Oriental Beauty Tea awarded Second Prize at a tea competition. As you settle into a quiet cup, imagine butterflies dancing through the shade, weaving a fleeting moment of beauty to keep." },
       more: {
         title: { zh: "關於臺灣的紫斑蝶", en: "About Taiwan's purple crow butterflies" },
-        body: { zh: "在臺灣，許多溫暖的地方都有機會看見紫斑蝶。研究紀錄顯示，牠們會在初春北返、春末初夏及秋季南遷等時期形成大規模蝶道，並在南部溫暖、避風的山谷群聚越冬。這片緩緩流動的紫色蝶河，常與墨西哥帝王斑蝶的壯麗越冬景觀並提。\n\n臺灣目前常見四種紫斑蝶。另有曾棲息於臺灣的大紫斑蝶特有亞種，已多年未見，更提醒我們珍惜蝶群賴以生存的棲地。為協助紫斑蝶安全飛越林內一帶的國道，保育措施包括設置防護網，並在遷徙蝶量達到管制門檻時暫時封閉部分車道，為蝶群留出回家的路。\n\nCHARM VILLA 貳等獎東方美人茶禮盒上所繡的是名為「端紫斑蝶」（Euploea mulciber）的紫斑蝶種。在外觀特徵上，端紫斑蝶的前翅可見明亮的藍紫色光澤，後翅則綴著散落的白點與白色細紋。\n\n紫斑蝶背景資料參考：茂林國家風景區管理處；交通部高速公路局；國立自然科學博物館；美國自然史博物館",
-          en: "Purple crow butterflies thrive in Taiwan's warm landscapes. Recorded migration patterns include a northward journey in early spring, movement in late spring and early summer, and a southward journey in autumn to sheltered wintering valleys. Their great winter gatherings are often compared with those of monarch butterflies in Mexico.\n\nFour purple crow species are commonly found in Taiwan today. Another, the Great Crow's endemic Taiwanese subspecies, has not been seen for decades—a reminder of how much these delicate lives depend on their habitats. Along a migration route at Linnei, conservation measures include protective netting and temporary highway lane closures to help butterflies cross safely.\n\nThe butterfly embroidered on the Sapphire Wings gift box is the Striped Blue Crow (Euploea mulciber), known in Chinese as 端紫斑蝶. Its forewings catch the light in brilliant blue-violet, while white spots and fine pale markings decorate its hindwings.\n\nButterfly background references: Maolin National Scenic Area; National Freeway Bureau; National Museum of Natural Science; American Museum of Natural History" },
+        body: { zh: "在臺灣，許多溫暖的地方都有機會看見紫斑蝶。研究紀錄顯示，牠們會在初春北返、春末初夏及秋季南遷等時期形成大規模蝶道，並在南部溫暖、避風的山谷群聚越冬。這片緩緩流動的紫色蝶河，常與墨西哥帝王斑蝶的壯麗越冬景觀並提。\n\n臺灣目前常見四種紫斑蝶。另有曾棲息於臺灣的大紫斑蝶特有亞種，已多年未見，更提醒我們珍惜蝶群賴以生存的棲地。為協助紫斑蝶安全飛越林內一帶的國道，保育措施包括設置防護網，並在遷徙蝶量達到管制門檻時暫時封閉部分車道，為蝶群留出回家的路。\n\nCHARM VILLA 貳等獎東方美人茶禮盒上所繡的是名為「端紫斑蝶」（Euploea mulciber）的紫斑蝶種。在外觀特徵上，端紫斑蝶的前翅可見明亮的藍紫色光澤，後翅則綴著散落的白點與白色細紋。",
+          en: "Purple crow butterflies thrive in Taiwan's warm landscapes. Recorded migration patterns include a northward journey in early spring, movement in late spring and early summer, and a southward journey in autumn to sheltered wintering valleys. Their great winter gatherings are often compared with those of monarch butterflies in Mexico.\n\nFour purple crow species are commonly found in Taiwan today. Another, the Great Crow's endemic Taiwanese subspecies, has not been seen for decades—a reminder of how much these delicate lives depend on their habitats. Along a migration route at Linnei, conservation measures include protective netting and temporary highway lane closures to help butterflies cross safely.\n\nThe butterfly embroidered on the Sapphire Wings gift box is the Striped Blue Crow (Euploea mulciber), known in Chinese as 端紫斑蝶. Its forewings catch the light in brilliant blue-violet, while white spots and fine pale markings decorate its hindwings." },
+        // the sources as a small grey note under the text (user 2026-10-14: 「用備註灰色小字呈現」)
+        source: { zh: "紫斑蝶背景資料參考：茂林國家風景區管理處；交通部高速公路局；國立自然科學博物館；美國自然史博物館", en: "Butterfly background references: Maolin National Scenic Area; National Freeway Bureau; National Museum of Natural Science; American Museum of Natural History" },
       },
     },
     notice: [competitionPricing, { zh: "限量供應，採預購製作。", en: "Limited availability; crafted upon pre-order." }, embroideryNote],
@@ -318,7 +320,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
         ...(notices.length ? [{ label: t("產品須知", "Please note"), value: notices.join(" "), items: notices }] : []),
       ],
       story: gift.story
-        ? { title: lt(gift.story.title), body: lt(gift.story.body), image: journalStory, ...(gift.story.more ? { more: { title: lt(gift.story.more.title), body: lt(gift.story.more.body) } } : {}) }
+        ? { title: lt(gift.story.title), body: lt(gift.story.body), image: journalStory, ...(gift.story.more ? { more: { title: lt(gift.story.more.title), body: lt(gift.story.more.body), ...(gift.story.more.source ? { source: lt(gift.story.more.source) } : {}) } } : {}) }
         : {
           title: t("一盒風景，一席茶時", "A little beauty, a moment for tea"),
           body: t("先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。",

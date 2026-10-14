@@ -68,7 +68,7 @@ export type Product = {
   /** items: a list fact (a gift box's teas) shown as bullet points; value keeps the same text as one line */
   facts: { label: string; value: string; items?: string[] }[];
   /** `more`: a second titled text under the story (紫斑蝶: about Taiwan's purple crow butterflies); bodies may hold paragraphs separated by blank lines */
-  story: { title: string; body: string; image?: Img; more?: { title: string; body: string } };
+  story: { title: string; body: string; image?: Img; more?: { title: string; body: string; source?: string } };
   variant?: { group: string; label: string };
   /** not sold on the US store (tea boxes, user 2026-10-07): kept out of every listing, menu, sitemap and product page; data kept */
   hidden?: boolean;
