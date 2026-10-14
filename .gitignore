@@ -50,3 +50,6 @@ next-env.d.ts
 # Local temp files
 temp/
 .env*
+
+# Checkout tests (tests/run.mjs): generated fixtures and Playwright output
+tests/.generated/

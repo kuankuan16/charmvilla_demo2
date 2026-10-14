@@ -40,10 +40,11 @@ async function soldBySlug() {
   return sold;
 }
 
-// Counted at most every 30 s per server instance; a new order shows within that time.
+// Counted at most every 30 s per server instance; a new order shows within that time. PREORDER_CACHE_MS changes it (the checkout
+// tests set 0 so a test order counts at once; leave it unset on Vercel).
 let cached: { at: number; left: Record<string, number> } | null = null;
 let pending: Promise<Record<string, number>> | null = null;
-const TTL = 30_000;
+const TTL = process.env.PREORDER_CACHE_MS ? Number(process.env.PREORDER_CACHE_MS) : 30_000;
 
 /** slug → boxes left (never below 0). Throws not_configured until the Admin token is set. `fresh` skips the cache (adding to the bag). */
 export async function preOrderLeft(fresh = false): Promise<Record<string, number>> {

@@ -2,7 +2,7 @@
 //   SHOPIFY_ADMIN_ACCESS_TOKEN  custom app → Admin API access token, scopes read_customers, write_customers (newsletter.ts)
 //                               and read_orders (preorder.ts, the pre-order allowance left)
 // SHOPIFY_STORE_DOMAIN and SHOPIFY_API_VERSION are shared with the Storefront client (config.ts).
-import { shopifyConfig, NOT_CONFIGURED } from "./config";
+import { shopifyConfig, shopifyOrigin, NOT_CONFIGURED } from "./config";
 import { ShopifyError } from "./client";
 
 const adminToken = () => process.env.SHOPIFY_ADMIN_ACCESS_TOKEN ?? "";
@@ -12,7 +12,7 @@ type GraphQLResponse<T> = { data?: T; errors?: { message: string }[] };
 
 export async function admin<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
   if (!isAdminConfigured()) throw new ShopifyError("Shopify Admin API 尚未串接：請先填入 SHOPIFY_STORE_DOMAIN 與 SHOPIFY_ADMIN_ACCESS_TOKEN。", 503, NOT_CONFIGURED);
-  const res = await fetch(`https://${shopifyConfig.domain}/admin/api/${shopifyConfig.version}/graphql.json`, {
+  const res = await fetch(`${shopifyOrigin()}/admin/api/${shopifyConfig.version}/graphql.json`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "X-Shopify-Access-Token": adminToken() },
     body: JSON.stringify({ query, variables }),

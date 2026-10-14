@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
+// Checkout tests only (npm run test:api / test:e2e → tests/run.mjs): CV_TEST_BUILD names a separate build folder and
+// CV_TEST_SHOPIFY_MAP a generated variant map with fake GIDs (tests/.generated, git-ignored), which then replaces
+// src/data/shopify-map.json for that build. Ignored on Vercel, so a deployed build always reads the real map.
+const testBuild = !process.env.VERCEL && process.env.CV_TEST_BUILD ? process.env.CV_TEST_BUILD : null;
+const testMap = testBuild && process.env.CV_TEST_SHOPIFY_MAP ? process.env.CV_TEST_SHOPIFY_MAP : null;
+
 const nextConfig: NextConfig = {
+  ...(testBuild ? { distDir: testBuild } : {}),
+  ...(testMap ? { turbopack: { resolveAlias: { "@/data/shopify-map.json": testMap } } } : {}),
   devIndicators: false,
   // Retired product URLs, in both languages. English is unprefixed and Chinese lives under /zh (user 2026-10-13); the "/en" entries
   // only catch old links from before that change (src/proxy.ts then 308s /en/... to the unprefixed address).
