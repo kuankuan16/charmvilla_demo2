@@ -516,9 +516,11 @@ const buildCatalog = (lang: Locale) => {
     ? { file: "studio-reunion-gift-box-us-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
   // the unboxed view is off the page (user 2026-10-07: 「15 盒的圖 3 拿掉，包數沒有對」); studio-reunion-gift-box-us-unboxed-15.webp stays in git history
   // 實拍照（使用者 2026-10-14 給的金色盒蓋正面＋開箱 15 入，3 欄 5 排）：背景換成全站灰漸層、norm 0.45（docs/qa/2026-10-14-reunion-photos）；
+  // 正面實拍 v4 改用攝影師原檔 ~/Downloads/子村0920/0920-002.tif（4763px，使用者：「這張重做」），畫布 3200×4000。封面 listing-tea-reunion-gift-box-us-v2
+  // 由原檔參考重生（Nano Banana 2.1，第 4 次；拉環小、在右短邊中間從盒蓋縫伸出；使用者：「上商品圖」「注意不要太膨脹」「大小比例要跟其他張差不多大」），norm 0.45。
   // 「加入圖庫」：封面 → 正面實拍 → 斜角 → 開箱 15 入。紅色盒蓋的兩張實拍先不上線（使用者：「先不上線」）
   studioExtra["reunion-paper-gift-box"] = [
-    { file: "studio-reunion-gift-box-us-front-photo-v3.webp", zh: "正面實拍", en: "Front view", enAlt: "photograph of the closed box from above, its mustard linen lid embroidered with a turquoise goldfish" },
+    { file: "studio-reunion-gift-box-us-front-photo-v4.webp", zh: "正面實拍", en: "Front view", enAlt: "photograph of the closed box from above, its mustard linen lid embroidered with a turquoise goldfish" },
     ...studioExtra["reunion-paper-gift-box"],
     { file: "studio-reunion-gift-box-us-unboxed-15-photo-v3.webp", zh: "開箱・15 入", en: "Unboxed · 15 tea bags", enAlt: "photograph of the opened box with 15 gold tea bags in five rows of three" },
   ];
