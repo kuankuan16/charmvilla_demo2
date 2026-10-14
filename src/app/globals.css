@@ -799,6 +799,8 @@ main:has(> .policy-page) { background: #efefed; }
 .cart-subtotal strong { font-size: 21px; font-weight: 500; }
 .cart-note { margin: 0; font-size: 13px; line-height: 1.7; color: var(--color-stone-deep); }
 .cart-error { margin: 0; font-size: 15px; color: #8a2a2a; }
+.cart-messages { display: grid; gap: 8px; padding: 0 28px 16px; }
+.cart-notice { margin: 0; font-size: 15px; color: var(--color-ink); }
 .cart-checkout { width: 100%; }
 .cart-checkout:disabled { opacity: .45; cursor: default; }
 .cart-checkout:disabled:hover { background: transparent; color: var(--color-ink); border-color: rgb(31 31 31 / 0.3); }

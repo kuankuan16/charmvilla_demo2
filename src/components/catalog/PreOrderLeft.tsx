@@ -7,17 +7,23 @@ import { useT } from "@/i18n/LocaleProvider";
 import type { Product } from "@/data/catalog";
 
 const LIVE = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify";
-let request: Promise<Record<string, number> | null> | null = null;
-const fetchLeft = () => (request ??= fetch("/api/preorder").then((r) => (r.ok ? r.json() : null)).then((d: { left?: Record<string, number> } | null) => d?.left ?? null).catch(() => null));
+// one request shared by the tag and the button, read again when older than 30 s (the server counts at most every 30 s)
+let request: { at: number; p: Promise<Record<string, number> | null> } | null = null;
+export const fetchPreOrderLeft = () => {
+  if (!request || Date.now() - request.at > 30_000) request = { at: Date.now(), p: fetch("/api/preorder").then((r) => (r.ok ? r.json() : null)).then((d: { left?: Record<string, number> } | null) => d?.left ?? null).catch(() => null) };
+  return request.p;
+};
 
 /** Boxes left for a pre-order product: the live count once read, else the static one from the data. */
-export function usePreOrderLeft(product: Product) {
+export function usePreOrderLeft(product: Pick<Product, "slug" | "preOrderRemaining">) {
   const [left, setLeft] = useState(product.preOrderRemaining);
   useEffect(() => {
     if (!LIVE || product.preOrderRemaining === undefined) return;
     let on = true;
-    fetchLeft().then((m) => { if (on && m && m[product.slug] !== undefined) setLeft(m[product.slug]); });
-    return () => { on = false; };
+    const read = () => fetchPreOrderLeft().then((m) => { if (on && m && m[product.slug] !== undefined) setLeft(m[product.slug]); });
+    read();
+    const timer = window.setInterval(read, 30_000);
+    return () => { on = false; window.clearInterval(timer); };
   }, [product.slug, product.preOrderRemaining]);
   return left;
 }
@@ -27,4 +33,10 @@ export default function PreOrderLeft({ product }: { product: Product }) {
   const left = usePreOrderLeft(product);
   if (left === 0) return <span className="product-soldout tc">{t("售罄", "Sold out")}</span>;
   return <span className="product-preorder tc">{left !== undefined && left <= 10 ? t(`預購・剩餘 ${left} 盒`, `Pre-order · ${left} left`) : t("預購", "Pre-order")}</span>;
+}
+
+/** The card's tag on collection pages: 預購, or 售罄 once the shared allowance is used up (no count on cards). */
+export function CardPreOrderTag({ product, preOrder, soldOut }: { product: Pick<Product, "slug" | "preOrderRemaining">; preOrder: string; soldOut: string }) {
+  const left = usePreOrderLeft(product);
+  return left === 0 ? <span className="catalog-card-soldout tc">{soldOut}</span> : <span className="catalog-card-preorder tc">{preOrder}</span>;
 }

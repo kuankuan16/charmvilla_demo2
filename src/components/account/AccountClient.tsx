@@ -10,12 +10,14 @@ import type { Customer, Address } from "@/lib/shopify/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
 import { api, cartIdInBrowser } from "./account-api";
+import { SIGNED_OUT_EVENT } from "@/components/cart/CartProvider";
 
 type Tab = "login" | "register" | "recover";
 type Section = "profile" | "addresses" | "orders";
 const money = (m: { amount: string; currencyCode: string }) => m.currencyCode === "TWD" ? `NT$ ${Number(m.amount).toLocaleString("en-US")}` : new Intl.NumberFormat("en-US", { style: "currency", currency: m.currencyCode }).format(Number(m.amount));
-const statusZh: Record<string, string> = { PAID: "已付款", PENDING: "待付款", AUTHORIZED: "已授權", REFUNDED: "已退款", PARTIALLY_REFUNDED: "部分退款", VOIDED: "已取消", FULFILLED: "已出貨", UNFULFILLED: "備貨中", PARTIALLY_FULFILLED: "部分出貨" };
-const statusEn: Record<string, string> = { PAID: "Paid", PENDING: "Payment pending", AUTHORIZED: "Authorized", REFUNDED: "Refunded", PARTIALLY_REFUNDED: "Partially refunded", VOIDED: "Canceled", FULFILLED: "Shipped", UNFULFILLED: "Being prepared", PARTIALLY_FULFILLED: "Partially shipped" };
+// every financial and fulfillment status the Storefront API can return, so none shows as a raw code
+const statusZh: Record<string, string> = { PAID: "已付款", PENDING: "待付款", AUTHORIZED: "已授權", PARTIALLY_PAID: "部分付款", REFUNDED: "已退款", PARTIALLY_REFUNDED: "部分退款", VOIDED: "已取消", EXPIRED: "付款逾期", FULFILLED: "已出貨", UNFULFILLED: "備貨中", PARTIALLY_FULFILLED: "部分出貨", IN_PROGRESS: "處理中", ON_HOLD: "暫緩處理", OPEN: "待處理", PENDING_FULFILLMENT: "待出貨", SCHEDULED: "已排程", RESTOCKED: "已退回庫存" };
+const statusEn: Record<string, string> = { PAID: "Paid", PENDING: "Payment pending", AUTHORIZED: "Authorized", PARTIALLY_PAID: "Partially paid", REFUNDED: "Refunded", PARTIALLY_REFUNDED: "Partially refunded", VOIDED: "Canceled", EXPIRED: "Payment expired", FULFILLED: "Shipped", UNFULFILLED: "Being prepared", PARTIALLY_FULFILLED: "Partially shipped", IN_PROGRESS: "In progress", ON_HOLD: "On hold", OPEN: "Open", PENDING_FULFILLMENT: "Awaiting shipment", SCHEDULED: "Scheduled", RESTOCKED: "Restocked" };
 
 export default function AccountClient() {
   const { lang, t } = useT();
@@ -96,7 +98,6 @@ export default function AccountClient() {
                 <label className="tc">Email <span className="account-req">{required}</span><input id="login-email" name="email" type="email" autoComplete="email" required /></label>
                 <label className="tc">{t("密碼", "Password")} <span className="account-req">{required}</span><input id="login-password" name="password" type="password" autoComplete="current-password" required minLength={8} /></label>
                 <div className="account-row--between">
-                  <label className="account-check tc"><input id="login-remember" name="remember" type="checkbox" /> {t("記住我", "Remember me")}</label>
                   <button type="button" className="account-link tc" onClick={() => { setTab("recover"); setNotice(null); }}>{t("忘記密碼？", "Forgot password?")}</button>
                 </div>
                 <button type="submit" className="btn-pill tc" disabled={busy}>{t("登入", "Sign in")}</button>
@@ -126,7 +127,7 @@ export default function AccountClient() {
       <h1 className="tc account-title">{zh ? `${[customer.lastName, customer.firstName].filter(Boolean).join("") || customer.email}，您好` : `Hello, ${[customer.firstName, customer.lastName].filter(Boolean).join(" ") || customer.email}`}</h1>
       <div className="account-tabs" role="tablist">
         {([["profile", t("個人資料", "Profile")], ["addresses", t("地址簿", "Addresses")], ["orders", t("訂單", "Orders")]] as [Section, string][]).map(([id, label]) => <button key={id} role="tab" type="button" aria-selected={section === id} className="tc" onClick={() => { setSection(id); setNotice(null); }}>{label}</button>)}
-        <button type="button" className="tc account-logout" onClick={async () => { await api("/api/account/logout", { method: "POST" }); setCustomer(null); setTab("login"); }}>{t("登出", "Sign out")}</button>
+        <button type="button" className="tc account-logout" onClick={async () => { await api("/api/account/logout", { method: "POST" }); window.dispatchEvent(new Event(SIGNED_OUT_EVENT)); setCustomer(null); setTab("login"); }}>{t("登出", "Sign out")}</button>
       </div>
       {notice && <p className={`account-notice account-notice--${notice.kind} tc`} role="status">{notice.text}</p>}
       {section === "profile" && <form className="account-form" onSubmit={(e) => submit(e, "/api/account/profile", "PATCH", () => { setNotice({ kind: "ok", text: t("已更新。", "Updated.") }); load(); })}>

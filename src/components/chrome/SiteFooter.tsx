@@ -9,9 +9,10 @@ import SocialLinks from "@/components/ui/SocialLinks";
 import NewsletterForm from "./NewsletterForm";
 import { localeHref, translator, type Locale } from "@/i18n/config";
 
-// Sign-in and sign-up are not open until the store runs on Shopify (client's final answers 2026-10-12, E6): the Account link
-// is hidden in local commerce mode; /account itself still opens when visited directly.
-const accountOpen = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify";
+// Sign-in and sign-up stay hidden until they work (client's final answers 2026-10-12, E6): the Account link
+// shows only with NEXT_PUBLIC_ACCOUNTS_OPEN=true; /account itself still opens when visited directly.
+// its own switch, so checkout can open before customer accounts do: NEXT_PUBLIC_ACCOUNTS_OPEN=true once sign-in really works
+const accountOpen = process.env.NEXT_PUBLIC_ACCOUNTS_OPEN === "true";
 
 export default function SiteFooter({ lang, home = false }: { lang: Locale; home?: boolean }) {
   const t = translator(lang);

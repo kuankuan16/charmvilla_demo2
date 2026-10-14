@@ -28,9 +28,9 @@ export const CART = `
   }`;
 
 export const CART_QUERY = `${CART} query GetCart($id: ID!) { cart(id: $id) { ...Cart } }`;
-export const CART_CREATE = `${CART} mutation CartCreate($input: CartInput) { cartCreate(input: $input) { cart { ...Cart } userErrors { field message } } }`;
-export const CART_LINES_ADD = `${CART} mutation CartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) { cartLinesAdd(cartId: $cartId, lines: $lines) { cart { ...Cart } userErrors { field message } } }`;
-export const CART_LINES_UPDATE = `${CART} mutation CartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) { cartLinesUpdate(cartId: $cartId, lines: $lines) { cart { ...Cart } userErrors { field message } } }`;
+export const CART_CREATE = `${CART} mutation CartCreate($input: CartInput) { cartCreate(input: $input) { cart { ...Cart } userErrors { field message } warnings { code message } } }`;
+export const CART_LINES_ADD = `${CART} mutation CartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) { cartLinesAdd(cartId: $cartId, lines: $lines) { cart { ...Cart } userErrors { field message } warnings { code message } } }`;
+export const CART_LINES_UPDATE = `${CART} mutation CartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) { cartLinesUpdate(cartId: $cartId, lines: $lines) { cart { ...Cart } userErrors { field message } warnings { code message } } }`;
 export const CART_LINES_REMOVE = `${CART} mutation CartLinesRemove($cartId: ID!, $lineIds: [ID!]!) { cartLinesRemove(cartId: $cartId, lineIds: $lineIds) { cart { ...Cart } userErrors { field message } } }`;
 export const CART_BUYER_IDENTITY = `${CART} mutation CartBuyerIdentityUpdate($cartId: ID!, $buyerIdentity: CartBuyerIdentityInput!) { cartBuyerIdentityUpdate(cartId: $cartId, buyerIdentity: $buyerIdentity) { cart { ...Cart } userErrors { field message } } }`;
 

@@ -3,7 +3,9 @@
 //   SHOPIFY_STOREFRONT_ACCESS_TOKEN  public Storefront API token from the "Headless" sales channel
 //   SHOPIFY_API_VERSION              optional, defaults below (quarterly versions, e.g. 2026-07)
 //   NEXT_PUBLIC_COMMERCE_MODE        "shopify" once the three values above are set; otherwise the cart runs in
-//                                    "local" mode (items kept in the browser with the site's TWD list prices, no checkout).
+//                                    "local" mode (items kept in the browser with the site's USD list prices, no checkout).
+//   NEXT_PUBLIC_ACCOUNTS_OPEN        "true" shows the Account links (header, menu, footer) once sign-in really works (E6);
+//                                    separate from the mode so checkout can open first.
 export const shopifyConfig = {
   domain: process.env.SHOPIFY_STORE_DOMAIN ?? "",
   token: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN ?? "",

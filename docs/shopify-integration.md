@@ -12,7 +12,7 @@
 
 不可捏造 GID。空字串代表「Shopify 還沒建立」，shopify 模式下該商品會顯示「暫時無法加入購物車」。
 
-## 美國站上架的 12 個商品（`getProducts("en")`）
+## 美國站上架的商品（`getProducts("en")`）：要在 Shopify 建立的是 10 個販售商品；4 個只展示的不用建
 | slug | 選項（各自一個 variant） | 網站目前售價 |
 |---|---|---|
 | `reunion-paper-gift-box` | — | $170 |
@@ -23,11 +23,11 @@
 | `winter-blossom-gift-box` | 2 種茶 | $230／$260 |
 | `orchid-gift-box` | 2 種茶 × 金／粉盒蓋 = 4 | $300／$340 |
 | `purple-butterfly-gift-box` | —（預購） | $425 |
-| `cloud-coaster` | — | 仍是 NT$ 1,880，待客戶給美金價 |
-| `bird-chopstick-rest` | — | 沒有價格，按鈕顯示「Price coming soon」並停用 |
-| `ginkgo-teaspoon-gift-box` | — | 仍是 NT$ 760，待客戶給美金價 |
-| `wooden-chopsticks` | — | 仍是 NT$ 680，待客戶給美金價 |
-| `christmas-gift-box` 聖誕禮盒（限量版） | 橘／藍綠盒蓋（同價，2 個 variant 或 1 個 variant＋屬性，待定） | 價格待訂（2026-10-14 客戶：售價、茶款、盒子、預購數量後續補上） |
+| `cloud-coaster` | — | 只展示、不販售（客戶答覆 B1），不用建 |
+| `bird-chopstick-rest` | — | 只展示、不販售（B4），不用建 |
+| `ginkgo-teaspoon-gift-box` | — | 只展示、不販售（B2），不用建 |
+| `wooden-chopsticks` | — | 只展示、不販售（B3），不用建 |
+| `christmas-gift-box` 聖誕禮盒（限量版） | 盒蓋 `Candy Cane`／`Stocking`（各一個 variant，key 用這兩個英文字） | 價格待訂（2026-10-14 客戶：售價、茶款、盒子、預購數量後續補上） |
 | `snowflake-gift-box` 聖誕心意禮（限量版） | **1 個 variant**（三盒一組 $60）；每盒選的茶以 line attribute `Teas`（看得到）＋`_mix`（隱藏，網站用來顯示）帶進訂單，不為茶款建 variant | $60 |
 
 `shopify-map.json` 裡排在這 12 個後面的是美國站隱藏的台灣禮盒，保留 slug 以免日後恢復時找不到；不用在美國商店建立。
@@ -52,11 +52,11 @@
 - 程式：`src/lib/shopify/variants.ts`（`variantFor` 選項 → GID、`productForVariant` GID → 商品＋選項，供購物車顯示名稱）。
 
 ## Line attribute（結帳頁、訂單、通知信看得到）
-- 一律英文：選項以 `Tea`（有盒蓋顏色時 `Tea / Lid color`，包裝選項時 `Packaging`）加英文選項文字送出。
+- 一律英文：選項以 `Tea`（有盒蓋顏色時 `Tea / Lid color`，包裝選項時 `Packaging`，聖誕禮盒的盒蓋圖案 `Lid`）加英文選項文字送出；聖誕心意禮用 `Teas`（看得到）＋`_mix`（隱藏）。
 - 預購商品（目前紫斑蝶 `purple-butterfly-gift-box`，`preOrder: true`）加 `Pre-order: Yes`，讓倉庫分得出預購訂單。
 
 ## Shopify 後台要做的設定
-1. **商品**：建立上表 12 個商品與選項 variant，售價用 USD，與網站顯示價一致（`src/data/tea-gifts.ts`、`catalog.ts`）。目前網站沒有向 Storefront 查詢商品價格與庫存，改價必須兩邊一起改。
+1. **商品**：建立上表販售中的商品與選項 variant，售價用 USD，與網站顯示價**完全一致**（`src/data/tea-gifts.ts`、`catalog.ts`）：170、220、220、60、230/260、230/260、300/340、425、60。商品頁價格來自網站資料，購物車價格與小計來自 Shopify，兩邊不同網站不會自動發現，改價必須兩邊一起改。
 2. **Markets**：只開「United States」，幣別 USD。程式建立購物車與會員登入時都會帶 `buyerIdentity.countryCode = "US"`。
 3. **預購**：紫斑蝶要在 Shopify 設定可以在沒有庫存時繼續販售（「缺貨時繼續銷售」），或改用預購 app／selling plan。預計出貨日、是否先收全額、能否取消、與一般商品同車如何出貨，**要客戶決定**，決定前不要寫進網站或政策。
 4. **稅金**：從加州出貨，用 Shopify Tax 或其他方式在結帳時計算；購物車已寫「Taxes are calculated at checkout.」。茶葉是否屬免稅食品要客戶的會計確認，不可由 agent 推測。
@@ -78,7 +78,7 @@
 ## 預購剩餘數量（客戶答覆 B7：每個商品一個共用額度，隨訂單減少）
 - Shopify 的庫存是每個 variant 各算各的，沒辦法讓同一商品的幾個茶款／盒蓋顏色共用一個數量，所以由網站計算：**剩餘＝額度（`src/data/tea-gifts.ts` 的 `preOrderLimit`）－已下單盒數**。已下單盒數用 Admin API 讀訂單（`src/lib/shopify/preorder.ts`），取每個品項的 `currentQuantity`，所以取消訂單、刪除或退款的品項會把數量還回來。
 - 額度：團圓、京都版 100；年年有魚、花開富貴 20；春曉、暮雪、蝴蝶蘭、紫斑蝶 10。聖誕禮盒、聖誕心意禮還沒有額度，只顯示「預購」。
-- 商品頁的標籤（`PreOrderLeft`）讀 `/api/preorder`，最多 30 秒更新一次；剩 10 盒以下才顯示數字（使用者 2026-10-13），0 盒顯示售罄、按鈕停用。
+- 商品頁的標籤與按鈕、分類頁卡片（`PreOrderLeft`、`CardPreOrderTag`）讀 `/api/preorder`，每 30 秒重讀一次；剩 10 盒以下才顯示數字（使用者 2026-10-13），0 盒顯示售罄、按鈕停用。
 - 加入購物車與改數量時（`/api/cart` POST／PATCH）再算一次最新數字，整個購物車的盒數超過剩餘就擋下來（409 `preorder_full`，「這款預購只剩 N 盒」）。讀不到數字時（沒填 token、Shopify 暫時異常）不擋，避免整站不能買。
 - 只計算 `PREORDER_COUNT_SINCE`（預設 2026-10-17）之後的訂單，上線前的測試訂單不會被扣掉；上線日改了就改這個環境變數。`read_orders` 只看得到最近 60 天的訂單，預購期間超過 60 天要另外申請 `read_all_orders`。
 - Shopify 後台：這些預購商品的 variant 設成「缺貨時繼續銷售」或不追蹤庫存，數量控管交給網站。仍有一個小縫：兩個人同時結帳最後幾盒時，可能多賣 1–2 盒，因為額度檢查在加入購物車時，不在 Shopify 結帳頁。
@@ -92,3 +92,6 @@
 - `src/components/account/AccountClient.tsx` + `src/app/[lang]/(catalog)/account/page.tsx`：會員頁。
 - `src/components/account/AccountLinkForm.tsx` + `src/app/[lang]/(catalog)/account/reset|activate/[[...token]]/page.tsx`：重設密碼與帳號啟用頁。
 - 未設定時：購物車以網站上的售價在瀏覽器裡運作、結帳按鈕停用；會員頁、重設密碼頁、啟用頁的表單可看，送出時顯示「會員系統將於 Shopify 串接完成後啟用」。
+- 會員入口（頁首圖示、選單、頁尾）另有開關 `NEXT_PUBLIC_ACCOUNTS_OPEN=true`，和 `NEXT_PUBLIC_COMMERCE_MODE` 分開，結帳可以先開、會員確認能用再開（客戶答覆 E6）。兩個都是 `NEXT_PUBLIC_`，改完要重新部署才生效。
+- 結帳網址：`checkoutUrl` 會用 Shopify 的主網域。不要把 Shopify 主網域設成本站網域（會被導回 Next.js 而 404）；用 myshopify 網域或 `checkout.` 子網域。
+- 購物車行為：Shopify 暫時異常時保留瀏覽器裡的購物車編號，只有 Shopify 明確回答購物車不存在才清掉；登出會放掉購物車（共用電腦時下一位不會帶到上一位會員）；Shopify 若因庫存調整數量（`warnings`），購物車會顯示說明；錯誤訊息在空購物車時也看得到。

@@ -196,8 +196,11 @@ const build = (lang: Locale) => {
           t("防止跨站請求偽造（CSRF）攻擊，確保您的資料安全。", "Prevent cross-site request forgery (CSRF) attacks to keep your data safe."),
         ] },
         t("我們不使用任何非必要的追蹤、分析或廣告 Cookie（例如 Google Analytics 或 Meta Pixel）。由於本站僅依賴嚴格必要的 Cookie，因此不需要也不會顯示 Cookie 同意橫幅。", "We do not use any non-essential tracking, analytics, or advertising cookies (such as Google Analytics or Meta Pixel). Because our Site relies solely on strictly necessary cookies, we do not require or display a cookie consent banner."),
-        // D7 (client 2026-10-12, checked against the code 2026-10-13): the bag is kept in localStorage (CartProvider.tsx), not a cookie.
-        t("您的購物車內容會儲存在您瀏覽器的本機儲存空間（local storage），讓您再次造訪時仍能看到；這些資訊只留在您的裝置上，不會用於追蹤。", "Your shopping bag is saved in your browser's local storage on your device, so it is still there when you return. This information stays on your device and is not used for tracking."),
+        // D7 (client 2026-10-12, checked against the code): local mode keeps the bag in localStorage; with Shopify on, the bag is a Shopify
+        // cart and the browser keeps only its id (CartProvider.tsx). Neither is a cookie or used for tracking (cart audit 2026-10-14).
+        process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify"
+          ? t("您的購物車內容由 Shopify 保存，以便結帳；您的瀏覽器只會在本機儲存空間（local storage）記住購物車編號，讓您再次造訪時仍能看到。這些資訊不會用於追蹤。", "Your shopping bag is kept by Shopify so you can check out; your browser only remembers the bag's ID in its local storage, so the bag is still there when you return. This information is not used for tracking.")
+          : t("您的購物車內容會儲存在您瀏覽器的本機儲存空間（local storage），讓您再次造訪時仍能看到；這些資訊只留在您的裝置上，不會用於追蹤。", "Your shopping bag is saved in your browser's local storage on your device, so it is still there when you return. This information stays on your device and is not used for tracking."),
       ] },
       { id: "rights", heading: t("6. 您的資料權利（GDPR 與 CCPA）", "6. Your Data Rights (GDPR & CCPA)"), blocks: [
         t("依您的所在地，您可能有權存取我們持有的您的個人資料、將其轉移至新的服務，以及要求更正、更新或刪除您的個人資料。由於您的資料儲存於 Shopify，若您希望行使這些權利，請透過下方的電子郵件與我們聯絡。我們會透過 Shopify 管理後台處理您的請求，確保您的資料被妥善匯出或自其伺服器刪除。", "Depending on where you live, you may have the right to access the Personal Information we hold about you, to port it to a new service, and to ask that your Personal Information be corrected, updated, or erased. Because your data is stored in Shopify, if you wish to exercise these rights, please contact us at the email below. We will then process your request through our Shopify administrative dashboard to ensure your data is appropriately exported or deleted from their servers."),

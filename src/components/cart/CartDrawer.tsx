@@ -14,7 +14,8 @@ export default function CartDrawer() {
   const { lang, t } = useT();
   useEffect(() => { const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") cart.setOpen(false); }; document.addEventListener("keydown", onKey); return () => document.removeEventListener("keydown", onKey); }, [cart]);
   useEffect(() => { document.documentElement.classList.toggle("cart--open", cart.open); return () => document.documentElement.classList.remove("cart--open"); }, [cart.open]);
-  const currencyTotals = Array.from(cart.lines.reduce((totals, line) => {
+  // Shopify's subtotal once connected (CartProvider); in local mode the lines are summed per currency
+  const currencyTotals = cart.mode === "shopify" ? [[cart.currency, cart.subtotal] as [string, number]] : Array.from(cart.lines.reduce((totals, line) => {
     if (!line.onRequest) totals.set(line.currency, (totals.get(line.currency) ?? 0) + line.unitAmount * line.quantity);
     return totals;
   }, new Map<string, number>()));
@@ -24,7 +25,14 @@ export default function CartDrawer() {
       <button type="button" className="cart-backdrop" aria-label={t("關閉購物車", "Close bag")} onClick={() => cart.setOpen(false)} tabIndex={cart.open ? 0 : -1} />
       <aside className="cart-panel" role="dialog" aria-modal="true" aria-label={t("購物車", "Bag")} inert={!cart.open}>
         <header className="cart-head"><h2 className="tc">{t("購物車", "Bag")} <span>{cart.count}</span></h2><button type="button" onClick={() => cart.setOpen(false)} aria-label={t("關閉購物車", "Close bag")} className="cart-close">✕</button></header>
-        {cart.lines.length === 0 ? (
+        {/* above both the empty and the filled bag, so a first add that fails (pre-order full, piece not set up) still says why */}
+        {(cart.error || cart.notice) && <div className="cart-messages">
+          {cart.error && <p className="cart-error tc" role="alert">{cart.error}</p>}
+          {cart.notice && <p className="cart-notice tc" role="status">{cart.notice}</p>}
+        </div>}
+        {!cart.ready && cart.mode === "shopify" ? (
+          <div className="cart-empty tc" aria-busy="true"><p>{t("購物車載入中…", "Loading your bag…")}</p></div>
+        ) : cart.lines.length === 0 ? (
           <div className="cart-empty tc"><p>{t("購物車是空的。", "Your bag is empty.")}</p><Link href={categoryHref("tea", lang)} onClick={() => cart.setOpen(false)} className="catalog-button tc">{t("選購茶包禮盒", "Browse tea gifts")}</Link></div>
         ) : (
           <>
@@ -49,8 +57,8 @@ export default function CartDrawer() {
                 </li>
               ))}
             </ul>
-            <footer className="cart-foot">
-              {cart.error && <p className="cart-error tc" role="alert">{cart.error}</p>}
+            <footer className="cart-foot" aria-busy={cart.busy}>
+              {cart.busy && <p className="cart-note tc" role="status">{t("更新中…", "Updating…")}</p>}
               <div className="cart-subtotal"><span className="tc">{t("小計", "Subtotal")}</span><strong>{currencyTotals.map(([currency, amount]) => cart.formatPrice(amount, currency)).join(" + ")}</strong></div>
               {/* sales tax is worked out by Shopify at checkout from the delivery address (2026-10-13 commerce audit) */}
               {!mixedCurrencies && cart.currency === "USD" && <p className="cart-note tc">{t("稅金於結帳時計算。", "Taxes are calculated at checkout.")}</p>}
