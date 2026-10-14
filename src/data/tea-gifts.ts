@@ -190,10 +190,10 @@ export const teaGifts: TeaGift[] = [
     notice: [embroideryNote], // 出貨時間改用全部預購商品共用的 preOrderShipping（客戶答覆 B7，2026-10-12；取代原本暫定的「12 月上旬起陸續出貨」）
     en: { name: "Christmas Delight", description: "Christmas Delight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags, three each of four tea varieties, presented in a paper drawer box with an embroidered woven-fabric lid. Choose an Orange or Teal lid for a warm holiday gift.", summary: "12 Goldfish Tea Bags per box · Four-tea assortment" } },
   // 雪花迷人禮（三盒組）：2026-10-13 agent 推理暫定，待客戶確認（使用者 2026-10-13：「先上架」）。名稱、盒型、尺寸、重量、茶款與文案皆為暫定值，
-  // 價格未定（priceTbd：顯示「價格待訂」、購物按鈕停用）；預購但不設額度、不顯示剩餘數。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
+  // 價格與茶款已由使用者轉達（2026-10-14：「三件一組 $60」「茶款（5 選 1）」玫瑰烏龍、東方美人、紅玉、金萱、玫瑰蜜香）；不預購。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
   // 每盒 2 包同一種茶、三盒一組，寫法同已隱藏的心有愛（heart-gift-box）。圖庫只用自己的 3 張（catalog.ts），沒有專屬情境照。
-  { officialId: 9002, slug: "snowflake-gift-box", /* not a pre-order (user 2026-10-13: 「雪花迷人禮（三盒組）不用預購」) */ teaTbd: true, name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], priceTbd: true,
-    choices: [rose, honey].map(label => ({ label, contents: [count(label, 2)] })),
+  { officialId: 9002, slug: "snowflake-gift-box", /* not a pre-order (user 2026-10-13: 「雪花迷人禮（三盒組）不用預購」) */ name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], usd: 60,
+    choices: [rose, beauty, ruby, jinxuan, honey].map(label => ({ label, contents: [count(label, 2)], price: 60 })),
     description: "CHARM VILLA「雪花迷人禮」每盒 2 包金魚茶包，三盒一組。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。",
     en: { name: "Snowflake Charming Gift (Set of 3)", description: "Snowflake Charming Gift is a set of three CHARM VILLA boxes, each holding two Goldfish Tea Bags of your selected tea. The white boxes carry rose-gold foil snowflakes and an embossed goldfish, sealed with a clear sticker — easy to share with friends during the holidays.", summary: "2 Goldfish Tea Bags per box · Set of 3 boxes · Choose one tea" } },
   { officialId: 1072, slug: "small-moon-tea-gift-box", hidden: true, sceneFile: "scene-small-moon-tea-gift-box.webp", name: "小鮮月禮盒｜純茶包", english: "SMALL MOON / TEA", series: "2026 中秋節限定商品", pieces: 6, box: "紙盒", dimensions: smallBox, weight: 99, contents: [count(rose, 3), count(honey, 3)], description: "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
