@@ -1,0 +1,58 @@
+{
+  "note": "The first mobile run recorded one canceled Image request (ERR_ABORTED) while resizing the previous desktop document and navigating. The target mobile main image loaded, and there were no app errors. Rechecked mobile with about:blank between viewport configurations to isolate navigation cancellation from page loads.",
+  "observation": {
+    "id": "en-mobile",
+    "url": "https://charmvilla-demo2.vercel.app/products/ginkgo-teaspoon-gift-box",
+    "title": "Ginkgo Teaspoon",
+    "viewport": [
+      390,
+      844
+    ],
+    "dpr": 2,
+    "currentSrc": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+    "natural": [
+      390,
+      487
+    ],
+    "frame": [
+      375,
+      468.75
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "reduced": false,
+    "requests": [
+      {
+        "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+        "bytes": 300
+      },
+      {
+        "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+        "bytes": 300
+      }
+    ],
+    "errors": [],
+    "failedRequests": [
+      {
+        "method": "Network.loadingFailed",
+        "params": {
+          "requestId": "85533.597",
+          "timestamp": 1063430.464713,
+          "type": "Image",
+          "errorText": "net::ERR_ABORTED",
+          "canceled": true
+        },
+        "sessionId": "AE09158BFFD70D3250F2CF0370A5E671"
+      }
+    ],
+    "assertions": {
+      "source": true,
+      "dimensions": true,
+      "layout": true,
+      "images": true,
+      "errors": true,
+      "network": false
+    }
+  }
+}

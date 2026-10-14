@@ -1,0 +1,286 @@
+[
+  {
+    "id": "en-desktop",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "dpr": 1,
+    "title": "Ginkgo Teaspoon",
+    "currentSrc": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+    "natural": [
+      1792,
+      2240
+    ],
+    "frame": [
+      587.2265625,
+      856
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": true,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+        "bytes": 163238
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "zh-retina",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "dpr": 2,
+    "title": "銀杏茶匙",
+    "currentSrc": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+    "natural": [
+      1792,
+      2240
+    ],
+    "frame": [
+      587.2265625,
+      856
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": true,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+        "bytes": 300
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+        "bytes": 2094
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "en-tall",
+    "viewport": [
+      1024,
+      1400
+    ],
+    "dpr": 1,
+    "title": "Ginkgo Teaspoon",
+    "currentSrc": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+    "natural": [
+      1792,
+      2240
+    ],
+    "frame": [
+      415.4140625,
+      1256
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": true,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+        "bytes": 300
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+        "bytes": 0
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "en-wide",
+    "viewport": [
+      1940,
+      1280
+    ],
+    "dpr": 2,
+    "title": "Ginkgo Teaspoon",
+    "currentSrc": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+    "natural": [
+      1792,
+      2240
+    ],
+    "frame": [
+      795.3046875,
+      1136
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": true,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+        "bytes": 300
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+        "bytes": 0
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "en-mobile",
+    "viewport": [
+      390,
+      844
+    ],
+    "dpr": 2,
+    "title": "Ginkgo Teaspoon",
+    "currentSrc": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+    "natural": [
+      390,
+      487
+    ],
+    "frame": [
+      375,
+      468.75
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": false,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+        "bytes": 10073
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+        "bytes": 0
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "zh-mobile-reduced",
+    "viewport": [
+      390,
+      844
+    ],
+    "dpr": 3,
+    "title": "銀杏茶匙",
+    "currentSrc": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+    "natural": [
+      390,
+      487
+    ],
+    "frame": [
+      375,
+      468.75
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": false,
+    "reduced": true,
+    "requests": [
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+        "bytes": 17937
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=384&q=75",
+        "bytes": 2813
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "mobile-boundary",
+    "viewport": [
+      767,
+      1000
+    ],
+    "dpr": 1,
+    "title": "Ginkgo Teaspoon",
+    "currentSrc": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+    "natural": [
+      767,
+      958
+    ],
+    "frame": [
+      752,
+      940
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": false,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+        "bytes": 0
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+        "bytes": 0
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=384&q=75",
+        "bytes": 0
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "id": "desktop-boundary",
+    "viewport": [
+      768,
+      1000
+    ],
+    "dpr": 1,
+    "title": "Ginkgo Teaspoon",
+    "currentSrc": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+    "natural": [
+      1792,
+      2240
+    ],
+    "frame": [
+      309.0625,
+      856
+    ],
+    "opacity": "1",
+    "overflow": false,
+    "broken": [],
+    "sourceActive": true,
+    "reduced": false,
+    "requests": [
+      {
+        "url": "http://localhost:3138/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+        "bytes": 300
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+        "bytes": 0
+      },
+      {
+        "url": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=384&q=75",
+        "bytes": 0
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  }
+]

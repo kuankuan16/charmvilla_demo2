@@ -65,6 +65,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Git 與多 agent 安全
 
+- 使用者 2026-10-14 明確指定：本專案後續修改的 GitHub 目標為 `https://github.com/tentenco/charmvilla_shopify_official`，本機 `origin` 的 fetch／push URL 使用 `https://github.com/tentenco/charmvilla_shopify_official.git`。推送前確認目標，不再使用舊 repo 名稱 `charmvilla_demo2`；發布時機仍依「溝通與授權」及最新使用者指示。
 - `.claude/worktrees/` 是 Claude Code 的本機工作樹，不是可直接提交的專案內容。不要批次加入、搬動或刪除 `.claude/`。
 - 發現其他工作樹有未提交變更或仍在執行的 agent 時，不得在同一工作樹或同一批檔案並行修改。先閱讀 `git -C <worktree> status`、diff 與程序狀態，再由使用者決定要完成、保存或放棄原工作。
 - 不得直接合併所有 `--no-merged` 分支。Claude 過去保留了多個互相覆蓋的設計實驗；每個分支都要和最新 `origin/main`、較新的使用者決策及目前 UI 比對。
