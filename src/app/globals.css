@@ -1562,7 +1562,7 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-number { visibility: hidden; } /* the 01–05 numbers go; the column stays so the rail, nodes and text keep their places (user 2026-10-14: 「把數字拿掉」) */
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
-.brew-icon { display: block; justify-self: end; width: 88px; height: 88px; /* 72 → 88 for the finer 3/4-view drawings (2026-10-14) */ color: #a6a6a2; transition: color .45s ease; }
+.brew-icon { display: block; justify-self: end; align-self: center; /* midway between the rules above and below (user 2026-10-14: 「插畫的位置居於上下線條的中間」) */ width: 88px; height: 88px; /* 72 → 88 for the finer 3/4-view drawings (2026-10-14) */ color: #a6a6a2; transition: color .45s ease; }
 /* grey until the progress line reaches the step (or the row is hovered), then gold like its node (user 2026-10-13: 「改成本來灰色，滑到變金色」) */
 .brew-steps li.is-progressed .brew-icon, .brew-steps li:hover .brew-icon { color: var(--color-gold); }
 .brew-icon svg { display: block; width: 100%; height: 100%; }
