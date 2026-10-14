@@ -1,0 +1,218 @@
+{
+  "deployment": "dpl_2yd5e4hb4ALp8iB8iWwhR8NFrbjh",
+  "sha": "4b1e83ac2be3f64c064746c590f97cca20b47a7d",
+  "checkedAt": "2026-10-14T10:44:41.357Z",
+  "cases": [
+    {
+      "id": "en-desktop",
+      "url": "https://charmvilla-demo2.vercel.app/products/ginkgo-teaspoon-gift-box",
+      "title": "Ginkgo Teaspoon",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "dpr": 2,
+      "currentSrc": "https://charmvilla-demo2.vercel.app/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+      "natural": [
+        1792,
+        2240
+      ],
+      "frame": [
+        587.2265625,
+        856
+      ],
+      "opacity": "1",
+      "overflow": false,
+      "broken": [],
+      "reduced": false,
+      "requests": [
+        {
+          "url": "https://charmvilla-demo2.vercel.app/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+          "bytes": 300
+        },
+        {
+          "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+          "bytes": 300
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": {
+        "source": true,
+        "dimensions": true,
+        "layout": true,
+        "images": true,
+        "errors": true,
+        "network": true
+      }
+    },
+    {
+      "id": "zh-desktop",
+      "url": "https://charmvilla-demo2.vercel.app/zh/products/ginkgo-teaspoon-gift-box",
+      "title": "銀杏茶匙",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "dpr": 2,
+      "currentSrc": "https://charmvilla-demo2.vercel.app/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+      "natural": [
+        1792,
+        2240
+      ],
+      "frame": [
+        587.2265625,
+        856
+      ],
+      "opacity": "1",
+      "overflow": false,
+      "broken": [],
+      "reduced": false,
+      "requests": [
+        {
+          "url": "https://charmvilla-demo2.vercel.app/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+          "bytes": 300
+        },
+        {
+          "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+          "bytes": 300
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": {
+        "source": true,
+        "dimensions": true,
+        "layout": true,
+        "images": true,
+        "errors": true,
+        "network": true
+      }
+    },
+    {
+      "id": "en-tall",
+      "url": "https://charmvilla-demo2.vercel.app/products/ginkgo-teaspoon-gift-box",
+      "title": "Ginkgo Teaspoon",
+      "viewport": [
+        1024,
+        1400
+      ],
+      "dpr": 1,
+      "currentSrc": "https://charmvilla-demo2.vercel.app/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+      "natural": [
+        1792,
+        2240
+      ],
+      "frame": [
+        415.4140625,
+        1256
+      ],
+      "opacity": "1",
+      "overflow": false,
+      "broken": [],
+      "reduced": false,
+      "requests": [
+        {
+          "url": "https://charmvilla-demo2.vercel.app/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+          "bytes": 300
+        },
+        {
+          "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=128&q=75",
+          "bytes": 300
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": {
+        "source": true,
+        "dimensions": true,
+        "layout": true,
+        "images": true,
+        "errors": true,
+        "network": true
+      }
+    },
+    {
+      "id": "en-mobile",
+      "url": "https://charmvilla-demo2.vercel.app/products/ginkgo-teaspoon-gift-box",
+      "title": "Ginkgo Teaspoon",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "currentSrc": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+      "natural": [
+        390,
+        487
+      ],
+      "frame": [
+        375,
+        468.75
+      ],
+      "opacity": "1",
+      "overflow": false,
+      "broken": [],
+      "reduced": false,
+      "requests": [
+        {
+          "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=828&q=90",
+          "bytes": 300
+        },
+        {
+          "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=256&q=75",
+          "bytes": 300
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": {
+        "source": true,
+        "dimensions": true,
+        "layout": true,
+        "images": true,
+        "errors": true,
+        "network": true
+      }
+    },
+    {
+      "id": "zh-mobile-reduced",
+      "url": "https://charmvilla-demo2.vercel.app/zh/products/ginkgo-teaspoon-gift-box",
+      "title": "銀杏茶匙",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 3,
+      "currentSrc": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+      "natural": [
+        390,
+        487
+      ],
+      "frame": [
+        375,
+        468.75
+      ],
+      "opacity": "1",
+      "overflow": false,
+      "broken": [],
+      "reduced": true,
+      "requests": [
+        {
+          "url": "https://charmvilla-demo2.vercel.app/_next/image?url=%2Fmedia%2Fsite%2Fstudio2k-ginkgo-teaspoon-gift-box-v5.webp&w=1200&q=90",
+          "bytes": 18325
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": {
+        "source": true,
+        "dimensions": true,
+        "layout": true,
+        "images": true,
+        "errors": true,
+        "network": true
+      }
+    }
+  ]
+}

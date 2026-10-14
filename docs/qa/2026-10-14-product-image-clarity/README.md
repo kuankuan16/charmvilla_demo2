@@ -28,4 +28,14 @@
 
 ## 範圍與狀態
 
-本機驗證完成；使用者已指示「直接發布」，本次正提交並推送 main，等待 Production 與線上驗證。未另建 Preview。共同 ProductGallery 的桌機主圖皆採此修正；資產、商品文案、圖片裁切與版型未變。Git 推送目標仍為 `tentenco/charmvilla_shopify_official`。
+使用者指示「直接發布」後，實作 commit `4b1e83a` 已推送到 main，Git 觸發 Production `dpl_2yd5e4hb4ALp8iB8iWwhR8NFrbjh`，狀態 READY 且 aliasAssigned=true，線上驗證通過。未另建 Preview。共同 ProductGallery 的桌機主圖皆採此修正；資產、商品文案、圖片裁切與版型未變。Git 推送目標仍為 `tentenco/charmvilla_shopify_official`。
+
+## Production 證據
+
+- 實作 SHA：`4b1e83ac2be3f64c064746c590f97cca20b47a7d`；deployment URL：`https://charmvilla-demo2-myhze96ww-tentenco.vercel.app`。詳細 API 回讀見 `production/deployment.json`。
+- `production/browser-report.json`：實際 alias `https://charmvilla-demo2.vercel.app` 中英文 1440×1000、390×844、較高桌機 1024×1400，共 5 案例，DPR 1–3；中文手機 reduced motion。桌機載入原圖 1792×2240，手機仍選 w=828 或 1200 的 Next 最佳化圖片。各案例無水平溢出、broken image、console/runtime error 或載入失敗。
+- 首次由桌機切到手機 viewport 後立刻導航，曾記錄一個被導航取消的圖片請求 `ERR_ABORTED`（主圖成功載入）。保留於 `production/navigation-observation.json`。改以 about:blank 隔開測試 viewport 後，重跑兩個手機案例均零 failed request；未修改應用程式或忽略網路錯誤。
+- `production/interactions.json`：春曉桌機 Enter 選縮圖、切粉紅選項重設第一張、下一張與淡入完成，零 app error。
+- 已逐張檢視 Production 桌機、較高桌機與中文手機截圖；圖片清晰、原裁切與版型保留。
+- 發布後 API 回讀顯示，專案在本次發布前已綁定 `www.charmvilla.com` 與 `charmvilla.com`（裸網域轉向 www），因此 Git Production 同時更新這些既有 alias。本次未更改 domain／DNS 設定。`production/existing-custom-domain.json` 是 www 商品頁的只讀瀏覽器確認：同樣載入 1792×2240 原圖。
+- 本紀錄對應上述實作 commit；後續只補 QA／交接的文件 commit 不改程式。未來仍應即時查核 Git HEAD 與 Vercel alias。

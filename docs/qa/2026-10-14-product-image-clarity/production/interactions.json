@@ -1,0 +1,16 @@
+{
+  "keyboard": {
+    "active": 1,
+    "src": "https://charmvilla-demo2.vercel.app/media/site/official-gift-front-spring-dawn-gift-box-blue-cutout-v3-even2.webp"
+  },
+  "pink": {
+    "active": 0,
+    "src": "https://charmvilla-demo2.vercel.app/media/site/studio-spring-dawn-gift-box-pink-cover-even2.webp"
+  },
+  "next": {
+    "active": 1,
+    "src": "https://charmvilla-demo2.vercel.app/media/site/official-gift-front-spring-dawn-gift-box-pink-cutout-v3-even2.webp",
+    "overflow": false
+  },
+  "errors": []
+}

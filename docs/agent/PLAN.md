@@ -1,23 +1,19 @@
 # Active Agent Plan
 
-Status: `in_progress`（2026-10-14：使用者明確指示「直接發布」，發布已通過本機驗證的商品主圖清晰度修正。）
+Status: `idle`（2026-10-14：使用者指示「直接發布」；商品頁桌機主圖清晰度已推送並部署 Production，線上中英文桌機／手機與互動驗證通過。）
 
-## 本次發布
+## 新任務模板
 
-- Objective：將桌機主圖清晰度修正推送至 `tentenco/charmvilla_shopify_official`，由 Git 觸發 `tentenco/charmvilla-demo2` Production，並檢查線上頁面。
-- Scope：`ProductGallery.tsx`、本次 QA 與已授權的 GitHub 目標／交接文件；既有商品圖及版型保留。
-- Release authorization：使用者 2026-10-14「直接發布」。
+- Objective：待下一個任務。
+- Scope：待下一個任務。
 
 | Step | Proof of completion | Status |
 | --- | --- | --- |
-| 確認發布範圍、remote、Vercel Git link 與工作樹 | origin 為新 repo；Vercel main 連到同 repo；其他 11 個 worktree 乾淨 | `completed` |
-| 本機完整驗證 | Node 24 npm run check、8 組 browser QA 與互動／失敗案例已通過 | `completed` |
-| Commit 並 push main | 僅提交本次程式、文件與 QA | `in_progress` |
-| 等待 Git 觸發 Production，確認 commit 與 alias | 精確 SHA、READY、charmvilla-demo2.vercel.app | `pending` |
-| 線上中英文桌機／手機驗證及交接紀錄 | 原圖 currentSrc、載入尺寸、console／request、視覺與互動證據 | `pending` |
+| 待填 | 待填 | `pending` |
 
-- Attempts and re-plan：無。
-- Next safe action：推送本次 commit，追蹤該 SHA 的 Production；完成後補線上 QA 與交接。
+- Attempts and re-plan：發布的手機 QA 曾將 viewport 切換後導航造成的 canceled image 當成載入失敗；已保留原始觀測，以 about:blank 隔開測試後重跑成功，未修改 app。詳見本次 QA。
+- Last completed：實作 commit `4b1e83a`、Production `dpl_2yd5e4hb4ALp8iB8iWwhR8NFrbjh` READY；5 組線上 QA、春曉互動與既有 www domain 只讀確認通過。發布證據見 CODEX_HANDOFF 與 `docs/qa/2026-10-14-product-image-clarity/production/`；本記錄對應實作 commit，後續文件 commit 不改程式。
+- Next safe action：依下一個使用者指示開始；推送目標為 `tentenco/charmvilla_shopify_official`。即時查核 Git／Vercel；目前 `www.charmvilla.com` 已綁同一專案，Production 會同步更新既有 alias。以下歷史待辦保留，不自行續做。
 
 ## 以下為既有任務紀錄（保留待辦；不代表目前 Git 狀態）
 
