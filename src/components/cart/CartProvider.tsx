@@ -48,7 +48,7 @@ const lineAttributes = (product: Product, option?: number, mix?: number[]) => {
   if (mix) return { attributes: [{ key: "Teas", value: mixText(en, mix, ", ", " × ") }, { key: "_mix", value: mix.join(",") }, ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])] };
   const label = option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label;
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
-  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid color" ? "Lid color" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
+  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid" ? "Lid" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
   const attrs = [...(label ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
   return attrs.length ? { attributes: attrs } : {};
 };

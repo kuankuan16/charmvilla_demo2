@@ -21,8 +21,8 @@
     "variants": {
       "Rose Oolong Tea": "",
       "Rose & Honey-Scented Black Tea": "",
-      "Ruby Black Tea (Red Jade / Ruby No. 18)": "",
-      "Oriental Beauty Tea (White Tip Oolong)": ""
+      "Ruby Black Tea": "",
+      "Oriental Beauty Tea": ""
     }
   },
   "spring-dawn-gift-box": {
@@ -31,8 +31,8 @@
     "variants": {
       "First-Prize Rose Oolong Tea / Blue": "",
       "First-Prize Rose Oolong Tea / Pink": "",
-      "Oriental Beauty Tea (White Tip Oolong) / Blue": "",
-      "Oriental Beauty Tea (White Tip Oolong) / Pink": ""
+      "Oriental Beauty Tea / Blue": "",
+      "Oriental Beauty Tea / Pink": ""
     }
   },
   "winter-blossom-gift-box": {
@@ -40,7 +40,7 @@
     "variantId": "",
     "variants": {
       "First-Prize Rose Oolong Tea": "",
-      "Oriental Beauty Tea (White Tip Oolong)": ""
+      "Oriental Beauty Tea": ""
     }
   },
   "orchid-gift-box": {
@@ -49,8 +49,8 @@
     "variants": {
       "First-Prize Rose Oolong Tea / Gold": "",
       "First-Prize Rose Oolong Tea / Pink": "",
-      "Oriental Beauty Tea (White Tip Oolong) / Gold": "",
-      "Oriental Beauty Tea (White Tip Oolong) / Pink": ""
+      "Oriental Beauty Tea / Gold": "",
+      "Oriental Beauty Tea / Pink": ""
     }
   },
   "purple-butterfly-gift-box": {
@@ -77,8 +77,8 @@
     "handle": "",
     "variantId": "",
     "variants": {
-      "Orange": "",
-      "Teal": ""
+      "Candy Cane": "",
+      "Stocking": ""
     }
   },
   "reunion-paulownia-gift-box": {

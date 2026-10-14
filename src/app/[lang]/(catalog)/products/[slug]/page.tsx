@@ -137,8 +137,10 @@ export default async function ProductPage({ params }: Props) {
     <h2 id="specs-title" className="tc">{specTitle}</h2>
     <dl className="product-keyfacts">
       {specFacts.map((f) => {
-        const isTeaContents = f.label === t("盒內茶款", "Tea selection") || f.label === t("茶款選擇（每盒擇一）", "Choose one tea variety");
-        return <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{isTeaContents ? teaItem(item) : smallParen(item)}</li>)}</ul> : isTeaContents ? teaItem(f.value) : f.value}</dd></div>;
+        const isTeaContents = f.label === t("盒內茶款", "Tea selection") || f.label === t("可選茶款", "Available teas");
+        // the choice rows read across the column, label above (client tea-names review 2026-10-13 §1)
+        const wide = f.label === t("可選茶款", "Available teas") || f.label === t("選茶方式", "Tea selection");
+        return <div key={f.label} className={wide ? "product-fact-wide" : undefined}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{isTeaContents ? teaItem(item) : smallParen(item)}</li>)}</ul> : isTeaContents ? teaItem(f.value) : f.value}</dd></div>;
       })}
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
       {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Goldfish Tea Bag design awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
@@ -198,6 +200,8 @@ export default async function ProductPage({ params }: Props) {
           {/* On Chinese pages the English name sits above the Chinese one; on English pages the name itself is English. */}
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
+          {/* a set sold only as a set: its unit under the name (client tea-names review 2026-10-13 §2) */}
+          {product.giftBox?.mixBoxes && <p className="product-setline tc">{t(`${product.giftBox.mixBoxes} 盒一組 · 每盒 ${product.giftBox.pieces} 包`, `Set of ${product.giftBox.mixBoxes} boxes · ${product.giftBox.pieces} tea bags per box`)}</p>}
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
           {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <span className="product-preorder tc">{preOrderLabel}</span>}</p>}
           {product.displayOnly && product.soldOut && <p className="product-price"><span className="product-preorder product-soldtag tc">{t("售完", "Sold out")}</span></p>}
