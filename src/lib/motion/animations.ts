@@ -221,10 +221,17 @@ function brewProcess(el: HTMLElement): Cleanup {
   const nodePositions = () => nodes.map((node, index) => steps[index].offsetTop + node.offsetTop + node.offsetHeight / 2);
   let positions = nodePositions();
   const visual = el.querySelector<HTMLElement>(".brew-visual");
+  const phone = () => window.matchMedia("(max-width: 767px)").matches;
   const pinnedBottom = () => { // phones: the figure pins under the header and the steps slide beneath it, so the last step must stop clear of it (and of the fade below it)
-    if (!visual || !window.matchMedia("(max-width: 767px)").matches) return null;
+    if (!visual || !phone()) return null;
     return Math.round((parseFloat(getComputedStyle(visual).top) || 0) + visual.offsetHeight + 48);
   };
+  // where the first node starts the rail. Desktop 74% → 60% (2026-10-15, reviewed in the browser after the pinned cup landed): at 74%
+  // the kettle poured while the cup's bowl was still below the fold (1440×900: the figure's top at 485px, the bowl at 851–1008px), so
+  // the water rose unseen until step 01 was nearly over; at 60% the whole cup and its 150 mL label are in view before the pour.
+  // Phones keep 74%: there the figure is pinned under the header and the steps pass beneath it, and starting lower would push the
+  // active step under the figure while its drawing is still playing.
+  const railStart = () => phone() ? "74%" : "60%";
   const paintProgress = (progress: number) => {
     list.style.setProperty("--brew-progress", progress.toFixed(4));
     const travel = (positions[positions.length - 1] - positions[0]) * progress;
@@ -244,7 +251,7 @@ function brewProcess(el: HTMLElement): Cleanup {
   paintProgress(0);
   const progress = ScrollTrigger.create({
     trigger: list,
-    start: () => `${positions[0]}px 74%`,
+    start: () => `${positions[0]}px ${railStart()}`,
     end: () => { const bottom = pinnedBottom(); return `${positions[positions.length - 1]}px ${bottom === null ? "55%" : `${bottom}px`}`; }, // 38% → 55% (2026-10-14): the last step and the photograph arrive while the pinned cup is still fully in view
     scrub: 1.1,
     onUpdate: (self) => paintProgress(self.progress),

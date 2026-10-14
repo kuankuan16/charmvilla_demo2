@@ -2,6 +2,12 @@
 
 使用者糾正轉成可執行規則，最新放最上方。新條目記錄「來源／遇到 X，應做 Y／如何驗證」；不要把 agent 的推測寫成使用者要求。同一錯誤重犯時重寫原條目，已過時的規則註明取代來源再移除。
 
+## 2026-10-15
+
+- 當用瀏覽器量 sticky／ScrollTrigger 的釘住位置時，先關掉電子報視窗（點 `[aria-label="關閉電子報視窗"]` 或設 `localStorage` `cv-newsletter-popup-seen=1`）：它把 `html/body` 設成 `overflow: hidden`，sticky 會失效、數字看起來像「沒釘住」而其實是量錯。驗證：`getComputedStyle(document.body).overflow` 不是 `hidden` 再量 figure top。（來源：本輪 agent 量測沖泡區時的誤判，非使用者指示。）
+- 當驗收捲動動畫時，截圖要標實際的進度變數值（例如 `--brew-stage`），不能只信檔名；「01-pour」可能是步驟 1 結束的畫面。起點要在軸線 start（stage 0）確認「第一個動作發生時主體在畫面內」（這次：壺倒水時杯身要在摺線上），桌機 1440×900 與 1800×1125 都量。（來源：本輪 Ego Lite 檢視發現 74% 起點讓水位在畫面外上升。）
+- 當用 Ego Lite Browser 做視覺檢視時，它的視窗固定 1800×1125（CDP `Emulation.setDeviceMetricsOverride` 無效），`scrollTo` 後 `page.screenshot()` 會是空白，改用 `page.cdp("Page.captureScreenshot")`；要精確尺寸（1440×900、390×844）用 agent-browser `set viewport`。（來源：本輪工具行為，非使用者指示。）
+
 ## 2026-10-14
 
 - 遇到「原圖清楚、桌機商品圖模糊」，先比對 currentSrc、實際解碼像素、DPR 與 object-fit 的縮放；高容器使用 cover 時，尺寸需求可能由高度決定，不能只用欄寬寫 sizes。原圖已是適當大小的壓縮 WebP 時，可讓桌機主圖直接用原圖、手機與縮圖保留最佳化；同時驗證沒有重複 preload，避免重畫商品或只提高 quality 掩蓋尺寸不足。

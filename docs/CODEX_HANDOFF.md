@@ -4,9 +4,9 @@
 
 ## 接手時先確認
 
-- 本輪 Agent 文件整理開始時，`main` 與 fetch 後的 `origin/main` 均為 `e83cc1b`，工作樹乾淨；本輪修改尚未 commit／push／部署。
+- 2026-10-15 沖泡區整合：`main` 在 `e83cc1b` 之後多了 `fe38a98`（merge `brew-cup-scroll`）、`297936e`（agent 文件整理）與沖泡區調整 commit。push／部署結果以下方「最近已交付」與 [沖泡區整合 QA](qa/2026-10-15-brew-cup-integration/README.zh-TW.md) 為準；接手時仍要 `git fetch` 回讀。
 - `origin` fetch／push：`https://github.com/tentenco/charmvilla_shopify_official.git`。Vercel 專案名稱仍是 `tentenco/charmvilla-demo2`，不可因 Git repo 改名就另建部署專案。
-- 另有 `.claude/worktrees/brew-cup`，分支 `brew-cup-scroll`、HEAD `c8380b9`；本輪讀取 status 為乾淨。這不是合併或刪除它的指示，也不代表已確認執行者狀態。
+- `.claude/worktrees/brew-cup`（分支 `brew-cup-scroll`、`c8380b9`）已於 2026-10-15 合併進 `main`（`fe38a98`）。工作樹、分支與其 dev server（port 3027）本輪沒有刪除；清理前先確認沒有其他執行者，這不是刪除指示。
 - Node 以 `.nvmrc` 的 24 為準；本輪 shell 為 22.23.1，替代執行方式見 [VERIFY.md](agent/VERIFY.md)。不要沿用另一台機器的路徑。
 - 既有本機測試使用 port 3026；動服務前先查證。使用者的 localhost 購物車要保留。
 
@@ -23,8 +23,9 @@
 | GA4 | `G-D3YCFQMZ2W`；property `559053952`、stream `16130398768`；checkout pixel `217153900` 已 connected。購買重要事件、營收／轉換率、購物／結帳漏斗、同意與跨域已配置；[事件契約](analytics/ga4-tracking-plan.md) |
 | Search Console | 連結 GA4；sitemap Success，56 URLs；首頁與中文京都頁 request indexing 成功。提交不等於 Google 已收錄；[上線 QA](qa/2026-10-15-production-launch/README.md) |
 | 核准圖片 | 保留遠端 `4b1e83a`、`860e631` 的主圖清晰度調整；桌機主圖原始 WebP、手機／縮圖最佳化；[圖片 QA](qa/2026-10-14-product-image-clarity/README.md) |
+| 沖泡區固定杯子（2026-10-15） | 商品頁「沖泡方式」一只線稿杯子釘在旁邊、隨五步累積，最後交棒給核准照片（Daily Harvest「What's in the cup」方向，研究在 `10-14-charmv-landing-try/reports/`）。合併 `brew-cup-scroll` 後依 Ego Lite 檢視微調：桌機軸線起點 60%、照片交棒 3.6→4、照片 104%→100% settle。10 個茶禮盒 × 中英文、390／1024／1440、reduced-motion 驗證；[整合 QA](qa/2026-10-15-brew-cup-integration/README.zh-TW.md)、[分支 QA](qa/2026-10-14-brew-cup-scroll/README.zh-TW.md) |
 
-Git 證據：`c767233` Shopify／中文／GA4，`96e9207` 整合遠端圖片調整，`548a52a` 追蹤網址保護及線上驗證，`e83cc1b` 最終發布文件。歷史內容可從 Git 讀取，不另複製舊 handoff。
+Git 證據：`c767233` Shopify／中文／GA4，`96e9207` 整合遠端圖片調整，`548a52a` 追蹤網址保護及線上驗證，`e83cc1b` 最終發布文件，`fe38a98` 合併沖泡區分支，`297936e` agent 文件整理，其後的沖泡區調整 commit 見整合 QA。歷史內容可從 Git 讀取，不另複製舊 handoff。
 
 使用者另授權的上線通知已透過 Gmail 寄出並讀回 `SENT`；這項已交付，不因接手而重寄。
 
@@ -38,6 +39,7 @@ Git 證據：`c767233` Shopify／中文／GA4，`96e9207` 整合遠端圖片調�
 | Admin 憑證更新 | `src/lib/shopify/admin-auth.ts`、`scripts/shopify/runtime.mjs`；server-only client credentials；不輸出或提交 token |
 | CMS／MCP | [Shopify 整合](shopify-integration.md)；`.mcp.json` 與 `.codex/config.toml` 的兩個 server；商店 MCP 拒絕 mutations |
 | GA4 前台／checkout | `src/lib/analytics/ga4.ts`、`src/components/analytics/`、`scripts/analytics/shopify-checkout-pixel.js` |
+| 商品頁沖泡區 | `src/components/catalog/TeaPages.tsx`、`BrewCup.tsx`、`brew-drawing.tsx`；`src/lib/motion/animations.ts` `brewProcess()` 輸出 `--brew-stage` 0→4；`src/app/globals.css` `.brew-*`／`.bc-*`；步驟資料在 `src/data/tea-gifts.ts` `brew`，中文由 `catalog-data.ts` 合併。無 JS／reduced-motion 只顯示照片 |
 | 秘密與設定 | `.env.example` 只有鍵名；真實值在忽略的 `.env.local`，先前已設 0600。不要讀出值來做交接或健康檢查 |
 
 Shopify API 網域為 `zcs0bg-10.myshopify.com`，checkout host `account.charmvilla.us`。CMS app 使用 client credentials 自動換發 token；不用重建 app 或再遷移中文。zh-TW 未對 Shopify Online Store 發佈，翻譯需用 `translatableResourcesByIds` 讀取；不要因 `Product.translations` 為空而覆寫或發布整個語系。
