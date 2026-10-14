@@ -1715,3 +1715,44 @@ html.news-pop--open, html.news-pop--open body, html.news-pop--open [data-page-sc
 @media (prefers-reduced-motion: reduce) {
   .news-pop-veil, .news-pop-panel { animation: none; }
 }
+/* Internal to-do list preview /tasks (user 2026-10-14: 「並在官網下給我一個預覽清單頁面」): the text pages' grey ground and white row
+   blocks; title and overall progress at the left, one white block per TASKS.md section at the right. Display-only checkboxes. */
+.tasks-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); align-items: start; padding: clamp(96px, 11vw, 176px) var(--page-gutter) clamp(80px, 9vw, 140px); background: #efefed; }
+main:has(> .tasks-page), .catalog-shell:has(> main > .tasks-page), .catalog-shell:has(> main > .tasks-page) [data-header]:not(.menu--opened) { background: #efefed; }
+.tasks-head { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + 32px); }
+.tasks-head h1 { font-size: clamp(34px, 3.6vw, 56px); font-weight: 500; line-height: 1.2; letter-spacing: -.02em; text-wrap: balance; }
+.tasks-intro { margin-top: 16px; font-size: 16px; line-height: 1.8; color: #5a5a5a; overflow-wrap: anywhere; }
+.tasks-progress { margin-top: 32px; }
+.tasks-progress-label { font-size: 16px; line-height: 1.6; font-weight: 500; }
+.tasks-bar { height: 8px; margin-top: 8px; background: rgb(31 31 31 / .12); }
+.tasks-bar span { display: block; height: 100%; background: var(--color-ink); }
+.tasks-note { margin-top: 16px; font-size: 13px; color: var(--color-stone-deep); }
+.tasks-body { grid-column: 7 / span 6; min-width: 0; }
+.tasks-section { padding: 24px 32px; background: var(--color-white); }
+.tasks-section + .tasks-section { margin-top: 8px; }
+.tasks-section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding-bottom: 16px; border-bottom: 1px solid rgb(31 31 31 / .12); }
+.tasks-section-head h2 { font-size: clamp(18px, 1.5vw, 22px); font-weight: 500; line-height: 1.4; }
+.tasks-count { font-size: 13px; line-height: 1.6; color: var(--color-stone-deep); white-space: nowrap; }
+.tasks-item { display: grid; grid-template-columns: 20px minmax(0, 1fr); column-gap: 16px; align-items: start; padding: 12px 0; font-size: 16px; line-height: 1.7; color: var(--color-ink); }
+.tasks-item + .tasks-item { border-top: 1px solid rgb(31 31 31 / .06); }
+.tasks-box { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-top: 4px; border: 1.5px solid rgb(31 31 31 / .55); background: var(--color-white); }
+.tasks-box svg { width: 14px; height: 14px; }
+.tasks-text { min-width: 0; overflow-wrap: anywhere; }
+.tasks-item.is-done { color: #6b6b6b; }
+.tasks-item.is-done .tasks-box { border-color: #6b6b6b; background: #6b6b6b; color: var(--color-white); }
+.tasks-item.is-done .tasks-text { text-decoration: line-through; text-decoration-color: rgb(107 107 107 / .45); text-decoration-thickness: 1px; }
+.tasks-code { padding: 1px 6px; background: #f1f1ef; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .875em; overflow-wrap: anywhere; }
+.tasks-link { text-decoration: underline; text-underline-offset: 4px; }
+.tasks-link:hover { text-decoration-thickness: 2px; }
+.tasks-link:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .tasks-head { grid-column: 1 / span 4; }
+  .tasks-body { grid-column: 5 / span 8; }
+}
+@media (max-width: 767px) {
+  .tasks-page { display: block; padding: 64px var(--page-gutter) 80px; }
+  .tasks-head { position: static; margin-bottom: 32px; }
+  .tasks-head h1 { font-size: 30px; }
+  .tasks-section { padding: 20px; }
+  .tasks-item { font-size: 15px; column-gap: 12px; }
+}
