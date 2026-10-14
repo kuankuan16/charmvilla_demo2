@@ -26,6 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // 2026-10-14 (user: 「分析並高度推理，修改排版，請優化」, after a portfolio page held together by hairlines): an event's particulars
 // (`facts`) sit in a ruled label / value table instead of loose bullets, and the way back follows the text instead of being pushed to
 // the foot of the column, so no empty band opens between them.
+// Thin geometric line icons beside the detail titles, after the reference's outlined marks (user 2026-10-14: 「我想要像這樣加入 icon」):
+// one stroke weight, no fill, ink; decorative only (the title says it in words).
+function FactIcon({ kind }: { kind: "venue" | "event" | "hours" }) {
+  return <svg className="news-fact-icon" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {kind === "venue" && <><path d="M16 27c-5.2-6-8-10.4-8-13.8a8 8 0 0 1 16 0C24 16.6 21.2 21 16 27Z" /><circle cx="16" cy="13.2" r="3.2" /><circle cx="16" cy="13.2" r="5.6" opacity=".45" /><path d="M9.5 29.5h13" /></>}
+    {kind === "event" && <><rect x="5" y="8" width="22" height="19" rx="1" /><path d="M5 13.5h22M11 5v5M21 5v5" /><path d="M16 16.5l1.2 2.8 2.8 1.2-2.8 1.2L16 24.5l-1.2-2.8-2.8-1.2 2.8-1.2Z" /></>}
+    {kind === "hours" && <><circle cx="16" cy="16" r="12" /><circle cx="16" cy="16" r="8.5" opacity=".45" /><path d="M16 9.5V16l4.2 2.6" /></>}
+  </svg>;
+}
+
 export default async function NewsArticle({ params }: Props) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
@@ -54,7 +64,7 @@ export default async function NewsArticle({ params }: Props) {
               <dl className="news-facts">
                 {n.facts.map((f) => (
                   <div key={f.label} className="news-fact">
-                    <dt className="tc">{f.label}</dt>
+                    <dt className="tc">{f.icon && <FactIcon kind={f.icon} />}<span className="news-fact-label">{f.label}</span></dt>
                     <dd>
                       <span className="news-fact-value tc">{f.value.split(/(・| · )/).map((x, i) => i % 2 ? x : <span key={i} className="news-fact-part">{x}</span> /* each part unbroken: a time never splits as 下 / 午 5:00 */)}</span>
                       {f.detail?.map((d) => <span key={d} className="news-fact-detail tc">{d}</span>)}
