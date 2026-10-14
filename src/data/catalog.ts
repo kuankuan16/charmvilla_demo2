@@ -520,7 +520,7 @@ const buildCatalog = (lang: Locale) => {
   // 由原檔參考重生（Nano Banana 2.1，第 4 次；拉環小、在右短邊中間從盒蓋縫伸出；使用者：「上商品圖」「注意不要太膨脹」「大小比例要跟其他張差不多大」），norm 0.45。
   // 「加入圖庫」：封面 → 正面實拍 → 斜角 → 開箱 15 入。紅色盒蓋的兩張實拍先不上線（使用者：「先不上線」）
   studioExtra["reunion-paper-gift-box"] = [
-    { file: "studio-reunion-gift-box-us-front-photo-v4.webp", zh: "正面實拍", en: "Front view", enAlt: "photograph of the closed box from above, its mustard linen lid embroidered with a turquoise goldfish" },
+    { file: "studio-reunion-gift-box-us-front-photo-v5.webp", zh: "正面實拍", en: "Front view", enAlt: "photograph of the closed box from above, its mustard linen lid embroidered with a turquoise goldfish" },
     ...studioExtra["reunion-paper-gift-box"],
     { file: "studio-reunion-gift-box-us-unboxed-15-photo-v3.webp", zh: "開箱・15 入", en: "Unboxed · 15 tea bags", enAlt: "photograph of the opened box with 15 gold tea bags in five rows of three" },
   ];
