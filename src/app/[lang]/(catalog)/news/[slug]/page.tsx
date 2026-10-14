@@ -26,13 +26,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // 2026-10-14 (user: 「分析並高度推理，修改排版，請優化」, after a portfolio page held together by hairlines): an event's particulars
 // (`facts`) sit in a ruled label / value table instead of loose bullets, and the way back follows the text instead of being pushed to
 // the foot of the column, so no empty band opens between them.
-// Thin geometric line icons beside the detail titles, after the reference's outlined marks (user 2026-10-14: 「我想要像這樣加入 icon」):
-// one stroke weight, no fill, ink; decorative only (the title says it in words).
+// Line icons beside the detail titles in the style of a plain outline icon set (user 2026-10-14: 「我想要像這樣加入 icon」, then
+// 「icon 風格改這樣」 with a sheet of simple single-weight outline icons): one even stroke, rounded ends, no fill, no echoes or tints,
+// only the few lines that name the thing. Decorative only (the title says it in words).
 function FactIcon({ kind }: { kind: "venue" | "event" | "hours" }) {
-  return <svg className="news-fact-icon" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    {kind === "venue" && <><path d="M16 27c-5.2-6-8-10.4-8-13.8a8 8 0 0 1 16 0C24 16.6 21.2 21 16 27Z" /><circle cx="16" cy="13.2" r="3.2" /><circle cx="16" cy="13.2" r="5.6" opacity=".45" /><path d="M9.5 29.5h13" /></>}
-    {kind === "event" && <><rect x="5" y="8" width="22" height="19" rx="1" /><path d="M5 13.5h22M11 5v5M21 5v5" /><path d="M16 16.5l1.2 2.8 2.8 1.2-2.8 1.2L16 24.5l-1.2-2.8-2.8-1.2 2.8-1.2Z" /></>}
-    {kind === "hours" && <><circle cx="16" cy="16" r="12" /><circle cx="16" cy="16" r="8.5" opacity=".45" /><path d="M16 9.5V16l4.2 2.6" /></>}
+  return <svg className="news-fact-icon" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {kind === "venue" && <><path d="M16 28c-5.5-6.3-8.5-10.8-8.5-14.5a8.5 8.5 0 0 1 17 0c0 3.7-3 8.2-8.5 14.5Z" /><circle cx="16" cy="13.5" r="3" /></>}
+    {kind === "event" && <><rect x="5.5" y="7.5" width="21" height="19" rx="1.5" /><path d="M5.5 12.5h21M11 5.5v4M21 5.5v4M12.5 15.5v8M19.5 15.5v8M9 18h14M9 21.5h14" /></>}
+    {kind === "hours" && <><circle cx="16" cy="16" r="11" /><path d="M16 9.5V16h5M16 5v2M16 25v2M5 16h2M25 16h2" /></>}
   </svg>;
 }
 
