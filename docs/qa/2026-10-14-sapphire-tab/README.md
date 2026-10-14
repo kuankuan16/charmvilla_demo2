@@ -6,3 +6,5 @@
 - 改成局部修改：從 listing-tea-purple-butterfly-gift-box-v4.webp 裁 (1200,900)-(1800,1500)，放大到 1200 交給 Nano Banana 2.1 只改拉環
   （參考使用者給的實品拉環特寫），縮回後以羽化矩形 (245,275)-(405,455)（裁切座標）貼回原圖並校正顏色；其他像素不變。
 - 再用 norm.py 0.45／0.52 統一背景與大小 → listing-tea-purple-butterfly-gift-box-v5.webp。
+- v6（使用者「紫斑蝶拉環的長度改現在的一半」）：拉環伸出木框外的部分剪掉一半，右側用下方 95px 的同色背景補上並羽化。
+- 同日刪除紫斑蝶斜角圖（使用者：「刪」），catalog.ts 過濾掉 studio-purple-butterfly-gift-box-angle。

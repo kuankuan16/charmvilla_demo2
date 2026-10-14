@@ -579,6 +579,8 @@ const buildCatalog = (lang: Locale) => {
   };
   const isStudioLike = (img: Img) => Boolean(img.cutout) || studioSources.has(img.src) || /^\/media\/(site\/(studio-|featured-|jewelry-)|gift-boxes\/)/.test(img.src);
   // Latest instruction ADDS the real front view in slot 2. Existing cover, angled view and unboxed view remain in order after it.
+  // 紫斑蝶：斜角圖（studio-purple-butterfly-gift-box-angle-v2）下架（使用者 2026-10-14：「刪」）；檔案留著
+  studioExtra["purple-butterfly-gift-box"] = (studioExtra["purple-butterfly-gift-box"] ?? []).filter((v) => !v.file.startsWith("studio-purple-butterfly-gift-box-angle"));
   const officialFronts: Record<string, string> = {
     "spring-dawn-gift-box": "official-gift-front-spring-dawn-gift-box-blue-cutout-v3.webp",
     "winter-blossom-gift-box": "official-gift-front-winter-blossom-gift-box-cutout-v3.webp",
