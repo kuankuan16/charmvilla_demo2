@@ -56,13 +56,22 @@
 - [x] 6. 預購：下單收全額、最晚 11 月底前出貨、出貨前可取消全額退款、出貨後依茶品政策（商品頁產品須知、購物車、運送與退換貨政策新增「預購付款與取消」）
 - [x] 7. 聖誕下單截止日 12/15（本土 48 州），阿拉斯加、夏威夷不適用（政策、常見問題、兩款聖誕商品頁）
 - [x] 8. 寄送範圍：阿拉斯加、夏威夷可寄但運費另計、不適用免運；APO／FPO／DPO 先不收（政策、常見問題）
-- [ ] 6–8 的英文是我們依中文翻的，請客戶看一下
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「預購商品於下單時收取全額款項。」→ "Pre-orders are charged in full when you place your order."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「預購商品預計最晚於 2026 年 11 月底前出貨。」→ "Pre-orders are expected to ship by the end of November 2026."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「出貨前可申請取消並獲得全額退款，請來信 us@charmvilla.com 並附上您的訂單編號。」→ "You may cancel a pre-order for a full refund before it ships. Please email us at us@charmvilla.com with your order number."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「出貨後依上方「茶品與消耗性商品」的退換貨政策處理。」→ "Once shipped, pre-orders follow our Teas & Consumable Items return policy above."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「（商品頁產品須知）預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。」→ "Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「（聖誕商品頁）聖誕節前送達：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單；阿拉斯加與夏威夷不適用此截止日。」→ "For delivery before Christmas, please order by December 15, 2026 (contiguous 48 states). This date does not apply to Alaska or Hawaii."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「（政策頁）聖誕節下單截止日：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單，以便在聖誕節前送達。阿拉斯加與夏威夷的運送時效須另行確認，不適用此截止日。」→ "Christmas order deadline: for delivery before Christmas to the contiguous 48 states, please order by December 15, 2026. Delivery times to Alaska and Hawaii must be confirmed separately, and this deadline does not apply to them."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「阿拉斯加與夏威夷：可以寄送，運費於結帳時另計，不適用 US$ 199 免運。」→ "Alaska & Hawaii: We ship to Alaska and Hawaii. Shipping is charged at checkout, and the US$199 complimentary shipping offer does not apply."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「APO／FPO／DPO 軍郵及外交郵件地址：上線初期暫不寄送。」→ "APO/FPO/DPO addresses: At launch, we are not able to ship to military or diplomatic addresses."
+- [ ] 英文待客戶確認（第 6–8 項，我們依中文翻譯）：「（運費段落新增）寄往阿拉斯加與夏威夷的運費另計，不適用免運；上線初期暫不寄送 APO／FPO／DPO 地址。」→ "Shipping to Alaska and Hawaii is charged separately and is not eligible for complimentary shipping; at launch, we do not ship to APO/FPO/DPO addresses."
 
 ## 等使用者決定
 
 - [x] 團圓斜角圖（第 3 張）拉環：先不用重做（使用者 10/14）
 - [x] 紫斑蝶手機版大圖：不用移（使用者 10/14）
-- [ ] 更新桌面的客戶更新報告 PDF（使用者 10/14：要）
+- [x] 更新客戶更新報告 PDF：桌面「CHARM VILLA 美國官網 10-14 更新報告.pdf」
 - [x] 電子報跳窗：先關掉，接上 Shopify（NEXT_PUBLIC_COMMERCE_MODE=shopify）後自動恢復
 - [x] 分類頁卡片不顯示剩餘盒數，內頁看數量就好（使用者 10/14）
 - [x] 活動頁開放時間：星期和時段分兩行、拿掉中間的小圓點
