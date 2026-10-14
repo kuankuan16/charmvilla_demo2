@@ -1146,7 +1146,7 @@ main:has(> .policy-page) { background: #efefed; }
    other stories as a numbered list. Notes 13 px, everything else 15 px or more; hairlines are the ink at 14 %. */
 .news-page { padding: clamp(48px, 6vw, 88px) var(--page-gutter) clamp(96px, 10vw, 160px); }
 .news-head h1 { font-size: clamp(42px, 4.85vw, 69px); font-weight: 400; line-height: 1.1; letter-spacing: .01em; text-wrap: balance; }
-.news-head p { margin-top: 16px; max-width: 448px; font-size: 17px; line-height: 1.8; color: rgb(31 31 31 / .64); }
+.news-head p { margin-top: 16px; max-width: none; /* one line wherever it fits (user 2026-10-14: 「不要斷行」「英文版也是」) */ font-size: 17px; line-height: 1.8; color: rgb(31 31 31 / .64); }
 .news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 4px; margin-top: 48px; }
 .news-card { display: block; }
 .news-card-image { position: relative; display: block; aspect-ratio: 456 / 350; overflow: hidden; background: #e6e4df; }
