@@ -16,12 +16,15 @@ export type CartLine = { key: string; slug: string | null; name: string; image: 
 type Ctx = {
   mode: "local" | "shopify"; ready: boolean; open: boolean; busy: boolean; error: string | null;
   lines: CartLine[]; count: number; subtotal: number; currency: string; checkoutUrl: string | null;
-  add: (product: Product, quantity?: number, option?: number) => Promise<void>; update: (key: string, quantity: number) => Promise<void>; remove: (key: string) => Promise<void>;
+  add: (product: Product, quantity?: number, option?: number, mix?: number[]) => Promise<void>; update: (key: string, quantity: number) => Promise<void>; remove: (key: string) => Promise<void>;
   setOpen: (v: boolean) => void; formatPrice: (n: number, c?: string) => string;
 };
 
 const CartContext = createContext<Ctx | null>(null);
-const lineKey = (l: { slug: string; option?: number }) => (l.option === undefined ? l.slug : `${l.slug}#${l.option}`);
+const lineKey = (l: { slug: string; option?: number; mix?: number[] }) => (l.mix ? `${l.slug}#m${l.mix.join("-")}` : l.option === undefined ? l.slug : `${l.slug}#${l.option}`);
+// Mix-and-match set (雪花三盒組): `mix` counts boxes per tea, in giftBox.choices order, e.g. [2,0,1,0,0] = two boxes of the first tea, one of the third.
+const mixText = (product: Product | undefined, mix: number[], sep: string, times: string) => mix.flatMap((n, i) => { const label = product?.giftBox?.choices?.[i]?.label; return n > 0 && label ? [`${label}${times}${n}`] : []; }).join(sep);
+const mixFromAttrs = (attrs?: { key: string; value: string }[]) => { const raw = attrs?.find((a) => a.key === "_mix")?.value; return raw ? raw.split(",").map(Number) : undefined; };
 const LOCAL_KEY = "cv-cart", ID_KEY = "cv-cart-id";
 const MODE: "local" | "shopify" = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify" ? "shopify" : "local";
 
@@ -31,14 +34,18 @@ const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string
   const hit = productForVariant(node.merchandise.id);
   const local = hit ? findProduct(hit.slug, lang) : undefined;
   const choice = hit?.option === undefined ? undefined : local?.giftBox?.choices?.[hit.option];
-  const name = local ? (choice ? `${local.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : local.name) : node.merchandise.product.title;
+  const mix = local?.giftBox?.mixBoxes ? mixFromAttrs(node.attributes) : undefined;
+  const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : choice?.label;
+  const name = local ? (picked ? `${local.name}${t(`（${picked}）`, ` (${picked})`)}` : local.name) : node.merchandise.product.title;
   return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id };
 });
 
 // Line attributes travel to Shopify checkout, the order and the order emails, so they are in English (the US store's language).
 // The option itself is the variant; the attribute only repeats it in words. Pre-order lines are marked so the warehouse can tell them apart.
-const lineAttributes = (product: Product, option?: number) => {
+const lineAttributes = (product: Product, option?: number, mix?: number[]) => {
   const en = findProduct(product.slug, "en");
+  // a mix-and-match set: the teas in words for the warehouse, plus a hidden `_mix` (underscore keys stay out of checkout) to name the line again in the bag
+  if (mix) return { attributes: [{ key: "Teas", value: mixText(en, mix, ", ", " × ") }, { key: "_mix", value: mix.join(",") }, ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])] };
   const label = option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label;
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
   const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid color" ? "Lid color" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
@@ -49,7 +56,7 @@ const lineAttributes = (product: Product, option?: number) => {
 export function CartProvider({ children }: { children: ReactNode }) {
   const { lang, t } = useT();
   const [ready, setReady] = useState(false); const [open, setOpen] = useState(false); const [busy, setBusy] = useState(false); const [error, setError] = useState<string | null>(null);
-  const [localLines, setLocalLines] = useState<{ slug: string; quantity: number; option?: number }[]>([]);
+  const [localLines, setLocalLines] = useState<{ slug: string; quantity: number; option?: number; mix?: number[] }[]>([]);
   const [shopifyCart, setShopifyCart] = useState<ShopifyCart | null>(null);
   const cartId = useRef<string | null>(null);
 
@@ -79,15 +86,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [lang, t]);
 
   // `option`: the tea chosen for a gift box sold "one tea per box" (index into product.giftBox.choices); it is part of the line key.
-  const add = useCallback(async (product: Product, quantity = 1, option?: number) => {
+  // `mix`: boxes per tea for a mix-and-match set (product.giftBox.mixBoxes); the whole set is one line, one variant.
+  const add = useCallback(async (product: Product, quantity = 1, option?: number, mix?: number[]) => {
     if (product.soldOut) return;
     setOpen(true);
     if (MODE === "shopify") {
       const merchandiseId = variantFor(product.slug, option); // one GID per option (src/data/shopify-map.json)
       if (!merchandiseId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece cannot be added to the bag for now.")); return; }
-      await call("POST", { lines: [{ merchandiseId, quantity, ...lineAttributes(product, option) }] }); return;
+      await call("POST", { lines: [{ merchandiseId, quantity, ...lineAttributes(product, option, mix) }] }); return;
     }
-    setLocalLines((ls) => { const i = ls.findIndex((l) => l.slug === product.slug && l.option === option); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
+    const key = lineKey({ slug: product.slug, option, mix });
+    setLocalLines((ls) => { const i = ls.findIndex((l) => lineKey(l) === key); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }), ...(mix ? { mix } : {}) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
   }, [call, t]);
   const update = useCallback(async (key: string, quantity: number) => {
     if (quantity < 1) return;
@@ -99,7 +108,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => ls.filter((l) => lineKey(l) !== key));
   }, [call]);
 
-  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang, t) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; return p ? [{ key: lineKey(l), slug: p.slug, name: choice ? `${p.name}${t(`（${choice.label}）`, ` (${choice.label})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
+  const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang, t) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; const picked = l.mix ? mixText(p, l.mix, t("、", ", "), t(" × ", " × ")) : choice?.label; return p ? [{ key: lineKey(l), slug: p.slug, name: picked ? `${p.name}${t(`（${picked}）`, ` (${picked})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "TWD", onRequest: !p.price }] : []; }), [localLines, shopifyCart, lang, t]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   const subtotal = lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = lines[0]?.currency ?? "TWD";

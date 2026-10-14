@@ -482,6 +482,18 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .product-choices label:has(input:checked) { border-color: var(--color-ink); box-shadow: inset 0 -3px var(--color-gold); }
 .product-choices input { position: absolute; opacity: 0; pointer-events: none; }
 .product-choices label:has(input:focus-visible) { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+/* Mix-and-match set (雪花三盒組, 2026-10-14): one row per tea with a box stepper, hairlines as the spec rows; a picked tea gets the chips' gold underline. */
+.product-mix ul { border-top: 1px solid #1f1f1f30; }
+.product-mix li { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 52px; padding: 6px 0 6px 12px; border-bottom: 1px solid #1f1f1f30; font-size: 15px; transition: box-shadow .2s; }
+.product-mix li.is-picked { box-shadow: inset 3px 0 var(--color-gold); }
+.product-mix-step { display: inline-flex; align-items: center; flex: none; border: 1px solid #1f1f1f30; height: 36px; }
+.product-mix-step button { width: 36px; height: 100%; font-size: 18px; line-height: 1; transition: background .2s, color .2s; }
+.product-mix-step button:hover:not(:disabled) { background: var(--color-ink); color: #fff; }
+.product-mix-step button:active:not(:disabled) { background: #000; color: #fff; }
+.product-mix-step button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+.product-mix-step button:disabled { opacity: .35; cursor: default; }
+.product-mix-step span { min-width: 30px; text-align: center; font-size: 16px; }
+.product-mix .product-choice-note { margin-top: 10px; }
 .product-visit h2 { font-size: clamp(37px,3.99vw,59px); line-height: 1.5; margin: 20px 0; font-weight: 500; }
 /* Spec rows keep a hairline so label and value can be read across (user 2026-09-30: 方便對照). */
 .product-visit { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; padding: 80px var(--page-gutter) 100px; scroll-margin-top: 110px; }

@@ -14,6 +14,7 @@ export const CART = `
       edges { node {
         id
         quantity
+        attributes { key value }
         cost { totalAmount { ...Money } }
         merchandise { ... on ProductVariant {
           id

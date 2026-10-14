@@ -61,6 +61,8 @@ export type TeaGift = {
   priceTbd?: boolean;
   /** the tea options are drafts: a red 茶款待確認 / Teas to be confirmed beside the choice label (user 2026-10-13) */
   teaTbd?: boolean;
+  /** set sold as `setOf` boxes, each one tea from `choices`, mixed freely (雪花三盒組, user 2026-10-14) */
+  mix?: boolean;
   /** not sold on the US store: kept out of every listing, menu, sitemap and product page (404), data kept */
   hidden?: boolean;
   variant?: { group: string; label: string };
@@ -192,10 +194,10 @@ export const teaGifts: TeaGift[] = [
   // 雪花迷人禮（三盒組）：2026-10-13 agent 推理暫定，待客戶確認（使用者 2026-10-13：「先上架」）。名稱、盒型、尺寸、重量、茶款與文案皆為暫定值，
   // 價格與茶款已由使用者轉達（2026-10-14：「三件一組 $60」「茶款（5 選 1）」玫瑰烏龍、東方美人、紅玉、金萱、玫瑰蜜香）；不預購。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
   // 每盒 2 包同一種茶、三盒一組，寫法同已隱藏的心有愛（heart-gift-box）。圖庫只用自己的 3 張（catalog.ts），沒有專屬情境照。
-  { officialId: 9002, slug: "snowflake-gift-box", /* not a pre-order (user 2026-10-13: 「雪花迷人禮（三盒組）不用預購」) */ name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], usd: 60,
+  { officialId: 9002, slug: "snowflake-gift-box", /* not a pre-order (user 2026-10-13: 「雪花迷人禮（三盒組）不用預購」) */ /* teas mixed freely across the three boxes, one tea per box (user 2026-10-14: 「可以自由混搭茶種（最多３種，每盒同一種口味）」) */ mix: true, name: "雪花迷人禮（三盒組）", english: "SNOWFLAKE CHARMING GIFT", series: "2026 聖誕節限定商品", pieces: 2, setOf: 3, box: paperSnowflake, dimensions: "10 × 6.5 × 7.5 cm", weight: 20, contents: [], usd: 60,
     choices: [rose, beauty, ruby, jinxuan, honey].map(label => ({ label, contents: [count(label, 2)], price: 60 })),
     description: "CHARM VILLA「雪花迷人禮」每盒 2 包金魚茶包，三盒一組。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。",
-    en: { name: "Snowflake Charming Gift (Set of 3)", description: "Snowflake Charming Gift is a set of three CHARM VILLA boxes, each holding two Goldfish Tea Bags of your selected tea. The white boxes carry rose-gold foil snowflakes and an embossed goldfish, sealed with a clear sticker — easy to share with friends during the holidays.", summary: "2 Goldfish Tea Bags per box · Set of 3 boxes · Choose one tea" } },
+    en: { name: "Snowflake Charming Gift (Set of 3)", description: "Snowflake Charming Gift is a set of three CHARM VILLA boxes, each holding two Goldfish Tea Bags of your selected tea. The white boxes carry rose-gold foil snowflakes and an embossed goldfish, sealed with a clear sticker — easy to share with friends during the holidays.", summary: "2 Goldfish Tea Bags per box · Set of 3 boxes · Mix up to 3 teas" } },
   { officialId: 1072, slug: "small-moon-tea-gift-box", hidden: true, sceneFile: "scene-small-moon-tea-gift-box.webp", name: "小鮮月禮盒｜純茶包", english: "SMALL MOON / TEA", series: "2026 中秋節限定商品", pieces: 6, box: "紙盒", dimensions: smallBox, weight: 99, contents: [count(rose, 3), count(honey, 3)], description: "中秋的心意，收在六尾小金魚之間。玫瑰烏龍茶與玫瑰蜜香紅茶各三入，讓相聚從打開禮盒、注入一杯熱水開始。",
     en: { name: "Small Moon Gift Box | Tea Only", description: "A Mid-Autumn gesture kept among six goldfish: three of Rose Oolong Tea and three of Rose & Honey-Scented Black Tea. The gathering begins with opening the box and pouring a cup of hot water." } },
   { officialId: 994, slug: "full-moon-tea-gift-box", hidden: true, journalStory: 301, name: "大盈月禮盒｜純茶包", english: "FULL MOON / TEA", series: "2026 中秋節限定商品", pieces: 18, box: wood, dimensions: squareBox, weight: 400, contents: eighteen, sceneFile: "CV-0357-tag2.webp" /* the brand's CV-0357 with the real gold foil tag (2026-10-05) */, description: "花鳥與枝葉鋪展在織布盒蓋上，桐木盒收藏十八尾小金魚。從盒上的一幅風景，到杯中的一段茶時，讓團聚與欣賞一同發生。", note: "本款為純茶包禮盒，不含茶點與茶具；緞帶顏色隨機出貨。",
@@ -277,7 +279,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
     const contents = gift.choices
       ? gift.choices.map(c => describeContents(c.contents)).join(t("；或 ", "; or "))
       : describeContents(gift.contents);
-    const mix = gift.choices ? t("單一茶款，整盒擇一", "one tea, chosen per box") : gift.contents.length > 1 ? t("綜合茶款", "assorted teas") : t("單一茶款", "single tea");
+    const mix = gift.mix ? t("每盒一種茶，可混搭", "one tea per box, mix and match") : gift.choices ? t("單一茶款，整盒擇一", "one tea, chosen per box") : gift.contents.length > 1 ? t("綜合茶款", "assorted teas") : t("單一茶款", "single tea");
     const note = en ? gift.en.note : gift.note;
     const notices = [...(gift.preOrder ? [lt(preOrderShipping)] : []), ...(gift.notice?.map(lt) ?? []), ...(note ? [note] : [])];
     // shared pre-order allowance left (客戶答覆 B7): the data override, else the full allowance until Shopify inventory replaces it
@@ -291,7 +293,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       ? gift.packaging.map(p => ({ label: lt(p.label), contents: gift.contents, price: price.amount, note: lt(p.text), viewsFrom: p.viewsFrom, placeholderViews: p.placeholderViews, lidViews: p.lidViews && { ...p.lidViews, lid: t(`${p.label.zh}盒蓋`, `${p.label.en.toLowerCase()} lid`) } })) // the text shows under the chooser once chosen (user 2026-10-07: 「可以精簡呈現在這區」), no longer a specification row
       : gift.choices?.flatMap(c => (gift.lid ?? [undefined]).map((l, li) => ({ label: l ? `${vt(c.label)}${t("／", " / ")}${lt(l)}` : vt(c.label), contents: c.contents, price: c.price, lidViews: l ? gift.lidViews?.[li] : undefined })));
     // lid colours with the same contents and price (聖誕佳禮 Orange/Teal) are named as such, not as packaging
-    const choiceLabel = gift.packaging?.some((o) => o.lidViews) ? t("選擇盒蓋顏色", "Choose your lid color") : gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : t("選擇茶款（每盒擇一）", "Choose your tea");
+    const choiceLabel = gift.packaging?.some((o) => o.lidViews) ? t("選擇盒蓋顏色", "Choose your lid color") : gift.packaging ? t("選擇包裝", "Choose your packaging") : gift.lid ? t("選擇茶款與盒蓋顏色", "Choose your tea and lid color") : gift.mix ? t(`選擇茶款（共 ${gift.setOf} 盒，每盒一種，可混搭）`, `Choose your teas (${gift.setOf} boxes, one tea per box, mix and match)`) : t("選擇茶款（每盒擇一）", "Choose your tea");
     return {
       slug: gift.slug, category: "tea", name, english: gift.english,
       summary: (en && gift.en.summary) || t(`${gift.pieces} 入／盒${gift.setOf ? ` · ${gift.setOf} 盒一組` : ""} · ${mix}`, `${gift.pieces} Goldfish Tea Bags per box${gift.setOf ? ` · Set of ${gift.setOf} boxes` : ""} · ${mix}`) /* set size in the card line (2026-10-13, 雪花三盒組) */,
@@ -302,7 +304,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
         { label: t("販售單位", "Contents"), value: gift.setOf
           ? t(`1 組 ${gift.setOf} 盒（每盒小金魚茶包 ${gift.pieces} 入）`, `1 set of ${gift.setOf} boxes (${gift.pieces} Goldfish Tea Bags each)`)
           : t(`1 盒／小金魚茶包 ${gift.pieces} 入`, `1 box / ${gift.pieces} Goldfish Tea Bags`) },
-        { label: gift.choices ? t("茶款選擇（每盒擇一）", "Choose one tea variety") : t("盒內茶款", "Tea selection"), value: contents,
+        { label: gift.mix ? t("可選茶款（每盒一種）", "Teas to choose from (one per box)") : gift.choices ? t("茶款選擇（每盒擇一）", "Choose one tea variety") : t("盒內茶款", "Tea selection"), value: contents,
           // one tea per line (user 2026-10-06: 「內容物用點列」)
           items: gift.choices ? gift.choices.map(c => describeContents(c.contents)) : gift.contents.map(c => describeContents([c])) },
         ...(gift.lid ? [{ label: t("盒蓋顏色", "Lid options"), value: gift.lid.map(lt).join(t("或", " or ")) }] : []),
@@ -340,7 +342,7 @@ export const teaGiftProductsFor = (lang: Locale): Product[] => {
       variant: gift.variant ? { group: gift.variant.group, label: v(gift.variant.label) } : undefined,
       officialUrl: `https://www.charmvilla.com.tw/product_d.php?lang=tw&tb=1&id=${gift.officialId}`,
       price: gift.priceTbd ? undefined : price,
-      giftBox: { pieces: gift.pieces, series: v(gift.series), contents: gift.contents, choices: bagChoices, choiceLabel },
+      giftBox: { pieces: gift.pieces, series: v(gift.series), contents: gift.contents, choices: bagChoices, choiceLabel, ...(gift.mix && gift.setOf ? { mixBoxes: gift.setOf } : {}) },
     };
   });
 };

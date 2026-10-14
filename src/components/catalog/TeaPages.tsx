@@ -99,7 +99,7 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   return (
     <section className="tea-sheet" aria-label={title}>
       {/* 京都版 holds one tea chosen from four (user 2026-10-13: 「京都版後面備註 4 選 1」) */}
-      {notes && <TeaKinds title={notes.title} productName={product.slug === "kyoto-gift-box" ? `${product.name}${t("（4 選 1）", " (choose 1 of 4)")}` : product.slug === "snowflake-gift-box" /* 「茶款（5 選 1）」 2026-10-14 */ ? `${product.name}${t("（5 選 1）", " (choose 1 of 5)")}` : ["winter-blossom-gift-box", "spring-dawn-gift-box", "orchid-gift-box"].includes(product.slug) /* 「暮雪也要備註2選1」「春曉也是一樣的邏輯處理」 */ ? `${product.name}${t("（2 選 1）", " (choose 1 of 2)")}` : product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, term: n.term, image: leafPhoto(n.name, t) }))} />}
+      {notes && <TeaKinds title={notes.title} productName={product.slug === "kyoto-gift-box" ? `${product.name}${t("（4 選 1）", " (choose 1 of 4)")}` : product.giftBox?.mixBoxes /* 雪花三盒組：每盒 5 選 1、三盒可混搭（2026-10-14） */ ? `${product.name}${t(`（${product.giftBox.choices?.length ?? 0} 款可混搭）`, ` (mix and match from ${product.giftBox.choices?.length ?? 0})`)}` : ["winter-blossom-gift-box", "spring-dawn-gift-box", "orchid-gift-box"].includes(product.slug) /* 「暮雪也要備註2選1」「春曉也是一樣的邏輯處理」 */ ? `${product.name}${t("（2 選 1）", " (choose 1 of 2)")}` : product.name} items={notes.items.map((n) => ({ name: n.name, text: n.text, term: n.term, image: leafPhoto(n.name, t) }))} />}
       {brew && <BrewProcess>
         {brew.image && <figure className="brew-visual">
           <Picture img={brew.image} fill animate={false} sizes="(max-width: 767px) 100vw, (max-width: 1279px) 40vw, 530px" />

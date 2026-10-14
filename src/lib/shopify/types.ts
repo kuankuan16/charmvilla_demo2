@@ -1,6 +1,6 @@
 export type Money = { amount: string; currencyCode: string };
 export type CartLine = {
-  id: string; quantity: number; cost: { totalAmount: Money };
+  id: string; quantity: number; attributes?: { key: string; value: string }[]; cost: { totalAmount: Money };
   merchandise: { id: string; title: string; price: Money; image: { url: string; altText: string | null } | null; product: { handle: string; title: string } };
 };
 export type Cart = { id: string; checkoutUrl: string; totalQuantity: number; cost: { subtotalAmount: Money; totalAmount: Money }; lines: { edges: { node: CartLine }[] } };
