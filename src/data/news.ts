@@ -9,7 +9,10 @@ import { translator, type Locale } from "../i18n/config";
 export type NewsBlock = string | { list: string[] } | { links: { label: string; href: string }[] } | { heading: string };
 // `focus` is the card photograph's object-position, used where the list crops it wider than it is (the list cards are about 1.3 : 1)
 // `whole`: the article shows the card picture uncropped (a printed piece such as an invitation) on `ground`, its paper colour
-export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; focus?: string; whole?: boolean; ground?: string; hero: Img; /** the article page image when it differs from the list card (fills the 4:5 frame) */ story?: Img; body: NewsBlock[] };
+// `facts`: an event's particulars as label / value rows (the article shows them as a ruled table, not a bulleted list; user 2026-10-14:
+// 「修改排版，請優化」). `value` is the line that matters most, `detail` the smaller lines under it, `map` an address for a Google Maps link.
+export type NewsFact = { label: string; value: string; detail?: string[]; map?: string };
+export type NewsEntry = { slug: string; date: string; dateLabel: string; tag: string; title: string; summary: string; card: Img; focus?: string; whole?: boolean; ground?: string; hero: Img; /** the article page image when it differs from the list card (fills the 4:5 frame) */ story?: Img; body: NewsBlock[]; facts?: NewsFact[] };
 
 const build = (lang: Locale): NewsEntry[] => {
   const t = translator(lang);
@@ -55,11 +58,12 @@ const build = (lang: Locale): NewsEntry[] => {
       story: site("news-la-popup-showmore-2026-wide.webp", t("CHARM VILLA 2026 新品發表邀請卡", "CHARM VILLA 2026 launch invitation"), 1570, 1963), // the article shows the whole invitation, 4:5 like its frame, so no edges (user 2026-10-13: 「展開換回原卡片，注意不要有不自然的切邊」)
       body: [
         t("CHARM VILLA 洛杉磯快閃展，2026 年 10 月 17 日至 12 月 31 日於 The Scholart Selection 展出。", "The CHARM VILLA pop-up in Los Angeles runs from October 17 to December 31, 2026, at The Scholart Selection."),
-        { list: [t("地點・The Scholart Selection，417 S Mission Dr, San Gabriel, CA 91776", "Venue · The Scholart Selection, 417 S Mission Dr, San Gabriel, CA 91776")] },
-        { heading: t("開幕活動", "Opening event") },
-        { list: [t("2026 年 10 月 17 日（星期六）下午 2:00–5:00（洛杉磯時間）", "Saturday, October 17, 2026 · 2:00–5:00 PM (Los Angeles time)")] },
-        { heading: t("一般開放時間", "Regular hours") },
-        { list: [t("星期二至星期日・上午 10:00–下午 5:00", "Tuesday to Sunday · 10:00 AM–5:00 PM"), t("星期一休館", "Closed on Mondays")] },
+      ],
+      // the same wording as the bullets they replace (地點・…, 開幕活動, 一般開放時間), each split at its own separator into label / value / detail
+      facts: [
+        { label: t("地點", "Venue"), value: "The Scholart Selection", detail: ["417 S Mission Dr, San Gabriel, CA 91776"], map: "The Scholart Selection, 417 S Mission Dr, San Gabriel, CA 91776" },
+        { label: t("開幕活動", "Opening event"), value: t("2026 年 10 月 17 日（星期六）", "Saturday, October 17, 2026"), detail: [t("下午 2:00–5:00（洛杉磯時間）", "2:00–5:00 PM (Los Angeles time)")] },
+        { label: t("一般開放時間", "Regular hours"), value: t("星期二至星期日・上午 10:00–下午 5:00", "Tuesday to Sunday · 10:00 AM–5:00 PM"), detail: [t("星期一休館", "Closed on Mondays")] },
       ],
     },
   ];

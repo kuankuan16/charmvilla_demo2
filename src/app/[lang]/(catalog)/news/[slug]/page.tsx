@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // the text while it scrolls; at the right the breadcrumb, category and date, the title over a short gold rule, the text and its
 // links, and the way back; then the other stories as a numbered list. The entry's wide `hero` is not shown here: the launch
 // banner is the same pose as its card, and the same picture twice on one page reads as a repeat.
+// 2026-10-14 (user: 「分析並高度推理，修改排版，請優化」, after a portfolio page held together by hairlines): an event's particulars
+// (`facts`) sit in a ruled label / value table instead of loose bullets, and the way back follows the text instead of being pushed to
+// the foot of the column, so no empty band opens between them.
 export default async function NewsArticle({ params }: Props) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
@@ -47,8 +50,22 @@ export default async function NewsArticle({ params }: Props) {
                 : "list" in b ? <ul key={i}>{b.list.map((x) => <li key={x} className="tc">{x}</li>)}</ul>
                 : <p key={i} className="news-article-links">{b.links.map((l) => <Link key={l.href} href={l.href.startsWith("/media/") ? l.href : localeHref(lang, l.href)} className="tc">{l.label}</Link>)}</p>)}
             </div>
+            {n.facts && (
+              <dl className="news-facts">
+                {n.facts.map((f) => (
+                  <div key={f.label} className="news-fact">
+                    <dt className="tc">{f.label}</dt>
+                    <dd>
+                      <span className="news-fact-value tc">{f.value.split(/(・| · )/).map((x, i) => i % 2 ? x : <span key={i} className="news-fact-part">{x}</span> /* each part unbroken: a time never splits as 下 / 午 5:00 */)}</span>
+                      {f.detail?.map((d) => <span key={d} className="news-fact-detail tc">{d}</span>)}
+                      {f.map && <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.map)}`} target="_blank" rel="noopener noreferrer" className="news-fact-map tc" aria-label={t("在 Google 地圖開啟（新分頁）", "Open in Google Maps (new tab)")}><span className="news-fact-map-label">{t("地圖", "Map")}</span><span aria-hidden="true">↗</span></a>}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+            <div className="news-story-foot"><Link href={localeHref(lang, "/news")} className="news-back tc"><span className="news-arrow news-arrow-back" aria-hidden="true" />{t("返回最新消息", "Back to News")}</Link></div>
           </div>
-          <div className="news-story-foot"><Link href={localeHref(lang, "/news")} className="news-back tc"><span className="news-arrow news-arrow-back" aria-hidden="true" />{t("返回最新消息", "Back to News")}</Link></div>
         </div>
       </div>
 
