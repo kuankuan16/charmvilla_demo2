@@ -87,7 +87,7 @@ const wood = "桐木盒、織布盒蓋";
 const woodTieDye = "桐木盒搭配紮染布面盒蓋，飾以手工刺繡";
 const woodEmbroidered = "桐木盒搭配手工刺繡布面盒蓋";
 const paperKyoto = "高密度紙盒搭配連體盒蓋與封口封條";
-const woodEmbroideredLid = "木盒搭配刺繡布面盒蓋"; // 聖誕禮盒：客戶回覆 2026-10-14 §1「木盒搭配刺繡布面上蓋」（取代 10-13 agent 推理的抽屜式紙盒）
+const woodEmbroideredLid = "紙盒搭配刺繡布面盒蓋"; // 聖誕禮盒：使用者 2026-10-14「聖誕節的都是紙盒」，取代客戶回覆 §1 的「木盒」（刺繡布面盒蓋保留）
 const paperSnowflake = "高密度紙盒，燙金雪花與壓紋小金魚，透明封口貼紙"; // 聖誕心意禮：材質同京都版（客戶回覆 2026-10-14 §2）；燙金雪花等裝飾是 10-13 依商品圖寫的
 const longBox = "28.6 × 11.7 × 9 cm";    // 11.3 × 4.6 × 3.5 in
 const smallBox = "20.5 × 18.5 × 6.9 cm"; // 8.1 × 7.3 × 2.7 in
@@ -110,7 +110,7 @@ const english: Record<string, string> = {
   [woodTieDye]: "Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery",
   [woodEmbroidered]: "Paulownia wood box with a hand-embroidered fabric lid",
   [paperKyoto]: "High-density paper box with an attached lid and closure seal",
-  [woodEmbroideredLid]: "Wooden box with an embroidered fabric lid",
+  [woodEmbroideredLid]: "Paper box with an embroidered fabric lid",
   [paperSnowflake]: "High-density paper box with rose-gold foil snowflakes, an embossed goldfish and a clear seal sticker",
   [assortment]: "Tea Assortment",
   "紙盒": "Paper box", "繽紛紙紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid", "繽紛紙盒、織布盒蓋": "Patterned paper box, woven-fabric lid",
@@ -200,17 +200,17 @@ export const teaGifts: TeaGift[] = [
   // officialId 9001 只是暫定的唯一值，台灣官網沒有這個商品編號（沒有官方商品圖、也不連到台灣官網）。
   // 茶款 × 盒蓋，一個選單（同春曉的 lid）：橘色是預設圖庫，藍綠色用自己的 4 張圖（含自己的開箱圖）。
   { officialId: 9001, slug: "christmas-gift-box", preOrder: true, /* client reply 2026-10-14 §1: one allowance of 200 boxes shared by every tea and lid */ preOrderLimit: 200, sceneFile: "scene-christmas-gift-box-two-boxes-window-light.webp", /* names from the client (user 2026-10-14, reply to the 10/13 report item 1: 「原「聖誕佳禮」請改為 聖誕禮盒（限量版）」 / "Christmas Giftbox (Limited Edition)") */ name: "聖誕禮盒（限量版）", english: "CHRISTMAS GIFTBOX (LIMITED EDITION)", series: "2026 聖誕節限定商品", pieces: 12,
-    // client reply 2026-10-14 §1: US$125 a box, the same for all three teas; wooden box with an embroidered fabric lid, size and weight as 暮雪 (Snowy Twilight)
+    // client reply 2026-10-14 §1: US$125 a box, the same for all three teas; paper box (user 2026-10-14: 「聖誕節的都是紙盒」, not the reply's wooden box) with an embroidered fabric lid, size and weight as 暮雪 (Snowy Twilight)
     box: woodEmbroideredLid, dimensions: longBox, weight: 350, contents: [], usd: 125,
     choices: [{ label: assortment, contents: christmasMix }, { label: rose, contents: [count(rose, 12)] }, { label: beauty, contents: [count(beauty, 12)] }].map(c => ({ ...c, price: 125 })),
     // Stocking / Candy Cane lids sold with every tea (each tea × lid a Shopify variant). The orange (Candy Cane) lid is the default gallery; the teal (Stocking) lid has its own 4 views.
     lid: [{ zh: "拐杖糖", en: "Candy Cane" }, { zh: "聖誕襪", en: "Stocking" }],
     lidViews: { 1: { cover: "studio-christmas-gift-box-teal-cover-v3.webp", front: "studio-christmas-gift-box-teal-front-v4.webp", angle: "studio-christmas-gift-box-teal-angle-v3.webp", unboxed: "studio-christmas-gift-box-teal-unboxed-v3.webp", lidName: { zh: "聖誕襪", en: "Stocking" } } },
-    description: "CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方美人茶各 3 包），或單一茶款玫瑰烏龍茶、東方美人茶各 12 包，以木盒搭配刺繡布面盒蓋呈現。可選擇聖誕襪或拐杖糖盒蓋，為佳節送上一份溫暖的心意。",
+    description: "CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方美人茶各 3 包），或單一茶款玫瑰烏龍茶、東方美人茶各 12 包，以紙盒搭配刺繡布面盒蓋呈現。可選擇聖誕襪或拐杖糖盒蓋，為佳節送上一份溫暖的心意。",
     summary: "12 入／盒 · 綜合茶款或單一茶款",
     story: { title: { zh: "故事", en: "Story" }, body: { zh: "金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開盒蓋，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。", en: "Gold baubles and snowflakes hang across the lid as a little goldfish swims into the season with a candy cane or a Christmas stocking. Lift the lid to find twelve Goldfish Tea Bags, ready for warm winter hours with the people who matter most." } },
     notice: [christmasCutoff, embroideryNote],
-    en: { name: "Christmas Giftbox (Limited Edition)", description: "Christmas Giftbox (Limited Edition) is a CHARM VILLA gift set containing 12 Goldfish Tea Bags: a tea assortment (three each of Rose Oolong, Jin Xuan Oolong, Ruby Black, and Oriental Beauty) or twelve of Rose Oolong or Oriental Beauty, presented in a wooden box with an embroidered fabric lid. Choose the Stocking or Candy Cane lid for a warm holiday gift.", summary: "12 Goldfish Tea Bags per box · Tea assortment or a single tea" } },
+    en: { name: "Christmas Giftbox (Limited Edition)", description: "Christmas Giftbox (Limited Edition) is a CHARM VILLA gift set containing 12 Goldfish Tea Bags: a tea assortment (three each of Rose Oolong, Jin Xuan Oolong, Ruby Black, and Oriental Beauty) or twelve of Rose Oolong or Oriental Beauty, presented in a paper box with an embroidered fabric lid. Choose the Stocking or Candy Cane lid for a warm holiday gift.", summary: "12 Goldfish Tea Bags per box · Tea assortment or a single tea" } },
   // 雪花迷人禮（三盒組）：2026-10-13 agent 推理暫定，待客戶確認（使用者 2026-10-13：「先上架」）。名稱、盒型、尺寸、重量、茶款與文案皆為暫定值，
   // 價格與茶款已由使用者轉達（2026-10-14：「三件一組 $60」「茶款（5 選 1）」玫瑰烏龍、東方美人、紅玉、金萱、玫瑰蜜香）；預購、額度待客戶提供（2026-10-14）。officialId 9002 只是暫定的唯一值，台灣官網沒有這個商品。
   // 每盒 2 包同一種茶、三盒一組，寫法同已隱藏的心有愛（heart-gift-box）。圖庫只用自己的 3 張（catalog.ts），沒有專屬情境照。
