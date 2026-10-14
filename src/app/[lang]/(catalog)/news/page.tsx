@@ -28,7 +28,7 @@ export default async function NewsPage({ params }: Props) {
         <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}</h1>
         {/* one line where it fits; where it does not, the break falls after the colon / comma, never before a stray "the" or inside a word
             (user 2026-10-14: 「斷句位置修改」「不要斷行」). The English first half is wider than a phone, so there it wraps normally. */}
-        <p className="tc"><span className={lang === "zh" ? "inline-block" : "md:inline-block"}>{t("新品發表、禮盒預購與期間限定活動，", "Launches, gift-box pre-orders and limited-time events:")}</span>{" "}<span className={lang === "zh" ? "inline-block" : "md:inline-block"}>{t("CHARM VILLA 的近況都在這裡。", "the latest from CHARM VILLA.")}</span></p>
+        <p className="tc"><span className={lang === "zh" ? "inline-block" : "md:inline-block"}>{t("新品發表、禮盒預購與期間限定活動，", "Launches, gift-box pre-orders and limited-time events:")}</span>{lang === "zh" ? null : " "}<span className={lang === "zh" ? "inline-block" : "md:inline-block"}>{t("CHARM VILLA 的近況都在這裡。", "the latest from CHARM VILLA.")}</span></p>
       </header>
       <ul className="news-grid">
         {getNews(lang).map((n) => (
