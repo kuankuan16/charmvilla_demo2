@@ -50,9 +50,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - 文案：中文是 source of truth。雙語規則見 `.translation/project-brief.md`、`.translation/style-guide.md`、`.translation/decisions.md`、`.translation/protected-terms.txt`。新增可見文案時，必須同時補上中文與英文，沿用 `t("中文", "English")`、`translator(lang)` 或 `useT()` 的既有模式。
 - 商品、內容與影像資料主要在 `src/data/`；頁面與元件不可另藏一份互相漂移的商品事實。`src/data/catalog.ts`、`tea-gifts.ts`、`commerce.ts` 的註解記錄大量已核准決策，修改前先讀相鄰註解。
 - UI 位於 `src/components/`；全站樣式集中在 `src/app/globals.css`。變更共用 CSS 前先搜尋所有 selector 使用處，並檢查中文／英文、桌機／手機與 reduced-motion。
-- Shopify 框架位於 `src/lib/shopify/`、`src/app/api/cart`、`src/app/api/account`、`src/components/cart`、`src/components/account`。目前預設為 local commerce；串接前必讀 `docs/shopify-integration.md`，不得捏造商店網域、token、variant GID、庫存、運費或金流狀態。
+- Shopify 框架位於 `src/lib/shopify/`、`src/app/api/cart`、`src/app/api/account`、`src/components/cart`、`src/components/account`。本機已設定 Shopify commerce；修改串接前必讀 `docs/shopify-integration.md`，不得捏造商店網域、token、variant GID、庫存、運費或金流狀態。
 
 ## 內容與品牌不可破壞項
+
+- **Shopify 整合資料來源（使用者 2026-10-14）**：商品照片、圖庫與視覺呈現以 `https://charmvilla-demo2.vercel.app/` 現有 Visual 為準，保留本專案已核准影像。商品資料、價格、選項、SKU 與庫存以 `charmvilla` 原始 Shopify 商店為準；建立明確 product／variant 對應，不把本機舊價格或預購額度反寫覆蓋 Shopify。無法明確配對時保留待確認，不捏造 ID 或商品事實。 使用者後續補充：demo2 已有的繁體中文文案必須遷入 Shopify 翻譯／CMS 並供 `/zh` 讀取，不得讓已核准中文退回英文；涉及舊庫存、預購或組合數的衝突仍依 Shopify 校正。
 
 - 不推測或自行補寫價格、庫存、尺寸、材質純度、寶石等級、茶葉沖泡參數、配送／退貨條款、獎項與專利事實。缺資料時保留明確的待確認狀態。
 - `CHARM VILLA`、`Show more!`、獎項名稱、專利號及 `.translation/protected-terms.txt` 內詞彙必須原樣保留。

@@ -6,6 +6,7 @@ import { categories, getCategories, getProducts, getCategory, getCategoryProduct
 import CollectionBrowser from "@/components/catalog/CollectionBrowser";
 import ProductCard from "@/components/catalog/ProductCard";
 import { alternatesFor, defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
+import { getCommerceProducts } from "@/lib/shopify/catalog";
 
 type Props = { params: Promise<{ lang: string; category: string }> };
 // No `dynamicParams = false`: an unknown category must reach the page so notFound() can answer with the localized 404.
@@ -28,7 +29,8 @@ export default async function CollectionPage({ params }: Props) {
   const t = translator(lang);
   const info = getCategory(category, lang);
   if (category !== "all" && !info) notFound();
-  const list = getCategoryProducts(category, lang);
+  const live = await getCommerceProducts(lang);
+  const list = category === "all" ? live : live.filter(p => p.category === category);
   const all = t("全部作品", "All Pieces");
   return (
     <div className="collection-page">

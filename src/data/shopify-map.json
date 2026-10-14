@@ -1,124 +1,122 @@
 {
-  "_how": "Paste values from Shopify admin (Products -> product -> variant -> copy 'gid://shopify/ProductVariant/...'). Never invent a GID: empty strings mean 'not in Shopify yet' and the piece cannot be added to the bag in shopify mode. One product = one entry keyed by the site slug.",
-  "_variants": "Products sold with options (tea, tea x lid colour) get one variant GID per option in 'variants', keyed by the option's English label exactly as the product page shows it (product.giftBox.choices in the English catalogue). Each option has its own Shopify price and stock, so never reuse one GID for several options. Products without options use 'variantId' (optioned products keep an empty 'variantId' for the older readers). The older shape { handle, variantId } (or a bare GID string) is still read: for an optioned product it is used only when 'variants' is absent.",
-  "_currency_note": "The US store sells in USD only. In shopify mode the bag and checkout prices come from Shopify (cart buyerIdentity countryCode US); the prices in src/data are what the product pages show, so a price change has to be made in both places until a Storefront product query is added.",
-  "_listed_note": "The first 13 entries are the products listed on the US site (getProducts('en')). The entries after them are gift boxes hidden on the US site; they stay so their slugs keep resolving if a box comes back.",
-  "reunion-paper-gift-box": {
-    "handle": "",
-    "variantId": ""
+  "_how": "Verified Shopify product IDs and variants. Visuals remain in catalog.ts. Run npm run shopify:sync to refresh data; this never writes to Shopify.",
+  "blossoming-prosperity-gift-box": {
+    "productId": "gid://shopify/Product/15081861874028",
+    "handle": "prosperity-in-bloom-lunar-new-year-gift",
+    "variantId": "gid://shopify/ProductVariant/53583844082028",
+    "variants": {}
   },
   "year-of-plenty-gift-box": {
-    "handle": "",
-    "variantId": ""
+    "productId": "gid://shopify/Product/15081862136172",
+    "handle": "abundance-prosperity-lunar-new-year-gift",
+    "variantId": "gid://shopify/ProductVariant/53770912629100",
+    "variants": {}
   },
-  "blossoming-prosperity-gift-box": {
-    "handle": "",
-    "variantId": ""
+  "wooden-chopsticks": {
+    "productId": "gid://shopify/Product/15088417931628",
+    "handle": "chopsticks",
+    "variantId": "gid://shopify/ProductVariant/53632845250924",
+    "variants": {}
   },
-  "kyoto-gift-box": {
-    "handle": "",
+  "cloud-coaster": {
+    "productId": "gid://shopify/Product/15088420946284",
+    "handle": "coaster",
+    "variantId": "gid://shopify/ProductVariant/53632848429420",
+    "variants": {}
+  },
+  "ginkgo-teaspoon-gift-box": {
+    "productId": "gid://shopify/Product/15088422125932",
+    "handle": "tea-spoon",
+    "variantId": "gid://shopify/ProductVariant/53632849805676",
+    "variants": {}
+  },
+  "winter-blossom-gift-box": {
+    "productId": "gid://shopify/Product/15107964273004",
+    "handle": "snowy-twilight",
     "variantId": "",
     "variants": {
-      "Rose Oolong Tea": "",
-      "Rose & Honey-Scented Black Tea": "",
-      "Ruby Black Tea": "",
-      "Oriental Beauty Tea": ""
+      "First Prize Rose Oolong Tea": "gid://shopify/ProductVariant/53771531583852",
+      "Third Prize Oriental Beauty Tea": "gid://shopify/ProductVariant/53771531616620"
+    }
+  },
+  "bird-chopstick-rest": {
+    "productId": "gid://shopify/Product/15114228269420",
+    "handle": "songbird-chopstick-rest",
+    "variantId": "gid://shopify/ProductVariant/53716047298924",
+    "variants": {}
+  },
+  "kyoto-gift-box": {
+    "productId": "gid://shopify/Product/15136264946028",
+    "handle": "kyoto-artisanal-reserve-6-ct",
+    "variantId": "",
+    "variants": {
+      "Rose Oolong Tea": "gid://shopify/ProductVariant/53771465687404",
+      "Rose & Honey-Scented Black Tea": "gid://shopify/ProductVariant/53771465720172",
+      "Ruby Black Tea": "gid://shopify/ProductVariant/53903381496172",
+      "Oriental Beauty Tea": "gid://shopify/ProductVariant/67637433663852"
     }
   },
   "spring-dawn-gift-box": {
-    "handle": "",
+    "productId": "gid://shopify/Product/15148513263980",
+    "handle": "spring-awakening-12-ct",
     "variantId": "",
     "variants": {
-      "First-Prize Rose Oolong Tea / Blue": "",
-      "First-Prize Rose Oolong Tea / Pink": "",
-      "Oriental Beauty Tea / Blue": "",
-      "Oriental Beauty Tea / Pink": ""
-    }
-  },
-  "winter-blossom-gift-box": {
-    "handle": "",
-    "variantId": "",
-    "variants": {
-      "First-Prize Rose Oolong Tea": "",
-      "Oriental Beauty Tea": ""
-    }
-  },
-  "orchid-gift-box": {
-    "handle": "",
-    "variantId": "",
-    "variants": {
-      "First-Prize Rose Oolong Tea / Gold": "",
-      "First-Prize Rose Oolong Tea / Pink": "",
-      "Oriental Beauty Tea / Gold": "",
-      "Oriental Beauty Tea / Pink": ""
+      "First Prize Rose Oolong Tea / Blue": "gid://shopify/ProductVariant/53903379136876",
+      "First Prize Rose Oolong Tea / Pink": "gid://shopify/ProductVariant/67632292790636",
+      "Third Prize Oriental Beauty Tea / Blue": "gid://shopify/ProductVariant/53903379169644",
+      "Third Prize Oriental Beauty Tea / Pink": "gid://shopify/ProductVariant/67632292823404"
     }
   },
   "purple-butterfly-gift-box": {
-    "handle": "",
-    "variantId": ""
+    "productId": "gid://shopify/Product/15150923350380",
+    "handle": "sapphire-wings",
+    "variantId": "gid://shopify/ProductVariant/53824982679916",
+    "variants": {}
   },
-  "cloud-coaster": {
-    "handle": "",
-    "variantId": ""
-  },
-  "bird-chopstick-rest": {
-    "handle": "",
-    "variantId": ""
-  },
-  "ginkgo-teaspoon-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "wooden-chopsticks": {
-    "handle": "",
-    "variantId": ""
-  },
-  "christmas-gift-box": {
-    "handle": "",
+  "orchid-gift-box": {
+    "productId": "gid://shopify/Product/15151974809964",
+    "handle": "royal-orchid-gold",
     "variantId": "",
     "variants": {
-      "Tea Assortment / Candy Cane": "",
-      "Tea Assortment / Stocking": "",
-      "Rose Oolong Tea / Candy Cane": "",
-      "Rose Oolong Tea / Stocking": "",
-      "Oriental Beauty Tea / Candy Cane": "",
-      "Oriental Beauty Tea / Stocking": ""
+      "First Prize Rose Oolong Tea / Gold": "gid://shopify/ProductVariant/53827887464812",
+      "First Prize Rose Oolong Tea / Pink": "gid://shopify/ProductVariant/67632301113708",
+      "Third Prize Oriental Beauty Tea / Gold": "gid://shopify/ProductVariant/53827887497580",
+      "Third Prize Oriental Beauty Tea / Pink": "gid://shopify/ProductVariant/67632301146476"
     }
   },
-  "reunion-paulownia-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "spring-blossoms-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "heart-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "fruit-infusion-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "rose-encounter-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "tea-to-share-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "small-moon-tea-gift-box": {
-    "handle": "",
-    "variantId": ""
-  },
-  "full-moon-tea-gift-box": {
-    "handle": "",
-    "variantId": ""
+  "reunion-paper-gift-box": {
+    "productId": "gid://shopify/Product/15402073194860",
+    "handle": "joyful-reunion",
+    "variantId": "",
+    "variants": {
+      "Gold": "gid://shopify/ProductVariant/67632284598636",
+      "Pink": "gid://shopify/ProductVariant/67632284631404",
+      "Blue": "gid://shopify/ProductVariant/67632284664172"
+    }
   },
   "snowflake-gift-box": {
-    "handle": "",
-    "variantId": ""
+    "productId": "gid://shopify/Product/15406015512940",
+    "handle": "christmas-edition-2-count",
+    "variantId": "",
+    "variants": {
+      "Rose Oolong Tea": "gid://shopify/ProductVariant/67637433893228",
+      "Rose & Honey-Scented Black Tea": "gid://shopify/ProductVariant/67637433925996",
+      "Oriental Beauty Tea": "gid://shopify/ProductVariant/67637433958764",
+      "Ruby Black Tea": "gid://shopify/ProductVariant/67637433991532",
+      "Jin Xuan Tea": "gid://shopify/ProductVariant/67637434024300"
+    }
+  },
+  "christmas-gift-box": {
+    "productId": "gid://shopify/Product/15406015742316",
+    "handle": "christmas-edition-12-count",
+    "variantId": "",
+    "variants": {
+      "Mixed Teas / Blue": "gid://shopify/ProductVariant/67637434253676",
+      "Mixed Teas / Orange": "gid://shopify/ProductVariant/67637434286444",
+      "Rose Oolong Tea / Blue": "gid://shopify/ProductVariant/67637434319212",
+      "Rose Oolong Tea / Orange": "gid://shopify/ProductVariant/67637434351980",
+      "Oriental Beauty Tea / Blue": "gid://shopify/ProductVariant/67637434384748",
+      "Oriental Beauty Tea / Orange": "gid://shopify/ProductVariant/67637434417516"
+    }
   }
 }

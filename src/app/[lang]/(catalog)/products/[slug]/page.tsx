@@ -1,8 +1,11 @@
+import ProductAnalytics from "@/components/analytics/ProductAnalytics";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { products, getProducts, findProduct, getCategory, getCategoryProducts, productHref, categoryHref, formatPrice } from "@/data/catalog";
+import { products, getCategory, productHref, categoryHref } from "@/data/catalog";
+import { getCommerceProduct, getCommerceProducts } from "@/lib/shopify/catalog";
+import LiveProductPrice from "@/components/catalog/LiveProductPrice";
 import PreOrderLeft from "@/components/catalog/PreOrderLeft";
 import AddToCart from "@/components/cart/AddToCart";
 import { getContent, site, type Img } from "@/data/content";
@@ -32,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw, slug } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  const product = findProduct(slug, lang);
+  const product = await getCommerceProduct(slug, lang);
   if (!product) return { title: t("找不到商品｜CHARM VILLA", "Piece not found | CHARM VILLA") };
   const title = t(`${product.name}｜CHARM VILLA`, `${product.name} | CHARM VILLA`);
   return { title, description: product.description, alternates: alternatesFor(lang, productHref(product)), openGraph: { title, description: product.description, images: [{ url: product.image.src, alt: product.image.alt }] } };
@@ -42,12 +45,12 @@ export default async function ProductPage({ params }: Props) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
   const t = translator(lang);
-  const product = findProduct(slug, lang);
+  const all = await getCommerceProducts(lang);
+  const product = all.find(p => p.slug === slug);
   if (!product) notFound();
-  const all = getProducts(lang);
   const { tea } = getContent(lang);
   const category = getCategory(product.category, lang)!;
-  const siblings = getCategoryProducts(product.category, lang);
+  const siblings = all.filter(p => p.category === product.category);
   const variants = product.variant ? all.filter((p) => p.variant?.group === product.variant?.group) : [];
   const allScenes = product.scenes ?? [];
   // (the shared closing spread of the tea boxes — the two people and the hands with the mug as two small images — went with the
@@ -147,7 +150,7 @@ export default async function ProductPage({ params }: Props) {
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
       {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Goldfish Tea Bag design awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
     </dl>
-    {product.giftBox && <p className="product-image-note tc">{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。", "Teaware, sweets and decorative props shown in the photographs are not included. Please see the contents listed above.")}{product.giftBox.choices && product.giftBox.choices.length > 1 && t("盒色與款式請見本頁選項。", " Available box colors and styles are shown in the selection options on this page.")}</p>}
+    {product.giftBox && <p className="product-image-note tc">{product.imageNote || <>{t("情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。", "Teaware, sweets and decorative props shown in the photographs are not included. Please see the contents listed above.")}{product.giftBox.choices && product.giftBox.choices.length > 1 && t("盒色與款式請見本頁選項。", " Available box colors and styles are shown in the selection options on this page.")}</>}</p>}
   </section>;
   // 茶款介紹 (tea gift boxes): each tea in the box with its note, in the same row style right after the specifications — it counts as
   // part of them (user 2026-10-07: 「加入目前官網的商品介紹頁」, then 「茶款也算在規格裡好了」).
@@ -197,7 +200,7 @@ export default async function ProductPage({ params }: Props) {
           reference's spacing (user's choice). Under them the same column carries the story and the first scene photographs, at the
           width of the information above them, while the product image on the left stays in place (after …/products/karla;
           user 2026-10-01: 「右側的情境照應該要對齊上面資訊欄的欄位，左邊商品圖會暫時固定」). No captions. */}
-      <ProductOptionProvider><ProductGallery key={product.slug} name={product.name} views={product.views} optionViews={product.giftBox?.choices?.map((c) => c.views)} intro={
+      <ProductOptionProvider><ProductAnalytics product={product} /><ProductGallery key={product.slug} name={product.name} views={product.views} optionViews={product.giftBox?.choices?.map((c) => c.views)} intro={
         <div className="product-intro">
           {/* On Chinese pages the English name sits above the Chinese one; on English pages the name itself is English. */}
           {lang === "zh" && <p className="product-english">{product.english}</p>}
@@ -207,7 +210,7 @@ export default async function ProductPage({ params }: Props) {
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
           {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <PreOrderLeft product={product} />}</p>}
           {product.displayOnly && product.soldOut && <p className="product-price"><span className="product-preorder product-soldtag tc">{t("售完", "Sold out")}</span></p>}
-          {product.price && <p className="product-price">{product.giftBox?.choices?.some((c) => c.price && c.price !== product.price?.amount) ? t(`${formatPrice(product.price.amount, product.price.currency)} 起`, `From ${formatPrice(product.price.amount, product.price.currency)}`) : formatPrice(product.price.amount, product.price.currency)}{product.soldOut && <span className="product-soldout tc">{t("售罄", "Sold out")}</span>}{product.preOrder && !product.soldOut && <PreOrderLeft product={product} />}</p>}
+          {product.price && <LiveProductPrice product={product} />}
           <p className="product-description tc">{product.description}</p>
           {keyLines}
           {originNote}

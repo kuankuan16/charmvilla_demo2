@@ -4,6 +4,8 @@ import studioListing from "./studio-listing.json";
 import { getContent, gallery, site, type Img } from "./content";
 import type { Locale } from "../i18n/config";
 import { sizeText } from "./measure";
+import shopifyProducts from "./shopify-products.json";
+import { applyShopifyProduct, type ShopifyProduct, type ShopifyVariant } from "@/lib/shopify/catalog-data";
 
 // Tea gift box gallery photographs that have a normalised `-even2.webp` copy (same grey ground and box size; user 2026-10-12).
 const evenGalleryFiles = [
@@ -88,8 +90,10 @@ export type Product = {
   teaTbd?: boolean;
   /** Shown but not sold at launch (客戶答覆 B1–B4, 2026-10-12): no price (NT$ or US$), no bag / pre-order buttons, no Offer in JSON-LD; photographs and text stay. */
   displayOnly?: boolean;
+  imageNote?: string;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
+  shopifyData?: { productId: string; published: boolean; status: string; variants: ShopifyVariant[] };
   /** How to brew (tea gift boxes, guide §4); `image` sits at the bottom left of the steps. */
   brew?: { title: string; steps: { title: string; text: string }[]; image?: Img };
   /** 茶款介紹: a note on each tea in the box (tea gift boxes, as on the official product pages). */
@@ -97,7 +101,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string; scene?: string }; views?: ProductView[] }[]; choiceLabel?: string; /** mix-and-match set: this many boxes, each one tea picked from `choices`; one price for the set */ mixBoxes?: number };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; shopifyVariantId?: string; availableForSale?: boolean; quantityAvailable?: number | null; sku?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string; scene?: string }; views?: ProductView[] }[]; choiceLabel?: string; /** mix-and-match set: this many boxes, each one tea picked from `choices`; one price for the set */ mixBoxes?: number };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -657,7 +661,13 @@ const buildCatalog = (lang: Locale) => {
   ];
   const products: Product[] = listed.map((p) => p.giftBox?.choices?.some((c) => c.viewsFrom || c.placeholderViews || c.lidViews)
     ? { ...p, giftBox: { ...p.giftBox, choices: p.giftBox.choices.map((c) => c.placeholderViews ? { ...c, views: greyViews(c.placeholderViews) } : c.viewsFrom ? { ...c, views: bySlug.get(c.viewsFrom)?.views } : c.lidViews ? { ...c, views: lidViews(p, c.lidViews) } : c) } } : p);
-  return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: products.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };
+  const aligned = products.map(p => {
+    const source = (shopifyProducts.products as Record<string, ShopifyProduct>)[p.slug];
+    if (!source) return p;
+    // Match gallery choices against their English identities, independently of the page language.
+    return applyShopifyProduct(p, source, lang);
+  });
+  return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: aligned.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };
 };
 
 const catalogs: Partial<Record<Locale, ReturnType<typeof buildCatalog>>> = {};

@@ -4,13 +4,12 @@
 //                                                                    signed-in customer when there is one), otherwise adds lines
 //                                                                    (POST and PATCH may add `warning`: Shopify changed a line, e.g. fewer in stock)
 //   PATCH  /api/cart   { id, lines:[{id, quantity}] }               → updates quantities
-//   (POST and PATCH refuse more pre-order boxes than are left: 409 preorder_full, src/lib/shopify/preorder.ts)
+//   Shopify's live inventory and inventory policy validate every line; local pre-order allowances are not used.
 //   DELETE /api/cart   { id, lineIds:[…] }                          → removes lines
 import { getCart, createCart, addLines, updateLines, removeLines, STORE_COUNTRY } from "@/lib/shopify/cart";
 import { readSession } from "@/lib/shopify/session";
 import { isShopifyConfigured } from "@/lib/shopify/config";
 import { json, handleError, buyerIp, body } from "@/lib/shopify/http";
-import { assertPreOrderRoom } from "@/lib/shopify/preorder";
 
 export async function GET(req: Request) {
   if (!isShopifyConfigured()) return json({ configured: false, cart: null });
@@ -22,8 +21,7 @@ export async function POST(req: Request) {
   const { id, lines } = await body<{ id?: string; lines?: { merchandiseId: string; quantity: number; attributes?: { key: string; value: string }[] }[] }>(req);
   if (!lines?.length) return json({ error: "bad_request", message: "缺少商品" }, 400);
   try {
-    // pre-order products share one allowance (客戶答覆 B7): the bag may not hold more boxes than are left
-    await assertPreOrderRoom(id ? await getCart(id, buyerIp(req)) : null, lines);
+    // Shopify variant inventory and selling policies are authoritative (user 2026-10-14).
     if (id) return json(await addLines(id, lines, buyerIp(req)));
     const customerAccessToken = (await readSession()) ?? undefined;
     return json(await createCart(lines, buyerIp(req), { countryCode: STORE_COUNTRY, ...(customerAccessToken ? { customerAccessToken } : {}) }));
@@ -32,7 +30,7 @@ export async function POST(req: Request) {
 export async function PATCH(req: Request) {
   const { id, lines } = await body<{ id?: string; lines?: { id: string; quantity: number }[] }>(req);
   if (!id || !lines?.length) return json({ error: "bad_request", message: "缺少購物車或商品" }, 400);
-  try { await assertPreOrderRoom(await getCart(id, buyerIp(req)), [], lines); return json(await updateLines(id, lines, buyerIp(req))); } catch (e) { return handleError(e); }
+  try { return json(await updateLines(id, lines, buyerIp(req))); } catch (e) { return handleError(e); }
 }
 export async function DELETE(req: Request) {
   const { id, lineIds } = await body<{ id?: string; lineIds?: string[] }>(req);

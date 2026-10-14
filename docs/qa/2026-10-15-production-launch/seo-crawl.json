@@ -1,0 +1,1346 @@
+[
+  {
+    "url": "https://www.charmvilla.com/zh",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "CHARM VILLA — 藝術即生活"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "CHARM VILLA | Art as Life"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/about",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/about",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/about"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/about"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/about"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "關於 CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/about",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/about",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/about"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/about"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/about"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "About | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/news",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/news",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/news"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/news"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/news"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "最新消息｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/news",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/news",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/news"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/news"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/news"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "News &amp; Announcements | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "CHARM VILLA 洛杉磯快閃展｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "CHARM VILLA Pop-up in Los Angeles | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/faq",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/faq",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/faq"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/faq"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/faq"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "常見問題｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/faq",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/faq",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/faq"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/faq"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/faq"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "FAQ | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/policy",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/policy",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/policy"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/policy"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/policy"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "運送與退換貨政策｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/policy",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/policy",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/policy"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/policy"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/policy"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Shipping &amp; Returns Policy | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/privacy",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/privacy",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/privacy"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/privacy"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/privacy"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "隱私權政策｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/privacy",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/privacy",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/privacy"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/privacy"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/privacy"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Privacy Policy | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/terms",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/terms",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/terms"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/terms"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/terms"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "服務條款｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/terms",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/terms",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/terms"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/terms"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/terms"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Terms of Service | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/prop65",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/prop65",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/prop65"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/prop65"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/prop65"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "加州 65 號提案警語｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/prop65",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/prop65",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/prop65"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/prop65"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/prop65"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "California Proposition 65 Warning | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/accessibility",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/accessibility",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/accessibility"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/accessibility"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/accessibility"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "無障礙聲明｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/accessibility",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/accessibility",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/accessibility"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/accessibility"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/accessibility"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Accessibility Statement | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/collections/all",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/collections/all",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/all"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/all"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/all"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "全部作品｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/collections/all",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/collections/all",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/all"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/all"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/all"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "All Pieces | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/collections/tea",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/collections/tea",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/tea"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/tea"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/tea"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "小金魚茶包｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/collections/tea",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/collections/tea",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/tea"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/tea"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/tea"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Goldfish Tea Bags | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/collections/scents",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/collections/scents",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/scents"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/scents"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/scents"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "香味是喜悅的記憶｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/collections/scents",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/collections/scents",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/scents"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/scents"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/scents"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Scents | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/collections/wood-fired",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/collections/wood-fired",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/wood-fired"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/wood-fired"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/wood-fired"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "柴燒系列｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/collections/wood-fired",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/collections/wood-fired",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/collections/wood-fired"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/collections/wood-fired"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/collections/wood-fired"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": false,
+    "title": [
+      "Wood-Fired Collection | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/reunion-paper-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/reunion-paper-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "團圓｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/reunion-paper-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/reunion-paper-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/reunion-paper-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/reunion-paper-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Joyful Reunion | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "年年有魚｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/year-of-plenty-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/year-of-plenty-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Abundance &amp; Prosperity | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "花開富貴｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Prosperity in Bloom | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/kyoto-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/kyoto-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/kyoto-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/kyoto-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/kyoto-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "京都版｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/kyoto-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/kyoto-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/kyoto-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/kyoto-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/kyoto-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Kyoto Artisanal Reserve | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/spring-dawn-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/spring-dawn-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/spring-dawn-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "春曉｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/spring-dawn-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/spring-dawn-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/spring-dawn-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Spring Awakening | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/winter-blossom-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/winter-blossom-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/winter-blossom-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "暮雪｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/winter-blossom-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/winter-blossom-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/winter-blossom-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/winter-blossom-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/winter-blossom-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Snowy Twilight | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/orchid-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/orchid-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/orchid-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/orchid-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/orchid-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "蝴蝶蘭｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/orchid-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/orchid-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/orchid-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/orchid-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/orchid-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Royal Orchid | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "紫斑蝶｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/purple-butterfly-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/purple-butterfly-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Sapphire Wings | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/christmas-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/christmas-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/christmas-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/christmas-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/christmas-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "聖誕禮盒（限量版）｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/christmas-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/christmas-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/christmas-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/christmas-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/christmas-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Christmas Edition (12-count) | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/snowflake-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/snowflake-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/snowflake-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/snowflake-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "聖誕心意禮（限量版）｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/snowflake-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/snowflake-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/snowflake-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/snowflake-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Christmas Edition (2-count) | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/cloud-coaster",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/cloud-coaster",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/cloud-coaster"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/cloud-coaster"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/cloud-coaster"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "雲朵杯墊｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/cloud-coaster",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/cloud-coaster",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/cloud-coaster"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/cloud-coaster"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/cloud-coaster"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Cloud Coaster | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/bird-chopstick-rest",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/bird-chopstick-rest",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/bird-chopstick-rest"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/bird-chopstick-rest"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/bird-chopstick-rest"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "鳥形筷架｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/bird-chopstick-rest",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/bird-chopstick-rest",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/bird-chopstick-rest"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/bird-chopstick-rest"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/bird-chopstick-rest"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Songbird Chopsticks Rest | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "銀杏茶匙｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Ginkgo Style Tea Spoon | CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/zh/products/wooden-chopsticks",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/zh/products/wooden-chopsticks",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/wooden-chopsticks"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/wooden-chopsticks"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/wooden-chopsticks"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "檜木筷子｜CHARM VILLA"
+    ]
+  },
+  {
+    "url": "https://www.charmvilla.com/products/wooden-chopsticks",
+    "status": 200,
+    "canonical": "https://www.charmvilla.com/products/wooden-chopsticks",
+    "hreflang": [
+      [
+        "zh-Hant",
+        "https://www.charmvilla.com/zh/products/wooden-chopsticks"
+      ],
+      [
+        "en",
+        "https://www.charmvilla.com/products/wooden-chopsticks"
+      ],
+      [
+        "x-default",
+        "https://www.charmvilla.com/products/wooden-chopsticks"
+      ]
+    ],
+    "noindex": false,
+    "productSchema": true,
+    "title": [
+      "Hinoki Wood Chopsticks | CHARM VILLA"
+    ]
+  }
+]

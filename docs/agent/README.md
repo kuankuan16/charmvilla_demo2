@@ -49,7 +49,7 @@
 
 - push `main` → Git 觸發 `tentenco/charmvilla-demo2` Production（`https://charmvilla-demo2.vercel.app`）。所以「push」就等於「上線」，只在使用者授權發布時做。
 - 只要 Preview、不要上線：`vercel deploy --yes --target preview --scope tentenco`（`.vercelignore` 已排除 `.env*` 與 `temp/`）。Preview 有 Vercel 登入保護。
-- `charmvilla-gallery-site`（`siteUrl`）是另一個沒連 Git 的專案；`www.charmvilla.com` 是品牌正式網站，絕對不碰。
+- 2026-10-15 已核對：`www.charmvilla.com` 與 apex 均綁 `tentenco/charmvilla-demo2`，`siteUrl` 是正式 www 網域。使用者已明確授權本輪正式上線；後續發布仍依當次授權。`charmvilla-gallery-site` 是另一個專案，不是部署目標。
 
 接手時已知、要問使用者才能定案的衝突：
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AccountClient from "@/components/account/AccountClient";
+import { redirect } from "next/navigation";
 import { alternatesFor, defaultLocale, isLocale, translator } from "@/i18n/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -15,5 +16,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 export default function AccountPage() {
+  if (process.env.SHOPIFY_CUSTOMER_ACCOUNT_URL) redirect(process.env.SHOPIFY_CUSTOMER_ACCOUNT_URL);
   return <main id="catalog-main" className="account-page" tabIndex={-1}><AccountClient /></main>;
 }

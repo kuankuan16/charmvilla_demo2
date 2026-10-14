@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { findProduct, productHref } from "@/data/catalog";
+import { productHref } from "@/data/catalog";
+import { getCommerceProducts } from "@/lib/shopify/catalog";
 import { Heading, Picture } from "@/components/ui";
 import { imageFit } from "@/data/content";
 import { localeHref, translator, type Locale } from "@/i18n/config";
@@ -16,9 +17,10 @@ const slugs = [
   "cloud-coaster",
 ];
 
-export default function FeaturedProducts({ lang }: { lang: Locale }) {
+export default async function FeaturedProducts({ lang }: { lang: Locale }) {
   const t = translator(lang);
-  const selected = slugs.map(slug => findProduct(slug, lang)!);
+  const products = await getCommerceProducts(lang);
+  const selected = slugs.map(slug => products.find(p => p.slug === slug)!);
   return <section id="featured" className="featured-products" aria-labelledby="featured-heading">
     <header className="featured-heading">
       <Heading className="tc" as="h2"><span id="featured-heading">{t("推薦商品精選", "Featured pieces")}</span></Heading>

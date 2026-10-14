@@ -4,8 +4,10 @@
 //   "shopify" — lines live in a Shopify Storefront cart (id in localStorage); checkout hands off to Shopify's
 //               hosted checkout (checkoutUrl), where Markets decide currency, taxes, shipping and payment.
 // The UI (drawer, add-to-cart) is identical in both modes.
+import { checkoutAnalytics, trackCartChange } from "@/lib/analytics/ga4";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { findProduct, formatPrice, type Product } from "@/data/catalog";
+import { findProduct, getProducts, formatPrice, type Product } from "@/data/catalog";
+import { variantLabel } from "@/lib/shopify/catalog-data";
 import type { Cart as ShopifyCart } from "@/lib/shopify/types";
 import { variantFor, productForVariant } from "@/lib/shopify/variants";
 import { useT } from "@/i18n/LocaleProvider";
@@ -17,7 +19,7 @@ type Ctx = {
   mode: "local" | "shopify"; ready: boolean; open: boolean; busy: boolean; error: string | null; /** Shopify changed a line instead of refusing it (e.g. fewer in stock) */ notice: string | null;
   lines: CartLine[]; count: number; subtotal: number; currency: string; checkoutUrl: string | null;
   add: (product: Product, quantity?: number, option?: number, mix?: number[]) => Promise<void>; update: (key: string, quantity: number) => Promise<void>; remove: (key: string) => Promise<void>;
-  setOpen: (v: boolean) => void; formatPrice: (n: number, c?: string) => string;
+  checkout: () => Promise<string | null>; setOpen: (v: boolean) => void; formatPrice: (n: number, c?: string) => string;
 };
 
 const CartContext = createContext<Ctx | null>(null);
@@ -34,11 +36,11 @@ const MODE: "local" | "shopify" = process.env.NEXT_PUBLIC_COMMERCE_MODE === "sho
 // The variant GID tells which product and which option (tea, tea × lid colour) the line is (src/lib/shopify/variants.ts).
 const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string, en: string) => string): CartLine[] => (cart?.lines.edges ?? []).map(({ node }) => {
   const hit = productForVariant(node.merchandise.id);
-  const local = hit ? findProduct(hit.slug, lang) : undefined;
-  const choice = hit?.option === undefined ? undefined : local?.giftBox?.choices?.[hit.option];
+  const local = hit ? findProduct(hit.slug, lang) : getProducts(lang).find(p => p.shopify?.handle === node.merchandise.product.handle);
   const mix = local?.giftBox?.mixBoxes ? mixFromAttrs(node.attributes) : undefined;
-  const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : choice?.label;
-  const name = local ? (picked ? `${local.name}${t(`（${picked}）`, ` (${picked})`)}` : local.name) : node.merchandise.product.title;
+  const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : node.merchandise.title === "Default Title" ? undefined : variantLabel(node.merchandise.title, lang);
+  const title = lang === "zh" && local ? local.name : node.merchandise.product.title;
+  const name = picked ? `${title}${t(`（${picked}）`, ` (${picked})`)}` : title;
   return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id, ...(local?.preOrder ? { preOrder: true } : {}) };
 });
 
@@ -48,10 +50,11 @@ const lineAttributes = (product: Product, option?: number, mix?: number[]) => {
   const en = findProduct(product.slug, "en");
   // a mix-and-match set: the teas in words for the warehouse, plus a hidden `_mix` (underscore keys stay out of checkout) to name the line again in the bag
   if (mix) return { attributes: [{ key: "Teas", value: mixText(en, mix, ", ", " × ") }, { key: "_mix", value: mix.join(",") }, ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])] };
-  const label = option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label;
+  const id = option === undefined ? product.shopify?.variantId : product.giftBox?.choices?.[option]?.shopifyVariantId;
+  const label = product.shopifyData?.variants.find(v => v.id === id)?.title ?? (option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label);
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
   const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid" ? "Lid" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
-  const attrs = [...(label ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
+  const attrs = [...(label && label !== "Default Title" ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
   return attrs.length ? { attributes: attrs } : {};
 };
 
@@ -60,6 +63,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false); const [open, setOpen] = useState(false); const [busy, setBusy] = useState(false); const [error, setError] = useState<string | null>(null); const [notice, setNotice] = useState<string | null>(null);
   const [localLines, setLocalLines] = useState<{ slug: string; quantity: number; option?: number; mix?: number[] }[]>([]);
   const [shopifyCart, setShopifyCart] = useState<ShopifyCart | null>(null);
+  const currentCart = useRef<ShopifyCart | null>(null);
   const cartId = useRef<string | null>(null);
 
   // boot: read the persisted cart
@@ -69,14 +73,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     queueMicrotask(async () => {
       try {
         if (MODE === "local") { const raw = localStorage.getItem(LOCAL_KEY); if (raw && !cancelled) setLocalLines(JSON.parse(raw)); }
-        else { cartId.current = localStorage.getItem(ID_KEY); if (cartId.current) { const d = await fetch(`/api/cart?id=${encodeURIComponent(cartId.current)}`).then((r) => r.json()).catch(() => null); if (!cancelled) { if (d?.cart) setShopifyCart(d.cart); else if (d && d.configured === true && d.cart === null) { localStorage.removeItem(ID_KEY); cartId.current = null; } /* an outage or a network error keeps the id for the next visit */ } } }
+        else { cartId.current = localStorage.getItem(ID_KEY); if (cartId.current) { const d = await fetch(`/api/cart?id=${encodeURIComponent(cartId.current)}`).then((r) => r.json()).catch(() => null); if (!cancelled) { if (d?.cart) { currentCart.current = d.cart; setShopifyCart(d.cart); } else if (d && d.configured === true && d.cart === null) { localStorage.removeItem(ID_KEY); cartId.current = null; } /* an outage or a network error keeps the id for the next visit */ } } }
       } catch { /* private mode or bad JSON */ }
       if (!cancelled) setReady(true);
     });
     return () => { cancelled = true; };
   }, []);
   useEffect(() => {
-    const onSignedOut = () => { try { localStorage.removeItem(ID_KEY); } catch { /* private mode */ } cartId.current = null; setShopifyCart(null); };
+    const onSignedOut = () => { try { localStorage.removeItem(ID_KEY); } catch { /* private mode */ } cartId.current = null; currentCart.current = null; setShopifyCart(null); };
     window.addEventListener(SIGNED_OUT_EVENT, onSignedOut);
     return () => window.removeEventListener(SIGNED_OUT_EVENT, onSignedOut);
   }, []);
@@ -88,6 +92,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const res = await fetch("/api/cart", { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: cartId.current ?? undefined, ...payload }) });
       const data = await res.json();
       if (!res.ok) throw new Error(apiMessage(lang, data, t("購物車更新失敗", "The bag could not be updated.")));
+      trackCartChange(currentCart.current, data.cart); currentCart.current = data.cart;
       setShopifyCart(data.cart); cartId.current = data.cart.id; localStorage.setItem(ID_KEY, data.cart.id);
       if (data.warning) setNotice(lang === "en" ? data.warning : t("部分商品的數量已依目前庫存調整。", "Some quantities were changed to match what is in stock."));
     } catch (e) { setError(e instanceof Error ? e.message : t("購物車更新失敗", "The bag could not be updated.")); } finally { setBusy(false); }
@@ -96,10 +101,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // `option`: the tea chosen for a gift box sold "one tea per box" (index into product.giftBox.choices); it is part of the line key.
   // `mix`: boxes per tea for a mix-and-match set (product.giftBox.mixBoxes); the whole set is one line, one variant.
   const add = useCallback(async (product: Product, quantity = 1, option?: number, mix?: number[]) => {
-    if (product.soldOut) return;
+    if (MODE === "local" && product.soldOut) return;
     setOpen(true);
     if (MODE === "shopify") {
-      const merchandiseId = variantFor(product.slug, option); // one GID per option (src/data/shopify-map.json)
+      const merchandiseId = (option === undefined ? product.shopify?.variantId : product.giftBox?.choices?.[option]?.shopifyVariantId) || variantFor(product.slug, option);
       if (!merchandiseId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece cannot be added to the bag for now.")); return; }
       await call("POST", { lines: [{ merchandiseId, quantity, ...lineAttributes(product, option, mix) }] }); return;
     }
@@ -116,12 +121,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => ls.filter((l) => lineKey(l) !== key));
   }, [call]);
 
+  const checkout = useCallback(async () => {
+    if (!currentCart.current || !cartId.current) return null;
+    setBusy(true); setError(null);
+    try {
+      const analytics = await checkoutAnalytics();
+      const res = await fetch("/api/cart/analytics", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ id: cartId.current, ...analytics }) });
+      if (!res.ok) throw new Error("Checkout preparation failed");
+      const data = await res.json();
+      return data.checkoutUrl as string;
+    } catch { setError(t("暫時無法開啟結帳，請再試一次。", "Checkout could not be opened. Please try again.")); return null; }
+    finally { setBusy(false); }
+  }, [t]);
+
   const lines = useMemo<CartLine[]>(() => MODE === "shopify" ? linesFromShopify(shopifyCart, lang, t) : localLines.flatMap((l) => { const p = findProduct(l.slug, lang); const choice = l.option === undefined ? undefined : p?.giftBox?.choices?.[l.option]; const picked = l.mix ? mixText(p, l.mix, t("、", ", "), t(" × ", " × ")) : choice?.label; return p ? [{ key: lineKey(l), slug: p.slug, name: picked ? `${p.name}${t(`（${picked}）`, ` (${picked})`)}` : p.name, image: { src: p.image.src, alt: p.image.alt }, quantity: l.quantity, unitAmount: choice?.price ?? p.price?.amount ?? 0, currency: p.price?.currency ?? "USD", onRequest: !p.price, ...(p.preOrder ? { preOrder: true } : {}) }] : []; }), [localLines, shopifyCart, lang, t]);
   const count = lines.reduce((n, l) => n + l.quantity, 0);
   // Shopify's own subtotal once connected (discounts and price changes match checkout); the line sum in local mode
   const subtotal = MODE === "shopify" && shopifyCart ? Number(shopifyCart.cost.subtotalAmount.amount) : lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
   const currency = MODE === "shopify" && shopifyCart ? shopifyCart.cost.subtotalAmount.currencyCode : lines[0]?.currency ?? "USD";
-  const value: Ctx = { mode: MODE, ready, open, busy, error, notice, lines, count, subtotal, currency, checkoutUrl: MODE === "shopify" ? shopifyCart?.checkoutUrl ?? null : null, add, update, remove, setOpen, formatPrice };
+  const value: Ctx = { mode: MODE, ready, open, busy, error, notice, lines, count, subtotal, currency, checkoutUrl: MODE === "shopify" ? shopifyCart?.checkoutUrl ?? null : null, add, update, remove, checkout, setOpen, formatPrice };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 

@@ -1,0 +1,173 @@
+{
+  "verifiedAt": "2026-10-14T12:56:41.240Z",
+  "optionLabels": 37,
+  "translationResources": 33,
+  "translations": [
+    {
+      "id": "gid://shopify/ProductOption/17559525523820",
+      "key": "name",
+      "value": "選擇茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8736079511916",
+      "key": "name",
+      "value": "頭等獎玫瑰烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8736079544684",
+      "key": "name",
+      "value": "參等獎東方美人茶"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17559505895788",
+      "key": "name",
+      "value": "選擇茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8736018071916",
+      "key": "name",
+      "value": "玫瑰烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8736018104684",
+      "key": "name",
+      "value": "玫瑰蜜香紅茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8854095004012",
+      "key": "name",
+      "value": "紅玉紅茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938591723884",
+      "key": "name",
+      "value": "東方美人茶"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17589944779116",
+      "key": "name",
+      "value": "選擇茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8854092448108",
+      "key": "name",
+      "value": "頭等獎玫瑰烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8854092480876",
+      "key": "name",
+      "value": "參等獎東方美人茶"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17868967739756",
+      "key": "name",
+      "value": "盒色"
+    },
+    {
+      "id": "gid://shopify/Metaobject/612186259820",
+      "key": "label",
+      "value": "藍色"
+    },
+    {
+      "id": "gid://shopify/Metaobject/612186227052",
+      "key": "label",
+      "value": "粉紅色"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17574591234412",
+      "key": "name",
+      "value": "選擇茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8787263783276",
+      "key": "name",
+      "value": "頭等獎玫瑰烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/8787263816044",
+      "key": "name",
+      "value": "參等獎東方美人茶"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17868970131820",
+      "key": "name",
+      "value": "盒色"
+    },
+    {
+      "id": "gid://shopify/Metaobject/287778898284",
+      "key": "label",
+      "value": "金色"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17868965020012",
+      "key": "name",
+      "value": "盒色"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17870119502188",
+      "key": "name",
+      "value": "選擇茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592051564",
+      "key": "name",
+      "value": "玫瑰烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592084332",
+      "key": "name",
+      "value": "玫瑰蜜香紅茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592117100",
+      "key": "name",
+      "value": "東方美人茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592149868",
+      "key": "name",
+      "value": "紅玉紅茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592182636",
+      "key": "name",
+      "value": "金萱烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17870119731564",
+      "key": "name",
+      "value": "選擇茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592412012",
+      "key": "name",
+      "value": "綜合茶款"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592444780",
+      "key": "name",
+      "value": "玫瑰烏龍茶"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592477548",
+      "key": "name",
+      "value": "東方美人茶"
+    },
+    {
+      "id": "gid://shopify/ProductOption/17870119764332",
+      "key": "name",
+      "value": "盒色"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592510316",
+      "key": "name",
+      "value": "藍色"
+    },
+    {
+      "id": "gid://shopify/ProductOptionValue/14938592543084",
+      "key": "name",
+      "value": "橘色"
+    }
+  ],
+  "originalOptionNamesUnchanged": true
+}

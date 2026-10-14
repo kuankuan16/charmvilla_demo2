@@ -1,6 +1,7 @@
 "use client";
 // Right-hand cart drawer (Bang & Olufsen style): lines with quantity steppers, subtotal, shipping note, checkout.
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { CONSENT_EVENT, track } from "@/lib/analytics/ga4";
 import Link from "next/link";
 import { useCart } from "./CartProvider";
 import { productHref, categoryHref } from "@/data/catalog";
@@ -12,6 +13,15 @@ import { preOrderShipping } from "@/data/tea-gifts";
 export default function CartDrawer() {
   const cart = useCart();
   const { lang, t } = useT();
+  const viewed = useRef(false);
+  useEffect(() => {
+    if (!cart.open) { viewed.current = false; return; }
+    const send = () => {
+      if (!viewed.current && cart.ready && cart.lines.length) viewed.current = track("view_cart", { currency: cart.currency, value: cart.subtotal, items: cart.lines.map(l => ({ item_id: l.variantId?.split("/").pop() ?? l.slug, item_name: l.name, item_brand: "CHARM VILLA", price: l.unitAmount, quantity: l.quantity })) });
+    };
+    send(); window.addEventListener(CONSENT_EVENT, send);
+    return () => window.removeEventListener(CONSENT_EVENT, send);
+  }, [cart.open, cart.ready, cart.lines, cart.currency, cart.subtotal]);
   useEffect(() => { const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") cart.setOpen(false); }; document.addEventListener("keydown", onKey); return () => document.removeEventListener("keydown", onKey); }, [cart]);
   useEffect(() => { document.documentElement.classList.toggle("cart--open", cart.open); return () => document.documentElement.classList.remove("cart--open"); }, [cart.open]);
   // Shopify's subtotal once connected (CartProvider); in local mode the lines are summed per currency
@@ -69,7 +79,7 @@ export default function CartDrawer() {
                   ? t("此訂單配送至美國本土相連 48 州可享免運。", "This order qualifies for complimentary shipping to the contiguous United States (48 states).")
                   : t(`訂單金額滿 US$ ${freeShippingMin}（含）配送至美國本土相連 48 州免運；未達則於結帳時依地址與配送方式計算運費。`, `Complimentary shipping on orders of US$${freeShippingMin} or more to the contiguous United States (48 states); below that, shipping is calculated at checkout by address and service.`)) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
               {cart.mode === "shopify" && cart.checkoutUrl
-                ? <a href={cart.checkoutUrl} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
+                ? <a href={cart.checkoutUrl} aria-disabled={cart.busy} onClick={async e => { e.preventDefault(); if (cart.busy) return; const url = await cart.checkout(); if (url) window.location.assign(url); }} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
                 : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Online checkout is not open yet")}>{t("前往結帳", "Go to checkout")}</button>}
               <p className="cart-note tc"><Link href={localeHref(lang, "/policy#us-shipping")} onClick={() => cart.setOpen(false)} className="underline underline-offset-4">{t("運送、付款與退換貨說明", "Delivery, payment and returns")}</Link></p>
               {cart.mode === "local" && <p className="cart-note tc">{t(`線上結帳即將開放；目前可先加入購物車，或來信 ${supportEmail} 洽詢。`, `Online checkout is not open yet. For now you can add pieces to your bag, or email us at ${supportEmail}.`)}</p>}

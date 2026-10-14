@@ -9,7 +9,7 @@
 export const shopifyConfig = {
   domain: process.env.SHOPIFY_STORE_DOMAIN ?? "",
   token: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN ?? "",
-  version: process.env.SHOPIFY_API_VERSION ?? "2026-07",
+  version: process.env.SHOPIFY_API_VERSION ?? "2026-10",
 };
 
 export const isShopifyConfigured = () => Boolean(shopifyConfig.domain && shopifyConfig.token);

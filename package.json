@@ -8,7 +8,13 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run build",
+    "shopify:sync": "node scripts/shopify/sync.mjs",
+    "shopify:prepare-zh": "node scripts/shopify/prepare-zh-copy.mjs",
+    "shopify:migrate-zh": "node scripts/shopify/migrate-zh-copy.mjs",
+    "shopify:test": "node --test scripts/shopify/catalog.test.mjs",
+    "shopify:mcp": "node scripts/shopify/mcp.mjs",
+    "shopify:verify": "node scripts/shopify/verify.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -19,14 +25,20 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
+    "graphql": "^16.13.2",
     "playwright": "^1.63.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "zod": "^4.6.7"
+  },
+  "engines": {
+    "node": ">=24 <25"
   }
 }

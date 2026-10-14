@@ -6,6 +6,7 @@ import Link from "next/link";
 import { getCategories, categoryHref } from "@/data/catalog";
 import { getCommerce, company } from "@/data/commerce";
 import SocialLinks from "@/components/ui/SocialLinks";
+import { CookieSettings } from "@/components/analytics/Analytics";
 import NewsletterForm from "./NewsletterForm";
 import { localeHref, translator, type Locale } from "@/i18n/config";
 
@@ -55,6 +56,7 @@ export default function SiteFooter({ lang, home = false }: { lang: Locale; home?
           {/* the US company behind the store, with the store's email (client's final answers 2026-10-12, A1) */}
           <p className="footer-company tc mt-1">{company.line} · <a href={`mailto:${getCommerce(lang).email}`} className="underline underline-offset-4">{getCommerce(lang).email}</a></p>
         </div>
+        <CookieSettings />
         <SocialLinks lang={lang} className="footer-social" />
       </div>
       <Link href={homeHref} className="footer-wordmark" aria-label={t("CHARM VILLA 首頁", "CHARM VILLA home")}>

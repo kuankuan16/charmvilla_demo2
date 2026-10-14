@@ -180,7 +180,7 @@ const build = (lang: Locale) => {
   const privacy: PolicyDoc = {
     title: t("隱私權政策", "Privacy Policy"),
     // D5 (client 2026-10-12): the date the final policies are actually published on the site. Change it to the launch date at launch.
-    updated: t("最後更新：2026 年 10 月 13 日", "Last Updated: October 13, 2026"),
+    updated: t("最後更新：2026 年 10 月 15 日", "Last Updated: October 15, 2026"),
     intro: t("本隱私權政策說明 Charm Villa 在您造訪本網站或於本站購物時，如何蒐集、使用與揭露您的個人資料。", "This Privacy Policy describes how Charm Villa (\"we\", \"us\", or \"our\") collects, uses, and discloses your Personal Information when you visit or make a purchase from our website (the \"Site\")."),
     sections: [
       { id: "platform", heading: t("1. 資料的蒐集與儲存（我們的平台）", "1. How We Collect and Store Data (Our Platform)"), blocks: [
@@ -210,17 +210,17 @@ const build = (lang: Locale) => {
         ] },
       ] },
       { id: "cookies", heading: t("5. Cookie", "5. Cookies"), blocks: [
-        t("Cookie 是您造訪本站時下載到您電腦或裝置上的少量資訊。本站僅使用「嚴格必要」的第一方 Cookie。這些 Cookie 是網站正常運作並提供您所請求服務的必要條件。具體來說，我們使用這些必要 Cookie 來：", "A cookie is a small amount of information that's downloaded to your computer or device when you visit our Site. Our Site only utilizes \"strictly necessary\" first-party cookies. These cookies are essential for the website to function properly and to provide the services you request. Specifically, we use these essential cookies to:"),
+        t("Cookie 是您造訪本站時儲存在裝置上的少量資訊。我們使用必要的 Cookie 與本機儲存功能提供購物服務，並在您允許後使用分析 Cookie。必要功能包括：", "Cookies are small pieces of information stored on your device. We use essential cookies and local storage to provide shopping services, and analytics cookies when you allow them. Essential functions include:"),
         { list: [
           t("維持您的購物車工作階段。", "Maintain your active shopping cart session."),
           t("在登入時驗證您的身分並保護您的帳號。", "Authenticate your identity and secure your user account during login."),
           t("防止跨站請求偽造（CSRF）攻擊，確保您的資料安全。", "Prevent cross-site request forgery (CSRF) attacks to keep your data safe."),
         ] },
-        t("我們不使用任何非必要的追蹤、分析或廣告 Cookie（例如 Google Analytics 或 Meta Pixel）。由於本站僅依賴嚴格必要的 Cookie，因此不需要也不會顯示 Cookie 同意橫幅。", "We do not use any non-essential tracking, analytics, or advertising cookies (such as Google Analytics or Meta Pixel). Because our Site relies solely on strictly necessary cookies, we do not require or display a cookie consent banner."),
+        t("您可選擇「允許分析」或「僅必要功能」，並隨時透過頁尾的「Cookie 設定」變更選擇。經您同意後，Google Analytics 4 會記錄網頁與商品瀏覽、購物車操作、結帳及完成購買事件，包含商品、金額、幣別、訂單編號與匿名瀏覽器識別資訊，用於分析購買流程與轉換率。我們不會將您的姓名、電子郵件、電話、地址或付款資料傳送至 Google Analytics，也未啟用廣告個人化。", "You can choose Allow analytics or Essential only, and change your choice at any time through Cookie settings in the footer. With your permission, Google Analytics 4 records page and product views, cart actions, checkout and completed purchases, including products, amounts, currency, order IDs and pseudonymous browser identifiers, to measure shopping journeys and conversion rates. We do not send names, email addresses, phone numbers, addresses or payment details to Google Analytics, and advertising personalization is disabled."),
         // D7 (client 2026-10-12, checked against the code): local mode keeps the bag in localStorage; with Shopify on, the bag is a Shopify
         // cart and the browser keeps only its id (CartProvider.tsx). Neither is a cookie or used for tracking (cart audit 2026-10-14).
         process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify"
-          ? t("您的購物車內容由 Shopify 保存，以便結帳；您的瀏覽器只會在本機儲存空間（local storage）記住購物車編號，讓您再次造訪時仍能看到。這些資訊不會用於追蹤。", "Your shopping bag is kept by Shopify so you can check out; your browser only remembers the bag's ID in its local storage, so the bag is still there when you return. This information is not used for tracking.")
+          ? t("您的購物車內容由 Shopify 保存，以便結帳；您的瀏覽器只會在本機儲存空間（local storage）記住購物車編號，讓您再次造訪時仍能看到。若您允許分析，我們也會將分析同意狀態與匿名工作階段識別碼傳遞至 Shopify 結帳，以銜接購買流程。", "Your shopping bag is kept by Shopify so you can check out; your browser remembers the bag's ID in local storage so it is still there when you return. If you allow analytics, we also pass your consent and pseudonymous session identifiers to Shopify checkout to connect the shopping journey.")
           : t("您的購物車內容會儲存在您瀏覽器的本機儲存空間（local storage），讓您再次造訪時仍能看到；這些資訊只留在您的裝置上，不會用於追蹤。", "Your shopping bag is saved in your browser's local storage on your device, so it is still there when you return. This information stays on your device and is not used for tracking."),
       ] },
       { id: "rights", heading: t("6. 您的資料權利（GDPR 與 CCPA）", "6. Your Data Rights (GDPR & CCPA)"), blocks: [

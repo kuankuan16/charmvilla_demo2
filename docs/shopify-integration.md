@@ -1,97 +1,97 @@
-# Shopify 串接說明（美國站，框架已完成，等商店建立後填入）
+# Shopify Headless 開發與資料來源
 
-最後更新：2026-10-13。美國站只賣到美國、只用 USD；英文是預設語言（無前綴網址），中文在 `/zh`。
+更新：2026-10-14。本文件取代舊的「本機價格／預購額度優先」串接規則。
 
-## 需要填的值
-| 位置 | 值 | 來源 |
-|---|---|---|
-| Vercel 環境變數 `SHOPIFY_STORE_DOMAIN` | `xxx.myshopify.com` | Shopify 後台網址 |
-| Vercel 環境變數 `SHOPIFY_STOREFRONT_ACCESS_TOKEN` | 公開 Storefront token | Shopify 後台 → 銷售管道 → Headless（或 Custom app）→ Storefront API |
-| Vercel 環境變數 `NEXT_PUBLIC_COMMERCE_MODE` | `shopify` | 填完上面兩項後改為 shopify 並重新部署 |
-| `src/data/shopify-map.json` | 每個商品的 `handle` 與 variant GID（`gid://shopify/ProductVariant/…`） | Shopify 後台 → 商品 → 變體 |
+## 已連接的環境
 
-不可捏造 GID。空字串代表「Shopify 還沒建立」，shopify 模式下該商品會顯示「暫時無法加入購物車」。
+- Git remote：`https://github.com/tentenco/charmvilla_shopify_official`；本機 `main` 追蹤 `origin/main`。
+- Shopify Admin：<https://admin.shopify.com/store/charmvilla/>。
+- 經 API 驗證的商店網域：`zcs0bg-10.myshopify.com`；店名 Charmvilla，貨幣 USD，API `2026-10`。
+- Storefront：沿用既有 Headless 管道的 **Charmvilla Headless02**。
+- Admin：新建並安裝 **CHARM VILLA Headless CMS**，Dev Dashboard app ID `435346210817`；目前版本 `headless-zh-tw-2026-10`（新增產品 CMS、翻譯及語系權限）。
+- App 使用 client credentials grant；伺服器在 token 到期前自動換發，不把 Admin 憑證傳給前端。
+- 會員入口導向商店現有 Shopify hosted customer accounts：`https://shopify.com/98570830188/account`。本次沒有啟用舊版密碼會員流程。
+- 結帳使用 Storefront Cart 回傳的 `checkoutUrl`，已確認導向 `account.charmvilla.us`。
 
-## 美國站上架的商品（`getProducts("en")`）：要在 Shopify 建立的是 10 個販售商品；4 個只展示的不用建
-| slug | 選項（各自一個 variant） | 網站目前售價 |
-|---|---|---|
-| `reunion-paper-gift-box` | — | $170 |
-| `year-of-plenty-gift-box` | — | $220 |
-| `blossoming-prosperity-gift-box` | — | $220 |
-| `kyoto-gift-box` | 4 種茶 | $60 |
-| `spring-dawn-gift-box` | 2 種茶 × 藍／粉盒蓋 = 4 | $230／$260 |
-| `winter-blossom-gift-box` | 2 種茶 | $230／$260 |
-| `orchid-gift-box` | 2 種茶 × 金／粉盒蓋 = 4 | $300／$340 |
-| `purple-butterfly-gift-box` | —（預購） | $425 |
-| `cloud-coaster` | — | 只展示、不販售（客戶答覆 B1），不用建 |
-| `bird-chopstick-rest` | — | 只展示、不販售（B4），不用建 |
-| `ginkgo-teaspoon-gift-box` | — | 只展示、不販售（B2），不用建 |
-| `wooden-chopsticks` | — | 只展示、不販售（B3），不用建 |
-| `christmas-gift-box` 聖誕禮盒（限量版） | 盒蓋 `Candy Cane`／`Stocking`（各一個 variant，key 用這兩個英文字） | 價格待訂（2026-10-14 客戶：售價、茶款、盒子、預購數量後續補上） |
-| `snowflake-gift-box` 聖誕心意禮（限量版） | **1 個 variant**（三盒一組 $60）；每盒選的茶以 line attribute `Teas`（看得到）＋`_mix`（隱藏，網站用來顯示）帶進訂單，不為茶款建 variant | $60 |
+## 來源契約
 
-`shopify-map.json` 裡排在這 12 個後面的是美國站隱藏的台灣禮盒，保留 slug 以免日後恢復時找不到；不用在美國商店建立。
+| 內容 | 唯一依據 | 實作位置 |
+| --- | --- | --- |
+| 商品照片、各角度、情境照與版面 | [現有 Visual](https://charmvilla-demo2.vercel.app/) 與專案既有影像 | `src/data/catalog.ts`、`public/media/` |
+| 商品內容、規格、故事、選項、SKU | 原 Shopify 商品、custom metafields、translations | `src/lib/shopify/catalog.ts`、`catalog-data.ts` |
+| 售價、購買資格、可用庫存 | Shopify Storefront，US market；未發佈商品僅從 Admin 讀取資料，不能購買 | 同上、`/api/products` |
+| product / variant 身分 | Shopify GID；不得用陣列索引猜配 | `src/data/shopify-map.json` |
+| 結帳價格、折扣、庫存驗證、稅金、運費 | Shopify hosted checkout | `/api/cart` |
 
-## 選項：每個選項一個 variant
-有選項的禮盒（京都版、春曉、暮雪、蝴蝶蘭）每個選項價格或庫存不同，所以在 Shopify 要建成同一個商品底下的多個 variant，並把每個 variant 的 GID 填進 `variants`：
+商品 SSR 每次讀取 Admin 內容與 Storefront 價格／庫存，React cache 只合併同一 request 的讀取。商品頁再每 30 秒／視窗重新取得焦點時更新價格和庫存（10 秒內共用請求）。無法確認庫存時停用加入購物車；不以本機預購額度放行。Shopify 對購物車數量與最終結帳再次驗證。
 
-```json
-"spring-dawn-gift-box": {
-  "handle": "spring-dawn-gift-box",
-  "variantId": "",
-  "variants": {
-    "First-Prize Rose Oolong Tea / Blue": "gid://shopify/ProductVariant/…",
-    "First-Prize Rose Oolong Tea / Pink": "gid://shopify/ProductVariant/…"
-  }
-}
+`shopify-products.json` 是唯讀同步的非機密商品快照，用於既有同步型錄與選項影像對照，不作為 live commerce 的庫存備援。Live 模式缺少 Admin 或 Storefront 憑證會報錯。超過每個商品 100 個 variants／metafields 時會明確要求補上分頁，避免截斷後悄悄顯示部分商品。
+
+## 商品對照
+
+價格為 2026-10-14 查證記錄，實際畫面以即時 Shopify 回應為準。35 個 variants 的完整 GID 見 mapping JSON。
+
+| 專案 slug | Shopify handle／名稱 | 已對齊的重點 |
+| --- | --- | --- |
+| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入、US$170、Gold／Pink／Blue；目前僅 Blue 可售 |
+| year-of-plenty-gift-box | abundance-prosperity-lunar-new-year-gift / Abundance & Prosperity | 18 入、US$220、目前無庫存 |
+| blossoming-prosperity-gift-box | prosperity-in-bloom-lunar-new-year-gift / Prosperity in Bloom | 18 入、US$220 |
+| kyoto-gift-box | kyoto-artisanal-reserve-6-ct / Kyoto Artisanal Reserve | 6 入、US$60、4 茶款；東方美人目前無庫存 |
+| spring-dawn-gift-box | spring-awakening-12-ct / Spring Awakening | 12 入、頭等玫瑰 US$230／參等東方美人 US$260，各 Blue／Pink |
+| winter-blossom-gift-box | snowy-twilight / Snowy Twilight | 12 入、頭等玫瑰 US$230／參等東方美人 US$260 |
+| orchid-gift-box | royal-orchid-gold / Royal Orchid | 18 入、頭等玫瑰 US$300／參等東方美人 US$340，各 Gold／Pink；Pink 目前售罄 |
+| purple-butterfly-gift-box | sapphire-wings / Sapphire Wings | 18 入、貳等東方美人、US$425、目前無庫存 |
+| christmas-gift-box | christmas-edition-12-count / Christmas Edition (12-count) | 12 入、US$120、3 茶款 × Blue／Orange；Headless 未開放 |
+| snowflake-gift-box | christmas-edition-2-count / Christmas Edition (2-count) | 單盒 2 入、US$20、5 茶款；取消舊三盒 US$60 組合；Headless 未開放 |
+| cloud-coaster | coaster / Cloud Coaster | UNLISTED；沿用展示商品狀態，不顯示購買按鈕 |
+| bird-chopstick-rest | songbird-chopstick-rest / Songbird Chopsticks Rest | UNLISTED；沿用展示商品狀態 |
+| ginkgo-teaspoon-gift-box | tea-spoon / Ginkgo Style Tea Spoon | UNLISTED；沿用展示商品狀態 |
+| wooden-chopsticks | chopsticks / Hinoki Wood Chopsticks | UNLISTED；沿用展示商品狀態 |
+
+### 影像與內容限制
+
+- 本次沒有新增、替換或匯入 Shopify 影像；`public/` 無修改。
+- 有明確身分的盒色照片按茶款＋盒色配對，即使 Shopify 改變 variant 排序也不會換錯。Christmas 的既有 Stocking 圖對 Blue、Candy Cane 圖對 Orange。
+- Joyful Reunion 的既有主圖是金黃盒蓋，尚無可確證的 Pink／Blue 專用照片；保留共用圖庫，不能把它當作已完成所有盒色實拍對照。照片清單不會自動覆蓋 Shopify 媒體。
+- 依使用者補充指示，已把 demo2 的14個商品繁體中文遷入 Shopify：28個原生 title／body_html 翻譯、33個原生翻譯資源涵蓋37個選項標籤（含共用顏色 metaobjects），以及14個 `custom.headless_copy_zh_tw` CMS欄位。中文頁的介紹、規格、故事、茶款介紹與沖泡步驟均讀 Shopify；來源與調整清單見 [中文遷移說明](shopify/chinese-copy-migration.md)。
+- 原有中文茶葉介紹與沖泡圖文已存入商品CMS欄位；影像仍用本機核准資產。英文一般編輯內容及 About／News／政策頁維持既有來源，未做全站CMS搬遷。
+- Shopify 商品本身若有文案錯誤（例如部分木製商品的保養段落仍寫 tea spoon），應由商店修正；本次不自行改寫原始事實。
+
+## 本機使用
+
+使用 Node 24（`.nvmrc`）：
+
+```sh
+npm ci
+npm run dev -- --port 3026
+npm run shopify:sync
+npm run shopify:test
+npm run shopify:verify
+npm run check
 ```
 
-- `variants` 的 key 是英文商品頁顯示的選項文字（`product.giftBox.choices[].label`，英文版）。改選項文字時要一起改這裡。
-- 沒有選項的商品只填 `variantId`。
-- 舊格式 `{ handle, variantId }` 或直接一個 GID 字串仍可讀；有選項的商品只有在完全沒有 `variants` 時才退回用 `variantId`。
-- 程式：`src/lib/shopify/variants.ts`（`variantFor` 選項 → GID、`productForVariant` GID → 商品＋選項，供購物車顯示名稱）。
+- `.env.example` 記錄必要鍵名。真實值已存放忽略的 `.env.local`（檔案權限 0600），不可提交或貼到對話。
+- `SHOPIFY_CLIENT_ID`、`SHOPIFY_CLIENT_SECRET` 為 server-only；`SHOPIFY_ADMIN_ACCESS_TOKEN` 僅供已有 legacy token 的環境選用。
+- `NEXT_PUBLIC_COMMERCE_MODE=shopify` 控制購物車模式；切換後需重新啟動／建置。
+- `shopify:sync` 只讀 Shopify，更新 mapping 和快照，不更新任何照片、庫存或商品。
+- `shopify:verify` 預設使用 `http://localhost:3026`，可用 `SHOPIFY_VERIFY_URL` 改寫。會新增／增減／移除測試購物車商品，不建立訂單、會員或寄信。
+- 新增商品須先查證 Shopify product GID、加入 mapping，選定現有核准影像，再同步；不自動匯入未知商品。
 
-## Line attribute（結帳頁、訂單、通知信看得到）
-- 一律英文：選項以 `Tea`（有盒蓋顏色時 `Tea / Lid color`，包裝選項時 `Packaging`，聖誕禮盒的盒蓋圖案 `Lid`）加英文選項文字送出；聖誕心意禮用 `Teas`（看得到）＋`_mix`（隱藏）。
-- 預購商品（目前紫斑蝶 `purple-butterfly-gift-box`，`preOrder: true`）加 `Pre-order: Yes`，讓倉庫分得出預購訂單。
+## MCP 與開發工具
 
-## Shopify 後台要做的設定
-1. **商品**：建立上表販售中的商品與選項 variant，售價用 USD，與網站顯示價**完全一致**（`src/data/tea-gifts.ts`、`catalog.ts`）：170、220、220、60、230/260、230/260、300/340、425、60。商品頁價格來自網站資料，購物車價格與小計來自 Shopify，兩邊不同網站不會自動發現，改價必須兩邊一起改。
-2. **Markets**：只開「United States」，幣別 USD。程式建立購物車與會員登入時都會帶 `buyerIdentity.countryCode = "US"`。
-3. **預購**：紫斑蝶要在 Shopify 設定可以在沒有庫存時繼續販售（「缺貨時繼續銷售」），或改用預購 app／selling plan。預計出貨日、是否先收全額、能否取消、與一般商品同車如何出貨，**要客戶決定**，決定前不要寫進網站或政策。
-4. **稅金**：從加州出貨，用 Shopify Tax 或其他方式在結帳時計算；購物車已寫「Taxes are calculated at checkout.」。茶葉是否屬免稅食品要客戶的會計確認，不可由 agent 推測。
-5. **付款**：Shopify Payments（美國）或客戶指定的金流。
-6. **客戶帳戶**：使用「傳統客戶帳戶」（Email＋密碼），本站的登入／註冊／忘記密碼／重設密碼／帳號啟用／個人資料／地址／訂單都走 Storefront API 的 customer 系列。若商店只能用「新版客戶帳戶」，需改為 Customer Account API（OAuth 導向 Shopify 託管頁）。
-7. **通知信連結**：後台 → 設定 → 通知 → 「客戶帳戶密碼重設」與「客戶帳戶邀請」，把按鈕連結改到本站：
-   - 重設密碼：`https://<網站網域>/account/reset?url={{ customer.reset_password_url | url_encode }}`
-   - 帳號啟用：`https://<網站網域>/account/activate?url={{ customer.account_activation_url | url_encode }}`
-   - 也接受保留 Shopify 路徑的寫法 `/account/reset/<id>/<token>`、`/account/activate/<id>/<token>`（本站會以自己的網域重組連結送給 Shopify）。上線前要用真的測試帳號走一次。
-8. **結帳品牌**：Shopify 後台 → 結帳 → 品牌設定（字標、色彩、字型），讓從本站導向的結帳頁一致。
+已設定兩個 stdio servers：
 
-## 電子報（Shopify 顧客名單，2026-10-14 使用者：「電子報用 Shopify」）
-- 頁尾表單與電子報跳窗都送到 `/api/newsletter`（`src/lib/shopify/newsletter.ts`）。訂閱者存成 Shopify 顧客，勾選「接受電子郵件行銷」（SUBSCRIBED、單次確認），並加上標籤 `newsletter`；已經是顧客（會員或買過的人）就只補上同意與標籤，不重複建立。之後用 Shopify Email 寄信。
-- 寫入行銷同意只能用 Admin API，所以要另外一個**只放在伺服器**的 token：Shopify 後台 → 設定 → 應用程式 → 開發應用程式 → 建立 custom app → Admin API 權限勾 `read_customers`、`write_customers`、`read_orders`（最後一項給預購剩餘數量用，見下節） → 安裝後取得 Admin API access token，填進 Vercel 環境變數 `SHOPIFY_ADMIN_ACCESS_TOKEN`（不可加 `NEXT_PUBLIC_`，不可放進前端）。另外也要有 `SHOPIFY_STORE_DOMAIN`。
-- 沒填 token 時 API 回 503 `not_configured`，表單顯示「電子報將於 Shopify 串接完成後開放訂閱。」，什麼都不存。
-- 表單有隱藏欄位 `company` 擋機器人：有填就回成功但不存。沒有做頻率限制；若上線後出現大量假訂閱，再加 Vercel Firewall 規則或驗證。
-- 上線前用一個測試信箱實際訂閱一次，到 Shopify 後台 → 顧客 確認出現、行銷狀態是「已訂閱」、有 `newsletter` 標籤。
+| Server | 功能 | 配置 |
+| --- | --- | --- |
+| shopify-dev-mcp | Shopify 官方文件、API schema、GraphQL 驗證 | `npx -y @shopify/dev-mcp@1.16.0` |
+| charmvilla-shopify | 此商店的 Admin GraphQL 唯讀查詢：商品、庫存、CMS pages／blogs／metaobjects | `node scripts/shopify/mcp.mjs` |
 
-## 預購剩餘數量（客戶答覆 B7：每個商品一個共用額度，隨訂單減少）
-- Shopify 的庫存是每個 variant 各算各的，沒辦法讓同一商品的幾個茶款／盒蓋顏色共用一個數量，所以由網站計算：**剩餘＝額度（`src/data/tea-gifts.ts` 的 `preOrderLimit`）－已下單盒數**。已下單盒數用 Admin API 讀訂單（`src/lib/shopify/preorder.ts`），取每個品項的 `currentQuantity`，所以取消訂單、刪除或退款的品項會把數量還回來。
-- 額度：團圓、京都版 100；年年有魚、花開富貴 20；春曉、暮雪、蝴蝶蘭、紫斑蝶 10。聖誕禮盒、聖誕心意禮還沒有額度，只顯示「預購」。
-- 商品頁的標籤與按鈕、分類頁卡片（`PreOrderLeft`、`CardPreOrderTag`）讀 `/api/preorder`，每 30 秒重讀一次；商品頁一律顯示剩餘數字（使用者 2026-10-14「20 盒和 100 盒也顯示數字」，取代 10-13 只顯示 10 盒以下），卡片只寫「預購」，0 盒顯示售罄、按鈕停用。
-- 加入購物車與改數量時（`/api/cart` POST／PATCH）再算一次最新數字，整個購物車的盒數超過剩餘就擋下來（409 `preorder_full`，「這款預購只剩 N 盒」）。讀不到數字時（沒填 token、Shopify 暫時異常）不擋，避免整站不能買。
-- 只計算 `PREORDER_COUNT_SINCE`（預設 2026-10-17）之後的訂單，上線前的測試訂單不會被扣掉；上線日改了就改這個環境變數。`read_orders` 只看得到最近 60 天的訂單，預購期間超過 60 天要另外申請 `read_all_orders`。
-- Shopify 後台：這些預購商品的 variant 設成「缺貨時繼續銷售」或不追蹤庫存，數量控管交給網站。仍有一個小縫：兩個人同時結帳最後幾盒時，可能多賣 1–2 盒，因為額度檢查在加入購物車時，不在 Shopify 結帳頁。
-- 上線前測試：用測試訂單買 1 盒紫斑蝶（`PREORDER_COUNT_SINCE` 暫時設成當天），確認 30 秒內商品頁從「剩餘 10 盒」變成「剩餘 9 盒」；取消訂單後回到 10。
+專案配置位於 `.mcp.json`（Claude）和 `.codex/config.toml`（Codex）；此 Mac 的 Codex 亦已登錄絕對路徑。重開 agent session 後工具才會自動出現在新 session。兩個 server 都已用 MCP SDK 完成 handshake／工具呼叫，官方 server 已驗證實際 Storefront query。
 
-## 程式對應
-- `src/lib/shopify/`：`client.ts`（Storefront GraphQL）、`queries.ts`、`cart.ts`（含 `setBuyerIdentity`、`attachCustomer`、`STORE_COUNTRY = "US"`）、`customer.ts`（含 `resetByUrl`、`activateByUrl`）、`session.ts`（customerAccessToken 存 httpOnly cookie）、`variants.ts`（選項 ↔ variant）。
-- `src/app/api/cart`：GET／POST／PATCH／DELETE；新建購物車時帶 country US 與已登入的會員。
-- `src/app/api/account/*`：register、login（兩者登入後把瀏覽器裡現有的購物車綁到會員）、logout、me、profile、recover、reset、activate、addresses。
-- `src/components/cart/`：`CartProvider`（local／shopify 兩種模式）、`CartDrawer`（右側抽屜）、`AddToCart`、`CartButton`。
-- `src/components/account/AccountClient.tsx` + `src/app/[lang]/(catalog)/account/page.tsx`：會員頁。
-- `src/components/account/AccountLinkForm.tsx` + `src/app/[lang]/(catalog)/account/reset|activate/[[...token]]/page.tsx`：重設密碼與帳號啟用頁。
-- 未設定時：購物車以網站上的售價在瀏覽器裡運作、結帳按鈕停用；會員頁、重設密碼頁、啟用頁的表單可看，送出時顯示「會員系統將於 Shopify 串接完成後啟用」。
-- 會員入口（頁首圖示、選單、頁尾）另有開關 `NEXT_PUBLIC_ACCOUNTS_OPEN=true`，和 `NEXT_PUBLIC_COMMERCE_MODE` 分開，結帳可以先開、會員確認能用再開（客戶答覆 E6）。兩個都是 `NEXT_PUBLIC_`，改完要重新部署才生效。
-- 結帳網址：`checkoutUrl` 會用 Shopify 的主網域。不要把 Shopify 主網域設成本站網域（會被導回 Next.js 而 404）；用 myshopify 網域或 `checkout.` 子網域。
-- 購物車行為：Shopify 暫時異常時保留瀏覽器裡的購物車編號，只有 Shopify 明確回答購物車不存在才清掉；登出會放掉購物車（共用電腦時下一位不會帶到上一位會員）；Shopify 若因庫存調整數量（`warnings`），購物車會顯示說明；錯誤訊息在空購物車時也看得到。
+商店 MCP 使用 GraphQL AST 限制為單一 query，拒絕 mutations。App 的 CMS write scopes 供後續授權開發使用，不代表 MCP 會自動更改或發佈內容。授權 scopes：`read_products,write_products,read_translations,write_translations,read_locales,write_locales,read_inventory,read_content,write_content,read_metaobjects,write_metaobjects,read_metaobject_definitions,write_metaobject_definitions,read_customers,write_customers,read_orders`。Customer scopes 支援現有 newsletter API，但本次未寄送或做實際訂閱測試。
+
+Shopify CLI 已安裝（4.9.3）；本次沒有建立 Charmvilla CLI store auth session，Headless Next.js 開發透過上述 API 憑證運作，不依賴 Theme／Hydrogen CLI 登入。官方 AI Toolkit plugin 未列於此環境的 marketplace，已採官方 Dev MCP 替代。
+
+## 驗證與部署狀態
+
+見 [初次整合 QA](qa/2026-10-14-shopify-headless/README.md) 及 [中文遷移 QA](qa/2026-10-14-shopify-chinese/README.md)。實際 Shopify API、MCP、購物車與 hosted checkout 頁面已驗證，未按付款、未建立訂單。2026-10-15 已依使用者授權正式上線至 www.charmvilla.com，Vercel production／preview 環境已設定 server-only 憑證；GA4 與結帳 pixel 見 [追蹤契約](analytics/ga4-tracking-plan.md)，發布證據見 [上線 QA](qa/2026-10-15-production-launch/README.md)。
