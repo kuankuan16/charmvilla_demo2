@@ -26,7 +26,8 @@ export default async function NewsPage({ params }: Props) {
     <section className="news-page" aria-labelledby="news-title">
       <header className="news-head">
         <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}</h1>
-        <p className="tc">{t("新品發表、禮盒預購與期間限定活動，CHARM VILLA 的近況都在這裡。", "Launches, gift-box pre-orders and limited-time events: the latest from CHARM VILLA.")}</p>
+        {/* the line breaks after the colon / comma, never before a stray "the" (user 2026-10-14: 「斷句位置修改」); phones wrap normally */}
+        <p className="tc"><span className="md:inline-block">{t("新品發表、禮盒預購與期間限定活動，", "Launches, gift-box pre-orders and limited-time events:")}</span>{" "}<span className="md:inline-block">{t("CHARM VILLA 的近況都在這裡。", "the latest from CHARM VILLA.")}</span></p>
       </header>
       <ul className="news-grid">
         {getNews(lang).map((n) => (

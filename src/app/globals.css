@@ -354,7 +354,10 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 /* the chosen packaging, in one line under the choice buttons */
 .product-choice-note { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--color-stone-deep); }
 .product-story-row .product-awards { margin-top: 2px; gap: 20px; }
-@media (max-width: 767px) { .product-keyfacts > div { grid-template-columns: 1fr; gap: 4px; } } /* phones: label above value (client tea-names review 2026-10-13 §1) */
+/* label above value whenever the column is narrow — phones, and tablets where the info column is slim (client tea-names review 2026-10-13 §1;
+   user 2026-10-14 at a tablet width: 「這個寬度的時候，商品 spec 就可以改成不分欄位了」). Measured on the column itself, not the window. */
+.product-specs { container-type: inline-size; }
+@container (max-width: 380px) { .product-keyfacts > div { grid-template-columns: 1fr; gap: 4px; } }
 .product-setline { margin-top: 6px; font-size: 15px; line-height: 1.6; color: var(--color-stone-deep); }
 .product-mix-help { margin: -4px 0 12px; font-size: 15px; line-height: 1.6; color: var(--color-stone-deep); }
 /* add to bag: the reference's FIND RETAILERS — full column width, ink ground, page-coloured capitals (user 2026-10-01) */
