@@ -12,6 +12,7 @@
 
 - Git：功能 c767233、整合既有圖片 QA 96e9207，均已推送 origin/main。
 - Git Production：dpl_9kJSkQvwSSZyHpLpTN8R2zfYtnzE，READY、aliasAssigned=true，www／apex／demo2 aliases 已指向，對應 96e9207。
+- 最終應用程式 commit 548a52a；Production dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt READY，aliasAssigned=true，含自動事件網址保護。
 - 最終正式域名 `SHOPIFY_VERIFY_URL=https://www.charmvilla.com npm run shopify:verify` 全部通過，測試 cart 清空。
 
 ## 檢查結果

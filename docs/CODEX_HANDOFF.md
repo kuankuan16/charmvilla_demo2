@@ -10,7 +10,7 @@ GA4 `G-D3YCFQMZ2W`，property 559053952、stream 16130398768；Shopify custom pi
 
 Search Console sitemap 重新提交 Success，56 URLs；首頁及中文京都商品頁均已 request indexing。提交不等於已收錄，首頁原已收錄。商品圖／中文來源契約保留。
 
-2026-10-14 遠端 4b1e83a、860e631 的桌機主圖清晰度修正保留：桌機 >=768px 使用原始 WebP，手機與縮圖維持 Next 最佳化；其歷史 QA 在 [圖片清晰度](qa/2026-10-14-product-image-clarity/README.md)。本輪不改圖片資產。最終 Git Production 已升級為 `dpl_9kJSkQvwSSZyHpLpTN8R2zfYtnzE`（96e9207，READY），正式 API／購物車 verify 通過。
+2026-10-14 遠端 4b1e83a、860e631 的桌機主圖清晰度修正保留：桌機 >=768px 使用原始 WebP，手機與縮圖維持 Next 最佳化；其歷史 QA 在 [圖片清晰度](qa/2026-10-14-product-image-clarity/README.md)。本輪不改圖片資產。最終 Git Production 已升級為 `dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt`（548a52a，READY），正式 API／購物車 verify 通過。
 
 付款前流程已實測，未付款、未建立訂單。原 localhost:3026 使用者購物車保留；本輪正式站 QA 購物車已清空。首次真實付款後仍需對照 Shopify order ID／GA transaction_id；退款 webhook 未納入此 pixel。
 
@@ -18,7 +18,7 @@ Search Console sitemap 重新提交 Success，56 URLs；首頁及中文京都商
 
 - 專案：`tentenco/charmvilla_shopify_official`。
 - `main` 追蹤 `origin/main`，本次開始基準為 `61e3a1a`。
-- 功能 c767233、合併遠端圖片 QA 96e9207 已推送 origin/main；Git Production dpl_9kJSkQvwSSZyHpLpTN8R2zfYtnzE READY，www aliasAssigned=true。後續文件提交不變更應用程式。
+- 功能 c767233、合併遠端圖片 QA 96e9207、追蹤網址保護 548a52a 已推送 origin/main；Git Production dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt READY，www aliasAssigned=true。後續文件提交不變更應用程式。
 - Node 24、Next.js 16.3.8、React 19.2.4。環境的預設 Node 是 22，可用 `npx -y -p node@24 -c 'npm run check'`。
 - 英文預設無前綴，中文 `/zh`；舊 `/en` 由 proxy 重新導向。
 - 舊版 handoff 來自另一台 Mac、另一個 demo repo；其中分支、worktree、Vercel project 和發布待辦不適用於這個 checkout。歷史內容保存在基準 commit 的同名檔案，不能將舊「下一步 push」當作目前授權。

@@ -5,7 +5,7 @@ Status: `idle` — 2026-10-15 Shopify 正式上線、GA4 電商追蹤與 Search 
 ## Last completed
 
 - 正式站 https://www.charmvilla.com/，Shopify 價格／庫存／checkout；demo2 Visual 與中文 CMS 保留。
-- Git c767233／96e9207 已推送；Production dpl_9kJSkQvwSSZyHpLpTN8R2zfYtnzE READY，正式 aliases 已指定。
+- Git c767233／96e9207／548a52a 已推送；Production dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt READY，正式 aliases 已指定。
 - GA4 G-D3YCFQMZ2W，購買重要事件、銷售收益總覽／轉換率／購物及結帳漏斗、14 個月保留、跨域及開發流量排除。Pixel217153900 已 connected。
 - GA DebugView 實際確認商品瀏覽、清單、加購、增減、購物車與 begin_checkout。
 - GSC 連結完成；sitemap Success 56 URLs；首頁與京都中文 request indexing 成功。
