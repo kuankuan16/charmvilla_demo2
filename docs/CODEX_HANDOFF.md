@@ -1,81 +1,65 @@
 # CHARM VILLA 開發交接
 
-更新：2026-10-15。正式站 Shopify／GA4 上線；Git 與部署仍須即時回讀。
+更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
-## 2026-10-15 正式上線
+## 接手時先確認
 
-使用者明確授權正式部署、GA4 電商追蹤與 Search Console 提交。正式站 https://www.charmvilla.com/ 已由本輪 Production `dpl_7bWh8qzQLH1r41kkgV9acb969U6x` 啟用 Shopify。www／apex 原先已綁 tentenco/charmvilla-demo2，無 DNS 變更。Git production branch 為 main，來源 tentenco/charmvilla_shopify_official。
+- 本輪 Agent 文件整理開始時，`main` 與 fetch 後的 `origin/main` 均為 `e83cc1b`，工作樹乾淨；本輪修改尚未 commit／push／部署。
+- `origin` fetch／push：`https://github.com/tentenco/charmvilla_shopify_official.git`。Vercel 專案名稱仍是 `tentenco/charmvilla-demo2`，不可因 Git repo 改名就另建部署專案。
+- 另有 `.claude/worktrees/brew-cup`，分支 `brew-cup-scroll`、HEAD `c8380b9`；本輪讀取 status 為乾淨。這不是合併或刪除它的指示，也不代表已確認執行者狀態。
+- Node 以 `.nvmrc` 的 24 為準；本輪 shell 為 22.23.1，替代執行方式見 [VERIFY.md](agent/VERIFY.md)。不要沿用另一台機器的路徑。
+- 既有本機測試使用 port 3026；動服務前先查證。使用者的 localhost 購物車要保留。
 
-GA4 `G-D3YCFQMZ2W`，property 559053952、stream 16130398768；Shopify custom pixel 217153900 已連線。標準前台／結帳漏斗、購買重要事件、14 個月保留、跨網域、debug 流量排除及 Search Console 連結已配置。GA「銷售和收益」數據匯報包含工作階段重要事件發生率；提升銷售量含購物歷程與結帳流程。詳見 [追蹤契約](analytics/ga4-tracking-plan.md)。
+## 最近已交付：正式站、Shopify、GA4、SEO
 
-Search Console sitemap 重新提交 Success，56 URLs；首頁及中文京都商品頁均已 request indexing。提交不等於已收錄，首頁原已收錄。商品圖／中文來源契約保留。
+正式站：<https://www.charmvilla.com/>。英文無前綴、中文 `/zh`；結帳測試入口：<https://www.charmvilla.com/zh/products/kyoto-gift-box>。
 
-2026-10-14 遠端 4b1e83a、860e631 的桌機主圖清晰度修正保留：桌機 >=768px 使用原始 WebP，手機與縮圖維持 Next 最佳化；其歷史 QA 在 [圖片清晰度](qa/2026-10-14-product-image-clarity/README.md)。本輪不改圖片資產。最終 Git Production 已升級為 `dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt`（548a52a，READY），正式 API／購物車 verify 通過。
+2026-10-15 已依使用者授權正式上線。當時核對 www／apex 都指向既有 Vercel 專案，沒有更動 DNS；`main` push 會觸發 Production。最後一次應用程式驗證的部署是 `dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt`，來源 `548a52a`、READY 且 aliasAssigned=true。`e83cc1b` 僅更新文件；現在的線上部署仍須即時回讀，不能從這個 ID 推測。
 
-付款前流程已實測，未付款、未建立訂單。原 localhost:3026 使用者購物車保留；本輪正式站 QA 購物車已清空。首次真實付款後仍需對照 Shopify order ID／GA transaction_id；退款 webhook 未納入此 pixel。
+| 已交付內容 | 核對結果與證據 |
+| --- | --- |
+| 商品與結帳 | 14 商品／35 variants 對齊；商品、價格、庫存與購買資格跟隨原 Shopify，照片保留 demo2 Visual；[整合契約](shopify-integration.md) |
+| 繁中 CMS | 14 商品、28 個原生商品翻譯、33 個資源涵蓋 37 個選項標籤、14 個中文 CMS 欄位；[遷移說明](shopify/chinese-copy-migration.md)、[中文 QA](qa/2026-10-14-shopify-chinese/README.md) |
+| GA4 | `G-D3YCFQMZ2W`；property `559053952`、stream `16130398768`；checkout pixel `217153900` 已 connected。購買重要事件、營收／轉換率、購物／結帳漏斗、同意與跨域已配置；[事件契約](analytics/ga4-tracking-plan.md) |
+| Search Console | 連結 GA4；sitemap Success，56 URLs；首頁與中文京都頁 request indexing 成功。提交不等於 Google 已收錄；[上線 QA](qa/2026-10-15-production-launch/README.md) |
+| 核准圖片 | 保留遠端 `4b1e83a`、`860e631` 的主圖清晰度調整；桌機主圖原始 WebP、手機／縮圖最佳化；[圖片 QA](qa/2026-10-14-product-image-clarity/README.md) |
 
-## 現行工作樹
+Git 證據：`c767233` Shopify／中文／GA4，`96e9207` 整合遠端圖片調整，`548a52a` 追蹤網址保護及線上驗證，`e83cc1b` 最終發布文件。歷史內容可從 Git 讀取，不另複製舊 handoff。
 
-- 專案：`tentenco/charmvilla_shopify_official`。
-- `main` 追蹤 `origin/main`，本次開始基準為 `61e3a1a`。
-- 功能 c767233、合併遠端圖片 QA 96e9207、追蹤網址保護 548a52a 已推送 origin/main；Git Production dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt READY，www aliasAssigned=true。後續文件提交不變更應用程式。
-- Node 24、Next.js 16.3.8、React 19.2.4。環境的預設 Node 是 22，可用 `npx -y -p node@24 -c 'npm run check'`。
-- 英文預設無前綴，中文 `/zh`；舊 `/en` 由 proxy 重新導向。
-- 舊版 handoff 來自另一台 Mac、另一個 demo repo；其中分支、worktree、Vercel project 和發布待辦不適用於這個 checkout。歷史內容保存在基準 commit 的同名檔案，不能將舊「下一步 push」當作目前授權。
+使用者另授權的上線通知已透過 Gmail 寄出並讀回 `SENT`；這項已交付，不因接手而重寄。
 
-## 本輪已完成
+## 工程入口
 
-1. 使用使用者已登入的 EGO Lite Browser 連接 Charmvilla，確認實際 API 網域為 `zcs0bg-10.myshopify.com`。
-2. 沿用既有 `Charmvilla Headless02` Storefront token；建立、設定並安裝 `CHARM VILLA Headless CMS` app，啟用 client credentials grant 與自動換發 token。
-3. 對齊 14 商品、35 variants：商品資料／價格／選項／庫存讀 Shopify，圖片與版面沿用 demo2 Visual。完整表格和來源規則見 [Shopify 整合](shopify-integration.md)。
-4. SSR 讀即時商品內容，前端每 30 秒／focus 更新價格與庫存；無法驗證庫存時停用購買，Shopify 最終驗證購物車與結帳。不再用本機預購額度計算庫存。
-5. 配置官方 Dev MCP 與專案唯讀 Admin MCP，兩者 SDK handshake／工具呼叫成功；Codex global 與專案設定均已登錄。新 agent session 才會載入新工具。
-6. 會員入口導向現有 Shopify hosted accounts。未重做 Customer Account API OAuth 前端。
-7. 完成 Shopify 真實 API 和購物車測試，以 EGO 打開 hosted checkout 的配送／付款畫面；沒有下單、付款或寄信，測試購物車已清空。
+| 範圍 | 檔案／文件 |
+| --- | --- |
+| Shopify 即時內容與庫存 | `src/lib/shopify/catalog.ts`、`catalog-data.ts`；`src/components/catalog/useLiveProduct.ts`、`LiveProductPrice.tsx`；`src/app/api/products/route.ts` |
+| 商品身分與快照 | `src/data/shopify-map.json`、`src/data/shopify-products.json`；快照不作即時庫存備援 |
+| 購物車／會員 | `src/app/api/cart/`、`src/app/api/account/`；公開會員入口跳 Shopify hosted accounts，沒有重做 Customer Account API OAuth 前端 |
+| Admin 憑證更新 | `src/lib/shopify/admin-auth.ts`、`scripts/shopify/runtime.mjs`；server-only client credentials；不輸出或提交 token |
+| CMS／MCP | [Shopify 整合](shopify-integration.md)；`.mcp.json` 與 `.codex/config.toml` 的兩個 server；商店 MCP 拒絕 mutations |
+| GA4 前台／checkout | `src/lib/analytics/ga4.ts`、`src/components/analytics/`、`scripts/analytics/shopify-checkout-pixel.js` |
+| 秘密與設定 | `.env.example` 只有鍵名；真實值在忽略的 `.env.local`，先前已設 0600。不要讀出值來做交接或健康檢查 |
 
-## 重要檔案
+Shopify API 網域為 `zcs0bg-10.myshopify.com`，checkout host `account.charmvilla.us`。CMS app 使用 client credentials 自動換發 token；不用重建 app 或再遷移中文。zh-TW 未對 Shopify Online Store 發佈，翻譯需用 `translatableResourcesByIds` 讀取；不要因 `Product.translations` 為空而覆寫或發布整個語系。
 
-- `src/lib/shopify/catalog.ts`：即時 Admin 內容＋Storefront 價格／庫存；保護缺設定、缺商品、分頁截斷。
-- `src/lib/shopify/catalog-data.ts`：不含憑證的資料轉換，保留既有影像，按茶款／盒色配對，不依賴 variant 排序。
-- `src/data/shopify-map.json`：真實 product／variant 身分；`shopify-products.json`：唯讀商品快照，不含 Shopify 圖片。
-- `src/components/catalog/useLiveProduct.ts`、`LiveProductPrice.tsx`、`src/app/api/products/route.ts`：價格／庫存更新及失敗狀態。
-- `src/lib/shopify/admin-auth.ts`、`scripts/shopify/runtime.mjs`：server-only client credentials 與 token 更新。
-- `scripts/shopify/{sync,verify,mcp}.mjs`：同步、真實整合檢查、商店 MCP；`catalog.test.mjs`：資料／影像身分回歸測試。
-- `.env.example`：環境變數鍵名；本機真實值在忽略的 `.env.local`，權限 0600。禁止輸出憑證。
-- `.mcp.json`、`.codex/config.toml`：不含 token 的 MCP 設定。
+## 已驗證與尚未驗證
 
-## 未隱藏的限制
+以下是上線時證據，不是本輪重新測試。完整輸出見 [正式上線 QA](qa/2026-10-15-production-launch/README.md) 與 [初次整合 QA](qa/2026-10-14-shopify-headless/README.md)。
 
-- 兩款 Christmas 商品未開放 Headless，保留商品展示但不可購買；本次未自行發佈到該管道。
-- Christmas 小盒已按 Shopify 改為單盒 2 入 US$20，不再販售前台舊三盒組。
-- Joyful Reunion 缺 Pink／Blue 專用照片；保留共用既有圖庫，不能宣稱所有顏色均已實拍配對。
-- 四款 UNLISTED 工藝商品仍保留既有展示模式，資料可讀但無加入購物車。
-- 2026-10-14 後續指示已完成中文遷移：14商品的28個原生商品翻譯、33個原生翻譯資源涵蓋37個選項標籤（含共用顏色 metaobjects）、14個中文CMS欄位。詳見 [中文遷移](shopify/chinese-copy-migration.md)；原本英文fallback限制已排除。
-- 中文商品的沖泡／茶葉介紹已遷入Shopify；品牌／News／政策頁未做CMS搬遷。
-- Shopify CLI 已安裝 4.9.3，但未建立 Charmvilla 的 CLI store auth；Headless API 與 MCP 正常運作，不依賴 CLI session。
-- 舊 classic account routes 仍存在；公開會員頁已跳至 hosted accounts。Newsletter 實際訂閱、登入 OTP、付款與訂單完成均未測試。
-- 安裝後 npm audit 仍列出 7 個既有 high advisories（sharp／source-map-js、ESLint glob 依賴鏈）；本輪新增 MCP SDK 已升至 1.32.1。未執行會改動不相關套件的 `audit fix --force`。
+- `npm run check` 通過：0 errors／7 既有 warnings；Shopify 測試 8/8、analytics 測試 8/8。
+- 正式 Shopify API／獨立測試購物車 CRUD、非法輸入與 hosted account redirect 通過；QA 購物車已清空。
+- 英文 1440px／中文 390px、鍵盤、reduced-motion、同意／撤回；沒有 runtime errors、failed requests、破圖或水平溢出。56 個 sitemap URL 的 HTTP／canonical／hreflang 檢查通過。
+- DebugView 實際收到瀏覽、加購／移除、購物車與 Shopify `begin_checkout`；配送、付款、purchase 邏輯以離線 fixture 測試。
+- 未實際付款、未建立訂單。首筆真實訂單仍須對照 Shopify order ID 與 GA transaction_id；退款／取消的伺服器同步未包含，GA 收益不等於退款後淨營收。
+- Newsletter 真實訂閱、登入 OTP、付款完成未測試；不要把 account redirect 通過當成完整會員測試。
 
-## 驗證
+## 保留限制，不自動啟動工作
 
-[完整 QA](qa/2026-10-14-shopify-headless/README.md)：
+- 兩款 Christmas 商品未開 Headless；保留展示但不可購買。小盒以 Shopify 單盒 2 入 US$20 為準，不恢復舊三盒組。價格仍須讀即時資料。
+- Joyful Reunion 缺 Pink／Blue 專用照片，使用共用核准圖庫；四款 UNLISTED 工藝商品維持展示模式。
+- 商品中文已遷移，品牌／News／政策頁未遷 CMS；英文一般編輯內容仍用既有來源。
+- Shopify CLI 曾安裝 4.9.3，未建立該商店 CLI auth；Headless API／MCP 不依賴它。MCP 歷史 handshake 成功不等於目前 session 已載入工具。
+- 上線時 npm audit 曾列 7 個既有 high advisories；目前情況須重新查證，不為文件任務執行 `audit fix --force`。
+- [TASKS.md](../TASKS.md) 有上線前的價格／預購／帳戶假設；它是公開頁面內容，不是目前待執行任務。需更新時另按內容範圍核對，不能照舊清單改商店。
 
-- `npm run check` 通過；lint 0 errors、7 既有 warnings，typecheck 和 production build 通過。
-- `npm run shopify:test`：8 項通過，含中文CMS優先與商務／影像保留測試。
-- `npm run shopify:verify`：Admin／Storefront／CMS、購物車新增／讀取／數量更新／移除、非法輸入 400、account 307 通過。
-- EGO：英文1440×1000、中文390×843，售罄、變體價格／照片、鍵盤、reduced-motion、API 失敗／恢復檢查完成；正常載入沒有 runtime error／failed request／破圖／水平溢出。
-- public 資產零修改；已掃描追蹤候選檔與前端 build chunks，沒有本機憑證值；`git diff --check` 通過。
-
-## 中文遷移補充
-
-- 使用EGO TaskSpace40擷取demo2的14頁，所有遷移文案在本機實際DOM比對皆零遺漏；390px手機、1440px桌機、鍵盤與reduced motion正常。
-- zh-TW已啟用但未對Shopify Online Store發佈；未發佈語系須從 `translatableResourcesByIds` 讀取，`Product.translations` 會回空陣列。前台及sync已修正，不需發佈整個商店語系才能讀CMS。
-- 原生 title／body_html 存放商品名稱與介紹；`custom.headless_copy_zh_tw` 存其餘中文內容。內容維護方式與調整差異見遷移文件。
-- 本次fetch發現origin/main前進至860e631（2個商品圖清晰度commits）；未覆寫本機整合或直接合併遠端。後續提交／發布前需重新檢視。
-- 本輪未下單、未寄信，保留使用者先前用於測試結帳的1件購物車；未推送或部署。
-
-- 一般選項翻譯鍵為 `name`；7個顏色選項連結 Shopify taxonomy metaobjects，需沿 `linkedMetafieldValue` 翻譯其 `label`。共用資源去重後為33個資源、37個標籤，已讀回驗證；見 [中文QA](qa/2026-10-14-shopify-chinese/README.md)。
-
-## 接續
-
-本次正式上線已獲授權並完成初次部署；最終發布與測試證據見 [上線 QA](qa/2026-10-15-production-launch/README.md)。啟動 `npm run dev -- --port 3026` 可檢查目前結果，既有開發服務使用同一埠。未來新一輪發布依當次使用者指示，先核對部署專案／環境變數；不可從舊 handoff 猜 Vercel 綁定，也不要推送當作備份。所有圖片、翻譯或商品內容補齊須依使用者來源規則進行。
+本輪 Agent 工作區整理的結果與驗證見 [PLAN.md](agent/PLAN.md)。後續發布依當次使用者指示，先核對 Git、專案與環境；不要把 push 當備份。

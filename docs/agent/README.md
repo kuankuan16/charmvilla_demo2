@@ -1,58 +1,58 @@
 # Agent 工作區
 
-這個資料夾讓 Claude Code 與 OpenAI Codex 用同一套工作方式接手 CHARM VILLA。原則是「入口短、狀態可續接、修正可累積」：穩定規則只放在根目錄 `AGENTS.md`，會變動的計畫與經驗則留在這裡，避免大型 handoff 變成互相矛盾的第二份規格。
+Codex 與 Claude Code 共用一套規則與一份進度。只保留會改變下一個動作的內容：規則放入口、狀態放計畫、證據放 QA，不複製第二套專案事實。
 
-## 每次開始的閱讀順序
+## 從這裡接手
 
-1. [`../../AGENTS.md`](../../AGENTS.md)：權限、架構、品牌與驗證等穩定規則。
-2. [`PLAN.md`](PLAN.md)：目前是否有未完成任務、下一步與證明方式。
-3. [`LESSONS.md`](LESSONS.md)：使用者最近糾正過、最容易再次踩到的行為。
-4. [`../CODEX_HANDOFF.md`](../CODEX_HANDOFF.md)：主線歷史、Preview、WIP 分支與外部依賴的時間點快照。
-5. 任務直接相關的 `.translation/`、`docs/qa/`、`docs/research/` 或程式碼相鄰註解；不要為了「完整閱讀」載入無關歷史。
+1. 讀 [AGENTS.md](../../AGENTS.md)，再讀 [PLAN.md](PLAN.md) 的 active task、FIFO queue 和下一個安全動作。先恢復未完成任務，不因新訊息就丟掉原任務。
+2. 讀 [LESSONS.md](LESSONS.md) 中與任務相關的修正，以及 [接手快照](../CODEX_HANDOFF.md)。快照有日期；Git、環境、部署須按需要重新查證。
+3. 執行入口規定的 Git 檢查，確認工作樹與修改範圍。依下表只開相關領域文件，避免載入全部歷史 QA。
+4. 多步任務依 [計畫模板](PLAN.template.md) 更新既有 `PLAN.md`，列出完成條件與 [必要驗證](VERIFY.md)，在已授權範圍內開始工作。
 
-`CLAUDE.md` 只以 `@AGENTS.md` 導入相同入口，不另複製規則。Codex 直接讀 `AGENTS.md`。兩邊不得各自維護一份專案事實。
+`CLAUDE.md` 只用 `@AGENTS.md` 導入入口；Codex 直接讀 `AGENTS.md`。不要在 `.claude/`、`.codex/` 再複製一份行為規則。
 
-## 文件責任
+## 文件各管一件事
 
-| 文件 | 放什麼 | 何時更新 |
+| 文件 | 責任 | 更新時機 |
 | --- | --- | --- |
-| `AGENTS.md` | 長期且會改變所有 agent 行為的規則 | 架構、授權、品牌或驗證原則確定改變時 |
-| `PLAN.md` | 一個進行中任務的目標、步驟、證據、失敗嘗試與接續點 | 多步任務開始、範圍改變、兩次失敗、暫停或完成時 |
-| `LESSONS.md` | 使用者糾正後可泛用的「遇到 X，應做 Y」 | 每次出現可重用的糾正時，最新放最上面 |
-| `CODEX_HANDOFF.md` | 已完成狀態、重要 commit／Preview、WIP 與風險 | 重大功能、部署歸屬、外部依賴或 WIP 狀態改變時 |
+| [AGENTS.md](../../AGENTS.md) | 穩定工作規則、資料來源與權限邊界 | 使用者要求或既有授權涵蓋的規則變更 |
+| [PLAN.md](PLAN.md) | 唯一進行中任務、FIFO queue、證據、失敗嘗試與接續點 | 開始、補充需求、排隊、重規劃、暫停與交付 |
+| [PLAN.template.md](PLAN.template.md) | 計畫格式；不是第二份進度 | 缺少必要交接欄位時 |
+| [LESSONS.md](LESSONS.md) | 可重用的使用者糾正 | 出現新糾正，或同一錯誤重犯時 |
+| [VERIFY.md](VERIFY.md) | 按變更類型選檢查與辨識副作用 | 命令、檢查範圍或部署方式改變時 |
+| [CODEX_HANDOFF.md](../CODEX_HANDOFF.md) | 最新已交付狀態、證據入口與未解限制 | 重大功能、外部服務、部署或工作樹狀態改變時 |
 
-## 計畫與交接規則
+[公開待辦 TASKS.md](../../TASKS.md) 供網站顯示，不是 Agent queue。其舊價格、預購與串接勾選項不得覆蓋 Shopify 現況；本次 Agent 文件整理不修改公開待辦內容。
 
-- 短小、單檔且低風險的修改不必製造形式化計畫；直接做最小改動並驗證。
-- 多檔、跨頁、資料遷移、外部服務、部署、未審分支或需求有關鍵歧義時，必須填 `PLAN.md`。每一步都要有可觀察的完成證據，不能只寫「完成開發」。
-- 同一步驟失敗兩次，停止重試，在計畫裡記錄錯誤、已排除項目與新假設後再繼續。
-- 暫停時保留明確的「下一個安全動作」、工作樹狀態與尚未執行的檢查。完成後把狀態設為 `completed`，確認 handoff 已更新，再把計畫重設為空白模板。
-- 不在文件中寫入 token、密碼、私人 URL、客戶資料或只能由某台機器存取的憑證。
+## 按任務讀取
 
-## Lessons 的品質標準
+| 任務 | 先讀 |
+| --- | --- |
+| Next.js 路由、渲染、快取 | 本機 `node_modules/next/dist/docs/` 對應章節；入口列出常用路徑 |
+| 商品、庫存、購物車、會員、CMS／MCP | [Shopify 整合](../shopify-integration.md)；中文內容另讀 [遷移說明](../shopify/chinese-copy-migration.md) |
+| 文案、雙語 | [.translation/project-brief.md](../../.translation/project-brief.md)、[style-guide.md](../../.translation/style-guide.md)、[decisions.md](../../.translation/decisions.md)、[protected-terms.txt](../../.translation/protected-terms.txt) |
+| 影像、動畫與版面 | 相關資料／元件相鄰註解、Lessons、該頁最近的 QA；使用實際可用的影像工具 |
+| GA4、結帳事件、SEO | [追蹤契約](../analytics/ga4-tracking-plan.md)、[正式上線 QA](../qa/2026-10-15-production-launch/README.md)；SEO 另讀 `src/app/sitemap.ts`、`robots.ts` 與 metadata |
+| 發布或回復版本 | 接手快照、當次授權、Git remote／branch、Vercel 實際 project／alias；不可只憑舊部署 ID |
 
-一條 lesson 要能改變下一次的具體行為。避免「要更小心」；改寫成「當商品事實沒有可追溯來源時，保留待確認狀態，不自行補寫或稱為核准文案」。若一條 lesson 已經穩定、跨任務適用且得到使用者同意，將它合併進 `AGENTS.md`，再從 `LESSONS.md` 移除重複內容。
+## 計畫如何接續
 
-## Claude Code 與 Codex 的工具差異
+- 只有一個 active task。獨立新任務依到達順序排隊，回覆順位；更正與補充直接併入目前任務，記下新完成條件。
+- 同一步驟連續失敗兩次，停止相同重試，填寫「觀察／已排除／新假設／下一個區別性檢查」。能獨立推進就繼續；真正缺少資訊才詢問。
+- 完成時保留精簡結果、證據與未執行檢查，設為 `completed` 並先交付，再接 queue 第一項。沒有排隊任務就等待下一個指示；不要自動把外部限制當成新任務。
+- 暫停、換 session 或壓縮上下文前，留下分支、已修改檔案、下一個安全動作及 queue。不得把計畫重設空白而遺失未交付工作。
+- Agent Memory 可用時同步 `fifo-task-queue` 與 `active-task-preservation`；不可假設跨工具記憶已載入，也不以私人記憶取代 repository 文件。
 
-兩個 agent 讀同一份 `AGENTS.md` 與本資料夾，但手邊的工具與記憶不同。接手時照下表換成自己的工具，不要照抄另一邊的指令。
+## 工具與秘密
 
-| 項目 | Codex（到 2026-10-12 16:52） | Claude Code |
-| --- | --- | --- |
-| 個人記憶 | `~/.codex/memories/`（大多是 09 月其他資料夾的事）；影像規則在 `~/.codex/memories/skills/charmvilla-product-image-fidelity/SKILL.md` | `~/.claude/projects/-Users-kuan-Documents-Codex-10-02-charmvilla-demo2/memory/`：使用者的語氣、字級、茶標、刺繡、禮盒、情境照等大量規格，生圖前必讀 |
-| 對話紀錄（考古用） | `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl` | `~/.claude/projects/<專案>/*.jsonl` |
-| 影像生成 | 內建 imagegen；原始檔在 `~/.codex/generated_images` | 依使用者記憶一律用 Higgsfield CLI：保留參考商品用 `nano_banana_2_1`，純文字／憑空生成用 `gpt_image_2_5 --variant sunburst`；一次一張、先給使用者看 |
-| 瀏覽器 QA | ego-browser（截圖要用明確 viewport＋`raw:true`，先驗 `innerWidth`） | `ego-browser` skill 或 Claude in Chrome；同樣要驗實際 viewport |
-| Node 24 | 暫存的 Node 24 runtime | 本機預設 Node 20、沒有 nvm：`npx -y -p node@24 -c 'npm run check'`（實測 v24.19.0） |
+- 先確認當前可用工具與登入狀態；不要沿用另一台 Mac 的 `/Users/...`、模型名稱、Node 路徑或瀏覽器 session。
+- Node 版本以 [.nvmrc](../../.nvmrc) 與 [package.json](../../package.json) 為準，先看 `node --version`。執行方式見驗證清單。
+- 瀏覽器沿用使用者指定的 EGO Lite Browser，先讀當前 `ego-browser` skill；確認實際 viewport，再做 1440px／390px QA。不要重開已完成 task 或清掉使用者的測試購物車。
+- Claude 的 [.mcp.json](../../.mcp.json) 與 Codex 的 [.codex/config.toml](../../.codex/config.toml) 已設相同兩個 Shopify MCP。新增設定不等於工具已連線；用可用工具或 handshake 驗證。商店 MCP 維持唯讀。
+- `.env.local`、token、密碼、顧客資料及含購物車／結帳 key 的網址不得進入計畫、QA、截圖輸出或 Git。外部副作用依目前任務授權判斷。
 
-共同的部署事實（2026-10-12 查證）：
+## 設計依據
 
-- push `main` → Git 觸發 `tentenco/charmvilla-demo2` Production（`https://charmvilla-demo2.vercel.app`）。所以「push」就等於「上線」，只在使用者授權發布時做。
-- 只要 Preview、不要上線：`vercel deploy --yes --target preview --scope tentenco`（`.vercelignore` 已排除 `.env*` 與 `temp/`）。Preview 有 Vercel 登入保護。
-- 2026-10-15 已核對：`www.charmvilla.com` 與 apex 均綁 `tentenco/charmvilla-demo2`，`siteUrl` 是正式 www 網域。使用者已明確授權本輪正式上線；後續發布仍依當次授權。`charmvilla-gallery-site` 是另一個專案，不是部署目標。
+使用者提供的 [概念圖](https://s4.tenten.co/Screenshot-2026-10-02-at-3.16.39-AM.jpeg) 與 [六項原則](https://s4.tenten.co/Codex_ClaudeCode_AGENTS-md.txt)：先計畫、最小改動、分工、重現修因、驗證、記錄修正。
 
-接手時已知、要問使用者才能定案的衝突：
-
-- 茶標材質（已定案）：使用者 2026-10-12 回覆「霧面金，不要像鏡子那樣亮（亮應該是打光造成的）」。Claude 記憶裡舊的「金色鋁箔」說法作廢；仍維持無孔、棉線黏在裡面。
-- 內文字級：10-12 使用者指定的內文層級是 17px（見 handoff），比 Claude 記憶裡 10-07／10-08 的 16px 新，以 17px 為準。
-- 沖泡區版型：Claude 記憶的「bramwel 奶黃卡片」（10-08）已被 10-12 的 Agasis 列表、再被「方案 01＋02 左圖右文」取代。
+本專案沿用已授權即執行與預設循序的工作方式，所以不照抄「每次等 yes」或強制開子 agent。圖中 plugin 建議不等於已安裝；本輪使用現有共用入口與 MCP，沒有新增 plugin、hook 或全域設定。
