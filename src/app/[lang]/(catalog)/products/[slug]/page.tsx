@@ -140,9 +140,9 @@ export default async function ProductPage({ params }: Props) {
     <dl className="product-keyfacts">
       {specFacts.map((f) => {
         const isTeaContents = f.label === t("盒內茶款", "Tea selection") || f.label === t("可選茶款", "Available teas");
-        // the choice rows read across the column, label above (client tea-names review 2026-10-13 §1)
-        const wide = f.label === t("可選茶款", "Available teas") || f.label === t("選茶方式", "Tea selection");
-        return <div key={f.label} className={wide ? "product-fact-wide" : undefined}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{isTeaContents ? teaItem(item) : smallParen(item)}</li>)}</ul> : isTeaContents ? teaItem(f.value) : f.value}</dd></div>;
+        // every row keeps the label / value columns on wider screens and stacks only on phones (user 2026-10-14: 「改為原本對齊的位置比較統一」,
+        // 「全站小螢幕的時候，spec 才改成上下排列不分欄位」), the choice rows included
+        return <div key={f.label}><dt className="tc">{smallParen(f.label)}</dt><dd className="tc">{f.items && f.items.length > 1 ? <ul className="product-fact-list">{f.items.map((item) => <li key={item}>{isTeaContents ? teaItem(item) : smallParen(item)}</li>)}</ul> : isTeaContents ? teaItem(f.value) : f.value}</dd></div>;
       })}
       {storyRows.map((r) => <div key={r.label} className="product-story-row"><dt className="tc">{r.label}</dt><dd className="tc">{r.body}</dd></div>)}
       {product.category === "tea" && <div className="product-story-row"><dt className="tc">{t("獲獎", "Goldfish Tea Bag design awards")}</dt><dd><div className="product-awards">{tea.awards.map((a) => <Image key={a.image.src} src={a.image.src} alt={a.image.alt} width={a.image.w} height={a.image.h} />)}</div></dd></div>}
