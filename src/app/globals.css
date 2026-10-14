@@ -1208,17 +1208,17 @@ main:has(> .policy-page) { background: #efefed; }
 /* an event's particulars: label / value rows between hairlines (user 2026-10-14: 「修改排版，請優化」); label above value when the column is narrow */
 .news-facts { margin-top: clamp(40px, 4vw, 56px); border-bottom: 1px solid rgb(31 31 31 / .14); }
 /* the icon takes the title's place at the left; the title sits small at the top of the right column, then the value, then the grey details
-   (user 2026-10-14: 「放到右側欄位的最上面，改14px」「把標題的位置給 icon」「下面地址等灰字也改成14px」). dt is display: contents, so its icon and
+   (user 2026-10-14: 「放到右側欄位的最上面，改14px」「把標題的位置給 icon」「下面地址等灰字也改成14px」, then 「照之前的邏輯改回13px」: the note size). dt is display: contents, so its icon and
    title land in the row's grid cells while the markup stays a dt / dd list. */
 .news-fact { display: grid; grid-template-columns: minmax(7em, 30%) minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 24px; padding: 24px 0; border-top: 1px solid rgb(31 31 31 / .14); }
 .news-fact dt { display: contents; }
 .news-fact-icon { grid-column: 1; grid-row: 1 / span 2; width: 32px; height: 32px; color: var(--color-ink); }
-.news-fact-label { grid-column: 2; grid-row: 1; margin-bottom: 6px; font-size: 14px; line-height: 1.6; letter-spacing: .04em; color: var(--color-ink); }
+.news-fact-label { grid-column: 2; grid-row: 1; margin-bottom: 6px; font-size: 13px; line-height: 1.6; letter-spacing: .04em; color: var(--color-ink); }
 .news-fact dd { grid-column: 2; grid-row: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .news-fact-value { font-size: 17px; line-height: 1.6; color: var(--color-ink); }
 .news-fact-part { white-space: nowrap; }
-.news-fact-detail { font-size: 14px; line-height: 1.7; color: var(--color-stone-deep); }
-.news-fact-map { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-bottom: -10px; font-size: 14px; color: var(--color-ink); }
+.news-fact-detail { font-size: 13px; line-height: 1.7; color: var(--color-stone-deep); }
+.news-fact-map { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-bottom: -10px; font-size: 13px; color: var(--color-ink); }
 .news-fact-map-label { text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: rgb(31 31 31 / .32); text-underline-offset: 5px; transition: text-decoration-color .2s; }
 .news-fact-map:hover .news-fact-map-label { text-decoration-color: var(--color-gold); }
 .news-fact-map:active { opacity: .7; }
