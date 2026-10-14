@@ -50,7 +50,8 @@ const lineAttributes = (product: Product, option?: number, mix?: number[]) => {
   if (mix) return { attributes: [{ key: "Teas", value: mixText(en, mix, ", ", " × ") }, { key: "_mix", value: mix.join(",") }, ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])] };
   const label = option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label;
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
-  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid" ? "Lid" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
+  // the Christmas Giftbox's lid is a pattern (Candy Cane / Stocking), not a colour: "Tea / Lid" (client reply 2026-10-14, tea × lid options)
+  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid" ? "Lid" : legend === "choose your tea and lid" ? "Tea / Lid" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
   const attrs = [...(label ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
   return attrs.length ? { attributes: attrs } : {};
 };

@@ -11,6 +11,8 @@ import { teaGifts } from "@/data/tea-gifts";
 import shopifyMap from "@/data/shopify-map.json";
 
 /** slug → shared allowance, for the pre-order products that have one (the two Christmas boxes have none yet). */
+/** a set sold as several boxes (聖誕心意禮) counts its allowance in sets (組), like its page tag (PreOrderLeft) */
+const unitOf = (slug: string) => (teaGifts.find((g) => g.slug === slug)?.setOf ? "組" : "盒");
 export const preOrderLimits: Record<string, number> = Object.fromEntries(teaGifts.filter((g) => g.preOrder && g.preOrderLimit !== undefined).map((g) => [g.slug, g.preOrderLimit as number]));
 
 const since = () => process.env.PREORDER_COUNT_SINCE || "2026-10-17";
@@ -78,6 +80,6 @@ export async function assertPreOrderRoom(cart: Cart | null, add: { merchandiseId
   let left: Record<string, number>;
   try { left = await preOrderLeft(true); } catch { return; }
   for (const slug of grown) {
-    if (after[slug] > left[slug]) throw new ShopifyError(left[slug] === 0 ? "這款預購已經額滿。" : `這款預購只剩 ${left[slug]} 盒，請減少數量。`, 409, "preorder_full");
+    if (after[slug] > left[slug]) throw new ShopifyError(left[slug] === 0 ? "這款預購已經額滿。" : `這款預購只剩 ${left[slug]} ${unitOf(slug)}，請減少數量。`, 409, "preorder_full");
   }
 }
