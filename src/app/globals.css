@@ -1208,7 +1208,7 @@ main:has(> .policy-page) { background: #efefed; }
 /* an event's particulars: label / value rows between hairlines (user 2026-10-14: 「修改排版，請優化」); label above value when the column is narrow */
 .news-facts { margin-top: clamp(40px, 4vw, 56px); border-bottom: 1px solid rgb(31 31 31 / .14); }
 .news-fact { display: grid; grid-template-columns: minmax(7em, 30%) minmax(0, 1fr); gap: 8px 24px; padding: 24px 0; border-top: 1px solid rgb(31 31 31 / .14); }
-.news-fact dt { padding-top: .3em; font-size: 15px; line-height: 1.6; letter-spacing: .04em; color: var(--color-stone-deep); }
+.news-fact dt { font-size: clamp(20px, 1.5vw, 24px); line-height: 1.45; color: var(--color-ink); } /* the row titles at the size of the values, in ink (user 2026-10-14: 「標題都一樣字級但黑色」) */
 .news-fact dd { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .news-fact-value { font-size: clamp(20px, 1.5vw, 24px); line-height: 1.45; color: var(--color-ink); }
 .news-fact-part { white-space: nowrap; }
@@ -1217,7 +1217,7 @@ main:has(> .policy-page) { background: #efefed; }
 .news-fact-map-label { text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: rgb(31 31 31 / .32); text-underline-offset: 5px; transition: text-decoration-color .2s; }
 .news-fact-map:hover .news-fact-map-label { text-decoration-color: var(--color-gold); }
 .news-fact-map:active { opacity: .7; }
-@container (max-width: 380px) { .news-fact { grid-template-columns: 1fr; gap: 4px; padding: 20px 0; } .news-fact dt { padding-top: 0; } }
+@container (max-width: 380px) { .news-fact { grid-template-columns: 1fr; gap: 4px; padding: 20px 0; } }
 .news-back { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 15px; transition: color .2s; }
 
 .news-more { margin-top: clamp(80px, 9vw, 140px); }
