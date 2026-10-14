@@ -1560,7 +1560,10 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-step-content::before { top: 0; }
 .brew-steps li:last-child .brew-step-content::after { bottom: 0; }
 .brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
-.brew-number { visibility: hidden; } /* the 01–05 numbers go; the column stays so the rail, nodes and text keep their places (user 2026-10-14: 「把數字拿掉」) */
+.brew-number { display: none; } /* the 01–05 numbers go (user 2026-10-14: 「把數字拿掉」), and their column with them so the text moves left;
+   the copy and the drawing get a wider gap (「整體可以左移，並增加文字與插畫的間距」) */
+.brew-steps .brew-step-content { grid-template-columns: minmax(0, 1fr) 88px; column-gap: 56px; }
+.brew-steps .brew-step-content::before, .brew-steps li:last-child .brew-step-content::after { left: 0; }
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
 .brew-icon { display: block; justify-self: end; align-self: center; /* midway between the rules above and below (user 2026-10-14: 「插畫的位置居於上下線條的中間」) */ width: 88px; height: 88px; /* 72 → 88 for the finer 3/4-view drawings (2026-10-14) */ color: #a6a6a2; transition: color .45s ease; }
@@ -1572,7 +1575,7 @@ main:has(> .policy-page) { background: #efefed; }
   .brew-guide { grid-column: 6 / -1; }
   .brew-steps { --brew-number-width: 36px; --brew-column-gap: 14px; }
   .brew-copy h3 { font-size: 23px; }
-  .brew-step-content { grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 76px; }
+  .brew-steps .brew-step-content { grid-template-columns: minmax(0, 1fr) 76px; column-gap: 40px; }
   .brew-icon { width: 76px; height: 76px; }
 }
 @media (max-width: 767px) {
@@ -1585,7 +1588,7 @@ main:has(> .policy-page) { background: #efefed; }
   .brew-kicker > span { width: 7px; height: 7px; }
   .brew-steps { grid-column: 1; grid-row: 3; --brew-node-size: 11px; --brew-row-padding: 24px; --brew-number-width: 30px; --brew-column-gap: 10px; }
   .brew-steps li { grid-template-columns: 16px minmax(0, 1fr); min-height: 0; }
-  .brew-step-content { grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 64px; }
+  .brew-steps .brew-step-content { grid-template-columns: minmax(0, 1fr) 64px; column-gap: 28px; }
   .brew-number { font-size: 13px; }
   .brew-copy h3 { font-size: 20px; }
   .brew-copy p { margin-top: 8px; font-size: 17px; line-height: 1.6; }
