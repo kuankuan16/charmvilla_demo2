@@ -1118,7 +1118,9 @@ main:has(> .policy-page) { background: #efefed; }
 .footer-news-form input { flex: 1; min-width: 0; height: 50px; padding: 0 16px; border: 0; background: transparent; color: #f7f6f4; font-size: 17px; }
 .footer-news-form input::placeholder { color: rgb(247 246 244 / .48); }
 .footer-news-form button { margin: 6px; padding: 0 16px; background: #f7f6f4; color: #111; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; transition: background .25s; }
-.footer-news-form button:hover { background: var(--color-gold); }
+.footer-news-form button:hover:not(:disabled) { background: var(--color-gold); }
+.footer-news-form button:disabled { opacity: .6; cursor: wait; }
+.news-trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; } /* newsletter bot trap (NewsletterTrap) */
 .footer-news-status { position: absolute; left: 0; top: calc(100% + 8px); font-size: 13px; color: var(--color-gold); }
 .footer-news-note { margin-top: 12px; font-size: 13px; }
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(72px, 8vw, 120px); padding-top: 26px; border-top: 1px solid rgb(247 246 244 / .16); font-size: 13px; color: rgb(247 246 244 / .72); }

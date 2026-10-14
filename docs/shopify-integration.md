@@ -68,6 +68,13 @@
    - 也接受保留 Shopify 路徑的寫法 `/account/reset/<id>/<token>`、`/account/activate/<id>/<token>`（本站會以自己的網域重組連結送給 Shopify）。上線前要用真的測試帳號走一次。
 8. **結帳品牌**：Shopify 後台 → 結帳 → 品牌設定（字標、色彩、字型），讓從本站導向的結帳頁一致。
 
+## 電子報（Shopify 顧客名單，2026-10-14 使用者：「電子報用 Shopify」）
+- 頁尾表單與電子報跳窗都送到 `/api/newsletter`（`src/lib/shopify/newsletter.ts`）。訂閱者存成 Shopify 顧客，勾選「接受電子郵件行銷」（SUBSCRIBED、單次確認），並加上標籤 `newsletter`；已經是顧客（會員或買過的人）就只補上同意與標籤，不重複建立。之後用 Shopify Email 寄信。
+- 寫入行銷同意只能用 Admin API，所以要另外一個**只放在伺服器**的 token：Shopify 後台 → 設定 → 應用程式 → 開發應用程式 → 建立 custom app → Admin API 權限勾 `read_customers`、`write_customers` → 安裝後取得 Admin API access token，填進 Vercel 環境變數 `SHOPIFY_ADMIN_ACCESS_TOKEN`（不可加 `NEXT_PUBLIC_`，不可放進前端）。另外也要有 `SHOPIFY_STORE_DOMAIN`。
+- 沒填 token 時 API 回 503 `not_configured`，表單顯示「電子報將於 Shopify 串接完成後開放訂閱。」，什麼都不存。
+- 表單有隱藏欄位 `company` 擋機器人：有填就回成功但不存。沒有做頻率限制；若上線後出現大量假訂閱，再加 Vercel Firewall 規則或驗證。
+- 上線前用一個測試信箱實際訂閱一次，到 Shopify 後台 → 顧客 確認出現、行銷狀態是「已訂閱」、有 `newsletter` 標籤。
+
 ## 程式對應
 - `src/lib/shopify/`：`client.ts`（Storefront GraphQL）、`queries.ts`、`cart.ts`（含 `setBuyerIdentity`、`attachCustomer`、`STORE_COUNTRY = "US"`）、`customer.ts`（含 `resetByUrl`、`activateByUrl`）、`session.ts`（customerAccessToken 存 httpOnly cookie）、`variants.ts`（選項 ↔ variant）。
 - `src/app/api/cart`：GET／POST／PATCH／DELETE；新建購物車時帶 country US 與已登入的會員。

@@ -2,14 +2,14 @@
 // Newsletter pop-up (user's reference 2026-10-13: picture left, white panel right with title, text, underlined email field with
 // an envelope, black SUBSCRIBE button, a contact line, X at the top right, over a dark veil). It opens by itself once per visitor:
 // 8 s after arrival or past half the page, whichever comes first; closing or submitting remembers that in localStorage. Never on
-// /account. Submitting goes through the footer form's useNewsletterSubmit, so it only says the newsletter is not open yet.
+// /account. Submitting goes through the footer form's useNewsletterSubmit (/api/newsletter → Shopify customers).
 import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useT } from "@/i18n/LocaleProvider";
 import { getCommerce } from "@/data/commerce";
 import { getScroller } from "@/lib/motion/scroller";
-import { useNewsletterSubmit } from "./NewsletterForm";
+import { useNewsletterSubmit, NewsletterTrap } from "./NewsletterForm";
 
 const SEEN_KEY = "cv-newsletter-popup-seen";
 const DELAY_MS = 8000;
@@ -26,7 +26,7 @@ export default function NewsletterPopup() {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
-  const { note, submit } = useNewsletterSubmit();
+  const { note, submit, sending } = useNewsletterSubmit();
   const email = getCommerce(lang).email;
 
   // Trigger: first of the timer or the half-page scroll. It waits (retrying) while the preloader, cart or menu is up, or on /account.
@@ -118,7 +118,8 @@ export default function NewsletterPopup() {
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1" stroke="currentColor" strokeWidth="1.4" fill="none" /><path d="M3.5 6.5l8.5 6.5 8.5-6.5" stroke="currentColor" strokeWidth="1.4" fill="none" /></svg>
               <input type="email" name="email" placeholder="Email" autoComplete="email" required />
             </label>
-            <button type="submit" className="news-pop-submit tc">{t("訂閱", "Subscribe")}</button>
+            <NewsletterTrap />
+            <button type="submit" className="news-pop-submit tc" disabled={sending}>{sending ? t("送出中…", "Sending…") : t("訂閱", "Subscribe")}</button>
             {note && <p className="news-pop-status tc" role="status">{note}</p>}
           </form>
           <p className="news-pop-note tc">{t("有任何問題，歡迎來信", "Questions? Email us at")} <a href={`mailto:${email}`}>{email}</a></p>
