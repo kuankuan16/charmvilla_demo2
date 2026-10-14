@@ -1,0 +1,45 @@
+{
+  "keyboard": {
+    "active": 1,
+    "src": "http://localhost:3138/media/site/official-gift-front-spring-dawn-gift-box-blue-cutout-v3-even2.webp",
+    "loaded": true,
+    "opacity": "1",
+    "pressed": 1,
+    "overflow": false
+  },
+  "pink": {
+    "active": 0,
+    "src": "http://localhost:3138/media/site/studio-spring-dawn-gift-box-pink-cover-even2.webp",
+    "loaded": true,
+    "opacity": "1",
+    "pressed": 1,
+    "overflow": false
+  },
+  "next": {
+    "active": 1,
+    "src": "http://localhost:3138/media/site/official-gift-front-spring-dawn-gift-box-pink-cutout-v3-even2.webp",
+    "loaded": true,
+    "opacity": "1",
+    "pressed": 1,
+    "overflow": false
+  },
+  "previous": {
+    "active": 0,
+    "src": "http://localhost:3138/media/site/studio-spring-dawn-gift-box-pink-cover-even2.webp",
+    "loaded": true,
+    "opacity": "1",
+    "pressed": 1,
+    "overflow": false
+  },
+  "mobileSwitch": {
+    "src": "http://localhost:3138/_next/image?url=%2Fmedia%2Fsite%2Fofficial-gift-front-spring-dawn-gift-box-blue-cutout-v3-even2.webp&w=828&q=90",
+    "overflow": false
+  },
+  "failure": {
+    "title": "春曉",
+    "alt": "春曉・棚拍商品照",
+    "thumbnailCount": 4,
+    "nextImageLoaded": true,
+    "appExceptions": 0
+  }
+}

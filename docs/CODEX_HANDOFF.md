@@ -1,10 +1,36 @@
 # Agent 接手快照（Claude Code ⇄ OpenAI Codex）
 
-更新時間：2026-10-12 17:20（Asia/Taipei）。檔名沿用 `CODEX_HANDOFF.md`，因為其他文件都連到這裡；內容是雙向的。
+更新時間：2026-10-14（Asia/Taipei，商品主圖清晰度發布中）。檔名沿用 `CODEX_HANDOFF.md`，因為其他文件都連到這裡；內容是雙向的。
 
 這份文件是「時間點快照」。2026-10-12 上午 Codex 從 Claude Code 接手；同日 17:20 再由 Claude Code 從 Codex 接回。每次開始工作仍要重新執行 Git 檢查；若本文件與最新使用者指示或 Git 現況不同，以後兩者為準。
 
-## 2026-10-12 17:20 Codex → Claude Code 接回（最新）
+## 2026-10-14 商品頁桌機主圖清晰度（發布中）
+
+- 使用者回報銀杏茶匙桌機大圖模糊。已重現：1024×1400、DPR 1 時，`sizes=50vw` 選到 640×800，但 `object-fit: cover` 依容器高度需要約 1005px 寬，造成放大；原圖有 1792×2240。
+- `ProductGallery.tsx` 現以 picture/source 在桌機 >=768px 直接使用既有 WebP 原圖，手機與縮圖保留 Next 最佳化。首張用 eager + high fetchPriority，避免預載另一張未使用的壓縮主圖。資產、商品內容、裁切、版型與互動均保留。
+- Node 24 `npm run check` 通過（0 errors／7 個既有 lint warnings，79 個靜態頁）。正式 build 的本機中英文／1440／390／較高桌機／DPR 1–3／767–768 breakpoint／reduced motion 均通過；另驗證春曉多圖庫、鍵盤、選色切換及圖片失敗後可切換下一張。
+- QA：[`docs/qa/2026-10-14-product-image-clarity/README.md`](qa/2026-10-14-product-image-clarity/README.md)，內含 JSON 與 200% 前後對照；桌機取完整原圖會比小型壓縮圖多用流量（銀杏茶匙約 163 KB）。
+- 使用者已明確指示「直接發布」；本次正提交並推送到 `tentenco/charmvilla_shopify_official/main`，等待 Git 觸發的 Production 與線上驗證。未另建 Preview。本次本機預覽使用 port 3138；既有 port 3123 server 未由本次啟動或停止。
+
+## 2026-10-14 最新 GitHub 目標：charmvilla_shopify_official
+
+- 使用者明確指定並要求記住：之後本專案的修改都傳到 `https://github.com/tentenco/charmvilla_shopify_official`。
+- GitHub API 確認新名稱仍是同一 repository ID `1399251640`，公開狀態、預設分支 `main` 與 admin／push 權限保留。15 個遠端分支 SHA 與前次查核相同，沒有 tags。
+- 本機 origin fetch／push URL 已改為 `https://github.com/tentenco/charmvilla_shopify_official.git`，`git fetch --all --prune` 成功；`main` 與 `origin/main` 均為 `61e3a1adab6150e07a348d72f2d28472ab1feeac`，ahead／behind = `0／0`。
+- Vercel Git link 原先仍顯示舊名稱，已使用 `vercel git connect` 更新原專案；API 回讀確認 `org=tentenco`、`repo=charmvilla_shopify_official`、`repoId=1399251640`、`productionBranch=main`。Vercel project 仍是 `tentenco/charmvilla-demo2`（`prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`），不可把 project 名稱與 GitHub repo 名稱混淆。
+- 新推送目標已寫入 `AGENTS.md`，並依使用者「記住」要求新增 Codex 記憶更新 note。下方移轉時的舊名稱僅作歷史紀錄。
+- 本次未修改應用程式／資產，未執行 lint、typecheck、build；未 commit／push、未建立 Preview／Production。專案規則與交接文件目前僅本機更新。
+
+## 2026-10-14 GitHub repository 已移轉至 tentenco（更名前紀錄）
+
+- 使用者明確要求移轉到 GitHub organization `tentenco`。已透過 GitHub 原生 transfer 完成：`kuankuan16/charmvilla_demo2` → `tentenco/charmvilla_demo2`；名稱、公開狀態與預設分支 `main` 保留。
+- GitHub API 已確認 owner 為 `tentenco`、type 為 `Organization`，repository ID 仍是 `1399251640`，目前登入帳號仍有 admin/push 權限。舊 repo URL 回應 HTTP 301 至新 repo。
+- 本機 origin 已更新為 `https://github.com/tentenco/charmvilla_demo2.git`；`git fetch --all --prune` 成功。移轉前後 15 個遠端分支的 SHA 逐一相同，沒有 tags；`main` = `origin/main` = `61e3a1adab6150e07a348d72f2d28472ab1feeac`。
+- Vercel 實際 API 查核：專案 `prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`、team `team_uIcYhBfO11q1gcwk3BB6OgPt` 的 Git link 已自動更新為 `tentenco/charmvilla_demo2`，repoId `1399251640`、productionBranch `main`。GitHub repo 使用底線，Vercel project 名稱仍為 `charmvilla-demo2`，不要混淆。
+- Vercel 最新既有 Production deployment `dpl_FDTy4aF72HUG4oYZK4FGTf47hhFa` 的 API 狀態為 `READY`；本次沒有建立 Preview／Production、沒有 push，亦未用新推送實測部署觸發或做網站 UI 驗證。
+- 本次只修改 Git remote 與本機交接文件，未修改應用程式／資產，未執行 lint、typecheck、build。開始時 12 個工作樹均乾淨；其他歷史 WIP 保留。下方 10-12／10-13 的 Git 與待發布狀態均為歷史紀錄，不能代替本節或即時查核。
+
+## 2026-10-12 17:20 Codex → Claude Code 接回（歷史快照）
 
 - **深夜更新：** 商品圖陰影 v2（`-even2`）、倒熱水照片 v5（暗室斜光、細嘴壺、扁平茶標）、關於頁 02 手工填茶情境照、引言去「」已上線。上線前檢查（只讀程式）列出 5 個紅色問題待使用者決定，見 `docs/agent/PLAN.md`：正式網域仍是 gallery-site、美國站預設中文、杯墊／茶匙／木筷為台幣價且鳥形筷架無價、購物車顯示台灣運費、最新消息連到隱藏商品。另：服務條款寫陶瓷「通過 FDA 認證」需改寫，隱私權政策仍描述 Shopify。
 - **晚間更新：** `91da6a3`：茶葉禮盒商品圖改用 `-even` 版（同一灰色漸層、同樣大小，作法見 `docs/qa/2026-10-12-gift-gallery-even/`）；茶款介紹標題在桌機吸附於選單下；倒熱水照片 v2（茶標正確寫 CHARM VILLA、細棉線）已上線。舊 v1 照片留在工作樹未提交、未被引用。
@@ -19,7 +45,7 @@
 ## 接手結論
 
 - 目前應使用的專案根目錄是 `/Users/kuan/Documents/Codex/10-02-charmvilla-demo2`。
-- Git remote 是 `https://github.com/kuankuan16/charmvilla_demo2`；10-12 上午 Codex 盤點時的基底是 `0eea455`，現行主線見上一節。
+- Git remote 現為 `https://github.com/tentenco/charmvilla_shopify_official.git`（2026-10-14 最新使用者指示）；10-12 上午 Codex 盤點時的基底是 `0eea455`，現行主線見最上方最新查核。
 - `CLAUDE.md` 只有 `@AGENTS.md`，所以 Claude 與 Codex 的共同規則應維護在根目錄 `AGENTS.md`，不另做兩份相互漂移的 agent 文件。
 - 共用 agent 工作區已整理到 `docs/agent/`：`README.md` 定義閱讀與維護順序，`PLAN.md` 保存可續接的多步任務，`LESSONS.md` 累積使用者糾正。穩定規則仍只升格到根目錄 `AGENTS.md`，時間點狀態仍留在本 handoff，避免多份文件互相漂移。
 - 本機 `.vercel/project.json` 連到 `tentenco/charmvilla-demo2`（project `prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23`，team `team_uIcYhBfO11q1gcwk3BB6OgPt`；舊的 `team_WwbxohHQlRJLjIfQJDEWpHFV` 已失效）。程式的 `siteUrl` 與歷史 QA 仍使用 `https://charmvilla-gallery-site.vercel.app`——那是另一個用 CLI 部署、沒有連 Git 的專案，未經使用者同意不要更新它。使用者實際檢視的是 `charmvilla-demo2.vercel.app`。絕對不要部署或修改 `www.charmvilla.com`（品牌正式網站）。

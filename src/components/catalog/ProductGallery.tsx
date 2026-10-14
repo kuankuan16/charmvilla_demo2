@@ -46,10 +46,15 @@ export default function ProductGallery({ name, views: baseViews, optionViews, in
       <div className="product-stage-size" aria-hidden="true" />
       <div className="product-stage">
         <div className="product-main-image" role="region" aria-label={t(`${name}圖片`, `Images of ${name}`)}>
-          {/* quality 90 and a half-window source: this image must stay crisp on large and high-density screens */}
+          {/* Desktop's cover image can scale with the stage height, beyond its half-window width. Use the already-compressed
+              original there to preserve its pixels; phones and thumbnails keep Next's responsive image optimization. */}
           {views.map((v, i) => <div key={v.image.src || `placeholder-${i}`} className={`product-slide${imageFit(v.image) === "contain" ? " product-slide--contained" : ""}${v.placeholder ? " product-slide--placeholder" : ""}${v.tone === "grey" ? " is-grey" : ""}`} data-active={i === active} aria-hidden={i !== active}>
             {/* a beige block where the photograph is still to be chosen (user 2026-10-07: 「其他先用米黃色塊取代表示要再挑圖」) */}
-            {v.placeholder ? <span className="product-placeholder-label tc">{v.label}</span> : <Image src={v.image.src} alt={v.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" quality={90} priority={i === 0} />}
+            {v.placeholder ? <span className="product-placeholder-label tc">{v.label}</span> : <picture className="absolute inset-0">
+              <source media="(min-width: 768px)" srcSet={v.image.src} />
+              {/* Eager/high replaces priority: preloading the optimized fallback would download a second, unused desktop image. */}
+              <Image src={v.image.src} alt={v.image.alt} fill sizes="(min-width:768px) 50vw, 100vw" quality={90} loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"} />
+            </picture>}
           </div>)}
           {caption && <div className="product-stage-caption">{caption}</div>}
           {views.length > 1 && <>

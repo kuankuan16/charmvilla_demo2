@@ -1,5 +1,26 @@
 # Active Agent Plan
 
+Status: `in_progress`（2026-10-14：使用者明確指示「直接發布」，發布已通過本機驗證的商品主圖清晰度修正。）
+
+## 本次發布
+
+- Objective：將桌機主圖清晰度修正推送至 `tentenco/charmvilla_shopify_official`，由 Git 觸發 `tentenco/charmvilla-demo2` Production，並檢查線上頁面。
+- Scope：`ProductGallery.tsx`、本次 QA 與已授權的 GitHub 目標／交接文件；既有商品圖及版型保留。
+- Release authorization：使用者 2026-10-14「直接發布」。
+
+| Step | Proof of completion | Status |
+| --- | --- | --- |
+| 確認發布範圍、remote、Vercel Git link 與工作樹 | origin 為新 repo；Vercel main 連到同 repo；其他 11 個 worktree 乾淨 | `completed` |
+| 本機完整驗證 | Node 24 npm run check、8 組 browser QA 與互動／失敗案例已通過 | `completed` |
+| Commit 並 push main | 僅提交本次程式、文件與 QA | `in_progress` |
+| 等待 Git 觸發 Production，確認 commit 與 alias | 精確 SHA、READY、charmvilla-demo2.vercel.app | `pending` |
+| 線上中英文桌機／手機驗證及交接紀錄 | 原圖 currentSrc、載入尺寸、console／request、視覺與互動證據 | `pending` |
+
+- Attempts and re-plan：無。
+- Next safe action：推送本次 commit，追蹤該 SHA 的 Production；完成後補線上 QA 與交接。
+
+## 以下為既有任務紀錄（保留待辦；不代表目前 Git 狀態）
+
 Status: `idle`（2026-10-13：依 Google 文件「English Copy Review & Recommended Changes」改好英文文案，已提交、尚未推送；需客戶決定的項目見對話回報與交接清單。前一批 `bdc8c03` 也尚未推送）
 
 開始新任務時以本模板取代下方欄位；完成並更新 handoff 後，恢復為 `idle`。
