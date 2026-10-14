@@ -214,28 +214,38 @@ function brewProcess(el: HTMLElement): Cleanup {
   const nodes = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-node]"));
   const content = Array.from(el.querySelectorAll<HTMLElement>("[data-brew-reveal]"));
   if (!list || steps.length < 2) return () => {};
+  el.classList.add("is-brew-live"); // the pinned cup drawing (BrewCup) shows only while this drives it; otherwise the photograph alone
   gsap.set(content, { y: 32, opacity: 0 });
   const tl = gsap.timeline({ paused: true }).to(content, { y: 0, opacity: 1, duration: .52, stagger: .17, ease: "none" });
   const reveal = ScrollTrigger.create({ trigger: list, start: str(el, "data-start", "top 98%"), end: str(el, "data-end", "top 20%"), scrub: 1, animation: tl });
   const nodePositions = () => nodes.map((node, index) => steps[index].offsetTop + node.offsetTop + node.offsetHeight / 2);
   let positions = nodePositions();
+  const visual = el.querySelector<HTMLElement>(".brew-visual");
+  const pinnedBottom = () => { // phones: the figure pins under the header and the steps slide beneath it, so the last step must stop clear of it (and of the fade below it)
+    if (!visual || !window.matchMedia("(max-width: 767px)").matches) return null;
+    return Math.round((parseFloat(getComputedStyle(visual).top) || 0) + visual.offsetHeight + 48);
+  };
   const paintProgress = (progress: number) => {
     list.style.setProperty("--brew-progress", progress.toFixed(4));
     const travel = (positions[positions.length - 1] - positions[0]) * progress;
+    let stage = 0; // the filled segments added up: 0 at the first node, 4 at the last, continuous between (the cup drawing reads it)
     steps.forEach((step, index) => {
       const distance = positions[index] - positions[0];
       step.classList.toggle("is-progressed", travel + .5 >= distance);
       if (index < steps.length - 1) {
-        const segment = (travel - distance) / (positions[index + 1] - positions[index]);
-        step.style.setProperty("--brew-segment-progress", gsap.utils.clamp(0, 1, segment).toFixed(4));
+        const segment = gsap.utils.clamp(0, 1, (travel - distance) / (positions[index + 1] - positions[index]));
+        step.style.setProperty("--brew-segment-progress", segment.toFixed(4));
+        stage += segment;
       }
     });
+    el.style.setProperty("--brew-stage", stage.toFixed(4));
+    el.dataset.brewStage = String(Math.min(steps.length - 1, Math.floor(stage + 1e-4)));
   };
   paintProgress(0);
   const progress = ScrollTrigger.create({
     trigger: list,
     start: () => `${positions[0]}px 74%`,
-    end: () => `${positions[positions.length - 1]}px 38%`,
+    end: () => { const bottom = pinnedBottom(); return `${positions[positions.length - 1]}px ${bottom === null ? "55%" : `${bottom}px`}`; }, // 38% → 55% (2026-10-14): the last step and the photograph arrive while the pinned cup is still fully in view
     scrub: 1.1,
     onUpdate: (self) => paintProgress(self.progress),
     onRefreshInit: () => { positions = nodePositions(); },
@@ -243,6 +253,7 @@ function brewProcess(el: HTMLElement): Cleanup {
   });
   return () => {
     reveal.kill(); progress.kill(); tl.kill();
+    el.classList.remove("is-brew-live"); el.style.removeProperty("--brew-stage"); delete el.dataset.brewStage;
     list.style.removeProperty("--brew-progress");
     steps.forEach((step) => { step.classList.remove("is-progressed"); step.style.removeProperty("--brew-segment-progress"); });
     gsap.set(content, { clearProps: "transform,opacity" });
