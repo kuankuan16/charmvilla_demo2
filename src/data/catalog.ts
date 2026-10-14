@@ -515,6 +515,13 @@ const buildCatalog = (lang: Locale) => {
   studioExtra["reunion-paper-gift-box"] = (studioExtra["reunion-paper-gift-box"] ?? []).map((v) => v.file === "gift-box-unboxed-12-v2.webp"
     ? { file: "studio-reunion-gift-box-us-closed-angle.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" } : v);
   // the unboxed view is off the page (user 2026-10-07: 「15 盒的圖 3 拿掉，包數沒有對」); studio-reunion-gift-box-us-unboxed-15.webp stays in git history
+  // 實拍照（使用者 2026-10-14 給的金色盒蓋正面＋開箱 15 入，3 欄 5 排）：背景換成全站灰漸層、norm 0.45（docs/qa/2026-10-14-reunion-photos）；
+  // 「加入圖庫」：封面 → 正面實拍 → 斜角 → 開箱 15 入。紅色盒蓋的兩張實拍先不上線（使用者：「先不上線」）
+  studioExtra["reunion-paper-gift-box"] = [
+    { file: "studio-reunion-gift-box-us-front-photo-v2.webp", zh: "正面實拍", en: "Front view", enAlt: "photograph of the closed box from above, its mustard linen lid embroidered with a turquoise goldfish" },
+    ...studioExtra["reunion-paper-gift-box"],
+    { file: "studio-reunion-gift-box-us-unboxed-15-photo-v2.webp", zh: "開箱・15 入", en: "Unboxed · 15 tea bags", enAlt: "photograph of the opened box with 15 gold tea bags in five rows of three" },
+  ];
   // 團圓桐木木盒：三張商品圖照繽紛紙盒的邏輯重生（Nano Banana 2.1，以官網的珊瑚紅亞麻盒蓋＋粉紅刺繡金魚照片當商品參考；使用者 2026-10-07：
   // 「用相同邏輯生成這個商品的 3 張商品圖（都要高清，注意刺繡的細節與英文字換角度時不要跑掉）」）：封面俯視斜角（studio-listing.json v4）、斜角近景、開箱
   studioExtra["reunion-paulownia-gift-box"] = [{ file: "studio-reunion-paulownia-gift-box-closed-angle-v2.webp", zh: "斜角", en: "Angled view", enAlt: "the box closed, seen at an angle" }, ...(studioExtra["reunion-paulownia-gift-box"] ?? [])];
