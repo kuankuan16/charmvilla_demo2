@@ -88,7 +88,10 @@ export default async function ProductPage({ params }: Props) {
   const storyRows = storyInColumn || storyInPair ? [] : [{ label: product.story.title, body: paragraphs(product.story.body, "s") }, ...(product.story.more ? [{ label: product.story.more.title, body: [...paragraphs(product.story.more.body, "m"), ...(product.story.more.source ? [<p key="src" className="product-story-source tc">{product.story.more.source}</p>] : [])] }] : [])];
   // 茶款介紹 and 沖泡方式 are neither in the column nor beside the photographs: one sheet after the scene photographs, before 繼續觀看
   // (TeaPages; user 2026-10-07: 「把茶款介紹跟沖泡方式獨立出來」, then 「整合成一屏…放在目前商品的情境之下，推薦商品之上」).
-  const sideText = storyInPair ? <div className="product-story-text"><h2 className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}{product.story.more && <><h3 className="product-story-more tc">{product.story.more.title}</h3>{[...paragraphs(product.story.more.body, "m"), ...(product.story.more.source ? [<p key="src" className="product-story-source tc">{product.story.more.source}</p>] : [])]}</>}</div> : null;
+  const sideText = storyInPair ? <div className="product-story-text"><h2 className="tc">{product.story.title}</h2>{paragraphs(product.story.body, "s")}</div> : null;
+  // the story's second titled text (紫斑蝶) leaves the story's side and sits under the large photograph, in the left column
+  // (user 2026-10-14: arrow from 「關於臺灣的紫斑蝶」 to the empty area under the large photo)
+  const moreText = storyInPair && product.story.more ? <div className="product-story-text"><h3 className="product-story-more tc">{product.story.more.title}</h3>{[...paragraphs(product.story.more.body, "m"), ...(product.story.more.source ? [<p key="src" className="product-story-source tc">{product.story.more.source}</p>] : [])]}</div> : null;
   // Tea gift boxes (user 2026-10-08, with the STINA page's "Teil derselben Kollektion" block: 「都放下面一點的排序」「像這樣呈現」): the story
   // leaves the specifications and sits at the foot of the column as that block — the title in ink and the text in grey at one size, a
   // blank line between — with the column's first scene photograph 80px under it; its second titled text (紫斑蝶) follows in the same type.
@@ -220,15 +223,18 @@ export default async function ProductPage({ params }: Props) {
         {columnScenes.map((img) => <figure key={img.src} className="scene-fig" data-shape={shapeOf(img)} style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:1280px) 31vw, (min-width:768px) 38vw, 100vw" /></figure>)}
       </ProductGallery></ProductOptionProvider>
       {editorial}
-      {pair && <section className="product-pair" aria-label={t("情境照", "In use")}>
-        <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
+      {pair && <section className={`product-pair${moreText ? " has-more" : ""}`} aria-label={t("情境照", "In use")}>
+        <div className="product-pair-main">
+          <figure className="scene-fig product-pair-large" data-shape={shapeOf(pair[0])} style={{ aspectRatio: frameOf(pair[0]) }}><Picture img={pair[0]} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
+          {moreText && <div className="product-pair-more">{moreText}</div>}
+        </div>
         <div className="product-pair-side">
           {sideText}
           <figure className="scene-fig product-pair-small" data-shape={shapeOf(pair[1])} style={{ aspectRatio: frameOf(pair[1]) }}><Picture img={pair[1]} fill fit="cover" animate={false} sizes="(min-width:768px) 22vw, 100vw" /></figure>
         </div>
       </section>}
       {spreads.map(([large, ...small], si) => <section key={large.src} className="product-spread" aria-label={t("情境照", "In use")}>
-        <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{sideText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
+        <div className={`product-spread-smalls${textAboveSmalls && si === 0 ? " is-centered" : ""}`}>{textAboveSmalls && si === 0 && <div className="product-spread-text">{sideText}{moreText}</div>}{small.map((img) => <figure key={img.src} className="scene-fig" data-shape="tall" style={{ aspectRatio: frameOf(img) }}><Picture img={img} fill fit="cover" animate={false} sizes="(min-width:768px) 16vw, 100vw" /></figure>)}</div>
         <figure className="scene-fig product-spread-large" data-shape="tall" style={{ aspectRatio: frameOf(large) }}><Picture img={large} fill fit="cover" animate={false} sizes="(min-width:768px) 46vw, 100vw" /></figure>
       </section>)}
       {rowScenes.length > 0 && <section className="product-scenes" aria-label={t("情境照", "In use")}>
