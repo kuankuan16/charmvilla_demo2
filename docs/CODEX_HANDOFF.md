@@ -14,7 +14,7 @@
 
 正式站：<https://www.charmvilla.com/>。英文無前綴、中文 `/zh`；結帳測試入口：<https://www.charmvilla.com/zh/products/kyoto-gift-box>。
 
-2026-10-15 已依使用者授權正式上線。當時核對 www／apex 都指向既有 Vercel 專案，沒有更動 DNS；`main` push 會觸發 Production。最後一次應用程式驗證的部署是 `dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt`，來源 `548a52a`、READY 且 aliasAssigned=true。`e83cc1b` 僅更新文件；現在的線上部署仍須即時回讀，不能從這個 ID 推測。
+2026-10-15 已依使用者授權正式上線。當時核對 www／apex 都指向既有 Vercel 專案，沒有更動 DNS；`main` push 會觸發 Production。最後一次應用程式驗證的部署是 `dpl_B3uNgcUTgd2eZhcu8K8K4YAQrgd8`（2026-10-15 05:11，來源 `864f7a0` 沖泡區整合，READY，www／apex alias 已指向；正式站 zh／en 商品頁實際捲動到 stage 4，見整合 QA）。之前的 `dpl_HkGe1sYsA6Z2277GYwErpRdbY7mt`（`548a52a`）是 Shopify 上線版。現在的線上部署仍須即時回讀，不能從這些 ID 推測。
 
 | 已交付內容 | 核對結果與證據 |
 | --- | --- |

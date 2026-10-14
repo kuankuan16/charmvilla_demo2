@@ -49,9 +49,19 @@
 
 ## Git 與部署
 
-- Commit：見本檔完成後的 `git log`；文件整理與沖泡區變更分開提交。
-- 部署：push `origin/main` 後由 Vercel 專案 `charmvilla-demo2` 建 Production；部署 ID 與正式站回讀結果在下節補記，push 前不預填。
+- Commit：`fe38a98` merge `brew-cup-scroll`；`297936e` 上一輪 agent 文件整理（與功能分開）；`864f7a0` 本次沖泡區調整、QA 與文件。`git push origin main`：`e83cc1b..864f7a0`。
+- Vercel Production：`dpl_B3uNgcUTgd2eZhcu8K8K4YAQrgd8`（`charmvilla-demo2`，建於 2026-10-15 05:11 台北時間，29s，READY）；aliases 含 `https://www.charmvilla.com`、`https://charmvilla.com`、`charmvilla-demo2-git-main-tentenco.vercel.app`。沒有改 DNS 或專案設定。
 
-## 正式站驗證
+## 正式站驗證（push 後實際回讀）
 
-（push 後補記。）
+- `curl` `https://www.charmvilla.com/products/year-of-plenty-gift-box` 與 `/zh/products/year-of-plenty-gift-box`：HTTP 200，HTML 內各有 1 個 `class="brew-cup"`、`brew-photo`、10 個 `data-brew-node` 屬性（5 節點 × 2）。
+- agent-browser 在正式站實際捲動（先關電子報視窗）：
+
+| 視窗 | 路由 | stage 0 | 中段 | 終點 |
+| --- | --- | --- | --- | --- |
+| 1440×900 | `/zh/products/year-of-plenty-gift-box` | scrollY 4667（＝本機 60% 起點的值，證明新 `railStart()` 已上線）、圖頂 359、照片 scale 1.04 | stage 2.00、圖釘 90 | stage 4.0000、照片 1、scale 1 |
+| 1440×900 | `/products/year-of-plenty-gift-box` | scrollY 4460、圖頂 359 | stage 1.91、圖釘 90 | stage 4.0000、照片 1 |
+| 390×844 | `/zh/...` | 圖頂 182 | stage 1.90、圖釘 72 | stage 4.0000、照片 1 |
+| 390×844 | `/products/...` | 圖頂 182 | stage 2.06、圖釘 72 | stage 4.0000、照片 1 |
+
+四個組合都 `is-brew-live`、page errors 0、console errors 0、無水平溢出。其餘 9 個商品頁在本機已逐頁驗證（上節），正式站同一份 build；沒有逐頁再捲一次。
