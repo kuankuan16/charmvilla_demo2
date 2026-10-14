@@ -12,6 +12,9 @@ import { getScroller } from "@/lib/motion/scroller";
 import { useNewsletterSubmit, NewsletterTrap } from "./NewsletterForm";
 
 const SEEN_KEY = "cv-newsletter-popup-seen";
+// off until sign-ups really reach the list (Shopify connected), then it opens again by itself (user 2026-10-14: 「電子報跳窗：現在關掉，
+// 還是接上名單服務後再開：好」); ?newsletter still previews it
+const LIVE = process.env.NEXT_PUBLIC_COMMERCE_MODE === "shopify";
 const DELAY_MS = 8000;
 const isAccountPath = (path: string) => /(^|\/)account(\/|$)/.test(path);
 const readSeen = () => { try { return window.localStorage.getItem(SEEN_KEY) === "1"; } catch { return false; } };
@@ -33,7 +36,7 @@ export default function NewsletterPopup() {
   useEffect(() => {
     // ?newsletter in the address previews the popup again: opens after 1.5 s even if it was already seen (user 2026-10-13: 「我要再看一次」)
     const preview = new URLSearchParams(window.location.search).has("newsletter");
-    if (readSeen() && !preview) return;
+    if ((readSeen() || !LIVE) && !preview) return;
     let done = false;
     let retry: number | undefined;
     const tryOpen = () => {

@@ -67,7 +67,7 @@ export default async function NewsArticle({ params }: Props) {
                   <div key={f.label} className="news-fact">
                     <dt className="tc">{f.icon && <FactIcon kind={f.icon} />}<span className="news-fact-label">{f.label}</span></dt>
                     <dd>
-                      <span className="news-fact-value tc">{f.value.split(/(・| · )/).map((x, i) => i % 2 ? x : <span key={i} className="news-fact-part">{x}</span> /* each part unbroken: a time never splits as 下 / 午 5:00 */)}</span>
+                      <span className="news-fact-value tc">{f.value.split(/(・| · )/).map((x, i) => i % 2 ? <span key={i} className="news-fact-sep">{x}</span> : <span key={i} className="news-fact-part">{x}</span> /* each part unbroken: a time never splits as 下 / 午 5:00 */)}</span>
                       {f.detail?.map((d) => <span key={d} className="news-fact-detail tc">{d}</span>)}
                       {f.map && <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.map)}`} target="_blank" rel="noopener noreferrer" className="news-fact-map tc" aria-label={t("在 Google 地圖開啟（新分頁）", "Open in Google Maps (new tab)")}><span className="news-fact-map-label">{t("地圖", "Map")}</span><span aria-hidden="true">↗</span></a>}
                     </dd>
