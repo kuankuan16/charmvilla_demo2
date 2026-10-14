@@ -1588,7 +1588,7 @@ main:has(> .policy-page) { background: #efefed; }
   .brew-kicker > span { width: 7px; height: 7px; }
   .brew-steps { grid-column: 1; grid-row: 3; --brew-node-size: 11px; --brew-row-padding: 24px; --brew-number-width: 30px; --brew-column-gap: 10px; }
   .brew-steps li { grid-template-columns: 16px minmax(0, 1fr); min-height: 0; }
-  .brew-steps .brew-step-content { grid-template-columns: minmax(0, 1fr) 64px; column-gap: 28px; }
+  .brew-steps .brew-step-content { grid-template-columns: minmax(0, 1fr) 64px; column-gap: 40px; } /* phones: wider text→drawing gap (user 2026-10-14: 「改加寬文字與插畫的 gap」) */
   .brew-number { font-size: 13px; }
   .brew-copy h3 { font-size: 20px; }
   .brew-copy p { margin-top: 8px; font-size: 17px; line-height: 1.6; }
