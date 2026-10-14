@@ -1543,10 +1543,15 @@ main:has(> .policy-page) { background: #efefed; }
 /* --- 美好的沖泡方式：2026-10-12 使用者選定方案 01 點到點動畫＋02 左圖右文。
    橫線從文字欄開始；每段軸線只連接相鄰的靜止節點，最後一點之後不畫線。
    每列只讓內容淡入上移，避免節點跟著位移而偏離軸線；手機依標題、照片、步驟排列。 --- */
-.brew-process { margin: 0 calc(-1 * var(--page-gutter)); padding: clamp(96px, 9vw, 144px) var(--page-gutter) clamp(112px, 10vw, 160px); background: #efefed; }
-.brew-process-inner { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); max-width: 1270px; margin: 0 auto; align-items: start; }
-.brew-visual { grid-column: 1 / span 5; position: sticky; top: clamp(88px, 10vh, 132px); margin: 0; aspect-ratio: 2 / 3; }
-.brew-guide { grid-column: 7 / -1; min-width: 0; }
+.brew-process { position: relative; margin: 0 calc(-1 * var(--page-gutter)); padding: clamp(96px, 9vw, 144px) var(--page-gutter) clamp(112px, 10vw, 160px); background: #efefed; }
+/* --brew-stage runs 0 → 4 with the rail (set by animations.ts): the cup drawing builds up on it, the section warms to amber while the
+   tea steeps (step 4) and the photograph of the brewed cup fades in over the drawing at the end (user 2026-10-14, after Daily Harvest's
+   "What's in the cup" from the design study in 10-14-charmv-landing-try/reports) */
+.brew-process { --brew-stage: 0; --brew-amber: clamp(0, (var(--brew-stage) - 3) / .7, 1); --brew-photo: clamp(0, (var(--brew-stage) - 3.7) / .3, 1); }
+.brew-process::before { content: ""; position: absolute; inset: 0; background: #f3e9d6; opacity: var(--brew-amber); pointer-events: none; }
+.brew-process-inner { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); max-width: 1270px; margin: 0 auto; align-items: start; }
+.brew-visual { grid-column: 1 / span 5; justify-self: start; position: sticky; top: clamp(88px, 10vh, 132px); margin: 0; aspect-ratio: 2 / 3; width: min(100%, calc((100vh - 190px) * 2 / 3)); /* whole figure in view while pinned: the labels and the progress sit inside it */ }
+.brew-guide { grid-column: 7 / -1; min-width: 0; padding-bottom: clamp(120px, 24vh, 260px); /* keeps the figure pinned until the photograph has fully arrived (the rail ends with the last step at 55% of the viewport) */ }
 .brew-intro { margin-bottom: 48px; }
 .brew-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
 .brew-kicker > span { width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--color-gold); }
@@ -1586,7 +1591,7 @@ main:has(> .policy-page) { background: #efefed; }
   .brew-process-inner { display: grid; grid-template-columns: minmax(0, 1fr); }
   .brew-guide { display: contents; }
   .brew-intro { grid-column: 1; grid-row: 1; margin-bottom: 32px; }
-  .brew-visual { grid-column: 1; grid-row: 2; position: static; aspect-ratio: 4 / 5; margin-bottom: 40px; }
+  .brew-visual { grid-column: 1; grid-row: 2; justify-self: stretch; position: sticky; top: var(--header-h); z-index: 2; width: auto; aspect-ratio: auto; height: 46svh; margin: 0 calc(-1 * var(--page-gutter)) 24px; padding: 10px 0 6px; background: #efefed; } /* full-bleed, so the rail's node rings never peek out beside it */
   .brew-kicker { margin-bottom: 12px; font-size: 13px; }
   .brew-kicker > span { width: 7px; height: 7px; }
   .brew-steps { grid-column: 1; grid-row: 3; --brew-node-size: 11px; --brew-row-padding: 24px; --brew-number-width: 30px; --brew-column-gap: 10px; }
@@ -1611,10 +1616,59 @@ main:has(> .policy-page) { background: #efefed; }
   .teakind-h05 { font-size: 22px; }
 }
 
+/* the pinned cup (BrewCup.tsx). One 2:3 stage holds the drawing and, over it, the photograph; every part reads --brew-stage directly
+   (continuous, so nothing snaps), the strokes are non-scaling so the line weight stays the icons' at every size */
+.brew-stage { position: relative; width: 100%; height: 100%; container-type: inline-size; }
+.brew-photo { position: absolute; inset: 0; opacity: var(--brew-photo); }
+.brew-cup { position: absolute; inset: 0; color: #8f8f8b; opacity: calc(1 - var(--brew-photo)); }
+.brew-process:not(.is-brew-live) .brew-cup { display: none; } /* no script, or fewer than two steps: the photograph alone */
+.brew-process:not(.is-brew-live) .brew-photo { opacity: 1; }
+.brew-cup svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.brew-cup svg * { vector-effect: non-scaling-stroke; stroke-width: 1.7px; }
+.bc-kettle { opacity: clamp(0, (1 - var(--brew-stage)) * 6, 1); } /* 01: pours, and has left by the time step 02 is reached (the sachet takes its place, never over it) */
+.bc-stream { opacity: clamp(0, min(var(--brew-stage) * 8, (.95 - var(--brew-stage)) * 8), 1); }
+.bc-steam { opacity: clamp(0, min((var(--brew-stage) - .3) * 3, (1.2 - var(--brew-stage)) * 4), 1); }
+.bc-water { --bc-level: clamp(0, var(--brew-stage) / .9, 1); transform: translateY(calc((1 - var(--bc-level)) * 11.5px)); } /* rises to the water line of the icons */
+.bc-water-fill { fill: color-mix(in srgb, #c9c9c5, var(--color-gold) calc(var(--brew-amber) * 100%)); opacity: calc(.28 + var(--brew-amber) * .12); } /* clear water, amber tea by step 4 */
+.bc-surface { opacity: clamp(0, var(--brew-stage) * 6, 1); stroke: color-mix(in srgb, #8f8f8b, var(--color-gold) calc(var(--brew-amber) * 100%)); }
+.bc-sachet { opacity: clamp(0, min((var(--brew-stage) - 1.02) * 5, (2.45 - var(--brew-stage)) * 3), 1); } /* 02: where the kettle was */
+.bc-sachet path:first-child { fill: #efefed; } /* hides the goldfish still inside */
+.bc-fish { --bc-lift: clamp(0, (var(--brew-stage) - 1.05) / .55, 1); --bc-drop: clamp(0, var(--brew-stage) - 2, 1); opacity: clamp(0, (var(--brew-stage) - 1.02) * 5, 1);
+  /* in the sachet → lifted out (02) → down into the cup, settling a little smaller (03) → gold as it steeps (04) */
+  transform: translate(calc(17px + var(--bc-drop) * 15.5px), calc(18px - var(--bc-lift) * 20px + var(--bc-drop) * 48.6px)) scale(calc(1 - var(--bc-drop) * .25));
+  stroke: color-mix(in srgb, #8f8f8b, var(--color-gold) calc(var(--brew-amber) * 100%)); }
+.bc-fish path { fill: var(--color-gold); fill-opacity: calc(var(--brew-amber) * .16); }
+.bc-watch { opacity: clamp(0, (var(--brew-stage) - 2.8) * 3.3, 1); } /* 04: the hand and a gold arc go to the five-minute mark */
+.brew-cup svg .bc-watch-arc { vector-effect: none; stroke-width: .22; stroke: var(--color-gold); stroke-dasharray: calc(var(--brew-amber) * .0833) 1; }
+.bc-hand { transform: rotate(calc(var(--brew-amber) * 30deg)); }
+.bc-label { position: absolute; display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 1; font-weight: 500; letter-spacing: .02em; color: var(--color-ink); white-space: nowrap; transform: translateY(-50%); }
+.bc-label i { display: block; width: 8cqw; height: 1px; background: var(--color-gold); }
+.bc-label b { font-weight: 500; }
+.bc-label-ml { right: 62.1%; top: 59.4%; opacity: clamp(0, (var(--brew-stage) - .45) * 4, 1); } /* the water line */
+.bc-label-temp { left: 59.9%; top: 44.7%; opacity: clamp(0, min((var(--brew-stage) - .15) * 4, (1 - var(--brew-stage)) * 6), 1); } /* the stream; leaves with the kettle */
+.bc-label-time { left: 43.4%; top: 29.8%; opacity: clamp(0, (var(--brew-stage) - 2.9) * 4, 1); } /* the stopwatch */
+.bc-progress { position: absolute; left: 24%; right: 24%; top: 85%; display: flex; gap: 4px; height: 2px; } /* five segments, one per step */
+.bc-progress i { flex: 1; position: relative; background: rgb(31 31 31 / .14); overflow: hidden; }
+.bc-progress i::after { content: ""; position: absolute; inset: 0; background: var(--color-gold); transform-origin: 0 50%; }
+.bc-progress i:nth-child(1)::after { transform: scaleX(clamp(0, var(--brew-stage) + 1, 1)); }
+.bc-progress i:nth-child(2)::after { transform: scaleX(clamp(0, var(--brew-stage), 1)); }
+.bc-progress i:nth-child(3)::after { transform: scaleX(clamp(0, var(--brew-stage) - 1, 1)); }
+.bc-progress i:nth-child(4)::after { transform: scaleX(clamp(0, var(--brew-stage) - 2, 1)); }
+.bc-progress i:nth-child(5)::after { transform: scaleX(clamp(0, var(--brew-stage) - 3, 1)); }
+@media (max-width: 767px) {
+  /* phones: the figure pins under the header at a fixed height and the steps scroll up beneath it (its background hides them) */
+  .brew-visual::before { content: ""; position: absolute; inset: 0; background: #f3e9d6; opacity: var(--brew-amber); pointer-events: none; }
+  .brew-visual::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 28px; background: linear-gradient(to bottom, color-mix(in srgb, #efefed, #f3e9d6 calc(var(--brew-amber) * 100%)), transparent); pointer-events: none; } /* steps fade out under the figure instead of a hard cut */
+  .brew-stage { width: auto; height: 100%; aspect-ratio: 2 / 3; margin: 0 auto; }
+  .bc-label { font-size: 12px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .brew-steps { --brew-progress: 1; --brew-segment-progress: 1; }
   .brew-node { background: var(--color-gold); transition: none; }
   .brew-icon { color: var(--color-gold); transition: none; }
+  .brew-cup, .brew-process::before, .brew-visual::before, .brew-visual::after { display: none; } /* the photograph of the brewed cup, no build-up */
+  .brew-photo { opacity: 1; }
 }
 
 /* FAQ accordion (user 2026-10-07, after the reference: 「可以點開才回答的形式，不要一下就看這麼多字」): the title and a contact button
