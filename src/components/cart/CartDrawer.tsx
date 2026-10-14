@@ -8,6 +8,7 @@ import { localeHref } from "@/i18n/config";
 import { useT } from "@/i18n/LocaleProvider";
 import { supportEmail, freeShippingMin } from "@/data/commerce";
 import { preOrderShipping } from "@/data/tea-gifts";
+import { MAX_LINE_QUANTITY } from "@/lib/shopify/types";
 
 export default function CartDrawer() {
   const cart = useCart();
@@ -49,7 +50,7 @@ export default function CartDrawer() {
                       <div className="cart-qty" role="group" aria-label={t("數量", "Quantity")}>
                         <button type="button" onClick={() => cart.update(l.key, l.quantity - 1)} disabled={cart.busy || l.quantity <= 1} aria-label={t("減少數量", "Decrease quantity")}>−</button>
                         <span aria-live="polite">{l.quantity}</span>
-                        <button type="button" onClick={() => cart.update(l.key, l.quantity + 1)} disabled={cart.busy} aria-label={t("增加數量", "Increase quantity")}>+</button>
+                        <button type="button" onClick={() => cart.update(l.key, l.quantity + 1)} disabled={cart.busy || l.quantity >= MAX_LINE_QUANTITY} aria-label={t("增加數量", "Increase quantity")}>+</button>
                       </div>
                       <button type="button" className="cart-remove tc" onClick={() => cart.remove(l.key)} disabled={cart.busy}>{t("移除", "Remove")}</button>
                     </div>
@@ -68,8 +69,11 @@ export default function CartDrawer() {
                 : cart.currency === "USD" ? (cart.subtotal >= freeShippingMin
                   ? t("此訂單配送至美國本土相連 48 州可享免運。", "This order qualifies for complimentary shipping to the contiguous United States (48 states).")
                   : t(`訂單金額滿 US$ ${freeShippingMin}（含）配送至美國本土相連 48 州免運；未達則於結帳時依地址與配送方式計算運費。`, `Complimentary shipping on orders of US$${freeShippingMin} or more to the contiguous United States (48 states); below that, shipping is calculated at checkout by address and service.`)) : t("運費、稅金與關稅於結帳時依配送國家計算。", "Shipping, taxes and duties are calculated at checkout by destination country.")}</p>
-              {cart.mode === "shopify" && cart.checkoutUrl
+              {/* while the bag is being updated the button waits, so checkout never opens with the lines from before the change */}
+              {cart.mode === "shopify" && cart.checkoutUrl && !cart.busy
                 ? <a href={cart.checkoutUrl} className="catalog-button cart-checkout tc">{t("前往結帳", "Go to checkout")}</a>
+                : cart.mode === "shopify" && cart.checkoutUrl
+                ? <button type="button" className="catalog-button cart-checkout tc" disabled>{t("前往結帳", "Go to checkout")}</button>
                 : <button type="button" className="catalog-button cart-checkout tc" disabled title={t("金流串接完成後開放", "Online checkout is not open yet")}>{t("前往結帳", "Go to checkout")}</button>}
               <p className="cart-note tc"><Link href={localeHref(lang, "/policy#us-shipping")} onClick={() => cart.setOpen(false)} className="underline underline-offset-4">{t("運送、付款與退換貨說明", "Delivery, payment and returns")}</Link></p>
               {cart.mode === "local" && <p className="cart-note tc">{t(`線上結帳即將開放；目前可先加入購物車，或來信 ${supportEmail} 洽詢。`, `Online checkout is not open yet. For now you can add pieces to your bag, or email us at ${supportEmail}.`)}</p>}

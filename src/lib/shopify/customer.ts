@@ -4,7 +4,16 @@ import type { Customer, Address, UserError } from "./types";
 
 export type AddressInput = { firstName?: string; lastName?: string; company?: string; address1?: string; address2?: string; city?: string; province?: string; zip?: string; country?: string; phone?: string };
 
-const fail = (errors?: UserError[], fallback = "Shopify 回傳錯誤") => { const m = firstUserError(errors); if (m) throw new ShopifyError(m, 400); throw new ShopifyError(fallback, 502); };
+// Shopify's customer errors that the pages explain in their own words (src/i18n/errors.ts has the English); any other error keeps Shopify's message.
+const known = (e: UserError): ShopifyError | null => {
+  if (e.code === "TAKEN" && e.field?.includes("email")) return new ShopifyError("這個 Email 已經註冊過，請直接登入；忘記密碼可以重設。", 400, "email_taken");
+  // the email is already a customer without a login (a newsletter subscriber, a past guest buyer): Shopify emails an activation link
+  if (e.code === "CUSTOMER_DISABLED") return new ShopifyError("這個 Email 已經在我們的顧客名單上（例如訂閱過電子報）。我們已寄出啟用帳號的信，請到信箱點連結設定密碼。", 409, "activation_sent");
+  if (e.code === "UNIDENTIFIED_CUSTOMER") return new ShopifyError("Email 或密碼不正確。", 400, "bad_login");
+  if (e.field?.includes("phone")) return new ShopifyError("手機號碼格式不正確，請用國際格式，例如 +1 415 555 0100。", 400, "invalid_phone");
+  return null;
+};
+const fail = (errors?: UserError[], fallback = "Shopify 回傳錯誤") => { const m = firstUserError(errors); if (m) throw known(errors![0]) ?? new ShopifyError(m, 400); throw new ShopifyError(fallback, 502); };
 
 export async function register(input: { email: string; password: string; firstName?: string; lastName?: string; phone?: string; acceptsMarketing?: boolean }) {
   const d = await storefront<{ customerCreate: { customer: { id: string; email: string } | null; customerUserErrors: UserError[] } }>(CUSTOMER_CREATE, { input });
@@ -20,9 +29,11 @@ export async function login(email: string, password: string) {
 
 export const logout = (token: string) => storefront(TOKEN_DELETE, { token }).catch(() => null);
 export const me = async (token: string) => (await storefront<{ customer: Customer | null }>(CUSTOMER_QUERY, { token })).customer;
+/** Asks Shopify to email a reset link. An email with no account gets the same answer, so the form never tells who has one. */
 export async function recover(email: string) {
   const d = await storefront<{ customerRecover: { customerUserErrors: UserError[] } }>(CUSTOMER_RECOVER, { email });
-  const m = firstUserError(d.customerRecover.customerUserErrors); if (m) throw new ShopifyError(m, 400);
+  const errors = d.customerRecover.customerUserErrors.filter((e) => e.code !== "UNIDENTIFIED_CUSTOMER");
+  const m = firstUserError(errors); if (m) throw new ShopifyError(m, 400);
 }
 type TokenPayload = { customerAccessToken: { accessToken: string; expiresAt: string } | null; customerUserErrors: UserError[] };
 /** Set a new password from the emailed reset link; signs the customer in. */
