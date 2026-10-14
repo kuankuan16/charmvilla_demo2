@@ -469,7 +469,7 @@ const buildCatalog = (lang: Locale) => {
     ["kyoto", "京都職人手作禮盒", "the Kyoto Artisanal Reserve gift box"],
     ["year-of-plenty", "年年有魚禮盒", "the Abundance & Prosperity gift box"],
     ["blossoming-prosperity", "花開富貴禮盒", "the Prosperity in Bloom gift box"],
-  ] as const) sceneLead[`${slug}-gift-box`] = [site(`scene-${slug}-gift-box-olive-sofa-pouch.webp`, t(`${zh}與一杯小金魚茶`, `${en[0].toUpperCase()}${en.slice(1)} with a glass of goldfish tea`), 1856, 2304), ...(sceneLead[`${slug}-gift-box`] ?? [])];
+  ] as const) sceneLead[`${slug}-gift-box`] = [site(`scene-${slug}-gift-box-olive-sofa-pouch${slug === "purple-butterfly" ? "-v2" /* tab retouched 2026-10-14 */ : ""}.webp`, t(`${zh}與一杯小金魚茶`, `${en[0].toUpperCase()}${en.slice(1)} with a glass of goldfish tea`), 1856, 2304), ...(sceneLead[`${slug}-gift-box`] ?? [])];
   // Further studio views beside the front view: the bags' three-quarter view. No near-duplicates in a product's gallery: the
   // earrings' close photographs repeated the front view, so each earring keeps only its better shot (user 2026-10-02: 「這個位置的圖
   // 不要重複，挑一張品質比較好的保留就好」) — the 2000 px studio front for the pearl, diamond and twin earrings, and the front view for
