@@ -1,7 +1,7 @@
 // /api/cart against the mock Storefront cart.
 import { test, beforeEach } from "node:test";
 import assert from "node:assert/strict";
-import { Client, BARE_BASE, MOCK, mock, line, variant, fixture } from "../support/helpers.mjs";
+import { Client, BARE_BASE, MOCK, mock, line, variant, preorderVariant, fixture } from "../support/helpers.mjs";
 
 beforeEach(() => mock.reset());
 const c = () => new Client();
@@ -20,7 +20,9 @@ test("create: one line, country US, Shopify prices, checkoutUrl on the store", a
   assert.equal(cart.totalQuantity, 1);
   assert.equal(cart.cost.subtotalAmount.amount, `${fixture.products["reunion-paper-gift-box"].price}.0`);
   assert.equal(cart.cost.subtotalAmount.currencyCode, "USD");
-  assert.deepEqual(cart.lines.edges[0].node.attributes, [{ key: "Pre-order", value: "Yes" }]);
+  assert.ok(cart.lines.edges[0].node.attributes.some(a => a.key === "Pre-order" && a.value === "Yes"));
+  assert.equal(cart.lines.edges[0].node.merchandise.id, preorderVariant("reunion-paper-gift-box"));
+  assert.ok(cart.lines.edges[0].node.sellingPlanAllocation);
   const s = await mock.state();
   assert.equal(s.carts[0].buyerIdentity.countryCode, "US");
   assert.equal(s.carts[0].buyerIdentity.customerId, undefined);
@@ -38,7 +40,7 @@ test("add, merge, update, remove keep Shopify's totals", async () => {
   assert.equal(r.data.cart.lines.edges.length, 2);
   const kyoto = fixture.products["kyoto-gift-box"].options[0].price, dawn = fixture.products["spring-dawn-gift-box"].options[2].price;
   assert.equal(Number(r.data.cart.cost.subtotalAmount.amount), kyoto * 2 + dawn);
-  const dawnLine = r.data.cart.lines.edges.find((e) => e.node.merchandise.id === variant("spring-dawn-gift-box", 2)).node;
+  const dawnLine = r.data.cart.lines.edges.find((e) => e.node.merchandise.id === preorderVariant("spring-dawn-gift-box")).node;
   assert.equal(dawnLine.merchandise.price.amount, `${dawn}.0`);
   r = await k.patch("/api/cart", { id, lines: [{ id: dawnLine.id, quantity: 3 }] });
   assert.equal(r.status, 200);
@@ -53,7 +55,7 @@ test("add, merge, update, remove keep Shopify's totals", async () => {
 test("distinct attributes keep two lines of the same published variant separate", async () => {
   const attrs = [{ key: "Gift note", value: "First gift" }, { key: "Pre-order", value: "Yes" }];
   const r = await c().post("/api/cart", { lines: [line("kyoto-gift-box", 0, 1, attrs)] });
-  assert.equal(r.status, 200); assert.deepEqual(r.data.cart.lines.edges[0].node.attributes, attrs);
+  assert.equal(r.status, 200); assert.ok(r.data.cart.lines.edges[0].node.attributes.some(a => a.key === "Gift note" && a.value === "First gift"));
   const r2 = await c().post("/api/cart", { id: r.data.cart.id, lines: [line("kyoto-gift-box", 0, 1, [{ key: "Gift note", value: "Second gift" }])] });
   assert.equal(r2.data.cart.lines.edges.length, 2);
 });
@@ -81,7 +83,7 @@ test("a variant Shopify does not know is an error, not a silent add", async () =
 
 test("Shopify's stock warnings reach the bag", async () => {
   const v = variant("kyoto-gift-box", 1);
-  await mock.config({ stock: { [v]: 2 } });
+  await mock.config({ stock: { [preorderVariant("kyoto-gift-box")]: 2 } });
   const r = await c().post("/api/cart", { lines: [{ merchandiseId: v, quantity: 3 }] });
   assert.equal(r.status, 200);
   assert.equal(r.data.cart.lines.edges[0].node.quantity, 2);

@@ -8,6 +8,7 @@ export const MOCK = process.env.MOCK_ORIGIN;
 if (!BASE || !MOCK) throw new Error("Run the checkout tests with npm run test:api / test:e2e (tests/run.mjs).");
 
 export const fixture = readFixture();
+export const preorderVariant = slug => fixture.batches[slug].variantId;
 /** Variant GID of a product (and option index) in the test fixture. */
 export const variant = (slug, option) => {
   const p = fixture.products[slug]; if (!p) throw new Error(`no fixture product ${slug}`);

@@ -16,6 +16,7 @@ export const CART = `
         quantity
         attributes { key value }
         cost { totalAmount { ...Money } }
+        sellingPlanAllocation { sellingPlan { id name } priceAdjustments { price { ...Money } } }
         merchandise { ... on ProductVariant {
           id
           title

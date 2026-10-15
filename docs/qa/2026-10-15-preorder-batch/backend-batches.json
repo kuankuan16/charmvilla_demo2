@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "blossoming-prosperity-gift-box",
+    "productId": "gid://shopify/Product/15425915257196",
+    "variantId": "gid://shopify/ProductVariant/67720264188268",
+    "limit": 20,
+    "unit": "box",
+    "plans": 1,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 20
+  },
+  {
+    "slug": "year-of-plenty-gift-box",
+    "productId": "gid://shopify/Product/15425915289964",
+    "variantId": "gid://shopify/ProductVariant/67720264221036",
+    "limit": 20,
+    "unit": "box",
+    "plans": 1,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 20
+  },
+  {
+    "slug": "winter-blossom-gift-box",
+    "productId": "gid://shopify/Product/15425915322732",
+    "variantId": "gid://shopify/ProductVariant/67720264253804",
+    "limit": 10,
+    "unit": "box",
+    "plans": 2,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 10
+  },
+  {
+    "slug": "kyoto-gift-box",
+    "productId": "gid://shopify/Product/15425915355500",
+    "variantId": "gid://shopify/ProductVariant/67720264286572",
+    "limit": 100,
+    "unit": "box",
+    "plans": 4,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 100
+  },
+  {
+    "slug": "spring-dawn-gift-box",
+    "productId": "gid://shopify/Product/15425915388268",
+    "variantId": "gid://shopify/ProductVariant/67720264319340",
+    "limit": 10,
+    "unit": "box",
+    "plans": 4,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 10
+  },
+  {
+    "slug": "purple-butterfly-gift-box",
+    "productId": "gid://shopify/Product/15425915421036",
+    "variantId": "gid://shopify/ProductVariant/67720264352108",
+    "limit": 10,
+    "unit": "box",
+    "plans": 1,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 10
+  },
+  {
+    "slug": "orchid-gift-box",
+    "productId": "gid://shopify/Product/15425915453804",
+    "variantId": "gid://shopify/ProductVariant/67720264384876",
+    "limit": 10,
+    "unit": "box",
+    "plans": 4,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 10
+  },
+  {
+    "slug": "reunion-paper-gift-box",
+    "productId": "gid://shopify/Product/15425915486572",
+    "variantId": "gid://shopify/ProductVariant/67720264417644",
+    "limit": 100,
+    "unit": "box",
+    "plans": 1,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 100
+  },
+  {
+    "slug": "snowflake-gift-box",
+    "productId": "gid://shopify/Product/15425915519340",
+    "variantId": "gid://shopify/ProductVariant/67720264450412",
+    "limit": 200,
+    "unit": "set",
+    "plans": 5,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 200
+  },
+  {
+    "slug": "christmas-gift-box",
+    "productId": "gid://shopify/Product/15425915552108",
+    "variantId": "gid://shopify/ProductVariant/67720264483180",
+    "limit": 200,
+    "unit": "box",
+    "plans": 6,
+    "reserve": [
+      "ON_SALE"
+    ],
+    "billing": [
+      "NO_REMAINING_BALANCE"
+    ],
+    "applied": true,
+    "remainingAfterInit": 200
+  }
+]

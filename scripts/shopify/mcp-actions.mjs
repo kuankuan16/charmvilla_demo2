@@ -2,7 +2,8 @@ import { readFileSync } from 'node:fs';
 import { z } from 'zod';
 
 const mapping = JSON.parse(readFileSync(new URL('../../src/data/shopify-map.json', import.meta.url)));
-const productIds = new Set(Object.values(mapping).map(p => p?.productId).filter(Boolean));
+const batches = JSON.parse(readFileSync(new URL('../../src/data/shopify-preorders.json', import.meta.url))).products;
+const productIds = new Set([...Object.values(mapping), ...Object.values(batches)].map(p => p?.productId).filter(Boolean));
 const gid = kind => z.string().regex(new RegExp(`^gid://shopify/${kind}/[0-9]+$`));
 const integer = z.number().int().min(-2147483648).max(2147483647);
 export const inventoryInput = z.object({

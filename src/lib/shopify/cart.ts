@@ -2,7 +2,7 @@ import { storefront, ShopifyError, firstUserError } from "./client";
 import { CART_QUERY, CART_CREATE, CART_LINES_ADD, CART_LINES_UPDATE, CART_LINES_REMOVE, CART_BUYER_IDENTITY } from "./queries";
 import type { Cart, UserError } from "./types";
 
-type LineInput = { merchandiseId: string; quantity: number; attributes?: { key: string; value: string }[] }; // attributes: e.g. the tea chosen for a one-tea gift box
+export type LineInput = { merchandiseId: string; quantity: number; sellingPlanId?: string; attributes?: { key: string; value: string }[] }; // attributes: e.g. the tea chosen for a one-tea gift box
 type Payload<K extends string> = Record<K, { cart: Cart | null; userErrors: UserError[]; warnings?: { code: string; message: string }[] }>;
 /** Shopify may change a line instead of refusing it (e.g. fewer in stock than asked) and only say so in `warnings`; the bag shows that. */
 export type CartResult = { cart: Cart; warning?: string };

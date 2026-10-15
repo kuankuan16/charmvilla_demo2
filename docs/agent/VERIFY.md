@@ -10,7 +10,7 @@
 | 應用程式、依賴、建置設定 | Node 24 執行 `npm run check`（lint、typecheck、build）；讀取 warnings／errors，不降低檢查標準 |
 | 商品配對、中文 CMS、Shopify 資料轉換 | 上項加 `npm run shopify:test`；檢查 variant 身分、中文優先、價格／庫存來源與核准照片 |
 | 購物車、API、會員跳轉 | 上項加 `npm run shopify:verify`，先確認 server 與目標環境；驗證新增／讀取／增減／移除、非法輸入、checkout host 和 account redirect |
-| GA4／結帳 pixel／同意 | `node --test scripts/analytics/analytics.test.mjs` 加應用程式檢查；瀏覽器驗證拒絕、同意、撤回、事件內容與去重，能連線時核對 DebugView |
+| GA4／結帳 pixel／同意 | `node --import ./tests/support/register-ts.mjs --test scripts/analytics/analytics.test.mjs` 加應用程式檢查；瀏覽器驗證拒絕、同意、撤回、事件內容與去重，能連線時核對 DebugView |
 | UI、動畫、影像、可見文案 | 應用程式檢查＋實際瀏覽器英文／中文、1440px／390px、鍵盤與 reduced-motion；核對 console、failed requests、水平溢出、裁切與正常／空白／錯誤狀態；表單檢查空輸入、重複送出、重新整理 |
 | SEO、metadata、路由 | 應用程式檢查＋受影響 URL 的狀態碼、canonical、hreflang、robots 與 sitemap；Search Console 提交成功和 Google 收錄分開記錄 |
 | 已授權發布 | 推送前確認 remote、branch、Vercel project；完成後讀回部署 READY／alias，開正式 URL 驗證受影響路徑。Build、push、部署與線上驗證分開記錄 |
@@ -24,7 +24,7 @@
 ```sh
 npx -y -p node@24 -c 'npm run check'
 npx -y -p node@24 -c 'npm run shopify:test'
-npx -y -p node@24 -c 'node --test scripts/analytics/analytics.test.mjs'
+npx -y -p node@24 -c 'node --import ./tests/support/register-ts.mjs --test scripts/analytics/analytics.test.mjs'
 ```
 
 以上三項按需選，不是每輪全部執行。`npm run check` 已包含 lint／typecheck／build，不用在它通過後再各跑一次。依賴已正確安裝時，不為純文件任務重跑安裝。

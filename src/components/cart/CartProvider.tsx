@@ -10,6 +10,7 @@ import { findProduct, getProducts, formatPrice, type Product } from "@/data/cata
 import { variantLabel } from "@/lib/shopify/catalog-data";
 import { MAX_LINE_QUANTITY, type Cart as ShopifyCart } from "@/lib/shopify/types";
 import { variantFor, productForVariant } from "@/lib/shopify/variants";
+import { preorderPurchase } from "@/lib/shopify/preorder-batch";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
 import type { Locale } from "@/i18n/config";
@@ -34,16 +35,18 @@ const MODE: "local" | "shopify" = process.env.NEXT_PUBLIC_COMMERCE_MODE === "sho
 
 // Lines are named from the site catalogue in the page language; the stored cart itself is language-neutral (slugs / variant ids).
 // The variant GID tells which product and which option (tea, tea × lid colour) the line is (src/lib/shopify/variants.ts).
-const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string, en: string) => string): CartLine[] => (cart?.lines.edges ?? []).map(({ node }) => {
-  const hit = productForVariant(node.merchandise.id);
+const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string, en: string) => string): CartLine[] => (cart?.lines.edges ?? []).filter(({ node }) => node.quantity > 0).map(({ node }) => {
+  const preorder = preorderPurchase(node.merchandise.id, node.sellingPlanAllocation?.sellingPlan.id);
+  const hit = preorder ?? productForVariant(node.merchandise.id);
   const local = hit ? findProduct(hit.slug, lang) : getProducts(lang).find(p => p.shopify?.handle === node.merchandise.product.handle);
   const mix = local?.giftBox?.mixBoxes ? mixFromAttrs(node.attributes) : undefined;
-  const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : node.merchandise.title === "Default Title" ? undefined : variantLabel(node.merchandise.title, lang);
-  const title = lang === "zh" && local ? local.name : node.merchandise.product.title;
+  const optionTitle = preorder?.option.title ?? node.merchandise.title;
+  const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : optionTitle === "Default Title" ? undefined : variantLabel(optionTitle, lang);
+  const title = local && (lang === "zh" || preorder) ? local.name : node.merchandise.product.title;
   const name = picked ? `${title}${t(`（${picked}）`, ` (${picked})`)}` : title;
   // The live product marks the actual Shopify line. The image catalogue's old snapshot can
   // predate this campaign, so it must not decide whether the bag shows preorder terms.
-  return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id, ...(node.attributes?.some(a => a.key === "Pre-order" && a.value === "Yes") ? { preOrder: true } : {}) };
+  return { key: node.id, slug: local?.slug ?? null, name, image: local ? { src: local.image.src, alt: local.image.alt } : node.merchandise.image ? { src: node.merchandise.image.url, alt: node.merchandise.image.altText ?? "" } : null, quantity: node.quantity, unitAmount: Number(node.sellingPlanAllocation?.priceAdjustments[0]?.price.amount ?? node.merchandise.price.amount), currency: node.merchandise.price.currencyCode, variantId: node.merchandise.id, ...(preorder || node.attributes?.some(a => a.key === "Pre-order" && a.value === "Yes") ? { preOrder: true } : {}) };
 });
 
 // Line attributes travel to Shopify checkout, the order and the order emails, so they are in English (the US store's language).

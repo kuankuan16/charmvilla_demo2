@@ -52,3 +52,15 @@ test("Checkout and payment returns do not replace acquisition referrals", () => 
   assert.equal(ga.commerceReferrer("https://notpaypal.com/"), false);
   assert.equal(ga.commerceReferrer("https://google.com/"), false);
 });
+
+test('Preorder analytics keeps the native checkout SKU, distinct plans and excludes zero-quantity lines', async () => {
+  const {preorderBatches}=await import('../../src/lib/shopify/preorder-batch.ts');
+  const b=preorderBatches['winter-blossom-gift-box'];
+  const p={slug:'winter-blossom-gift-box',name:'暮雪',preOrderRemaining:10,shopifyData:{variants:[{id:Object.keys(b.options)[0],title:'Rose',price:'230'}]}};
+  const nodes=[230,260,0].map((amount,i)=>({id:`line-${i}`,quantity:amount?1:0,cost:{totalAmount:{amount:String(amount)}},sellingPlanAllocation:{sellingPlan:{name:i?'Oriental Beauty':'Rose'}},merchandise:{id:b.variantId,title:'Default Title',product:{title:'Snowy Twilight'}}}));
+  const c={lines:{edges:nodes.map(node=>({node}))}};
+  const items=ga.cartItems(c);
+  assert.equal(ga.productItem(p).item_id,b.variantId.split('/').pop());
+  assert.equal(items.length,2);assert.deepEqual(items.map(i=>i.price),[230,260]);
+  assert.notEqual(items[0].item_variant,items[1].item_variant);
+});

@@ -3,7 +3,7 @@
 import { test, before, after, beforeEach } from "node:test";
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
-import { BASE, LOCAL_BASE, MOCK, mock, fixture, variant } from "../support/helpers.mjs";
+import { BASE, LOCAL_BASE, MOCK, mock, fixture, variant, preorderVariant } from "../support/helpers.mjs";
 
 let browser;
 before(async () => { browser = await chromium.launch({ channel: "chrome", headless: !process.env.HEADED }); });
@@ -75,8 +75,10 @@ for (const lang of ["en", "zh"]) {
     let carts = await cartState();
     assert.equal(carts.length, 1);
     assert.equal(carts[0].buyerIdentity.countryCode, "US");
-    assert.equal(carts[0].lines[0].merchandiseId, variant(REUNION, 0), "the sole option is the verified Gold variant");
-    assert.deepEqual(carts[0].lines[0].attributes, [{ key: "Packaging", value: fixture.products[REUNION].options[0].label }, { key: "Pre-order", value: "Yes" }]);
+    assert.equal(carts[0].lines[0].merchandiseId, preorderVariant(REUNION), "Gold resolves to the shared preorder SKU");
+    assert.equal(carts[0].lines[0].sellingPlanId, fixture.batches[REUNION].options[variant(REUNION, 0)].sellingPlanId);
+    assert.ok(carts[0].lines[0].attributes.some(a => a.key === "Option" && a.value === "Gold"));
+    assert.ok(carts[0].lines[0].attributes.some(a => a.key === "Ships by" && a.value === "2026-11-30"));
     await closeBag(page);
 
     // 2. tea × lid colour option
@@ -90,14 +92,15 @@ for (const lang of ["en", "zh"]) {
     assert.equal(await dawnLine.locator(".cart-line-price").innerText(), usd(opt.price));
     carts = await cartState();
     assert.equal(carts.length, 1, "the second piece goes into the same Shopify cart");
-    assert.equal(carts[0].lines[1].merchandiseId, variant(DAWN, 2));
-    assert.deepEqual(carts[0].lines[1].attributes, [{ key: "Tea", value: opt.label }, { key: "Pre-order", value: "Yes" }]);
+    assert.equal(carts[0].lines[1].merchandiseId, preorderVariant(DAWN));
+    assert.equal(carts[0].lines[1].sellingPlanId, fixture.batches[DAWN].options[variant(DAWN, 2)].sellingPlanId);
+    assert.ok(carts[0].lines[1].attributes.some(a => a.key === "Option" && a.value === opt.label));
     let total = fixture.products[REUNION].price + opt.price;
     assert.equal(await subtotalText(page), usd(total));
     assert.ok((await page.locator(".cart-foot").innerText()).includes(t.free), "US$199 or more: complimentary shipping");
     await closeBag(page);
 
-    // Christmas products remain unpublished; exercise quantities only with published lines.
+    // Exercise quantity updates on the same shared preorder SKU.
     await page.locator(".header-cart-btn").first().click();
     await settled(page);
 
@@ -150,20 +153,20 @@ for (const lang of ["en", "zh"]) {
   });
 
   test(`[${lang}] live variant sold out: purchase stays disabled`, async () => {
-    await mock.config({ stock: { [variant(BUTTERFLY)]: 0 } });
+    await mock.config({ stock: { [preorderVariant(BUTTERFLY)]: 0 } });
     const { context, page, problems } = await open();
     await page.goto(`${BASE}${prefix(lang)}/products/${BUTTERFLY}`);
     const buy = page.locator("button.product-buy");
     await page.waitForFunction((txt) => document.querySelector("button.product-buy")?.textContent === txt, t.soldOut);
     assert.equal(await buy.isDisabled(), true);
-    assert.ok(await page.locator(".product-soldout").first().isVisible());
+    assert.match(await page.locator(".product-preorder").innerText(), lang === "zh" ? /預購額滿/ : /Pre-order sold out/);
     assert.deepEqual(problems, []);
     await context.close();
   });
 
   test(`[${lang}] fewer left than asked: Shopify's stock note, and a line removed in Shopify disappears from the bag`, async () => {
     const { context, page } = await open();
-    await mock.config({ stock: { [variant(DAWN, 0)]: 1 } });
+    await mock.config({ stock: { [preorderVariant(DAWN)]: 1 } });
     await page.goto(`${BASE}${prefix(lang)}/products/${DAWN}`);
     await page.locator(`label:has(input[name="tea-${DAWN}"])`).nth(0).click();
     await addFromPage(page);
@@ -210,12 +213,12 @@ for (const lang of ["en", "zh"]) {
   });
 }
 
-for (const lang of ["en", "zh"]) test(`[${lang}] unpublished Christmas products retain correct choices and the confirmed three-box set`, async () => {
+for (const lang of ["en", "zh"]) test(`[${lang}] Christmas preorders share the approved batch and retain the three-box set`, async () => {
   const { context, page, problems } = await open();
   for (const slug of ["christmas-gift-box", SNOW]) {
     await page.goto(`${BASE}${prefix(lang)}/products/${slug}`);
-    await page.waitForFunction((txt) => document.querySelector("button.product-buy")?.textContent === txt, T[lang].soldOut);
-    assert.equal(await page.locator("button.product-buy").isDisabled(), true);
+    await page.locator(".product-preorder").waitFor();
+    assert.match(await page.locator(".product-preorder").innerText(), /200/);
     if (slug === "christmas-gift-box") {
       const tea = page.locator(`#tea-${slug}`), lid = page.locator(`#lid-${slug}`);
       assert.equal(await tea.locator('option').count(), 4); // placeholder + three teas
@@ -223,10 +226,12 @@ for (const lang of ["en", "zh"]) test(`[${lang}] unpublished Christmas products 
       for (let teaIndex = 1; teaIndex <= 3; teaIndex++) for (let lidIndex = 1; lidIndex <= 2; lidIndex++) {
         await tea.selectOption({ index: teaIndex });
         await lid.selectOption({ index: lidIndex });
-        assert.equal(await page.locator('button.product-buy').isDisabled(), true, "a complete choice cannot override Shopify publication");
+        assert.equal(await page.locator('button.product-buy').isDisabled(), false, "a complete choice uses the published preorder pool");
       }
     } else {
       assert.equal(await page.locator('.product-choices input').count(), fixture.products[slug].options.length);
+      await page.locator(".product-choices label").first().click();
+      assert.equal(await page.locator("button.product-buy").isDisabled(), false);
     }
     assert.equal(await page.locator('.product-mix').count(), 0);
     if (slug === SNOW) {

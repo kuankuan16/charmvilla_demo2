@@ -13,6 +13,7 @@ export type ShopifyProduct = {
   currency: string; published: boolean; availableForSale: boolean; variants: ShopifyVariant[];
   metafields: { namespace: string; key: string; type: string; value: string }[];
   translations: { key: string; value: string }[];
+  preorderBatch?: { remaining: number; unit: "box" | "set" };
 };
 export type ShopifyChineseCopy = {
   version: 1; locale: "zh-TW"; title: string; description: string;
@@ -142,7 +143,7 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
     facts: localizedFacts ?? facts,
     story: copy?.story ?? { ...local.story, title: sections.story ? t("故事", "Story") : meta.product_story_title || source.title, body: sections.story || meta.product_story || "", more: undefined },
     price: variants.length && (source.currency === "USD" || source.currency === "TWD") ? { amount: Math.min(...variants.map(v => Number(v.price))), currency: source.currency } : undefined,
-    soldOut: !source.availableForSale || !variants.some(v => v.availableForSale), preOrder, preOrderPolicy: preorder?.policy, preOrderRemaining: undefined, priceTbd: false, teaTbd: false,
+    soldOut: !source.availableForSale || !variants.some(v => v.availableForSale), preOrder, preOrderPolicy: preorder?.policy, preOrderRemaining: source.preorderBatch?.remaining, preOrderUnit: source.preorderBatch?.unit, priceTbd: false, teaTbd: false,
     shopify: { handle: source.handle, variantId: variants.length === 1 ? variants[0].id : "" },
     shopifyData: { productId: source.id, published: source.published, status: source.status, scheduledPreOrder, variants },
     giftBox: local.giftBox ? { ...local.giftBox, pieces, contents: [], choices, mixBoxes: undefined, choiceLabel: copy?.choiceLabel || (hasTea && hasColor ? t("選擇茶款與盒色", "Choose your tea and box color") : hasColor ? t("選擇包裝", "Choose your packaging") : t("選擇茶款", "Choose your tea")) } : undefined,

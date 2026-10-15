@@ -36,6 +36,10 @@ export function createMockShopify({ catalog }) {
   let origin = "";
 
   const sourceProducts = Object.values(catalog.snapshot.products);
+  const batches = Object.values(catalog.batches);
+  const poolStock = id => state.stock[id] ?? batches.find(b => b.variantId === id)?.limit;
+  const linePrice = l => variants[l.merchandiseId].plans?.[l.sellingPlanId]?.price ?? Number(variants[l.merchandiseId].price);
+  const livePool = b => ({ id: b.productId, availableForSale: poolStock(b.variantId) > 0, requiresSellingPlan: true, variants: { nodes: [{ id: b.variantId, price: money(variants[b.variantId].price), quantityAvailable: poolStock(b.variantId), availableForSale: poolStock(b.variantId) > 0, currentlyNotInStock: false, sellingPlanAllocations: { nodes: Object.entries(b.plans).map(([id, p]) => ({ sellingPlan: { id, recurringDeliveries: false }, checkoutChargeAmount: money(p.price), remainingBalanceChargeAmount: money(0), priceAdjustments: [{ price: money(p.price) }] })), pageInfo: { hasNextPage: false } } }], pageInfo: { hasNextPage: false } } });
   const stockOf = v => state.stock[v.id] ?? 99;
   const liveProduct = p => p.published ? { ...p, availableForSale: p.variants.some(v => stockOf(v) > 0), variants: { nodes: p.variants.map(v => ({ ...v, quantityAvailable: stockOf(v), availableForSale: stockOf(v) > 0, currentlyNotInStock: false, price: money(v.price, p.currency) })), pageInfo: { hasNextPage: false } } } : null;
 
@@ -50,11 +54,12 @@ export function createMockShopify({ catalog }) {
       const v = variants[l.merchandiseId];
       return { node: {
         id: l.id, quantity: l.quantity, attributes: l.attributes,
-        cost: { totalAmount: money(Number(v.price) * l.quantity, v.currency) },
+        cost: { totalAmount: money(linePrice(l) * l.quantity, v.currency) },
+        sellingPlanAllocation: l.sellingPlanId ? { sellingPlan: { id: l.sellingPlanId, name: v.plans[l.sellingPlanId].title }, priceAdjustments: [{ price: money(linePrice(l)) }] } : null,
         merchandise: { id: l.merchandiseId, title: v.title, price: money(v.price, v.currency), image: v.image ? { url: `${origin}${v.image}`, altText: null } : null, product: { handle: v.handle, title: v.productTitle } },
       } };
     });
-    const subtotal = c.lines.reduce((n, l) => n + Number(variants[l.merchandiseId].price) * l.quantity, 0);
+    const subtotal = c.lines.reduce((n, l) => n + linePrice(l) * l.quantity, 0);
     return {
       id: c.id, checkoutUrl: `${origin}/cart/c/${c.token}?key=${c.key}`, totalQuantity: c.lines.reduce((n, l) => n + l.quantity, 0),
       cost: { subtotalAmount: money(subtotal), totalAmount: money(subtotal) },
@@ -69,6 +74,7 @@ export function createMockShopify({ catalog }) {
     const userErrors = [], warnings = [];
     lines.forEach((input, i) => {
       if (!variants[input.merchandiseId] || !variants[input.merchandiseId].published) { userErrors.push(err(`The merchandise with id ${input.merchandiseId} does not exist.`, "INVALID", ["lines", String(i), "merchandiseId"])); return; }
+      if (variants[input.merchandiseId].plans && !variants[input.merchandiseId].plans[input.sellingPlanId]) { userErrors.push(err("A valid selling plan is required.", "INVALID")); return; }
       const quantity = input.quantity ?? 1;
       if (!Number.isInteger(quantity) || quantity < 1) { userErrors.push(err("The quantity must be greater than 0.", "INVALID", ["lines", String(i), "quantity"])); return; }
       for (const a of input.attributes ?? []) if (typeof a.key !== "string" || typeof a.value !== "string") { userErrors.push(err("Attribute key and value must be strings.", "INVALID", ["lines", String(i), "attributes"])); return; }
@@ -76,13 +82,13 @@ export function createMockShopify({ catalog }) {
     if (userErrors.length) return { userErrors, warnings };
     for (const input of lines) {
       const attributes = (input.attributes ?? []).map(({ key, value }) => ({ key, value }));
-      let line = cart.lines.find((l) => l.merchandiseId === input.merchandiseId && sameAttrs(l.attributes, attributes));
+      let line = cart.lines.find((l) => l.merchandiseId === input.merchandiseId && l.sellingPlanId === input.sellingPlanId && sameAttrs(l.attributes, attributes));
       const want = (line?.quantity ?? 0) + (input.quantity ?? 1);
-      const stock = state.stock[input.merchandiseId];
+      const stock = poolStock(input.merchandiseId);
       const otherLines = cart.lines.filter((l) => l !== line && l.merchandiseId === input.merchandiseId).reduce((n, l) => n + l.quantity, 0);
       const room = stock === undefined ? Infinity : Math.max(0, stock - otherLines);
       if (room === 0) { warnings.push({ code: "MERCHANDISE_OUT_OF_STOCK", message: `The product '${variants[input.merchandiseId].productTitle}' is already sold out.`, target: input.merchandiseId }); continue; }
-      if (!line) { line = { id: `gid://shopify/CartLine/${randomUUID()}?cart=${cart.token}`, merchandiseId: input.merchandiseId, quantity: 0, attributes }; cart.lines.push(line); }
+      if (!line) { line = { id: `gid://shopify/CartLine/${randomUUID()}?cart=${cart.token}`, merchandiseId: input.merchandiseId, sellingPlanId: input.sellingPlanId, quantity: 0, attributes }; cart.lines.push(line); }
       line.quantity = Math.min(want, room);
       if (want > room) warnings.push({ code: "MERCHANDISE_NOT_ENOUGH_STOCK", message: `Only ${room} items were added to your cart due to availability.`, target: line.id });
     }
@@ -129,6 +135,7 @@ export function createMockShopify({ catalog }) {
 
   // ---------- Storefront operations ----------
   const storefrontOps = {
+    PreorderPools: ({ ids }) => ({ nodes: ids.map(id => { const b = batches.find(b => b.productId === id); return b ? livePool(b) : null; }) }),
     HeadlessCatalog: ({ ids }) => ({ nodes: ids.map(id => liveProduct(sourceProducts.find(p => p.id === id))) }),
     CheckoutAnalytics: ({ id, attributes }) => { const c = findCart(id); if (!c) return { cartAttributesUpdate: missingCart() }; c.attributes = attributes; return { cartAttributesUpdate: { cart: renderCart(c), userErrors: [] } }; },
     GetCart: ({ id }) => { const c = findCart(id); return { cart: c ? renderCart(c) : null }; },
@@ -154,7 +161,7 @@ export function createMockShopify({ catalog }) {
       if (!userErrors.length) for (const u of lines) {
         const line = cart.lines.find((l) => l.id === u.id);
         if (u.quantity === 0) { cart.lines = cart.lines.filter((l) => l !== line); continue; }
-        const stock = state.stock[line.merchandiseId];
+        const stock = poolStock(line.merchandiseId);
         const others = cart.lines.filter((l) => l !== line && l.merchandiseId === line.merchandiseId).reduce((n, l) => n + l.quantity, 0);
         const room = stock === undefined ? Infinity : Math.max(0, stock - others);
         line.quantity = Math.min(u.quantity, room);
@@ -263,7 +270,7 @@ export function createMockShopify({ catalog }) {
   // ---------- Admin operations ----------
   const parseOrderQuery = (q = "") => ({ since: /created_at:>=(\S+)/.exec(q)?.[1] ?? null, notCancelled: /-status:cancelled/.test(q) });
   const adminOps = {
-    HeadlessContent: ({ ids }) => ({ shop: { currencyCode: "USD" }, nodes: ids.map(id => { const p = sourceProducts.find(p => p.id === id); return { ...p, variants: { nodes: p.variants, pageInfo: { hasNextPage: false } }, metafields: { nodes: p.metafields, pageInfo: { hasNextPage: false } } }; }), translatableResourcesByIds: { nodes: ids.map(id => ({ resourceId: id, translations: sourceProducts.find(p => p.id === id).translations })) } }),
+    HeadlessContent: ({ ids }) => ({ shop: { currencyCode: "USD" }, nodes: ids.map(id => { const p = sourceProducts.find(p => p.id === id); if (!p) { const b = batches.find(b => b.productId === id); return b ? { id, status: "ACTIVE", requiresSellingPlan: true, variants: { nodes: [{ id: b.variantId, inventoryPolicy: "DENY" }], pageInfo: { hasNextPage: false } }, metafields: { nodes: [], pageInfo: { hasNextPage: false } } } : null; } return { ...p, variants: { nodes: p.variants, pageInfo: { hasNextPage: false } }, metafields: { nodes: p.metafields, pageInfo: { hasNextPage: false } } }; }), translatableResourcesByIds: { nodes: ids.map(id => ({ resourceId: id, translations: sourceProducts.find(p => p.id === id)?.translations ?? [] })) } }),
     FindCustomer: ({ q }) => { const email = /email:"([^"]*)"/.exec(q ?? "")?.[1]; const c = email ? byEmail(email) : null; return { customers: { nodes: c ? [{ id: c.id, emailMarketingConsent: c.emailMarketingConsent }] : [] } }; },
     NewsletterCreate: ({ input }) => {
       if (!validEmail(input.email)) return { customerCreate: { customer: null, userErrors: [{ field: ["email"], message: "Email is invalid" }] } };

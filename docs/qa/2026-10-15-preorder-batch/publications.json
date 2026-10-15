@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "gid://shopify/Product/15425915257196",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915289964",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915322732",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915355500",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915388268",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915421036",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915453804",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915486572",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915519340",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15425915552108",
+      "resourcePublicationsV2": {
+        "nodes": [
+          {
+            "isPublished": true,
+            "publication": {
+              "id": "gid://shopify/Publication/323245572460",
+              "name": "Charmvilla Headless 02"
+            }
+          }
+        ]
+      },
+      "metafield": {
+        "value": "1"
+      }
+    }
+  ]
+}

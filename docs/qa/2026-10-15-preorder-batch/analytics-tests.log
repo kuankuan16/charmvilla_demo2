@@ -1,0 +1,21 @@
+✔ Purchase uses discounted merchandise value, separates shipping/tax, stable variant ID and no PII (1.757208ms)
+✔ Repeated purchase events and thank-you reloads are deduplicated (0.865625ms)
+✔ Checkout cannot report a purchase without a real Shopify order ID (0.244917ms)
+✔ Both explicit storefront consent and Shopify analytics permission are required (0.578791ms)
+✔ Shopify checkout stages map once to standard GA4 funnel events (0.619208ms)
+✔ URL sanitization removes checkout tokens and customer inputs (0.105042ms)
+✔ Product and cart analytics use the same Shopify variant ID (0.103958ms)
+✔ Checkout and payment returns do not replace acquisition referrals (0.064709ms)
+✔ Preorder analytics keeps the native checkout SKU, distinct plans and excludes zero-quantity lines (0.423667ms)
+(node:69794) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kuan/Documents/Codex/10-02-charmvilla-demo2/src/lib/analytics/ga4.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kuan/Documents/Codex/10-02-charmvilla-demo2/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 97.187084

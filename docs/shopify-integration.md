@@ -2,6 +2,14 @@
 
 更新：2026-10-15。本文件取代舊的「本機價格／預購額度優先」串接規則。
 
+## 2026-10-15 更新：預購獨立批次
+
+使用者已確認按原表格啟用10款新預購額度，無現貨也可預購。每款增加1個獨立tracked/DENY SKU，各茶／盒蓋以原生PRE_ORDER selling plan共用它；ON_SALE在訂單成立時占用額度。原商品／variant／價格／文案／現貨保留，前台仍用原身分配圖與選項，cart轉換成預購SKU＋plan。`src/data/shopify-preorders.json`記錄實際GID；即時數量及價格來自Shopify，`/api/preorder`不快取。
+
+新批次只Headless02發布。團圓Gold only、聖誕心意禮200組×3盒。App新版`headless-preorder-batch-2026-10-15`補write_purchase_options/write_publications/read_shipping，保留既有secret；實際23 scopes。以下「18 scopes／未改庫存」段落是前階段連線歷史。
+
+操作／取消回補／改價同步／停單與限制請見[預購後台管理](shopify/preorder-batch-2026-11.md)，驗證見[本輪 QA](qa/2026-10-15-preorder-batch/README.md)。此段優先於下方舊的商品現貨／未發布狀態表。
+
 ## 目前這台 Mac 的連線狀態（2026-10-15 登入後重查）
 
 - root 已用使用者登入的既有 **CHARM VILLA Headless CMS** client credentials 與 **Charmvilla Headless 02** Storefront token 接通真實商店；僅存 ignored `.env.local`、0600 權限。沒有輪替密鑰或更動 Vercel 環境。

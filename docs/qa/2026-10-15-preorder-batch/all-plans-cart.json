@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-15T07:33:27.375Z",
+  "products": 10,
+  "options": 29,
+  "nativePlans": true,
+  "correctPrices": true,
+  "shipmentAttributes": true,
+  "noOrderPlaced": true
+}

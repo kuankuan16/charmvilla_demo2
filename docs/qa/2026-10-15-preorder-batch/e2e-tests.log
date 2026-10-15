@@ -1,0 +1,35 @@
+
+> charmvilla-gallery-site@0.1.0 test:e2e
+> node --import ./tests/support/register-ts.mjs --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tests/run.mjs e2e
+
+
+▶ building (shopify mode, .next/test-shopify)
+
+▶ building (local mode, .next/test-local)
+▶ mock http://127.0.0.1:55268 · full http://127.0.0.1:55509 · bare http://127.0.0.1:55512 · local http://127.0.0.1:55516
+
+▶ e2e tests
+✔ [en] optioned and pre-order pieces: names, options, Shopify prices, notes, quantities, checkout (4267.138792ms)
+✔ [en] the first add fails: the empty bag says why (395.648166ms)
+✔ [en] live variant sold out: purchase stays disabled (326.4475ms)
+✔ [en] fewer left than asked: Shopify's stock note, and a line removed in Shopify disappears from the bag (2397.479ms)
+✔ [en] sign in ties the bag to the customer; sign out lets it go (1455.866ms)
+✔ [zh] optioned and pre-order pieces: names, options, Shopify prices, notes, quantities, checkout (4101.014ms)
+✔ [zh] the first add fails: the empty bag says why (428.429291ms)
+✔ [zh] live variant sold out: purchase stays disabled (376.523209ms)
+✔ [zh] fewer left than asked: Shopify's stock note, and a line removed in Shopify disappears from the bag (2525.59475ms)
+✔ [zh] sign in ties the bag to the customer; sign out lets it go (1576.112583ms)
+✔ [en] Christmas preorders share the approved batch and retain the three-box set (478.246084ms)
+✔ [zh] Christmas preorders share the approved batch and retain the three-box set (586.460625ms)
+✔ newsletter pop-up: opens by itself in shopify mode, never in local mode (20867.806166ms)
+✔ [en] the footer newsletter form subscribes through Shopify (378.895208ms)
+✔ [en] local mode: the bag lives in the browser, checkout stays closed (633.818416ms)
+✔ [zh] local mode: the bag lives in the browser, checkout stays closed (628.074958ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41703.332333

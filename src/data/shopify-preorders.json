@@ -1,0 +1,212 @@
+{
+  "campaign": "2026-11",
+  "enabled": true,
+  "products": {
+    "blossoming-prosperity-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15081861874028",
+      "productId": "gid://shopify/Product/15425915257196",
+      "variantId": "gid://shopify/ProductVariant/67720264188268",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53583844082028": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174613868",
+          "title": "Default Title"
+        }
+      }
+    },
+    "year-of-plenty-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15081862136172",
+      "productId": "gid://shopify/Product/15425915289964",
+      "variantId": "gid://shopify/ProductVariant/67720264221036",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53770912629100": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174646636",
+          "title": "Default Title"
+        }
+      }
+    },
+    "winter-blossom-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15107964273004",
+      "productId": "gid://shopify/Product/15425915322732",
+      "variantId": "gid://shopify/ProductVariant/67720264253804",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53771531583852": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174679404",
+          "title": "First Prize Rose Oolong Tea"
+        },
+        "gid://shopify/ProductVariant/53771531616620": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174712172",
+          "title": "Third Prize Oriental Beauty Tea"
+        }
+      }
+    },
+    "kyoto-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15136264946028",
+      "productId": "gid://shopify/Product/15425915355500",
+      "variantId": "gid://shopify/ProductVariant/67720264286572",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53771465687404": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174744940",
+          "title": "Rose Oolong Tea"
+        },
+        "gid://shopify/ProductVariant/53771465720172": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174777708",
+          "title": "Rose & Honey-Scented Black Tea"
+        },
+        "gid://shopify/ProductVariant/53903381496172": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174810476",
+          "title": "Ruby Black Tea"
+        },
+        "gid://shopify/ProductVariant/67637433663852": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174843244",
+          "title": "Oriental Beauty Tea"
+        }
+      }
+    },
+    "spring-dawn-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15148513263980",
+      "productId": "gid://shopify/Product/15425915388268",
+      "variantId": "gid://shopify/ProductVariant/67720264319340",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53903379136876": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174876012",
+          "title": "First Prize Rose Oolong Tea / Blue"
+        },
+        "gid://shopify/ProductVariant/67632292790636": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174908780",
+          "title": "First Prize Rose Oolong Tea / Pink"
+        },
+        "gid://shopify/ProductVariant/53903379169644": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174941548",
+          "title": "Third Prize Oriental Beauty Tea / Blue"
+        },
+        "gid://shopify/ProductVariant/67632292823404": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174974316",
+          "title": "Third Prize Oriental Beauty Tea / Pink"
+        }
+      }
+    },
+    "purple-butterfly-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15150923350380",
+      "productId": "gid://shopify/Product/15425915421036",
+      "variantId": "gid://shopify/ProductVariant/67720264352108",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53824982679916": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694174581100",
+          "title": "Default Title"
+        }
+      }
+    },
+    "orchid-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15151974809964",
+      "productId": "gid://shopify/Product/15425915453804",
+      "variantId": "gid://shopify/ProductVariant/67720264384876",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/53827887464812": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175007084",
+          "title": "First Prize Rose Oolong Tea / Gold"
+        },
+        "gid://shopify/ProductVariant/67632301113708": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175039852",
+          "title": "First Prize Rose Oolong Tea / Pink"
+        },
+        "gid://shopify/ProductVariant/53827887497580": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175072620",
+          "title": "Third Prize Oriental Beauty Tea / Gold"
+        },
+        "gid://shopify/ProductVariant/67632301146476": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175105388",
+          "title": "Third Prize Oriental Beauty Tea / Pink"
+        }
+      }
+    },
+    "reunion-paper-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15402073194860",
+      "productId": "gid://shopify/Product/15425915486572",
+      "variantId": "gid://shopify/ProductVariant/67720264417644",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/67632284598636": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175138156",
+          "title": "Gold"
+        }
+      }
+    },
+    "snowflake-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15406015512940",
+      "productId": "gid://shopify/Product/15425915519340",
+      "variantId": "gid://shopify/ProductVariant/67720264450412",
+      "unit": "set",
+      "boxesPerUnit": 3,
+      "options": {
+        "gid://shopify/ProductVariant/67637433893228": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175170924",
+          "title": "Rose Oolong Tea"
+        },
+        "gid://shopify/ProductVariant/67637433925996": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175203692",
+          "title": "Rose & Honey-Scented Black Tea"
+        },
+        "gid://shopify/ProductVariant/67637433958764": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175236460",
+          "title": "Oriental Beauty Tea"
+        },
+        "gid://shopify/ProductVariant/67637433991532": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175269228",
+          "title": "Ruby Black Tea"
+        },
+        "gid://shopify/ProductVariant/67637434024300": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175301996",
+          "title": "Jin Xuan Tea"
+        }
+      }
+    },
+    "christmas-gift-box": {
+      "sourceProductId": "gid://shopify/Product/15406015742316",
+      "productId": "gid://shopify/Product/15425915552108",
+      "variantId": "gid://shopify/ProductVariant/67720264483180",
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "options": {
+        "gid://shopify/ProductVariant/67637434253676": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175334764",
+          "title": "Mixed Teas / Blue"
+        },
+        "gid://shopify/ProductVariant/67637434286444": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175367532",
+          "title": "Mixed Teas / Orange"
+        },
+        "gid://shopify/ProductVariant/67637434319212": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175400300",
+          "title": "Rose Oolong Tea / Blue"
+        },
+        "gid://shopify/ProductVariant/67637434351980": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175433068",
+          "title": "Rose Oolong Tea / Orange"
+        },
+        "gid://shopify/ProductVariant/67637434384748": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175465836",
+          "title": "Oriental Beauty Tea / Blue"
+        },
+        "gid://shopify/ProductVariant/67637434417516": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694175498604",
+          "title": "Oriental Beauty Tea / Orange"
+        }
+      }
+    }
+  }
+}

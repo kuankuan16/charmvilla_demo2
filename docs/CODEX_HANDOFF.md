@@ -2,13 +2,22 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
+## 2026-10-15 預購整合（正在發布）
+
+- 使用者已明確同意「現貨與預購分開、依表格設定上限、額滿停單」，已無數量定義等待。新的10款/29plans已建立並初始化100/20/20/100/10/10/10/10/200盒及200組，團圓Gold only。原商品/價格/實物庫存逐一回讀未變。
+- native tracked SKU + PRE_ORDER plan（ON_SALE、100%全額、DENY）提供同款跨茶/盒蓋共用原子額度。前台映射見`shopify-preorders.json`，29選項真實cart及最後1單位的跨plan上限已驗證。
+- Node24 check、19商品/批次測試、38 API、16 E2E、9 analytics與Ego12組雙語桌手機通過。實際付款與訂單扣量尚未測試；測試cart清空，不改原現貨讓測試過關。
+- [後台操作](shopify/preorder-batch-2026-11.md)與[QA](qa/2026-10-15-preorder-batch/README.md)。原商品改價需同步plan PRICE；不同步會禁購；取消回補以Shopify restock為準，勿重設剩餘額度為原始上限。
+- 以下前階段「等待定義／無可行方案／Christmas未公開」已由本節取代。Production待本批commit push、READY及www實際回讀。
+
 ## 2026-10-15 MCP 已接通、團圓金色與沖泡橫線
 
 - 本機既有 CMS app／Headless02 憑證已接通，保留原secret；API實際18 scopes、倉庫讀取、MCP三個工具握手均通過。只新增read_locations/write_inventory並更新原app安裝權限，未寫入商品／庫存。限定寫入工具需CAS/idempotency；詳見 [MCP QA](qa/2026-10-15-shopify-mcp-connected/README.md)。
 - 團圓前台只使用既有Gold GID，粉紅／藍選單暫時隱藏，無多餘選色步驟；商店原始三variants與庫存保持。Gold目前Hayward可用0，因此售罄；不可把Blue3轉算Gold。舊購物車仍能識別隱藏色款。
-- 沖泡頭尾橫線移除，只保留中間4條；留白／垂直進度線／底部對齊不變。Node24 check、Shopify13、相關購物車E2E7、Ego中英文1440/390×motion/reduced共8組通過；桌機底緣差0px，無console／request／溢出問題。[本批 QA](qa/2026-10-15-gold-only-brew-dividers/README.md)。本節寫入時Git/Production待本輪推送與回讀。
+- 沖泡頭尾橫線移除，只保留中間4條；留白／垂直進度線／底部對齊不變。Node24 check、Shopify13、相關購物車E2E7、Ego中英文1440/390×motion/reduced共8組通過；桌機底緣差0px，無console／request／溢出問題。[本批 QA](qa/2026-10-15-gold-only-brew-dividers/README.md)。`df2a777`已提交推送；正式 deployment `dpl_6Xiapgg8FSQSzsURFbriNJr4NFWY` READY，www/apex/demo2 aliases及來源SHA一致，正式8組Ego QA也通過。
 - 新需求：使用者授權照建議修改Shopify預購，需分現貨與未來預購額度、共用上限且結帳控量。已詢問原10款上限是否不含現貨的新批次額度或含現貨總量；待答前只做不依賴此定義的讀取／方案驗證。不能只開缺貨繼續銷售。FIFO及接續點見PLAN。
-- root port3146為本輪Node24已建置真實Shopify模式。Ego task44 p1本機、p2Shopify登入成功；現在由agent持有，沒有再等待登入。
+- 預購讀取盤點已完成：[盤點與實作限制](qa/2026-10-15-preorder-setup/README.md)。10款既有allocation仍只是記錄，全variants DENY，沒有selling plan。商店非Plus；不能假設自建Functions可用。可讀近60天的2筆訂單均已退款／履行、未標預購；不能據此推論整批已接數量為0。使用者詢問是否需客戶確認，已建議確認額度定義、外部既有訂單、團圓金色實數；未新增預購設定或寫庫存。
+- root port3146為本輪Node24已建置真實Shopify模式。Ego task44已finish一次，依使用者需要保留p1本機與p2已登入Shopify Admin；沒有再等待登入。預購數字確認前不再操作瀏覽器。
 
 ## 2026-10-15 root 同步與 Shopify MCP 接續
 
@@ -86,7 +95,7 @@ Git 證據：`c767233` Shopify／中文／GA4，`96e9207` 整合遠端圖片調�
 | 商品身分與快照 | `src/data/shopify-map.json`、`src/data/shopify-products.json`；快照不作即時庫存備援 |
 | 購物車／會員 | `src/app/api/cart/`、`src/app/api/account/`；公開會員入口跳 Shopify hosted accounts，沒有重做 Customer Account API OAuth 前端 |
 | Admin 憑證更新 | `src/lib/shopify/admin-auth.ts`、`scripts/shopify/runtime.mjs`；server-only client credentials；不輸出或提交 token |
-| CMS／MCP | [Shopify 整合](shopify-integration.md)；`.mcp.json` 與 `.codex/config.toml` 的兩個 server；商店 MCP 拒絕 mutations |
+| CMS／MCP | [Shopify 整合](shopify-integration.md)；`.mcp.json` 與 `.codex/config.toml` 的兩個 server；query工具拒絕mutations，另有商品metafield及庫存的限定CAS寫入工具 |
 | GA4 前台／checkout | `src/lib/analytics/ga4.ts`、`src/components/analytics/`、`scripts/analytics/shopify-checkout-pixel.js` |
 | 商品頁沖泡區 | `src/components/catalog/TeaPages.tsx`、`BrewCup.tsx`、`brew-drawing.tsx`；`src/lib/motion/animations.ts` `brewProcess()` 輸出 `--brew-stage` 0→4；`src/app/globals.css` `.brew-*`／`.bc-*`；步驟資料在 `src/data/tea-gifts.ts` `brew`，中文由 `catalog-data.ts` 合併。無 JS／reduced-motion 只顯示照片 |
 | 秘密與設定 | `.env.example` 只有鍵名；真實值在忽略的 `.env.local`，先前已設 0600。不要讀出值來做交接或健康檢查 |

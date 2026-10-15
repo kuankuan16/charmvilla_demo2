@@ -15,6 +15,8 @@ import { isShopifyConfigured } from "@/lib/shopify/config";
 import { ShopifyError } from "@/lib/shopify/client";
 import { json, handleError, buyerIp, body } from "@/lib/shopify/http";
 import { MAX_LINE_QUANTITY, type Cart } from "@/lib/shopify/types";
+import { preparePreorderLines } from "@/lib/shopify/preorder-cart";
+import type { LineInput } from "@/lib/shopify/cart";
 
 const wholeQuantity = (q: unknown, min: number) => typeof q === "number" && Number.isInteger(q) && q >= min && q <= MAX_LINE_QUANTITY;
 const badQuantity = () => json({ error: "bad_quantity", message: `數量需為 1 到 ${MAX_LINE_QUANTITY} 的整數` }, 400);
@@ -26,15 +28,16 @@ export async function GET(req: Request) {
   try { return json({ configured: true, cart: await getCart(id, buyerIp(req)) }); } catch (e) { return handleError(e); }
 }
 export async function POST(req: Request) {
-  const { id, lines } = await body<{ id?: string; lines?: { merchandiseId: string; quantity: number; attributes?: { key: string; value: string }[] }[] }>(req);
+  const { id, lines } = await body<{ id?: string; lines?: LineInput[] }>(req);
   if (!Array.isArray(lines) || !lines.length || lines.some((l) => !l || typeof l.merchandiseId !== "string")) return json({ error: "bad_request", message: "缺少商品" }, 400);
   if (lines.some((l) => !wholeQuantity(l.quantity, 1))) return badQuantity();
   try {
+    const purchaseLines = await preparePreorderLines(lines);
     const current = id ? await getCart(id, buyerIp(req)) : null;
     // Shopify variant inventory and selling policies remain authoritative.
-    if (current) return json(await addLines(current.id, lines, buyerIp(req)));
+    if (current) return json(await addLines(current.id, purchaseLines, buyerIp(req)));
     const customerAccessToken = (await readSession()) ?? undefined;
-    return json(await createCart(lines, buyerIp(req), { countryCode: STORE_COUNTRY, ...(customerAccessToken ? { customerAccessToken } : {}) }));
+    return json(await createCart(purchaseLines, buyerIp(req), { countryCode: STORE_COUNTRY, ...(customerAccessToken ? { customerAccessToken } : {}) }));
   } catch (e) { return handleError(e); }
 }
 export async function PATCH(req: Request) {

@@ -1,0 +1,45 @@
+[
+  {
+    "case": "two-options-last-unit",
+    "totalQuantity": 1,
+    "warnings": [
+      {
+        "code": "MERCHANDISE_OUT_OF_STOCK",
+        "message": "The product 'Snowy Twilight \u2014 Pre-order November 2026' is already sold out."
+      }
+    ],
+    "userErrors": []
+  },
+  {
+    "case": "one-option-over-limit",
+    "totalQuantity": 1,
+    "warnings": [
+      {
+        "code": "MERCHANDISE_NOT_ENOUGH_STOCK",
+        "message": "Only 1 item was added to your cart due to availability."
+      }
+    ],
+    "userErrors": []
+  },
+  {
+    "case": "premium-option-price",
+    "totalQuantity": 1,
+    "warnings": [],
+    "userErrors": []
+  },
+  {
+    "case": "no-plan-blocked",
+    "totalQuantity": null,
+    "warnings": [],
+    "userErrors": [
+      {
+        "field": [
+          "input",
+          "lines",
+          "0"
+        ],
+        "message": "Variant can only be purchased with a selling plan."
+      }
+    ]
+  }
+]

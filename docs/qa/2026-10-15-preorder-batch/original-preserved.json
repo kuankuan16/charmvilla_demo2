@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-15T07:26:57.697Z",
+  "originalProducts": 10,
+  "originalVariants": 31,
+  "fields": [
+    "title",
+    "descriptionHtml",
+    "variant.title",
+    "price",
+    "sku",
+    "inventoryPolicy",
+    "inventoryLevels"
+  ],
+  "unchanged": true
+}

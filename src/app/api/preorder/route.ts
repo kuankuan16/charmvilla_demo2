@@ -6,7 +6,7 @@ import { json, handleError } from "@/lib/shopify/http";
 export async function GET() {
   try {
     const res = json({ left: await preOrderLeft() });
-    res.headers.set("Cache-Control", "public, s-maxage=30, stale-while-revalidate=30");
+    res.headers.set("Cache-Control", "no-store");
     return res;
   } catch (e) { return handleError(e); }
 }

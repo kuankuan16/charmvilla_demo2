@@ -29,6 +29,8 @@
 
 商品 item_id 始終為 Shopify numeric variant ID。傳送名稱、variant、數量、實際折後商品金額與幣別；purchase 的 value 不含稅／運費，tax、shipping 分欄，transaction_id 為 Shopify order ID。以 transaction_id 與 browser storage 防止感謝頁重複計算。不送 email、地址、電話、付款資料、cart key 或 checkout URL token。
 
+2026-10-15 預購批次：view_item 的 item_id 轉為實際預購 SKU，與原生 checkout 一致；不同茶／盒蓋以 selling plan 區分，購物車增減以 line ID 比對，避免相同SKU互相覆蓋。Shopify回傳quantity 0的行不送事件。未修改既有checkout pixel與同意規則。
+
 ## 同意與歸因
 
 首次造訪顯示雙語 Cookie banner；同意前完全不載入 gtag。選「僅必要功能」仍可購物。頁尾 Cookie 設定可撤回；只刪除 GA cookies，保留購物車。

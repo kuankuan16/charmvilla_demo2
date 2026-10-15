@@ -2,6 +2,7 @@ export type Money = { amount: string; currencyCode: string };
 export type CartLine = {
   id: string; quantity: number; attributes?: { key: string; value: string }[]; cost: { totalAmount: Money };
   merchandise: { id: string; title: string; price: Money; image: { url: string; altText: string | null } | null; product: { handle: string; title: string } };
+  sellingPlanAllocation?: { sellingPlan: { id: string; name: string }; priceAdjustments: { price: Money }[] } | null;
 };
 export type Cart = { id: string; checkoutUrl: string; totalQuantity: number; cost: { subtotalAmount: Money; totalAmount: Money }; lines: { edges: { node: CartLine }[] } };
 export type Address = { id: string; firstName: string | null; lastName: string | null; company: string | null; address1: string | null; address2: string | null; city: string | null; province: string | null; zip: string | null; country: string | null; phone: string | null; formatted: string[] };

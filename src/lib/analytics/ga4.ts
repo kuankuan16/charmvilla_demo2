@@ -1,5 +1,6 @@
 import type { Product } from "@/data/catalog";
 import type { Cart } from "@/lib/shopify/types";
+import { preorderPurchase } from "@/lib/shopify/preorder-batch";
 
 export type AnalyticsItem = { item_id: string; item_name: string; item_brand: string; item_category?: string; item_variant?: string; price?: number; quantity: number; index?: number };
 export type Consent = "granted" | "denied";
@@ -91,14 +92,20 @@ export async function checkoutAnalytics() {
 }
 export function productItem(p: Product, variantId?: string): AnalyticsItem {
   const variant = p.shopifyData?.variants.find(v => v.id === variantId) ?? p.shopifyData?.variants[0];
-  return { item_id: variant ? shortId(variant.id) : p.slug, item_name: p.english || p.name, item_brand: "CHARM VILLA", item_category: p.category, ...(variant ? { item_variant: variant.title, price: Number(variant.price) } : p.price ? { price: p.price.amount } : {}), quantity: 1 };
+  const preorder = variant && p.preOrderRemaining !== undefined ? preorderPurchase(variant.id) : null;
+  return { item_id: variant ? shortId(preorder?.batch.variantId ?? variant.id) : p.slug, item_name: p.english || p.name, item_brand: "CHARM VILLA", item_category: p.category, ...(variant ? { item_variant: variant.title, price: Number(variant.price) } : p.price ? { price: p.price.amount } : {}), quantity: 1 };
 }
 export function cartItems(cart: Cart): AnalyticsItem[] {
-  return cart.lines.edges.map(({ node: n }) => ({ item_id: shortId(n.merchandise.id), item_name: n.merchandise.product.title, item_brand: "CHARM VILLA", item_variant: n.merchandise.title, price: Number(n.cost.totalAmount.amount) / n.quantity, quantity: n.quantity }));
+  return cart.lines.edges.filter(({ node }) => node.quantity > 0).map(({ node: n }) => ({ item_id: shortId(n.merchandise.id), item_name: n.merchandise.product.title, item_brand: "CHARM VILLA", item_variant: n.sellingPlanAllocation?.sellingPlan.name ?? n.merchandise.title, price: Number(n.cost.totalAmount.amount) / n.quantity, quantity: n.quantity }));
 }
 export function trackCartChange(before: Cart | null, after: Cart) {
-  const old = new Map((before ? cartItems(before) : []).map(i => [i.item_id, i]));
-  const next = new Map(cartItems(after).map(i => [i.item_id, i]));
+  // Different selling plans share a SKU; compare actual cart lines, not just SKU.
+  const byLine = (cart: Cart | null) => {
+    const ids = cart?.lines.edges.filter(({ node }) => node.quantity > 0).map(({ node }) => node.id) ?? [];
+    return new Map((cart ? cartItems(cart) : []).map((item, i) => [ids[i], item]));
+  };
+  const old = byLine(before);
+  const next = byLine(after);
   for (const id of new Set([...old.keys(), ...next.keys()])) {
     const delta = (next.get(id)?.quantity ?? 0) - (old.get(id)?.quantity ?? 0);
     if (!delta) continue;
