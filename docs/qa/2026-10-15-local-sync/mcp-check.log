@@ -1,0 +1,16 @@
+
+> charmvilla-gallery-site@0.1.0 shopify:mcp:check
+> node scripts/shopify/check-mcp.mjs
+
+{
+  "transportConnected": true,
+  "storeConnected": false,
+  "writes": 0,
+  "tools": [
+    {
+      "name": "shopify_admin_query",
+      "readOnly": true
+    }
+  ],
+  "error": "Shopify Admin credentials are not configured."
+}

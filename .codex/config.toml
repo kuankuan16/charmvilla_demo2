@@ -1,7 +1,7 @@
 [mcp_servers.charmvilla-shopify]
-command = "node"
-args = ["scripts/shopify/mcp.mjs"]
-startup_timeout_sec = 30
+command = "npx"
+args = ["-y", "-p", "node@24", "-c", "node scripts/shopify/mcp.mjs"]
+startup_timeout_sec = 60
 
 [mcp_servers.shopify-dev-mcp]
 command = "npx"

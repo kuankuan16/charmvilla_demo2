@@ -2,11 +2,19 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
+## 2026-10-15 root 同步與 Shopify MCP 接續
+
+- 本輪使用者授權本機／GitHub 最新版整合、正式 www 發布與 Ego／Shopify MCP 設定。root fetch/push 都是 `tentenco/charmvilla_shopify_official.git`。
+- root 原 main `2232e74` 的21個本機修改檔已保存為本機分支 `codex/preserved-local-client-work-20261015`／`4589147`，再 fast-forward 到 `729d6fa`。舊 WIP 的核准圖片／文案已在先前 release curated merge；本輪合併補回影像 Lessons，沒有把舊檔覆蓋到同事新 Shopify。歷史 CSV、QA、rejected 圖片及 output 原路保留、未批次發布。
+- root 應用程式與已驗收 `afc5199` 相同；Node24 check／Shopify12及 MCP 改動後 lint 通過，本機與 www 各5路由及5圖片 hash 通過。`729d6fa` 已由正式 www/apex/demo2 alias 指向 READY deployment `dpl_7byj5Wsz4zprzHPbxYBsR1pwxtCg`。本輪後續 MCP／文件提交不變更 storefront 程式。
+- root `npm start` port3146 為本輪持有，Ego task44 p1 已開此網址。p2 Shopify 密碼登入已 handOff；沒有使用者確認前不可操作 task44。MCP server handshake 通過但商店查詢缺 Admin credentials；production sensitive env 不可回讀。未修改 Shopify 商品、庫存、憑證或 app scopes。接續見 [整合文件](shopify-integration.md) 與 [QA](qa/2026-10-15-local-sync/README.md)。
+- 團圓金色可售數量仍待使用者回答，不能把目前藍色3盒當成金色。隱藏無貨色款須等商店實際資料更正再驗證，未宣稱已完成。
+
 ## 2026-10-15 核准雪花圖片與客戶定稿正式發布
 
 - 在隔離 `charmvilla-release-20261015` 整理核准五張圖片、定稿、政策連結、聖誕兩選單、最新加大的沖泡留白；已整合 `9beeb11`，保留同事最新 Shopify/checkout/SEO/配送/庫存與 Logo 修正。
 - Node24 check、Shopify12、API37、E2E16、Ego zh/en1440/390 通過。67a9091 圖片與定稿已正式發布；底部對齊補充 afc5199 的正式部署為 dpl_79UtGMhWkVkjfG1jHKHA4zipXjmP，READY/www/apex/demo2，正式12組視窗/語言/motion檢查通過，桌機底緣差0px。[本批 QA](qa/2026-10-15-client-images-release/README.md)。
-- 原 root `10-02-charmvilla-demo2` 仍在舊主線2232e74並保留WIP，不從它直接再次發布。已確認照片只有五個新檔案納入，不納入 rejected outputs。
+- 當時 root `10-02-charmvilla-demo2` 在舊主線2232e74並保留WIP；其後已依上節保存與同步。照片只有五個核准新檔案納入，不納入 rejected outputs。
 - Shopify後台本輪無寫入；後續團圓金色庫存待使用者提供實際數量，粉紅/藍隱藏選單為獨立新任務。
 
 ## 本輪交付（2026-10-15）

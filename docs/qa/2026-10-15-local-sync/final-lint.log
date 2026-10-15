@@ -1,0 +1,25 @@
+
+> charmvilla-gallery-site@0.1.0 lint
+> eslint
+
+
+/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/docs/qa/2026-10-01-product-studio-gallery/reference.mjs
+  19:11  warning  'frame' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  22:11  warning  'pressed' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/scripts/tmp/sheet2.mjs
+  4:103  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/src/components/account/AccountClient.tsx
+  167:123  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/src/components/cart/CartDrawer.tsx
+  53:64  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/src/components/chrome/Header.tsx
+  132:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/src/components/engine/Preloader.tsx
+  78:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 7 problems (0 errors, 7 warnings)

@@ -1,0 +1,11 @@
+{
+  "transportConnected": true,
+  "tools": [
+    "feedback",
+    "learn_shopify_api",
+    "search_docs_chunks",
+    "validate",
+    "validate_theme"
+  ],
+  "storeAccess": false
+}

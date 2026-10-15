@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-15T04:12:48.930Z",
+  "applicationSourceMatchesVerifiedRelease": true,
+  "routes": [
+    {
+      "base": "http://localhost:3146",
+      "route": "/",
+      "status": 200
+    },
+    {
+      "base": "http://localhost:3146",
+      "route": "/zh",
+      "status": 200
+    },
+    {
+      "base": "http://localhost:3146",
+      "route": "/products/snowflake-gift-box",
+      "status": 200
+    },
+    {
+      "base": "http://localhost:3146",
+      "route": "/zh/products/reunion-paper-gift-box",
+      "status": 200
+    },
+    {
+      "base": "http://localhost:3146",
+      "route": "/policy",
+      "status": 200
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "route": "/",
+      "status": 200
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "route": "/zh",
+      "status": 200
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "route": "/products/snowflake-gift-box",
+      "status": 200
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "route": "/zh/products/reunion-paper-gift-box",
+      "status": 200
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "route": "/policy",
+      "status": 200
+    }
+  ],
+  "assets": [
+    {
+      "base": "http://localhost:3146",
+      "file": "scene-snowflake-gift-box-olive-sofa-pouch-gold-seal-v3.webp",
+      "matched": true
+    },
+    {
+      "base": "http://localhost:3146",
+      "file": "studio-snowflake-gift-box-angle-smooth-bg-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "http://localhost:3146",
+      "file": "studio-snowflake-gift-box-front-smooth-bg-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "http://localhost:3146",
+      "file": "studio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "http://localhost:3146",
+      "file": "studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "file": "scene-snowflake-gift-box-olive-sofa-pouch-gold-seal-v3.webp",
+      "matched": true
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "file": "studio-snowflake-gift-box-angle-smooth-bg-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "file": "studio-snowflake-gift-box-front-smooth-bg-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "file": "studio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp",
+      "matched": true
+    },
+    {
+      "base": "https://www.charmvilla.com",
+      "file": "studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+      "matched": true
+    }
+  ],
+  "publicProducts": 14,
+  "publicVariants": 35
+}

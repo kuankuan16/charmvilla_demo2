@@ -1,6 +1,15 @@
 # Shopify Headless 開發與資料來源
 
-更新：2026-10-14。本文件取代舊的「本機價格／預購額度優先」串接規則。
+更新：2026-10-15。本文件取代舊的「本機價格／預購額度優先」串接規則。
+
+## 目前這台 Mac 的連線狀態（2026-10-15 重查）
+
+- root `main` 已同步 canonical GitHub，與正式發布版的應用程式一致。本機預覽 `http://localhost:3146` 已在 Ego Lite 開啟；此時為本機展示模式，尚未接通即時 Shopify，不能拿它的庫存代替正式商店。
+- `.env.local` 原先沒有 Shopify 憑證。本輪只補已驗證的公開商店網域與 API 版本，保留原設定備份與 0600 權限。Vercel production 所有 Shopify 環境值為敏感欄位，CLI 無法回讀；沒有把 `[SENSITIVE]` 寫成實際憑證，也沒有更改遠端環境或輪替密鑰。
+- 兩個 MCP 都完成 stdio handshake；官方 Dev MCP 提供文件工具。商店 MCP 的實際 query 回傳 `Shopify Admin credentials are not configured.`，所以目前是 server 可啟動、商店未連通。`npm run shopify:mcp:check` 可重跑此診斷，不寫入資料。
+- Ego task44 p2 已填 `erik@tenten.co` 並停在密碼登入，控制權已交使用者。登入後沿用 **CHARM VILLA Headless CMS** app 設定本機的 client ID/secret（或已有 Admin token）與 Headless02 Storefront token；真實值只存 ignored `.env.local`，不貼進對話／Git。完成後重跑診斷、核對 shop 與 scopes，再以 `NEXT_PUBLIC_COMMERCE_MODE=shopify` 重啟／建置本機。
+- 現有商店 MCP 只有 query；商品編輯／庫存寫入尚未啟用，也未做真實寫入測試。庫存功能需先核對實際 `write_inventory` scope，再實作帶舊數量比對與 idempotency key 的操作，避免覆蓋同事或訂單同時造成的庫存變化。[Shopify inventorySetQuantities 文件](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorySetQuantities)。本次不從舊的 scopes 記錄推定已有權限。
+- Node24 啟動已寫入兩份商店 MCP 專案配置；新的 agent session 才會重新載入工具。詳細證據見 [本機同步與 MCP QA](qa/2026-10-15-local-sync/README.md)。以下舊的「已連接／已驗證」敘述代表當時及正式環境，不代表目前 root 的本機憑證已齊全。
 
 ## 已連接的環境
 
