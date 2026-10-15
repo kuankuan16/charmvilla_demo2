@@ -1,0 +1,19 @@
+{
+  "version[app_module_data][branding][app_handle]": "",
+  "version[app_module_data][branding][name]": "CHARM VILLA Headless CMS",
+  "version[version_tag]": "",
+  "version[app_module_data][app_access][access]": "",
+  "version[app_module_data][app_access][scopes]": "read_products,write_products,read_inventory,read_content,write_content,read_metaobjects,write_metaobjects,read_metaobject_definitions,write_metaobject_definitions,read_customers,write_customers,read_orders,read_translations,write_translations,read_locales,write_locales",
+  "version[app_module_data][app_access][optional_scopes]": "",
+  "version[app_module_data][webhooks][api_version]": "2026-10",
+  "version[app_module_data][app_home][app_url]": "https://charmvilla-demo2.vercel.app",
+  "version[app_module_data][app_home][embedded]": false,
+  "version[app_module_data][app_access][redirect_url_allowlist]": "",
+  "version[app_module_data][app_access][use_legacy_install_flow]": false,
+  "version[app_module_data][app_home][preferences_url]": "",
+  "version[app_module_data][point_of_sale][embedded]": false,
+  "version[app_module_data][app_proxy][prefix]": "",
+  "version[app_module_data][app_proxy][subpath]": "",
+  "version[app_module_data][app_proxy][url]": "",
+  "version[message]": ""
+}

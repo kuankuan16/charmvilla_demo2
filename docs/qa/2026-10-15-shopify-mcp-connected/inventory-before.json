@@ -1,0 +1,107 @@
+{
+  "shop": {
+    "name": "Charmvilla",
+    "myshopifyDomain": "zcs0bg-10.myshopify.com"
+  },
+  "locations": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Location/113254105452",
+        "name": "44896 Domain Terrace",
+        "isActive": true,
+        "fulfillsOnlineOrders": false
+      },
+      {
+        "id": "gid://shopify/Location/114803605868",
+        "name": "Hayward ReadySpaces",
+        "isActive": true,
+        "fulfillsOnlineOrders": true
+      },
+      {
+        "id": "gid://shopify/Location/114803933548",
+        "name": "SGV Pop-up",
+        "isActive": true,
+        "fulfillsOnlineOrders": false
+      }
+    ]
+  },
+  "productVariant": {
+    "id": "gid://shopify/ProductVariant/67632284598636",
+    "title": "Gold",
+    "product": {
+      "id": "gid://shopify/Product/15402073194860",
+      "title": "Joyful Reunion"
+    },
+    "inventoryItem": {
+      "id": "gid://shopify/InventoryItem/69616076521836",
+      "tracked": true,
+      "inventoryLevels": {
+        "nodes": [
+          {
+            "location": {
+              "id": "gid://shopify/Location/113254105452",
+              "name": "44896 Domain Terrace",
+              "isActive": true
+            },
+            "quantities": [
+              {
+                "name": "available",
+                "quantity": 0
+              },
+              {
+                "name": "on_hand",
+                "quantity": 0
+              },
+              {
+                "name": "committed",
+                "quantity": 0
+              }
+            ]
+          },
+          {
+            "location": {
+              "id": "gid://shopify/Location/114803605868",
+              "name": "Hayward ReadySpaces",
+              "isActive": true
+            },
+            "quantities": [
+              {
+                "name": "available",
+                "quantity": 0
+              },
+              {
+                "name": "on_hand",
+                "quantity": 0
+              },
+              {
+                "name": "committed",
+                "quantity": 0
+              }
+            ]
+          },
+          {
+            "location": {
+              "id": "gid://shopify/Location/114803933548",
+              "name": "SGV Pop-up",
+              "isActive": true
+            },
+            "quantities": [
+              {
+                "name": "available",
+                "quantity": 0
+              },
+              {
+                "name": "on_hand",
+                "quantity": 0
+              },
+              {
+                "name": "committed",
+                "quantity": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

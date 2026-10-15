@@ -43,7 +43,7 @@ SHOPIFY_VERIFY_URL=https://www.charmvilla.com npm run shopify:verify
 
 - `npm run shopify:sync` 只讀商店，但會寫入本機 mapping／商品快照；不是健康檢查。
 - `npm run shopify:prepare-zh` 會重建本機遷移 manifest；`npm run shopify:migrate-zh` 與選項遷移腳本會寫 Shopify。既有遷移已完成，不能為驗證重跑；改 CMS 前依當次授權備份、限定商品與欄位、寫後讀回。
-- 商店 MCP 保持唯讀 query；官方 Dev MCP 查文件與 schema。權限存在不代表可以任意變更商店。
+- 商店 query 保持唯讀；限定 CMS／庫存工具要求 digest／舊數量比對，官方 Dev MCP 查文件與 schema。權限存在不代表可以任意變更商店。
 - `scripts/verify-catalog.py`、`scripts/verify-tea-gifts.mjs` 有歷史假設；先校正才可使用，不以舊 assertions 推翻現行資料來源契約。
 - Git `main` 已連 Vercel Production；push 可能直接上線，不能當成備份。Preview 也屬外部發布，依當次範圍操作。
 - 不向正式 GA 送假 `purchase`。離線 fixtures 通過、DebugView 收到事件、真實付款完成是三種不同證據；首次真實訂單仍須核對 Shopify order ID 與 GA transaction_id。

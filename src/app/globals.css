@@ -1567,14 +1567,13 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-node { position: relative; z-index: 1; width: var(--brew-node-size); height: var(--brew-node-size); margin-top: calc(var(--brew-row-padding) + 1px); border-radius: 50%; background: #bebebb; transition: background-color .32s ease, box-shadow .32s ease; }
 .brew-steps li.is-progressed .brew-node { background: var(--color-gold); box-shadow: 0 0 0 3px #efefed; }
 .brew-step-content { position: relative; min-height: inherit; display: grid; grid-template-columns: var(--brew-number-width) minmax(0, 1fr) 88px; column-gap: var(--brew-column-gap); padding: var(--brew-row-padding) 0; will-change: transform, opacity; }
-.brew-step-content::before, .brew-steps li:last-child .brew-step-content::after { content: ""; position: absolute; left: calc(var(--brew-number-width) + var(--brew-column-gap)); right: 0; height: 1px; background: rgb(31 31 31 / .16); }
-.brew-step-content::before { top: 0; }
-.brew-steps li:last-child .brew-step-content::after { bottom: 0; }
+/* User 2026-10-15: only the dividers between steps; no leading or trailing rule. */
+.brew-steps li + li .brew-step-content::before { content: ""; position: absolute; top: 0; left: calc(var(--brew-number-width) + var(--brew-column-gap)); right: 0; height: 1px; background: rgb(31 31 31 / .16); }
 .brew-number { padding-top: 2px; font-size: 14px; line-height: 1.2; font-weight: 500; letter-spacing: .02em; color: var(--color-gold); }
 .brew-number { display: none; } /* the 01–05 numbers go (user 2026-10-14: 「把數字拿掉」), and their column with them so the text moves left;
    the copy and the drawing get a wider gap (「整體可以左移，並增加文字與插畫的間距」) */
 .brew-steps .brew-step-content { grid-template-columns: minmax(0, 1fr) 88px; column-gap: 56px; }
-.brew-steps .brew-step-content::before, .brew-steps li:last-child .brew-step-content::after { left: 0; }
+.brew-steps li + li .brew-step-content::before { left: 0; }
 .brew-copy h3 { margin: 0; font-size: 25px; line-height: 1.2; font-weight: 500; letter-spacing: -.02em; color: var(--color-ink); }
 .brew-copy p { max-width: 520px; margin: 10px 0 0; font-size: 17px; line-height: 1.6; font-weight: 400; color: #5a5a57; }
 .brew-icon { display: block; justify-self: end; align-self: center; /* midway between the rules above and below (user 2026-10-14: 「插畫的位置居於上下線條的中間」) */ width: 88px; height: 88px; /* 72 → 88 for the finer 3/4-view drawings (2026-10-14) */ color: #a6a6a2; transition: color .45s ease; }

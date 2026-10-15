@@ -116,8 +116,9 @@ test('Approved preorder restoration preserves every Shopify price, variant and s
       assert.equal(p.preOrderPolicy.shipBy, '2026-11-30');
       assert.deepEqual(p.preOrderPolicy, { shipBy: preorder.policy.shipBy, ...preorder.policy.notice[lang] });
       assert.equal(p.price.amount, Math.min(...source.variants.map(v => Number(v.price))));
-      assert.equal(p.soldOut, !source.availableForSale); assert.equal(p.shopifyData.published, source.published);
-      assert.deepEqual(p.shopifyData.variants, source.variants);
+      const shown = slug === "reunion-paper-gift-box" ? source.variants.filter(v => v.title === "Gold") : source.variants;
+      assert.equal(p.soldOut, !source.availableForSale || !shown.some(v => v.availableForSale)); assert.equal(p.shopifyData.published, source.published);
+      assert.deepEqual(p.shopifyData.variants, shown);
       assert.equal(p.preOrderRemaining, undefined); assert.equal(p.giftBox.mixBoxes, undefined); assert.equal(p.image, image);
     }
   }
@@ -134,4 +135,29 @@ test('Explicit campaign disable overrides legacy preorder copy without convertin
 test('An enabled preorder must provide approved terms in both languages', () => {
   const policy = structuredClone(preorder.policy); delete policy.notice.zh;
   assert.throws(() => applyShopifyProduct(local, withPreorder(snapshot.products['kyoto-gift-box'], policy), 'en'), /Invalid preorder terms/);
+});
+
+
+test('Reunion exposes only the verified Gold variant in both languages regardless of sort order and other stock', () => {
+  const source = structuredClone(snapshot.products['reunion-paper-gift-box']);
+  const before = structuredClone(source);
+  source.variants.reverse();
+  const gold = source.variants.find(v => v.id === 'gid://shopify/ProductVariant/67632284598636');
+  gold.availableForSale = false; gold.quantityAvailable = 0;
+  source.availableForSale = true; // Another color in stock cannot enable Gold.
+  for (const lang of ['zh', 'en']) {
+    let p = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, lang);
+    assert.equal(p.giftBox.choices, undefined); assert.equal(p.shopify.variantId, gold.id);
+    assert.equal(p.soldOut, true); assert.deepEqual(p.shopifyData.variants, [gold]);
+    assert.equal(p.price.amount, Number(gold.price)); assert.equal(p.image, image);
+    gold.availableForSale = true; gold.quantityAvailable = 2; gold.price = '171.25';
+    p = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, lang);
+    assert.equal(p.soldOut, false); assert.equal(p.price.amount, 171.25); assert.equal(p.shopifyData.variants[0].quantityAvailable, 2);
+    gold.availableForSale = false; gold.quantityAvailable = 0;
+  }
+  assert.equal(source.variants.length, 3);
+  for (const variant of source.variants.filter(v => v !== gold)) assert.deepEqual(variant, before.variants.find(v => v.id === variant.id));
+  source.variants = source.variants.filter(v => v !== gold);
+  const missing = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, 'en');
+  assert.equal(missing.shopify.variantId, ''); assert.equal(missing.soldOut, true); assert.equal(missing.price, undefined);
 });

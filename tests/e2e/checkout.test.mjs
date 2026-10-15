@@ -62,6 +62,7 @@ for (const lang of ["en", "zh"]) {
     // 1. a published pre-order product; choose its first available option
     await page.goto(`${BASE}${prefix(lang)}/products/${REUNION}`);
     await noOverflow(page, "product page 1440");
+    assert.equal(await page.locator('.product-choices input').count(), 0, "Gold is selected implicitly; hidden colors have no chooser");
     await addFromPage(page);
     await assert.doesNotReject(lines(page).first().waitFor());
     assert.equal(await lines(page).count(), 1);
@@ -74,6 +75,7 @@ for (const lang of ["en", "zh"]) {
     let carts = await cartState();
     assert.equal(carts.length, 1);
     assert.equal(carts[0].buyerIdentity.countryCode, "US");
+    assert.equal(carts[0].lines[0].merchandiseId, variant(REUNION, 0), "the sole option is the verified Gold variant");
     assert.deepEqual(carts[0].lines[0].attributes, [{ key: "Packaging", value: fixture.products[REUNION].options[0].label }, { key: "Pre-order", value: "Yes" }]);
     await closeBag(page);
 
@@ -261,14 +263,20 @@ test("[en] the footer newsletter form subscribes through Shopify", async () => {
 for (const lang of ["en", "zh"]) test(`[${lang}] local mode: the bag lives in the browser, checkout stays closed`, async () => {
   const { context, page, problems } = await open(390, 844);
   await page.goto(`${LOCAL_BASE}${prefix(lang)}/products/${REUNION}`);
+  assert.equal(await page.locator('.product-choices input').count(), 0);
+  assert.equal(await page.locator('button.product-buy').isDisabled(), true, "Gold has no stock in the local snapshot; Blue stock cannot enable it");
+  // Exercise the local bag with a product that is actually available in the snapshot.
+  const slug = 'kyoto-gift-box';
+  const option = fixture.snapshot.products[slug].variants.findIndex(v => v.availableForSale);
+  await page.goto(`${LOCAL_BASE}${prefix(lang)}/products/${slug}`);
   await addFromPage(page, false);
   assert.equal(await lines(page).count(), 1);
-  assert.equal(await lines(page).first().locator(".cart-line-price").innerText(), usd(fixture.products[REUNION].price));
+  assert.equal(await lines(page).first().locator(".cart-line-price").innerText(), usd(fixture.products[slug].options[option].price));
   assert.equal(await page.locator(".cart-checkout").evaluate((el) => el.tagName), "BUTTON");
   assert.equal(await page.locator(".cart-checkout").isDisabled(), true);
   assert.ok((await page.locator(".cart-foot").innerText()).includes(T[lang].localNote));
   const stored = JSON.parse(await page.evaluate(() => localStorage.getItem("cv-cart")));
-  assert.equal(stored.length, 1); assert.equal(stored[0].slug, REUNION); assert.equal(stored[0].quantity, 1); assert.equal(stored[0].option, 2);
+  assert.equal(stored.length, 1); assert.equal(stored[0].slug, slug); assert.equal(stored[0].quantity, 1); assert.equal(stored[0].option, option);
   await noOverflow(page, "local bag 390");
   await page.reload();
   await page.locator(".header-cart-count").first().waitFor();

@@ -1,0 +1,51 @@
+
+> charmvilla-gallery-site@0.1.0 shopify:mcp:check
+> node scripts/shopify/check-mcp.mjs
+
+{
+  "transportConnected": true,
+  "storeConnected": true,
+  "writes": 0,
+  "tools": [
+    {
+      "name": "shopify_admin_query",
+      "readOnly": true
+    },
+    {
+      "name": "shopify_set_inventory",
+      "readOnly": false
+    },
+    {
+      "name": "shopify_set_product_metafield",
+      "readOnly": false
+    }
+  ],
+  "store": {
+    "name": "Charmvilla",
+    "myshopifyDomain": "zcs0bg-10.myshopify.com",
+    "currencyCode": "USD"
+  },
+  "scopes": [
+    "read_content",
+    "read_customers",
+    "read_inventory",
+    "read_locales",
+    "read_locations",
+    "read_metaobject_definitions",
+    "read_metaobjects",
+    "read_orders",
+    "read_products",
+    "read_translations",
+    "write_content",
+    "write_customers",
+    "write_inventory",
+    "write_locales",
+    "write_metaobject_definitions",
+    "write_metaobjects",
+    "write_products",
+    "write_translations"
+  ],
+  "inventoryWriteScope": true,
+  "mcpWritesEnabled": true,
+  "inventoryToolReady": true
+}

@@ -2,14 +2,14 @@
 
 更新：2026-10-15。本文件取代舊的「本機價格／預購額度優先」串接規則。
 
-## 目前這台 Mac 的連線狀態（2026-10-15 重查）
+## 目前這台 Mac 的連線狀態（2026-10-15 登入後重查）
 
-- root `main` 已同步 canonical GitHub，與正式發布版的應用程式一致。本機預覽 `http://localhost:3146` 已在 Ego Lite 開啟；此時為本機展示模式，尚未接通即時 Shopify，不能拿它的庫存代替正式商店。
-- `.env.local` 原先沒有 Shopify 憑證。本輪只補已驗證的公開商店網域與 API 版本，保留原設定備份與 0600 權限。Vercel production 所有 Shopify 環境值為敏感欄位，CLI 無法回讀；沒有把 `[SENSITIVE]` 寫成實際憑證，也沒有更改遠端環境或輪替密鑰。
-- 兩個 MCP 都完成 stdio handshake；官方 Dev MCP 提供文件工具。商店 MCP 的實際 query 回傳 `Shopify Admin credentials are not configured.`，所以目前是 server 可啟動、商店未連通。`npm run shopify:mcp:check` 可重跑此診斷，不寫入資料。
-- Ego task44 p2 已填 `erik@tenten.co` 並停在密碼登入，控制權已交使用者。登入後沿用 **CHARM VILLA Headless CMS** app 設定本機的 client ID/secret（或已有 Admin token）與 Headless02 Storefront token；真實值只存 ignored `.env.local`，不貼進對話／Git。完成後重跑診斷、核對 shop 與 scopes，再以 `NEXT_PUBLIC_COMMERCE_MODE=shopify` 重啟／建置本機。
-- 現有商店 MCP 只有 query；商品編輯／庫存寫入尚未啟用，也未做真實寫入測試。庫存功能需先核對實際 `write_inventory` scope，再實作帶舊數量比對與 idempotency key 的操作，避免覆蓋同事或訂單同時造成的庫存變化。[Shopify inventorySetQuantities 文件](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorySetQuantities)。本次不從舊的 scopes 記錄推定已有權限。
-- Node24 啟動已寫入兩份商店 MCP 專案配置；新的 agent session 才會重新載入工具。詳細證據見 [本機同步與 MCP QA](qa/2026-10-15-local-sync/README.md)。以下舊的「已連接／已驗證」敘述代表當時及正式環境，不代表目前 root 的本機憑證已齊全。
+- root 已用使用者登入的既有 **CHARM VILLA Headless CMS** client credentials 與 **Charmvilla Headless 02** Storefront token 接通真實商店；僅存 ignored `.env.local`、0600 權限。沒有輪替密鑰或更動 Vercel 環境。
+- `npm run shopify:mcp:check` 已通過 transport、工具清單、商店網域與18個實際授權 scopes；locations／團圓金色庫存讀取成功。官方 Dev MCP 提供文件；商店 MCP 提供 query、限定商品 CMS metafield 更新及庫存修正。
+- App 新版本 `headless-mcp-inventory-2026-10-15` 僅新增 `read_locations,write_inventory`。經 Dev Dashboard Install app → Charmvilla → Update data access 升級既有安裝，保留其他權限、URL、憑證與所有商店資料。
+- 庫存工具要求實際 variant/location、舊數量 `expectedQuantity` 與 UUID `idempotencyKey`，用 API 2026-10 `changeFromQuantity` 原子比對。CMS 工具限已映射商品的 `custom` metafield，要求明確 `compareDigest`（新建為 null）。不提供任意 mutation、圖片覆蓋、價格／發布／配送／金流操作。
+- 4份讀寫 GraphQL 均以真實 API schema 驗證，5項隔離測試通過；沒有為測試而修改真實商品或庫存。新 agent session 會載入工具；舊 session 可透過 MCP SDK 驗證但不會自動新增工具。
+- 本機 commerce 已設定 Shopify，需用 Node24 build/start；本輪完整網站驗證見後續發布 QA。詳細 MCP 證據見 [連線 QA](qa/2026-10-15-shopify-mcp-connected/README.md)。
 
 ## 已連接的環境
 
@@ -17,7 +17,7 @@
 - Shopify Admin：<https://admin.shopify.com/store/charmvilla/>。
 - 經 API 驗證的商店網域：`zcs0bg-10.myshopify.com`；店名 Charmvilla，貨幣 USD，API `2026-10`。
 - Storefront：沿用既有 Headless 管道的 **Charmvilla Headless02**。
-- Admin：新建並安裝 **CHARM VILLA Headless CMS**，Dev Dashboard app ID `435346210817`；目前版本 `headless-zh-tw-2026-10`（新增產品 CMS、翻譯及語系權限）。
+- Admin：新建並安裝 **CHARM VILLA Headless CMS**，Dev Dashboard app ID `435346210817`；目前版本 `headless-mcp-inventory-2026-10-15`（保留 CMS／翻譯，補上倉庫讀取與庫存寫入）。
 - App 使用 client credentials grant；伺服器在 token 到期前自動換發，不把 Admin 憑證傳給前端。
 - 會員入口導向商店現有 Shopify hosted customer accounts：`https://shopify.com/98570830188/account`。本次沒有啟用舊版密碼會員流程。
 - 結帳使用 Storefront Cart 回傳的 `checkoutUrl`，已確認導向 `account.charmvilla.us`。
@@ -44,7 +44,7 @@
 
 | 專案 slug | Shopify handle／名稱 | 已對齊的重點 |
 | --- | --- | --- |
-| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入、US$170、Gold／Pink／Blue；目前僅 Blue 可售 |
+| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入；前台依2026-10-15指示只販售Gold，Pink／Blue選單隱藏；原Shopify規格保留、價格庫存即時讀取 |
 | year-of-plenty-gift-box | abundance-prosperity-lunar-new-year-gift / Abundance & Prosperity | 18 入、US$220、目前無庫存 |
 | blossoming-prosperity-gift-box | prosperity-in-bloom-lunar-new-year-gift / Prosperity in Bloom | 18 入、US$220 |
 | kyoto-gift-box | kyoto-artisanal-reserve-6-ct / Kyoto Artisanal Reserve | 6 入、US$60、4 茶款；東方美人目前無庫存 |
@@ -95,11 +95,13 @@ npm run check
 | Server | 功能 | 配置 |
 | --- | --- | --- |
 | shopify-dev-mcp | Shopify 官方文件、API schema、GraphQL 驗證 | `npx -y @shopify/dev-mcp@1.16.0` |
-| charmvilla-shopify | 此商店的 Admin GraphQL 唯讀查詢：商品、庫存、CMS pages／blogs／metaobjects | `node scripts/shopify/mcp.mjs` |
+| charmvilla-shopify | 商店唯讀查詢＋限定商品 custom metafield CAS 更新＋庫存 CAS 更新 | `node scripts/shopify/mcp.mjs` |
 
 專案配置位於 `.mcp.json`（Claude）和 `.codex/config.toml`（Codex）；此 Mac 的 Codex 亦已登錄絕對路徑。重開 agent session 後工具才會自動出現在新 session。兩個 server 都已用 MCP SDK 完成 handshake／工具呼叫，官方 server 已驗證實際 Storefront query。
 
-商店 MCP 使用 GraphQL AST 限制為單一 query，拒絕 mutations。App 的 CMS write scopes 供後續授權開發使用，不代表 MCP 會自動更改或發佈內容。授權 scopes：`read_products,write_products,read_translations,write_translations,read_locales,write_locales,read_inventory,read_content,write_content,read_metaobjects,write_metaobjects,read_metaobject_definitions,write_metaobject_definitions,read_customers,write_customers,read_orders`。Customer scopes 支援現有 newsletter API，但本次未寄送或做實際訂閱測試。
+`shopify_admin_query` 使用 GraphQL AST 限制單一 query。兩個獨立寫入工具只在使用者具體指示的商品／欄位／數量範圍內操作：`shopify_set_inventory` 與 `shopify_set_product_metafield`。先讀現況，保留舊數量／digest，再寫入；遇到並行衝突需重新讀取並釐清，不能跳過比較。網路不確定時不自動重送，庫存重送必須沿用同一 key 與參數。庫存 mutation 成功而 readback 失敗會保留 receipt 並明示 readbackError，不謊報整體失敗後重複扣加庫存。
+
+原16項 scopes 均保留，新增 `read_locations,write_inventory`；權限存在不代表可以任意變更商店。真實數量與倉庫需使用者／庫存系統提供，禁止用舊預購額度或其他顏色的數量推算。
 
 Shopify CLI 已安裝（4.9.3）；本次沒有建立 Charmvilla CLI store auth session，Headless Next.js 開發透過上述 API 憑證運作，不依賴 Theme／Hydrogen CLI 登入。官方 AI Toolkit plugin 未列於此環境的 marketplace，已採官方 Dev MCP 替代。
 

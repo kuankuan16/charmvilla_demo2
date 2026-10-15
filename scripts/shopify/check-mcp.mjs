@@ -25,7 +25,8 @@ try {
     report.storeConnected = data.shop.myshopifyDomain === 'zcs0bg-10.myshopify.com';
     report.scopes = data.currentAppInstallation.accessScopes.map(scope => scope.handle).sort();
     report.inventoryWriteScope = report.scopes.includes('write_inventory');
-    report.mcpWritesEnabled = false;
+    report.mcpWritesEnabled = report.tools.some(tool => !tool.readOnly);
+    report.inventoryToolReady = report.inventoryWriteScope && report.scopes.includes('read_locations') && report.tools.some(tool => tool.name === 'shopify_set_inventory');
     if (!report.storeConnected) { report.error = 'Unexpected Shopify store.'; process.exitCode = 1; }
   }
 } catch (error) {

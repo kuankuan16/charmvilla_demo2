@@ -48,7 +48,7 @@ Codex 與 Claude Code 共用一套規則與一份進度。只保留會改變下�
 - 先確認當前可用工具與登入狀態；不要沿用另一台 Mac 的 `/Users/...`、模型名稱、Node 路徑或瀏覽器 session。
 - Node 版本以 [.nvmrc](../../.nvmrc) 與 [package.json](../../package.json) 為準，先看 `node --version`。執行方式見驗證清單。
 - 瀏覽器沿用使用者指定的 EGO Lite Browser，先讀當前 `ego-browser` skill；確認實際 viewport，再做 1440px／390px QA。不要重開已完成 task 或清掉使用者的測試購物車。
-- Claude 的 [.mcp.json](../../.mcp.json) 與 Codex 的 [.codex/config.toml](../../.codex/config.toml) 已設相同兩個 Shopify MCP。新增設定不等於工具已連線；用可用工具或 handshake 驗證。商店 MCP 維持唯讀。
+- Claude 的 [.mcp.json](../../.mcp.json) 與 Codex 的 [.codex/config.toml](../../.codex/config.toml) 已設相同兩個 Shopify MCP。新增設定不等於工具已連線；用可用工具或 handshake 驗證。商店 query 維持唯讀，另有需舊值比對的限定 CMS／庫存工具，使用範圍依使用者具體指示。
 - `.env.local`、token、密碼、顧客資料及含購物車／結帳 key 的網址不得進入計畫、QA、截圖輸出或 Git。外部副作用依目前任務授權判斷。
 
 ## 設計依據

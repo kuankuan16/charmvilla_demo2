@@ -1,6 +1,7 @@
 // Shared, credential-free adapter. Shopify owns facts; the local catalogue owns every image and layout.
 import type { Product } from "@/data/catalog";
 import type { Locale } from "@/i18n/config";
+import shopifyMap from "../../data/shopify-map.json" with { type: "json" };
 
 export type ShopifyVariant = {
   id: string; title: string; sku: string | null; price: string; inventoryQuantity: number;
@@ -65,6 +66,12 @@ const normalize = (s: string) => {
 
 export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang: Locale, visualChoices = local.giftBox?.choices): Product {
   const t = (zh: string, en: string) => lang === "zh" ? zh : en;
+  // User 2026-10-15: Joyful Reunion sells Gold only; hide Pink/Blue for now.
+  // Filter presentation by verified GID, never by position, stock or translated title.
+  // The Shopify product and all its original variants/inventory remain untouched.
+  const variants = local.slug === "reunion-paper-gift-box"
+    ? source.variants.filter(v => v.id === shopifyMap["reunion-paper-gift-box"].variants.Gold)
+    : source.variants;
   const translated = Object.fromEntries(source.translations.map(x => [x.key, x.value]));
   const copy = lang === "zh" ? chineseCopy(source) : undefined;
   const sections = sectionsOf((lang === "zh" && translated.body_html) || source.descriptionHtml);
@@ -72,7 +79,7 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
   const countMatch = htmlText(source.descriptionHtml).match(/contain(?:s|ing)\s+(\d+|two|six|twelve|fifteen|eighteen)\s+Goldfish Tea Bags/i);
   const counts: Record<string, number> = { two: 2, six: 6, twelve: 12, fifteen: 15, eighteen: 18 };
   const pieces = Number(meta.teabag_count) || (countMatch ? (counts[countMatch[1].toLowerCase()] || Number(countMatch[1])) : 0);
-  const choices = source.variants.length > 1 ? source.variants.map(v => {
+  const choices = variants.length > 1 ? variants.map(v => {
     const visual = visualChoices?.find(c => normalize(c.label) === normalize(v.title));
     const tea = v.selectedOptions.find(o => /tea|flavo/i.test(o.name))?.value;
     // Client final reply 2026-10-14: Blue is the Stocking lid, Orange is Candy Cane.
@@ -104,10 +111,10 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
   const description = sections.intro || htmlText(source.descriptionHtml);
   const preorder = preorderDetails(source, lang);
   const scheduledPreOrder = preorder?.enabled ?? (source.tags.some(s => /pre.?order/i.test(s)) || /crafted upon pre-order/i.test(source.descriptionHtml));
-  const preOrder = scheduledPreOrder || source.variants.some(v => v.currentlyNotInStock && v.availableForSale);
-  const hasTea = source.variants.some(v => v.selectedOptions.some(o => /tea|flavo/i.test(o.name)));
-  const hasColor = source.variants.some(v => v.selectedOptions.some(o => /color/i.test(o.name)));
-  const teaNames = [...new Set(source.variants.flatMap(v => v.selectedOptions.filter(o => /tea|flavo/i.test(o.name)).map(o => o.value)))];
+  const preOrder = scheduledPreOrder || variants.some(v => v.currentlyNotInStock && v.availableForSale);
+  const hasTea = variants.some(v => v.selectedOptions.some(o => /tea|flavo/i.test(o.name)));
+  const hasColor = variants.some(v => v.selectedOptions.some(o => /color/i.test(o.name)));
+  const teaNames = [...new Set(variants.flatMap(v => v.selectedOptions.filter(o => /tea|flavo/i.test(o.name)).map(o => o.value)))];
   const teaIdentity = (name: string) => {
     const value = normalize(name);
     return ["rose oolong", "honey", "oriental beauty", "ruby", "jin xuan"].find(key => value.includes(key));
@@ -134,10 +141,10 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
     summary: copy ? localizedFacts?.find(f => f.label === "販售單位")?.value ?? copy.description : meta.short_product_desc || (pieces ? t(`${pieces} 入小金魚茶包`, `${pieces} Goldfish Tea Bags`) : meta.product_contents || ""),
     facts: localizedFacts ?? facts,
     story: copy?.story ?? { ...local.story, title: sections.story ? t("故事", "Story") : meta.product_story_title || source.title, body: sections.story || meta.product_story || "", more: undefined },
-    price: source.currency === "USD" || source.currency === "TWD" ? { amount: Math.min(...source.variants.map(v => Number(v.price))), currency: source.currency } : undefined,
-    soldOut: !source.availableForSale, preOrder, preOrderPolicy: preorder?.policy, preOrderRemaining: undefined, priceTbd: false, teaTbd: false,
-    shopify: { handle: source.handle, variantId: source.variants.length === 1 ? source.variants[0].id : "" },
-    shopifyData: { productId: source.id, published: source.published, status: source.status, scheduledPreOrder, variants: source.variants },
+    price: variants.length && (source.currency === "USD" || source.currency === "TWD") ? { amount: Math.min(...variants.map(v => Number(v.price))), currency: source.currency } : undefined,
+    soldOut: !source.availableForSale || !variants.some(v => v.availableForSale), preOrder, preOrderPolicy: preorder?.policy, preOrderRemaining: undefined, priceTbd: false, teaTbd: false,
+    shopify: { handle: source.handle, variantId: variants.length === 1 ? variants[0].id : "" },
+    shopifyData: { productId: source.id, published: source.published, status: source.status, scheduledPreOrder, variants },
     giftBox: local.giftBox ? { ...local.giftBox, pieces, contents: [], choices, mixBoxes: undefined, choiceLabel: copy?.choiceLabel || (hasTea && hasColor ? t("選擇茶款與盒色", "Choose your tea and box color") : hasColor ? t("選擇包裝", "Choose your packaging") : t("選擇茶款", "Choose your tea")) } : undefined,
     // Editorial leaf photographs and general brewing guide remain; product-specific facts above come only from Shopify.
   };

@@ -1,0 +1,498 @@
+[
+  {
+    "lang": "zh",
+    "width": 1440,
+    "reduce": false,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "已售罄",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 1440,
+      "overflow": false,
+      "bottomDelta": 0,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        240,
+        240,
+        240,
+        240,
+        240
+      ],
+      "padding": [
+        "64px",
+        "64px",
+        "64px",
+        "64px",
+        "64px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "reduce": false,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "已售罄",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 390,
+      "overflow": false,
+      "bottomDelta": 166.40625,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        220.78125,
+        166.390625,
+        193.5859375,
+        166.390625,
+        166.390625
+      ],
+      "padding": [
+        "40px",
+        "40px",
+        "40px",
+        "40px",
+        "40px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "zh",
+    "width": 1440,
+    "reduce": true,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "已售罄",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 1440,
+      "overflow": false,
+      "bottomDelta": 0,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        240,
+        240,
+        240,
+        240,
+        240
+      ],
+      "padding": [
+        "64px",
+        "64px",
+        "64px",
+        "64px",
+        "64px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "reduce": true,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "已售罄",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 390,
+      "overflow": false,
+      "bottomDelta": 166.40625,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        220.78125,
+        166.390625,
+        193.5859375,
+        166.390625,
+        166.390625
+      ],
+      "padding": [
+        "40px",
+        "40px",
+        "40px",
+        "40px",
+        "40px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "reduce": false,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "Sold out",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 1440,
+      "overflow": false,
+      "bottomDelta": 0,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        249.5859375,
+        240,
+        240,
+        240,
+        240
+      ],
+      "padding": [
+        "64px",
+        "64px",
+        "64px",
+        "64px",
+        "64px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "reduce": false,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "Sold out",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 390,
+      "overflow": false,
+      "bottomDelta": 193.875,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        247.9765625,
+        193.5859375,
+        247.9765625,
+        220.78125,
+        193.5859375
+      ],
+      "padding": [
+        "40px",
+        "40px",
+        "40px",
+        "40px",
+        "40px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "reduce": true,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "Sold out",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 1440,
+      "overflow": false,
+      "bottomDelta": 0,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        249.5859375,
+        240,
+        240,
+        240,
+        240
+      ],
+      "padding": [
+        "64px",
+        "64px",
+        "64px",
+        "64px",
+        "64px"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "reduce": true,
+    "product": {
+      "buttons": 0,
+      "buyDisabled": true,
+      "buyText": "Sold out",
+      "data": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "overflow": false
+    },
+    "keyboard": true,
+    "brew": {
+      "width": 390,
+      "overflow": false,
+      "bottomDelta": 193.875,
+      "before": [
+        "none",
+        "\"\"",
+        "\"\"",
+        "\"\"",
+        "\"\""
+      ],
+      "after": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "heights": [
+        247.9765625,
+        193.5859375,
+        247.9765625,
+        220.78125,
+        193.5859375
+      ],
+      "padding": [
+        "40px",
+        "40px",
+        "40px",
+        "40px",
+        "40px"
+      ]
+    },
+    "errors": []
+  }
+]

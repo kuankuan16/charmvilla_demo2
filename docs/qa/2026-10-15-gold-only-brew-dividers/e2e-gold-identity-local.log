@@ -1,0 +1,20 @@
+
+> charmvilla-gallery-site@0.1.0 test:e2e
+> node --import ./tests/support/register-ts.mjs --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tests/run.mjs e2e --no-build
+
+▶ mock http://127.0.0.1:50912 · full http://127.0.0.1:50913 · bare http://127.0.0.1:50916 · local http://127.0.0.1:50921
+
+▶ e2e tests
+✔ [en] optioned and pre-order pieces: names, options, Shopify prices, notes, quantities, checkout (4144.244167ms)
+✔ [zh] optioned and pre-order pieces: names, options, Shopify prices, notes, quantities, checkout (3898.157916ms)
+✔ newsletter pop-up: opens by itself in shopify mode, never in local mode (20793.272667ms)
+✔ [en] local mode: the bag lives in the browser, checkout stays closed (586.484333ms)
+✔ [zh] local mode: the bag lives in the browser, checkout stays closed (605.807125ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30240.015458

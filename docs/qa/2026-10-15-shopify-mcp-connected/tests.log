@@ -1,0 +1,13 @@
+✔ inventory requires explicit old quantity, valid IDs and idempotency; CMS requires explicit digest (1.577958ms)
+✔ wrong store, missing scope, unmapped product, untracked or inactive location cannot send writes (0.338375ms)
+✔ inventory adjustment uses atomic old-value comparison and stable idempotency key (0.281667ms)
+✔ uncertain writes never automatically retry; successful writes retain receipt when readback fails (0.155875ms)
+✔ metafield changes use custom namespace, observed digest and atomic error propagation (0.591208ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 62.111459
