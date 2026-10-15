@@ -7,7 +7,7 @@
 import { translator, type Locale } from "../i18n/config";
 
 /** A paragraph, a bulleted list, a question with its answer, or a fact still to be supplied. */
-export type PolicyBlock = string | { list: string[] } | { q: string; a: string } | { pending: string };
+export type PolicyBlock = string | { list: string[] } | { q: string; a: string } | { pending: string } | { before: string; link: { label: string; href: string }; after: string };
 export type PolicySection = { id: string; heading: string; blocks: PolicyBlock[]; source?: string };
 export type PolicyDoc = { title: string; intro?: string; updated?: string; sections: PolicySection[] };
 
@@ -31,17 +31,15 @@ const build = (lang: Locale) => {
   // "before noon, same day" promise, and the pre-order schedule (B7) that is shown separately.
   const dispatch = t("現貨訂單於 1–2 個工作天內出貨，出貨後通常另需 3–7 個工作天送達。週末及美國聯邦假日不出貨。",
     "In-stock orders ship within 1–2 business days. Delivery typically takes an additional 3–7 business days after dispatch. We do not dispatch orders on weekends or U.S. federal holidays.");
-  // Client reply 2026-10-14 §6: 「預計最晚於 2026 年 11 月底前出貨」 (was late November, B7)
-  const preorder = t("預購商品依商品頁標示的時程出貨，預計最晚於 2026 年 11 月底前。",
-    "Pre-order items ship on the schedule shown on their product pages, expected by the end of November 2026.");
-  // Client reply 2026-10-14 §7–§8 (English is our translation of the client's Chinese, pending their review): the Christmas order
-  // cut-off, Alaska and Hawaii, and military/diplomatic addresses
-  const christmas = t("聖誕節下單截止日：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單，以便在聖誕節前送達。阿拉斯加與夏威夷的運送時效須另行確認，不適用此截止日。",
-    "Christmas order deadline: for delivery before Christmas to the contiguous 48 states, please order by December 15, 2026. Delivery times to Alaska and Hawaii must be confirmed separately, and this deadline does not apply to them.");
-  const remote = t("阿拉斯加與夏威夷：可以寄送，運費於結帳時另計，不適用 US$ 199 免運。",
-    "Alaska & Hawaii: We ship to Alaska and Hawaii. Shipping is charged at checkout, and the US$199 complimentary shipping offer does not apply.");
+  // Client's approved English, final reply 2026-10-14, items 2 and 7–10.
+  const preorder = t("預購商品預計最晚於 2026 年 11 月底前出貨。",
+    "Pre-orders are expected to ship by the end of November 2026.");
+  const christmas = t("若希望在聖誕節前送達美國本土相連 48 州，請於 2026 年 12 月 15 日前下單。寄往阿拉斯加或夏威夷的訂單，請聯絡我們確認配送時間；不適用此截止日。",
+    "For delivery before Christmas to the contiguous 48 states, please order by December 15, 2026. For orders shipping to Alaska or Hawaii, please contact us to confirm delivery timing; this deadline does not apply.");
+  const remote = t("我們可寄送至阿拉斯加與夏威夷。運費於結帳時計算。寄往這兩州的訂單不適用免運。",
+    "We ship to Alaska and Hawaii. Shipping charges are calculated at checkout. Orders shipping to these states are not eligible for complimentary shipping.");
   const military = t("APO／FPO／DPO 軍郵及外交郵件地址：上線初期暫不寄送。",
-    "APO/FPO/DPO addresses: At launch, we are not able to ship to military or diplomatic addresses.");
+    "At launch, we do not ship to APO/FPO/DPO addresses.");
 
   // Frequently Asked Questions (/faq). Each answer keeps the document's order; `highlights` are the ones the About page repeats.
   const faqGroups: { id: string; heading: string; items: ({ id: string } & ReturnType<typeof qa>)[] }[] = [
@@ -81,7 +79,7 @@ const build = (lang: Locale) => {
     ] },
     { id: "orders", heading: t("訂單、運送與送禮", "Orders, Shipping & Gifting"), items: [
       { id: "shipping-cost", ...qa(["運費怎麼計算？", "How is shipping calculated?"],
-        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。寄往阿拉斯加與夏威夷的運費另計，不適用免運；上線初期暫不寄送 APO／FPO／DPO 地址。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states). Shipping to Alaska and Hawaii is charged separately and is not eligible for complimentary shipping; at launch, we do not ship to APO/FPO/DPO addresses."]) },
+        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。寄往阿拉斯加與夏威夷的運費於結帳時計算，這兩州的訂單不適用免運。上線初期暫不寄送 APO／FPO／DPO 地址。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states). Shipping charges for Alaska and Hawaii are calculated at checkout. Orders shipping to these states are not eligible for complimentary shipping. At launch, we do not ship to APO/FPO/DPO addresses."]) },
       { id: "delivery-time", ...qa(["配送需要多久？", "How long does delivery take?"],
         [`訂單從加州出貨。${dispatch}${preorder}${christmas}可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。`, `Orders ship from California. ${dispatch} ${preorder} ${christmas} Available shipping options are shown at checkout, and we will send a tracking link once your order ships.`]) },
       { id: "store", ...qa(["你們有實體店面嗎？", "Do you have a physical store?"],
@@ -104,7 +102,7 @@ const build = (lang: Locale) => {
   const policy: PolicyDoc = {
     title: t("運送與退換貨政策", "Shipping & Returns Policy"),
     // D5 (client 2026-10-12): the date the final policies are actually published on the site. Change it to the launch date at launch.
-    updated: t("最後更新：2026 年 10 月 13 日", "Last Updated: October 13, 2026"),
+    updated: t("最後更新：2026 年 10 月 15 日", "Last Updated: October 15, 2026"),
     intro: t("關於運費、配送時間與退換貨規定，您需要知道的一切。", "Everything you need to know about our shipping rates, delivery times, and return guidelines."),
     sections: [
       { id: "returns", heading: t("退換貨與退款政策", "Return & Refund Policy"), blocks: [
@@ -148,8 +146,10 @@ const build = (lang: Locale) => {
           t("預購商品於下單時收取全額款項。", "Pre-orders are charged in full when you place your order."),
           t("預購商品預計最晚於 2026 年 11 月底前出貨。", "Pre-orders are expected to ship by the end of November 2026."),
           t(`出貨前可申請取消並獲得全額退款，請來信 ${email} 並附上您的訂單編號。`, `You may cancel a pre-order for a full refund before it ships. Please email us at ${email} with your order number.`),
-          t("出貨後依上方「茶品與消耗性商品」的退換貨政策處理。", "Once shipped, pre-orders follow our Teas & Consumable Items return policy above."),
         ] },
+        { before: t("訂單出貨後，適用我們的", "Once your order has shipped, our "),
+          link: { label: t("茶品與消耗性商品", "Teas & Consumable Items"), href: "#returns-tea" },
+          after: t("退換貨政策。", " return policy applies.") },
       ] },
       { id: "address", heading: t("地址正確性", "Address Accuracy"), blocks: [
         t("請確認結帳時輸入的收件地址正確無誤。因顧客提供的地址錯誤而送達他處的包裹，或物流商標示為「已送達」但未收到的包裹，Charm Villa 恕不負責。", "Please ensure your shipping address is entered correctly at checkout. Charm Villa is not responsible for packages delivered to incorrect addresses provided by the customer, or for packages marked as \"Delivered\" by the carrier but not received."),

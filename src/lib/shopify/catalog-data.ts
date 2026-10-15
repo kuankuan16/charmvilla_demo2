@@ -75,8 +75,17 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
   const choices = source.variants.length > 1 ? source.variants.map(v => {
     const visual = visualChoices?.find(c => normalize(c.label) === normalize(v.title));
     const tea = v.selectedOptions.find(o => /tea|flavo/i.test(o.name))?.value;
+    // Client final reply 2026-10-14: Blue is the Stocking lid, Orange is Candy Cane.
+    // Keep Shopify variant identities and availability; only the storefront labels change.
+    const lidValue = v.selectedOptions.find(o => /color|lid/i.test(o.name))?.value;
+    const lid = local.slug === "christmas-gift-box" && lidValue
+      ? /^(Blue|Teal|Stocking)$/i.test(lidValue) ? t("聖誕襪", "Stocking")
+        : /^(Orange|Candy Cane)$/i.test(lidValue) ? t("拐杖糖", "Candy Cane") : undefined
+      : undefined;
+    const selection = tea && lid ? { tea: variantLabel(tea, lang), lid } : undefined;
     return {
-      label: variantLabel(v.title, lang), contents: tea && pieces ? [{ name: variantLabel(tea, lang), count: pieces }] : [],
+      label: selection ? `${selection.tea}${t("／", " / ")}${selection.lid}` : variantLabel(v.title, lang),
+      selection, contents: tea && pieces ? [{ name: variantLabel(tea, lang), count: pieces }] : [],
       price: Number(v.price), shopifyVariantId: v.id, availableForSale: v.availableForSale,
       quantityAvailable: v.quantityAvailable, sku: v.sku ?? undefined,
       ...(visual?.views ? { views: visual.views } : {}),

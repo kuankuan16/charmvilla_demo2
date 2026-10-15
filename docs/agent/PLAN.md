@@ -5,19 +5,23 @@ Updated: 2026-10-15
 
 ## Active task
 
-使用者明確授權將已完成的 Pre-order UI push 至正式站。隔離 release branch 只發佈預購 UI／資料串接／購物車提示；不夾帶主工作樹的 SEO、Search 移除或 Logo 修正。
+發布使用者核准的雪花商品圖、10/14 客戶定稿、政策連結、聖誕選單與沖泡步驟留白。保留最新主線 Shopify、購物車與 Logo 修正，不寫 Shopify 後台。最新補充要求步驟再拉開；桌機每步至少 240px、上下各 64px，手機上下各 40px，待實際頁面驗證。
 
 ## Steps and evidence
 
-- complete: Shopify 預購欄位 10 商品寫入並讀回；庫存、價格、status 不變。
-- complete: Node24 check、Shopify11、analytics8；雙語1440／390、庫存失敗與購物車加／增／刪驗證。QA 位於 docs/qa/2026-10-15-preorder-ui/。
-- in_progress: Git commit／push 正確 origin/main、Vercel READY／正式 alias 與來源 SHA 回讀、正式頁面與購物車驗證。
+1. 已完成：955e603 基礎上的 curated patch、Node24 check、Shopify12、雙語1440/390、照片/政策/選單與 Logo QA，證據 docs/qa/2026-10-15-client-images-release/。這些是合併最新主線與再次增加間距之前的證據。
+2. 進行中：最新 origin/main 已到 9beeb11，需保留其 SEO、購物車、三盒 US$60、配送與庫存成果；合併後重新驗證受影響範圍。
+3. 待完成：發布 main，讀回 Vercel alias/來源 SHA，正式圖片/文案/雙語桌手機 QA，確認公開 Shopify API 未被本次發佈改寫。
 
 ## FIFO queue
 
-1. Shopify 配送：SGV 僅現場銷售、不出貨，所有網購使用 Hayward 庫存；不配送 Alaska／Hawaii。最新指示優先於舊截圖。限定調整 online fulfillment／shipping zone，保留現有 UPS／Express 費率與 USD199含免運，不改商品庫存或價格；同步衝突政策。
-2. 使用者重開 Logo 問題：跨瀏覽器內頁頂部 Logo 回首頁仍間歇 Page Not Found。既有本機 cleanup 修正未部署，需核對正式錯誤與該修正，不宣稱線上已解決。
+1. 團圓只剩金色有貨，粉紅/藍停售；整合正確 Shopify variants 並隱藏不需選擇的色款選單。已詢問金色實際可售數量，尚待回答，不能捏造或把藍色庫存移轉。只限本商品的明確新授權，其餘 Shopify 不改。
 
-## Workspace
+## Attempts and decisions
 
-隔離 release worktree：10-14-charmvilla-preorder-release，branch release/preorder-ui-20261015。主工作樹所有 WIP 保留，其他分支與 port3027 不動。正式發布授權僅為本次預購 UI。
+- 最新沖泡截圖的「最後的文字與圖片有對齊到」語意已詢問；先增加步驟間距，不強制鎖定圖片底部。
+- 上游 9beeb11 的 PLAN 記錄先前配送/庫存/Logo/checkout 全數已交付；不再把那些舊項目排成新工作。
+
+## Resume
+
+工作樹 /Users/kuan/Documents/Codex/charmvilla-release-20261015；原本 10-02-charmvilla-demo2 WIP 原樣保留，不從舊 root 發布。先合併最新 main，再完成本次 release，接續團圓。

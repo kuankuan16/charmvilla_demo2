@@ -4,6 +4,8 @@
 
 ## 2026-10-15
 
+- 使用者要求「拉開每一個步驟的間距」時，應比較實際每列高度與整段圖文比例，不只小幅增加 padding；桌機/手機驗證五個節點連線、分隔線及最後一步的留白。來源：本輪使用者指出前次留白仍不夠；圖文底部是否需對齊仍待澄清。
+
 - 當用瀏覽器量 sticky／ScrollTrigger 的釘住位置時，先關掉電子報視窗（點 `[aria-label="關閉電子報視窗"]` 或設 `localStorage` `cv-newsletter-popup-seen=1`）：它把 `html/body` 設成 `overflow: hidden`，sticky 會失效、數字看起來像「沒釘住」而其實是量錯。驗證：`getComputedStyle(document.body).overflow` 不是 `hidden` 再量 figure top。（來源：本輪 agent 量測沖泡區時的誤判，非使用者指示。）
 - 當驗收捲動動畫時，截圖要標實際的進度變數值（例如 `--brew-stage`），不能只信檔名；「01-pour」可能是步驟 1 結束的畫面。起點要在軸線 start（stage 0）確認「第一個動作發生時主體在畫面內」（這次：壺倒水時杯身要在摺線上），桌機 1440×900 與 1800×1125 都量。（來源：本輪 Ego Lite 檢視發現 74% 起點讓水位在畫面外上升。）
 - 當用 Ego Lite Browser 做視覺檢視時，它的視窗固定 1800×1125（CDP `Emulation.setDeviceMetricsOverride` 無效），`scrollTo` 後 `page.screenshot()` 會是空白，改用 `page.cdp("Page.captureScreenshot")`；要精確尺寸（1440×900、390×844）用 agent-browser `set viewport`。（來源：本輪工具行為，非使用者指示。）

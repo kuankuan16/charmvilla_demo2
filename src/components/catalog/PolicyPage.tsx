@@ -27,7 +27,9 @@ export default function PolicyPage({ title, intro, updated, sections, labels }: 
                 ? <ul key={i}>{b.list.map((item) => <li key={item} className="tc">{item}</li>)}</ul>
                 : "q" in b
                   ? <div key={i} className="policy-qa"><h3 className="tc">{b.q}</h3><p className="tc">{b.a}</p></div>
-                  : <p key={i} className="policy-pending tc"><span>{labels.pending}</span>{b.pending}</p>)}
+                  : "link" in b
+                    ? <p key={i} className="tc">{b.before}<a className="policy-inline-link" href={b.link.href}>{b.link.label}</a>{b.after}</p>
+                    : <p key={i} className="policy-pending tc"><span>{labels.pending}</span>{b.pending}</p>)}
             {/* `s.source` is the editors' reference (commerce.ts) and is not shown to customers (copy decision 2026-10-06) */}
           </section>
         ))}

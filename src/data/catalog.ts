@@ -103,7 +103,7 @@ export type Product = {
   /** The Show more! concept: the protected slogan and the finalized concept copy (guide §5). */
   concept?: { title: string; slogan: string; body: string };
   /** choices: what the bag button offers (a tea, a tea × lid colour, or a packaging option); choiceLabel: the legend above them */
-  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; price?: number; note?: string; shopifyVariantId?: string; availableForSale?: boolean; quantityAvailable?: number | null; sku?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string; scene?: string }; views?: ProductView[] }[]; choiceLabel?: string; /** mix-and-match set: this many boxes, each one tea picked from `choices`; one price for the set */ mixBoxes?: number };
+  giftBox?: { pieces: number; series: string; contents: TeaContents; choices?: { label: string; contents: TeaContents; selection?: { tea: string; lid: string }; price?: number; note?: string; shopifyVariantId?: string; availableForSale?: boolean; quantityAvailable?: number | null; sku?: string; viewsFrom?: string; placeholderViews?: number; lidViews?: { cover?: string; angle?: string; front?: string; unboxed?: string; lid?: string; scene?: string }; views?: ProductView[] }[]; choiceLabel?: string; /** mix-and-match set: this many boxes, each one tea picked from `choices`; one price for the set */ mixBoxes?: number };
 };
 
 const buildCatalog = (lang: Locale) => {
@@ -405,7 +405,7 @@ const buildCatalog = (lang: Locale) => {
   // 蝴蝶蘭：兩人在橄欖綠扶手椅旁對飲、杯中各有小金魚茶包，禮盒是焦點（使用者 2026-10-13 選定：「上情境」）
   sceneExtra["orchid-gift-box"] = [...(sceneExtra["orchid-gift-box"] ?? []), site("scene-orchid-gift-box-two-friends-tea.webp", t("兩個人在扶手椅旁享用小金魚茶，桌上是粉紅色蝴蝶蘭禮盒", "Two people enjoying goldfish tea by the armchairs, the pink Royal Orchid gift box on the table"), 2784, 3456)];
   // 雪花三盒組：照紫斑蝶沙發照的構圖，三盒同斜角（使用者 2026-10-13）
-  sceneExtra["snowflake-gift-box"] = [...(sceneExtra["snowflake-gift-box"] ?? []), site("scene-snowflake-gift-box-olive-sofa-pouch-v2.webp", t("胡桃木邊桌上的三盒聖誕心意禮，旁邊是茶包與一杯小金魚茶", "Three Christmas Charming Gift boxes on a walnut side table, with a tea pouch and a cup of goldfish tea"), 2784, 3456)];
+  sceneExtra["snowflake-gift-box"] = [...(sceneExtra["snowflake-gift-box"] ?? []), site("scene-snowflake-gift-box-olive-sofa-pouch-gold-seal-v3.webp", t("胡桃木邊桌上的三盒聖誕心意禮，旁邊是茶包與一杯小金魚茶", "Three Christmas Charming Gift boxes on a walnut side table, with a tea pouch and a cup of goldfish tea"), 2784, 3456)];
   // 春曉：藍色與粉紅盒蓋並列的窗光照（使用者 2026-10-13：「幫我生一張 春曉 的雙封面情境照/heroimage」，4K）
   sceneExtra["spring-dawn-gift-box"] = [...(sceneExtra["spring-dawn-gift-box"] ?? []), site("scene-spring-dawn-gift-box-blue-pink-sunbeam.webp", t("陽光下並列的藍色與粉紅色盒蓋春曉禮盒，旁邊是一杯小金魚茶", "Spring Awakening gift boxes with blue and pink lids side by side in the sun, beside a cup of goldfish tea"), 2784, 3456)];
   // 蝴蝶蘭：金色與粉紅盒蓋並列的情境照（使用者 2026-10-13：「一次擺2種顏色封面的禮盒示意」/luxuryshot；窗光、木桌、背景柔焦植物、盒子加厚、4K）
@@ -543,11 +543,13 @@ const buildCatalog = (lang: Locale) => {
     { file: "studio-christmas-gift-box-orange-angle-v3.webp", zh: "橘色盒蓋・斜角", en: "Orange lid, angled view", enAlt: "orange lid, angled view" },
     { file: "studio-christmas-gift-box-orange-unboxed-v3.webp", zh: "橘色盒蓋・開箱 12 入", en: "Orange lid, unboxed · 12 tea bags", enAlt: "orange lid, the box opened to show 12 tea bags" },
   ];
-  // 雪花迷人禮（三盒組）（2026-10-13 agent 推理暫定，待客戶確認）：只用自己的 3 張，順序 三盒封面（studio-listing.json）→ 斜角 → 正面；
-  // 已是灰底正規化版（不需 -even2），不加入任何開箱圖或其他盒的圖
+  // 聖誕心意禮：原有三張照片保留；使用者 2026-10-15 新增實拍開盒照，顯示單盒內兩包茶包。
+  // 四張棚拍依使用者 2026-10-15 糾正統一平順漸層；開盒再依實拍重生清晰細節，盒身展示寬度與正面照一致。
+  // 完整 4:5 畫布不可再套 cutout 的 20% padding 二次縮小。
   studioExtra["snowflake-gift-box"] = [
-    { file: "studio-snowflake-gift-box-angle-v3.webp", zh: "斜角", en: "Angled view", enAlt: "one box seen at an angle" },
-    { file: "studio-snowflake-gift-box-front-v3.webp", zh: "正面", en: "Front view", enAlt: "one box seen from the front" },
+    { file: "studio-snowflake-gift-box-angle-smooth-bg-v5.webp", zh: "斜角", en: "Angled view", enAlt: "one box seen at an angle" },
+    { file: "studio-snowflake-gift-box-front-smooth-bg-v5.webp", zh: "正面", en: "Front view", enAlt: "one box seen from the front" },
+    { file: "studio-snowflake-gift-box-unboxed-2-hd-v5.webp", zh: "開盒・2 入", en: "Unboxed · 2 tea bags", enAlt: "the box opened to show two individually wrapped Goldfish Tea Bags" },
   ];
   // Photographs a product page leaves out (user 2026-10-01, on the coaster page: 「這 2 張不要」 — the box under branch shadows and the
   // flat lay of every wooden piece on stone).
@@ -636,7 +638,7 @@ const buildCatalog = (lang: Locale) => {
     "year-of-plenty-gift-box": ["scene-year-of-plenty-gift-box-olive-sofa-pouch.webp", "scene-year-of-plenty-cream-table-sun-celadon-cup.webp", mug],
     "blossoming-prosperity-gift-box": ["scene-blossoming-prosperity-gift-box-olive-sofa-pouch.webp", "scene-blossoming-prosperity-gift-box.webp", mug],
     "christmas-gift-box": ["scene-christmas-gift-box-two-boxes-window-light.webp", "scene-christmas-gift-box-burgundy-sunbeam.webp", mug], // 兩色禮盒窗光照（2026-10-13 取代茶包款式錯誤的沙發照：「包裝袋錯誤」）也是 hover 圖
-    "snowflake-gift-box": ["scene-snowflake-gift-box-olive-sofa-pouch-v2.webp", mug, twoPeople], // 沙發照領頭、也是清單 hover（使用者 2026-10-13：「用這個做情境圖」→「好」）；兩人照與捧杯照左右交換（「左右交換」）
+    "snowflake-gift-box": ["scene-snowflake-gift-box-olive-sofa-pouch-gold-seal-v3.webp", mug, twoPeople], // 沙發照領頭、也是清單 hover（使用者 2026-10-13：「用這個做情境圖」→「好」）；兩人照與捧杯照左右交換（「左右交換」）
   };
   const listed: Product[] = [...bagProducts, ...jewelryProducts, ...teaProducts, ...teawareProducts].map(withShopify).map(withListing);
   // A choice may show another listing's studio views while it is chosen (the Reunion box's 粉紅色 = the paulownia box, a hidden

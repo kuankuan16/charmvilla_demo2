@@ -37,9 +37,37 @@ test('Chinese option labels retain verified pink and Christmas color photographs
   const blue = [{ label: 'Stocking', image: { ...image, src: '/approved-stocking.webp' } }];
   const orchid = applyShopifyProduct({ ...local, giftBox: { ...local.giftBox, choices: [{ label: '頭等獎玫瑰烏龍茶／粉紅色', contents: [], views: pink }] } }, snapshot.products['orchid-gift-box'], 'zh');
   assert.equal(orchid.giftBox.choices.find(c => c.label === '頭等獎玫瑰烏龍茶／粉紅色').views, pink);
-  const christmas = applyShopifyProduct({ ...local, giftBox: { ...local.giftBox, choices: [{ label: 'Tea Assortment / Stocking', contents: [], views: blue }] } }, snapshot.products['christmas-gift-box'], 'zh');
-  assert.equal(christmas.giftBox.choices.find(c => c.label === '綜合茶款／藍色').views, blue);
-  assert.equal(christmas.giftBox.choices.find(c => c.label === '綜合茶款／橘色').views, undefined);
+  const christmas = applyShopifyProduct({ ...local, slug: 'christmas-gift-box', giftBox: { ...local.giftBox, choices: [{ label: 'Tea Assortment / Stocking', contents: [], views: blue }] } }, snapshot.products['christmas-gift-box'], 'zh');
+  assert.equal(christmas.giftBox.choices.find(c => c.label === '綜合茶款／聖誕襪').views, blue);
+  assert.equal(christmas.giftBox.choices.find(c => c.label === '綜合茶款／拐杖糖').views, undefined);
+});
+test('Separate Christmas tea and lid selections preserve all six Shopify variant identities in any order', () => {
+  const source = structuredClone(snapshot.products['christmas-gift-box']);
+  source.variants.reverse();
+  const visuals = source.variants.map(v => ({ label: v.title, contents: [], views: [{ label: v.id, image: { ...image, src: `/${v.id.split('/').at(-1)}.webp` } }] }));
+  for (const lang of ['en', 'zh']) {
+    const product = applyShopifyProduct({ ...local, slug: 'christmas-gift-box' }, source, lang, visuals);
+    assert.equal(product.giftBox.choices.length, 6);
+    assert.equal(new Set(product.giftBox.choices.map(c => c.selection.tea)).size, 3);
+    assert.equal(new Set(product.giftBox.choices.map(c => c.selection.lid)).size, 2);
+    for (const choice of product.giftBox.choices) {
+      const original = source.variants.find(v => v.id === choice.shopifyVariantId);
+      const color = original.selectedOptions.find(o => /color/i.test(o.name)).value;
+      const expected = color === 'Blue' ? (lang === 'en' ? 'Stocking' : '聖誕襪') : (lang === 'en' ? 'Candy Cane' : '拐杖糖');
+      assert.equal(choice.selection.lid, expected);
+      assert.equal(choice.price, Number(original.price));
+      assert.equal(choice.availableForSale, original.availableForSale);
+      assert.equal(choice.views, visuals.find(v => v.label === original.title).views);
+      assert.doesNotMatch(choice.label, /Blue|Orange|藍色|橘色/);
+    }
+    // Applying live data over the local snapshot must retain the same option photos.
+    const live = applyShopifyProduct(product, source, lang);
+    assert.deepEqual(live.giftBox.choices, product.giftBox.choices);
+  }
+  assert.ok(applyShopifyProduct(local, snapshot.products['kyoto-gift-box'], 'en').giftBox.choices.every(c => !c.selection));
+  source.variants[0].selectedOptions.find(o => /color/i.test(o.name)).value = 'Unknown lid';
+  const unknown = applyShopifyProduct({ ...local, slug: 'christmas-gift-box' }, source, 'en');
+  assert.equal(unknown.giftBox.choices[0].selection, undefined);
 });
 test('Tea note names follow the Shopify competition grade while preserving editorial text', () => {
   const source = structuredClone(snapshot.products['orchid-gift-box']);

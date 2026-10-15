@@ -123,9 +123,9 @@ const tieDyeColors: Bi = { zh: "紮染盒蓋的色彩依實品為準，可能與
 const teaFinalSale: Bi = { zh: "茶品屬於食品，售出後恕不退換，詳見退換貨政策。", en: "Tea is a final sale and cannot be returned; see our return policy." };
 // 客戶回覆 2026-10-14 §6：「預計最晚於 2026 年 11 月底前出貨」（取代 B7 的「11 月下旬」）；下單時收全額，出貨前可取消並全額退款，出貨後依茶品退換貨政策
 export const preOrderShipping: Bi = { zh: "預購商品預計最晚於 2026 年 11 月底前出貨。", en: "Pre-orders are expected to ship by the end of November 2026." };
-const preOrderTerms: Bi = { zh: "預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。", en: "Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies." };
+export const preOrderTerms: Bi = { zh: "預購於下單時收取全額款項。訂單出貨前可申請取消並獲得全額退款。出貨後依茶品退換貨政策處理。", en: "Pre-orders are charged in full when you place your order. You may cancel for a full refund before your order ships. Once shipped, our tea return policy applies." };
 // 客戶回覆 2026-10-14 §7：聖誕下單截止日（只適用美國本土 48 州）
-const christmasCutoff: Bi = { zh: "聖誕節前送達：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單；阿拉斯加與夏威夷不適用此截止日。", en: "For delivery before Christmas, please order by December 15, 2026 (contiguous 48 states). This date does not apply to Alaska or Hawaii." };
+export const christmasCutoff: Bi = { zh: "聖誕節前送達：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單；阿拉斯加與夏威夷不適用此截止日。", en: "For delivery before Christmas, please order by December 15, 2026 (contiguous 48 states). This deadline does not apply to Alaska or Hawaii." };
 const embroideryNote: Bi = { zh: "盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。", en: "The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation." };
 
 export const teaGifts: TeaGift[] = [

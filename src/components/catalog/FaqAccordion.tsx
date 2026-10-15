@@ -5,6 +5,7 @@
 // only once opened. Native <details>, so it works without JavaScript and is keyboard-accessible. A document with a single
 // section (Prop 65) opens it at once. The documents' section numbers (「1. 健康…」) are dropped from the row titles (user 2026-10-07: 「拿掉數字」).
 import type { PolicySection } from "@/data/commerce";
+import PolicySectionLink from "./PolicySectionLink";
 
 export default function FaqAccordion({ title, intro, updated, sections, contact, labels }: {
   title: string; intro?: string; updated?: string; sections: PolicySection[]; contact?: { label: string; href: string };
@@ -32,7 +33,9 @@ export default function FaqAccordion({ title, intro, updated, sections, contact,
                         <summary className="tc"><span>{b.q}</span><span className="faq-toggle" aria-hidden="true" /></summary>
                         <p className="tc">{b.a}</p>
                       </details>
-                    : <p key={i} className="faq-text faq-pending tc">{labels && <span>{labels.pending}</span>}{b.pending}</p>)}
+                    : "link" in b
+                      ? <p key={i} className="faq-text tc">{b.before}<PolicySectionLink {...b.link} />{b.after}</p>
+                      : <p key={i} className="faq-text faq-pending tc">{labels && <span>{labels.pending}</span>}{b.pending}</p>)}
               {/* `s.source` is the editors' reference (commerce.ts) and is not shown to customers (copy decision 2026-10-06) */}
             </div>
           </details>

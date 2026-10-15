@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { products, getCategory, productHref, categoryHref } from "@/data/catalog";
+import { christmasCutoff, preOrderShipping, preOrderTerms } from "@/data/tea-gifts";
 import { getCommerceProduct, getCommerceProducts } from "@/lib/shopify/catalog";
 import LiveProductPrice from "@/components/catalog/LiveProductPrice";
 import PreOrderLeft from "@/components/catalog/PreOrderLeft";
@@ -131,6 +132,11 @@ export default async function ProductPage({ params }: Props) {
   const keyLines = keyRows.length > 0 && <ul className="product-keylines">{keyRows.map((f) => <li key={f.label}><span className="tc">{f.label}</span><span className="tc">{f.value}</span></li>)}</ul>;
   const shownAbove = new Set(keyRows.map((f) => f.label).concat(t("系列", "Series")));
   const specFacts = product.facts.filter((f) => !shownAbove.has(f.label));
+  // Approved store policies apply to live Shopify products without overwriting their CMS facts.
+  const policyFacts: typeof product.facts = [
+    ...(product.preOrder ? [{ label: t("預購須知", "Pre-order information"), value: `${preOrderShipping[lang]} ${preOrderTerms[lang]}` }] : []),
+    ...(["christmas-gift-box", "snowflake-gift-box"].includes(product.slug) ? [{ label: t("聖誕配送", "Christmas delivery"), value: christmasCutoff[lang] }] : []),
+  ];
   const origin = product.facts.find((f) => f.label === t("產地", "Made in"));
   const originNote = origin && <p className="product-origin tc">{t(`${origin.value}製作。`, `Made in ${origin.value}.`)}</p>;
   // the second, outlined button leads to the brewing steps; other products have none (user 2026-10-07: 「移除常見問題」)
@@ -141,7 +147,7 @@ export default async function ProductPage({ params }: Props) {
   const specs = <section className="product-specs" aria-labelledby="specs-title">
     <h2 id="specs-title" className="tc">{specTitle}</h2>
     <dl className="product-keyfacts">
-      {specFacts.map((f) => {
+      {[...specFacts, ...policyFacts].map((f) => {
         const isTeaContents = f.label === t("盒內茶款", "Tea selection") || f.label === t("可選茶款", "Available teas");
         // every row keeps the label / value columns on wider screens and stacks only on phones (user 2026-10-14: 「改為原本對齊的位置比較統一」,
         // 「全站小螢幕的時候，spec 才改成上下排列不分欄位」), the choice rows included
