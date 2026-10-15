@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
+// Isolated checkout test build folders; ignored by Vercel. Tests never replace production product mappings.
+const testBuild = !process.env.VERCEL && /^\.next\/test-(shopify|local)$/.test(process.env.CV_TEST_BUILD ?? "") ? process.env.CV_TEST_BUILD : null;
+
 const nextConfig: NextConfig = {
+  ...(testBuild ? { distDir: testBuild } : {}),
   devIndicators: false,
   // Retired product URLs, in both languages. English is unprefixed and Chinese lives under /zh (user 2026-10-13); the "/en" entries
   // only catch old links from before that change (src/proxy.ts then 308s /en/... to the unprefixed address).

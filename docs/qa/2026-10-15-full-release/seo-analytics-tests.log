@@ -1,0 +1,39 @@
+(node:47642) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/src/lib/seo/metadata.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ both locales share canonical, hreflang, OG and Twitter identity without inherited home titles (0.516959ms)
+✔ US online seller is distinct from the brand; no false US storefront or brand social equivalence (0.15075ms)
+✔ every Shopify variant retains its own price, stock, SKU and seller with approved images (1.206833ms)
+✔ unpublished, display-only, inactive or unconfirmed currency products never advertise offers (0.26175ms)
+✔ JSON-LD is script-safe and round-trips hostile CMS strings without executable markup (0.074041ms)
+✔ article dates never turn future event dates into publication timestamps; graph references resolve (0.263292ms)
+✔ backordered variants do not turn stocked siblings into pre-orders; explicit preorder tags apply to the product (0.30575ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 89.424792
+(node:47644) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/src/lib/analytics/ga4.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Purchase uses discounted merchandise value, separates shipping/tax, stable variant ID and no PII (1.352208ms)
+✔ Repeated purchase events and thank-you reloads are deduplicated (0.316875ms)
+✔ Checkout cannot report a purchase without a real Shopify order ID (0.230875ms)
+✔ Both explicit storefront consent and Shopify analytics permission are required (0.984875ms)
+✔ Shopify checkout stages map once to standard GA4 funnel events (0.525209ms)
+✔ URL sanitization removes checkout tokens and customer inputs (0.105625ms)
+✔ Product and cart analytics use the same Shopify variant ID (0.092167ms)
+✔ Checkout and payment returns do not replace acquisition referrals (0.056709ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64.35575

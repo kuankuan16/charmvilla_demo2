@@ -1,0 +1,96 @@
+
+> charmvilla-gallery-site@0.1.0 shopify:test
+> node --test scripts/shopify/catalog.test.mjs
+
+(node:45831) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/src/lib/shopify/catalog-data.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Shopify replaces price and stock while preserving approved image objects (1.498416ms)
+✔ Christmas small gift follows the confirmed Shopify three-box US$60 set without inventing mix variants (0.574833ms)
+✔ Option photos match by identity, independently of variant order (0.20475ms)
+✔ Every mapped variant has one identity, without fabricated or shared GIDs (0.35475ms)
+✔ Chinese option labels retain verified pink and Christmas color photographs (0.428292ms)
+✔ Tea note names follow the Shopify competition grade while preserving editorial text (0.132959ms)
+✔ Shopify Chinese CMS restores approved copy without changing commerce or images (1.085667ms)
+✔ All 14 Chinese migration entries match Shopify IDs and contain no retired pre-order claims (0.656875ms)
+✔ Approved preorder restoration preserves every Shopify price, variant and sale restriction (2.133541ms)
+✔ Explicit campaign disable overrides legacy preorder copy without converting regular inventory to preorder (0.241916ms)
+✔ An enabled preorder must provide approved terms in both languages (0.236834ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.64175
+(node:45834) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/src/lib/seo/metadata.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ both locales share canonical, hreflang, OG and Twitter identity without inherited home titles (0.506083ms)
+✔ US online seller is distinct from the brand; no false US storefront or brand social equivalence (0.147917ms)
+✖ every Shopify variant retains its own price, stock, SKU and seller with approved images (1.20825ms)
+✔ unpublished, display-only, inactive or unconfirmed currency products never advertise offers (0.252542ms)
+✔ JSON-LD is script-safe and round-trips hostile CMS strings without executable markup (0.074333ms)
+✔ article dates never turn future event dates into publication timestamps; graph references resolve (0.17175ms)
+✖ backordered variants do not turn stocked siblings into pre-orders; explicit preorder tags apply to the product (0.191208ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 5
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.720709
+
+✖ failing tests:
+
+test at scripts/seo/seo.test.mjs:35:1
+✖ every Shopify variant retains its own price, stock, SKU and seller with approved images (1.20825ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'https://schema.org/PreOrder'
+  - 'https://schema.org/InStock'
+                        ^
+
+      at TestContext.<anonymous> (file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/scripts/seo/seo.test.mjs:45:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'https://schema.org/PreOrder',
+    expected: 'https://schema.org/InStock',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/seo/seo.test.mjs:78:1
+✖ backordered variants do not turn stocked siblings into pre-orders; explicit preorder tags apply to the product (0.191208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'https://schema.org/PreOrder'
+  - 'https://schema.org/BackOrder'
+                        ^
+
+      at TestContext.<anonymous> (file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/scripts/seo/seo.test.mjs:86:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'https://schema.org/PreOrder',
+    expected: 'https://schema.org/BackOrder',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

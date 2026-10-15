@@ -1,0 +1,54 @@
+
+> charmvilla-gallery-site@0.1.0 test:api
+> node --import ./tests/support/register-ts.mjs --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tests/run.mjs api
+
+
+▶ building (shopify mode, .next/test-shopify)
+▶ mock http://127.0.0.1:52208 · full http://127.0.0.1:52234 · bare http://127.0.0.1:52241
+
+▶ api tests
+✔ register: checks, signs in with an httpOnly cookie, me returns the customer (74.896125ms)
+✔ register: an email already taken, and a newsletter subscriber who registers (activation email) (43.480291ms)
+✔ register: a phone Shopify will not take is reported (12.31725ms)
+✔ login / logout / wrong password / me without a session (47.089208ms)
+✔ a session Shopify no longer accepts is cleared (20.691084ms)
+✔ profile: update name, marketing; refused without a session (31.33875ms)
+✔ addresses: add (first is default), add as default, edit, delete (68.0175ms)
+✔ orders placed with the account are listed (12.412667ms)
+✔ forgot password → emailed link → reset signs in with the new password (58.504833ms)
+✔ an invited account is activated from the emailed link (23.473166ms)
+✔ signing in ties the bag to the customer (login, register, reset), and a bag made while signed in carries them (54.462084ms)
+✔ not configured: me says so, reset / activate answer 503 (20.001375ms)
+✔ POST without lines is refused (31.080458ms)
+✔ create: one line, country US, Shopify prices, checkoutUrl on the store (11.893417ms)
+✔ add, merge, update, remove keep Shopify's totals (50.158667ms)
+✔ distinct attributes keep two lines of the same published variant separate (21.077875ms)
+✔ PATCH and DELETE need a cart and lines (9.226709ms)
+✔ GET: no id, unknown cart, not configured (13.532708ms)
+✔ a variant Shopify does not know is an error, not a silent add (8.083417ms)
+✔ Shopify's stock warnings reach the bag (21.068042ms)
+✔ the shopper's IP is passed to Shopify (9.55575ms)
+✔ a cart gone on Shopify's side (checkout completed, expired) starts a new one on the next add (19.514917ms)
+✔ a line removed on Shopify's side: changing it says so and returns the cart as Shopify has it (21.931625ms)
+✔ quantities must be whole numbers from 1 to 99 (26.779917ms)
+✔ a new email becomes a subscribed customer tagged newsletter (43.6845ms)
+✔ an existing customer (a member) gets consent and the tag, no duplicate (18.266458ms)
+✔ subscribing twice (and two clicks at once) leaves one customer (28.939709ms)
+✔ a bad email is refused before Shopify is asked (22.173042ms)
+✔ the hidden bot field answers ok and stores nothing (7.413792ms)
+✔ not configured: 503 not_configured, nothing stored (7.250208ms)
+✔ Admin API down: an error, not a fake success (11.632334ms)
+✔ live quantities add across variants; unpublished Christmas products have zero saleable stock (57.918083ms)
+✔ stock changes are read immediately and historical orders do not replace current inventory (18.811042ms)
+✔ Shopify bounds cart quantity by variant stock, independently of campaign allocation (12.301625ms)
+✔ sold-out variants cannot add a purchasable line (16.707792ms)
+✔ Christmas three-box set is US$60 but unpublished; allocation200 cannot make it purchasable (18.953375ms)
+✔ missing configuration and Admin outages fail explicitly instead of returning old allowances (33.405875ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1216.460042

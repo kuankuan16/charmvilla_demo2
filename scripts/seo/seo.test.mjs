@@ -42,7 +42,7 @@ test('every Shopify variant retains its own price, stock, SKU and seller with ap
   assert.equal(node.offers.length, source.variants.length);
   assert.equal(node.offers[0].price, '231.75'); assert.equal(node.offers[0].sku, 'LIVE-SKU');
   assert.equal(node.offers[0].availability, 'https://schema.org/OutOfStock');
-  assert.equal(node.offers[1].availability, 'https://schema.org/InStock');
+  assert.equal(node.offers[1].availability, 'https://schema.org/PreOrder');
   assert.ok(node.offers.every(o => o.seller['@id'] === entityIds.store && o.priceCurrency === 'USD'));
   assert.ok(node.offers.every(o => o.name.includes('春曉') || o.name.includes(product.name)));
   assert.equal(new Set(node.offers.map(o => o['@id'])).size, node.offers.length);
@@ -78,6 +78,7 @@ test('article dates never turn future event dates into publication timestamps; g
 test('backordered variants do not turn stocked siblings into pre-orders; explicit preorder tags apply to the product', () => {
   const source = structuredClone(snapshot.products['kyoto-gift-box']);
   source.tags = []; source.published = true; source.status = 'ACTIVE';
+  source.metafields = source.metafields.filter(m => m.key !== 'preorder_details');
   source.variants[0].availableForSale = true; source.variants[0].currentlyNotInStock = true;
   source.variants[1].availableForSale = true; source.variants[1].currentlyNotInStock = false;
   const product = applyShopifyProduct(local, source, 'en');

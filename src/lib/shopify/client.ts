@@ -1,8 +1,10 @@
-import { shopifyConfig, isShopifyConfigured, NOT_CONFIGURED, NOT_CONFIGURED_MESSAGE } from "./config";
+import { shopifyConfig, shopifyOrigin, isShopifyConfigured, NOT_CONFIGURED, NOT_CONFIGURED_MESSAGE } from "./config";
 
 export class ShopifyError extends Error {
   status: number;
   code?: string;
+  /** a cart mutation Shopify refused still returns the cart as it is now; the bag shows that instead of a stale copy */
+  cart?: unknown;
   constructor(message: string, status = 500, code?: string) { super(message); this.status = status; this.code = code; }
 }
 
@@ -11,7 +13,7 @@ type GraphQLResponse<T> = { data?: T; errors?: { message: string; extensions?: {
 /** Minimal Storefront API client. Every call fails fast with a 503 until the store credentials are configured. */
 export async function storefront<T>(query: string, variables: Record<string, unknown> = {}, buyerIp?: string): Promise<T> {
   if (!isShopifyConfigured()) throw new ShopifyError(NOT_CONFIGURED_MESSAGE, 503, NOT_CONFIGURED);
-  const res = await fetch(`https://${shopifyConfig.domain}/api/${shopifyConfig.version}/graphql.json`, {
+  const res = await fetch(`${shopifyOrigin()}/api/${shopifyConfig.version}/graphql.json`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

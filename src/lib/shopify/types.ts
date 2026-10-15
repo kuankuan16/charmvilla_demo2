@@ -8,3 +8,5 @@ export type Address = { id: string; firstName: string | null; lastName: string |
 export type Order = { id: string; orderNumber: number; processedAt: string; financialStatus: string | null; fulfillmentStatus: string; statusUrl: string; totalPrice: Money; lineItems: { edges: { node: { title: string; quantity: number; variant: { image: { url: string; altText: string | null } | null } | null } }[] } };
 export type Customer = { id: string; firstName: string | null; lastName: string | null; email: string | null; phone: string | null; acceptsMarketing: boolean; defaultAddress: Address | null; addresses: { edges: { node: Address }[] }; orders: { edges: { node: Order }[] } };
 export type UserError = { code?: string | null; field?: string[] | null; message: string };
+/** Most boxes one bag line may hold (the drawer's + button stops there; /api/cart refuses more). */
+export const MAX_LINE_QUANTITY = 99;

@@ -8,6 +8,12 @@ const english: Record<string, string> = {
   not_configured: "This is not open yet.",
   server_error: "Something went wrong. Please try again.",
   preorder_full: "Not enough pre-order boxes are left for this quantity.",
+  cart_gone: "Your bag had expired, so it has been emptied. Please add the pieces again.",
+  bad_quantity: "Please choose a quantity from 1 to 99.",
+  email_taken: "An account with this email already exists. Please sign in, or reset your password.",
+  activation_sent: "This email is already on our customer list (for example from the newsletter). We have sent you an email to activate your account: please follow the link in it to choose a password.",
+  bad_login: "The email or password is incorrect.",
+  invalid_phone: "Please enter the phone number in international format, for example +1 415 555 0100.",
 };
 const cjk = /[\u3400-\u9fff]/;
 

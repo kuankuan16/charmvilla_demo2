@@ -97,3 +97,11 @@ Shopify CLI 已安裝（4.9.3）；本次沒有建立 Charmvilla CLI store auth 
 ## 驗證與部署狀態
 
 見 [初次整合 QA](qa/2026-10-14-shopify-headless/README.md) 及 [中文遷移 QA](qa/2026-10-14-shopify-chinese/README.md)。實際 Shopify API、MCP、購物車與 hosted checkout 頁面已驗證，未按付款、未建立訂單。2026-10-15 已依使用者授權正式上線至 www.charmvilla.com，Vercel production／preview 環境已設定 server-only 憑證；GA4 與結帳 pixel 見 [追蹤契約](analytics/ga4-tracking-plan.md)，發布證據見 [上線 QA](qa/2026-10-15-production-launch/README.md)。
+
+## 同事checkout-tests-wip整合（2026-10-15）
+
+- `npm run test:api`、`npm run test:e2e`、`npm test`執行隔離loopback mock；模擬購物車、傳統會員API/備用UI、newsletter及即時商品CMS/庫存。網站正式會員仍轉Shopify hosted accounts。
+- 測試讀目前核准商品快照作身分/內容fixture；可售數量使用測試情境。`CV_TEST_BUILD`僅接受`.next/test-shopify`/`.next/test-local`且Vercel忽略。完整HTTP商店origin僅在本機test build接受127.0.0.1；所有真實SHOPIFY憑證/GA欄位明確清空，避免Next重新載入.env.local。
+- tests與正式build都寫.next子目錄，必須循序執行；`-- --no-build`僅適用程式未改的相同測試build。
+- 合併保留失效購物車恢復、拒絕變更時回傳即時cart、整數1–99驗證、上限UI、會員錯誤分類與隱私文案；GA4仍依成功的實際cart差額追蹤，結帳更新中不可跳轉。
+- 舊的本機預購額度/訂單扣量模型已被Shopify即時庫存取代，未恢復。未發布Christmas商品保持不可買；三盒組每組60由Shopify實際資料決定。

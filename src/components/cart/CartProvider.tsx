@@ -8,7 +8,7 @@ import { checkoutAnalytics, trackCartChange } from "@/lib/analytics/ga4";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { findProduct, getProducts, formatPrice, type Product } from "@/data/catalog";
 import { variantLabel } from "@/lib/shopify/catalog-data";
-import type { Cart as ShopifyCart } from "@/lib/shopify/types";
+import { MAX_LINE_QUANTITY, type Cart as ShopifyCart } from "@/lib/shopify/types";
 import { variantFor, productForVariant } from "@/lib/shopify/variants";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
@@ -55,7 +55,8 @@ const lineAttributes = (product: Product, option?: number, mix?: number[]) => {
   const id = option === undefined ? product.shopify?.variantId : product.giftBox?.choices?.[option]?.shopifyVariantId;
   const label = product.shopifyData?.variants.find(v => v.id === id)?.title ?? (option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label);
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
-  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid" ? "Lid" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
+  // the Christmas Giftbox's lid is a pattern (Candy Cane / Stocking), not a colour: "Tea / Lid" (client reply 2026-10-14, tea × lid options)
+  const key = legend.includes("packaging") ? "Packaging" : legend === "choose your lid" ? "Lid" : legend === "choose your tea and lid" ? "Tea / Lid" : legend.includes("lid") ? "Tea / Lid color" : "Tea";
   const attrs = [...(label && label !== "Default Title" ? [{ key, value: label }] : []), ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])];
   return attrs.length ? { attributes: attrs } : {};
 };
@@ -88,17 +89,26 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
   useEffect(() => { if (MODE === "local" && ready) { try { localStorage.setItem(LOCAL_KEY, JSON.stringify(localLines)); } catch { /* private mode */ } } }, [localLines, ready]);
 
+  const keepCart = useCallback((cart: ShopifyCart | null) => {
+    currentCart.current = cart; setShopifyCart(cart); cartId.current = cart?.id ?? null;
+    try { if (cart) localStorage.setItem(ID_KEY, cart.id); else localStorage.removeItem(ID_KEY); } catch { /* private mode: the bag still works for this visit */ }
+  }, []);
   const call = useCallback(async (method: string, payload: Record<string, unknown>) => {
     setBusy(true); setError(null); setNotice(null);
     try {
       const res = await fetch("/api/cart", { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: cartId.current ?? undefined, ...payload }) });
-      const data = await res.json();
-      if (!res.ok) throw new Error(apiMessage(lang, data, t("購物車更新失敗", "The bag could not be updated.")));
-      trackCartChange(currentCart.current, data.cart); currentCart.current = data.cart;
-      setShopifyCart(data.cart); cartId.current = data.cart.id; localStorage.setItem(ID_KEY, data.cart.id);
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        // a refused change comes back with the cart as Shopify has it (lines removed there disappear here too);
+        // a cart Shopify no longer has (checkout completed, expired) is let go so the next add starts a new one
+        if (data.cart) keepCart(data.cart); else if (data.error === "cart_gone") keepCart(null);
+        throw new Error(apiMessage(lang, data, t("購物車更新失敗", "The bag could not be updated.")));
+      }
+      trackCartChange(currentCart.current, data.cart);
+      keepCart(data.cart);
       if (data.warning) setNotice(lang === "en" ? data.warning : t("部分商品的數量已依目前庫存調整。", "Some quantities were changed to match what is in stock."));
-    } catch (e) { setError(e instanceof Error ? e.message : t("購物車更新失敗", "The bag could not be updated.")); } finally { setBusy(false); }
-  }, [lang, t]);
+    } catch (e) { setError(e instanceof TypeError /* fetch itself failed: offline */ ? t("購物車更新失敗，請檢查網路後再試一次。", "The bag could not be updated. Please check your connection and try again.") : e instanceof Error ? e.message : t("購物車更新失敗", "The bag could not be updated.")); } finally { setBusy(false); }
+  }, [lang, t, keepCart]);
 
   // `option`: the tea chosen for a gift box sold "one tea per box" (index into product.giftBox.choices); it is part of the line key.
   // `mix`: boxes per tea for a mix-and-match set (product.giftBox.mixBoxes); the whole set is one line, one variant.
@@ -114,7 +124,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLocalLines((ls) => { const i = ls.findIndex((l) => lineKey(l) === key); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }), ...(mix ? { mix } : {}) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });
   }, [call, t]);
   const update = useCallback(async (key: string, quantity: number) => {
-    if (quantity < 1) return;
+    if (quantity < 1 || quantity > MAX_LINE_QUANTITY) return;
     if (MODE === "shopify") { await call("PATCH", { lines: [{ id: key, quantity }] }); return; }
     setLocalLines((ls) => ls.map((l) => (lineKey(l) === key ? { ...l, quantity } : l)));
   }, [call]);

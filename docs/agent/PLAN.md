@@ -15,9 +15,9 @@ Updated: 2026-10-15
 
 | 狀態 | 動作 | 驗證 | 證據 |
 | --- | --- | --- | --- |
-| in_progress | 保存全部本輪WIP並整合origin/main | explicit staging、秘密掃描、diff | 待執行 |
-| pending | 合併checkout-tests-wip並解衝突 | 沿用Shopify即時來源、檢查新測試隔離 | 待執行 |
-| pending | check、Shopify/SEO/analytics/同事測試與瀏覽器 | 讀完輸出、正常/錯誤路徑 | 待執行 |
+| completed | 保存全部本輪WIP並整合origin/main | explicit staging、秘密掃描、diff | d18197e、7809393 |
+| completed | 合併checkout-tests-wip並解衝突 | 現行來源、mock隔離 | 衝突已解，待merge commit |
+| completed | check、Shopify/SEO/analytics/同事測試與瀏覽器 | 讀完輸出、正常/錯誤路徑 | API37、E2E16、Shopify11、SEO7、GA8、56頁crawl、live cart通過 |
 | pending | commit/push main與正式驗證 | READY/alias、實際正式頁面 | 待執行 |
 
 ## FIFO queue
@@ -37,6 +37,13 @@ Updated: 2026-10-15
 - Search UI 已完成：Node24 check 通過，中英文×1440／390×4分類共16組、舊 q、鍵盤、reduced-motion 通過。QA：docs/qa/2026-10-15-remove-search/README.md。
 
 ## Attempts and decisions
+
+- E2E第二次英文路由修正後正常，剩下首個購物車案例中英文assertion失敗；等待輸出釐清，不能盲重跑。另發現production build會清除同在.next內的test builds，本輪已誤同時啟動check；後續所有build必須循序，這批後段瀏覽器結果作廢並重建測試後再跑。
+
+
+- 同事API測試已適配現行Shopify：37/37通過。第一次隔離build缺mock CMS連線而失敗，調整為先啟動mock後build，保持正式憑證全空。
+- E2E第一次英文頁在127.0.0.1實際重現ERR_TOO_MANY_REDIRECTS（zh路由另查結果）；採用同事rewrite marker修正，並限制只有非Vercel接受marker，保留正式/en canonical redirect。這是自架環境另一路由問題，與正式Logo動畫例外區分。
+
 
 - 預購 UI 已正式發布：47eb598／bbf555a，Vercel dpl_8x1DtyatQMPdvycNY1jzkMLd9YDy READY，www 與 apex alias，正式 UI／購物車通過並清空。主 main／origin/main 快進 bbf555a，既有 WIP bytes 核對保留。
 - SGV online fulfillment 已關閉且 reload 讀回 false、sellsInPerson=true；原專屬免費 Shipping rate 依 Shopify confirmation 移除。
