@@ -1,0 +1,164 @@
+{
+  "base": "9beeb11140f2d4d9086a4ea3aac127b6825ba111",
+  "checks": [
+    {
+      "file": "docs/shopify/preorder-policy-2026.json",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/shopify/restore-preorder.mjs",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/activate/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/addresses/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/login/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/logout/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/me/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/profile/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/recover/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/register/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/account/reset/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/cart/analytics/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/cart/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/newsletter/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/preorder/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/app/api/products/route.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/components/cart/CartProvider.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "src/components/catalog/BrewProcess.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "src/data/shopify-map.json",
+      "unchanged": true
+    },
+    {
+      "file": "src/data/shopify-products.json",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/admin-auth.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/admin.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/cart.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/catalog.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/client.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/config.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/customer.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/http.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/newsletter.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/preorder.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/queries.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/session.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/types.ts",
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/shopify/variants.ts",
+      "unchanged": true
+    }
+  ],
+  "merchantPreorderReaderUnchanged": true,
+  "assets": [
+    {
+      "file": "scene-snowflake-gift-box-olive-sofa-pouch-gold-seal-v3.webp",
+      "sha256": "72d490a87687e8557b01886304f9cb129f5dd28397c267a7aeaf40078a4a1b75"
+    },
+    {
+      "file": "studio-snowflake-gift-box-angle-smooth-bg-v5.webp",
+      "sha256": "57018ae2bdfede39f90daa7f6c6774034724ed0764ca6e3580a088773aeb9fb6"
+    },
+    {
+      "file": "studio-snowflake-gift-box-front-smooth-bg-v5.webp",
+      "sha256": "9eededcdc91a35dae88ac62d7faa48bcc95a01695a788934c3c1795481ad798c"
+    },
+    {
+      "file": "studio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp",
+      "sha256": "4a3483c4378f67eb4e1e044d756b7eaa432bb3aca66f3742c6cd9087a2e0c540"
+    },
+    {
+      "file": "studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+      "sha256": "945f21cc997d262c19b22ec56dae61dd717dce514fa9a7cd2f4e2078584f855a"
+    }
+  ]
+}

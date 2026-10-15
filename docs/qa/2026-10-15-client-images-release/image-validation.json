@@ -1,0 +1,32 @@
+{
+  "generationCalls": 1,
+  "nativeGeneratedSize": [
+    1024,
+    1536
+  ],
+  "catalogSize": [
+    1856,
+    2320
+  ],
+  "resizedSource": [
+    982,
+    1473
+  ],
+  "uniformScale": 0.958984375,
+  "productUpscaled": false,
+  "generatedProductRGBUsed": true,
+  "generatedContentNote": "User expressly requested regeneration for sharper product details. This is not pixel-identical to the real photograph.",
+  "productBounds": {
+    "left": 580,
+    "right": 1274,
+    "top": 301,
+    "bottom": 1495
+  },
+  "bodyWidth": 695,
+  "bodyFraction": 0.3744612068965517,
+  "referenceBodyWidth": 696,
+  "source": "/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/output/imagegen/snowflake-unboxed-hd-20261015/generated-hd-master-v1.png",
+  "destination": "/Users/kuan/Documents/Codex/10-02-charmvilla-demo2/public/media/site/studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+  "losslessDecodeChangedChannels": 0,
+  "bytes": 1683482
+}

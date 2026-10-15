@@ -2,6 +2,13 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
+## 2026-10-15 核准雪花圖片與客戶定稿發布準備
+
+- 在隔離 `charmvilla-release-20261015` 整理核准五張圖片、定稿、政策連結、聖誕兩選單、最新加大的沖泡留白；已整合 `9beeb11`，保留同事最新 Shopify/checkout/SEO/配送/庫存與 Logo 修正。
+- Node24 check、Shopify12、API37、E2E16、Ego zh/en1440/390 皆通過；[本批 QA](qa/2026-10-15-client-images-release/README.md)。正式發布/alias 尚待讀回，不把本機完成當已上線。
+- 原 root `10-02-charmvilla-demo2` 仍在舊主線2232e74並保留WIP，不從它直接再次發布。已確認照片只有五個新檔案納入，不納入 rejected outputs。
+- Shopify後台本輪無寫入；後續團圓金色庫存待使用者提供實際數量，粉紅/藍隱藏選單為獨立新任務。
+
 ## 本輪交付（2026-10-15）
 
 - 使用者明確授權「commit、push everything」及merge同事branch，全部已完成：`d18197e`全部WIP、`7809393`整合已部署Logo、`6ac2081`合併`origin/checkout-tests-wip`（kuankuan16，tip`abdc4c4`）。不是squash/cherry-pick，分支tip確為main祖先；其餘舊設計分支未批次合併。

@@ -10,7 +10,7 @@ Updated: 2026-10-15
 ## Steps and evidence
 
 1. 已完成：955e603 基礎上的 curated patch、Node24 check、Shopify12、雙語1440/390、照片/政策/選單與 Logo QA，證據 docs/qa/2026-10-15-client-images-release/。這些是合併最新主線與再次增加間距之前的證據。
-2. 進行中：最新 origin/main 已到 9beeb11，需保留其 SEO、購物車、三盒 US$60、配送與庫存成果；合併後重新驗證受影響範圍。
+2. 已完成：整合最新 9beeb11，保留 SEO、購物車、三盒 US$60、配送與庫存；Node24 check、Shopify12、API37、E2E16、雙語桌手機 QA 通過。
 3. 待完成：發布 main，讀回 Vercel alias/來源 SHA，正式圖片/文案/雙語桌手機 QA，確認公開 Shopify API 未被本次發佈改寫。
 
 ## FIFO queue

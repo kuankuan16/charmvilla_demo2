@@ -1,0 +1,50 @@
+const fs = await import("node:fs/promises");
+const dir = "/Users/kuan/Documents/Codex/charmvilla-release-20261015/docs/qa/2026-10-15-client-images-release";
+const config = JSON.parse(await fs.readFile(`${dir}/browser-phase.json`, "utf8"));
+const page = (await taskSpace(44)).page("p1");
+await page.events();
+const results = [];
+for (const lang of ["en", "zh"]) for (const width of [1440, 390]) {
+  const prefix = lang === "zh" ? "/zh" : "";
+  await page.cdp("Emulation.setDeviceMetricsOverride", {width, height: width === 390 ? 844 : 900, deviceScaleFactor: 1, mobile: width === 390});
+  await page.goto(`${config.base}${prefix}/products/christmas-gift-box`);
+  const options = await page.evaluate(() => [...document.querySelectorAll(".product-split-options select")].map(s => ({id: s.id, values: [...s.options].map(o => o.value).filter(Boolean)})));
+  if (options.length !== 2 || options[0].values.length !== 3 || options[1].values.length !== 2) throw new Error(JSON.stringify(options));
+  const teaSelector = `loc=css:#${options[0].id}`, lidSelector = `loc=css:#${options[1].id}`;
+  await page.selectOption(teaSelector, options[0].values[0]);
+  const partialDisabled = await page.evaluate(() => document.querySelector(".product-buy").disabled);
+  const combinations = [];
+  for (const tea of options[0].values) for (const lid of options[1].values) {
+    await page.selectOption(teaSelector, tea);
+    await page.selectOption(lidSelector, lid);
+    await page.waitForFunction(() => {const i=document.querySelector('.product-slide[data-active="true"] img'); return i?.complete && i.naturalWidth > 0;});
+    combinations.push(await page.evaluate(() => ({selected: [...document.querySelectorAll(".product-split-options select")].map(s=>s.value),image: document.querySelector('.product-slide[data-active="true"] img').currentSrc,disabled: document.querySelector(".product-buy").disabled})));
+  }
+  await page.focus(teaSelector); await page.keyboard.press("Tab");
+  const keyboardLid = await page.evaluate(() => document.activeElement?.id);
+  const viewport = await page.evaluate(() => ({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth}));
+  if (!partialDisabled || combinations.some(c=>!c.disabled) || keyboardLid !== options[1].id || viewport.width !== width || viewport.overflow) throw new Error("Option/availability/keyboard/viewport regression");
+  await page.focus(teaSelector);
+  const shot = await page.cdp("Page.captureScreenshot",{format:"png",captureBeyondViewport:false});
+  await fs.writeFile(`${dir}/${config.phase}-${lang}-${width}-options.png`,Buffer.from(shot.data,"base64"));
+  await page.goto(`${config.base}${prefix}/policy`);
+  await page.click("loc=css:#preorders > summary");
+  await page.focus('loc=css:#preorders a[href="#returns-tea"]'); await page.keyboard.press("Enter");
+  await page.waitForFunction(() => location.hash === "#returns-tea" && document.querySelector("#returns-tea").open);
+  await page.reload();
+  await page.waitForFunction(() => document.querySelector("#returns-tea").open);
+  const policy = await page.evaluate(() => ({hash:location.hash,open:document.querySelector("#returns-tea").open,overflow:document.documentElement.scrollWidth>innerWidth}));
+  const events = await page.events();
+  const errors = events.filter(e => e.method === "Runtime.exceptionThrown" || (e.method === "Runtime.consoleAPICalled" && e.params.type === "error") || (e.method === "Network.responseReceived" && e.params.response.status >= 400) || (e.method === "Network.loadingFailed" && !e.params.canceled));
+  if (policy.overflow || errors.length) throw new Error(JSON.stringify({policy,errors}));
+  results.push({lang,width,options,partialDisabled,combinations,keyboardLid,viewport,policy,errors});
+  console.log({lang,width,combinations:combinations.length,policyLink:"pass",errors:errors.length});
+}
+await page.cdp("Emulation.setEmulatedMedia", {features:[{name:"prefers-reduced-motion",value:"reduce"}]});
+await page.reload();
+const reduced = await page.evaluate(() => ({enabled:matchMedia("(prefers-reduced-motion: reduce)").matches,policyOpen:document.querySelector("#returns-tea").open}));
+await fs.writeFile(`${dir}/${config.phase}-ui.json`,JSON.stringify({mode:"Shopify snapshot; not live shipping validation",results,reduced},null,2));
+await page.cdp("Emulation.setEmulatedMedia",{features:[]});
+await page.cdp("Emulation.clearDeviceMetricsOverride");
+await page.goto(`${config.base}/zh/products/snowflake-gift-box`);
+await page.click('loc=css:button[aria-label="查看開盒・2 入"]');

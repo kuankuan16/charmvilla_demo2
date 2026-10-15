@@ -1,0 +1,65 @@
+CHARM VILLA｜待辦確認與英文定稿
+回覆 Tenten · 2026 年 10 月 14 日
+
+
+Tenten 團隊您好：
+以下為待辦頁「等客戶回覆」及「客戶回覆：產品規格與預購寄送確認」未勾選項目的確認回覆。
+
+
+聖誕禮盒選項與刺繡
+* 前台拆成 “Choose your tea” 與 “Choose your lid” 兩個選單。
+* 三種茶款：綜合、玫瑰烏龍、東方美人；兩種上蓋：Candy Cane、Stocking，共 6 種組合。
+* Candy Cane＝橘色盒子；Stocking＝藍綠色盒子。前台上蓋選項只顯示圖案名稱。
+* 確認為手工刺繡，保留「手工刺繡／hand embroidery」。
+* 陶瓷文案依先前確認保留，無須再次追問文件。
+
+
+已確認英文定稿
+以下英文已逐項確認，請使用這些版本。
+
+
+1. 預購扣款
+Pre-orders are charged in full when you place your order.
+
+
+2. 預購出貨
+Pre-orders are expected to ship by the end of November 2026.
+
+
+3. 取消與退款
+You may cancel a pre-order for a full refund before it ships. Please email us at us@charmvilla.com with your order number.
+
+
+4. 出貨後政策
+Once your order has shipped, our Teas & Consumable Items return policy applies.
+請將政策名稱連結至相應退換貨政策。
+
+
+5. 商品頁預購簡短說明
+Pre-orders are charged in full when you place your order. You may cancel for a full refund before your order ships. Once shipped, our tea return policy applies.
+
+
+6. 聖誕商品頁截止日
+For delivery before Christmas, please order by December 15, 2026 (contiguous 48 states). This deadline does not apply to Alaska or Hawaii.
+
+
+7. 政策頁聖誕截止日
+For delivery before Christmas to the contiguous 48 states, please order by December 15, 2026. For orders shipping to Alaska or Hawaii, please contact us to confirm delivery timing; this deadline does not apply.
+
+
+8. 阿拉斯加與夏威夷
+We ship to Alaska and Hawaii. Shipping charges are calculated at checkout. Orders shipping to these states are not eligible for complimentary shipping.
+
+
+9. 軍郵與外交地址
+At launch, we do not ship to APO/FPO/DPO addresses.
+
+
+10. 運費段落整合說明
+Shipping charges for Alaska and Hawaii are calculated at checkout. Orders shipping to these states are not eligible for complimentary shipping. At launch, we do not ship to APO/FPO/DPO addresses.
+
+
+Shopify 設定與測試
+* 請將阿拉斯加、夏威夷設為獨立運送區域，使用承運商即時計價，不適用 US$199 免運。
+* 請輸入正確商品重量及寄件紙箱尺寸，測試單盒、多盒及超過 US$199 的訂單，確認運費正確。
+* 美國本土 48 州維持訂單滿 US$199（含）免運。

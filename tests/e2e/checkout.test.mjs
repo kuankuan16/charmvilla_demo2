@@ -214,7 +214,18 @@ for (const lang of ["en", "zh"]) test(`[${lang}] unpublished Christmas products 
     await page.goto(`${BASE}${prefix(lang)}/products/${slug}`);
     await page.waitForFunction((txt) => document.querySelector("button.product-buy")?.textContent === txt, T[lang].soldOut);
     assert.equal(await page.locator("button.product-buy").isDisabled(), true);
-    assert.equal(await page.locator('.product-choices input').count(), fixture.products[slug].options.length);
+    if (slug === "christmas-gift-box") {
+      const tea = page.locator(`#tea-${slug}`), lid = page.locator(`#lid-${slug}`);
+      assert.equal(await tea.locator('option').count(), 4); // placeholder + three teas
+      assert.equal(await lid.locator('option').count(), 3); // placeholder + two lids
+      for (let teaIndex = 1; teaIndex <= 3; teaIndex++) for (let lidIndex = 1; lidIndex <= 2; lidIndex++) {
+        await tea.selectOption({ index: teaIndex });
+        await lid.selectOption({ index: lidIndex });
+        assert.equal(await page.locator('button.product-buy').isDisabled(), true, "a complete choice cannot override Shopify publication");
+      }
+    } else {
+      assert.equal(await page.locator('.product-choices input').count(), fixture.products[slug].options.length);
+    }
     assert.equal(await page.locator('.product-mix').count(), 0);
     if (slug === SNOW) {
       assert.ok((await page.locator('body').innerText()).includes('$60.00'));
