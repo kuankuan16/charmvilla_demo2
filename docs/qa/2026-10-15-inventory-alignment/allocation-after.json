@@ -1,0 +1,2942 @@
+{
+  "admin": {
+    "shop": {
+      "myshopifyDomain": "zcs0bg-10.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "nodes": [
+      {
+        "id": "gid://shopify/Product/15402073194860",
+        "handle": "joyful-reunion",
+        "title": "Joyful Reunion",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Joyful Reunion is a CHARM VILLA gift set containing 15 Goldfish Tea Bags: three each of five tea varieties. Every packaging option contains the same assortment, offering a selection to enjoy together or give as a gift.</p><h3>Story</h3><p>Little goldfish carrying different teas gather in one paper box, a symbol of reunion and the joy of togetherness.</p><h3>What is included</h3><ul>\n<li>3 Goldfish Tea Bags — Rose Oolong Tea</li>\n<li>3 Goldfish Tea Bags — Oriental Beauty Tea (White Tip Oolong)</li>\n<li>3 Goldfish Tea Bags — Ruby Black Tea (Red Jade / Ruby No.18)</li>\n<li>3 Goldfish Tea Bags — Jin Xuan Oolong Tea (Golden Lily)</li>\n<li>3 Goldfish Tea Bags — Rose &amp; Honey-Scented Black Tea</li>\n</ul><h3>Packaging</h3><ul>\n<li>Gold option: orange paper box with a hand-embroidered gold lid.</li>\n<li>Pink option: Paulownia wood box with a hand-embroidered pink lid.</li>\n<li>Blue option: blue paper box with a hand-embroidered yellow lid.</li>\n<li>All three options contain the same 15-bag tea assortment.</li>\n</ul><p>The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation.</p><h3>How to brew</h3><p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Color",
+            "values": [
+              "Gold",
+              "Pink",
+              "Blue"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/67632284598636",
+              "title": "Gold",
+              "sku": "HYTYG",
+              "price": "170.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Color",
+                  "value": "Gold"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616076521836",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 275,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632284631404",
+              "title": "Pink",
+              "sku": "HYTYP",
+              "price": "170.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Color",
+                  "value": "Pink"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616076554604",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 275,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632284664172",
+              "title": "Blue",
+              "sku": "HYTYY",
+              "price": "170.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Color",
+                  "value": "Blue"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616076587372",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 275,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 3
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "shopify",
+              "key": "color-pattern",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287778898284\",\"gid://shopify/Metaobject/612186227052\",\"gid://shopify/Metaobject/612186259820\"]",
+              "compareDigest": "e5a48d47f3aaf1fc150674c474a0a7f831187a5e19032281a431a4024d6acdac"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"團圓\",\"description\":\"CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包，適合與親友共享或贈禮。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 15 入\"},{\"label\":\"盒型與材質\",\"value\":\"金色款：橘色紙盒搭配金色手工刺繡盒蓋；粉紅色款：桐木盒搭配粉紅色手工刺繡盒蓋；藍色款：藍色紙盒搭配黃色手工刺繡盒蓋。三款皆內含相同的 15 包茶款組合。\"},{\"label\":\"保存期限\",\"value\":\"1 年\"},{\"label\":\"盒內茶款\",\"value\":\"玫瑰烏龍茶 3 入東方美人茶 3 入紅玉紅茶 3 入金萱烏龍茶 3 入玫瑰蜜香紅茶 3 入\",\"items\":[\"玫瑰烏龍茶 3 入\",\"東方美人茶 3 入\",\"紅玉紅茶 3 入\",\"金萱烏龍茶 3 入\",\"玫瑰蜜香紅茶 3 入\"]},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"不同茶款的小金魚在一方禮盒內團聚，象徵著團圓美好之意。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"選擇包裝\"}",
+              "compareDigest": "7997919a6f54dee0d08d9bcce88c5c6fc287fc7126a507892e770145cdd3946e"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":100,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "81e1b63126a1605fa9e3c66eb90c9690246ee96ee0aa6971e29e9067143fb208"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15081862136172",
+        "handle": "abundance-prosperity-lunar-new-year-gift",
+        "title": "Abundance & Prosperity",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Abundance &amp; Prosperity is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box with a hand-embroidered fabric lid. Four tea varieties are included in every box, making it a thoughtful assortment for shared tea moments and festive gifting.</p>\n<h3>What is included</h3>\n<ul>\n<li>9 Goldfish Tea Bags — Rose Oolong Tea</li>\n<li>3 Goldfish Tea Bags — Oriental Beauty Tea (White Tip Oolong)</li>\n<li>3 Goldfish Tea Bags — Ruby Black Tea (Red Jade / Ruby No.18)</li>\n<li>3 Goldfish Tea Bags — Jin Xuan Oolong Tea (Golden Lily)</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Paulownia wood box body with hand-embroidered fabric lid.</li>\n<li>Box dimensions: L 11.0 in × W 7.5 in × H 3.5 in (length × width × height).</li>\n<li>The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53770912629100",
+              "title": "Default Title",
+              "sku": "HYAP",
+              "price": "220.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Title",
+                  "value": "Default Title"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/54968279433580",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "The architecture of the box speaks of traditional luxury, featuring a body carved from superior Paulownia wood—esteemed for its light weight and preservative qualities. The presentation is finished with a lid of exquisite, hand-woven fabric, offering a tactile elegance that signifies a treasure within.",
+              "compareDigest": "0c1441e6451920b1d897ce967fee327a3e2ca31aa7d5adc9688779e0bf490d98"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": "The Imperial Heritage Assortment",
+              "compareDigest": "2c406bead771c54e31e76a958ae1a699b1bb1bb83c729b871ff397b401ffe46c"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "This collection is a grand testament to the profound cultural symbolism of prosperity and perfect balance. Designed as the ultimate ceremonial gift, it encapsulates four master-blended teas, representing a complete journey through Taiwan's most prized tea varieties. It is a benchmark of generosity and exceptional taste.",
+              "compareDigest": "b8a99449af075634482d1f1ecc77aaafe60dc144c5e8f699afcd53b1155b1a16"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Abundance & Harmony",
+              "compareDigest": "38e745a0603b34a6383852c596ea2c4ad8377ad3d60c59878a986df9536b226d"
+            },
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 18 Goldfish Tea Bags",
+              "compareDigest": "aba20ec68ab1cabd673b56ed5566520b61f18c9cc515407e6fba3a824572ad67"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "400g",
+              "compareDigest": "bb6cc16f26db2b931bbbfd8ba19fb5502b261d3cdcbe35cce8649acdcb8ddba6"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "Paulownia wood box body with woven fabric lid",
+              "compareDigest": "7f5f66ec04ac72869c292ca9072e5487edcd1e7c851333455325a6c842fc2f67"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 11.0 in × W 7.5 in × H 3.5 in",
+              "compareDigest": "1f772bc71a747a81fa52974dd8cd2fb7e6658ee785c1676ab479cfdcc76a7ee4"
+            },
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "18",
+              "compareDigest": "0be1d691ae9763d9d8c5d31ad8da73d1a15f0f34ae18c1d1da5b9acff7d9f509"
+            },
+            {
+              "namespace": "custom",
+              "key": "no_tea_var_variants",
+              "type": "list.single_line_text_field",
+              "value": "[\"Artisanal Rose Oolong\",\"Red Jade (Ruby No.18) Black Tea\",\"Golden Lily (Jin Xuan) Oolong\",\"Oriental Beauty (White Tip Oolong)\"]",
+              "compareDigest": "4a34049569e13e4f2efb8e655bc6127fdb0ee3410f8ee2dd3447a8ca536b7252"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"年年有魚\",\"description\":\"CHARM VILLA「年年有魚」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。每盒集結四款茶，適合共享品茶時光，也為節慶送禮備妥一份心意。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box body with woven fabric lid\"}},{\"label\":\"保存期限\",\"value\":\"1 年\"},{\"label\":\"盒內茶款\",\"value\":\"玫瑰烏龍茶 9 入東方美人茶 3 入紅玉紅茶 3 入金萱烏龍茶 3 入\",\"items\":[\"玫瑰烏龍茶 9 入\",\"東方美人茶 3 入\",\"紅玉紅茶 3 入\",\"金萱烏龍茶 3 入\"]},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"\"}",
+              "compareDigest": "9e55a299fdda29cff37d6c706cdf566d104293b163d2c9fb607ae46e64f3bead"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":20,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "a3ef7b1212ca8aaf063114f368ef349deea35bbf9893c1f0d9c4612542dae878"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15081861874028",
+        "handle": "prosperity-in-bloom-lunar-new-year-gift",
+        "title": "Prosperity in Bloom",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Prosperity in Bloom is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box with a hand-embroidered fabric lid. Its fixed four-tea assortment brings together Rose Oolong, Ruby Black, Jin Xuan Oolong, and Oriental Beauty for a gift to share at celebrations and gatherings.</p>\n<h3>What is included</h3>\n<ul>\n<li>9 Goldfish Tea Bags — Rose Oolong Tea</li>\n<li>3 Goldfish Tea Bags — Oriental Beauty Tea (White Tip Oolong)</li>\n<li>3 Goldfish Tea Bags — Ruby Black Tea (Red Jade / Ruby No.18)</li>\n<li>3 Goldfish Tea Bags — Jin Xuan Oolong Tea (Golden Lily)</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Paulownia wood box body with hand-embroidered fabric lid.</li>\n<li>Box dimensions: L 11.0 in × W 7.5 in × H 3.5 in (length × width × height).</li>\n<li>The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53583844082028",
+              "title": "Default Title",
+              "sku": "HYBP",
+              "price": "220.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Title",
+                  "value": "Default Title"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/54779880505708",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "no_tea_var_variants",
+              "type": "list.single_line_text_field",
+              "value": "[\"Artisanal Rose Oolong\",\"Red Jade (Ruby No.18) Black Tea\",\"Golden Lily (Jin Xuan) Oolong\",\"Oriental Beauty (White Tip Oolong)\"]",
+              "compareDigest": "4a34049569e13e4f2efb8e655bc6127fdb0ee3410f8ee2dd3447a8ca536b7252"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "The box is meticulously crafted from premium Paulownia wood, ensuring a stable yet light structure of understated luxury. Its most unique feature is the silk outer lid, painstakingly hand-dyed by master artisans. The gradient color on each piece is an objet d'art, an unparalleled masterpiece of artistic light and shadow, far surpassing mass-produced alternatives.",
+              "compareDigest": "ddfaffe4c4b57febcd587760b0d6192de304a8089e6952d5a57ff4a441837ecd"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": " The Golden Dynasty Treasury",
+              "compareDigest": "702acbc87fa95bbcf193d95795d15672398a1c3fc5ab23d508686d86ef644ba4"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "A celebration of auspiciousness and enduring affluence, this collection is designed to bestow blessings of success and harmony upon the recipient. Its generous 18-piece assortment and opulent presentation make it the quintessential offering for the most significant occasions and esteemed relationships.",
+              "compareDigest": "9f5c918e1628d8e2be35b8281e8adc867dfff08fda40f0b44bc93dfacf04624a"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Blooms of Prosperity",
+              "compareDigest": "60b03f2097ee902013100f749c9098fe81bfe284c4972e14e70fe5cf04d34cca"
+            },
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 18 Goldfish Tea Bags",
+              "compareDigest": "aba20ec68ab1cabd673b56ed5566520b61f18c9cc515407e6fba3a824572ad67"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "400g",
+              "compareDigest": "bb6cc16f26db2b931bbbfd8ba19fb5502b261d3cdcbe35cce8649acdcb8ddba6"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "Paulownia wood box body with woven fabric lid",
+              "compareDigest": "7f5f66ec04ac72869c292ca9072e5487edcd1e7c851333455325a6c842fc2f67"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 11.0 in × W 7.5 in × H 3.5 in",
+              "compareDigest": "1f772bc71a747a81fa52974dd8cd2fb7e6658ee785c1676ab479cfdcc76a7ee4"
+            },
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "18",
+              "compareDigest": "0be1d691ae9763d9d8c5d31ad8da73d1a15f0f34ae18c1d1da5b9acff7d9f509"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"花開富貴\",\"description\":\"CHARM VILLA「花開富貴」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。固定的四款茶組合匯集玫瑰烏龍茶、紅玉紅茶、金萱烏龍茶與東方美人茶，適合在慶祝與相聚時分享。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box body with woven fabric lid\"}},{\"label\":\"保存期限\",\"value\":\"1 年\"},{\"label\":\"盒內茶款\",\"value\":\"玫瑰烏龍茶 9 入東方美人茶 3 入紅玉紅茶 3 入金萱烏龍茶 3 入\",\"items\":[\"玫瑰烏龍茶 9 入\",\"東方美人茶 3 入\",\"紅玉紅茶 3 入\",\"金萱烏龍茶 3 入\"]},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"\"}",
+              "compareDigest": "20783dba15d6ee27c83fa3e853665bff9a6d26eb725baa2b86710577fe7e55ee"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":20,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "a3ef7b1212ca8aaf063114f368ef349deea35bbf9893c1f0d9c4612542dae878"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15136264946028",
+        "handle": "kyoto-artisanal-reserve-6-ct",
+        "title": "Kyoto Artisanal Reserve",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Kyoto Artisanal Reserve is a CHARM VILLA gift set containing six Goldfish Tea Bags of your selected tea. A compact high-density paper box with an attached lid holds a single-tea selection for everyday tea moments or a considered gift.</p><h3>Choose your tea</h3><ul>\n<li>Rose Oolong Tea: 6 Goldfish Tea Bags of this tea per box.</li>\n<li>Rose &amp; Honey-Scented Black Tea: 6 Goldfish Tea Bags of this tea per box.</li>\n<li>Ruby Black Tea (Red Jade / Ruby No.18): 6 Goldfish Tea Bags of this tea per box.</li>\n<li>Oriental Beauty Tea (White Tip Oolong): 6 Goldfish Tea Bags of this tea per box.</li>\n</ul><h3>Packaging</h3><ul>\n<li>High-density paper box with an attached lid and closure seal.</li>\n<li>Box dimensions: L 8.1 in × W 7.3 in × H 2.7 in (length × width × height).</li>\n</ul><h3>How to brew</h3><p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "Rose Oolong Tea",
+              "Rose & Honey-Scented Black Tea",
+              "Ruby Black Tea",
+              "Oriental Beauty Tea"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53771465687404",
+              "title": "Rose Oolong Tea",
+              "sku": "HYKRRO",
+              "price": "60.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose Oolong Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/54968830034284",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 99,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 18
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53771465720172",
+              "title": "Rose & Honey-Scented Black Tea",
+              "sku": "HYKRRH",
+              "price": "60.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose & Honey-Scented Black Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/54968830067052",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 99,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 20
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53903381496172",
+              "title": "Ruby Black Tea",
+              "sku": "HYKRRB",
+              "price": "60.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Ruby Black Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/55107232366956",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 99,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 20
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433663852",
+              "title": "Oriental Beauty Tea",
+              "sku": "HYKROB",
+              "price": "60.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Oriental Beauty Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264679276",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 8.1 in × W 7.3 in × H 2.7 in",
+              "compareDigest": "1def75b26d841b03da460c4c5e14a7478334e350929ab7c289b271f5b22dd23e"
+            },
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "6",
+              "compareDigest": "b748b4ebf53795686930b718fd46066df65694e910c9e647cd56c2b081b95732"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "High-Density Paper Box",
+              "compareDigest": "b96819b1229f2a1e4d81671b031905dbe5861f17e37c19c73c447c50abc391eb"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "99 g",
+              "compareDigest": "62e9dc4816c01acd69ad0e1947ae172ada32aee5f322aaf8e877df25aca7aa45"
+            },
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 6 Goldfish Tea Bags",
+              "compareDigest": "6d1d456a6a8491b5dfdff6b88dd28904841490095158b1db0cd8d6d6fb9c1654"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "The bespoke presentation is a lesson in understated elegance. Though housed in a refined, rigid-form caddy, the focus remains on the priceless contents.",
+              "compareDigest": "ee252ab0da840858c8e7e2e880a66374cfacb7f289c26a4b88d7313af3f3631c"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": "The Gilded Caddy",
+              "compareDigest": "b1c0691bb0b844d0da977981332dbbb59482551a02dcbe8586eeb32af5843622"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "An ode to minimalist refinement and focused excellence. This reserve is crafted for the discerning connoisseur who values singular perfection over variety. It embodies quiet luxury, where the purity of a single, extraordinary blend is showcased as a rare jewel.",
+              "compareDigest": "c1b3290a4e9a70b2e2e03635a8b446a4751f8815764b51422ae09a2f708b85f2"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Six Moments of Quiet Luxury",
+              "compareDigest": "342902728945ded4c430a448ff27bf83b14a51e24332950ec3ac07180061dda9"
+            },
+            {
+              "namespace": "shopify",
+              "key": "dietary-preferences",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/273812685164\",\"gid://shopify/Metaobject/287787778412\",\"gid://shopify/Metaobject/289148338540\"]",
+              "compareDigest": "0e38c1aaccf3bf4f29de68d7973850ee1b43dd7fd14b4a8ab3dfe0df524ad040"
+            },
+            {
+              "namespace": "shopify",
+              "key": "tea-input-type",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287777456492\"]",
+              "compareDigest": "8f2d92fe1d4cb59ad110be6bdd2c033fe38789528d7f77cf38d6f36c56e079dc"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"京都版\",\"description\":\"CHARM VILLA「京都版」禮盒內含 6 包所選茶款的金魚茶包。精巧的高密度紙盒搭配連體盒蓋，盛裝單一茶款，適合日常品茶或作為用心挑選的禮物。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 6 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"6\"}},{\"label\":\"盒型與材質\",\"value\":\"高密度紙盒搭配連體盒蓋與封口封條\",\"source\":{\"key\":\"packaging_material\",\"value\":\"High-Density Paper Box\"}},{\"label\":\"保存期限\",\"value\":\"玫瑰烏龍茶、玫瑰蜜香紅茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"20.5 × 18.5 × 6.9 cm（約 8.1 × 7.3 × 2.7 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 8.1 in × W 7.3 in × H 2.7 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 99 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"99 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}",
+              "compareDigest": "fe09849d8a4b8505c65b404527cda2be839d7d6a59ff0fc0abdd010997a20ac0"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":100,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "81e1b63126a1605fa9e3c66eb90c9690246ee96ee0aa6971e29e9067143fb208"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15148513263980",
+        "handle": "spring-awakening-12-ct",
+        "title": "Spring Awakening",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Spring Awakening is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Its spring-dawn inspiration brings a sense of renewal to a tea moment or a thoughtful gift. Choose your tea and a Blue or Pink lid.</p>\n<h3>Story</h3>\n<p>As dawn breaks, morning sunlight washes the sky into a soft, translucent veil. Yellow tits sing their morning song amid the golden blossoms of a trumpet tree, weaving a spring scene that invites you to linger.</p>\n<h3>Choose your tea</h3>\n<ul>\n<li>First Prize Rose Oolong Tea: 12 Goldfish Tea Bags of this tea per box.</li>\n<li>Third Prize Oriental Beauty Tea: 12 Goldfish Tea Bags of this tea per box.</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery.</li>\n<li>Lid options: Blue or Pink.</li>\n<li>Box dimensions: L 11.3 in × W 4.6 in × H 3.5 in (length × width × height).</li>\n<li>The tie-dye process creates variations in color; each lid may differ from the product images.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>\n<h3>Product Notice</h3>\n<ul>\n<li>Prices are subject to change and will be adjusted based on the official pricing from the tea competitions (held twice a year).</li>\n<li>Actual tie-dyed lid colors may differ from the product images.</li>\n</ul>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "First Prize Rose Oolong Tea",
+              "Third Prize Oriental Beauty Tea"
+            ]
+          },
+          {
+            "name": "Color",
+            "values": [
+              "Blue",
+              "Pink"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53903379136876",
+              "title": "First Prize Rose Oolong Tea / Blue",
+              "sku": "HYSABRO",
+              "price": "230.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "First Prize Rose Oolong Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Blue"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/55107230204268",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 350,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632292790636",
+              "title": "First Prize Rose Oolong Tea / Pink",
+              "sku": "HYSAPRO",
+              "price": "230.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "First Prize Rose Oolong Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Pink"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616084713836",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 350,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53903379169644",
+              "title": "Third Prize Oriental Beauty Tea / Blue",
+              "sku": "HYSABOB",
+              "price": "260.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Third Prize Oriental Beauty Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Blue"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/55107230237036",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 350,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632292823404",
+              "title": "Third Prize Oriental Beauty Tea / Pink",
+              "sku": "HYSAPOB",
+              "price": "260.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Third Prize Oriental Beauty Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Pink"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616084746604",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 350,
+                    "unit": "GRAMS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "12",
+              "compareDigest": "b944a0a3b20cf5927e594ff306d256d16cd5b0ba3e27b3285f40d7ef5e19695b"
+            },
+            {
+              "namespace": "shopify",
+              "key": "tea-input-type",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287777456492\"]",
+              "compareDigest": "8f2d92fe1d4cb59ad110be6bdd2c033fe38789528d7f77cf38d6f36c56e079dc"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "The outer box is exquisitely made from superior Paulownia wood, complemented by a textured fabric lid. The subtle, luxurious texture and delicate feel of the fabric underscore its premium quality. Its classic dimensions make it perfect for personal collection or sophisticated gifting, highlighting the giver's impeccable taste.",
+              "compareDigest": "97a97ac465eb139dc5108a2d360a8f927b035f220dbed9c46555056b2037f8f2"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": "The Connoisseur",
+              "compareDigest": "ee297d541f533df5a95258377cfc30a9515be50861b617a9cd13fc78bf252d48"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "A tribute to the magnificent spectacle of a spring dawn. As the first rays of morning sun drape the horizon in a shimmering golden veil, the Yellow Tit sings from the branches of the golden trumpet tree. This collection infuses the richness and vitality of nature’s revival into your tea ceremony, inviting you to commence a top-tier, mellow, rich, and gracefully unhurried tasting experience.",
+              "compareDigest": "f1dcbfbac2635fad62f5b2794c1088c6985f8038847669ded574c4b15ade911c"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Spring Awakening",
+              "compareDigest": "2a242aa54c04b3c7da76eeea57d374f3a2565412cce425c50dfec88b02c2a4ac"
+            },
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 12 Goldfish Tea Bags",
+              "compareDigest": "9c62a18f0f4372225339294ce0f6a44d654def9cccc5e71d789e35aeb5262637"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "350 g",
+              "compareDigest": "5b07b890bcb9d4d2473958c35e2a53360b67db44ea7447ed498ca703677df4f7"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "Paulownia wood box with a fabric-covered lid",
+              "compareDigest": "b8f2ffc893d1f9251b2462b7b4eaab74bb3466dcdacd2572da989f3de77b7976"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 11.3 in × W 4.6 in × H 3.5 in",
+              "compareDigest": "c1a8ebd8de132102573d0dc9535e582a232fb7b8c15b41c7e5eb46e1b50a3e26"
+            },
+            {
+              "namespace": "shopify",
+              "key": "color-pattern",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/612186259820\",\"gid://shopify/Metaobject/612186227052\"]",
+              "compareDigest": "c97c188e89ffc9ea3230eca5fd89075c6389feba2d3ea796770f7e52dab70dfc"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"春曉\",\"description\":\"CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 12 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"12\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配紮染布面盒蓋，飾以手工刺繡\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box with a fabric-covered lid\"}},{\"label\":\"保存期限\",\"value\":\"頭等獎玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28.6 × 11.7 × 9 cm（約 11.3 × 4.6 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.3 in × W 4.6 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 350 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"350 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"頭等獎玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"參等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款與盒蓋顏色\"}",
+              "compareDigest": "6309953fb5bd3506d1a6690fb27c9f7688855696334119694d30b042f7f6d3aa"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "9996e0c4bd5836bf6dccb8ec2b3b9f6483589edb1cd8c79c599b11eea08b9b4c"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15107964273004",
+        "handle": "snowy-twilight",
+        "title": "Snowy Twilight",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Inspired by the meeting of cherry blossoms and snow, the collection offers a quiet tea moment for yourself or someone special.</p>\n<h3>Story</h3>\n<p>As the last days of winter give way to early spring, we picture cherry blossoms opening across the landscape.</p>\n<p>Where blossom meets snow, Snowy Twilight captures the quiet grace of that fleeting season. May it bring you the fresh, gentle beauty of spring’s first light.</p>\n<h3>Choose your tea</h3>\n<ul>\n<li>First Prize Rose Oolong Tea: 12 Goldfish Tea Bags of this tea per box.</li>\n<li>Third Prize Oriental Beauty Tea: 12 Goldfish Tea Bags of this tea per box.</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery.</li>\n<li>Box dimensions: L 11.3 in × W 4.6 in × H 3.5 in (length × width × height).</li>\n<li>The tie-dye process creates variations in color; each lid may differ from the product images.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>\n<h3>Product Notice</h3>\n<ul>\n<li>Prices are subject to change and will be adjusted based on the official pricing from the tea competitions (held twice a year).</li>\n<li>Actual tie-dyed lid colors may differ from the product images.</li>\n</ul>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "First Prize Rose Oolong Tea",
+              "Third Prize Oriental Beauty Tea"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53771531583852",
+              "title": "First Prize Rose Oolong Tea",
+              "sku": "HYSTRO",
+              "price": "230.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "First Prize Rose Oolong Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/54968893440364",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53771531616620",
+              "title": "Third Prize Oriental Beauty Tea",
+              "sku": "HYSTOB",
+              "price": "260.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Third Prize Oriental Beauty Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/54968893473132",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 12 Goldfish Tea Bags",
+              "compareDigest": "9c62a18f0f4372225339294ce0f6a44d654def9cccc5e71d789e35aeb5262637"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "350 g",
+              "compareDigest": "5b07b890bcb9d4d2473958c35e2a53360b67db44ea7447ed498ca703677df4f7"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "Paulownia wood box with a fabric-covered lid",
+              "compareDigest": "b8f2ffc893d1f9251b2462b7b4eaab74bb3466dcdacd2572da989f3de77b7976"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 11.3 in × W 4.6 in × H 3.5 in",
+              "compareDigest": "c1a8ebd8de132102573d0dc9535e582a232fb7b8c15b41c7e5eb46e1b50a3e26"
+            },
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "12",
+              "compareDigest": "b944a0a3b20cf5927e594ff306d256d16cd5b0ba3e27b3285f40d7ef5e19695b"
+            },
+            {
+              "namespace": "shopify",
+              "key": "color-pattern",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287778832748\",\"gid://shopify/Metaobject/287778865516\",\"gid://shopify/Metaobject/287778898284\"]",
+              "compareDigest": "b55edcfc556b75fb2548788d4abc04a61842f8e6142e1006b87004f19eb99818"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "Artisan Craftsmanship & Luxurious Materials\nThe box is meticulously crafted from premium Paulownia wood, ensuring a stable yet light structure of understated luxury. Its most unique feature is the silk outer lid, painstakingly hand-dyed by master artisans. The gradient color on each piece is an objet d'art, an unparalleled masterpiece of artistic light and shadow, far surpassing mass-produced alternatives.",
+              "compareDigest": "6f677de6809ccdaa1b291a310ce6499c885022da4cf536f49b2ac04a344aa9ec"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": "The Heritage ",
+              "compareDigest": "51452ab90abe9e5bf054b0bc8323bf9d808a91129a8760268d293403025c384f"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "This exquisite box captures the ephemeral beauty of the transition from late winter to early spring—a precious moment of merging cherry blossoms and snow, where nature is poised to awaken. Reflecting the tranquility and elegance of the first morning dew, we have immortalized this transient beauty into a serene tea ritual. This is a highly limited, collectible edition.",
+              "compareDigest": "863f676e425214750ab5850208907200a280ae72358cb7a5da16a636313432c7"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Snowy Twilight",
+              "compareDigest": "dbde6aeca82777c4bcb48ef30dd23fb1ee2fc11fa28db94d7816f904673f4b6f"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"暮雪\",\"description\":\"CHARM VILLA「暮雪」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。靈感來自櫻花與白雪相遇的景緻，為自己或珍視的人留下一段靜謐的品茶時光。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 12 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"12\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配紮染布面盒蓋，飾以手工刺繡\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box with a fabric-covered lid\"}},{\"label\":\"保存期限\",\"value\":\"頭等獎玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28.6 × 11.7 × 9 cm（約 11.3 × 4.6 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.3 in × W 4.6 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 350 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"350 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"時至暮冬，即將迎來初春日子，總會令人聯想起櫻花遍土盛放的景色。在暮冬曉春之際，櫻雪互映的模樣，願能為您帶來初春新露時分清雅恬淡的美好。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"頭等獎玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"參等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}",
+              "compareDigest": "0fdbb72e76064cd8880f46e813868fc1dbcfa0abc80ba0e0d50777702138aa98"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "9996e0c4bd5836bf6dccb8ec2b3b9f6483589edb1cd8c79c599b11eea08b9b4c"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15151974809964",
+        "handle": "royal-orchid-gold",
+        "title": "Royal Orchid",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a hand-embroidered fabric lid. The orchid-inspired collection offers a gift for celebrations and meaningful occasions. Choose your tea and a Gold or Pink lid.</p>\n<h3>Choose your tea</h3>\n<ul>\n<li>First Prize Rose Oolong Tea: 18 Goldfish Tea Bags of this tea per box.</li>\n<li>Third Prize Oriental Beauty Tea: 18 Goldfish Tea Bags of this tea per box.</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Paulownia wood box with hand-embroidered fabric lid.</li>\n<li>Lid options: Gold or Pink.</li>\n<li>Box dimensions: L 11.0 in × W 7.5 in × H 3.5 in (length × width × height).</li>\n<li>The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>\n<h3>Product Notice</h3>\n<ul>\n<li>Prices are subject to change and will be adjusted based on the official pricing from the tea competitions (held twice a year).<br>\n</li>\n</ul>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "First Prize Rose Oolong Tea",
+              "Third Prize Oriental Beauty Tea"
+            ]
+          },
+          {
+            "name": "Color",
+            "values": [
+              "Gold",
+              "Pink"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53827887464812",
+              "title": "First Prize Rose Oolong Tea / Gold",
+              "sku": "HYROGRO",
+              "price": "300.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "First Prize Rose Oolong Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Gold"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/55025998070124",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632301113708",
+              "title": "First Prize Rose Oolong Tea / Pink",
+              "sku": "HYROPRO",
+              "price": "300.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "First Prize Rose Oolong Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Pink"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616093036908",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53827887497580",
+              "title": "Third Prize Oriental Beauty Tea / Gold",
+              "sku": "HYROGOB",
+              "price": "340.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Third Prize Oriental Beauty Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Gold"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/55025998102892",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 1
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632301146476",
+              "title": "Third Prize Oriental Beauty Tea / Pink",
+              "sku": "HYROPOB",
+              "price": "340.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Third Prize Oriental Beauty Tea"
+                },
+                {
+                  "name": "Color",
+                  "value": "Pink"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69616093069676",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 11.0 in × W 7.5 in × H 3.5 in",
+              "compareDigest": "1f772bc71a747a81fa52974dd8cd2fb7e6658ee785c1676ab479cfdcc76a7ee4"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "Paulownia wood box with fabric-covered lid",
+              "compareDigest": "0267ec6855ef42cfccfe582f393e1a6a75477e92f9540dcc8da85de95e9d5462"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "Featuring a grander 18-piece capacity, this specification emphasizes its exceptional volume and presence. The box body is crafted from Paulownia wood, paired with a refined textured fabric lid, perfectly fusing classical artistry with contemporary aesthetics.",
+              "compareDigest": "ec4c85ff540d6d998e67023fead50d7a42667f84c1a08084db59d9b832d1a638"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": "The Timeless",
+              "compareDigest": "7e327fa16d30ae1d2bf679e057ccab023713a103e307124b853c265ea2c887cc"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "The gracefully unfurling presence of the \"King of Orchids\" symbolizes continuous prosperity and eternal fulfillment. This collection integrates the noble elegance and timeless grace of the orchid, making it the supreme choice for gifting to cherished contacts, a wish for blessings and sophisticated style. It represents not just a gift, but a distinction to elegance and enduring success.",
+              "compareDigest": "baa145ed0b8310367dcee5c542b65002dbd1034baa53b594e42afe45026e711d"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Royal Orchid",
+              "compareDigest": "8694eeac33e72117cf9db02468c994352341674259d6eed0195b01783e7fa2f4"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "400 g",
+              "compareDigest": "fcf274e1848d7ff52c9e1dd4be51aa10076379e6b139145a58a41bee16fd8272"
+            },
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 18 Goldfish Tea Bags",
+              "compareDigest": "aba20ec68ab1cabd673b56ed5566520b61f18c9cc515407e6fba3a824572ad67"
+            },
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "18",
+              "compareDigest": "0be1d691ae9763d9d8c5d31ad8da73d1a15f0f34ae18c1d1da5b9acff7d9f509"
+            },
+            {
+              "namespace": "shopify",
+              "key": "caffeine-content",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287787745644\"]",
+              "compareDigest": "8b627c424c2d4249ed51c69e8c1894fbcf508c06f741217c2bd7015c5f7d3765"
+            },
+            {
+              "namespace": "shopify",
+              "key": "dietary-preferences",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287787778412\",\"gid://shopify/Metaobject/273812685164\",\"gid://shopify/Metaobject/287787811180\"]",
+              "compareDigest": "9b7ab4356f62d076318838fee204a5c397292ec40b9367ca8f82c7ace292b013"
+            },
+            {
+              "namespace": "shopify",
+              "key": "color-pattern",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287778898284\",\"gid://shopify/Metaobject/612186227052\"]",
+              "compareDigest": "acd6e22fb58ef1d64c6852b32f467d0e66f8cbc26f83819a79f815aa4672ae21"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"蝴蝶蘭\",\"description\":\"CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box with fabric-covered lid\"}},{\"label\":\"保存期限\",\"value\":\"頭等獎玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"頭等獎玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"參等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款與盒蓋顏色\"}",
+              "compareDigest": "0ab2b8012cf9b55e1ddb5e23bba672a1b41fb41db3c50611fc8834bd6384f4c5"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "9996e0c4bd5836bf6dccb8ec2b3b9f6483589edb1cd8c79c599b11eea08b9b4c"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15150923350380",
+        "handle": "sapphire-wings",
+        "title": "Sapphire Wings",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>Sapphire Wings is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of Second Prize Oriental Beauty Tea. A Paulownia wood box with a hand-embroidered fabric lid presents this single-tea selection in a butterfly-inspired gift collection.</p>\n<h3>Story</h3>\n<p>Each winter, Taiwan’s purple crow butterflies trace a violet river across the island’s skies.</p>\n<p>Their dark wings, adorned with blue and white, shimmer between violet and sapphire as they turn in flight—like a constellation briefly brought within reach.</p>\n<p>CHARM VILLA captures their graceful silhouettes in a gift collection of fine Oriental Beauty Tea awarded Second Prize at a tea competition. As you settle into a quiet cup, imagine butterflies dancing through the shade, weaving a fleeting moment of beauty to keep.</p>\n<h4>About Taiwan’s purple crow butterflies</h4>\n<p>Purple crow butterflies thrive in Taiwan’s warm landscapes. Recorded migration patterns include a northward journey in early spring, movement in late spring and early summer, and a southward journey in autumn to sheltered wintering valleys. Their great winter gatherings are often compared with those of monarch butterflies in Mexico.</p>\n<p>Four purple crow species are commonly found in Taiwan today. Another, the Great Crow’s endemic Taiwanese subspecies, has not been seen for decades—a reminder of how much these delicate lives depend on their habitats. Along a migration route at Linnei, conservation measures include protective netting and temporary motorway lane closures to help butterflies cross safely.</p>\n<p>The butterfly embroidered on the Sapphire Wings gift box is the Striped Blue Crow (Euploea mulciber), known in Chinese as 端紫斑蝶. Its forewings catch the light in brilliant blue-violet, while white spots and fine pale markings decorate its hindwings.</p>\n<h3>What is included</h3>\n<ul>\n<li>18 Goldfish Tea Bags — Second Prize Oriental Beauty Tea</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Paulownia wood box body with hand-embroidered fabric lid.</li>\n<li>Box dimensions: L 11.0 in × W 7.5 in × H 3.5 in (length × width × height).</li>\n<li>The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>\n<h3>Product Notice</h3>\n<ul>\n<li>Prices are subject to change and will be adjusted based on the official pricing from the tea competitions (held twice a year).</li>\n<li>Limited availability; crafted upon pre-order.</li>\n</ul>",
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53824982679916",
+              "title": "Default Title",
+              "sku": "HYSW",
+              "price": "425.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Title",
+                  "value": "Default Title"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/55023108850028",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 400,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803605868"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    },
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/114803933548"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "teabag_count",
+              "type": "number_integer",
+              "value": "18",
+              "compareDigest": "0be1d691ae9763d9d8c5d31ad8da73d1a15f0f34ae18c1d1da5b9acff7d9f509"
+            },
+            {
+              "namespace": "shopify",
+              "key": "tea-input-type",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/288946618732\"]",
+              "compareDigest": "70b92f7ec0ff7cf57ada50640056ac05908b71422f0461eb24a27ff873da7260"
+            },
+            {
+              "namespace": "shopify",
+              "key": "caffeine-content",
+              "type": "list.metaobject_reference",
+              "value": "[\"gid://shopify/Metaobject/287787745644\"]",
+              "compareDigest": "8b627c424c2d4249ed51c69e8c1894fbcf508c06f741217c2bd7015c5f7d3765"
+            },
+            {
+              "namespace": "custom",
+              "key": "no_tea_var_variants",
+              "type": "list.single_line_text_field",
+              "value": "[\"Second Prize Oriental Beauty Tea\"]",
+              "compareDigest": "30e3f0a0c7b863e0e62bfbe4e37ca446b9b839e7f4bc0e723d57fe3ff0c538e0"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_description",
+              "type": "multi_line_text_field",
+              "value": "Artisan Craftsmanship & Luxurious Materials\nThe outer box lid utilizes a hand-woven fabric crafted on a traditional loom, presenting a simple, textured weave of warp and weft. The subtle shimmer of the natural silk threads reveals the extraordinary craftsmanship of this custom-made piece. It is not merely packaging, but an collectible work of art.",
+              "compareDigest": "e896d5dd3ffb3820ee6afa110fbef778caff1e62d6ba82d6c9b341417780719a"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_lid_title",
+              "type": "single_line_text_field",
+              "value": "The Bespoke Reservation ",
+              "compareDigest": "389a0ab1aa09979448b41a9e5e1bd0771f440f3ba3751254cf834cce4dff7f16"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story",
+              "type": "multi_line_text_field",
+              "value": "This is an ultra-rare, bespoke-reservation treasure. Its inspiration is drawn from the magnificent annual migration of the Euploea butterfly in Taiwan, a slow-moving purple river in the sky. The iridescent blue-purple scales constantly shifting on the butterfly wings are like a miniature galaxy in the night sky, instantly captivating the observer. This box infuses this precious, fleeting, and irreplicable natural beauty into the deep, mellow charm of the top-tier Oriental Beauty Tea.",
+              "compareDigest": "4ef4ab310c7e0517233c5cfd842c4c07cd584582eee21e4e48f912883ab8f565"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_story_title",
+              "type": "single_line_text_field",
+              "value": "Sapphire Wings",
+              "compareDigest": "9be41307b8366c2f3eacc222843dd7795a149870191cec4b431052c71df89339"
+            },
+            {
+              "namespace": "custom",
+              "key": "short_product_desc",
+              "type": "single_line_text_field",
+              "value": "Box of 18 Goldfish Tea Bags",
+              "compareDigest": "aba20ec68ab1cabd673b56ed5566520b61f18c9cc515407e6fba3a824572ad67"
+            },
+            {
+              "namespace": "custom",
+              "key": "product_weight",
+              "type": "single_line_text_field",
+              "value": "400 g",
+              "compareDigest": "fcf274e1848d7ff52c9e1dd4be51aa10076379e6b139145a58a41bee16fd8272"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_material",
+              "type": "single_line_text_field",
+              "value": "Paulownia wood box body with woven fabric lid",
+              "compareDigest": "7f5f66ec04ac72869c292ca9072e5487edcd1e7c851333455325a6c842fc2f67"
+            },
+            {
+              "namespace": "custom",
+              "key": "packaging_dimensions",
+              "type": "single_line_text_field",
+              "value": "L 11.0 in × W 7.5 in × H 3.5 in",
+              "compareDigest": "1f772bc71a747a81fa52974dd8cd2fb7e6658ee785c1676ab479cfdcc76a7ee4"
+            },
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"紫斑蝶\",\"description\":\"CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box body with woven fabric lid\"}},{\"label\":\"保存期限\",\"value\":\"2 年\"},{\"label\":\"盒內茶款\",\"value\":\"貳等獎東方美人茶 18 入\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。\\n限量供應，採預購製作。\\n盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。\",\"限量供應，採預購製作。\",\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"紫斑蝶，每年越冬時便在臺灣上空織就出一道紫色長河的美麗生命。牠們一身黑紗綴著藍帶與白點，盤旋飄舞於半空時，蝶翅上忽紫倏藍的幻變鱗光，就好似夜空中閃爍的小小星河，頃刻便能傾城。CHARM VILLA 為您捕捉紫斑蝶的倩麗身影，裝點於茶評鑑會獲評貳等獎的頂級東方美人茶。願您潛心品茗溫潤好茶的同時，能靜賞於幽翳之中翩然起舞的群蝶，交織出美好的吉光片羽。\",\"more\":{\"title\":\"關於臺灣的紫斑蝶\",\"body\":\"在臺灣，許多溫暖的地方都有機會看見紫斑蝶。研究紀錄顯示，牠們會在初春北返、春末初夏及秋季南遷等時期形成大規模蝶道，並在南部溫暖、避風的山谷群聚越冬。這片緩緩流動的紫色蝶河，常與墨西哥帝王斑蝶的壯麗越冬景觀並提。\\n\\n臺灣目前常見四種紫斑蝶。另有曾棲息於臺灣的大紫斑蝶特有亞種，已多年未見，更提醒我們珍惜蝶群賴以生存的棲地。為協助紫斑蝶安全飛越林內一帶的國道，保育措施包括設置防護網，並在遷徙蝶量達到管制門檻時暫時封閉部分車道，為蝶群留出回家的路。\\n\\nCHARM VILLA 貳等獎東方美人茶禮盒上所繡的是名為「端紫斑蝶」（Euploea mulciber）的紫斑蝶種。在外觀特徵上，端紫斑蝶的前翅可見明亮的藍紫色光澤，後翅則綴著散落的白點與白色細紋。\\n\\n紫斑蝶背景資料參考：茂林國家風景區管理處；交通部高速公路局；國立自然科學博物館；美國自然史博物館\"}},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"貳等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"\"}",
+              "compareDigest": "b5d847e5f25c661181c853bee428ef6f721cbd0118dac4949116afd23ed23c5d"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "9996e0c4bd5836bf6dccb8ec2b3b9f6483589edb1cd8c79c599b11eea08b9b4c"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15406015742316",
+        "handle": "christmas-edition-12-count",
+        "title": "Christmas Edition (12-count)",
+        "status": "UNLISTED",
+        "descriptionHtml": "<p>The CHARM VILLA Christmas Edition (12-count) contains 12 Goldfish Tea Bags in a Blue or Orange paper box with a Christmas lid with hand embroidery. Choose a single-tea selection of Rose Oolong or Oriental Beauty, or a four-tea mixed assortment for seasonal gifting.</p>\n<h3>Tea selections</h3>\n<ul>\n<li>Rose Oolong Tea: 12 Goldfish Tea Bags of Rose Oolong Tea.</li>\n<li>Oriental Beauty Tea: 12 Goldfish Tea Bags of Oriental Beauty Tea (White Tip Oolong).</li>\n<li>Mixed Teas: 3 Goldfish Tea Bags each of Rose Oolong Tea, Oriental Beauty Tea (White Tip Oolong), Ruby Black Tea (Red Jade / Ruby No.18), and Jin Xuan Oolong Tea (Golden Lily). Total: 12 tea bags.</li>\n</ul>\n<h3>Packaging</h3>\n<ul>\n<li>Blue or Orange paper box with a Christmas lid with hand embroidery.</li>\n<li>The selected box color and tea selection identify your chosen variant.</li>\n<li>The lid features hand embroidery, adding texture and carefully worked detail to the gift presentation.</li>\n</ul>\n<h3>How to brew</h3>\n<p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "Mixed Teas",
+              "Rose Oolong Tea",
+              "Oriental Beauty Tea"
+            ]
+          },
+          {
+            "name": "Box Color",
+            "values": [
+              "Blue",
+              "Orange"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/67637434253676",
+              "title": "Mixed Teas / Blue",
+              "sku": "HYCE-BLUE",
+              "price": "120.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Mixed Teas"
+                },
+                {
+                  "name": "Box Color",
+                  "value": "Blue"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265269100",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434286444",
+              "title": "Mixed Teas / Orange",
+              "sku": "HYCE-ORANGE",
+              "price": "120.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Mixed Teas"
+                },
+                {
+                  "name": "Box Color",
+                  "value": "Orange"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265301868",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434319212",
+              "title": "Rose Oolong Tea / Blue",
+              "sku": "HYCERO-BLUE",
+              "price": "120.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose Oolong Tea"
+                },
+                {
+                  "name": "Box Color",
+                  "value": "Blue"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265334636",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434351980",
+              "title": "Rose Oolong Tea / Orange",
+              "sku": "HYCERO-ORANGE",
+              "price": "120.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose Oolong Tea"
+                },
+                {
+                  "name": "Box Color",
+                  "value": "Orange"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265367404",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434384748",
+              "title": "Oriental Beauty Tea / Blue",
+              "sku": "HYCEOB-BLUE",
+              "price": "120.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Oriental Beauty Tea"
+                },
+                {
+                  "name": "Box Color",
+                  "value": "Blue"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265400172",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434417516",
+              "title": "Oriental Beauty Tea / Orange",
+              "sku": "HYCEOB-ORANGE",
+              "price": "120.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Oriental Beauty Tea"
+                },
+                {
+                  "name": "Box Color",
+                  "value": "Orange"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265432940",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"聖誕禮盒（限量版）\",\"description\":\"CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方美人茶各 3 包），或單一茶款玫瑰烏龍茶、東方美人茶各 12 包，以紙盒搭配刺繡布面盒蓋呈現。可選擇藍色或橘色紙盒，搭配聖誕手工刺繡盒蓋，為佳節送上一份溫暖的心意。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 12 入\"},{\"label\":\"盒型與材質\",\"value\":\"藍色或橘色紙盒搭配聖誕手工刺繡布面盒蓋\"},{\"label\":\"保存期限\",\"value\":\"綜合茶款、玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28.6 × 11.7 × 9 cm（約 11.3 × 4.6 × 3.5 in）\"},{\"label\":\"重量（含盒）\",\"value\":\"約 350 公克\"},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開盒蓋，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款與盒色\"}",
+              "compareDigest": "675e14b46065b38169d85b1ed936f83a026d5df325aac8d0dbf38fc446bbe387"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":200,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "8818633ce54991302c8b56450345c4ce7fee197f803bb037c194ebf5a7ce4051"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15406015512940",
+        "handle": "christmas-edition-2-count",
+        "title": "Christmas Edition (2-count)",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>The CHARM VILLA Christmas Edition (2-count) contains two Goldfish Tea Bags of your selected tea in a Christmas paper box. Choose one of five tea varieties for a small seasonal gift or a pair of tea moments.</p><h3>Choose your tea</h3><ul>\n<li>Rose Oolong Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Rose &amp; Honey-Scented Black Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Oriental Beauty Tea (White Tip Oolong): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Ruby Black Tea (Red Jade / Ruby No.18): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Jin Xuan Oolong Tea (Golden Lily): 2 Goldfish Tea Bags of this tea per box.</li>\n</ul><h3>Packaging</h3><ul><li>Christmas paper box containing two Goldfish Tea Bags of the selected tea.</li></ul><h3>How to brew</h3><p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "Rose Oolong Tea",
+              "Rose & Honey-Scented Black Tea",
+              "Oriental Beauty Tea",
+              "Ruby Black Tea",
+              "Jin Xuan Tea"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/67637433893228",
+              "title": "Rose Oolong Tea",
+              "sku": "HY2CERO",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose Oolong Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264908652",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433925996",
+              "title": "Rose & Honey-Scented Black Tea",
+              "sku": "HY2CERH",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose & Honey-Scented Black Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264941420",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433958764",
+              "title": "Oriental Beauty Tea",
+              "sku": "HY2CEOB",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Oriental Beauty Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264974188",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433991532",
+              "title": "Ruby Black Tea",
+              "sku": "HY2CERB",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Ruby Black Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265006956",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434024300",
+              "title": "Jin Xuan Tea",
+              "sku": "HY2CEJX",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Jin Xuan Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265039724",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"聖誕心意禮（限量版）\",\"description\":\"CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，以單盒販售。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 2 入\"},{\"label\":\"盒型與材質\",\"value\":\"高密度紙盒，燙金雪花與壓紋小金魚，透明封口貼紙\"},{\"label\":\"保存期限\",\"value\":\"玫瑰烏龍茶、玫瑰蜜香紅茶款 1 年；其他茶款 2 年\"},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}",
+              "compareDigest": "8731d3185d0531a668afb7480754f9dc74df3a3f20ed1958245c5bda1d6de0e4"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":200,\"scope\":\"product\",\"unit\":\"set\",\"boxesPerUnit\":3,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "6729cc03f98061918a481b7568a69eea1accd3e7d60e3baca4257f413060d41c"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      }
+    ],
+    "translatableResourcesByIds": {
+      "nodes": [
+        {
+          "resourceId": "gid://shopify/Product/15081861874028",
+          "translations": [
+            {
+              "key": "title",
+              "value": "花開富貴",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「花開富貴」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。固定的四款茶組合匯集玫瑰烏龍茶、紅玉紅茶、金萱烏龍茶與東方美人茶，適合在慶祝與相聚時分享。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15081862136172",
+          "translations": [
+            {
+              "key": "title",
+              "value": "年年有魚",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「年年有魚」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。每盒集結四款茶，適合共享品茶時光，也為節慶送禮備妥一份心意。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15107964273004",
+          "translations": [
+            {
+              "key": "title",
+              "value": "暮雪",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「暮雪」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。靈感來自櫻花與白雪相遇的景緻，為自己或珍視的人留下一段靜謐的品茶時光。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15136264946028",
+          "translations": [
+            {
+              "key": "title",
+              "value": "京都版",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「京都版」禮盒內含 6 包所選茶款的金魚茶包。精巧的高密度紙盒搭配連體盒蓋，盛裝單一茶款，適合日常品茶或作為用心挑選的禮物。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15148513263980",
+          "translations": [
+            {
+              "key": "title",
+              "value": "春曉",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15150923350380",
+          "translations": [
+            {
+              "key": "title",
+              "value": "紫斑蝶",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15151974809964",
+          "translations": [
+            {
+              "key": "title",
+              "value": "蝴蝶蘭",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15402073194860",
+          "translations": [
+            {
+              "key": "title",
+              "value": "團圓",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包，適合與親友共享或贈禮。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15406015512940",
+          "translations": [
+            {
+              "key": "title",
+              "value": "聖誕心意禮（限量版）",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，以單盒販售。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。</p>",
+              "outdated": false
+            }
+          ]
+        },
+        {
+          "resourceId": "gid://shopify/Product/15406015742316",
+          "translations": [
+            {
+              "key": "title",
+              "value": "聖誕禮盒（限量版）",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方美人茶各 3 包），或單一茶款玫瑰烏龍茶、東方美人茶各 12 包，以紙盒搭配刺繡布面盒蓋呈現。可選擇藍色或橘色紙盒，搭配聖誕手工刺繡盒蓋，為佳節送上一份溫暖的心意。</p>",
+              "outdated": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "storefront": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Product/15402073194860",
+        "availableForSale": true,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/67632284598636",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632284631404",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632284664172",
+              "quantityAvailable": 3,
+              "availableForSale": true
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15081862136172",
+        "availableForSale": false,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53770912629100",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15081861874028",
+        "availableForSale": true,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53583844082028",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15136264946028",
+        "availableForSale": true,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53771465687404",
+              "quantityAvailable": 18,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53771465720172",
+              "quantityAvailable": 20,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53903381496172",
+              "quantityAvailable": 20,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433663852",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15148513263980",
+        "availableForSale": true,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53903379136876",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632292790636",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53903379169644",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632292823404",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15107964273004",
+        "availableForSale": true,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53771531583852",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53771531616620",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15151974809964",
+        "availableForSale": true,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53827887464812",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632301113708",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            },
+            {
+              "id": "gid://shopify/ProductVariant/53827887497580",
+              "quantityAvailable": 1,
+              "availableForSale": true
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67632301146476",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/Product/15150923350380",
+        "availableForSale": false,
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/53824982679916",
+              "quantityAvailable": 0,
+              "availableForSale": false
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      },
+      null,
+      null
+    ]
+  }
+}

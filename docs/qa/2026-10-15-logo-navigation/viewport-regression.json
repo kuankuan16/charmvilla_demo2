@@ -1,0 +1,374 @@
+[
+  {
+    "lang": "zh",
+    "reduced": false,
+    "initial": {
+      "height": 900,
+      "live": true,
+      "photoDisplay": "block",
+      "reduced": false,
+      "stage": "0.0000",
+      "width": 1440
+    },
+    "brew": {
+      "active": "4",
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 799.984375,
+        "height": 709.984375,
+        "left": 115.1875,
+        "right": 588.515625,
+        "top": 90,
+        "width": 473.328125,
+        "x": 115.1875,
+        "y": 90
+      },
+      "stage": "4.0000"
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "en",
+    "reduced": false,
+    "initial": {
+      "height": 900,
+      "live": true,
+      "photoDisplay": "block",
+      "reduced": false,
+      "stage": "0.0000",
+      "width": 1440
+    },
+    "brew": {
+      "active": "4",
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 799.984375,
+        "height": 709.984375,
+        "left": 115.1875,
+        "right": 588.515625,
+        "top": 90,
+        "width": 473.328125,
+        "x": 115.1875,
+        "y": 90
+      },
+      "stage": "4.0000"
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "zh",
+    "reduced": false,
+    "initial": {
+      "height": 844,
+      "live": true,
+      "photoDisplay": "block",
+      "reduced": false,
+      "stage": "0.0000",
+      "width": 390
+    },
+    "brew": {
+      "active": "4",
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 460.234375,
+        "height": 388.234375,
+        "left": 0,
+        "right": 390,
+        "top": 72,
+        "width": 390,
+        "x": 0,
+        "y": 72
+      },
+      "stage": "4.0000"
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "en",
+    "reduced": false,
+    "initial": {
+      "height": 844,
+      "live": true,
+      "photoDisplay": "block",
+      "reduced": false,
+      "stage": "0.0000",
+      "width": 390
+    },
+    "brew": {
+      "active": "4",
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 460.234375,
+        "height": 388.234375,
+        "left": 0,
+        "right": 390,
+        "top": 72,
+        "width": 390,
+        "x": 0,
+        "y": 72
+      },
+      "stage": "4.0000"
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "zh",
+    "reduced": true,
+    "initial": {
+      "height": 900,
+      "live": false,
+      "photoDisplay": "block",
+      "reduced": true,
+      "stage": "",
+      "width": 1440
+    },
+    "brew": {
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 799.984375,
+        "height": 709.984375,
+        "left": 115.1875,
+        "right": 588.515625,
+        "top": 90,
+        "width": 473.328125,
+        "x": 115.1875,
+        "y": 90
+      },
+      "stage": ""
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "en",
+    "reduced": true,
+    "initial": {
+      "height": 900,
+      "live": false,
+      "photoDisplay": "block",
+      "reduced": true,
+      "stage": "",
+      "width": 1440
+    },
+    "brew": {
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 799.984375,
+        "height": 709.984375,
+        "left": 115.1875,
+        "right": 588.515625,
+        "top": 90,
+        "width": 473.328125,
+        "x": 115.1875,
+        "y": 90
+      },
+      "stage": ""
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "zh",
+    "reduced": true,
+    "initial": {
+      "height": 844,
+      "live": false,
+      "photoDisplay": "block",
+      "reduced": true,
+      "stage": "",
+      "width": 390
+    },
+    "brew": {
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 460.234375,
+        "height": 388.234375,
+        "left": 0,
+        "right": 390,
+        "top": 72,
+        "width": 390,
+        "x": 0,
+        "y": 72
+      },
+      "stage": ""
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  },
+  {
+    "lang": "en",
+    "reduced": true,
+    "initial": {
+      "height": 844,
+      "live": false,
+      "photoDisplay": "block",
+      "reduced": true,
+      "stage": "",
+      "width": 390
+    },
+    "brew": {
+      "brokenImages": [],
+      "errors": [],
+      "overflow": false,
+      "photo": {
+        "bottom": 460.234375,
+        "height": 388.234375,
+        "left": 0,
+        "right": 390,
+        "top": 72,
+        "width": 390,
+        "x": 0,
+        "y": 72
+      },
+      "stage": ""
+    },
+    "footer": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true
+    },
+    "keyboard": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "soft": true
+    },
+    "reload": {
+      "error": false,
+      "hero": true,
+      "overflow": false
+    }
+  }
+]

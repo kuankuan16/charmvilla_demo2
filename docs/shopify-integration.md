@@ -12,6 +12,7 @@
 - App 使用 client credentials grant；伺服器在 token 到期前自動換發，不把 Admin 憑證傳給前端。
 - 會員入口導向商店現有 Shopify hosted customer accounts：`https://shopify.com/98570830188/account`。本次沒有啟用舊版密碼會員流程。
 - 結帳使用 Storefront Cart 回傳的 `checkoutUrl`，已確認導向 `account.charmvilla.us`。
+- 2026-10-15 結帳 Logo 已驗證：原生連到 `account.charmvilla.us/`，現行 Shopify 主題首頁既有 redirect 導回正式 `https://www.charmvilla.com/`；Shop Pay 與 Guest 實際點擊皆通過。本輪未改遠端設定，詳見 [Logo QA](qa/2026-10-15-checkout-logo/README.md)。
 
 ## 來源契約
 
@@ -20,6 +21,7 @@
 | 商品照片、各角度、情境照與版面 | [現有 Visual](https://charmvilla-demo2.vercel.app/) 與專案既有影像 | `src/data/catalog.ts`、`public/media/` |
 | 商品內容、規格、故事、選項、SKU | 原 Shopify 商品、custom metafields、translations | `src/lib/shopify/catalog.ts`、`catalog-data.ts` |
 | 售價、購買資格、可用庫存 | Shopify Storefront，US market；未發佈商品僅從 Admin 讀取資料，不能購買 | 同上、`/api/products` |
+| 預購 campaign 與雙語付款／出貨說明 | Shopify merchant-owned `custom.preorder_details` JSON，依使用者 2026-10-15 截圖恢復 10 款原預購商品；`enabled: false` 可停用 campaign | `catalog-data.ts`、`AddToCart.tsx`；不更動庫存、價格或管道 |
 | product / variant 身分 | Shopify GID；不得用陣列索引猜配 | `src/data/shopify-map.json` |
 | 結帳價格、折扣、庫存驗證、稅金、運費 | Shopify hosted checkout | `/api/cart` |
 
@@ -42,7 +44,7 @@
 | orchid-gift-box | royal-orchid-gold / Royal Orchid | 18 入、頭等玫瑰 US$300／參等東方美人 US$340，各 Gold／Pink；Pink 目前售罄 |
 | purple-butterfly-gift-box | sapphire-wings / Sapphire Wings | 18 入、貳等東方美人、US$425、目前無庫存 |
 | christmas-gift-box | christmas-edition-12-count / Christmas Edition (12-count) | 12 入、US$120、3 茶款 × Blue／Orange；Headless 未開放 |
-| snowflake-gift-box | christmas-edition-2-count / Christmas Edition (2-count) | 單盒 2 入、US$20、5 茶款；取消舊三盒 US$60 組合；Headless 未開放 |
+| snowflake-gift-box | christmas-edition-2-count / Christmas Charming Gift (Limited Edition) | 使用者2026-10-15確認三盒一組、每盒2入／共6入、US$60、5茶款；allocation共200組；Headless未開放 |
 | cloud-coaster | coaster / Cloud Coaster | UNLISTED；沿用展示商品狀態，不顯示購買按鈕 |
 | bird-chopstick-rest | songbird-chopstick-rest / Songbird Chopsticks Rest | UNLISTED；沿用展示商品狀態 |
 | ginkgo-teaspoon-gift-box | tea-spoon / Ginkgo Style Tea Spoon | UNLISTED；沿用展示商品狀態 |

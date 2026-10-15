@@ -4,6 +4,9 @@
 
 ## 2026-10-15
 
+- 當使用者提供同時含「串接前預購上限」及「串接後可售合計」的表格，分開保存兩種語意；整款合計不可重複寫到每個variant。使用者已明確指定聖誕心意禮三盒一組、共200組，取代舊單盒規則；單位變更不代表可自行推算售價；使用者其後明確確認每組US$60，依此完成轉換。驗證逐variant加總、null發布狀態與商品販售單位。（來源：2026-10-15庫存表及兩次回覆。）
+
+- 遇到配送範圍或履約庫存與舊截圖衝突，套用最新明確指示：SGV 僅現場銷售、不寄貨，所有網購使用 Hayward 庫存；不寄 Alaska／Hawaii（取代早先可寄、另計運費）。驗證不能只看頁面文案，要核對 Shopify online fulfillment、location group／zone 與實際可售數量。（來源：使用者本輪兩次配送回覆，2026-10-15。）
 - 當用瀏覽器量 sticky／ScrollTrigger 的釘住位置時，先關掉電子報視窗（點 `[aria-label="關閉電子報視窗"]` 或設 `localStorage` `cv-newsletter-popup-seen=1`）：它把 `html/body` 設成 `overflow: hidden`，sticky 會失效、數字看起來像「沒釘住」而其實是量錯。驗證：`getComputedStyle(document.body).overflow` 不是 `hidden` 再量 figure top。（來源：本輪 agent 量測沖泡區時的誤判，非使用者指示。）
 - 當驗收捲動動畫時，截圖要標實際的進度變數值（例如 `--brew-stage`），不能只信檔名；「01-pour」可能是步驟 1 結束的畫面。起點要在軸線 start（stage 0）確認「第一個動作發生時主體在畫面內」（這次：壺倒水時杯身要在摺線上），桌機 1440×900 與 1800×1125 都量。（來源：本輪 Ego Lite 檢視發現 74% 起點讓水位在畫面外上升。）
 - 當用 Ego Lite Browser 做視覺檢視時，它的視窗固定 1800×1125（CDP `Emulation.setDeviceMetricsOverride` 無效），`scrollTo` 後 `page.screenshot()` 會是空白，改用 `page.cdp("Page.captureScreenshot")`；要精確尺寸（1440×900、390×844）用 agent-browser `set viewport`。（來源：本輪工具行為，非使用者指示。）

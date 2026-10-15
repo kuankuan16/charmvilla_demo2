@@ -1,0 +1,97 @@
+{
+  "verifiedAt": "2026-10-15T03:05:29.886Z",
+  "tests": [
+    {
+      "name": "CA-under-199",
+      "cart": {
+        "totalQuantity": 1,
+        "cost": {
+          "subtotalAmount": {
+            "amount": "60.0",
+            "currencyCode": "USD"
+          }
+        },
+        "deliveryGroups": {
+          "nodes": []
+        }
+      },
+      "cleared": true
+    },
+    {
+      "name": "CA-over-199",
+      "cart": {
+        "totalQuantity": 4,
+        "cost": {
+          "subtotalAmount": {
+            "amount": "240.0",
+            "currencyCode": "USD"
+          }
+        },
+        "deliveryGroups": {
+          "nodes": [
+            {
+              "deliveryOptions": [
+                {
+                  "title": "Free UPS Ground",
+                  "estimatedCost": {
+                    "amount": "0.0",
+                    "currencyCode": "USD"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cleared": true
+    },
+    {
+      "name": "AK-blocked",
+      "cart": {
+        "totalQuantity": 0,
+        "cost": {
+          "subtotalAmount": {
+            "amount": "0.0",
+            "currencyCode": "USD"
+          }
+        },
+        "deliveryGroups": {
+          "nodes": []
+        }
+      },
+      "cleared": true
+    },
+    {
+      "name": "HI-blocked",
+      "cart": {
+        "totalQuantity": 0,
+        "cost": {
+          "subtotalAmount": {
+            "amount": "0.0",
+            "currencyCode": "USD"
+          }
+        },
+        "deliveryGroups": {
+          "nodes": []
+        }
+      },
+      "cleared": true
+    },
+    {
+      "name": "AE-blocked",
+      "cart": {
+        "totalQuantity": 0,
+        "cost": {
+          "subtotalAmount": {
+            "amount": "0.0",
+            "currencyCode": "USD"
+          }
+        },
+        "deliveryGroups": {
+          "nodes": []
+        }
+      },
+      "cleared": true
+    }
+  ]
+}

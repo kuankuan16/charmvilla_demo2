@@ -1,0 +1,13 @@
+{
+  "verifiedAt": "2026-10-15",
+  "shipping": {
+    "url": "https://account.charmvilla.us/policies/shipping-policy",
+    "noAKHI": true,
+    "free199": true,
+    "chargedFull": true
+  },
+  "refund": {
+    "url": "https://account.charmvilla.us/policies/refund-policy",
+    "cancelBeforeShipping": true
+  }
+}

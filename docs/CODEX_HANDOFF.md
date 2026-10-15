@@ -2,12 +2,29 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
-## 2026-10-15 預購 UI 正式發布準備
+## 本輪接續狀態（2026-10-15）
 
-- 使用者明確要求將 Pre-order UI push 至正式站。本次只包含預購 UI、Shopify custom.preorder_details 讀取、購物車使用真實 line attributes，未包含另一本機工作樹的全站 SEO／Search 移除／Logo cleanup 修正。
-- Shopify 10 個對應商品的雙語條件已寫入並讀回；價格、庫存與 status 未變。Node24 check、Shopify11／analytics8 及先前雙語1440／390與購物車 UI 驗證已通過。[QA](qa/2026-10-15-preorder-ui/README.md)。
-- 基準 origin/main 2232e74，target repo tentenco/charmvilla_shopify_official，既有 Vercel tentenco/charmvilla-demo2。此為部署前記錄，實際 READY／alias 與 source SHA 必須讀回。
-- 尚待完成：使用者最新確認 SGV 僅現場、網購只用 Hayward 庫存、不寄 AK／HI；另外重新要求排查頂部 Logo 回首頁的間歇 Page Not Found。主工作樹的 PLAN 保留接續順序，不能因本次發布便宣稱這兩項已修。
+- Logo已正式發布：commit955e603，Vercel dpl_Hg2LGAPx2mMwpbAPqbw8Gbf5UVqD READY，www/apex已指向。正式8組viewport/motion與Ego6次上方Logo通過。[QA](qa/2026-10-15-logo-navigation/README.md)。
+- 庫存表已完成：前8款Hayward/線上合計3/0/1/58/4/2/2/0，保留正確數量；10款allocation已寫入。使用者明確確認聖誕心意禮三盒一組US$60、200組；已同步五款variant售價、雙語規格、共6包。兩款Christmas仍未Headless發布，沒有新增200現貨；不支援臆測混搭variants。[QA](qa/2026-10-15-inventory-alignment/README.md)。
+- 預購UI已正式發布於47eb598/bbf555a，Shopify custom.preorder_details 10款已生效。[QA](qa/2026-10-15-preorder-ui/README.md)。
+- 配送線上完成：Hayward為default/online，Fremont/SGV online=false，SGV in-person=true；48州+DC，滿199免運，AK/HI/軍郵不寄。公開shipping/refund政策已發布、實際運費驗證，QA車清空。[QA](qa/2026-10-15-shipping-alignment/README.md)。
+- 使用者最新授權所有本輪修改commit/push，並要求merge同事branch。下一步整合目前SEO/schema、Search移除、配送前台、庫存快照與QA；遠端最新候選checkout-tests-wip（kuankuan16，6個未合併commit）需按現行Shopify來源契約調整，不恢復舊預購計數或本機商品價格。過去設計分支不批次合併。
+- 保留release worktree、brew-cup工作樹/3027、使用者localhost cart。Ego86/p1與agent-browser logo-navigation-aae96406a56d沿用。
+
+## 已驗證：結帳 Logo 返回正式首頁（2026-10-15）
+
+- 使用者要求修正結帳 Logo 返回舊網站。檢查時，active Shopify theme `187176714604`（Updated copy of Balance）的 `layout/theme.liquid` **原本已存在** index → `https://www.charmvilla.com` redirect；本輪沒有修改主題、DNS、商店 primary domain 或結帳設定。
+- 原生 Logo href 仍是 Shopify primary domain `https://account.charmvilla.us/`，瀏覽器執行 redirect 後回到正式 www 首頁。從全新獨立購物車實際點擊 **Shop Pay accelerated checkout** 與 **Guest checkout** Logo，兩者均到 `https://www.charmvilla.com/`。不要只憑 href 是 account 網域便判斷仍有錯誤。
+- 未付款／建單／退款；獨立測試購物車已清空（quantity 0）、含 key 的暫存檔已移除。前輪 SEO 未提交／未部署狀態不變。[結帳 Logo QA](qa/2026-10-15-checkout-logo/README.md)。
+
+## 本機已完成、尚未發布：全站 SEO／schema（2026-10-15）
+
+- 使用者指定 AgricIDaniel/claude-seo 優化全部頁面並建立正確 business／entity schema；本輪授權為本機實作與驗證，沒有 commit、push 或部署。
+- 基準 `main`／`origin/main` 為 `2232e74`，初始乾淨。現在未提交 diff 為這次 SEO；不覆蓋或當成已發布。既有 `.claude/worktrees/brew-cup` 與 port 3027 沒有動。
+- 完成 56 個雙語頁面的 metadata、OG／Twitter，及 `OnlineStore`（Haoying LLC）、`Brand`、`WebSite`、各頁型／麵包屑／分類清單／Product／逐 variant Offer／Article／台日 Store 的 JSON-LD。美國僅線上銷售；門市沒有掛成美國經銷商分店。日本官網品牌創立年份與核准 About 不同，schema 省略有爭議年份。
+- 實作入口：`src/lib/seo/{metadata,schema}.ts`、`src/components/seo/JsonLd.tsx`；`catalog-data.ts` 新增 `scheduledPreOrder` 區分明確預購與 BackOrder，保留原有 UI 行為。官方 logo 的 schema 版本只補白底留白，原圖保留。
+- Node 24 `npm run check` 通過（0 errors／7 原有 warnings）；SEO 7/7、Shopify 8/8；56 URL、43 資產、12 控制路徑無錯誤；Schema.org 驗證器 0 errors／0 warnings；1440／390 中英文、reduced-motion、鍵盤與 Ego 導覽通過。
+- [完整 QA／來源](qa/2026-10-15-seo-schema/README.md)、[entity 決策](qa/2026-10-15-seo-schema/SCHEMA-REPORT.md)、[JSON-LD 樣本](qa/2026-10-15-seo-schema/generated-schema.json)。本機 production server 在 port 3026 供檢視，實際部署仍是下方已發布版本。
 
 ## 接手時先確認
 
@@ -64,7 +81,7 @@ Shopify API 網域為 `zcs0bg-10.myshopify.com`，checkout host `account.charmvi
 
 ## 保留限制，不自動啟動工作
 
-- 兩款 Christmas 商品未開 Headless；保留展示但不可購買。小盒以 Shopify 單盒 2 入 US$20 為準，不恢復舊三盒組。價格仍須讀即時資料。
+- 兩款 Christmas 商品未開 Headless；保留展示但不可購買。最新使用者已明確指定小盒改為三盒一組，共200組；每組US$60已依使用者確認寫入，取代之前單盒規則。
 - Joyful Reunion 缺 Pink／Blue 專用照片，使用共用核准圖庫；四款 UNLISTED 工藝商品維持展示模式。
 - 商品中文已遷移，品牌／News／政策頁未遷 CMS；英文一般編輯內容仍用既有來源。
 - Shopify CLI 曾安裝 4.9.3，未建立該商店 CLI auth；Headless API／MCP 不依賴它。MCP 歷史 handshake 成功不等於目前 session 已載入工具。

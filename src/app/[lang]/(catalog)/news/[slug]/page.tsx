@@ -1,10 +1,13 @@
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { articleNode, pageNodes, ref } from "@/lib/seo/schema";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { Picture } from "@/components/ui";
 import { findNews, getNews } from "@/data/news";
-import { alternatesFor, defaultLocale, isLocale, locales, localeHref, translator } from "@/i18n/config";
+import { defaultLocale, isLocale, locales, localeHref, translator } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
 
@@ -16,7 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw, slug } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const n = findNews(slug, lang);
-  return n ? { title: lang === "en" ? `${n.title} | CHARM VILLA` : `${n.title}｜CHARM VILLA`, description: n.summary, alternates: alternatesFor(lang, `/news/${slug}`) } : {};
+  if (!n) notFound();
+  return pageMetadata({ lang, path: `/news/${slug}`, title: lang === "en" ? `${n.title} | CHARM VILLA` : `${n.title}｜CHARM VILLA`, description: n.summary, image: n.story ?? n.card, article: true });
 }
 
 // Article (user 2026-10-06, after jakobsencopenhagen.com/stories, verin, framer and solena): the 4:5 photograph held beside
@@ -45,8 +49,10 @@ export default async function NewsArticle({ params }: Props) {
   const t = translator(lang);
   const all = getNews(lang);
   const others = all.map((o, i) => ({ ...o, n: String(i + 1).padStart(2, "0") })).filter((o) => o.slug !== n.slug);
+  const schema = articleNode(n, lang);
   return (
     <article className="news-article">
+      <JsonLd nodes={[...pageNodes(lang, `/news/${slug}`, n.title, n.summary, "WebPage", [{ path: "/news", name: t("最新消息", "News") }], { mainEntity: ref(String(schema["@id"])) }), schema]} />
       <div className="news-story">
         <div className="news-story-media"><div className="news-story-image" style={n.ground ? { background: n.ground } : undefined}><Picture img={n.story ?? n.card} fill fit={n.story ? "cover" : n.whole ? "contain" : "cover"} animate={false} sizes="(min-width:768px) 46vw, 100vw" /></div></div>
         <div className="news-story-text">

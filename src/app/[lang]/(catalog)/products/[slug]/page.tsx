@@ -1,3 +1,6 @@
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { pageNodes, productNode, ref } from "@/lib/seo/schema";
 import ProductAnalytics from "@/components/analytics/ProductAnalytics";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -15,7 +18,7 @@ import ProductGallery from "@/components/catalog/ProductGallery";
 import { ProductOptionProvider } from "@/components/catalog/ProductOption";
 import ProductCard from "@/components/catalog/ProductCard";
 import TeaPages from "@/components/catalog/TeaPages";
-import { alternatesFor, defaultLocale, isLocale, siteUrl, translator } from "@/i18n/config";
+import { defaultLocale, isLocale, translator } from "@/i18n/config";
 
 // The other categories by closeness, for 繼續觀看 when a category has fewer than four other pieces.
 const nearest: Record<string, string[]> = {
@@ -35,16 +38,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw, slug } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
+  if (!products.some(p => p.slug === slug)) notFound();
   const product = await getCommerceProduct(slug, lang);
-  if (!product) return { title: t("找不到商品｜CHARM VILLA", "Piece not found | CHARM VILLA") };
-  const title = t(`${product.name}｜CHARM VILLA`, `${product.name} | CHARM VILLA`);
-  return { title, description: product.description, alternates: alternatesFor(lang, productHref(product)), openGraph: { title, description: product.description, images: [{ url: product.image.src, alt: product.image.alt }] } };
+  if (!product) notFound();
+  const title = product.category === "tea"
+    ? t(`${product.name}・小金魚茶包禮盒｜CHARM VILLA`, `${product.name} Tea Gift | CHARM VILLA`)
+    : t(`${product.name}｜CHARM VILLA`, `${product.name} | CHARM VILLA`);
+  return pageMetadata({ lang, path: productHref(product), title, description: `${product.name}${lang === "zh" ? "：" : ": "}${[product.summary, product.description].filter(Boolean).filter((value, index, values) => values.indexOf(value) === index).join(lang === "zh" ? "。" : ". ")}`, image: product.image });
 }
 
 export default async function ProductPage({ params }: Props) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
   const t = translator(lang);
+  if (!products.some(p => p.slug === slug)) notFound();
   const all = await getCommerceProducts(lang);
   const product = all.find(p => p.slug === slug);
   if (!product) notFound();
@@ -178,22 +185,14 @@ export default async function ProductPage({ params }: Props) {
   // installation photograph (CV-0215) darkened
   const about = getAbout(lang);
   const band = site("about-installation-2k.webp", t("展場裡懸掛的白色紙摺金魚與花", "White paper goldfish and blossoms hanging in an exhibition"), 2400, 1604);
-  // Offers only for a known USD list price (a TWD price on the US store is still to be confirmed, so it is left out). Options with
-  // different prices give an AggregateOffer; availability follows soldOut / preOrder. No sku, shipping or return policy is
-  // stated here: none of them is confirmed yet (shopify-integration.md, commerce.ts).
-  const offerUrl = `${siteUrl}${productHref(product, lang)}`;
-  const availability = `https://schema.org/${product.soldOut ? "SoldOut" : product.preOrder ? "PreOrder" : "InStock"}`;
-  const optionPrices = product.price ? (product.giftBox?.choices ?? []).map((c) => c.price ?? product.price!.amount) : [];
-  // display-only pieces (客戶答覆 B1–B4) are not offered for sale
-  const offers = product.displayOnly || product.price?.currency !== "USD" ? undefined
-    : new Set(optionPrices).size > 1
-      ? { "@type": "AggregateOffer", lowPrice: Math.min(...optionPrices), highPrice: Math.max(...optionPrices), offerCount: optionPrices.length, priceCurrency: "USD", availability, url: offerUrl }
-      : { "@type": "Offer", price: product.price.amount, priceCurrency: "USD", availability, url: offerUrl };
-  const schema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.description, image: product.views.filter((v) => !v.placeholder).map((v) => new URL(v.image.src, siteUrl).href), brand: { "@type": "Brand", name: "CHARM VILLA" }, category: category.name, url: `${siteUrl}${productHref(product, lang)}`,
-    ...(offers && { offers }) };
+  const schema = productNode(product, category.name, lang);
+  const pageSchema = pageNodes(lang, productHref(product), product.name, product.description, "ItemPage", [
+    { path: categoryHref("all"), name: t("全部作品", "All Pieces") },
+    { path: categoryHref(product.category), name: category.name },
+  ], { mainEntity: ref(String(schema["@id"])) });
   return (
     <article className={`product-page product-page--${product.category}`} data-product={slug}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <JsonLd nodes={[...pageSchema, schema]} />
       {/* First screen after jakobsencopenhagen.com/en/products/holger-1-5-seater (user 2026-10-01: 「直接照這個一模一樣」): see ProductGallery
           and the product page block in globals.css. Name, summary line, price, text and the button sit inside the first screen
           (user: 「所有資訊不需滑動才看到」); since 2026-10-05 the specifications follow the button in their own section, at the

@@ -1,0 +1,59 @@
+{
+  "verifiedAt": "2026-10-15T03:10:15.069Z",
+  "results": [
+    {
+      "lang": "zh",
+      "cycle": 0,
+      "url": "http://localhost:3026/zh",
+      "errors": [],
+      "soft": true,
+      "hero": true,
+      "error": false
+    },
+    {
+      "lang": "zh",
+      "cycle": 1,
+      "url": "http://localhost:3026/zh",
+      "errors": [],
+      "soft": true,
+      "hero": true,
+      "error": false
+    },
+    {
+      "lang": "zh",
+      "cycle": 2,
+      "url": "http://localhost:3026/zh",
+      "errors": [],
+      "soft": true,
+      "hero": true,
+      "error": false
+    },
+    {
+      "lang": "en",
+      "cycle": 0,
+      "url": "http://localhost:3026/",
+      "errors": [],
+      "soft": true,
+      "hero": true,
+      "error": false
+    },
+    {
+      "lang": "en",
+      "cycle": 1,
+      "url": "http://localhost:3026/",
+      "errors": [],
+      "soft": true,
+      "hero": true,
+      "error": false
+    },
+    {
+      "lang": "en",
+      "cycle": 2,
+      "url": "http://localhost:3026/",
+      "errors": [],
+      "soft": true,
+      "hero": true,
+      "error": false
+    }
+  ]
+}

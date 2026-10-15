@@ -236,12 +236,7 @@ html:has(.catalog-shell) { overflow-x: clip; scroll-padding-top: calc(var(--head
 .collection-categories a[aria-current], .collection-categories a:hover { border-color: var(--color-gold); }
 .collection-categories a[aria-current] { font-weight: 700; }
 .collection-categories span { font-size: 13px; color: var(--color-stone-deep); }
-.collection-results { padding: 0 var(--page-gutter) 80px; min-height: 400px; }
-.collection-tools { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 30px 0; font-size: 15px; }
-.collection-tools p span { margin-left: 12px; }
-.collection-search { display: flex; align-items: center; gap: 16px; }
-.collection-search input { border: 0; border-bottom: 1px solid #1f1f1f50; border-radius: 0; min-height: 40px; width: 235px; background: transparent; color: var(--color-ink); padding: 8px 0; font-size: 16px; }
-.collection-search button { min-height: 40px; text-decoration: underline; }
+.collection-results { padding: 30px var(--page-gutter) 80px; min-height: 400px; }
 .catalog-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 65px 25px; }
 .catalog-card { min-width: 0; }
 .catalog-card a { display: block; }
@@ -584,13 +579,7 @@ main:has(> .policy-page) { background: #efefed; }
   .collection-heading-copy p { font-size: 17px; }
   .collection-categories { top: var(--header-h); padding-inline: var(--page-gutter); gap: 26px; }
   .collection-categories a { font-size: 15px; padding-block: 16px 13px; gap: 8px; }
-  .collection-results { padding: 0 var(--page-gutter) 50px; }
-  .collection-tools { flex-direction: column; align-items: stretch; gap: 14px; padding-block: 23px; }
-  .collection-tools > p { font-size: 13px; }
-  .collection-search { gap: 10px; }
-  .collection-search label { font-size: 15px; flex-shrink: 0; }
-  .collection-search input { min-width: 0; width: auto; flex: 1; font-size: 18px; }
-  .collection-search button { flex-shrink: 0; font-size: 15px; }
+  .collection-results { padding: 23px var(--page-gutter) 50px; }
   .catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px 15px; }
   .catalog-card h3 { font-size: 18px; margin-top: 10px; }
   .catalog-card p { font-size: 15px; line-height: 1.8; }

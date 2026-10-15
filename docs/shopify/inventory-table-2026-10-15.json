@@ -1,0 +1,21 @@
+{
+  "source": "Owner-supplied inventory table, 2026-10-15 10:29 +08:00; owner confirmed all columns authoritative and small Christmas gift is 3 boxes per set, 200 sets",
+  "locationId": "gid://shopify/Location/114803605868",
+  "columns": {
+    "preorderLimit": "Product-wide pre-integration preorder allowance; not additional physical stock",
+    "available": "Current aggregate saleable units across existing variants; null means not published to Headless, not a quantity of zero",
+    "boxesPerUnit": "Boxes in one sellable unit"
+  },
+  "products": {
+    "reunion-paper-gift-box": { "preorderLimit": 100, "available": 3, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "year-of-plenty-gift-box": { "preorderLimit": 20, "available": 0, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "blossoming-prosperity-gift-box": { "preorderLimit": 20, "available": 1, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "kyoto-gift-box": { "preorderLimit": 100, "available": 58, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "spring-dawn-gift-box": { "preorderLimit": 10, "available": 4, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "winter-blossom-gift-box": { "preorderLimit": 10, "available": 2, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "orchid-gift-box": { "preorderLimit": 10, "available": 2, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "purple-butterfly-gift-box": { "preorderLimit": 10, "available": 0, "unit": "box", "boxesPerUnit": 1, "published": true },
+    "christmas-gift-box": { "preorderLimit": 200, "available": null, "unit": "box", "boxesPerUnit": 1, "published": false },
+    "snowflake-gift-box": { "preorderLimit": 200, "available": null, "unit": "set", "boxesPerUnit": 3, "published": false }
+  }
+}

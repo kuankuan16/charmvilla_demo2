@@ -21,4 +21,10 @@
 
 已詢問：SGV Pop-up 是否繼續宅配；未達 US$199 與 AK／HI 是否沿用 UPS 即時計算。沒有回答前不自行新增運費金額或調整出貨地點。使用者後續要求移除 Search UI，依 queue 於預購 UI 交付後執行；配送問題仍待回覆。
 
-使用者已明確授權推送預購 UI 至正式站。本 release worktree 只包含預購 UI／Shopify 欄位讀取與購物車標記修正；隔離建置與 Shopify 11/11／analytics 8/8 均通過，見 [release check](release-check.log)。實際推送、部署與線上驗證須讀回 Vercel 狀態，不以這份部署前 QA 代替。Shopify 預購欄位已實際寫入並讀回。腳本 `scripts/shopify/restore-preorder.mjs` 預設 dry-run、`--apply` 才寫入，使用 compareDigest，保留第一份 backup，不覆蓋不同的既有條件。
+## 正式發布（使用者後續明確授權）
+
+隔離 release worktree 通過 Node24 check／Shopify11／analytics8，[輸出](release-check.log)。實作 commit `47eb598`、QA log whitespace commit `bbf555a` 已 push 正確 repo main；Vercel `dpl_8x1DtyatQMPdvycNY1jzkMLd9YDy` READY，www／apex alias 均指向同一版本。[部署來源與 alias](production-deployment.json)。
+
+[正式中英文 1440／390](production-ui.json)實際展開付款與取消文字正常；[正式購物車](production-cart.json)加入 1 件、顯示預購出貨時間、價格 US$60、checkout host 正確，之後移除清空，未付款／建單。已檢視正式手機截圖。此次沒有包含本機 SEO、Search 移除與 Logo 修正。
+
+Shopify 預購欄位已實際寫入並讀回。腳本 `scripts/shopify/restore-preorder.mjs` 預設 dry-run、`--apply` 才寫入，使用 compareDigest，保留第一份 backup，不覆蓋不同的既有條件。

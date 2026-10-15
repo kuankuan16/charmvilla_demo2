@@ -1,0 +1,31 @@
+{
+  "verifiedAt": "2026-10-15T01:22:05.037Z",
+  "shop": "charmvilla",
+  "checkoutLogoHref": "https://account.charmvilla.us/",
+  "redirectDestination": "https://www.charmvilla.com/",
+  "currentThemeId": "187176714604",
+  "currentThemeName": "Updated copy of Balance",
+  "existingRedirect": true,
+  "remoteSettingsChanged": false,
+  "themeChanged": false,
+  "tested": [
+    {
+      "flow": "Shop Pay accelerated checkout",
+      "clickedLogo": true,
+      "destination": "https://www.charmvilla.com/"
+    },
+    {
+      "flow": "Guest checkout",
+      "clickedLogo": true,
+      "destination": "https://www.charmvilla.com/",
+      "title": "CHARM VILLA | Art as Life"
+    }
+  ],
+  "orderCreated": false,
+  "paymentSubmitted": false,
+  "testCartCleanup": {
+    "emptied": true,
+    "totalQuantity": 0,
+    "temporaryKeyFileRemoved": true
+  }
+}

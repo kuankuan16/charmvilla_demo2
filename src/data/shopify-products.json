@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-14T12:50:38.418Z",
+  "syncedAt": "2026-10-15T03:31:05.021Z",
   "domain": "zcs0bg-10.myshopify.com",
   "version": "2026-10",
   "products": {
@@ -103,6 +103,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"花開富貴\",\"description\":\"CHARM VILLA「花開富貴」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。固定的四款茶組合匯集玫瑰烏龍茶、紅玉紅茶、金萱烏龍茶與東方美人茶，適合在慶祝與相聚時分享。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box body with woven fabric lid\"}},{\"label\":\"保存期限\",\"value\":\"1 年\"},{\"label\":\"盒內茶款\",\"value\":\"玫瑰烏龍茶 9 入東方美人茶 3 入紅玉紅茶 3 入金萱烏龍茶 3 入\",\"items\":[\"玫瑰烏龍茶 9 入\",\"東方美人茶 3 入\",\"紅玉紅茶 3 入\",\"金萱烏龍茶 3 入\"]},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":20,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -221,6 +227,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"年年有魚\",\"description\":\"CHARM VILLA「年年有魚」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。每盒集結四款茶，適合共享品茶時光，也為節慶送禮備妥一份心意。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box body with woven fabric lid\"}},{\"label\":\"保存期限\",\"value\":\"1 年\"},{\"label\":\"盒內茶款\",\"value\":\"玫瑰烏龍茶 9 入東方美人茶 3 入紅玉紅茶 3 入金萱烏龍茶 3 入\",\"items\":[\"玫瑰烏龍茶 9 入\",\"東方美人茶 3 入\",\"紅玉紅茶 3 入\",\"金萱烏龍茶 3 入\"]},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":20,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -660,6 +672,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"暮雪\",\"description\":\"CHARM VILLA「暮雪」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。靈感來自櫻花與白雪相遇的景緻，為自己或珍視的人留下一段靜謐的品茶時光。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 12 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"12\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配紮染布面盒蓋，飾以手工刺繡\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box with a fabric-covered lid\"}},{\"label\":\"保存期限\",\"value\":\"頭等獎玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28.6 × 11.7 × 9 cm（約 11.3 × 4.6 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.3 in × W 4.6 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 350 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"350 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"時至暮冬，即將迎來初春日子，總會令人聯想起櫻花遍土盛放的景色。在暮冬曉春之際，櫻雪互映的模樣，願能為您帶來初春新露時分清雅恬淡的美好。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"頭等獎玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"參等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -914,6 +932,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"京都版\",\"description\":\"CHARM VILLA「京都版」禮盒內含 6 包所選茶款的金魚茶包。精巧的高密度紙盒搭配連體盒蓋，盛裝單一茶款，適合日常品茶或作為用心挑選的禮物。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 6 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"6\"}},{\"label\":\"盒型與材質\",\"value\":\"高密度紙盒搭配連體盒蓋與封口封條\",\"source\":{\"key\":\"packaging_material\",\"value\":\"High-Density Paper Box\"}},{\"label\":\"保存期限\",\"value\":\"玫瑰烏龍茶、玫瑰蜜香紅茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"20.5 × 18.5 × 6.9 cm（約 8.1 × 7.3 × 2.7 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 8.1 in × W 7.3 in × H 2.7 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 99 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"99 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":100,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -1103,6 +1127,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"春曉\",\"description\":\"CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一份心意帶來清新氣息。可選擇茶款，以及藍色或粉紅色盒蓋。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 12 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"12\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配紮染布面盒蓋，飾以手工刺繡\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box with a fabric-covered lid\"}},{\"label\":\"保存期限\",\"value\":\"頭等獎玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28.6 × 11.7 × 9 cm（約 11.3 × 4.6 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.3 in × W 4.6 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 350 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"350 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"紮染盒蓋的色彩依實品為準，可能與產品圖片略有差異。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"黎明破曉之際，晨陽將天空渲染為一匹朦朧的薄幕；黃山雀在風鈴木金黃的枝頭上唱著晨歌，交織出一幅醺人的春日風景。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"頭等獎玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"參等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款與盒蓋顏色\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -1223,6 +1253,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"紫斑蝶\",\"description\":\"CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box body with woven fabric lid\"}},{\"label\":\"保存期限\",\"value\":\"2 年\"},{\"label\":\"盒內茶款\",\"value\":\"貳等獎東方美人茶 18 入\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。\\n限量供應，採預購製作。\\n盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"價格可能變動，並依每年舉辦兩次的茶葉競賽官方定價調整。\",\"限量供應，採預購製作。\",\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"紫斑蝶，每年越冬時便在臺灣上空織就出一道紫色長河的美麗生命。牠們一身黑紗綴著藍帶與白點，盤旋飄舞於半空時，蝶翅上忽紫倏藍的幻變鱗光，就好似夜空中閃爍的小小星河，頃刻便能傾城。CHARM VILLA 為您捕捉紫斑蝶的倩麗身影，裝點於茶評鑑會獲評貳等獎的頂級東方美人茶。願您潛心品茗溫潤好茶的同時，能靜賞於幽翳之中翩然起舞的群蝶，交織出美好的吉光片羽。\",\"more\":{\"title\":\"關於臺灣的紫斑蝶\",\"body\":\"在臺灣，許多溫暖的地方都有機會看見紫斑蝶。研究紀錄顯示，牠們會在初春北返、春末初夏及秋季南遷等時期形成大規模蝶道，並在南部溫暖、避風的山谷群聚越冬。這片緩緩流動的紫色蝶河，常與墨西哥帝王斑蝶的壯麗越冬景觀並提。\\n\\n臺灣目前常見四種紫斑蝶。另有曾棲息於臺灣的大紫斑蝶特有亞種，已多年未見，更提醒我們珍惜蝶群賴以生存的棲地。為協助紫斑蝶安全飛越林內一帶的國道，保育措施包括設置防護網，並在遷徙蝶量達到管制門檻時暫時封閉部分車道，為蝶群留出回家的路。\\n\\nCHARM VILLA 貳等獎東方美人茶禮盒上所繡的是名為「端紫斑蝶」（Euploea mulciber）的紫斑蝶種。在外觀特徵上，端紫斑蝶的前翅可見明亮的藍紫色光澤，後翅則綴著散落的白點與白色細紋。\\n\\n紫斑蝶背景資料參考：茂林國家風景區管理處；交通部高速公路局；國立自然科學博物館；美國自然史博物館\"}},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"貳等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -1410,6 +1446,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"蝴蝶蘭\",\"description\":\"CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值得紀念的時刻傳遞心意。可選擇茶款，以及金色或粉紅色盒蓋。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 18 入\",\"source\":{\"key\":\"teabag_count\",\"value\":\"18\"}},{\"label\":\"盒型與材質\",\"value\":\"桐木盒搭配手工刺繡布面盒蓋\",\"source\":{\"key\":\"packaging_material\",\"value\":\"Paulownia wood box with fabric-covered lid\"}},{\"label\":\"保存期限\",\"value\":\"頭等獎玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28 × 19 × 9 cm（約 11.0 × 7.5 × 3.5 in）\",\"source\":{\"key\":\"packaging_dimensions\",\"value\":\"L 11.0 in × W 7.5 in × H 3.5 in\"}},{\"label\":\"重量（含盒）\",\"value\":\"約 400 公克\",\"source\":{\"key\":\"product_weight\",\"value\":\"400 g\"}},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"頭等獎玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"參等獎東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"比賽獲獎茶\",\"text\":\"台灣每年舉辦茶葉評鑑比賽，自茶乾與沖泡後的底葉外觀、乾茶與茶湯的香氣，以及茶湯水色，嚴謹評選出各級別的獲獎茶。\",\"term\":\"得獎茶\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款與盒蓋顏色\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":10,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -1506,6 +1548,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"團圓\",\"description\":\"CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包，適合與親友共享或贈禮。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／小金魚茶包 15 入\"},{\"label\":\"盒型與材質\",\"value\":\"金色款：橘色紙盒搭配金色手工刺繡盒蓋；粉紅色款：桐木盒搭配粉紅色手工刺繡盒蓋；藍色款：藍色紙盒搭配黃色手工刺繡盒蓋。三款皆內含相同的 15 包茶款組合。\"},{\"label\":\"保存期限\",\"value\":\"1 年\"},{\"label\":\"盒內茶款\",\"value\":\"玫瑰烏龍茶 3 入東方美人茶 3 入紅玉紅茶 3 入金萱烏龍茶 3 入玫瑰蜜香紅茶 3 入\",\"items\":[\"玫瑰烏龍茶 3 入\",\"東方美人茶 3 入\",\"紅玉紅茶 3 入\",\"金萱烏龍茶 3 入\",\"玫瑰蜜香紅茶 3 入\"]},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"不同茶款的小金魚在一方禮盒內團聚，象徵著團圓美好之意。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。\",\"choiceLabel\":\"選擇包裝\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":100,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [
@@ -1527,9 +1575,9 @@
     "snowflake-gift-box": {
       "id": "gid://shopify/Product/15406015512940",
       "handle": "christmas-edition-2-count",
-      "title": "Christmas Edition (2-count)",
+      "title": "Christmas Charming Gift (Limited Edition)",
       "status": "ACTIVE",
-      "descriptionHtml": "<p>The CHARM VILLA Christmas Edition (2-count) contains two Goldfish Tea Bags of your selected tea in a Christmas paper box. Choose one of five tea varieties for a small seasonal gift or a pair of tea moments.</p><h3>Choose your tea</h3><ul>\n<li>Rose Oolong Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Rose &amp; Honey-Scented Black Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Oriental Beauty Tea (White Tip Oolong): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Ruby Black Tea (Red Jade / Ruby No.18): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Jin Xuan Oolong Tea (Golden Lily): 2 Goldfish Tea Bags of this tea per box.</li>\n</ul><h3>Packaging</h3><ul><li>Christmas paper box containing two Goldfish Tea Bags of the selected tea.</li></ul><h3>How to brew</h3><p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+      "descriptionHtml": "<p>CHARM VILLA Christmas Charming Gift (Limited Edition) is sold as a set of three boxes and contains 6 Goldfish Tea Bags in total, with 2 tea bags per box. Choose from the tea varieties below.</p><h3>Choose your tea</h3><ul>\n<li>Rose Oolong Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Rose &amp; Honey-Scented Black Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Oriental Beauty Tea (White Tip Oolong): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Ruby Black Tea (Red Jade / Ruby No.18): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Jin Xuan Oolong Tea (Golden Lily): 2 Goldfish Tea Bags of this tea per box.</li>\n</ul><h3>Packaging</h3><ul><li>Set of three Christmas paper boxes, each containing two Goldfish Tea Bags of the selected tea (6 tea bags per set).</li></ul><h3>How to brew</h3><p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
       "tags": [],
       "options": [
         {
@@ -1548,7 +1596,7 @@
           "id": "gid://shopify/ProductVariant/67637433893228",
           "title": "Rose Oolong Tea",
           "sku": "HY2CERO",
-          "price": "20.00",
+          "price": "60.00",
           "inventoryQuantity": 0,
           "inventoryPolicy": "DENY",
           "selectedOptions": [
@@ -1565,7 +1613,7 @@
           "id": "gid://shopify/ProductVariant/67637433925996",
           "title": "Rose & Honey-Scented Black Tea",
           "sku": "HY2CERH",
-          "price": "20.00",
+          "price": "60.00",
           "inventoryQuantity": 0,
           "inventoryPolicy": "DENY",
           "selectedOptions": [
@@ -1582,7 +1630,7 @@
           "id": "gid://shopify/ProductVariant/67637433958764",
           "title": "Oriental Beauty Tea",
           "sku": "HY2CEOB",
-          "price": "20.00",
+          "price": "60.00",
           "inventoryQuantity": 0,
           "inventoryPolicy": "DENY",
           "selectedOptions": [
@@ -1599,7 +1647,7 @@
           "id": "gid://shopify/ProductVariant/67637433991532",
           "title": "Ruby Black Tea",
           "sku": "HY2CERB",
-          "price": "20.00",
+          "price": "60.00",
           "inventoryQuantity": 0,
           "inventoryPolicy": "DENY",
           "selectedOptions": [
@@ -1616,7 +1664,7 @@
           "id": "gid://shopify/ProductVariant/67637434024300",
           "title": "Jin Xuan Tea",
           "sku": "HY2CEJX",
-          "price": "20.00",
+          "price": "60.00",
           "inventoryQuantity": 0,
           "inventoryPolicy": "DENY",
           "selectedOptions": [
@@ -1635,7 +1683,25 @@
           "namespace": "custom",
           "key": "headless_copy_zh_tw",
           "type": "json",
-          "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"聖誕心意禮（限量版）\",\"description\":\"CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，以單盒販售。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 2 入\"},{\"label\":\"盒型與材質\",\"value\":\"高密度紙盒，燙金雪花與壓紋小金魚，透明封口貼紙\"},{\"label\":\"保存期限\",\"value\":\"玫瑰烏龍茶、玫瑰蜜香紅茶款 1 年；其他茶款 2 年\"},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}"
+          "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"聖誕心意禮（限量版）\",\"description\":\"CHARM VILLA「聖誕心意禮（限量版）」三盒一組，每盒 2 包金魚茶包，共 6 包。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"3 盒一組，每盒 2 包，共 6 包\"},{\"label\":\"盒型與材質\",\"value\":\"高密度紙盒，燙金雪花與壓紋小金魚，透明封口貼紙\"},{\"label\":\"保存期限\",\"value\":\"玫瑰烏龍茶、玫瑰蜜香紅茶款 1 年；其他茶款 2 年\"},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":200,\"scope\":\"product\",\"unit\":\"set\",\"boxesPerUnit\":3,\"sourceDate\":\"2026-10-15\"}}"
+        },
+        {
+          "namespace": "custom",
+          "key": "teabag_count",
+          "type": "number_integer",
+          "value": "6"
+        },
+        {
+          "namespace": "custom",
+          "key": "product_contents",
+          "type": "single_line_text_field",
+          "value": "Set of 3 boxes · 2 tea bags per box · 6 tea bags per set"
         }
       ],
       "translations": [
@@ -1646,7 +1712,7 @@
         },
         {
           "key": "body_html",
-          "value": "<p>CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，以單盒販售。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。</p>",
+          "value": "<p>CHARM VILLA「聖誕心意禮（限量版）」三盒一組，每盒 2 包金魚茶包，共 6 包。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。</p>",
           "outdated": false
         }
       ],
@@ -1812,6 +1878,12 @@
           "key": "headless_copy_zh_tw",
           "type": "json",
           "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"聖誕禮盒（限量版）\",\"description\":\"CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方美人茶各 3 包），或單一茶款玫瑰烏龍茶、東方美人茶各 12 包，以紙盒搭配刺繡布面盒蓋呈現。可選擇藍色或橘色紙盒，搭配聖誕手工刺繡盒蓋，為佳節送上一份溫暖的心意。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 12 入\"},{\"label\":\"盒型與材質\",\"value\":\"藍色或橘色紙盒搭配聖誕手工刺繡布面盒蓋\"},{\"label\":\"保存期限\",\"value\":\"綜合茶款、玫瑰烏龍茶款 1 年；其他茶款 2 年\"},{\"label\":\"外盒尺寸（長 × 寬 × 高）\",\"value\":\"28.6 × 11.7 × 9 cm（約 11.3 × 4.6 × 3.5 in）\"},{\"label\":\"重量（含盒）\",\"value\":\"約 350 公克\"},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\\n茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"盒蓋上的手工刺繡，為禮盒增添立體質感與細緻工藝。\",\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"故事\",\"body\":\"金色的吊飾與雪花垂落在盒蓋上，小金魚帶著拐杖糖與聖誕襪游進佳節。打開盒蓋，十二尾小金魚茶包，陪你與重要的人共度溫暖的冬日時光。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款與盒色\"}"
+        },
+        {
+          "namespace": "custom",
+          "key": "preorder_details",
+          "type": "json",
+          "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":200,\"scope\":\"product\",\"unit\":\"box\",\"boxesPerUnit\":1,\"sourceDate\":\"2026-10-15\"}}"
         }
       ],
       "translations": [

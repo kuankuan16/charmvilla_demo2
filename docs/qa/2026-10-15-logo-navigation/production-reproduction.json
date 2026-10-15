@@ -1,0 +1,21 @@
+{
+  "url": "https://www.charmvilla.com/zh",
+  "errorPage": true,
+  "errors": [
+    {
+      "message": "Uncaught TypeError: r.toFixed is not a function",
+      "stack": "TypeError: r.toFixed is not a function\n    at https://www.charmvilla.com/_next/static/immutable/chunks/3j628midg2guz.js:1:27527\n    at Array.forEach (<anonymous>)\n    at p (https://www.charmvilla.com/_next/static/immutable/chunks/3j628midg2guz.js:1:27336)\n    at onUpdate (https://www.charmvilla.com/_next/static/immutable/chunks/3j628midg2guz.js:1:28014)\n    at ek.update (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:31272)\n    at ek.revert (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:25354)\n    at ek.refresh (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:28879)\n    at https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:15562\n    at Array.forEach (<anonymous>)\n    at eL (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:15533)",
+      "brew": {
+        "connected": false,
+        "display": "",
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

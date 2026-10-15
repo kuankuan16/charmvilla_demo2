@@ -1,0 +1,741 @@
+{
+  "/": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "OnlineStore",
+        "@id": "https://www.charmvilla.com/#organization",
+        "name": "CHARM VILLA US Store",
+        "legalName": "Haoying LLC",
+        "url": "https://www.charmvilla.com/",
+        "description": "CHARM VILLA's authorized independent US distributor, operated by Haoying LLC. Orders ship from California; the US store sells online only.",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "image": "https://www.charmvilla.com/media/site/og-charm-villa-1200x630.jpg",
+        "email": "us@charmvilla.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "25509 Industrial Blvd, Ste G5",
+          "addressLocality": "Hayward",
+          "addressRegion": "CA",
+          "postalCode": "94545",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "us@charmvilla.com",
+          "availableLanguage": [
+            "en",
+            "zh-Hant"
+          ]
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "United States"
+        },
+        "brand": {
+          "@id": "https://www.charmvilla.com/#brand"
+        }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://www.charmvilla.com/#brand",
+        "name": "CHARM VILLA",
+        "alternateName": [
+          "CHARMVILLA",
+          "子村莊園"
+        ],
+        "url": "https://www.charmvilla.com.tw/",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "sameAs": [
+          "https://charmvilla.jp/",
+          "https://www.facebook.com/CHARMVILLA8/",
+          "https://twitter.com/charmvilla8",
+          "https://www.instagram.com/charmvilla/"
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.charmvilla.com/#logo",
+        "url": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "contentUrl": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "width": 1200,
+        "height": 240,
+        "caption": "CHARM VILLA"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.charmvilla.com/#website",
+        "url": "https://www.charmvilla.com/",
+        "name": "CHARM VILLA",
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "inLanguage": [
+          "en",
+          "zh-Hant"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.charmvilla.com/#webpage",
+        "url": "https://www.charmvilla.com/",
+        "name": "Goldfish Tea Bags & Taiwanese Tea Gifts | CHARM VILLA",
+        "description": "Explore CHARM VILLA Goldfish Tea Bags, Taiwanese tea gifts and hinoki wood pieces. Shop the US online store, operated by Haoying LLC and shipping from California.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://www.charmvilla.com/#website"
+        },
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "mainEntity": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "mentions": [
+          {
+            "@id": "https://www.charmvilla.com/#store-taipei"
+          },
+          {
+            "@id": "https://www.charmvilla.com/#store-kyoto"
+          }
+        ]
+      },
+      {
+        "@type": "Store",
+        "@id": "https://www.charmvilla.com/#store-taipei",
+        "name": "CHARM VILLA Regent Taipei",
+        "url": "https://www.charmvilla.com/#visit",
+        "image": "https://www.charmvilla.com/media/site/store-regent-2k.webp",
+        "telephone": "+886225420303",
+        "hasMap": "https://goo.gl/maps/agJHzfM2VE82",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "B1, Regent Galleria, No. 3, Ln. 39, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei",
+          "addressLocality": "Taipei",
+          "addressCountry": "TW"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Friday",
+              "https://schema.org/Saturday",
+              "https://schema.org/Sunday"
+            ],
+            "opens": "10:00",
+            "closes": "21:00"
+          }
+        ]
+      },
+      {
+        "@type": "Store",
+        "@id": "https://www.charmvilla.com/#store-kyoto",
+        "name": "CHARM VILLA Kyoto",
+        "url": "https://www.charmvilla.com/#visit",
+        "image": "https://www.charmvilla.com/media/site/store-kyoto-2k.webp",
+        "telephone": "+81756065507",
+        "hasMap": "https://goo.gl/maps/WBdsELDfMx52",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "442 Yamamoto-cho, Teramachi-dori Nijo, Nakagyo-ku, Kyoto",
+          "addressLocality": "Kyoto",
+          "addressCountry": "JP"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "https://schema.org/Saturday",
+              "https://schema.org/Sunday"
+            ],
+            "opens": "11:00",
+            "closes": "18:00"
+          }
+        ]
+      }
+    ]
+  },
+  "/products/spring-dawn-gift-box": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "OnlineStore",
+        "@id": "https://www.charmvilla.com/#organization",
+        "name": "CHARM VILLA US Store",
+        "legalName": "Haoying LLC",
+        "url": "https://www.charmvilla.com/",
+        "description": "CHARM VILLA's authorized independent US distributor, operated by Haoying LLC. Orders ship from California; the US store sells online only.",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "image": "https://www.charmvilla.com/media/site/og-charm-villa-1200x630.jpg",
+        "email": "us@charmvilla.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "25509 Industrial Blvd, Ste G5",
+          "addressLocality": "Hayward",
+          "addressRegion": "CA",
+          "postalCode": "94545",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "us@charmvilla.com",
+          "availableLanguage": [
+            "en",
+            "zh-Hant"
+          ]
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "United States"
+        },
+        "brand": {
+          "@id": "https://www.charmvilla.com/#brand"
+        }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://www.charmvilla.com/#brand",
+        "name": "CHARM VILLA",
+        "alternateName": [
+          "CHARMVILLA",
+          "子村莊園"
+        ],
+        "url": "https://www.charmvilla.com.tw/",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "sameAs": [
+          "https://charmvilla.jp/",
+          "https://www.facebook.com/CHARMVILLA8/",
+          "https://twitter.com/charmvilla8",
+          "https://www.instagram.com/charmvilla/"
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.charmvilla.com/#logo",
+        "url": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "contentUrl": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "width": 1200,
+        "height": 240,
+        "caption": "CHARM VILLA"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.charmvilla.com/#website",
+        "url": "https://www.charmvilla.com/",
+        "name": "CHARM VILLA",
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "inLanguage": [
+          "en",
+          "zh-Hant"
+        ]
+      },
+      {
+        "@type": "ItemPage",
+        "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#webpage",
+        "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+        "name": "Spring Awakening",
+        "description": "Spring Awakening is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Its spring-dawn inspiration brings a sense of renewal to a tea moment or a thoughtful gift. Choose your tea and a Blue or Pink lid.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://www.charmvilla.com/#website"
+        },
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "breadcrumb": {
+          "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#product"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.charmvilla.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "All Pieces",
+            "item": "https://www.charmvilla.com/collections/all"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Goldfish Tea Bags",
+            "item": "https://www.charmvilla.com/collections/tea"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Spring Awakening",
+            "item": "https://www.charmvilla.com/products/spring-dawn-gift-box"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#product",
+        "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+        "name": "Spring Awakening",
+        "description": "Spring Awakening is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a Paulownia wood box with a tie-dyed fabric lid featuring hand embroidery. Its spring-dawn inspiration brings a sense of renewal to a tea moment or a thoughtful gift. Choose your tea and a Blue or Pink lid.",
+        "image": [
+          "https://www.charmvilla.com/media/site/listing-tea-spring-dawn-gift-box-v4-even2.webp",
+          "https://www.charmvilla.com/media/site/official-gift-front-spring-dawn-gift-box-blue-cutout-v3-even2.webp",
+          "https://www.charmvilla.com/media/site/studio-spring-dawn-gift-box-end-angle-even2.webp",
+          "https://www.charmvilla.com/media/site/gift-box-unboxed-12-v2-even2.webp"
+        ],
+        "category": "Goldfish Tea Bags",
+        "brand": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#webpage"
+        },
+        "productID": "gid://shopify/Product/15148513263980",
+        "offers": [
+          {
+            "@type": "Offer",
+            "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#offer-53903379136876",
+            "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+            "name": "Spring Awakening — First Prize Rose Oolong Tea / Blue",
+            "sku": "HYSABRO",
+            "price": "230.0",
+            "priceCurrency": "USD",
+            "seller": {
+              "@id": "https://www.charmvilla.com/#organization"
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#offer-67632292790636",
+            "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+            "name": "Spring Awakening — First Prize Rose Oolong Tea / Pink",
+            "sku": "HYSAPRO",
+            "price": "230.0",
+            "priceCurrency": "USD",
+            "seller": {
+              "@id": "https://www.charmvilla.com/#organization"
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#offer-53903379169644",
+            "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+            "name": "Spring Awakening — Third Prize Oriental Beauty Tea / Blue",
+            "sku": "HYSABOB",
+            "price": "260.0",
+            "priceCurrency": "USD",
+            "seller": {
+              "@id": "https://www.charmvilla.com/#organization"
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://www.charmvilla.com/products/spring-dawn-gift-box#offer-67632292823404",
+            "url": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+            "name": "Spring Awakening — Third Prize Oriental Beauty Tea / Pink",
+            "sku": "HYSAPOB",
+            "price": "260.0",
+            "priceCurrency": "USD",
+            "seller": {
+              "@id": "https://www.charmvilla.com/#organization"
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    ]
+  },
+  "/collections/tea": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "OnlineStore",
+        "@id": "https://www.charmvilla.com/#organization",
+        "name": "CHARM VILLA US Store",
+        "legalName": "Haoying LLC",
+        "url": "https://www.charmvilla.com/",
+        "description": "CHARM VILLA's authorized independent US distributor, operated by Haoying LLC. Orders ship from California; the US store sells online only.",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "image": "https://www.charmvilla.com/media/site/og-charm-villa-1200x630.jpg",
+        "email": "us@charmvilla.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "25509 Industrial Blvd, Ste G5",
+          "addressLocality": "Hayward",
+          "addressRegion": "CA",
+          "postalCode": "94545",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "us@charmvilla.com",
+          "availableLanguage": [
+            "en",
+            "zh-Hant"
+          ]
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "United States"
+        },
+        "brand": {
+          "@id": "https://www.charmvilla.com/#brand"
+        }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://www.charmvilla.com/#brand",
+        "name": "CHARM VILLA",
+        "alternateName": [
+          "CHARMVILLA",
+          "子村莊園"
+        ],
+        "url": "https://www.charmvilla.com.tw/",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "sameAs": [
+          "https://charmvilla.jp/",
+          "https://www.facebook.com/CHARMVILLA8/",
+          "https://twitter.com/charmvilla8",
+          "https://www.instagram.com/charmvilla/"
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.charmvilla.com/#logo",
+        "url": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "contentUrl": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "width": 1200,
+        "height": 240,
+        "caption": "CHARM VILLA"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.charmvilla.com/#website",
+        "url": "https://www.charmvilla.com/",
+        "name": "CHARM VILLA",
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "inLanguage": [
+          "en",
+          "zh-Hant"
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.charmvilla.com/collections/tea#webpage",
+        "url": "https://www.charmvilla.com/collections/tea",
+        "name": "Goldfish Tea Bags",
+        "description": "From woven fabric to the grain of paulownia wood, each tea gift box holds details worth a closer look. Discover handcrafted goldfish tea bags, then choose the box style, tea selection and number of tea bags for the gift you have in mind.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://www.charmvilla.com/#website"
+        },
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "breadcrumb": {
+          "@id": "https://www.charmvilla.com/collections/tea#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://www.charmvilla.com/collections/tea#list"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.charmvilla.com/collections/tea#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.charmvilla.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "All Pieces",
+            "item": "https://www.charmvilla.com/collections/all"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Goldfish Tea Bags",
+            "item": "https://www.charmvilla.com/collections/tea"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.charmvilla.com/collections/tea#list",
+        "numberOfItems": 10,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Joyful Reunion",
+            "url": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Abundance & Prosperity",
+            "url": "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Prosperity in Bloom",
+            "url": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Kyoto Artisanal Reserve",
+            "url": "https://www.charmvilla.com/products/kyoto-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Spring Awakening",
+            "url": "https://www.charmvilla.com/products/spring-dawn-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Snowy Twilight",
+            "url": "https://www.charmvilla.com/products/winter-blossom-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "Royal Orchid",
+            "url": "https://www.charmvilla.com/products/orchid-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "Sapphire Wings",
+            "url": "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "Christmas Edition (12-count)",
+            "url": "https://www.charmvilla.com/products/christmas-gift-box"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "name": "Christmas Edition (2-count)",
+            "url": "https://www.charmvilla.com/products/snowflake-gift-box"
+          }
+        ]
+      }
+    ]
+  },
+  "/news/la-popup-scholart-selection-2026": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "OnlineStore",
+        "@id": "https://www.charmvilla.com/#organization",
+        "name": "CHARM VILLA US Store",
+        "legalName": "Haoying LLC",
+        "url": "https://www.charmvilla.com/",
+        "description": "CHARM VILLA's authorized independent US distributor, operated by Haoying LLC. Orders ship from California; the US store sells online only.",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "image": "https://www.charmvilla.com/media/site/og-charm-villa-1200x630.jpg",
+        "email": "us@charmvilla.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "25509 Industrial Blvd, Ste G5",
+          "addressLocality": "Hayward",
+          "addressRegion": "CA",
+          "postalCode": "94545",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "us@charmvilla.com",
+          "availableLanguage": [
+            "en",
+            "zh-Hant"
+          ]
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "United States"
+        },
+        "brand": {
+          "@id": "https://www.charmvilla.com/#brand"
+        }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://www.charmvilla.com/#brand",
+        "name": "CHARM VILLA",
+        "alternateName": [
+          "CHARMVILLA",
+          "子村莊園"
+        ],
+        "url": "https://www.charmvilla.com.tw/",
+        "logo": {
+          "@id": "https://www.charmvilla.com/#logo"
+        },
+        "sameAs": [
+          "https://charmvilla.jp/",
+          "https://www.facebook.com/CHARMVILLA8/",
+          "https://twitter.com/charmvilla8",
+          "https://www.instagram.com/charmvilla/"
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.charmvilla.com/#logo",
+        "url": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "contentUrl": "https://www.charmvilla.com/brand/charmvilla-logo-schema.png",
+        "width": 1200,
+        "height": 240,
+        "caption": "CHARM VILLA"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.charmvilla.com/#website",
+        "url": "https://www.charmvilla.com/",
+        "name": "CHARM VILLA",
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "inLanguage": [
+          "en",
+          "zh-Hant"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#webpage",
+        "url": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026",
+        "name": "CHARM VILLA Pop-up in Los Angeles",
+        "description": "October 17 to December 31 at The Scholart Selection, San Gabriel.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://www.charmvilla.com/#website"
+        },
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        },
+        "breadcrumb": {
+          "@id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#article"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.charmvilla.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "News",
+            "item": "https://www.charmvilla.com/news"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CHARM VILLA Pop-up in Los Angeles",
+            "item": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#article",
+        "url": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026",
+        "headline": "CHARM VILLA Pop-up in Los Angeles",
+        "description": "October 17 to December 31 at The Scholart Selection, San Gabriel.",
+        "inLanguage": "en",
+        "articleSection": "Events",
+        "image": [
+          "https://www.charmvilla.com/media/site/news-la-popup-showmore-2026-wide.webp"
+        ],
+        "publisher": {
+          "@id": "https://www.charmvilla.com/#organization"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#webpage"
+        },
+        "about": {
+          "@id": "https://www.charmvilla.com/#brand"
+        }
+      }
+    ]
+  }
+}

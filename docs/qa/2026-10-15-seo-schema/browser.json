@@ -1,0 +1,112 @@
+[
+  {
+    "brokenImages": 0,
+    "canonical": "https://www.charmvilla.com/products/kyoto-gift-box",
+    "graphs": [
+      [
+        "OnlineStore",
+        "Brand",
+        "ImageObject",
+        "WebSite"
+      ],
+      [
+        "ItemPage",
+        "BreadcrumbList",
+        "Product"
+      ]
+    ],
+    "h1": "Kyoto Artisanal Reserve",
+    "lang": "en",
+    "overflow": false,
+    "title": "Kyoto Artisanal Reserve Tea Gift | CHARM VILLA",
+    "width": 1440,
+    "path": "/products/kyoto-gift-box",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "brokenImages": 0,
+    "canonical": "https://www.charmvilla.com/zh/products/kyoto-gift-box",
+    "graphs": [
+      [
+        "OnlineStore",
+        "Brand",
+        "ImageObject",
+        "WebSite"
+      ],
+      [
+        "ItemPage",
+        "BreadcrumbList",
+        "Product"
+      ]
+    ],
+    "h1": "京都版",
+    "lang": "zh-Hant",
+    "overflow": false,
+    "title": "京都版・小金魚茶包禮盒｜CHARM VILLA",
+    "width": 1440,
+    "path": "/zh/products/kyoto-gift-box",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "brokenImages": 0,
+    "canonical": "https://www.charmvilla.com/products/kyoto-gift-box",
+    "graphs": [
+      [
+        "OnlineStore",
+        "Brand",
+        "ImageObject",
+        "WebSite"
+      ],
+      [
+        "ItemPage",
+        "BreadcrumbList",
+        "Product"
+      ]
+    ],
+    "h1": "Kyoto Artisanal Reserve",
+    "lang": "en",
+    "overflow": false,
+    "title": "Kyoto Artisanal Reserve Tea Gift | CHARM VILLA",
+    "width": 390,
+    "path": "/products/kyoto-gift-box",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "brokenImages": 0,
+    "canonical": "https://www.charmvilla.com/zh/products/kyoto-gift-box",
+    "graphs": [
+      [
+        "OnlineStore",
+        "Brand",
+        "ImageObject",
+        "WebSite"
+      ],
+      [
+        "ItemPage",
+        "BreadcrumbList",
+        "Product"
+      ]
+    ],
+    "h1": "京都版",
+    "lang": "zh-Hant",
+    "overflow": false,
+    "title": "京都版・小金魚茶包禮盒｜CHARM VILLA",
+    "width": 390,
+    "path": "/zh/products/kyoto-gift-box",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "brewCup": "none",
+    "overflow": false,
+    "path": "/zh/products/kyoto-gift-box",
+    "reducedMotion": true
+  },
+  {
+    "focusTag": "A",
+    "keyboardFocus": "跳至商品內容"
+  }
+]
