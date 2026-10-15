@@ -1,0 +1,20 @@
+[
+  {
+    "lines": [
+      "Complimentary Shipping: Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states).",
+      "Standard Shipping: For orders under US$199, or orders not eligible for complimentary shipping, shipping rates are calculated and displayed at checkout based on your location and selected service.",
+      "We do not ship to Alaska or Hawaii.",
+      "APO/FPO/DPO addresses: At launch, we are not able to ship to military or diplomatic addresses."
+    ],
+    "url": "https://www.charmvilla.com/policy"
+  },
+  {
+    "lines": [
+      "免運費：訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。",
+      "標準運費：訂單未達 US$ 199，或不符合免運條件時，運費依您的地區與選擇的配送方式於結帳時計算並顯示。",
+      "目前不寄送阿拉斯加與夏威夷。",
+      "APO／FPO／DPO 軍郵及外交郵件地址：上線初期暫不寄送。"
+    ],
+    "url": "https://www.charmvilla.com/zh/policy"
+  }
+]
