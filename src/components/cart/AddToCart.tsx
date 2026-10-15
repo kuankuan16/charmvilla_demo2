@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+import { localeHref } from "@/i18n/config";
 import { useProductOption } from "@/components/catalog/ProductOption";
 import { useCart } from "./CartProvider";
 import { formatPrice, type Product } from "@/data/catalog";
@@ -10,7 +12,7 @@ import { useLiveProduct } from "@/components/catalog/useLiveProduct";
 // 拿掉」). The quantity stepper and the bar docked to the page bottom are gone; quantity is set in the bag drawer.
 // Gift boxes sold "one tea per box" (心有愛、春曉、暮雪) ask for the tea first; the choice travels with the bag line (2026-10-02).
 export default function AddToCart({ product }: { product: Product }) {
-  const cart = useCart(); const { t } = useT();
+  const cart = useCart(); const { t, lang } = useT();
   const choices = product.giftBox?.choices;
   const { option, setOption } = useProductOption(); // shared with the gallery (ProductOption.tsx)
   // Mix-and-match set (雪花三盒組, user 2026-10-14: 「可以自由混搭茶種（最多３種，每盒同一種口味）」): a stepper per tea, boxes counted
@@ -49,6 +51,12 @@ export default function AddToCart({ product }: { product: Product }) {
       {/* the chosen packaging in one line (user 2026-10-07: the 包裝選項 texts 「可以精簡呈現在這區」) */}
       {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}
     </fieldset>}
+    {product.preOrder && product.preOrderPolicy && <aside className="product-preorder-notice tc" aria-label={t("預購說明", "Pre-order information")}>
+      <p>{product.preOrderPolicy.shipping}</p>
+      <details><summary>{t("預購付款與取消", "Pre-order payment and cancellation")}</summary>
+        <p>{product.preOrderPolicy.terms} <Link href={`${localeHref(lang, "/policy")}#preorders`}>{t("查看完整政策", "Read the full policy")}</Link></p>
+      </details>
+    </aside>}
     <button type="button" className="product-buy tc" onClick={() => (boxes ? cart.add(product, 1, undefined, mix) : cart.add(product, 1, option))} disabled={cart.busy || !live.checked || live.error || missing || soldOut || noPrice}>{live.error ? t("暫時無法確認庫存", "Availability temporarily unavailable") : !live.checked ? t("確認庫存中", "Checking availability") : soldOut ? t("已售罄", "Sold out") : noPrice ? t("價格確認中", "Price coming soon") : missing && boxes ? t(`還要選 ${boxes - picked} 盒`, `Choose ${boxes - picked} more boxes`) : missing ? t("請先選擇商品選項", "Choose your option") : product.preOrder ? t("加入預購", "Pre-order") : t("加入購物車", "Add to bag")}</button>
   </>;
 }

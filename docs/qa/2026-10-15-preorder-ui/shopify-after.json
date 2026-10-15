@@ -1,0 +1,371 @@
+{
+  "at": "2026-10-15T02:16:19.216Z",
+  "products": [
+    {
+      "id": "gid://shopify/Product/15402073194860",
+      "handle": "joyful-reunion",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009328492",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632284631404",
+            "price": "170.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632284664172",
+            "price": "170.00",
+            "inventoryQuantity": 3,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15081862136172",
+      "handle": "abundance-prosperity-lunar-new-year-gift",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009295724",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53770912629100",
+            "price": "220.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15081861874028",
+      "handle": "prosperity-in-bloom-lunar-new-year-gift",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009262956",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53583844082028",
+            "price": "220.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15136264946028",
+      "handle": "kyoto-artisanal-reserve-6-ct",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009230188",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53771465687404",
+            "price": "60.00",
+            "inventoryQuantity": 18,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771465720172",
+            "price": "60.00",
+            "inventoryQuantity": 20,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903381496172",
+            "price": "60.00",
+            "inventoryQuantity": 20,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433663852",
+            "price": "60.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15148513263980",
+      "handle": "spring-awakening-12-ct",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009197420",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53903379136876",
+            "price": "230.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292790636",
+            "price": "230.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903379169644",
+            "price": "260.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292823404",
+            "price": "260.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15107964273004",
+      "handle": "snowy-twilight",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009164652",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53771531583852",
+            "price": "230.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771531616620",
+            "price": "260.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15151974809964",
+      "handle": "royal-orchid-gold",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009131884",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53827887464812",
+            "price": "300.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301113708",
+            "price": "300.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53827887497580",
+            "price": "340.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301146476",
+            "price": "340.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15150923350380",
+      "handle": "sapphire-wings",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009099116",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53824982679916",
+            "price": "425.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15406015742316",
+      "handle": "christmas-edition-12-count",
+      "status": "UNLISTED",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009066348",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67637434253676",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434286444",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434319212",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434351980",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434384748",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434417516",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15406015512940",
+      "handle": "christmas-edition-2-count",
+      "status": "ACTIVE",
+      "preorder": {
+        "id": "gid://shopify/Metafield/191217009033580",
+        "type": "json",
+        "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}}}",
+        "compareDigest": "061cda1ec73f7e10714364a169fed9dc6da8beb63aa3a03042fd3ea2608859a3"
+      },
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67637433893228",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433925996",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433958764",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433991532",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434024300",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    }
+  ]
+}

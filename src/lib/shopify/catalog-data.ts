@@ -28,6 +28,18 @@ export function chineseCopy(source: ShopifyProduct): ShopifyChineseCopy | undefi
   return copy;
 }
 
+/** Merchant-owned campaign setting. Explicit false also disables legacy preorder tags. */
+function preorderDetails(source: ShopifyProduct, lang: Locale) {
+  const raw = source.metafields.find(m => m.namespace === "custom" && m.key === "preorder_details")?.value;
+  if (!raw) return undefined;
+  const data = JSON.parse(raw);
+  if (data.version !== 1 || typeof data.enabled !== "boolean") throw new Error(`Invalid preorder setting: ${source.handle}`);
+  if (!data.enabled) return { enabled: false };
+  const validNotice = (notice: { shipping?: unknown; terms?: unknown } | undefined) => typeof notice?.shipping === "string" && Boolean(notice.shipping.trim()) && typeof notice.terms === "string" && Boolean(notice.terms.trim());
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(data.shipBy) || !validNotice(data.notice?.zh) || !validNotice(data.notice?.en)) throw new Error(`Invalid preorder terms: ${source.handle}`);
+  return { enabled: true, policy: { shipBy: data.shipBy as string, shipping: data.notice[lang].shipping as string, terms: data.notice[lang].terms as string } };
+}
+
 /** Text only, rendered by React (never dangerouslySetInnerHTML). */
 export const htmlText = (html: string) => html.replace(/<\/(?:p|li|h[1-6])\s*>|<br\s*\/?\s*>/gi, "\n").replace(/<[^>]*>/g, "")
   .replace(/&(?:amp|nbsp|lt|gt|quot|apos|#39);/g, x => ({ "&amp;": "&", "&nbsp;": " ", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'", "&#39;": "'" })[x] ?? x)
@@ -81,7 +93,9 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
   if (choices) facts.push({ label: t("商品選項", "Options"), value: choices.map(c => c.label).join(", "), items: choices.map(c => c.label) });
   add(t("商品須知", "Product notice"), sections["product notice"]);
   const description = sections.intro || htmlText(source.descriptionHtml);
-  const preOrder = source.tags.some(s => /pre.?order/i.test(s)) || /crafted upon pre-order/i.test(source.descriptionHtml) || source.variants.some(v => v.currentlyNotInStock && v.availableForSale);
+  const preorder = preorderDetails(source, lang);
+  const scheduledPreOrder = preorder?.enabled ?? (source.tags.some(s => /pre.?order/i.test(s)) || /crafted upon pre-order/i.test(source.descriptionHtml));
+  const preOrder = scheduledPreOrder || source.variants.some(v => v.currentlyNotInStock && v.availableForSale);
   const hasTea = source.variants.some(v => v.selectedOptions.some(o => /tea|flavo/i.test(o.name)));
   const hasColor = source.variants.some(v => v.selectedOptions.some(o => /color/i.test(o.name)));
   const teaNames = [...new Set(source.variants.flatMap(v => v.selectedOptions.filter(o => /tea|flavo/i.test(o.name)).map(o => o.value)))];
@@ -112,9 +126,9 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
     facts: localizedFacts ?? facts,
     story: copy?.story ?? { ...local.story, title: sections.story ? t("故事", "Story") : meta.product_story_title || source.title, body: sections.story || meta.product_story || "", more: undefined },
     price: source.currency === "USD" || source.currency === "TWD" ? { amount: Math.min(...source.variants.map(v => Number(v.price))), currency: source.currency } : undefined,
-    soldOut: !source.availableForSale, preOrder, preOrderRemaining: undefined, priceTbd: false, teaTbd: false,
+    soldOut: !source.availableForSale, preOrder, preOrderPolicy: preorder?.policy, preOrderRemaining: undefined, priceTbd: false, teaTbd: false,
     shopify: { handle: source.handle, variantId: source.variants.length === 1 ? source.variants[0].id : "" },
-    shopifyData: { productId: source.id, published: source.published, status: source.status, variants: source.variants },
+    shopifyData: { productId: source.id, published: source.published, status: source.status, scheduledPreOrder, variants: source.variants },
     giftBox: local.giftBox ? { ...local.giftBox, pieces, contents: [], choices, mixBoxes: undefined, choiceLabel: copy?.choiceLabel || (hasTea && hasColor ? t("選擇茶款與盒色", "Choose your tea and box color") : hasColor ? t("選擇包裝", "Choose your packaging") : t("選擇茶款", "Choose your tea")) } : undefined,
     // Editorial leaf photographs and general brewing guide remain; product-specific facts above come only from Shopify.
   };

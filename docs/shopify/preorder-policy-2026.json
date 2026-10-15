@@ -1,0 +1,30 @@
+{
+  "source": "Owner screenshot, 2026-10-15; preorder product scope restored from commit a5eb155 before Shopify migration",
+  "slugs": [
+    "reunion-paper-gift-box",
+    "year-of-plenty-gift-box",
+    "blossoming-prosperity-gift-box",
+    "kyoto-gift-box",
+    "spring-dawn-gift-box",
+    "winter-blossom-gift-box",
+    "orchid-gift-box",
+    "purple-butterfly-gift-box",
+    "christmas-gift-box",
+    "snowflake-gift-box"
+  ],
+  "policy": {
+    "version": 1,
+    "enabled": true,
+    "shipBy": "2026-11-30",
+    "notice": {
+      "zh": {
+        "shipping": "預購商品預計最晚於 2026 年 11 月底前出貨。",
+        "terms": "預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。"
+      },
+      "en": {
+        "shipping": "Pre-orders are expected to ship by the end of November 2026.",
+        "terms": "Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies."
+      }
+    }
+  }
+}

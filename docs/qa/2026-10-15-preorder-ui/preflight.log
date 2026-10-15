@@ -1,0 +1,58 @@
+
+> charmvilla-gallery-site@0.1.0 shopify:test
+> node --test scripts/shopify/catalog.test.mjs
+
+(node:98462) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/src/lib/shopify/catalog-data.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Shopify replaces price and stock while preserving approved image objects (1.07625ms)
+✔ Christmas small box follows the Shopify 2-count unit, never the retired three-box bundle (0.364916ms)
+✔ Option photos match by identity, independently of variant order (0.198708ms)
+✔ Every mapped variant has one identity, without fabricated or shared GIDs (0.118209ms)
+✔ Chinese option labels retain verified pink and Christmas color photographs (0.29925ms)
+✔ Tea note names follow the Shopify competition grade while preserving editorial text (0.104792ms)
+✔ Shopify Chinese CMS restores approved copy without changing commerce or images (1.103541ms)
+✔ All 14 Chinese migration entries match Shopify IDs and contain no retired pre-order claims (0.361708ms)
+✔ Approved preorder restoration preserves every Shopify price, variant and sale restriction (1.773625ms)
+✔ Explicit campaign disable overrides legacy preorder copy without converting regular inventory to preorder (0.193333ms)
+✔ An enabled preorder must provide approved terms in both languages (0.217791ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 81.672291
+{
+  "dryRun": true,
+  "productCount": 10,
+  "slugs": [
+    "reunion-paper-gift-box",
+    "year-of-plenty-gift-box",
+    "blossoming-prosperity-gift-box",
+    "kyoto-gift-box",
+    "spring-dawn-gift-box",
+    "winter-blossom-gift-box",
+    "orchid-gift-box",
+    "purple-butterfly-gift-box",
+    "christmas-gift-box",
+    "snowflake-gift-box"
+  ],
+  "policy": {
+    "version": 1,
+    "enabled": true,
+    "shipBy": "2026-11-30",
+    "notice": {
+      "zh": {
+        "shipping": "預購商品預計最晚於 2026 年 11 月底前出貨。",
+        "terms": "預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。"
+      },
+      "en": {
+        "shipping": "Pre-orders are expected to ship by the end of November 2026.",
+        "terms": "Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies."
+      }
+    }
+  }
+}

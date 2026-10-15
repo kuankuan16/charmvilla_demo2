@@ -1,0 +1,374 @@
+{
+  "at": "2026-10-15T02:15:20.139Z",
+  "source": "Owner screenshot, 2026-10-15; preorder product scope restored from commit a5eb155 before Shopify migration",
+  "targets": [
+    {
+      "slug": "reunion-paper-gift-box",
+      "id": "gid://shopify/Product/15402073194860",
+      "handle": "joyful-reunion"
+    },
+    {
+      "slug": "year-of-plenty-gift-box",
+      "id": "gid://shopify/Product/15081862136172",
+      "handle": "abundance-prosperity-lunar-new-year-gift"
+    },
+    {
+      "slug": "blossoming-prosperity-gift-box",
+      "id": "gid://shopify/Product/15081861874028",
+      "handle": "prosperity-in-bloom-lunar-new-year-gift"
+    },
+    {
+      "slug": "kyoto-gift-box",
+      "id": "gid://shopify/Product/15136264946028",
+      "handle": "kyoto-artisanal-reserve-6-ct"
+    },
+    {
+      "slug": "spring-dawn-gift-box",
+      "id": "gid://shopify/Product/15148513263980",
+      "handle": "spring-awakening-12-ct"
+    },
+    {
+      "slug": "winter-blossom-gift-box",
+      "id": "gid://shopify/Product/15107964273004",
+      "handle": "snowy-twilight"
+    },
+    {
+      "slug": "orchid-gift-box",
+      "id": "gid://shopify/Product/15151974809964",
+      "handle": "royal-orchid-gold"
+    },
+    {
+      "slug": "purple-butterfly-gift-box",
+      "id": "gid://shopify/Product/15150923350380",
+      "handle": "sapphire-wings"
+    },
+    {
+      "slug": "christmas-gift-box",
+      "id": "gid://shopify/Product/15406015742316",
+      "handle": "christmas-edition-12-count"
+    },
+    {
+      "slug": "snowflake-gift-box",
+      "id": "gid://shopify/Product/15406015512940",
+      "handle": "christmas-edition-2-count"
+    }
+  ],
+  "products": [
+    {
+      "id": "gid://shopify/Product/15402073194860",
+      "handle": "joyful-reunion",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632284631404",
+            "price": "170.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632284664172",
+            "price": "170.00",
+            "inventoryQuantity": 3,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15081862136172",
+      "handle": "abundance-prosperity-lunar-new-year-gift",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53770912629100",
+            "price": "220.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15081861874028",
+      "handle": "prosperity-in-bloom-lunar-new-year-gift",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53583844082028",
+            "price": "220.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15136264946028",
+      "handle": "kyoto-artisanal-reserve-6-ct",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53771465687404",
+            "price": "60.00",
+            "inventoryQuantity": 18,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771465720172",
+            "price": "60.00",
+            "inventoryQuantity": 20,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903381496172",
+            "price": "60.00",
+            "inventoryQuantity": 20,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433663852",
+            "price": "60.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15148513263980",
+      "handle": "spring-awakening-12-ct",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53903379136876",
+            "price": "230.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292790636",
+            "price": "230.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903379169644",
+            "price": "260.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292823404",
+            "price": "260.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15107964273004",
+      "handle": "snowy-twilight",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53771531583852",
+            "price": "230.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771531616620",
+            "price": "260.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15151974809964",
+      "handle": "royal-orchid-gold",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53827887464812",
+            "price": "300.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301113708",
+            "price": "300.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53827887497580",
+            "price": "340.00",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301146476",
+            "price": "340.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15150923350380",
+      "handle": "sapphire-wings",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53824982679916",
+            "price": "425.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15406015742316",
+      "handle": "christmas-edition-12-count",
+      "status": "UNLISTED",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67637434253676",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434286444",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434319212",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434351980",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434384748",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434417516",
+            "price": "120.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15406015512940",
+      "handle": "christmas-edition-2-count",
+      "status": "ACTIVE",
+      "preorder": null,
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67637433893228",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433925996",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433958764",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433991532",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434024300",
+            "price": "20.00",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    }
+  ]
+}

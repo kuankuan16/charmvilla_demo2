@@ -83,6 +83,8 @@ export type Product = {
   soldOut?: boolean;
   /** Made to order: labelled 預購 / Pre-order beside the price, card and bag button. */
   preOrder?: boolean;
+  /** Approved bilingual terms from Shopify custom.preorder_details; no local stock allowance. */
+  preOrderPolicy?: { shipBy: string; shipping: string; terms: string };
   /** Pre-order boxes left in the product's one shared allowance (客戶答覆 B7, 2026-10-12): shown as 預購・剩餘 N 盒 beside the price. Until
    *  Shopify inventory replaces it, it equals the allowance unless tea-gifts.ts overrides it (preOrderLeft). Absent: no count is shown. */
   preOrderRemaining?: number;
@@ -93,7 +95,7 @@ export type Product = {
   imageNote?: string;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
-  shopifyData?: { productId: string; published: boolean; status: string; variants: ShopifyVariant[] };
+  shopifyData?: { productId: string; published: boolean; status: string; scheduledPreOrder?: boolean; variants: ShopifyVariant[] };
   /** How to brew (tea gift boxes, guide §4); `image` sits at the bottom left of the steps. */
   brew?: { title: string; steps: { title: string; text: string }[]; image?: Img };
   /** 茶款介紹: a note on each tea in the box (tea gift boxes, as on the official product pages). */

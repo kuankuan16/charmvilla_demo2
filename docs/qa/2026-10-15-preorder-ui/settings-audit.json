@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-15",
+  "source": "Authenticated Shopify Admin UI, store charmvilla",
+  "paymentCapture": {
+    "automaticallyAtCheckout": true,
+    "manually": false,
+    "automaticallyAtFulfillment": false
+  },
+  "returnRules": [
+    "No returns",
+    "Cancel until fulfilled"
+  ],
+  "hostedPolicies": {
+    "returnAndRefund": "No policy set",
+    "shipping": "No policy set"
+  },
+  "shippingProfiles": {
+    "general": {
+      "Hayward ReadySpaces": {
+        "Express": "USD30, 1–2 business days",
+        "UPS": "7 calculated services, free USD199 and up",
+        "zone": "Domestic / United States; province exclusions not yet inspected"
+      },
+      "SGV Pop-up": {
+        "Standard": "Free, 3–5 business days; no minimum shown",
+        "zone": "North America / United States; province exclusions not yet inspected"
+      }
+    }
+  },
+  "pendingClarification": [
+    "Should SGV Pop-up offer shipping or only be used for pop-up activities?",
+    "Use current calculated UPS rates for orders under USD199 and for AK/HI, or another rate table?"
+  ],
+  "mutations": "Only 10 custom.preorder_details product metafields and their definition were added. No shipping/payment/policy/inventory/price/channel settings changed."
+}

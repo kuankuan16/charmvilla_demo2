@@ -2,6 +2,13 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
+## 2026-10-15 預購 UI 正式發布準備
+
+- 使用者明確要求將 Pre-order UI push 至正式站。本次只包含預購 UI、Shopify custom.preorder_details 讀取、購物車使用真實 line attributes，未包含另一本機工作樹的全站 SEO／Search 移除／Logo cleanup 修正。
+- Shopify 10 個對應商品的雙語條件已寫入並讀回；價格、庫存與 status 未變。Node24 check、Shopify11／analytics8 及先前雙語1440／390與購物車 UI 驗證已通過。[QA](qa/2026-10-15-preorder-ui/README.md)。
+- 基準 origin/main 2232e74，target repo tentenco/charmvilla_shopify_official，既有 Vercel tentenco/charmvilla-demo2。此為部署前記錄，實際 READY／alias 與 source SHA 必須讀回。
+- 尚待完成：使用者最新確認 SGV 僅現場、網購只用 Hayward 庫存、不寄 AK／HI；另外重新要求排查頂部 Logo 回首頁的間歇 Page Not Found。主工作樹的 PLAN 保留接續順序，不能因本次發布便宣稱這兩項已修。
+
 ## 接手時先確認
 
 - 2026-10-15 沖泡區整合：`main` 在 `e83cc1b` 之後多了 `fe38a98`（merge `brew-cup-scroll`）、`297936e`（agent 文件整理）與沖泡區調整 commit。push／部署結果以下方「最近已交付」與 [沖泡區整合 QA](qa/2026-10-15-brew-cup-integration/README.zh-TW.md) 為準；接手時仍要 `git fetch` 回讀。

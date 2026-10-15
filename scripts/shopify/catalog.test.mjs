@@ -74,3 +74,31 @@ test('All 14 Chinese migration entries match Shopify IDs and contain no retired 
     assert.doesNotMatch(JSON.stringify(p.copy), /預購商品預計|預購於下單|3 盒一組|三盒一組|剩餘 100/);
   }
 });
+
+const preorder = JSON.parse(readFileSync(new URL('../../docs/shopify/preorder-policy-2026.json', import.meta.url)));
+const withPreorder = (source, policy = preorder.policy) => ({ ...structuredClone(source), metafields: [...source.metafields.filter(m => m.key !== 'preorder_details'), { namespace: 'custom', key: 'preorder_details', type: 'json', value: JSON.stringify(policy) }] });
+test('Approved preorder restoration preserves every Shopify price, variant and sale restriction', () => {
+  for (const slug of preorder.slugs) {
+    const source = snapshot.products[slug];
+    for (const lang of ['zh', 'en']) {
+      const p = applyShopifyProduct({ ...local, slug }, withPreorder(source), lang);
+      assert.equal(p.preOrder, true); assert.equal(p.shopifyData.scheduledPreOrder, true);
+      assert.equal(p.preOrderPolicy.shipBy, '2026-11-30');
+      assert.deepEqual(p.preOrderPolicy, { shipBy: preorder.policy.shipBy, ...preorder.policy.notice[lang] });
+      assert.equal(p.price.amount, Math.min(...source.variants.map(v => Number(v.price))));
+      assert.equal(p.soldOut, !source.availableForSale); assert.equal(p.shopifyData.published, source.published);
+      assert.deepEqual(p.shopifyData.variants, source.variants);
+      assert.equal(p.preOrderRemaining, undefined); assert.equal(p.giftBox.mixBoxes, undefined); assert.equal(p.image, image);
+    }
+  }
+});
+test('Explicit campaign disable overrides legacy preorder copy without converting regular inventory to preorder', () => {
+  const disabled = withPreorder(snapshot.products['purple-butterfly-gift-box'], { version: 1, enabled: false });
+  const p = applyShopifyProduct(local, disabled, 'en');
+  assert.equal(p.preOrder, false); assert.equal(p.shopifyData.scheduledPreOrder, false); assert.equal(p.preOrderPolicy, undefined);
+  assert.equal(applyShopifyProduct(local, snapshot.products['kyoto-gift-box'], 'en').preOrder, false);
+});
+test('An enabled preorder must provide approved terms in both languages', () => {
+  const policy = structuredClone(preorder.policy); delete policy.notice.zh;
+  assert.throws(() => applyShopifyProduct(local, withPreorder(snapshot.products['kyoto-gift-box'], policy), 'en'), /Invalid preorder terms/);
+});

@@ -1,0 +1,19 @@
+(node:35839) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/src/lib/seo/metadata.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-shopify-official/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ both locales share canonical, hreflang, OG and Twitter identity without inherited home titles (0.533458ms)
+✔ US online seller is distinct from the brand; no false US storefront or brand social equivalence (0.155875ms)
+✔ every Shopify variant retains its own price, stock, SKU and seller with approved images (1.177292ms)
+✔ unpublished, display-only, inactive or unconfirmed currency products never advertise offers (0.239375ms)
+✔ JSON-LD is script-safe and round-trips hostile CMS strings without executable markup (0.073667ms)
+✔ article dates never turn future event dates into publication timestamps; graph references resolve (0.18625ms)
+✔ backordered variants do not turn stocked siblings into pre-orders; explicit preorder tags apply to the product (0.212875ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76.579125

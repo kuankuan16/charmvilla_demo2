@@ -1,0 +1,168 @@
+
+> charmvilla-gallery-site@0.1.0 check
+> npm run lint && npm run typecheck && npm run build
+
+
+> charmvilla-gallery-site@0.1.0 lint
+> eslint
+
+
+/Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/docs/qa/2026-10-01-product-studio-gallery/reference.mjs
+  19:11  warning  'frame' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  22:11  warning  'pressed' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/scripts/tmp/sheet2.mjs
+  4:103  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/src/components/account/AccountClient.tsx
+  167:123  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/src/components/cart/CartDrawer.tsx
+  52:64  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/src/components/chrome/Header.tsx
+  132:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/src/components/engine/Preloader.tsx
+  78:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 7 problems (0 errors, 7 warnings)
+
+
+> charmvilla-gallery-site@0.1.0 typecheck
+> tsc --noEmit
+
+
+> charmvilla-gallery-site@0.1.0 build
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 718ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.3s
+  Running TypeScript ...
+  Finished TypeScript in 1688ms ...
+  Collecting page data using 17 workers ...
+  Generating static pages using 17 workers (0/81) ...
+  Generating static pages using 17 workers (20/81) 
+  Generating static pages using 17 workers (40/81) 
+  Generating static pages using 17 workers (60/81) 
+✓ Generating static pages using 17 workers (81/81) in 217ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[lang]
+├ ƒ /[lang]/[...rest]
+├   /[lang]/about
+│ ├ ● /zh/about
+│ └ ● /en/about
+├   /[lang]/accessibility
+│ ├ ● /zh/accessibility
+│ └ ● /en/accessibility
+├   /[lang]/account
+│ ├ ● /zh/account
+│ └ ● /en/account
+├ ƒ /[lang]/account/activate/[[...token]]
+├ ƒ /[lang]/account/reset/[[...token]]
+├ ƒ /[lang]/collections/[category]
+├   /[lang]/faq
+│ ├ ● /zh/faq
+│ └ ● /en/faq
+├   /[lang]/news
+│ ├ ● /zh/news
+│ └ ● /en/news
+├   /[lang]/news/[slug]
+│ ├ ● /zh/news/la-popup-scholart-selection-2026
+│ └ ● /en/news/la-popup-scholart-selection-2026
+├   /[lang]/policy
+│ ├ ● /zh/policy
+│ └ ● /en/policy
+├   /[lang]/privacy
+│ ├ ● /zh/privacy
+│ └ ● /en/privacy
+├ ƒ /[lang]/products/[slug]
+├   /[lang]/prop65
+│ ├ ● /zh/prop65
+│ └ ● /en/prop65
+├   /[lang]/tasks
+│ ├ ● /zh/tasks
+│ └ ● /en/tasks
+├   /[lang]/terms
+│ ├ ● /zh/terms
+│ └ ● /en/terms
+├ ƒ /api/account/activate
+├ ƒ /api/account/addresses
+├ ƒ /api/account/login
+├ ƒ /api/account/logout
+├ ƒ /api/account/me
+├ ƒ /api/account/profile
+├ ƒ /api/account/recover
+├ ƒ /api/account/register
+├ ƒ /api/account/reset
+├ ƒ /api/cart
+├ ƒ /api/cart/analytics
+├ ƒ /api/newsletter
+├ ƒ /api/preorder
+├ ƒ /api/products
+├ ○ /apple-icon.png
+├ ○ /icon.png
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> charmvilla-gallery-site@0.1.0 shopify:test
+> node --test scripts/shopify/catalog.test.mjs
+
+(node:35642) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/src/lib/shopify/catalog-data.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Shopify replaces price and stock while preserving approved image objects (1.2765ms)
+✔ Christmas small box follows the Shopify 2-count unit, never the retired three-box bundle (0.452042ms)
+✔ Option photos match by identity, independently of variant order (0.244083ms)
+✔ Every mapped variant has one identity, without fabricated or shared GIDs (0.166417ms)
+✔ Chinese option labels retain verified pink and Christmas color photographs (0.326792ms)
+✔ Tea note names follow the Shopify competition grade while preserving editorial text (0.113583ms)
+✔ Shopify Chinese CMS restores approved copy without changing commerce or images (1.083083ms)
+✔ All 14 Chinese migration entries match Shopify IDs and contain no retired pre-order claims (0.500291ms)
+✔ Approved preorder restoration preserves every Shopify price, variant and sale restriction (2.3325ms)
+✔ Explicit campaign disable overrides legacy preorder copy without converting regular inventory to preorder (0.365125ms)
+✔ An enabled preorder must provide approved terms in both languages (0.379333ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 78.089083
+(node:35664) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/src/lib/analytics/ga4.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/ekc-m5max/Documents/Github/Codex-Local/10-14-charmvilla-preorder-release/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Purchase uses discounted merchandise value, separates shipping/tax, stable variant ID and no PII (1.623375ms)
+✔ Repeated purchase events and thank-you reloads are deduplicated (0.368792ms)
+✔ Checkout cannot report a purchase without a real Shopify order ID (0.252792ms)
+✔ Both explicit storefront consent and Shopify analytics permission are required (1.290458ms)
+✔ Shopify checkout stages map once to standard GA4 funnel events (0.629458ms)
+✔ URL sanitization removes checkout tokens and customer inputs (0.126541ms)
+✔ Product and cart analytics use the same Shopify variant ID (0.229959ms)
+✔ Checkout and payment returns do not replace acquisition referrals (0.099334ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67.841458
