@@ -5,13 +5,16 @@ Updated: 2026-10-15
 
 ## Active task
 
-發布使用者核准的雪花商品圖、10/14 客戶定稿、政策連結、聖誕選單與沖泡步驟留白。保留最新主線 Shopify、購物車與 Logo 修正，不寫 Shopify 後台。原批次 67a9091 已正式部署並驗證圖片/定稿/選單；最新更正要求第五步與圖片底部對齊。保留桌機每步至少240px、上下各64px與手機40px，移除桌機guide尾端空白並校正照片動畫終點，待本機及正式驗證。
+使用者要求確認 root checkout 連到 tentenco/charmvilla_shopify_official，安全合併本機與同事最新版本、發布 www.charmvilla.com，並在 Ego Lite 開本機與 Shopify Admin，接通商店 MCP。先前圖片、定稿與底部對齊已正式發布並驗證。新的 root 同步須保留舊 WIP 的可回復備份，不能用舊檔覆蓋同事 Shopify 修改。
 
 ## Steps and evidence
 
 1. 已完成：955e603 基礎上的 curated patch、Node24 check、Shopify12、雙語1440/390、照片/政策/選單與 Logo QA，證據 docs/qa/2026-10-15-client-images-release/。這些是合併最新主線與再次增加間距之前的證據。
 2. 已完成：整合最新 9beeb11，保留 SEO、購物車、三盒 US$60、配送與庫存；Node24 check、Shopify12、API37、E2E16、雙語桌手機 QA 通過。
-3. 待完成：發布 main，讀回 Vercel alias/來源 SHA，正式圖片/文案/雙語桌手機 QA，確認公開 Shopify API 未被本次發佈改寫。
+3. 已完成：67a9091 圖片/文案、afc5199 底部對齊正式發布。Vercel alias/來源 SHA 已核對；本機及正式各12組對齊 QA，8組桌機底緣差0px，手機/reduced-motion/Logo與錯誤檢查通過。14商品35variants與10款預購資料不變。
+4. 進行中：root main 落後18個提交；先保存舊 WIP 與核准資產，再 fast-forward 最新主線，確認核准功能均已包含；未核准圖片/歷史輸出保留本機。
+5. 待完成：以既有 Vercel 專案憑證接通本機 Shopify，實際 MCP handshake/唯讀查詢驗證，說明寫入能力限制；秘密僅存 ignored .env.local。Ego task44 p1 本機、p2 Shopify 密碼登入已交給使用者。
+6. 待完成：以同步後 root 執行必要驗證，重新確認正式 alias 與實際頁面，回報版本差異及未解的登入/數量條件。
 
 ## FIFO queue
 
@@ -24,4 +27,4 @@ Updated: 2026-10-15
 
 ## Resume
 
-工作樹 /Users/kuan/Documents/Codex/charmvilla-release-20261015；原本 10-02-charmvilla-demo2 WIP 原樣保留，不從舊 root 發布。先合併最新 main，再完成本次 release，接續團圓。
+先在 /Users/kuan/Documents/Codex/charmvilla-release-20261015 提交正式 QA 證據，再同步 10-02-charmvilla-demo2。root remote 已確認正確，舊 WIP 不能直接整批套到新主線。團圓金色數量仍待回答；不寫入庫存。

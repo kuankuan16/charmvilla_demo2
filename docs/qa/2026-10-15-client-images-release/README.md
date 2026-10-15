@@ -6,7 +6,7 @@
 - 在隔離 worktree 整理，最後整合 origin/main `9beeb11`。原本 root 的未提交工作保留，未批次提交。
 - 五張新圖：三盒、斜角、正面均為 smooth-bg-v5；開盒 2 入使用已驗收 unboxed-2-hd-v5；情境圖為 gold-seal-v3。前四張 1856×2320、情境圖 2784×3456。圖片尺寸/原生輸出限制見 image-validation.json；不宣稱原生 4K。
 - 定稿：預購付款/出貨/取消說明、退貨政策連結、軍郵文字、聖誕茶款與盒蓋兩個選單。依上游較新授權保留「不寄 Alaska/Hawaii」及三盒一組 US$60，不恢復舊文案。
-- 沖泡：桌機每步至少 240px、上下各 64px，手機上下各 40px。沒有改 BrewProcess 的 lifecycle、杯子/照片/進度演算法；未強制圖文底部對齊（提問待回覆）。
+- 沖泡：桌機每步至少 240px、上下各 64px，手機上下各 40px。使用者其後更正要求底部對齊；移除 guide 尾端空白，桌機動畫終點改依照片高度及末節點位置計算，保留手機終點與 BrewProcess lifecycle。
 
 ## 已驗證
 
@@ -20,7 +20,9 @@
 
 ## 發布狀態
 
-尚未發布。下一步普通 push main、讀回 Vercel正式 alias/SHA、正式頁面與五個資產 hash 驗證。Preview 未另建。
+67a9091 已 push main；Vercel dpl_DT8Mcq2yjr98w8EGaLPxPttVt5NS READY，www/apex/demo2 alias 來源相同。正式 zh/en1440/390 四張圖、六組選項與政策連結/Logo/動畫通過；5資產 SHA256 相符，14商品35variants及10款預購 notice 完全相同，見 production-*.json/png。Preview 未另建。
+
+底部對齊補充 afc5199 已推送；Vercel dpl_79UtGMhWkVkjfG1jHKHA4zipXjmP READY，正式 www/apex/demo2 來源一致。Node24 check 通過；alignment-local-alignment.json 與 alignment-production-alignment.json/截圖涵蓋 zh/en × 1440/1800/1024/390 與 reduced-motion。8組桌機底緣差0px，手機最後一步在照片下方可讀；本機及正式各12組動畫/Logo與console/network均正常。
 
 ## 後續獨立任務
 
