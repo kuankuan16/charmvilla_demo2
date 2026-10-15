@@ -2,13 +2,14 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
-## 2026-10-15 預購整合（正在發布）
+## 2026-10-15 預購整合（已正式發布）
 
 - 使用者已明確同意「現貨與預購分開、依表格設定上限、額滿停單」，已無數量定義等待。新的10款/29plans已建立並初始化100/20/20/100/10/10/10/10/200盒及200組，團圓Gold only。原商品/價格/實物庫存逐一回讀未變。
 - native tracked SKU + PRE_ORDER plan（ON_SALE、100%全額、DENY）提供同款跨茶/盒蓋共用原子額度。前台映射見`shopify-preorders.json`，29選項真實cart及最後1單位的跨plan上限已驗證。
 - Node24 check、19商品/批次測試、38 API、16 E2E、9 analytics與Ego12組雙語桌手機通過。實際付款與訂單扣量尚未測試；測試cart清空，不改原現貨讓測試過關。
 - [後台操作](shopify/preorder-batch-2026-11.md)與[QA](qa/2026-10-15-preorder-batch/README.md)。原商品改價需同步plan PRICE；不同步會禁購；取消回補以Shopify restock為準，勿重設剩餘額度為原始上限。
-- 以下前階段「等待定義／無可行方案／Christmas未公開」已由本節取代。Production待本批commit push、READY及www實際回讀。
+- `4755c7c` 已推送指定GitHub；Production `dpl_8uFKZ7LhFs3nV6QShyA2W8PXgvBp` READY，來源SHA及www/apex/demo2 aliases一致。正式8組Ego雙語桌手機、10款額度API與真實cart CRUD／invalid input／hosted account redirect通過。未實際付款下單；首單仍須核對Available/Committed。後續文件提交不更動應用程式。
+- 以下前階段「等待定義／無可行方案／Christmas未公開」已由本節取代。預購額度已初始化，禁止因接手而再執行初始化或重設原始上限，避免將已售名額補回。
 
 ## 2026-10-15 MCP 已接通、團圓金色與沖泡橫線
 

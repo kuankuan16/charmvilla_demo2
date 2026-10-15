@@ -1,0 +1,40 @@
+{
+  "id": "dpl_8uFKZ7LhFs3nV6QShyA2W8PXgvBp",
+  "name": "charmvilla-demo2",
+  "url": "charmvilla-demo2-b8ri7as00-tentenco.vercel.app",
+  "type": "LAMBDAS",
+  "state": "READY",
+  "createdAt": 1792049928137,
+  "creator": {
+    "uid": "HhBz0I1f2mTOvGQechDKT8n4",
+    "username": "kuankuan16"
+  },
+  "project": {
+    "id": "prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23",
+    "name": "charmvilla-demo2",
+    "framework": "nextjs"
+  },
+  "meta": {
+    "githubCommitRef": "main",
+    "githubCommitSha": "4755c7c46c91f6ca1c8f82e25bc3ab713c7410f5",
+    "githubCommitMessage": "feat: enable capped November preorders through shared Shopify inventory and native selling plans\n\nApply the client-approved ten-product limits independently of physical stock; keep Reunion Gold only and the Christmas gift at 200 three-box sets. Preserve existing Shopify product content, prices, s...",
+    "githubRepo": "charmvilla_shopify_official",
+    "githubOrg": "tentenco"
+  },
+  "alias": [
+    "www.charmvilla.com",
+    "charmvilla-demo2.vercel.app",
+    "charmvilla.com",
+    "charmvilla-demo2-tentenco.vercel.app",
+    "charmvilla-demo2-git-main-tentenco.vercel.app"
+  ],
+  "target": "production",
+  "regions": [
+    "iad1"
+  ],
+  "buildingAt": 1792049929214,
+  "ready": 1792049960914,
+  "readyState": "READY",
+  "source": "git",
+  "aliasError": null
+}

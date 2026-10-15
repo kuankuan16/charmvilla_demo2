@@ -26,4 +26,12 @@
 
 沒有真實付款、下單、退款、出貨，不能宣稱已做實單扣量測試。原生庫存ON_SALE與checkout數量控管已驗證，首筆真實訂單仍應核對Available/Committed。沒有更動金流、shipping profiles、原現貨或使用者購物車。
 
-後台操作見 [預購管理](../../shopify/preorder-batch-2026-11.md)。部署狀態以 production.json 及正式頁面回讀為準，不能把本機綠燈當作已上線。
+## Production
+
+- 應用程式commit `4755c7c46c91f6ca1c8f82e25bc3ab713c7410f5` 已推送 `tentenco/charmvilla_shopify_official`。
+- deployment `dpl_8uFKZ7LhFs3nV6QShyA2W8PXgvBp` READY，www.charmvilla.com／charmvilla.com／charmvilla-demo2.vercel.app指向同版本；以deployment ID與www hostname分別讀回核對。見production.json。
+- 正式Ego8組團圓／紫斑蝶×中英文×1440/390，含normal/reduced，100／10額度、可預購、團圓隱藏其他色、無水平溢出／JS exception／非取消類失敗請求。見production-browser.json。
+- 正式14款API中的10款批次額度與29選項均正確，見production-availability.json。正式真實cart create/read/update/remove、400錯誤與hosted account redirect通過，測試cart清空，見production-cart-verification.log。
+- 本節之後只補交接與驗證文件，沒有再改應用程式。
+
+後台操作見 [預購管理](../../shopify/preorder-batch-2026-11.md)。

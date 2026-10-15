@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-15T07:40:51.570Z",
+  "products": 14,
+  "rows": [
+    {
+      "slug": "blossoming-prosperity-gift-box",
+      "remaining": 20,
+      "unit": "box",
+      "options": 1
+    },
+    {
+      "slug": "year-of-plenty-gift-box",
+      "remaining": 20,
+      "unit": "box",
+      "options": 1
+    },
+    {
+      "slug": "winter-blossom-gift-box",
+      "remaining": 10,
+      "unit": "box",
+      "options": 2
+    },
+    {
+      "slug": "kyoto-gift-box",
+      "remaining": 100,
+      "unit": "box",
+      "options": 4
+    },
+    {
+      "slug": "spring-dawn-gift-box",
+      "remaining": 10,
+      "unit": "box",
+      "options": 4
+    },
+    {
+      "slug": "purple-butterfly-gift-box",
+      "remaining": 10,
+      "unit": "box",
+      "options": 1
+    },
+    {
+      "slug": "orchid-gift-box",
+      "remaining": 10,
+      "unit": "box",
+      "options": 4
+    },
+    {
+      "slug": "reunion-paper-gift-box",
+      "remaining": 100,
+      "unit": "box",
+      "options": 1
+    },
+    {
+      "slug": "snowflake-gift-box",
+      "remaining": 200,
+      "unit": "set",
+      "options": 5
+    },
+    {
+      "slug": "christmas-gift-box",
+      "remaining": 200,
+      "unit": "box",
+      "options": 6
+    }
+  ]
+}
