@@ -1,0 +1,16 @@
+{
+  "verifiedAt": "2026-10-15T03:09:03.733Z",
+  "environment": "production bbf555a, unchanged BrewProcess baseline",
+  "results": [
+    {
+      "url": "https://www.charmvilla.com/zh",
+      "errors": [
+        {
+          "message": "Uncaught TypeError: i.toFixed is not a function",
+          "stack": "TypeError: i.toFixed is not a function\n    at https://www.charmvilla.com/_next/static/immutable/chunks/2y-p306v2rqo_.js:1:28051\n    at Array.forEach (<anonymous>)\n    at p (https://www.charmvilla.com/_next/static/immutable/chunks/2y-p306v2rqo_.js:1:27860)\n    at onUpdate (https://www.charmvilla.com/_next/static/immutable/chunks/2y-p306v2rqo_.js:1:28538)\n    at ek.update (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:31272)\n    at ek.revert (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:25354)\n    at ek.refresh (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:28879)\n    at https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:15562\n    at Array.forEach (<anonymous>)\n    at eL (https://www.charmvilla.com/_next/static/immutable/chunks/3o0f-niusrlg9.js:1:15533)"
+        }
+      ],
+      "body": "THIS PAGE COULDN’T LOAD\n\nRELOAD TO TRY AGAIN, OR GO BACK.\n\nReload\nBack"
+    }
+  ]
+}

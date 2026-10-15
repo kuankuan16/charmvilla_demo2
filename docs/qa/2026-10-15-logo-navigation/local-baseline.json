@@ -1,0 +1,20 @@
+[
+  {
+    "url": "http://localhost:3026/zh",
+    "error": true,
+    "errors": [
+      {
+        "message": "Uncaught TypeError: r.toFixed is not a function",
+        "stack": "TypeError: r.toFixed is not a function\n    at http://localhost:3026/_next/static/chunks/1e_wbkk2ra5ht.js:1:27527\n    at Array.forEach (<anonymous>)\n    at p (http://localhost:3026/_next/static/chunks/1e_wbkk2ra5ht.js:1:27336)\n    at onUpdate (http://localhost:3026/_next/static/chunks/1e_wbkk2ra5ht.js:1:28014)\n    at ek.update (http://localhost:3026/_next/static/chunks/2buqp4gto_04v.js:1:31272)\n    at ek.revert (http://localhost:3026/_next/static/chunks/2buqp4gto_04v.js:1:25354)\n    at ek.refresh (http://localhost:3026/_next/static/chunks/2buqp4gto_04v.js:1:28879)\n    at http://localhost:3026/_next/static/chunks/2buqp4gto_04v.js:1:15562\n    at Array.forEach (<anonymous>)\n    at eL (http://localhost:3026/_next/static/chunks/2buqp4gto_04v.js:1:15533)",
+        "connected": false,
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  }
+]
