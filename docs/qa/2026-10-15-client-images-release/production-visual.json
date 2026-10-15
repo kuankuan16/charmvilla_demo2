@@ -1,0 +1,161 @@
+{
+  "results": [
+    {
+      "lang": "zh",
+      "width": 1440,
+      "images": [
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        },
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-angle-smooth-bg-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        },
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-front-smooth-bg-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        },
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        }
+      ],
+      "brew": {
+        "padding": "64px",
+        "minHeight": "240px",
+        "steps": 5,
+        "stage": "4.0000"
+      },
+      "home": "https://www.charmvilla.com/zh",
+      "errors": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "images": [
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        },
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-angle-smooth-bg-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        },
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-front-smooth-bg-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        },
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-unboxed-2-hd-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        }
+      ],
+      "brew": {
+        "padding": "40px",
+        "minHeight": "0px",
+        "steps": 5,
+        "stage": "4.0000"
+      },
+      "home": "https://www.charmvilla.com/zh",
+      "errors": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "images": [
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        },
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-angle-smooth-bg-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        },
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-front-smooth-bg-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        },
+        {
+          "src": "https://www.charmvilla.com/media/site/studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+          "decoded": 1856,
+          "overflow": false,
+          "viewport": 1440
+        }
+      ],
+      "brew": {
+        "padding": "64px",
+        "minHeight": "240px",
+        "steps": 5,
+        "stage": "4.0000"
+      },
+      "home": "https://www.charmvilla.com/",
+      "errors": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "images": [
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        },
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-angle-smooth-bg-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        },
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-front-smooth-bg-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        },
+        {
+          "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-unboxed-2-hd-v5.webp&w=640&q=90",
+          "decoded": 390,
+          "overflow": false,
+          "viewport": 390
+        }
+      ],
+      "brew": {
+        "padding": "40px",
+        "minHeight": "0px",
+        "steps": 5,
+        "stage": "4.0000"
+      },
+      "home": "https://www.charmvilla.com/",
+      "errors": []
+    }
+  ],
+  "reduced": {
+    "enabled": true,
+    "src": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-unboxed-2-hd-v5.webp&w=640&q=90",
+    "overflow": false
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "checkedAt": "2026-10-15T03:55:27.677Z",
+  "base": "https://www.charmvilla.com",
+  "shopifyProductsUnchanged": 14,
+  "shopifyVariantsUnchanged": 35,
+  "assets": [
+    {
+      "file": "scene-snowflake-gift-box-olive-sofa-pouch-gold-seal-v3.webp",
+      "sha256": "72d490a87687e8557b01886304f9cb129f5dd28397c267a7aeaf40078a4a1b75",
+      "bytes": 3543908,
+      "verified": true
+    },
+    {
+      "file": "studio-snowflake-gift-box-angle-smooth-bg-v5.webp",
+      "sha256": "57018ae2bdfede39f90daa7f6c6774034724ed0764ca6e3580a088773aeb9fb6",
+      "bytes": 1282126,
+      "verified": true
+    },
+    {
+      "file": "studio-snowflake-gift-box-front-smooth-bg-v5.webp",
+      "sha256": "9eededcdc91a35dae88ac62d7faa48bcc95a01695a788934c3c1795481ad798c",
+      "bytes": 1234346,
+      "verified": true
+    },
+    {
+      "file": "studio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp",
+      "sha256": "4a3483c4378f67eb4e1e044d756b7eaa432bb3aca66f3742c6cd9087a2e0c540",
+      "bytes": 1353900,
+      "verified": true
+    },
+    {
+      "file": "studio-snowflake-gift-box-unboxed-2-hd-v5.webp",
+      "sha256": "945f21cc997d262c19b22ec56dae61dd717dce514fa9a7cd2f4e2078584f855a",
+      "bytes": 1683482,
+      "verified": true
+    }
+  ],
+  "preorderNotices": [
+    {
+      "slug": "reunion-paper-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "year-of-plenty-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "blossoming-prosperity-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "kyoto-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "spring-dawn-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "winter-blossom-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "orchid-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "purple-butterfly-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "christmas-gift-box",
+      "unchanged": true
+    },
+    {
+      "slug": "snowflake-gift-box",
+      "unchanged": true
+    }
+  ],
+  "copy": [
+    {
+      "text": "Pre-orders are charged in full when you place your order.",
+      "present": true
+    },
+    {
+      "text": "Pre-orders are expected to ship by the end of November 2026.",
+      "present": true
+    },
+    {
+      "text": "You may cancel a pre-order for a full refund before it ships. Please email us at us@charmvilla.com with your order number.",
+      "present": true
+    },
+    {
+      "text": "Once your order has shipped, our",
+      "present": true
+    },
+    {
+      "text": "Teas &amp; Consumable Items",
+      "present": true
+    },
+    {
+      "text": "At launch, we do not ship to APO/FPO/DPO addresses.",
+      "present": true
+    },
+    {
+      "text": "We do not ship to Alaska or Hawaii.",
+      "present": true
+    }
+  ]
+}

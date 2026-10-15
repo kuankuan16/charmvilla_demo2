@@ -1,0 +1,341 @@
+{
+  "mode": "Shopify snapshot; not live shipping validation",
+  "results": [
+    {
+      "lang": "en",
+      "width": 1440,
+      "options": [
+        {
+          "id": "tea-christmas-gift-box",
+          "values": [
+            "Mixed Teas",
+            "Rose Oolong Tea",
+            "Oriental Beauty Tea"
+          ]
+        },
+        {
+          "id": "lid-christmas-gift-box",
+          "values": [
+            "Stocking",
+            "Candy Cane"
+          ]
+        }
+      ],
+      "partialDisabled": true,
+      "combinations": [
+        {
+          "selected": [
+            "Mixed Teas",
+            "Stocking"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-teal-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Mixed Teas",
+            "Candy Cane"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Rose Oolong Tea",
+            "Stocking"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-teal-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Rose Oolong Tea",
+            "Candy Cane"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Oriental Beauty Tea",
+            "Stocking"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-teal-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Oriental Beauty Tea",
+            "Candy Cane"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+          "disabled": true
+        }
+      ],
+      "keyboardLid": "lid-christmas-gift-box",
+      "viewport": {
+        "width": 1440,
+        "overflow": false
+      },
+      "policy": {
+        "hash": "#returns-tea",
+        "open": true,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "options": [
+        {
+          "id": "tea-christmas-gift-box",
+          "values": [
+            "Mixed Teas",
+            "Rose Oolong Tea",
+            "Oriental Beauty Tea"
+          ]
+        },
+        {
+          "id": "lid-christmas-gift-box",
+          "values": [
+            "Stocking",
+            "Candy Cane"
+          ]
+        }
+      ],
+      "partialDisabled": true,
+      "combinations": [
+        {
+          "selected": [
+            "Mixed Teas",
+            "Stocking"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-teal-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Mixed Teas",
+            "Candy Cane"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Rose Oolong Tea",
+            "Stocking"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-teal-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Rose Oolong Tea",
+            "Candy Cane"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Oriental Beauty Tea",
+            "Stocking"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-teal-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "Oriental Beauty Tea",
+            "Candy Cane"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        }
+      ],
+      "keyboardLid": "lid-christmas-gift-box",
+      "viewport": {
+        "width": 390,
+        "overflow": false
+      },
+      "policy": {
+        "hash": "#returns-tea",
+        "open": true,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "options": [
+        {
+          "id": "tea-christmas-gift-box",
+          "values": [
+            "綜合茶款",
+            "玫瑰烏龍茶",
+            "東方美人茶"
+          ]
+        },
+        {
+          "id": "lid-christmas-gift-box",
+          "values": [
+            "聖誕襪",
+            "拐杖糖"
+          ]
+        }
+      ],
+      "partialDisabled": true,
+      "combinations": [
+        {
+          "selected": [
+            "綜合茶款",
+            "聖誕襪"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-teal-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "綜合茶款",
+            "拐杖糖"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "玫瑰烏龍茶",
+            "聖誕襪"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-teal-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "玫瑰烏龍茶",
+            "拐杖糖"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "東方美人茶",
+            "聖誕襪"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-teal-cover-v3.webp",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "東方美人茶",
+            "拐杖糖"
+          ],
+          "image": "https://www.charmvilla.com/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+          "disabled": true
+        }
+      ],
+      "keyboardLid": "lid-christmas-gift-box",
+      "viewport": {
+        "width": 1440,
+        "overflow": false
+      },
+      "policy": {
+        "hash": "#returns-tea",
+        "open": true,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "options": [
+        {
+          "id": "tea-christmas-gift-box",
+          "values": [
+            "綜合茶款",
+            "玫瑰烏龍茶",
+            "東方美人茶"
+          ]
+        },
+        {
+          "id": "lid-christmas-gift-box",
+          "values": [
+            "聖誕襪",
+            "拐杖糖"
+          ]
+        }
+      ],
+      "partialDisabled": true,
+      "combinations": [
+        {
+          "selected": [
+            "綜合茶款",
+            "聖誕襪"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-teal-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "綜合茶款",
+            "拐杖糖"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "玫瑰烏龍茶",
+            "聖誕襪"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-teal-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "玫瑰烏龍茶",
+            "拐杖糖"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "東方美人茶",
+            "聖誕襪"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-teal-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        },
+        {
+          "selected": [
+            "東方美人茶",
+            "拐杖糖"
+          ],
+          "image": "https://www.charmvilla.com/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=640&q=90",
+          "disabled": true
+        }
+      ],
+      "keyboardLid": "lid-christmas-gift-box",
+      "viewport": {
+        "width": 390,
+        "overflow": false
+      },
+      "policy": {
+        "hash": "#returns-tea",
+        "open": true,
+        "overflow": false
+      },
+      "errors": []
+    }
+  ],
+  "reduced": {
+    "enabled": true,
+    "policyOpen": true
+  }
+}

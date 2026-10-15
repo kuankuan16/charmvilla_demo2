@@ -252,7 +252,17 @@ function brewProcess(el: HTMLElement): Cleanup {
   const progress = ScrollTrigger.create({
     trigger: list,
     start: () => `${positions[0]}px ${railStart()}`,
-    end: () => { const bottom = pinnedBottom(); return `${positions[positions.length - 1]}px ${bottom === null ? "55%" : `${bottom}px`}`; }, // 38% → 55% (2026-10-14): the last step and the photograph arrive while the pinned cup is still fully in view
+    end: () => {
+      const lastNode = positions[positions.length - 1];
+      const mobileBottom = pinnedBottom();
+      if (mobileBottom !== null) return `${lastNode}px ${mobileBottom}px`;
+      if (!visual) return `${lastNode}px 55%`;
+      // Desktop: finish the photo as the guide's bottom reaches the pinned photo's bottom.
+      // The guide has no trailing spacer, so the two columns then leave together, aligned.
+      const top = parseFloat(getComputedStyle(visual).top) || 0;
+      const afterNode = list.offsetHeight - lastNode;
+      return `${lastNode}px ${top + visual.offsetHeight - afterNode}px`;
+    },
     scrub: 1.1,
     onUpdate: (self) => paintProgress(self.progress),
     onRefreshInit: () => { positions = nodePositions(); },

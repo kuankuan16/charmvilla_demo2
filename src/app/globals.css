@@ -1554,7 +1554,7 @@ main:has(> .policy-page) { background: #efefed; }
 .brew-process::before { content: ""; position: absolute; inset: 0; background: #f3e9d6; opacity: var(--brew-amber); pointer-events: none; }
 .brew-process-inner { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 1.6vw, 28px); max-width: 1270px; margin: 0 auto; align-items: start; }
 .brew-visual { grid-column: 1 / span 5; justify-self: start; position: sticky; top: clamp(88px, 10vh, 132px); margin: 0; aspect-ratio: 2 / 3; width: min(100%, calc((100vh - 190px) * 2 / 3)); /* whole figure in view while pinned: the labels and the progress sit inside it */ }
-.brew-guide { grid-column: 7 / -1; min-width: 0; padding-bottom: clamp(120px, 24vh, 260px); /* keeps the figure pinned until the photograph has fully arrived (the rail ends with the last step at 55% of the viewport) */ }
+.brew-guide { grid-column: 7 / -1; min-width: 0; } /* user 2026-10-15: the final step and photograph share the same bottom edge; no empty pinning tail */
 .brew-intro { margin-bottom: 48px; }
 .brew-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 14px; line-height: 1.2; font-weight: 500; color: #62625e; }
 .brew-kicker > span { width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--color-gold); }
