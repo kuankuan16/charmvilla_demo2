@@ -1,65 +1,43 @@
 # Active Agent Plan
 
-Status: `in_progress`
+Status: `completed`
 Updated: 2026-10-15
 
 ## Active task
 
-- 使用者最新明確要求全部改完後commit/push everything，並merge同事GitHub branch。
-- 範圍：本輪SEO/schema、Search移除、配送前台、庫存快照/工具/QA、已部署Logo證據，以及最新同事checkout-tests-wip。
-- 遠端已fetch，origin/main955e603；primary main基準bbf555a有本輪WIP；保留brew-cup與release工作樹。
-- 完成條件：分支差異審查、不回退現行Shopify來源規則、整合測試/實際瀏覽器、commit/push main、Vercel READY與正式線上驗證。
-- 無待確認問題；如果發現互斥且無已確認依據再詢問。
+已完成使用者要求的全部修改commit/push、同事branch合併與正式部署。沒有待確認問題。
 
 ## Steps and evidence
 
 | 狀態 | 動作 | 驗證 | 證據 |
 | --- | --- | --- | --- |
-| completed | 保存全部本輪WIP並整合origin/main | explicit staging、秘密掃描、diff | d18197e、7809393 |
-| completed | 合併checkout-tests-wip並解衝突 | 現行來源、mock隔離 | 衝突已解，待merge commit |
-| completed | check、Shopify/SEO/analytics/同事測試與瀏覽器 | 讀完輸出、正常/錯誤路徑 | API37、E2E16、Shopify11、SEO7、GA8、56頁crawl、live cart通過 |
-| pending | commit/push main與正式驗證 | READY/alias、實際正式頁面 | 待執行 |
+| completed | Logo根因修正及先行正式發布 | layout cleanup、正式8組motion/viewport與6次top Logo | 955e603；logo-navigation QA |
+| completed | 庫存表與三盒US$60 | 10款allocation、8款可售合計、五款variant60、雙語讀回 | inventory-alignment QA；實體庫存/未發布狀態保留 |
+| completed | 全部WIP與同事checkout-tests-wip合併 | source契約、GA4與Admin token保留，隔離mock | d18197e、7809393、merge6ac2081（parent abdc4c4） |
+| completed | 整合驗證 | check 0 errors/7既有warnings、API37/E2E16/Shopify11/SEO7/GA8 | full-release QA |
+| completed | 正式發布與驗證 | 6ac2081 push、Vercel READY/www/apex、56頁crawl、12組UI、Logo、live cart | dpl_FeZSFXA9NWEwWCWKmu5iW3v4umJG；production-*.json/log |
 
 ## FIFO queue
 
 無。
 
-## Completed this round
-
-- 庫存表及聖誕心意禮三盒US$60已完成：Admin讀回、正式zh/en、Shopify11/11、check通過；實體數量/發布狀態保留。
-
-- Logo正式修正已交付：955e603，Vercel dpl_Hg2LGAPx2mMwpbAPqbw8Gbf5UVqD READY/www/apex；正式8組viewport/motion與Ego6次上方Logo通過。詳見logo-navigation QA。
-
-- Shopify 配送已完成並在線上生效：Hayward default/online true，Fremont/SGV online false，SGV in-person true；配送限本土48州+DC，排除13州／領地／軍郵；shipping/refund hosted policies 已發布並公開讀回。US$240免運、US$60 UPS即時價、AK/HI/AE不可寄，測試車全部清空。前台政策文字尚未部署。
-
-- 全站 SEO／schema 本機完成、結帳 Logo 現行 redirect 已驗證。
-- 預購 UI 已交付；Shopify 10 商品 custom.preorder_details 已寫入並讀回，價格／庫存／status 不變。付款 automatic at checkout 已確認；hosted shipping／refund policies 未設定。QA：docs/qa/2026-10-15-preorder-ui/README.md。
-- Search UI 已完成：Node24 check 通過，中英文×1440／390×4分類共16組、舊 q、鍵盤、reduced-motion 通過。QA：docs/qa/2026-10-15-remove-search/README.md。
-
 ## Attempts and decisions
 
-- E2E第二次英文路由修正後正常，剩下首個購物車案例中英文assertion失敗；等待輸出釐清，不能盲重跑。另發現production build會清除同在.next內的test builds，本輪已誤同時啟動check；後續所有build必須循序，這批後段瀏覽器結果作廢並重建測試後再跑。
+- 同事分支為最新kuankuan16的checkout-tests-wip；其他10/08以前的舊設計分支未批次合併。
+- 原本本機預購額度/訂單計數已退役，保留Shopify即時庫存。舊mock補上CMS/availability/analytics，測試憑證顯式清空、只允許loopback。原會員API備用UI測試仍可用；正式會員維持Shopify hosted redirect。
+- 127.0.0.1英文自架測試重現redirect loop，採用同事rewrite marker；僅非Vercel接受。正式Logo錯誤則是動畫清理時序，兩者區分。
+- 測試build與production build同在.next，曾並行導致後段測試無效；已停止、循序乾淨重建且16/16通過。之後build必須循序。
+- 初次SEO fixture因新campaign預期變動而失敗，依情境更新測試後7/7通過；不改真實商品規則迎合舊測試。
 
+## Verification and delivery
 
-- 同事API測試已適配現行Shopify：37/37通過。第一次隔離build缺mock CMS連線而失敗，調整為先啟動mock後build，保持正式憑證全空。
-- E2E第一次英文頁在127.0.0.1實際重現ERR_TOO_MANY_REDIRECTS（zh路由另查結果）；採用同事rewrite marker修正，並限制只有非Vercel接受marker，保留正式/en canonical redirect。這是自架環境另一路由問題，與正式Logo動畫例外區分。
-
-
-- 預購 UI 已正式發布：47eb598／bbf555a，Vercel dpl_8x1DtyatQMPdvycNY1jzkMLd9YDy READY，www 與 apex alias，正式 UI／購物車通過並清空。主 main／origin/main 快進 bbf555a，既有 WIP bytes 核對保留。
-- SGV online fulfillment 已關閉且 reload 讀回 false、sellsInPerson=true；原專屬免費 Shipping rate 依 Shopify confirmation 移除。
-- Fremont online checkbox disabled，不盲試：UI 明示它是 default location，必須先另選 default 才能關閉。為符合使用者「所有網購只用 Hayward」，下一步將 default 設為 Hayward，再關 Fremont online；不轉移／更改庫存。
-- 第一次選 Hayward 後 default 區塊顯示已變，但 reload 仍回 Fremont，不能算儲存成功；原 DOM main wait 也不適用 shadow UI。下一步完整找出 Save／Unsaved bar，保存後再以實際 snapshot／checkbox disabled 狀態驗證，不重複假設 autosave。
-- App 無 read_locations／legal policy scopes，維持原 scopes；透過已登入 Admin 正常 UI 操作。read_inventory 查各 location id／available 可成功，36 variants／Hayward available 合計79；QA 已保存矩陣。
-- 最新 profile 讀回（132599513452）僅顯示 Hayward；費率已變為 Free UPS Ground（>=199、5–8 business days）與 UPS 3 種 calculated services，與早先 Express30／7服務不同。本輪未編輯這些 Hayward rates；以新讀回現況為準，保留現有費率、不還原舊快照。下一步先核對州選取，已對齊就不再更改。
-- 使用者回答沒有其他人同步調整，繼續在已授權範圍處理；Edit shipping zone 目前顯示 US 62/62 全選，尚未修改州選取。
-- Fremont toggle 後 readback 一度仍 true；不要從 optimistic UI 或 main.innerText 推論保存。下一步用新頁面、可見 checkbox 狀態與 saved toast 核對。SGV 已有 reload false 證據。
-
-## Earlier tasks / user steering
-
-- 全站 SEO／schema 與結帳 Logo QA 已本機完成，尚未提交／部署。
-- Logo 間歇載入錯誤已於正式與本機重現，BrewProcess layout cleanup 修正後 check、12 次往返及 8 組 viewport／locale／motion 測試通過。使用者最新指定「可以先忽略」「先處理下一個預購 UI」，因此停止延伸調查與發布，保留本機成果。詳見 docs/qa/2026-10-15-logo-navigation/README.md。
+- 本機、Git merge/commit/push、Production皆完成；沒有另建Preview。
+- 全部程式已在6ac2081；後續文件提交只補QA/交接，不改應用程式。正式56頁、43資產、12控制路徑0錯誤，真實測試車已清空，沒有付款/建單/寄信。
+- 聖誕兩款仍未Headless開放。三盒組200為campaign額度，不是新增200現貨或跨variant共用庫存引擎；沒有新增混搭variant。
 
 ## Resume
 
-- 保存本輪WIP後merge origin/main及checkout-tests-wip；審查測試隔離、舊預購計數/會員流程與現行契約衝突，再驗證部署。
-- 保留primary所有已授權WIP、brew-cup工作樹與3027、使用者localhost購物車；Ego86/p1及agent-browser logo-navigation-aae96406a56d重用。
+- 無排隊任務。收到新任務先fetch/status重新確認主線，不重跑已完成遷移。
+- 本機3026為最新production build可沿用；保留使用者購物車、brew-cup工作樹/3027與release工作樹。
+- 本輪browser QA完成後關閉專用agent session，沒有清除使用者storage。
+- [完整release證據](../qa/2026-10-15-full-release/README.md)、[交接](../CODEX_HANDOFF.md)。

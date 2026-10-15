@@ -17,7 +17,11 @@
 - Shopify adapter11/11；SEO7/7；GA4 8/8。第一次SEO測試因更新後campaign fixture失敗，修正scenario後完整通過（domain-tests.log保留初次，seo-analytics-tests.log為最後結果）。
 - 本機完整SEO crawl56頁、43資產、12控制路徑0錯誤（local-seo.json）。代表性zh/en×1440/390×分類/三盒組/政策共12頁正常，無Search或水平溢出，JSON-LD存在、三盒組60且不可購買（local-browser.json）。
 - 真實Shopify14商品、獨立購物車新增/讀取/增量/移除、checkout host與hosted account redirect通過；測試車清空（local-shopify.log）。
-- 正式部署與上線回歸待push後讀回。
+- 全部內容與同事分支已合併至main `6ac2081`（第二parent為abdc4c4），push成功；Vercel `dpl_FeZSFXA9NWEwWCWKmu5iW3v4umJG` READY、www/apex aliases，GitHub Vercel status success。
+- 正式crawl56頁／43資產／12控制路徑0錯誤（production-seo.json）；12組zh/en桌機手機分類/三盒組/政策驗證通過，Search移除、JSON-LD存在、三盒組60且不可購買（production-browser.json）。
+- 正式zh/en商品→上方Logo soft navigation通過（production-logo.json）；先前955e603的8組viewport/motion回歸證據仍有效。
+- 正式Shopify實際購物車CRUD、正確checkout host與hosted account redirect通過，獨立測試車清空（production-shopify.log）；正式雙語運費條文展開可見滿199免運、不寄AK/HI/軍郵（production-shipping-copy.json）。
+- 後續只補交付文件與QA，應用程式內容與6ac2081相同。
 
 ## 試驗記錄
 

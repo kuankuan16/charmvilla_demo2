@@ -11,3 +11,7 @@
 - 本機前台政策已同步不寄 AK／HI；Node24 check、Shopify 11/11 通過（既有 7 lint warnings）。這些前台文字尚未 Git push／部署；Shopify 設定與 hosted policies 已在線上生效。
 
 操作中曾以模糊搜尋 Virgin 選到 Virginia；重新載入逐項 readback 時發現並修正。最終 Virginia／West Virginia 均允許，U.S. Virgin Islands 排除；不以 49/62 數量單獨當作正確證據。
+
+## 後續正式發布（2026-10-15）
+
+已經使用者明確授權，隨main `6ac2081`正式發布；Vercel READY、www/apex及正式瀏覽器/全站crawl驗證通過，詳見[完整release QA](../2026-10-15-full-release/README.md)。本文較早的未部署狀態為當時快照，已由此結果取代。

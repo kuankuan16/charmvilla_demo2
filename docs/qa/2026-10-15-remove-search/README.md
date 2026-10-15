@@ -8,3 +8,7 @@
 - 首次 QA 在 server 重啟尚未 ready 時連線被拒，確認 Ready／HTTP 200 後才重跑並通過，並非應用程式失敗。
 
 未 commit／push／部署；port 3026 是本機整合成果。先前 SEO／預購 UI 與本機 Logo 修正完整保留。
+
+## 後續正式發布（2026-10-15）
+
+已經使用者明確授權，隨main `6ac2081`正式發布；Vercel READY、www/apex及正式瀏覽器/全站crawl驗證通過，詳見[完整release QA](../2026-10-15-full-release/README.md)。本文較早的未部署狀態為當時快照，已由此結果取代。

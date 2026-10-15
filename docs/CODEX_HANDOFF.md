@@ -2,14 +2,16 @@
 
 更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
 
-## 本輪接續狀態（2026-10-15）
+## 本輪交付（2026-10-15）
 
-- Logo已正式發布：commit955e603，Vercel dpl_Hg2LGAPx2mMwpbAPqbw8Gbf5UVqD READY，www/apex已指向。正式8組viewport/motion與Ego6次上方Logo通過。[QA](qa/2026-10-15-logo-navigation/README.md)。
-- 庫存表已完成：前8款Hayward/線上合計3/0/1/58/4/2/2/0，保留正確數量；10款allocation已寫入。使用者明確確認聖誕心意禮三盒一組US$60、200組；已同步五款variant售價、雙語規格、共6包。兩款Christmas仍未Headless發布，沒有新增200現貨；不支援臆測混搭variants。[QA](qa/2026-10-15-inventory-alignment/README.md)。
-- 預購UI已正式發布於47eb598/bbf555a，Shopify custom.preorder_details 10款已生效。[QA](qa/2026-10-15-preorder-ui/README.md)。
-- 配送線上完成：Hayward為default/online，Fremont/SGV online=false，SGV in-person=true；48州+DC，滿199免運，AK/HI/軍郵不寄。公開shipping/refund政策已發布、實際運費驗證，QA車清空。[QA](qa/2026-10-15-shipping-alignment/README.md)。
-- 使用者最新授權所有本輪修改commit/push，並要求merge同事branch。下一步整合目前SEO/schema、Search移除、配送前台、庫存快照與QA；遠端最新候選checkout-tests-wip（kuankuan16，6個未合併commit）需按現行Shopify來源契約調整，不恢復舊預購計數或本機商品價格。過去設計分支不批次合併。
-- 保留release worktree、brew-cup工作樹/3027、使用者localhost cart。Ego86/p1與agent-browser logo-navigation-aae96406a56d沿用。
+- 使用者明確授權「commit、push everything」及merge同事branch，全部已完成：`d18197e`全部WIP、`7809393`整合已部署Logo、`6ac2081`合併`origin/checkout-tests-wip`（kuankuan16，tip`abdc4c4`）。不是squash/cherry-pick，分支tip確為main祖先；其餘舊設計分支未批次合併。
+- 正式Vercel `dpl_FeZSFXA9NWEwWCWKmu5iW3v4umJG` READY，來源`6ac2081`，www/apex aliases已指向，GitHub status success。所有SEO/schema、Search移除、配送前台、Logo、預購UI與三盒組資料均在線上。[完整release QA](qa/2026-10-15-full-release/README.md)。後續文件提交只補證據，程式同6ac2081。
+- 驗證：check0 errors/7既有warnings、API37、E2E16、Shopify11、SEO7、GA4 8；正式56頁/43資產/12控制路徑0錯誤，12組zh/en桌機手機UI、Logo、真實cart CRUD/hosted account redirect通過。測試車清空，無訂單/付款/寄信。
+- 庫存表：前8款Hayward/線上合計3/0/1/58/4/2/2/0保持正確；10款allocation已寫入。使用者確認聖誕心意禮三盒一組US$60、200組，已同步五款variant售價、雙語規格、共6包。兩款Christmas仍未Headless發布，未新增現貨或混搭variants。[庫存QA](qa/2026-10-15-inventory-alignment/README.md)。
+- 配送：Hayward default/online，SGV/Fremont不配送，SGV現場銷售；本土48州+DC、滿199免運、AK/HI/軍郵不寄，Shopify及前台均一致。[配送QA](qa/2026-10-15-shipping-alignment/README.md)。
+- 同事整合保留cart恢復/quantity/錯誤同步與測試；沒有恢復舊本機預購扣額度。mock只用loopback與測試token。正式會員仍Shopify hosted。test build與production build不能並行（同在.next）。
+- Logo錯誤是沖泡動畫passive cleanup晚於首頁layout refresh，已改layout cleanup；另採用同事自架127.0.0.1英文rewrite marker修正（僅非Vercel），不是同一根因。[Logo QA](qa/2026-10-15-logo-navigation/README.md)。
+- PLAN已完成、queue空。本機3026保留可檢視；brew-cup/3027與release工作樹均保留。使用者瀏覽器購物車未清除。以下段落保留歷史背景，以本節及最新Git讀回為準。
 
 ## 已驗證：結帳 Logo 返回正式首頁（2026-10-15）
 
@@ -17,9 +19,9 @@
 - 原生 Logo href 仍是 Shopify primary domain `https://account.charmvilla.us/`，瀏覽器執行 redirect 後回到正式 www 首頁。從全新獨立購物車實際點擊 **Shop Pay accelerated checkout** 與 **Guest checkout** Logo，兩者均到 `https://www.charmvilla.com/`。不要只憑 href 是 account 網域便判斷仍有錯誤。
 - 未付款／建單／退款；獨立測試購物車已清空（quantity 0）、含 key 的暫存檔已移除。前輪 SEO 未提交／未部署狀態不變。[結帳 Logo QA](qa/2026-10-15-checkout-logo/README.md)。
 
-## 本機已完成、尚未發布：全站 SEO／schema（2026-10-15）
+## 全站 SEO／schema（2026-10-15；已隨6ac2081發布）
 
-- 使用者指定 AgricIDaniel/claude-seo 優化全部頁面並建立正確 business／entity schema；本輪授權為本機實作與驗證，沒有 commit、push 或部署。
+- 使用者指定 AgricIDaniel/claude-seo 優化全部頁面並建立正確 business／entity schema；最初完成本機實作與驗證，後經使用者明確授權，已隨6ac2081 commit/push並部署。
 - 基準 `main`／`origin/main` 為 `2232e74`，初始乾淨。現在未提交 diff 為這次 SEO；不覆蓋或當成已發布。既有 `.claude/worktrees/brew-cup` 與 port 3027 沒有動。
 - 完成 56 個雙語頁面的 metadata、OG／Twitter，及 `OnlineStore`（Haoying LLC）、`Brand`、`WebSite`、各頁型／麵包屑／分類清單／Product／逐 variant Offer／Article／台日 Store 的 JSON-LD。美國僅線上銷售；門市沒有掛成美國經銷商分店。日本官網品牌創立年份與核准 About 不同，schema 省略有爭議年份。
 - 實作入口：`src/lib/seo/{metadata,schema}.ts`、`src/components/seo/JsonLd.tsx`；`catalog-data.ts` 新增 `scheduledPreOrder` 區分明確預購與 BackOrder，保留原有 UI 行為。官方 logo 的 schema 版本只補白底留白，原圖保留。

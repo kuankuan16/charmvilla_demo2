@@ -47,3 +47,7 @@ npx -y -p node@24 -c 'node scripts/seo/verify.mjs'
 ```
 
 `verify.mjs` 預設連 `http://localhost:3026`，結果寫入 `/tmp/charmvilla-seo-crawl-<timestamp>.json`，不覆寫歷史 QA。可用 `SEO_VERIFY_URL`／`SEO_VERIFY_OUTPUT` 指定本次目標與新的證據檔案。它只讀頁面，不操作購物車、訂單或 CMS。
+
+## 後續正式發布（2026-10-15）
+
+已經使用者明確授權，隨main `6ac2081`正式發布；Vercel READY、www/apex及正式瀏覽器/全站crawl驗證通過，詳見[完整release QA](../2026-10-15-full-release/README.md)。本文較早的未部署狀態為當時快照，已由此結果取代。
