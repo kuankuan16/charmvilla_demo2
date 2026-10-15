@@ -1,0 +1,23 @@
+{
+  "verifiedAt": "2026-10-15T03:07:51.598Z",
+  "under199": {
+    "subtotal": 60,
+    "service": "UPS Ground",
+    "shipping": 6.65,
+    "currency": "USD"
+  },
+  "blocked": [
+    {
+      "state": "AK",
+      "message": "Shipping not available"
+    },
+    {
+      "state": "HI",
+      "message": "Shipping not available"
+    },
+    {
+      "state": "AE",
+      "message": "Shipping not available"
+    }
+  ]
+}

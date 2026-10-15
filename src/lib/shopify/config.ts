@@ -1,5 +1,6 @@
 // Shopify Storefront API configuration. Fill these in Vercel (Project → Settings → Environment Variables):
-//   SHOPIFY_STORE_DOMAIN             e.g. charm-villa.myshopify.com   (no protocol)
+//   SHOPIFY_STORE_DOMAIN             e.g. charm-villa.myshopify.com   (no protocol). Tests only: a full origin with the protocol,
+//                                    e.g. http://127.0.0.1:4010, points every call at the mock store (tests/mock-shopify)
 //   SHOPIFY_STOREFRONT_ACCESS_TOKEN  public Storefront API token from the "Headless" sales channel
 //   SHOPIFY_API_VERSION              optional, defaults below (quarterly versions, e.g. 2026-07)
 //   NEXT_PUBLIC_COMMERCE_MODE        "shopify" once the three values above are set; otherwise the cart runs in
@@ -10,6 +11,14 @@ export const shopifyConfig = {
   domain: process.env.SHOPIFY_STORE_DOMAIN ?? "",
   token: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN ?? "",
   version: process.env.SHOPIFY_API_VERSION ?? "2026-10",
+};
+
+/** Loopback mock transport is accepted only in an isolated local test build. */
+export const shopifyOrigin = () => {
+  if (!/^https?:\/\//.test(shopifyConfig.domain)) return `https://${shopifyConfig.domain}`;
+  const url = new URL(shopifyConfig.domain);
+  if (!process.env.VERCEL && /^\.next\/test-(shopify|local)$/.test(process.env.CV_TEST_BUILD ?? "") && url.protocol === "http:" && url.hostname === "127.0.0.1" && url.pathname === "/" && !url.username && !url.password && !url.search && !url.hash) return url.origin;
+  throw new Error("Full Shopify origins are restricted to the local checkout test server");
 };
 
 export const isShopifyConfigured = () => Boolean(shopifyConfig.domain && shopifyConfig.token);

@@ -1,0 +1,286 @@
+{
+  "admin": {
+    "shop": {
+      "myshopifyDomain": "zcs0bg-10.myshopify.com",
+      "currencyCode": "USD"
+    },
+    "nodes": [
+      {
+        "id": "gid://shopify/Product/15406015512940",
+        "handle": "christmas-edition-2-count",
+        "title": "Christmas Edition (2-count)",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p>The CHARM VILLA Christmas Edition (2-count) contains two Goldfish Tea Bags of your selected tea in a Christmas paper box. Choose one of five tea varieties for a small seasonal gift or a pair of tea moments.</p><h3>Choose your tea</h3><ul>\n<li>Rose Oolong Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Rose &amp; Honey-Scented Black Tea: 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Oriental Beauty Tea (White Tip Oolong): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Ruby Black Tea (Red Jade / Ruby No.18): 2 Goldfish Tea Bags of this tea per box.</li>\n<li>Jin Xuan Oolong Tea (Golden Lily): 2 Goldfish Tea Bags of this tea per box.</li>\n</ul><h3>Packaging</h3><ul><li>Christmas paper box containing two Goldfish Tea Bags of the selected tea.</li></ul><h3>How to brew</h3><p>Pour 150 mL (about 5 fl oz) of hot water at 95°C (203°F) into your cup. Tear the package fully open at the notch and lift out the Goldfish Tea Bag. Add it to the water, gently submerge it with a teaspoon or stirrer, then let it float. Steep for about 5 minutes. Use a clear glass cup to enjoy the goldfish’s shape.</p>",
+        "options": [
+          {
+            "name": "Choose Tea Flavor",
+            "values": [
+              "Rose Oolong Tea",
+              "Rose & Honey-Scented Black Tea",
+              "Oriental Beauty Tea",
+              "Ruby Black Tea",
+              "Jin Xuan Tea"
+            ]
+          }
+        ],
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/67637433893228",
+              "title": "Rose Oolong Tea",
+              "sku": "HY2CERO",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose Oolong Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264908652",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433925996",
+              "title": "Rose & Honey-Scented Black Tea",
+              "sku": "HY2CERH",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Rose & Honey-Scented Black Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264941420",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433958764",
+              "title": "Oriental Beauty Tea",
+              "sku": "HY2CEOB",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Oriental Beauty Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621264974188",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637433991532",
+              "title": "Ruby Black Tea",
+              "sku": "HY2CERB",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Ruby Black Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265006956",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "gid://shopify/ProductVariant/67637434024300",
+              "title": "Jin Xuan Tea",
+              "sku": "HY2CEJX",
+              "price": "20.00",
+              "inventoryPolicy": "DENY",
+              "selectedOptions": [
+                {
+                  "name": "Choose Tea Flavor",
+                  "value": "Jin Xuan Tea"
+                }
+              ],
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/69621265039724",
+                "tracked": true,
+                "measurement": {
+                  "weight": {
+                    "value": 0,
+                    "unit": "POUNDS"
+                  }
+                },
+                "inventoryLevels": {
+                  "nodes": [
+                    {
+                      "location": {
+                        "id": "gid://shopify/Location/113254105452"
+                      },
+                      "quantities": [
+                        {
+                          "name": "available",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false
+                  }
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "namespace": "custom",
+              "key": "headless_copy_zh_tw",
+              "type": "json",
+              "value": "{\"version\":1,\"locale\":\"zh-TW\",\"title\":\"聖誕心意禮（限量版）\",\"description\":\"CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，以單盒販售。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。\",\"facts\":[{\"label\":\"販售單位\",\"value\":\"1 盒／所選茶款小金魚茶包 2 入\"},{\"label\":\"盒型與材質\",\"value\":\"高密度紙盒，燙金雪花與壓紋小金魚，透明封口貼紙\"},{\"label\":\"保存期限\",\"value\":\"玫瑰烏龍茶、玫瑰蜜香紅茶款 1 年；其他茶款 2 年\"},{\"label\":\"茶包材質\",\"value\":\"食品等級不織布，製作過程不使用化學黏劑；茶葉通過 SGS 檢測\"},{\"label\":\"產品須知\",\"value\":\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\",\"items\":[\"茶品屬於食品，售出後恕不退換，詳見退換貨政策。\"]}],\"story\":{\"title\":\"一盒風景，一席茶時\",\"body\":\"先看盒面的紋理，再看金魚的摺痕。從指尖的手作到水中的舒展，每一件小物都邀請人放慢觀看的步調。禮盒被打開之後，藝術也隨著共飲的時刻，走進生活。\"},\"teaNotes\":{\"title\":\"茶款介紹\",\"items\":[{\"name\":\"玫瑰烏龍茶\",\"text\":\"取台灣南投新鮮有機玫瑰花瓣，搭配嚴選烏龍茶胚。金黃琥珀茶湯，蘊遞醇美玫瑰香氣，滋味甘醇，喉韻悠長。\"},{\"name\":\"東方美人茶\",\"text\":\"茶小綠葉蟬吸食嫩芽而形成「著涎」，茶香帶有天然花果蜜香，口感醇厚甘潤。\"},{\"name\":\"紅玉紅茶\",\"text\":\"紅玉是台灣特有的茶樹品種。茶湯明亮清澈、朱紅豔麗，滋味濃醇甘潤，帶有天然肉桂、薄荷與淡淡花香。\"},{\"name\":\"金萱烏龍茶\",\"text\":\"茶湯金黃明亮、水色澄清，微焙醇和並帶天然乳香，口感甘醇生津，茶性溫潤柔和。\"},{\"name\":\"玫瑰蜜香紅茶\",\"text\":\"蜜香紅茶中加入有機玫瑰花瓣，玫瑰濃郁甜美，與天然甘醇的蜜香紅茶相伴。\"}]},\"brew\":{\"title\":\"沖泡方式\",\"steps\":[{\"title\":\"注入熱水\",\"text\":\"將 150 mL（約 5 fl oz）、95°C（203°F）的熱水倒入杯中。建議使用透明玻璃杯，欣賞小金魚的姿態。\"},{\"title\":\"打開包裝\",\"text\":\"沿著缺口將包裝完整撕開，取出小金魚茶包。\"},{\"title\":\"放入小金魚\",\"text\":\"將茶包放入水中。可用茶匙或攪拌棒輕輕將茶包壓入水中，再讓它浮起。\"},{\"title\":\"浸泡\",\"text\":\"浸泡約 5 分鐘，看茶色漸漸加深，小金魚慢慢成形。\"},{\"title\":\"享用\",\"text\":\"聞一聞茶香，啜飲一口，為自己留一段時間。\"}]},\"imageNote\":\"情境圖中的茶具、茶點與佈置物僅作展示，禮盒內容請見上方規格。盒色與款式請見本頁選項。\",\"choiceLabel\":\"選擇茶款（每盒擇一）\"}",
+              "compareDigest": "8731d3185d0531a668afb7480754f9dc74df3a3f20ed1958245c5bda1d6de0e4"
+            },
+            {
+              "namespace": "custom",
+              "key": "preorder_details",
+              "type": "json",
+              "value": "{\"version\":1,\"enabled\":true,\"shipBy\":\"2026-11-30\",\"notice\":{\"zh\":{\"shipping\":\"預購商品預計最晚於 2026 年 11 月底前出貨。\",\"terms\":\"預購於下單時收取全額款項；出貨前可申請取消並獲得全額退款，出貨後依茶品退換貨政策處理。\"},\"en\":{\"shipping\":\"Pre-orders are expected to ship by the end of November 2026.\",\"terms\":\"Pre-orders are charged in full when you order. You may cancel for a full refund before your order ships; once shipped, our tea return policy applies.\"}},\"allocation\":{\"limit\":200,\"scope\":\"product\",\"unit\":\"set\",\"boxesPerUnit\":3,\"sourceDate\":\"2026-10-15\"}}",
+              "compareDigest": "6729cc03f98061918a481b7568a69eea1accd3e7d60e3baca4257f413060d41c"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      }
+    ],
+    "translatableResourcesByIds": {
+      "nodes": [
+        {
+          "resourceId": "gid://shopify/Product/15406015512940",
+          "translations": [
+            {
+              "key": "title",
+              "value": "聖誕心意禮（限量版）",
+              "outdated": false
+            },
+            {
+              "key": "body_html",
+              "value": "<p>CHARM VILLA「聖誕心意禮（限量版）」每盒 2 包金魚茶包，以單盒販售。白色紙盒飾以燙金雪花與壓紋小金魚，以透明貼紙封口，適合在佳節分送親友。</p>",
+              "outdated": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "storefront": {
+    "nodes": [
+      null
+    ]
+  }
+}

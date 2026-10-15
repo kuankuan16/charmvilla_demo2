@@ -1,0 +1,1273 @@
+{
+  "nodes": [
+    {
+      "id": "gid://shopify/Product/15081861874028",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53583844082028",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15081862136172",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53770912629100",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15088417931628",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53632845250924",
+            "inventoryQuantity": 2,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 2
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15088420946284",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53632848429420",
+            "inventoryQuantity": 2,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 2
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15088422125932",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53632849805676",
+            "inventoryQuantity": 5,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 5
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15107964273004",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53771531583852",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771531616620",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15114228269420",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53716047298924",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15114241638764",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53716117913964",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15136264946028",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53771465687404",
+            "inventoryQuantity": 18,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 18
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771465720172",
+            "inventoryQuantity": 20,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 20
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903381496172",
+            "inventoryQuantity": 20,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 20
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433663852",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15148513263980",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53903379136876",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292790636",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903379169644",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292823404",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15150923350380",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53824982679916",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15151974809964",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/53827887464812",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301113708",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53827887497580",
+            "inventoryQuantity": 1,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 1
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301146476",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15402073194860",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632284631404",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632284664172",
+            "inventoryQuantity": 3,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803605868"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 3
+                      }
+                    ]
+                  },
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/114803933548"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15406015512940",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67637433893228",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433925996",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433958764",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433991532",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434024300",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15406015742316",
+      "variants": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ProductVariant/67637434253676",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434286444",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434319212",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434351980",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434384748",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434417516",
+            "inventoryQuantity": 0,
+            "inventoryPolicy": "DENY",
+            "inventoryItem": {
+              "inventoryLevels": {
+                "nodes": [
+                  {
+                    "location": {
+                      "id": "gid://shopify/Location/113254105452"
+                    },
+                    "quantities": [
+                      {
+                        "name": "available",
+                        "quantity": 0
+                      }
+                    ]
+                  }
+                ],
+                "pageInfo": {
+                  "hasNextPage": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

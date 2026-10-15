@@ -241,7 +241,7 @@ const buildContent = (lang: Locale) => {
         shops: [
           // Store photos + hours: official charmvilla.jp/#indexStore (user, 2026-09-24).
           {
-            name: t("CHARM VILLA 晶華門市", "CHARM VILLA Regent Taipei"),
+            id: "taipei", name: t("CHARM VILLA 晶華門市", "CHARM VILLA Regent Taipei"),
             addr: t("台北市中山區中山北路二段 39 巷 3 號 B1（麗晶精品）", "B1, Regent Galleria, No. 3, Ln. 39, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei"),
             hours: t("10:00–21:00・全年無休", "10:00–21:00 · Open every day"),
             phone: { label: t("02-2542-0303", "+886 2 2542 0303"), tel: "+886225420303" }, // www.charmvilla.com.tw, 2026-10-02
@@ -255,7 +255,7 @@ const buildContent = (lang: Locale) => {
             },
           },
           {
-            name: t("CHARM VILLA 京都門市", "CHARM VILLA Kyoto"),
+            id: "kyoto", name: t("CHARM VILLA 京都門市", "CHARM VILLA Kyoto"),
             addr: t("京都市中京區寺町通二條・山本町 442", "442 Yamamoto-cho, Teramachi-dori Nijo, Nakagyo-ku, Kyoto"),
             hours: t("週六・週日 11:00–18:00", "Saturday and Sunday 11:00–18:00"),
             phone: { label: t("075-606-5507", "+81 75 606 5507"), tel: "+81756065507" }, // charmvilla.jp, 2026-10-02

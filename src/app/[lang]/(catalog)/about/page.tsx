@@ -1,3 +1,6 @@
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { pageNodes } from "@/lib/seo/schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,7 +8,7 @@ import { notFound } from "next/navigation";
 import { getAbout } from "@/data/about";
 import { getContent } from "@/data/content";
 import { categoryHref, getCategories } from "@/data/catalog";
-import { alternatesFor, defaultLocale, isLocale, localeHref, translator, type Locale } from "@/i18n/config";
+import { defaultLocale, isLocale, localeHref, translator, type Locale } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -13,11 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return {
-    title: t("關於 CHARM VILLA", "About | CHARM VILLA"),
-    description: getAbout(lang).intro,
-    alternates: alternatesFor(lang, "/about"),
-  };
+  return pageMetadata({ lang, path: "/about", title: t("關於 CHARM VILLA｜品牌故事與美國商店", "About CHARM VILLA | Brand Story & US Store"),
+    description: getAbout(lang).intro, image: getAbout(lang).hero });
 }
 
 // Line icons for the store's terms (24 px grid, 1.5 px stroke, currentColor).
@@ -48,6 +48,7 @@ export default async function AboutPage({ params }: Props) {
   const categories = getCategories(lang);
   return (
     <article className="about-page">
+      <JsonLd nodes={pageNodes(lang, "/about", about.title, about.intro, "AboutPage")} />
       {/* Opening spread for a portrait photograph (2026-10-05): the name, slogan and intro in the left half, set at the foot of the
           column; the photograph fills the right half. */}
       <header className="about-hero">

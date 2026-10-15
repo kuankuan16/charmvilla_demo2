@@ -1,0 +1,100 @@
+{
+  "dryRun": true,
+  "at": "2026-10-15T03:31:41.285Z",
+  "rows": [
+    {
+      "slug": "reunion-paper-gift-box",
+      "preorderLimit": 100,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 3,
+      "onlineAvailable": 3,
+      "published": true
+    },
+    {
+      "slug": "year-of-plenty-gift-box",
+      "preorderLimit": 20,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 0,
+      "onlineAvailable": 0,
+      "published": true
+    },
+    {
+      "slug": "blossoming-prosperity-gift-box",
+      "preorderLimit": 20,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 1,
+      "onlineAvailable": 1,
+      "published": true
+    },
+    {
+      "slug": "kyoto-gift-box",
+      "preorderLimit": 100,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 58,
+      "onlineAvailable": 58,
+      "published": true
+    },
+    {
+      "slug": "spring-dawn-gift-box",
+      "preorderLimit": 10,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 4,
+      "onlineAvailable": 4,
+      "published": true
+    },
+    {
+      "slug": "winter-blossom-gift-box",
+      "preorderLimit": 10,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 2,
+      "onlineAvailable": 2,
+      "published": true
+    },
+    {
+      "slug": "orchid-gift-box",
+      "preorderLimit": 10,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 2,
+      "onlineAvailable": 2,
+      "published": true
+    },
+    {
+      "slug": "purple-butterfly-gift-box",
+      "preorderLimit": 10,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 0,
+      "onlineAvailable": 0,
+      "published": true
+    },
+    {
+      "slug": "christmas-gift-box",
+      "preorderLimit": 200,
+      "unit": "box",
+      "boxesPerUnit": 1,
+      "haywardAvailable": 0,
+      "onlineAvailable": null,
+      "published": false
+    },
+    {
+      "slug": "snowflake-gift-box",
+      "preorderLimit": 200,
+      "unit": "set",
+      "boxesPerUnit": 3,
+      "haywardAvailable": 0,
+      "onlineAvailable": null,
+      "published": false
+    }
+  ],
+  "allocationWrites": 0,
+  "physicalQuantityWrites": 0,
+  "priceWrites": 0,
+  "publicationWrites": 0
+}

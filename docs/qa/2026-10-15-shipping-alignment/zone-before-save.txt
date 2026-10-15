@@ -1,0 +1,321 @@
+[p1 "Charmvilla · Shipping and delivery · General profile · Shopify" | space "CHARM VILLA Logo 間歇載入錯誤排查"(86): 1 managed, 0 untracked — p1* "Charmvilla · Shipping and delivery · General profile · Shopify"]
+root
+  container
+    anchor [ref=391, loc=href:/store/charmvilla/settings/shipping/profiles/132599513452#AppFrameMain, url=https://admin.shopify.com/store/charmvilla/settings/shipping/profiles/132599513452#AppFrameMain]
+      text "Skip to content"
+    image
+    button "Search" [ref=392, loc=css:button[aria-label="Search"]]
+      svg_root
+    container
+      container
+        unordered_list
+          list_item
+            anchor [ref=394, url=https://admin.shopify.com/store/charmvilla]
+              svg_root
+          list_item
+            anchor [ref=395, loc=href:/store/charmvilla/orders, url=https://admin.shopify.com/store/charmvilla/orders]
+              svg_root
+          list_item
+            anchor [ref=396, loc=href:/store/charmvilla/products, url=https://admin.shopify.com/store/charmvilla/products]
+              svg_root
+          list_item
+            anchor [ref=397, loc=href:/store/charmvilla/customers, url=https://admin.shopify.com/store/charmvilla/customers]
+              svg_root
+          list_item
+            anchor [ref=398, loc=href:/store/charmvilla/growth, url=https://admin.shopify.com/store/charmvilla/growth]
+              svg_root
+          list_item
+            anchor [ref=399, loc=href:/store/charmvilla/discounts, url=https://admin.shopify.com/store/charmvilla/discounts]
+              svg_root
+          list_item
+            anchor [ref=400, url=https://admin.shopify.com/store/charmvilla/content/metaobjects]
+              svg_root
+          list_item
+            anchor [ref=401, url=https://admin.shopify.com/store/charmvilla/markets]
+              svg_root
+          list_item
+            anchor [ref=402, url=https://admin.shopify.com/store/charmvilla/shopify-balance/account?referrer=finances-nav]
+              svg_root
+          list_item
+            anchor [ref=403, loc=href:/store/charmvilla/analytics, url=https://admin.shopify.com/store/charmvilla/analytics]
+              svg_root
+        unordered_list
+          list_item
+            unordered_list
+              list_item
+                button "Sales channels" [ref=404, loc=css:button[aria-label="Sales channels"]]
+                  svg_root
+          list_item
+            unordered_list
+              list_item
+                button "Apps" [ref=405, loc=css:button[aria-label="Apps"]]
+                  svg_root
+      unordered_list
+        list_item
+          anchor [ref=406, loc=href:/store/charmvilla/settings, url=https://admin.shopify.com/store/charmvilla/settings]
+            svg_root
+    button "Back from Settings" [ref=407, loc=css:button[aria-label="Back from Settings"]]
+      svg_root
+      text "Settings"
+    search "Shop settings menu"
+      container
+        svg_root
+        comboboxgrouping "Search" [ref=408]
+          text "Search"
+    container "Shop settings menu"
+      heading
+        text "Charmvilla"
+      link [ref=410, url=https://admin.shopify.com/store/charmvilla/settings/domains]
+        text "account.charmvilla.us"
+      button "Update internal icon" [ref=411, loc=css:button[aria-label="Update internal icon"]]
+        image "CHA"
+          text "CHA"
+        svg_root
+      unordered_list
+        list_item
+          anchor [ref=412, loc=href:/store/charmvilla/settings/general, url=https://admin.shopify.com/store/charmvilla/settings/general]
+            svg_root
+            text "General"
+        list_item
+          anchor [ref=413, loc=href:/store/charmvilla/settings/plan, url=https://admin.shopify.com/store/charmvilla/settings/plan]
+            svg_root
+            text "Plan"
+        list_item
+          anchor [ref=414, loc=href:/store/charmvilla/settings/billing, url=https://admin.shopify.com/store/charmvilla/settings/billing]
+            svg_root
+            text "Billing"
+        list_item
+          anchor [ref=415, loc=href:/store/charmvilla/settings/organization-account, url=https://admin.shopify.com/store/charmvilla/settings/organization-account]
+            svg_root
+            text "Users"
+        list_item
+          anchor [ref=416, loc=href:/store/charmvilla/settings/payments, url=https://admin.shopify.com/store/charmvilla/settings/payments]
+            svg_root
+            text "Payments"
+        list_item
+          anchor [ref=417, loc=href:/store/charmvilla/settings/checkout, url=https://admin.shopify.com/store/charmvilla/settings/checkout]
+            svg_root
+            text "Checkout"
+        list_item
+          anchor [ref=418, loc=href:/store/charmvilla/settings/customer_accounts, url=https://admin.shopify.com/store/charmvilla/settings/customer_accounts]
+            svg_root
+            text "Customer accounts"
+        list_item
+          anchor [ref=419, url=https://admin.shopify.com/store/charmvilla/settings/shipping]
+            svg_root
+            text "Shipping and delivery"
+        list_item
+          anchor [ref=420, loc=href:/store/charmvilla/settings/taxes, url=https://admin.shopify.com/store/charmvilla/settings/taxes]
+            svg_root
+            text "Taxes and duties"
+        list_item
+          anchor [ref=421, loc=href:/store/charmvilla/settings/locations, url=https://admin.shopify.com/store/charmvilla/settings/locations]
+            svg_root
+            text "Locations"
+        list_item
+          anchor [ref=422, loc=href:/store/charmvilla/settings/markets, url=https://admin.shopify.com/store/charmvilla/settings/markets]
+            svg_root
+            text "Markets"
+        list_item
+          anchor [ref=423, loc=href:/store/charmvilla/settings/apps, url=https://admin.shopify.com/store/charmvilla/settings/apps]
+            svg_root
+            text "Apps"
+        list_item
+          anchor [ref=424, loc=href:/store/charmvilla/settings/sales_channels, url=https://admin.shopify.com/store/charmvilla/settings/sales_channels]
+            svg_root
+            text "Sales channels"
+        list_item
+          anchor [ref=425, url=https://admin.shopify.com/store/charmvilla/settings/domains]
+            svg_root
+            text "Domains"
+        list_item
+          anchor [ref=426, loc=href:/store/charmvilla/settings/customer_events, url=https://admin.shopify.com/store/charmvilla/settings/customer_events]
+            svg_root
+            text "Customer events"
+        list_item
+          anchor [ref=427, loc=href:/store/charmvilla/settings/notifications, url=https://admin.shopify.com/store/charmvilla/settings/notifications]
+            svg_root
+            text "Notifications"
+        list_item
+          anchor [ref=428, loc=href:/store/charmvilla/settings/custom_data, url=https://admin.shopify.com/store/charmvilla/settings/custom_data]
+            svg_root
+            text "Metafields and metaobjects"
+        list_item
+          anchor [ref=429, loc=href:/store/charmvilla/settings/languages, url=https://admin.shopify.com/store/charmvilla/settings/languages]
+            svg_root
+            text "Languages"
+        list_item
+          anchor [ref=430, loc=href:/store/charmvilla/settings/privacy, url=https://admin.shopify.com/store/charmvilla/settings/privacy]
+            svg_root
+            text "Customer privacy"
+        list_item
+          anchor [ref=431, loc=href:/store/charmvilla/settings/legal, url=https://admin.shopify.com/store/charmvilla/settings/legal]
+            svg_root
+            text "Policies"
+    container
+      container
+        container
+          link "Shipping and delivery" [ref=434, loc=css:a[aria-label="Shipping and delivery"], url=https://admin.shopify.com/store/charmvilla/settings/shipping]
+            svg_root
+          link [ref=435, url=https://admin.shopify.com/store/charmvilla/settings/shipping]
+            svg_root
+            text "Shipping and delivery"
+          text "/"
+        heading
+          text "General profile"
+      heading
+        text "General profile"
+      container
+        heading
+          text "Products"
+        container
+          svg_root
+          button [ref=436]
+            text "All products not in other profiles"
+          svg_root
+        paragraph
+          text "New products are added by default"
+      container
+        heading
+          text "Fulfillment location"
+        container
+          svg_root
+          link [ref=437, loc=href:/store/charmvilla/settings/locations/114803605868, url=https://admin.shopify.com/store/charmvilla/settings/locations/114803605868]
+            text "Hayward ReadySpaces"
+          text "25509 Industrial Blvd, G5, Hayward California 94545, United States"
+          button "More actions" [ref=438]
+            svg_root
+      container
+        heading
+          text "Shipping zones"
+        button "Add zone" [ref=439]
+          svg_root
+          text "Zone"
+        container
+          heading
+            image
+            text "Domestic"
+            text "United States"
+            button "More actions" [ref=441]
+              svg_root
+          svg_root
+          text "Free UPS Ground"
+          text "Orders $199.00 and up · 5–8 business days"
+          text "Free"
+          button "More actions" [ref=442]
+            svg_root
+          image
+          button [ref=443]
+            text "UPS®"
+            svg_root
+          text "3 services · Calculated transit time"
+          text "Calculated"
+          button "More actions" [ref=444]
+            svg_root
+          text "UPS 3 Day Select®"
+          text "UPS® Ground"
+          text "UPS® Ground Saver"
+          button [ref=445]
+            svg_root
+            paragraph
+              text "Add shipping option"
+    container
+      container "Sidekick"
+      dialog_modeless "Edit shipping zone" [ref=451]
+        container
+          heading
+            text "Edit shipping zone"
+          button "Close" [ref=452]
+            svg_root
+        container "Edit shipping zone" [ref=453]
+          container
+            container
+              text "Zone name"
+              textbox "Zone name" [ref=454, loc=css:input[name="zoneName"]]
+                text "Domestic"
+              paragraph
+                text "Customers won’t see this"
+            container
+              text "Regions"
+              container
+                container
+                  svg_root
+                  textbox "Search" [ref=455]
+                    text "Search"
+                list
+                  grid "grid" [ref=479, loc=role:grid[name="grid"]]
+                    row
+                      heading [ref=493]
+                        container
+                          checkbox [ref=494]
+                          svg_root
+                        button [ref=495]
+                          container
+                            text "NA"
+                            text "North America"
+                          container
+                            text "49 of 62 states/provinces"
+                            svg_root
+                      heading [ref=480]
+                        container
+                          checkbox [ref=481]
+                          svg_root
+                        button [ref=482]
+                          container
+                            image
+                            text "United States"
+                          container
+                            text "49 of 62 states"
+                            svg_root
+                      listitem
+                        container
+                          checkbox [ref=496]
+                          svg_root
+                        text "Alabama"
+                      listitem
+                        container
+                          checkbox [ref=497]
+                          svg_root
+                        text "Alaska"
+                      listitem
+                        container
+                          checkbox [ref=498]
+                          svg_root
+                        text "American Samoa"
+                      listitem
+                        container
+                          checkbox [ref=499]
+                          svg_root
+                        text "Arizona"
+                      listitem
+                        container
+                          checkbox [ref=500]
+                          svg_root
+                        text "Arkansas"
+                      listitem
+                        container
+                          checkbox [ref=501]
+                          svg_root
+                        text "California"
+                      listitem
+                        container
+                          checkbox [ref=502]
+                          svg_root
+                        text "Colorado"
+                      listitem
+                        container
+                          checkbox [ref=503]
+                          svg_root
+                        text "Connecticut"
+                      listitem
+                        container
+                          checkbox [ref=504]
+                          svg_root
+                        text "Delaware"
+              link [ref=463, url=https://admin.shopify.com/store/charmvilla/markets]
+                text "Add more regions in Markets"
+        container
+          button [ref=464]
+            text "Cancel"
+          button [ref=465]
+            text "Done"

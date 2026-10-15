@@ -1,0 +1,162 @@
+[
+  {
+    "lang": "zh",
+    "width": 1440,
+    "reduced": false,
+    "brew": {
+      "errors": [],
+      "live": true,
+      "overflow": false,
+      "reduced": false,
+      "stage": "4.0000"
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/zh"
+    }
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "reduced": false,
+    "brew": {
+      "errors": [],
+      "live": true,
+      "overflow": false,
+      "reduced": false,
+      "stage": "4.0000"
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/"
+    }
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "reduced": false,
+    "brew": {
+      "errors": [],
+      "live": true,
+      "overflow": false,
+      "reduced": false,
+      "stage": "4.0000"
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/zh"
+    }
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "reduced": false,
+    "brew": {
+      "errors": [],
+      "live": true,
+      "overflow": false,
+      "reduced": false,
+      "stage": "4.0000"
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/"
+    }
+  },
+  {
+    "lang": "zh",
+    "width": 1440,
+    "reduced": true,
+    "brew": {
+      "errors": [],
+      "live": false,
+      "overflow": false,
+      "reduced": true,
+      "stage": ""
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/zh"
+    }
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "reduced": true,
+    "brew": {
+      "errors": [],
+      "live": false,
+      "overflow": false,
+      "reduced": true,
+      "stage": ""
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/"
+    }
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "reduced": true,
+    "brew": {
+      "errors": [],
+      "live": false,
+      "overflow": false,
+      "reduced": true,
+      "stage": ""
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/zh"
+    }
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "reduced": true,
+    "brew": {
+      "errors": [],
+      "live": false,
+      "overflow": false,
+      "reduced": true,
+      "stage": ""
+    },
+    "home": {
+      "error": false,
+      "errors": [],
+      "hero": true,
+      "overflow": false,
+      "soft": true,
+      "url": "https://www.charmvilla.com/"
+    }
+  }
+]

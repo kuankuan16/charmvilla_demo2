@@ -1,8 +1,11 @@
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { pageNodes } from "@/lib/seo/schema";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FaqAccordion from "@/components/catalog/FaqAccordion";
 import { getCommerce, supportEmail, type PolicySection } from "@/data/commerce";
-import { alternatesFor, defaultLocale, isLocale, translator, type Locale } from "@/i18n/config";
+import { defaultLocale, isLocale, translator, type Locale } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -46,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return { title: t("無障礙聲明｜CHARM VILLA", "Accessibility Statement | CHARM VILLA"), description: t("CHARM VILLA 以 WCAG 2.1 AA 為目標，持續改善網站無障礙；遇到困難請來信。", "CHARM VILLA works toward WCAG 2.1 Level AA and keeps improving the site. If something gets in your way, email us."), alternates: alternatesFor(lang, "/accessibility") };
+  return pageMetadata({ lang, path: "/accessibility", title: t("無障礙聲明｜CHARM VILLA", "Accessibility Statement | CHARM VILLA"), description: t("CHARM VILLA 以 WCAG 2.1 AA 為目標，持續改善網站無障礙；遇到困難請來信。", "CHARM VILLA works toward WCAG 2.1 Level AA and keeps improving the site. If something gets in your way, email us.") });
 }
 
 export default async function Page({ params }: Props) {
@@ -55,5 +58,5 @@ export default async function Page({ params }: Props) {
   const doc = statement(lang);
   const { labels } = getCommerce(lang);
   // the same accordion as /privacy and the other policy pages (user 2026-10-07: 「其他很多資訊的頁面也都用相同的邏輯設計」), without the contact button (「這幾頁的聯絡我們的按鈕可以刪」); the email is in the text
-  return <FaqAccordion title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} />;
+  return <><JsonLd nodes={pageNodes(lang, "/accessibility", doc.title, doc.intro ?? doc.title)} /><FaqAccordion title={doc.title} intro={doc.intro} updated={doc.updated} sections={doc.sections} labels={labels} /></>;
 }

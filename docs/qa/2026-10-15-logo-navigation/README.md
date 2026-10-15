@@ -18,3 +18,8 @@
 新增正式 top Logo 重現後，在最新整合 production build 重新跑中英文上方 Logo 各3次，6/6通過且保留soft navigation、無runtime exception（`reopened-local-regression.json`）。首次測試選錯首頁 `.hero` selector導致等待逾時；實際頁面成功、errors為空，改以現行 `.orbit-title`驗證。
 
 使用者2026-10-15已明確授權正式部署。release worktree僅帶入BrewProcess生命週期修正，Node24 npm run check通過，0 errors／7既有warnings（release-check.log）。正式部署與線上回歸證據於發布後補充。使用者購物車與port3027未動。
+
+## 正式結果
+
+- commit `955e603` 已 push 正確 repository main；Vercel `dpl_Hg2LGAPx2mMwpbAPqbw8Gbf5UVqD` READY，www/apex aliases 已指向（production-deployment.json）。
+- 正式中英文×1440/390×正常/減少動態8組，動畫0→4、鍵盤上方Logo soft navigation、首頁掛載、無runtime error/水平溢出（production-regression.json）。Ego中英文上方Logo各3次均通過（production-ego.json）。

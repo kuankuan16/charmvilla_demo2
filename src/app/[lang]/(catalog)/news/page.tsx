@@ -1,10 +1,13 @@
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { itemList, pageNodes, ref } from "@/lib/seo/schema";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { Picture } from "@/components/ui";
 import { getNews } from "@/data/news";
-import { alternatesFor, defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
+import { defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -12,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang = isLocale(raw) ? raw : defaultLocale;
   const t = translator(lang);
-  return { title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表、禮盒預購與期間限定活動。", "Launches, gift-box pre-orders and limited-time events."), alternates: alternatesFor(lang, "/news") };
+  return pageMetadata({ lang, path: "/news", title: t("最新消息｜CHARM VILLA", "News & Announcements | CHARM VILLA"), description: t("新品發表、禮盒預購與期間限定活動。", "Launches, gift-box pre-orders and limited-time events.") });
 }
 
 // The list after verin-template.webflow.io/news (user 2026-10-06: 「最新消息清單頁，喜歡這個版型」): the title with a short line under
@@ -22,8 +25,11 @@ export default async function NewsPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const t = translator(lang);
+  const entries = getNews(lang);
+  const list = itemList(lang, "/news", entries.map(n => ({ path: `/news/${n.slug}`, name: n.title })));
   return (
     <section className="news-page" aria-labelledby="news-title">
+      <JsonLd nodes={[...pageNodes(lang, "/news", t("最新消息", "News & Announcements"), t("CHARM VILLA 新品與活動消息。", "New pieces and events from CHARM VILLA."), "CollectionPage", [], { mainEntity: ref(String(list["@id"])) }), list]} />
       <header className="news-head">
         <h1 id="news-title" className="tc">{t("最新消息", "News & Announcements")}</h1>
         {/* one line where it fits; where it does not, the break falls after the colon / comma, never before a stray "the" or inside a word

@@ -9,6 +9,7 @@ import { localeHref } from "@/i18n/config";
 import { useT } from "@/i18n/LocaleProvider";
 import { supportEmail, freeShippingMin } from "@/data/commerce";
 import { preOrderShipping } from "@/data/tea-gifts";
+import { MAX_LINE_QUANTITY } from "@/lib/shopify/types";
 
 export default function CartDrawer() {
   const cart = useCart();
@@ -59,7 +60,7 @@ export default function CartDrawer() {
                       <div className="cart-qty" role="group" aria-label={t("數量", "Quantity")}>
                         <button type="button" onClick={() => cart.update(l.key, l.quantity - 1)} disabled={cart.busy || l.quantity <= 1} aria-label={t("減少數量", "Decrease quantity")}>−</button>
                         <span aria-live="polite">{l.quantity}</span>
-                        <button type="button" onClick={() => cart.update(l.key, l.quantity + 1)} disabled={cart.busy} aria-label={t("增加數量", "Increase quantity")}>+</button>
+                        <button type="button" onClick={() => cart.update(l.key, l.quantity + 1)} disabled={cart.busy || l.quantity >= MAX_LINE_QUANTITY} aria-label={t("增加數量", "Increase quantity")}>+</button>
                       </div>
                       <button type="button" className="cart-remove tc" onClick={() => cart.remove(l.key)} disabled={cart.busy}>{t("移除", "Remove")}</button>
                     </div>

@@ -1,0 +1,18 @@
+{
+  "commit": "bbf555aacba6df4c9c6854bf383bb6ecbed36b37",
+  "implementationCommit": "47eb5980c6e5c8a356b358a629f6967344edb8ff",
+  "projectId": "prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23",
+  "deploymentId": "dpl_8x1DtyatQMPdvycNY1jzkMLd9YDy",
+  "url": "charmvilla-demo2-qdcmgn9nt-tentenco.vercel.app",
+  "readyState": "READY",
+  "target": "production",
+  "wwwDeploymentId": "dpl_8x1DtyatQMPdvycNY1jzkMLd9YDy",
+  "wwwReadyState": "READY",
+  "aliases": [
+    "www.charmvilla.com",
+    "charmvilla-demo2.vercel.app",
+    "charmvilla.com",
+    "charmvilla-demo2-tentenco.vercel.app",
+    "charmvilla-demo2-git-main-tentenco.vercel.app"
+  ]
+}

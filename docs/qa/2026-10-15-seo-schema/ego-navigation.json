@@ -1,0 +1,23 @@
+{
+  "space": 82,
+  "steps": [
+    "collection → product by click",
+    "language menu → 繁體中文"
+  ],
+  "result": {
+    "path": "/zh/products/reunion-paper-gift-box",
+    "title": "團圓・小金魚茶包禮盒｜CHARM VILLA",
+    "language": "zh-Hant",
+    "canonical": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box",
+    "ogTitle": "團圓・小金魚茶包禮盒｜CHARM VILLA",
+    "types": [
+      "OnlineStore",
+      "Brand",
+      "ImageObject",
+      "WebSite",
+      "ItemPage",
+      "BreadcrumbList",
+      "Product"
+    ]
+  }
+}

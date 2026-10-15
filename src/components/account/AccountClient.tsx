@@ -84,7 +84,7 @@ export default function AccountClient() {
             <>
               <h1 id="account-title" className="tc account-title">{t("重設密碼", "Reset password")}</h1>
               <p className="tc account-sub">{t("輸入註冊時的 Email，我們會寄出重設密碼的連結。", "Enter the email you registered with and we will send a link to reset your password.")}</p>
-              <form className="account-form" onSubmit={(e) => submit(e, "/api/account/recover", "POST", () => setNotice({ kind: "ok", text: t("已寄出重設密碼的信件，請查看信箱。", "A password reset email has been sent. Please check your inbox.") }))}>
+              <form className="account-form" onSubmit={(e) => submit(e, "/api/account/recover", "POST", () => setNotice({ kind: "ok", text: t("如果這個 Email 有註冊帳號，我們已寄出重設密碼的信，請查看信箱。", "If an account exists for this email, we have sent a link to reset your password. Please check your inbox.") }))}>
                 <label className="tc">Email <span className="account-req">{required}</span><input id="recover-email" name="email" type="email" autoComplete="email" required /></label>
                 <button type="submit" className="btn-pill tc" disabled={busy}>{t("寄送重設連結", "Send reset link")}</button>
                 <p className="account-hint tc"><button type="button" onClick={() => { setTab("login"); setNotice(null); }}>{t("回到登入", "Back to sign in")}</button></p>

@@ -1,5 +1,5 @@
-// GET /api/preorder → { left: { "<slug>": boxes left } } for the pre-order products with a shared allowance (src/lib/shopify/preorder.ts);
-// 503 not_configured until the Admin token is set, and the pages then keep the allowance written in the data.
+// Compatibility count endpoint: live Shopify variant quantities, not historical campaign allocations.
+// API errors remain explicit; callers must not substitute stale local stock.
 import { preOrderLeft } from "@/lib/shopify/preorder";
 import { json, handleError } from "@/lib/shopify/http";
 

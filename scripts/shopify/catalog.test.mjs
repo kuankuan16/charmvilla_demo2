@@ -13,11 +13,13 @@ test('Shopify replaces price and stock while preserving approved image objects',
   const p = applyShopifyProduct(local, source, 'en');
   assert.equal(p.image, image); assert.equal(p.views, local.views); assert.equal(p.scenes, local.scenes);
   assert.equal(p.giftBox.choices[0].price, 61.25); assert.equal(p.soldOut, true);
-  assert.equal(p.preOrderRemaining, undefined); assert.equal(p.preOrder, false);
+  assert.equal(p.preOrderRemaining, undefined); assert.equal(p.preOrder, true);
 });
-test('Christmas small box follows the Shopify 2-count unit, never the retired three-box bundle', () => {
+test('Christmas small gift follows the confirmed Shopify three-box US$60 set without inventing mix variants', () => {
   const p = applyShopifyProduct({ ...local, slug: 'snowflake-gift-box', giftBox: { ...local.giftBox, mixBoxes: 3 } }, snapshot.products['snowflake-gift-box'], 'zh');
-  assert.equal(p.price.amount, 20); assert.equal(p.giftBox.pieces, 2); assert.equal(p.giftBox.mixBoxes, undefined);
+  assert.equal(p.price.amount, 60); assert.equal(p.giftBox.pieces, 6); assert.equal(p.giftBox.mixBoxes, undefined);
+  assert.equal(p.facts.find(f => f.label === '販售單位').value, '3 盒一組，每盒 2 包，共 6 包');
+  assert.ok(p.giftBox.choices.every(c => c.price === 60 && c.contents[0].count === 6));
   assert.equal(p.giftBox.choices.length, 5); assert.equal(p.shopifyData.published, false); assert.equal(p.soldOut, true);
 });
 test('Option photos match by identity, independently of variant order', () => {
@@ -124,7 +126,10 @@ test('Explicit campaign disable overrides legacy preorder copy without convertin
   const disabled = withPreorder(snapshot.products['purple-butterfly-gift-box'], { version: 1, enabled: false });
   const p = applyShopifyProduct(local, disabled, 'en');
   assert.equal(p.preOrder, false); assert.equal(p.shopifyData.scheduledPreOrder, false); assert.equal(p.preOrderPolicy, undefined);
-  assert.equal(applyShopifyProduct(local, snapshot.products['kyoto-gift-box'], 'en').preOrder, false);
+  const regular = structuredClone(snapshot.products['kyoto-gift-box']);
+  regular.metafields = regular.metafields.filter(m => m.key !== 'preorder_details');
+  regular.tags = [];
+  assert.equal(applyShopifyProduct(local, regular, 'en').preOrder, false);
 });
 test('An enabled preorder must provide approved terms in both languages', () => {
   const policy = structuredClone(preorder.policy); delete policy.notice.zh;

@@ -1,0 +1,50 @@
+{
+  "verifiedAt": "2026-10-15T03:05:21.522Z",
+  "locations": [
+    {
+      "id": "113254105452",
+      "check": [
+        {
+          "name": "sellsInPerson",
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "name": "fulfillsOnlineOrders",
+          "checked": false,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "id": "114803605868",
+      "check": [
+        {
+          "name": "sellsInPerson",
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "name": "fulfillsOnlineOrders",
+          "checked": true,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "id": "114803933548",
+      "check": [
+        {
+          "name": "sellsInPerson",
+          "checked": true,
+          "disabled": false
+        },
+        {
+          "name": "fulfillsOnlineOrders",
+          "checked": false,
+          "disabled": false
+        }
+      ]
+    }
+  ]
+}

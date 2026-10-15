@@ -1,0 +1,3711 @@
+{
+  "date": "2026-10-15T03:39:21.089Z",
+  "base": "http://localhost:3026",
+  "sitemapCount": 56,
+  "pages": [
+    {
+      "path": "/zh",
+      "status": 200,
+      "title": "小金魚茶包・台灣茶禮盒｜CHARM VILLA 美國商店",
+      "description": "探索 CHARM VILLA 小金魚茶包、台灣茶禮盒、檜木器物與柴燒筷架。美國線上商店由 Haoying LLC 經營，從加州出貨，提供中英文商品與購物資訊。",
+      "canonical": "https://www.charmvilla.com/zh",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "EVERYDAYLUXURIESEveryday Luxuries"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh#webpage"
+        },
+        {
+          "type": "Store",
+          "id": "https://www.charmvilla.com/#store-taipei"
+        },
+        {
+          "type": "Store",
+          "id": "https://www.charmvilla.com/#store-kyoto"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 126813,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Goldfish Tea Bags & Taiwanese Tea Gifts | CHARM VILLA",
+      "description": "Explore CHARM VILLA Goldfish Tea Bags, Taiwanese tea gifts and hinoki wood pieces. Shop the US online store, operated by Haoying LLC and shipping from…",
+      "canonical": "https://www.charmvilla.com",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "EVERYDAYLUXURIESEveryday Luxuries"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/#webpage"
+        },
+        {
+          "type": "Store",
+          "id": "https://www.charmvilla.com/#store-taipei"
+        },
+        {
+          "type": "Store",
+          "id": "https://www.charmvilla.com/#store-kyoto"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 141764,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/about",
+      "status": 200,
+      "title": "關於 CHARM VILLA｜品牌故事與美國商店",
+      "description": "CHARM VILLA 是 2013 年由創意總監蘇靜媚創立的設計品牌。從一尾在茶杯裡舒展的小金魚茶包開始，我們把工藝、茶與設計帶進日常：送禮的時刻、一杯茶的時間，還有每天配戴、…",
+      "canonical": "https://www.charmvilla.com/zh/about",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/about"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/about"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/about"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "CHARM VILLA"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "AboutPage",
+          "id": "https://www.charmvilla.com/zh/about#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/about#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 84916,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About CHARM VILLA | Brand Story & US Store",
+      "description": "Founded in 2013 by creative director Su Ching-mei, CHARM VILLA is a design brand that brings craft, tea and design into everyday life. It began with a…",
+      "canonical": "https://www.charmvilla.com/about",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/about"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/about"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/about"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "CHARM VILLA"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "AboutPage",
+          "id": "https://www.charmvilla.com/about#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/about#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 85692,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/news",
+      "status": 200,
+      "title": "最新消息｜CHARM VILLA",
+      "description": "新品發表、禮盒預購與期間限定活動。",
+      "canonical": "https://www.charmvilla.com/zh/news",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/news"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/news"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/news"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "最新消息"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/zh/news#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/news#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/zh/news#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 49851,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/news",
+      "status": 200,
+      "title": "News & Announcements | CHARM VILLA",
+      "description": "Launches, gift-box pre-orders and limited-time events.",
+      "canonical": "https://www.charmvilla.com/news",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/news"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/news"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/news"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "News & Announcements"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/news#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/news#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/news#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 49836,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/news/la-popup-scholart-selection-2026",
+      "status": 200,
+      "title": "CHARM VILLA 洛杉磯快閃展｜CHARM VILLA",
+      "description": "10 月 17 日至 12 月 31 日，於 San Gabriel 的 The Scholart Selection。",
+      "canonical": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+        }
+      ],
+      "ogType": "article",
+      "h1": [
+        "CHARM VILLA 洛杉磯快閃展"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026#breadcrumb"
+        },
+        {
+          "type": "Article",
+          "id": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026#article"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 58901,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/news/la-popup-scholart-selection-2026",
+      "status": 200,
+      "title": "CHARM VILLA Pop-up in Los Angeles | CHARM VILLA",
+      "description": "October 17 to December 31 at The Scholart Selection, San Gabriel.",
+      "canonical": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/news/la-popup-scholart-selection-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026"
+        }
+      ],
+      "ogType": "article",
+      "h1": [
+        "CHARM VILLA Pop-up in Los Angeles"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#breadcrumb"
+        },
+        {
+          "type": "Article",
+          "id": "https://www.charmvilla.com/news/la-popup-scholart-selection-2026#article"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 58301,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/faq",
+      "status": 200,
+      "title": "常見問題｜CHARM VILLA",
+      "description": "關於小金魚茶包、沖泡、產品保養與訂單的常見問題。",
+      "canonical": "https://www.charmvilla.com/zh/faq",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/faq"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "常見問題"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/faq#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/faq#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 64815,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/faq",
+      "status": 200,
+      "title": "FAQ | CHARM VILLA",
+      "description": "Answers to common questions about Goldfish Tea Bags, brewing, product care, and orders.",
+      "canonical": "https://www.charmvilla.com/faq",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/faq"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Frequently Asked Questions"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/faq#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/faq#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 66296,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/policy",
+      "status": 200,
+      "title": "運送與退換貨政策｜CHARM VILLA",
+      "description": "CHARM VILLA 美國線上商店的運費、配送時間與退換貨規定。",
+      "canonical": "https://www.charmvilla.com/zh/policy",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/policy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/policy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/policy"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "運送與退換貨政策"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/policy#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/policy#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 66304,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/policy",
+      "status": 200,
+      "title": "Shipping & Returns Policy | CHARM VILLA",
+      "description": "Shipping rates, delivery times, and returns guidelines for the CHARM VILLA US online store.",
+      "canonical": "https://www.charmvilla.com/policy",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/policy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/policy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/policy"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Shipping & Returns Policy"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/policy#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/policy#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 68548,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/privacy",
+      "status": 200,
+      "title": "隱私權政策｜CHARM VILLA",
+      "description": "CHARM VILLA 如何蒐集、使用與揭露您的個人資料。",
+      "canonical": "https://www.charmvilla.com/zh/privacy",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/privacy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/privacy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/privacy"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "隱私權政策"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/privacy#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/privacy#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 61449,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "title": "Privacy Policy | CHARM VILLA",
+      "description": "How CHARM VILLA collects, uses and discloses your personal information.",
+      "canonical": "https://www.charmvilla.com/privacy",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/privacy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/privacy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/privacy"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Privacy Policy"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/privacy#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/privacy#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 63043,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/terms",
+      "status": 200,
+      "title": "服務條款｜CHARM VILLA",
+      "description": "使用 CHARM VILLA 網站與購買商品的條款。",
+      "canonical": "https://www.charmvilla.com/zh/terms",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/terms"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/terms"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/terms"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "服務條款"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/terms#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/terms#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 62885,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "title": "Terms of Service | CHARM VILLA",
+      "description": "The terms that govern the use of the CHARM VILLA website and the purchase of its products.",
+      "canonical": "https://www.charmvilla.com/terms",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/terms"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/terms"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/terms"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Terms of Service"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/terms#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/terms#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 65228,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/prop65",
+      "status": 200,
+      "title": "加州 65 號提案警語｜CHARM VILLA",
+      "description": "CHARM VILLA 商品的加州 65 號提案警語。",
+      "canonical": "https://www.charmvilla.com/zh/prop65",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/prop65"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/prop65"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/prop65"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "加州 65 號提案警語"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/prop65#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/prop65#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 45972,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/prop65",
+      "status": 200,
+      "title": "California Proposition 65 Warning | CHARM VILLA",
+      "description": "The California Proposition 65 warning for CHARM VILLA products.",
+      "canonical": "https://www.charmvilla.com/prop65",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/prop65"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/prop65"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/prop65"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "California Proposition 65 Warning"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/prop65#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/prop65#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 46093,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/accessibility",
+      "status": 200,
+      "title": "無障礙聲明｜CHARM VILLA",
+      "description": "CHARM VILLA 以 WCAG 2.1 AA 為目標，持續改善網站無障礙；遇到困難請來信。",
+      "canonical": "https://www.charmvilla.com/zh/accessibility",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/accessibility"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/accessibility"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/accessibility"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "無障礙聲明"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/zh/accessibility#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/accessibility#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 51252,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/accessibility",
+      "status": 200,
+      "title": "Accessibility Statement | CHARM VILLA",
+      "description": "CHARM VILLA works toward WCAG 2.1 Level AA and keeps improving the site. If something gets in your way, email us.",
+      "canonical": "https://www.charmvilla.com/accessibility",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/accessibility"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/accessibility"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/accessibility"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Accessibility Statement"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "WebPage",
+          "id": "https://www.charmvilla.com/accessibility#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/accessibility#breadcrumb"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 51614,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/collections/all",
+      "status": 200,
+      "title": "全部作品｜CHARM VILLA",
+      "description": "走進 CHARM VILLA 的日常藝廊，欣賞小金魚茶包、香味是喜悅的記憶與柴燒鳥形筷架，從細節讀懂每件作品。",
+      "canonical": "https://www.charmvilla.com/zh/collections/all",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/all"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/all"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/all"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "ALL PIECES14"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/zh/collections/all#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/collections/all#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/zh/collections/all#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 196599,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/collections/all",
+      "status": 200,
+      "title": "All Pieces | CHARM VILLA",
+      "description": "Discover goldfish tea gifts, hinoki wood pieces and wood-fired chopstick rests. Look closely at their textures and forms, and find small ways to bring art…",
+      "canonical": "https://www.charmvilla.com/collections/all",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/all"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/all"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/all"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "ALL PIECES14"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/collections/all#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/collections/all#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/collections/all#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 198629,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/collections/tea",
+      "status": 200,
+      "title": "小金魚茶包｜CHARM VILLA",
+      "description": "從織布的經緯到桐木的紋理，一盒茶也有值得細看的風景。以禮盒收藏手作的小金魚，依盒型、入數與茶款，選一份走進日常的心意。",
+      "canonical": "https://www.charmvilla.com/zh/collections/tea",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/tea"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/tea"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/tea"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "GOLDFISH TEA BAGS10"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/zh/collections/tea#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/collections/tea#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/zh/collections/tea#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 172912,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/collections/tea",
+      "status": 200,
+      "title": "Goldfish Tea Bags | CHARM VILLA",
+      "description": "From woven fabric to the grain of paulownia wood, each tea gift box holds details worth a closer look. Discover handcrafted goldfish tea bags, then choose the…",
+      "canonical": "https://www.charmvilla.com/collections/tea",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/tea"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/tea"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/tea"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "GOLDFISH TEA BAGS10"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/collections/tea#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/collections/tea#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/collections/tea#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 173839,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/collections/scents",
+      "status": 200,
+      "title": "香味是喜悅的記憶｜CHARM VILLA",
+      "description": "以檜木製作的杯墊、茶匙與筷子。",
+      "canonical": "https://www.charmvilla.com/zh/collections/scents",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/scents"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/scents"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/scents"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "SCENTS03"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/zh/collections/scents#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/collections/scents#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/zh/collections/scents#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 67285,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/collections/scents",
+      "status": 200,
+      "title": "Scents | CHARM VILLA",
+      "description": "Scent holds the memory of joy. Discover hinoki wood coasters, teaspoons and chopsticks, with natural grain and a gentle aroma that bring a quiet pleasure to…",
+      "canonical": "https://www.charmvilla.com/collections/scents",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/scents"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/scents"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/scents"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "SCENTS03"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/collections/scents#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/collections/scents#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/collections/scents#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 68607,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/collections/wood-fired",
+      "status": 200,
+      "title": "柴燒系列｜CHARM VILLA",
+      "description": "以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。",
+      "canonical": "https://www.charmvilla.com/zh/collections/wood-fired",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/wood-fired"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/wood-fired"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/wood-fired"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "WOOD-FIRED COLLECTION01"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/zh/collections/wood-fired#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/collections/wood-fired#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/zh/collections/wood-fired#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 55576,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/collections/wood-fired",
+      "status": 200,
+      "title": "Wood-Fired Collection | CHARM VILLA",
+      "description": "A little bird rests between the table and your chopsticks, bringing a quiet pause to each place setting. Each wood-fired piece is shaped and finished by hand,…",
+      "canonical": "https://www.charmvilla.com/collections/wood-fired",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/collections/wood-fired"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/collections/wood-fired"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/collections/wood-fired"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "WOOD-FIRED COLLECTION01"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "CollectionPage",
+          "id": "https://www.charmvilla.com/collections/wood-fired#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/collections/wood-fired#breadcrumb"
+        },
+        {
+          "type": "ItemList",
+          "id": "https://www.charmvilla.com/collections/wood-fired#list"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 56329,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/reunion-paper-gift-box",
+      "status": 200,
+      "title": "團圓・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "團圓：1 盒／小金魚茶包 15 入。CHARM VILLA「團圓」禮盒內含 15 包金魚茶包，五款茶各 3 包，適合與親友共享或贈禮。",
+      "canonical": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "團圓"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box#product"
+        }
+      ],
+      "offers": 3,
+      "missingAlt": 0,
+      "htmlBytes": 202241,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/reunion-paper-gift-box",
+      "status": 200,
+      "title": "Joyful Reunion Tea Gift | CHARM VILLA",
+      "description": "Joyful Reunion: 15 Goldfish Tea Bags. Joyful Reunion is a CHARM VILLA gift set containing 15 Goldfish Tea Bags: three each of five tea varieties. Every…",
+      "canonical": "https://www.charmvilla.com/products/reunion-paper-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Joyful Reunion"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/reunion-paper-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/reunion-paper-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/reunion-paper-gift-box#product"
+        }
+      ],
+      "offers": 3,
+      "missingAlt": 0,
+      "htmlBytes": 203463,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/year-of-plenty-gift-box",
+      "status": 200,
+      "title": "年年有魚・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "年年有魚：1 盒／小金魚茶包 18 入。CHARM VILLA「年年有魚」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。每盒集結四款茶，適合共享品茶時光，也為節慶送禮…",
+      "canonical": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "年年有魚"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box#product"
+        }
+      ],
+      "offers": 1,
+      "missingAlt": 0,
+      "htmlBytes": 208640,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/year-of-plenty-gift-box",
+      "status": 200,
+      "title": "Abundance & Prosperity Tea Gift | CHARM VILLA",
+      "description": "Abundance & Prosperity: Box of 18 Goldfish Tea Bags. Abundance & Prosperity is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box…",
+      "canonical": "https://www.charmvilla.com/products/year-of-plenty-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/year-of-plenty-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/year-of-plenty-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Abundance & Prosperity"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/year-of-plenty-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/year-of-plenty-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/year-of-plenty-gift-box#product"
+        }
+      ],
+      "offers": 1,
+      "missingAlt": 0,
+      "htmlBytes": 209763,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/blossoming-prosperity-gift-box",
+      "status": 200,
+      "title": "花開富貴・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "花開富貴：1 盒／小金魚茶包 18 入。CHARM VILLA「花開富貴」禮盒以桐木盒搭配手工刺繡布面盒蓋，內含 18 包金魚茶包。固定的四款茶組合匯集玫瑰烏龍茶、紅玉紅茶、金萱…",
+      "canonical": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "花開富貴"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box#product"
+        }
+      ],
+      "offers": 1,
+      "missingAlt": 0,
+      "htmlBytes": 210307,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/blossoming-prosperity-gift-box",
+      "status": 200,
+      "title": "Prosperity in Bloom Tea Gift | CHARM VILLA",
+      "description": "Prosperity in Bloom: Box of 18 Goldfish Tea Bags. Prosperity in Bloom is a CHARM VILLA gift set containing 18 Goldfish Tea Bags in a Paulownia wood box with a…",
+      "canonical": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/blossoming-prosperity-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Prosperity in Bloom"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/blossoming-prosperity-gift-box#product"
+        }
+      ],
+      "offers": 1,
+      "missingAlt": 0,
+      "htmlBytes": 210918,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/kyoto-gift-box",
+      "status": 200,
+      "title": "京都版・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "京都版：1 盒／所選茶款小金魚茶包 6 入。CHARM VILLA「京都版」禮盒內含 6 包所選茶款的金魚茶包。精巧的高密度紙盒搭配連體盒蓋，盛裝單一茶款，適合日常品茶或作為用心…",
+      "canonical": "https://www.charmvilla.com/zh/products/kyoto-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/kyoto-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/kyoto-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/kyoto-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "京都版"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/kyoto-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/kyoto-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/kyoto-gift-box#product"
+        }
+      ],
+      "offers": 4,
+      "missingAlt": 0,
+      "htmlBytes": 210036,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/kyoto-gift-box",
+      "status": 200,
+      "title": "Kyoto Artisanal Reserve Tea Gift | CHARM VILLA",
+      "description": "Kyoto Artisanal Reserve: Box of 6 Goldfish Tea Bags. Kyoto Artisanal Reserve is a CHARM VILLA gift set containing six Goldfish Tea Bags of your selected tea.…",
+      "canonical": "https://www.charmvilla.com/products/kyoto-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/kyoto-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/kyoto-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/kyoto-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Kyoto Artisanal Reserve"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/kyoto-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/kyoto-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/kyoto-gift-box#product"
+        }
+      ],
+      "offers": 4,
+      "missingAlt": 0,
+      "htmlBytes": 211381,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/spring-dawn-gift-box",
+      "status": 200,
+      "title": "春曉・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "春曉：1 盒／所選茶款小金魚茶包 12 入。CHARM VILLA「春曉」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以春日清晨為靈感，為品茶時光或一…",
+      "canonical": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/spring-dawn-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/spring-dawn-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "春曉"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box#product"
+        }
+      ],
+      "offers": 4,
+      "missingAlt": 0,
+      "htmlBytes": 206217,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/spring-dawn-gift-box",
+      "status": 200,
+      "title": "Spring Awakening Tea Gift | CHARM VILLA",
+      "description": "Spring Awakening: Box of 12 Goldfish Tea Bags. Spring Awakening is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a…",
+      "canonical": "https://www.charmvilla.com/products/spring-dawn-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/spring-dawn-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/spring-dawn-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/spring-dawn-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Spring Awakening"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/spring-dawn-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/spring-dawn-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/spring-dawn-gift-box#product"
+        }
+      ],
+      "offers": 4,
+      "missingAlt": 0,
+      "htmlBytes": 207924,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/winter-blossom-gift-box",
+      "status": 200,
+      "title": "暮雪・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "暮雪：1 盒／所選茶款小金魚茶包 12 入。CHARM VILLA「暮雪」禮盒內含 12 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。靈感來自櫻花與白雪相遇的景緻，為…",
+      "canonical": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/winter-blossom-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/winter-blossom-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "暮雪"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box#product"
+        }
+      ],
+      "offers": 2,
+      "missingAlt": 0,
+      "htmlBytes": 193902,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/winter-blossom-gift-box",
+      "status": 200,
+      "title": "Snowy Twilight Tea Gift | CHARM VILLA",
+      "description": "Snowy Twilight: Box of 12 Goldfish Tea Bags. Snowy Twilight is a CHARM VILLA gift set containing 12 Goldfish Tea Bags of your selected tea, presented in a…",
+      "canonical": "https://www.charmvilla.com/products/winter-blossom-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/winter-blossom-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/winter-blossom-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/winter-blossom-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Snowy Twilight"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/winter-blossom-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/winter-blossom-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/winter-blossom-gift-box#product"
+        }
+      ],
+      "offers": 2,
+      "missingAlt": 0,
+      "htmlBytes": 194892,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/orchid-gift-box",
+      "status": 200,
+      "title": "蝴蝶蘭・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "蝴蝶蘭：1 盒／所選茶款小金魚茶包 18 入。CHARM VILLA「蝴蝶蘭」禮盒內含 18 包所選茶款的金魚茶包，以桐木盒搭配手工刺繡布面盒蓋呈現。以蘭花為靈感，適合在慶祝或值…",
+      "canonical": "https://www.charmvilla.com/zh/products/orchid-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/orchid-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/orchid-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/orchid-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "蝴蝶蘭"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/orchid-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/orchid-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/orchid-gift-box#product"
+        }
+      ],
+      "offers": 4,
+      "missingAlt": 0,
+      "htmlBytes": 188132,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/orchid-gift-box",
+      "status": 200,
+      "title": "Royal Orchid Tea Gift | CHARM VILLA",
+      "description": "Royal Orchid: Box of 18 Goldfish Tea Bags. Royal Orchid is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of your selected tea, presented in a…",
+      "canonical": "https://www.charmvilla.com/products/orchid-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/orchid-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/orchid-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/orchid-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Royal Orchid"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/orchid-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/orchid-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/orchid-gift-box#product"
+        }
+      ],
+      "offers": 4,
+      "missingAlt": 0,
+      "htmlBytes": 188557,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/purple-butterfly-gift-box",
+      "status": 200,
+      "title": "紫斑蝶・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "紫斑蝶：1 盒／小金魚茶包 18 入。CHARM VILLA「紫斑蝶」禮盒內含 18 包貳等獎東方美人茶金魚茶包。以蝴蝶為靈感，透過桐木盒與手工刺繡布面盒蓋，呈現此款單一茶款禮盒。",
+      "canonical": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "紫斑蝶"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box#product"
+        }
+      ],
+      "offers": 1,
+      "missingAlt": 0,
+      "htmlBytes": 186996,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/purple-butterfly-gift-box",
+      "status": 200,
+      "title": "Sapphire Wings Tea Gift | CHARM VILLA",
+      "description": "Sapphire Wings: Box of 18 Goldfish Tea Bags. Sapphire Wings is a CHARM VILLA gift set containing 18 Goldfish Tea Bags of Second Prize Oriental Beauty Tea. A…",
+      "canonical": "https://www.charmvilla.com/products/purple-butterfly-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/purple-butterfly-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/purple-butterfly-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Sapphire Wings"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/purple-butterfly-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/purple-butterfly-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/purple-butterfly-gift-box#product"
+        }
+      ],
+      "offers": 1,
+      "missingAlt": 0,
+      "htmlBytes": 183120,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/christmas-gift-box",
+      "status": 200,
+      "title": "聖誕禮盒（限量版）・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "聖誕禮盒（限量版）：1 盒／所選茶款小金魚茶包 12 入。CHARM VILLA「聖誕禮盒（限量版）」每盒 12 包金魚茶包，可選綜合茶款（玫瑰烏龍茶、金萱烏龍茶、紅玉紅茶、東方…",
+      "canonical": "https://www.charmvilla.com/zh/products/christmas-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/christmas-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/christmas-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/christmas-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "聖誕禮盒（限量版）"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/christmas-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/christmas-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/christmas-gift-box#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 200264,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/christmas-gift-box",
+      "status": 200,
+      "title": "Christmas Edition (12-count) Tea Gift | CHARM VILLA",
+      "description": "Christmas Edition (12-count): 12 Goldfish Tea Bags. The CHARM VILLA Christmas Edition (12-count) contains 12 Goldfish Tea Bags in a Blue or Orange paper box…",
+      "canonical": "https://www.charmvilla.com/products/christmas-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/christmas-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/christmas-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/christmas-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Christmas Edition (12-count)"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/christmas-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/christmas-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/christmas-gift-box#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 197282,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/snowflake-gift-box",
+      "status": 200,
+      "title": "聖誕心意禮（限量版）・小金魚茶包禮盒｜CHARM VILLA",
+      "description": "聖誕心意禮（限量版）：3 盒一組，每盒 2 包，共 6 包。CHARM VILLA「聖誕心意禮（限量版）」三盒一組，每盒 2 包金魚茶包，共 6 包。白色紙盒飾以燙金雪花與壓紋小…",
+      "canonical": "https://www.charmvilla.com/zh/products/snowflake-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/snowflake-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/snowflake-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "聖誕心意禮（限量版）"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/snowflake-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/snowflake-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/snowflake-gift-box#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 197583,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/snowflake-gift-box",
+      "status": 200,
+      "title": "Christmas Charming Gift (Limited Edition) Tea Gift | CHARM VILLA",
+      "description": "Christmas Charming Gift (Limited Edition): 6 Goldfish Tea Bags. CHARM VILLA Christmas Charming Gift (Limited Edition) is sold as a set of three boxes and…",
+      "canonical": "https://www.charmvilla.com/products/snowflake-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/snowflake-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/snowflake-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Christmas Charming Gift (Limited Edition)"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/snowflake-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/snowflake-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/snowflake-gift-box#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 197249,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/cloud-coaster",
+      "status": 200,
+      "title": "雲朵杯墊｜CHARM VILLA",
+      "description": "雲朵杯墊：6 片／組。雲朵形狀的檜木杯墊，把木質的紋理與自然溫潤的香氣帶到茶杯旁。一組六片，拿起一片感受表面，也觀察每一片的輪廓。",
+      "canonical": "https://www.charmvilla.com/zh/products/cloud-coaster",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/cloud-coaster"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/cloud-coaster"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/cloud-coaster"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "雲朵杯墊"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/cloud-coaster#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/cloud-coaster#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/cloud-coaster#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 86695,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/cloud-coaster",
+      "status": 200,
+      "title": "Cloud Coaster | CHARM VILLA",
+      "description": "Cloud Coaster: 6 pieces of coasters. Product Notice To preserve the delicate craftsmanship and the natural, mellow aroma of the Hinoki wood, please hand wash…",
+      "canonical": "https://www.charmvilla.com/products/cloud-coaster",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/cloud-coaster"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/cloud-coaster"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/cloud-coaster"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Cloud Coaster"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/cloud-coaster#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/cloud-coaster#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/cloud-coaster#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 86001,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/bird-chopstick-rest",
+      "status": 200,
+      "title": "鳥形筷架｜CHARM VILLA",
+      "description": "鳥形筷架：以鳥的輪廓構成筷架。小小一件，在餐具與桌面之間，留下有形的留白。",
+      "canonical": "https://www.charmvilla.com/zh/products/bird-chopstick-rest",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/bird-chopstick-rest"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/bird-chopstick-rest"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/bird-chopstick-rest"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "鳥形筷架"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/bird-chopstick-rest#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/bird-chopstick-rest#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/bird-chopstick-rest#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 93114,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/bird-chopstick-rest",
+      "status": 200,
+      "title": "Songbird Chopsticks Rest | CHARM VILLA",
+      "description": "Songbird Chopsticks Rest: 1 piece. Product Notice Artisan Handcrafted: Individually shaped and finished by hand. Unique Variations: Because of the handmade…",
+      "canonical": "https://www.charmvilla.com/products/bird-chopstick-rest",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/bird-chopstick-rest"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/bird-chopstick-rest"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/bird-chopstick-rest"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Songbird Chopsticks Rest"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/bird-chopstick-rest#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/bird-chopstick-rest#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/bird-chopstick-rest#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 95326,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/ginkgo-teaspoon-gift-box",
+      "status": 200,
+      "title": "銀杏茶匙｜CHARM VILLA",
+      "description": "銀杏茶匙：1 只／盒。銀杏的輪廓成為茶匙的造型，木紋則為每一次觀看帶來不同細節。以禮盒呈現，收藏一份茶席心意。",
+      "canonical": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "銀杏茶匙"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 86850,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/ginkgo-teaspoon-gift-box",
+      "status": 200,
+      "title": "Ginkgo Style Tea Spoon | CHARM VILLA",
+      "description": "Ginkgo Style Tea Spoon: 1 piece of teaspoon. Product Notice To preserve the delicate craftsmanship and the natural, mellow aroma of the Hinoki wood, please…",
+      "canonical": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/ginkgo-teaspoon-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Ginkgo Style Tea Spoon"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/ginkgo-teaspoon-gift-box#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 87210,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/zh/products/wooden-chopsticks",
+      "status": 200,
+      "title": "檜木筷子｜CHARM VILLA",
+      "description": "檜木筷子：2 雙／組（不含鳥形筷架）。沿著修長線條看見木質紋理。與鳥形筷架搭配，在餐桌上形成一組安靜的物件。",
+      "canonical": "https://www.charmvilla.com/zh/products/wooden-chopsticks",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/wooden-chopsticks"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/wooden-chopsticks"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/wooden-chopsticks"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "檜木筷子"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/zh/products/wooden-chopsticks#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/zh/products/wooden-chopsticks#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/zh/products/wooden-chopsticks#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 81331,
+      "previewNoindex": "noindex, nofollow"
+    },
+    {
+      "path": "/products/wooden-chopsticks",
+      "status": 200,
+      "title": "Hinoki Wood Chopsticks | CHARM VILLA",
+      "description": "Hinoki Wood Chopsticks: 2 pairs of chopsticks. Product Notice To preserve the delicate craftsmanship and the natural, mellow aroma of the Hinoki wood, please…",
+      "canonical": "https://www.charmvilla.com/products/wooden-chopsticks",
+      "hreflang": [
+        {
+          "rel": "alternate",
+          "hreflang": "zh-Hant",
+          "href": "https://www.charmvilla.com/zh/products/wooden-chopsticks"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.charmvilla.com/products/wooden-chopsticks"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.charmvilla.com/products/wooden-chopsticks"
+        }
+      ],
+      "ogType": "website",
+      "h1": [
+        "Hinoki Wood Chopsticks"
+      ],
+      "schema": [
+        {
+          "type": "OnlineStore",
+          "id": "https://www.charmvilla.com/#organization"
+        },
+        {
+          "type": "Brand",
+          "id": "https://www.charmvilla.com/#brand"
+        },
+        {
+          "type": "ImageObject",
+          "id": "https://www.charmvilla.com/#logo"
+        },
+        {
+          "type": "WebSite",
+          "id": "https://www.charmvilla.com/#website"
+        },
+        {
+          "type": "ItemPage",
+          "id": "https://www.charmvilla.com/products/wooden-chopsticks#webpage"
+        },
+        {
+          "type": "BreadcrumbList",
+          "id": "https://www.charmvilla.com/products/wooden-chopsticks#breadcrumb"
+        },
+        {
+          "type": "Product",
+          "id": "https://www.charmvilla.com/products/wooden-chopsticks#product"
+        }
+      ],
+      "offers": 0,
+      "missingAlt": 0,
+      "htmlBytes": 82999,
+      "previewNoindex": "noindex, nofollow"
+    }
+  ],
+  "controls": [
+    {
+      "path": "/en/about",
+      "status": 308,
+      "location": "/about",
+      "robots": []
+    },
+    {
+      "path": "/en/products/kyoto-gift-box",
+      "status": 308,
+      "location": "/products/kyoto-gift-box",
+      "robots": []
+    },
+    {
+      "path": "/zh/products/does-not-exist",
+      "status": 404,
+      "location": null,
+      "robots": [
+        "noindex",
+        "max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      ]
+    },
+    {
+      "path": "/products/does-not-exist",
+      "status": 404,
+      "location": null,
+      "robots": [
+        "noindex",
+        "max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      ]
+    },
+    {
+      "path": "/collections/bags",
+      "status": 404,
+      "location": null,
+      "robots": [
+        "noindex",
+        "max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      ]
+    },
+    {
+      "path": "/collections/does-not-exist",
+      "status": 404,
+      "location": null,
+      "robots": [
+        "noindex",
+        "max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      ]
+    },
+    {
+      "path": "/zh/does-not-exist",
+      "status": 404,
+      "location": null,
+      "robots": [
+        "noindex",
+        "max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      ]
+    },
+    {
+      "path": "/does-not-exist",
+      "status": 404,
+      "location": null,
+      "robots": [
+        "noindex",
+        "max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      ]
+    },
+    {
+      "path": "/tasks",
+      "status": 200,
+      "location": null,
+      "robots": [
+        "noindex, nofollow"
+      ]
+    },
+    {
+      "path": "/zh/tasks",
+      "status": 200,
+      "location": null,
+      "robots": [
+        "noindex, nofollow"
+      ]
+    },
+    {
+      "path": "/account/reset/test-token",
+      "status": 200,
+      "location": null,
+      "robots": [
+        "noindex, nofollow"
+      ]
+    },
+    {
+      "path": "/zh/account/activate/test-token",
+      "status": 200,
+      "location": null,
+      "robots": [
+        "noindex, nofollow"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "/media/site/og-charm-villa-1200x630.jpg",
+      "status": 200
+    },
+    {
+      "path": "/brand/charmvilla-logo-schema.png",
+      "status": 200
+    },
+    {
+      "path": "/media/site/store-regent-2k.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/store-kyoto-2k.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/scene-olive-armchair-books-goldfish-tea.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/news-la-popup-showmore-2026-wide.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-reunion-gift-box-us-v2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio2k-cloud-coaster.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/featured-bird-chopstick-rest-55.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-reunion-gift-box-us-front-photo-v5.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-reunion-gift-box-us-closed-angle-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-reunion-gift-box-us-unboxed-15-photo-v4.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-year-of-plenty-gift-box-v4-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/official-gift-front-year-of-plenty-gift-box-cutout-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-year-of-plenty-gift-box-angle-v2-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/gift-box-unboxed-18-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-blossoming-prosperity-gift-box-v4-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/official-gift-front-blossoming-prosperity-gift-box-cutout-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-blossoming-prosperity-gift-box-angle-v2-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-kyoto-gift-box-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-kyoto-gift-box-official-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-kyoto-gift-box-unboxed-6-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-spring-dawn-gift-box-v4-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/official-gift-front-spring-dawn-gift-box-blue-cutout-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-spring-dawn-gift-box-end-angle-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/gift-box-unboxed-12-v2-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-winter-blossom-gift-box-v4-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/official-gift-front-winter-blossom-gift-box-cutout-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-winter-blossom-gift-box-end-angle-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-orchid-gift-box-v4-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/official-gift-front-orchid-gift-box-gold-cutout-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-orchid-gift-box-angle-v2-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/listing-tea-purple-butterfly-gift-box-v8.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/official-gift-front-purple-butterfly-gift-box-cutout-v3-even2.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-christmas-gift-box-orange-cover-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-christmas-gift-box-orange-front-v4.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-christmas-gift-box-orange-angle-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-christmas-gift-box-orange-unboxed-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-snowflake-gift-box-set-of-3-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-snowflake-gift-box-angle-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio-snowflake-gift-box-front-v3.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio2k-ginkgo-teaspoon-gift-box-v5.webp",
+      "status": 200
+    },
+    {
+      "path": "/media/site/studio2k-wooden-chopsticks.webp",
+      "status": 200
+    }
+  ],
+  "extraLinks": [
+    {
+      "path": "/zh/account",
+      "status": 307
+    },
+    {
+      "path": "/account",
+      "status": 307
+    }
+  ],
+  "robots": "User-Agent: *\nAllow: /\nDisallow: /account\nDisallow: /zh/account\nDisallow: /api/\n\nSitemap: https://www.charmvilla.com/sitemap.xml\n",
+  "duplicateTitles": [],
+  "duplicateDescriptions": [],
+  "errors": []
+}

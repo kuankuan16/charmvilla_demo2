@@ -1,0 +1,68 @@
+{
+  "verifiedAt": "2026-10-15T03:03:47.850Z",
+  "reloaded": true,
+  "allowedCount": 49,
+  "scope": "48 contiguous states plus Washington DC",
+  "checks": [
+    {
+      "name": "Alaska",
+      "checked": false
+    },
+    {
+      "name": "American Samoa",
+      "checked": false
+    },
+    {
+      "name": "Armed Forces Americas",
+      "checked": false
+    },
+    {
+      "name": "Armed Forces Europe",
+      "checked": false
+    },
+    {
+      "name": "Armed Forces Pacific",
+      "checked": false
+    },
+    {
+      "name": "Micronesia",
+      "checked": false
+    },
+    {
+      "name": "Guam",
+      "checked": false
+    },
+    {
+      "name": "Hawaii",
+      "checked": false
+    },
+    {
+      "name": "Marshall Islands",
+      "checked": false
+    },
+    {
+      "name": "Northern Mariana Islands",
+      "checked": false
+    },
+    {
+      "name": "Palau",
+      "checked": false
+    },
+    {
+      "name": "Puerto Rico",
+      "checked": false
+    },
+    {
+      "name": "U.S. Virgin Islands",
+      "checked": false
+    },
+    {
+      "name": "Virginia",
+      "checked": true
+    },
+    {
+      "name": "West Virginia",
+      "checked": true
+    }
+  ]
+}

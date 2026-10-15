@@ -31,13 +31,15 @@ const build = (lang: Locale) => {
   // "before noon, same day" promise, and the pre-order schedule (B7) that is shown separately.
   const dispatch = t("現貨訂單於 1–2 個工作天內出貨，出貨後通常另需 3–7 個工作天送達。週末及美國聯邦假日不出貨。",
     "In-stock orders ship within 1–2 business days. Delivery typically takes an additional 3–7 business days after dispatch. We do not dispatch orders on weekends or U.S. federal holidays.");
-  // Client's approved English, final reply 2026-10-14, items 2 and 7–10.
+  // Client's final English, 2026-10-14; newer owner shipping exclusions below remain authoritative.
   const preorder = t("預購商品預計最晚於 2026 年 11 月底前出貨。",
     "Pre-orders are expected to ship by the end of November 2026.");
-  const christmas = t("若希望在聖誕節前送達美國本土相連 48 州，請於 2026 年 12 月 15 日前下單。寄往阿拉斯加或夏威夷的訂單，請聯絡我們確認配送時間；不適用此截止日。",
-    "For delivery before Christmas to the contiguous 48 states, please order by December 15, 2026. For orders shipping to Alaska or Hawaii, please contact us to confirm delivery timing; this deadline does not apply.");
-  const remote = t("我們可寄送至阿拉斯加與夏威夷。運費於結帳時計算。寄往這兩州的訂單不適用免運。",
-    "We ship to Alaska and Hawaii. Shipping charges are calculated at checkout. Orders shipping to these states are not eligible for complimentary shipping.");
+  // Owner 2026-10-15 shipping scope supersedes the earlier client AK/HI delivery wording.
+  const christmas = t("聖誕節下單截止日：寄送美國本土 48 州的訂單，請於 2026 年 12 月 15 日前下單，以便在聖誕節前送達。",
+    "Christmas order deadline: for delivery before Christmas to the contiguous 48 states, please order by December 15, 2026.");
+  // Owner 2026-10-15: replaces the earlier screenshot's separately charged AK/HI shipping.
+  const remote = t("目前不寄送阿拉斯加與夏威夷。",
+    "We do not ship to Alaska or Hawaii.");
   const military = t("APO／FPO／DPO 軍郵及外交郵件地址：上線初期暫不寄送。",
     "At launch, we do not ship to APO/FPO/DPO addresses.");
 
@@ -79,7 +81,7 @@ const build = (lang: Locale) => {
     ] },
     { id: "orders", heading: t("訂單、運送與送禮", "Orders, Shipping & Gifting"), items: [
       { id: "shipping-cost", ...qa(["運費怎麼計算？", "How is shipping calculated?"],
-        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。寄往阿拉斯加與夏威夷的運費於結帳時計算，這兩州的訂單不適用免運。上線初期暫不寄送 APO／FPO／DPO 地址。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states). Shipping charges for Alaska and Hawaii are calculated at checkout. Orders shipping to these states are not eligible for complimentary shipping. At launch, we do not ship to APO/FPO/DPO addresses."]) },
+        ["運費於結帳時依您的訂單與收件地址計算。完成購買前，您可以先查看可用的配送方式與適用的運費優惠。訂單金額滿 US$ 199（含 US$ 199）配送至美國本土相連 48 州即享免運。目前不寄送阿拉斯加、夏威夷及 APO／FPO／DPO 地址。", "Shipping costs are calculated at checkout based on your order and delivery address. You can review the available services and any applicable shipping offers before completing your purchase. Complimentary shipping on orders of US$199 or more to the contiguous United States (48 states). We do not ship to Alaska, Hawaii, or APO/FPO/DPO addresses."]) },
       { id: "delivery-time", ...qa(["配送需要多久？", "How long does delivery take?"],
         [`訂單從加州出貨。${dispatch}${preorder}${christmas}可用的配送方式會顯示在結帳頁；訂單出貨後，我們會寄送追蹤連結給您。`, `Orders ship from California. ${dispatch} ${preorder} ${christmas} Available shipping options are shown at checkout, and we will send a tracking link once your order ships.`]) },
       { id: "store", ...qa(["你們有實體店面嗎？", "Do you have a physical store?"],

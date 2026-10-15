@@ -28,7 +28,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    ".next/test-shopify/types/**/*.ts",
+    ".next/test-shopify/dev/types/**/*.ts",
+    ".next/test-local/types/**/*.ts",
+    ".next/test-local/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

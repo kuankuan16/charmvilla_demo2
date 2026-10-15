@@ -1,0 +1,35 @@
+
+> charmvilla-gallery-site@0.1.0 test:e2e
+> node --import ./tests/support/register-ts.mjs --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tests/run.mjs e2e
+
+
+▶ building (shopify mode, .next/test-shopify)
+
+▶ building (local mode, .next/test-local)
+▶ mock http://127.0.0.1:53021 · full http://127.0.0.1:53320 · bare http://127.0.0.1:53323 · local http://127.0.0.1:53326
+
+▶ e2e tests
+✔ [en] optioned and pre-order pieces: names, options, Shopify prices, notes, quantities, checkout (5397.412083ms)
+✔ [en] the first add fails: the empty bag says why (552.422625ms)
+✔ [en] live variant sold out: purchase stays disabled (474.565708ms)
+✔ [en] fewer left than asked: Shopify's stock note, and a line removed in Shopify disappears from the bag (2586.7755ms)
+✔ [en] sign in ties the bag to the customer; sign out lets it go (1523.915958ms)
+✔ [zh] optioned and pre-order pieces: names, options, Shopify prices, notes, quantities, checkout (4589.210083ms)
+✔ [zh] the first add fails: the empty bag says why (426.026625ms)
+✔ [zh] live variant sold out: purchase stays disabled (395.258666ms)
+✔ [zh] fewer left than asked: Shopify's stock note, and a line removed in Shopify disappears from the bag (2592.372417ms)
+✔ [zh] sign in ties the bag to the customer; sign out lets it go (1617.209708ms)
+✔ [en] unpublished Christmas products retain correct choices and the confirmed three-box set (370.993584ms)
+✔ [zh] unpublished Christmas products retain correct choices and the confirmed three-box set (498.775292ms)
+✔ newsletter pop-up: opens by itself in shopify mode, never in local mode (20902.094834ms)
+✔ [en] the footer newsletter form subscribes through Shopify (809.674541ms)
+✔ [en] local mode: the bag lives in the browser, checkout stays closed (526.951333ms)
+✔ [zh] local mode: the bag lives in the browser, checkout stays closed (555.711ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 44386.433916

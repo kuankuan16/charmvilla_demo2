@@ -51,3 +51,6 @@ next-env.d.ts
 temp/
 .env*
 !.env.example
+
+# Checkout tests (tests/run.mjs): generated fixtures and Playwright output
+tests/.generated/
