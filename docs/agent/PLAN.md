@@ -1,34 +1,55 @@
 # Active Agent Plan
 
-Status: `completed`
+Status: `in_progress`
 Updated: 2026-10-16
 
 ## Active task
 
-- 使用者已核准金色完整圖庫並明確要求直接正式上線、Push GitHub。
-- 將金色三張接入團圓Gold圖庫與預設封面，Yellow保留原黃款、Red保留先前已預覽三張，第4張共用15包實拍。發布先前已核對的三色選單與聖誕三盒混搭來源，保留原Shopify商品／價格／庫存，不執行初始化或遠端資料修改。
-- 目標GitHub tentenco/charmvilla_shopify_official main；Vercel tentenco/charmvilla-demo2，正式 www.charmvilla.com。fetch成功，main/origin/main5439c02無新增提交；其他歷史QA及未核准圖片不納入。
-- 使用Vercel deployments-cicd技能核對team/project/commit/environment，正常push不強推；本機check/Shopify/購物車測試與雙語桌手機驗證後發布，正式alias及頁面必須核對。
-- 完成條件：三色四張皆正確、三盒混搭資料與價格正確、Git remote SHA與production來源一致、正式路由圖片及購物車驗證通過。無必要問題。
+- 使用者已明確要求「直接發佈」並「更新Github」：發布三款主打排序至www.charmvilla.com，推送指定tentenco/charmvilla_shopify_official的main。
+- 範圍：已驗證的merchandising.ts、FeaturedProducts及collection page；同步500額度的操作文件與交接。IG三張仍僅試稿，不套用官網，不發布社群；其他WIP不帶入。
+- Git fetch成功，main/origin/main db67cc7；正式目前dpl_EEZJDoT2vMfFeYMEAPqLcMwRNVoY，來源亦db67cc7。其他worktree在本次三檔無重疊修改，index空。
+- 既有check與13商品測試在本次來源修改後完成；來源之後未改，沿用結果。發布後驗證實際alias/來源SHA與中英文桌機1440、手機390的首頁/tea/all，圖片和排序、500額度、console/failed requests。
+- 完成條件：main push成功，正確Git SHA部署READY，www正式受影響路由確認。無必要待問問題。
+
+## Completed preceding IG task
+
+已交付三款IG首稿，詳output/imagegen/ig-holiday-20261016/README.md；未替換官網。每張原生1122×1402，使用內建imagegen各一次，原圖與prompt保存。
+
+## Completed preceding display task
+
+- 使用者轉貼客戶要求：聖誕兩款置頂，連同15入團圓在網站更凸顯。
+- 首頁推薦區前三位依序為聖誕12入、聖誕心意禮、團圓15入；茶禮盒與全部商品清單同步置頂，其他商品保持相對順序，其他分類不受影響。
+- 只改展示排序與既有推薦區文案，沿用核准圖片和Shopify商品資料／價格／額度；不寫原商品、不新增圖片、不改購物流程。
+- Git main/origin/main db67cc7，fetch成功；既有QA、圖片output及同事WIP保留。三個應用檔為本輪已驗證修改，使用者現已授權發布／push。
+- 完成條件：中英文首頁／茶清單／全部清單前三位一致，連結與圖片正常，metadata及ItemList排序一致，桌1440／手機390與鍵盤／reduced-motion可用，check通過。
 
 ## Steps and evidence
 
-| 狀態 | 動作 | 如何證明完成 | 實際結果／證據 |
-| --- | --- | --- | --- |
-| completed | 同步及來源確認 | fetch、status、worktrees、remote與部署歸屬 | main5439c02；project prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23 |
-| completed | 接入核准金色圖庫 | Gold/Yellow/Red各四張、來源hash一致 | 僅新增三張圖片及視覺映射 |
-| completed | 完整驗證 | check、商品/API/E2E、本機雙語桌手機 | check通過、20 unit／41 API／24 E2E，Ego60雙語1440/390三色通過，真實cart已清空 |
-| completed | Push與正式發布 | origin/main SHA、Vercel READY/alias與正式頁面 | 39ade00已push；正式Git部署Gy2jp READY、www同SHA，48例圖片及真實cart通過 |
+| 狀態 | 動作 | 驗證 |
+| --- | --- | --- |
+| completed | 核對首頁／清單資料路徑 | FeaturedProducts現有6款、CollectionPage live順序，Shopify來源契約保持 |
+| completed | 共用主打排序並調首頁前三位 | 單一slug清單，首頁6格維持、其他商品保留 |
+| completed | 本機驗證 | check、13商品測試、Ego12例、鍵盤與動畫結束截圖 |
+| completed | 交付本機預覽與文件 | 本機3246；500額度已線上 |
+| in_progress | Git commit/push與正式部署 | 精準暫存本輪檔案，等待來源SHA一致的READY部署 |
+| pending | 正式URL驗證 | 中英文桌手機排序及圖片、500額度與alias |
 
 ## FIFO queue
 
-無。
+無。行事曆需求已排除。
+
+## Completed preceding task
+
+- 聖誕預購兩款各500已完成並回報：12入500盒；2入經使用者確認500組＝1500小盒。兩款各增300；原商品現貨／售價不變。
+- 2入CAS及metafield receipts成功、四商品回讀；正式API兩款preOrderRemaining500，中文頁「預購・剩餘 500 組」、3盒一組及US$60確認。
+- QA：docs/qa/2026-10-16-christmas-capacity-500。無程式變更或部署需求，不可再增300。未付款／下單；首單扣量仍待驗證。
 
 ## Attempts and decisions
 
-- 保留其他WIP，不執行git add全部；來源依前輪snowflake-mix/source.json核對，再加入核准金色三張與相關測試/文件。
-- 不把CLI Ready或Git push視為已上線，必須驗證 www 正式路由和資產。
+- 首頁截圖首次卡在preloader／newsletter，關閉電子報後body overflow仍為hidden，第二次等待也逾時；停止等待同一路徑，改重新載入（已正常關閉電子報）後用實際hover導覽至推薦卡。未改瀏覽器storage或網站程式；DOM排序矩陣已通過，已補動畫結束截圖並檢視。
+
+- 提升展示順位，使用同一slug清單，避免首頁與分類不同步，不更改Shopify商品事實。
 
 ## Resume
 
-本任務完成：應用39ade00已推送、正式發布且驗證通過；交接文件另行提交，不改已測來源。其他歷史QA與未核准資產WIP留在本機，queue空。最後文件部署核對結果保留本輪QA的本機production-final.json；Ego60完成後只留正式商品頁供使用者檢視。
+下一步精準stage/commit/push本次三個應用檔與交接/QA文件，核對Git部署，再使用Ego本次新space驗證正式URL。保留本機3246與其他WIP。IG試稿不發布，兩款500額度已生效不可再增300，未測實際付款首單扣量。

@@ -1,0 +1,375 @@
+{
+  "checkedAt": "2026-10-16T04:07:48.474Z",
+  "page": {
+    "url": "https://www.charmvilla.com/zh/products/snowflake-gift-box",
+    "label": "預購・剩餘 500 組",
+    "unit": true,
+    "price": true
+  },
+  "status": 200,
+  "data": {
+    "products": {
+      "reunion-paper-gift-box": {
+        "price": {
+          "amount": 170,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 100,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67632284598636",
+            "price": "170.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67730134532460",
+            "price": "170.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67730134729068",
+            "price": "170.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          }
+        ]
+      },
+      "year-of-plenty-gift-box": {
+        "price": {
+          "amount": 220,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 20,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53770912629100",
+            "price": "220.0",
+            "availableForSale": true,
+            "quantityAvailable": 20
+          }
+        ]
+      },
+      "blossoming-prosperity-gift-box": {
+        "price": {
+          "amount": 220,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 20,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53583844082028",
+            "price": "220.0",
+            "availableForSale": true,
+            "quantityAvailable": 20
+          }
+        ]
+      },
+      "kyoto-gift-box": {
+        "price": {
+          "amount": 60,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 100,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53771465687404",
+            "price": "60.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771465720172",
+            "price": "60.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903381496172",
+            "price": "60.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433663852",
+            "price": "60.0",
+            "availableForSale": true,
+            "quantityAvailable": 100
+          }
+        ]
+      },
+      "spring-dawn-gift-box": {
+        "price": {
+          "amount": 230,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 10,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53903379136876",
+            "price": "230.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292790636",
+            "price": "230.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53903379169644",
+            "price": "260.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632292823404",
+            "price": "260.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          }
+        ]
+      },
+      "winter-blossom-gift-box": {
+        "price": {
+          "amount": 230,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 10,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53771531583852",
+            "price": "230.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53771531616620",
+            "price": "260.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          }
+        ]
+      },
+      "orchid-gift-box": {
+        "price": {
+          "amount": 300,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 10,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53827887464812",
+            "price": "300.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301113708",
+            "price": "300.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/53827887497580",
+            "price": "340.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67632301146476",
+            "price": "340.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          }
+        ]
+      },
+      "purple-butterfly-gift-box": {
+        "price": {
+          "amount": 425,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 10,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53824982679916",
+            "price": "425.0",
+            "availableForSale": true,
+            "quantityAvailable": 10
+          }
+        ]
+      },
+      "christmas-gift-box": {
+        "price": {
+          "amount": 120,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 500,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67637434253676",
+            "price": "120.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434286444",
+            "price": "120.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434319212",
+            "price": "120.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434351980",
+            "price": "120.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434384748",
+            "price": "120.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434417516",
+            "price": "120.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          }
+        ]
+      },
+      "snowflake-gift-box": {
+        "price": {
+          "amount": 60,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "preOrderRemaining": 500,
+        "mixAvailable": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/67637433893228",
+            "price": "60.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433925996",
+            "price": "60.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433958764",
+            "price": "60.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637433991532",
+            "price": "60.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          },
+          {
+            "id": "gid://shopify/ProductVariant/67637434024300",
+            "price": "60.00",
+            "availableForSale": true,
+            "quantityAvailable": 500
+          }
+        ]
+      },
+      "cloud-coaster": {
+        "price": {
+          "amount": 50,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53632848429420",
+            "price": "50.0",
+            "availableForSale": true,
+            "quantityAvailable": 2
+          }
+        ]
+      },
+      "bird-chopstick-rest": {
+        "price": {
+          "amount": 60,
+          "currency": "USD"
+        },
+        "soldOut": true,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53716047298924",
+            "price": "60.0",
+            "availableForSale": false,
+            "quantityAvailable": 0
+          }
+        ]
+      },
+      "ginkgo-teaspoon-gift-box": {
+        "price": {
+          "amount": 60,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53632849805676",
+            "price": "60.0",
+            "availableForSale": true,
+            "quantityAvailable": 5
+          }
+        ]
+      },
+      "wooden-chopsticks": {
+        "price": {
+          "amount": 60,
+          "currency": "USD"
+        },
+        "soldOut": false,
+        "published": true,
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/53632845250924",
+            "price": "60.0",
+            "availableForSale": true,
+            "quantityAvailable": 2
+          }
+        ]
+      }
+    }
+  }
+}

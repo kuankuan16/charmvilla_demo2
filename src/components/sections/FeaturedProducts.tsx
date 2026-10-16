@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { productHref } from "@/data/catalog";
+import { promotedProductSlugs } from "@/data/merchandising";
 import { getCommerceProducts } from "@/lib/shopify/catalog";
 import { Heading, Picture } from "@/components/ui";
 import { imageFit } from "@/data/content";
@@ -7,13 +8,11 @@ import { localeHref, translator, type Locale } from "@/i18n/config";
 
 // A single cross-category selection; full collections live on their own pages. As on the listing cards, the scene photograph
 // appears while a card is hovered (user 2026-10-01: 「首頁清單 hover 時也要換情境照」).
-// 真皮包與金飾全站隱藏（使用者 2026-10-07），白包與兩對耳環換成豐盛點心盤、年年有魚與雲朵杯墊
+// The three promoted tea gifts occupy the first row; the second row keeps the craft selection.
 const slugs = [
-  "reunion-paper-gift-box", // 團圓（美國版一個商品，2026-10-07）
+  ...promotedProductSlugs,
   "ginkgo-teaspoon-gift-box",
-  "spring-dawn-gift-box", // 花滿富春不在美國販售，換成春曉（2026-10-07）
   "bird-chopstick-rest",
-  "year-of-plenty-gift-box",
   "cloud-coaster",
 ];
 
@@ -23,7 +22,7 @@ export default async function FeaturedProducts({ lang }: { lang: Locale }) {
   const selected = slugs.map(slug => products.find(p => p.slug === slug)!);
   return <section id="featured" className="featured-products" aria-labelledby="featured-heading">
     <header className="featured-heading">
-      <Heading className="tc" as="h2"><span id="featured-heading">{t("推薦商品精選", "Featured pieces")}</span></Heading>
+      <Heading className="tc" as="h2"><span id="featured-heading">{t("主打茶禮與精選作品", "Featured tea gifts and pieces")}</span></Heading>
     </header>
     <div className="featured-grid">
       {selected.map((product) => <article key={product.slug} data-featured-product={product.slug}>

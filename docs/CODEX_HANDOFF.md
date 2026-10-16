@@ -1,5 +1,23 @@
 # CHARM VILLA 開發交接
 
+## 2026-10-16 IG 三款攝影首稿（僅交付試稿）
+
+- 內建imagegen三次各一張；聖誕12入橘盒、聖誕心意禮三盒組、團圓香檳金。沿用官網淺暖灰底，加少量松枝／緞帶和冬日光影，無額外廣告文字。
+- 三張原生1122×1402 PNG，全圖及原尺寸已檢視；來源、完整提示詞、hash及驗收限制見 `output/imagegen/ig-holiday-20261016/README.md`。心意禮三盒與金色封口確認，但生成對細部圖案及金魚輪廓有局部重繪，屬氛圍首稿，尚未核准替換商品圖。
+- 未發布IG、未替換官網、未push/deploy。主打排序仍僅本機；500盒／500組額度已生效，不可重複增加。
+
+## 2026-10-16 三款主打展示（本機完成，未發布）
+
+- 首頁推薦前三位與tea/all清單同步：聖誕12入、聖誕心意禮、團圓15入。共用merchandising.ts；metadata及ItemList同步，Shopify資料與核准圖不變。
+- check與13商品測試通過；Ego雙語1440/390十二例排序／圖片／無溢出及鍵盤通過，見[QA](qa/2026-10-16-promoted-gifts/README.md)。本機3246；未commit/push/Preview/Production。
+- 後續IG三款首稿已完成，見本文件最上方；本項展示排序尚未發布。
+
+## 2026-10-16 聖誕預購額度調整（兩款已完成）
+
+- 使用者轉貼客戶「12入跟2入預購調到各500」並要求改。12入batch 15425915552108於Hayward由200增300至500，custom.preorder_batch allocation.limit同步500；舊值比較及idempotency receipt成功，committed=0，正式API六選項均可售並共用剩餘500。
+- 使用者確認2入為500組＝1500小盒後，batch 15425915519340的available200→500、allocation.limit200→500，committed0；CAS/idempotency成功。正式中文頁顯示「預購・剩餘 500 組」，仍3盒一組、US$60，正式API成功。原兩商品及已完成12入batch前後deep-equal。證據見[本輪QA](qa/2026-10-16-christmas-capacity-500/README.md)。
+- 額度即時生效，無網站程式修改或部署；Git仍db67cc7，交接文件尚在本機。兩款均不可再增加300。未下單付款；下一項為聖誕兩款置頂及15入團圓主打呈現，行事曆需求已排除。
+
 ## 2026-10-16 核准圖庫與選單正式發布（已完成）
 
 - 使用者已確認四張金色圖庫，明確授權Production及Push GitHub。Gold為新香檳米金三角度＋原15包開盒，Yellow保留原黃款，Red沿用已確認三張＋原開盒。

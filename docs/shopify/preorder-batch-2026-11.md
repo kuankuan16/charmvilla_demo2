@@ -1,6 +1,6 @@
 # 2026 年 11 月預購：後台操作
 
-更新：2026-10-16。10月15日依使用者確認的10款表格啟用獨立預購批次；10月16日只為團圓補齊三色，沒有重新初始化額度。各茶款／盒蓋共用同款額度；現貨另行管理。
+更新：2026-10-16。客戶追加聖誕兩款各500的要求已完成：12入上限500盒；使用者確認2入為500組＝1500小盒，已由200增至500組。兩款各增加300個販售單位，保留既有接單消耗，不重跑初始化。10月15日啟用10款獨立預購批次，10月16日補齊團圓三色；各茶款／盒蓋共用同款額度，現貨另行管理。
 
 | 商品 | 本批接單上限 | Shopify 預購商品 |
 | --- | --- | --- |
@@ -12,8 +12,8 @@
 | 暮雪 | 10 盒 | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915322732) |
 | 蝴蝶蘭 | 10 盒 | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915453804) |
 | 紫斑蝶 | 10 盒 | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915421036) |
-| 聖誕禮盒 | 200 盒 | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915552108) |
-| 聖誕心意禮 | 200 組（每組3盒） | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915519340) |
+| 聖誕禮盒（12入） | 500 盒 | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915552108) |
+| 聖誕心意禮（每小盒2入） | 500 組（每組3盒，共1500小盒） | [管理額度](https://admin.shopify.com/store/charmvilla/products/15425915519340) |
 
 ## 看額度與訂單
 

@@ -1,0 +1,458 @@
+[
+  {
+    "url": "http://127.0.0.1:3246/zh/collections/tea",
+    "width": 1440,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/zh/products/christmas-gift-box",
+        "name": "聖誕禮盒（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/snowflake-gift-box",
+        "name": "聖誕心意禮（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/reunion-paper-gift-box",
+        "name": "團圓",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 10,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "聖誕禮盒（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "聖誕心意禮（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "團圓",
+          "url": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/zh/collections/all",
+    "width": 1440,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/zh/products/christmas-gift-box",
+        "name": "聖誕禮盒（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/snowflake-gift-box",
+        "name": "聖誕心意禮（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/reunion-paper-gift-box",
+        "name": "團圓",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 14,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "聖誕禮盒（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "聖誕心意禮（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "團圓",
+          "url": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/zh",
+    "width": 1440,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/zh/products/christmas-gift-box",
+        "name": "聖誕禮盒（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/snowflake-gift-box",
+        "name": "聖誕心意禮（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/reunion-paper-gift-box",
+        "name": "團圓",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 6,
+    "schema": []
+  },
+  {
+    "url": "http://127.0.0.1:3246/collections/tea",
+    "width": 1440,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/products/christmas-gift-box",
+        "name": "Christmas Edition (12-count)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/snowflake-gift-box",
+        "name": "Christmas Charming Gift (Limited Edition)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/reunion-paper-gift-box",
+        "name": "Joyful Reunion",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 10,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Christmas Edition (12-count)",
+          "url": "https://www.charmvilla.com/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Christmas Charming Gift (Limited Edition)",
+          "url": "https://www.charmvilla.com/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Joyful Reunion",
+          "url": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/collections/all",
+    "width": 1440,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/products/christmas-gift-box",
+        "name": "Christmas Edition (12-count)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/snowflake-gift-box",
+        "name": "Christmas Charming Gift (Limited Edition)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/reunion-paper-gift-box",
+        "name": "Joyful Reunion",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 14,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Christmas Edition (12-count)",
+          "url": "https://www.charmvilla.com/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Christmas Charming Gift (Limited Edition)",
+          "url": "https://www.charmvilla.com/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Joyful Reunion",
+          "url": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/",
+    "width": 1440,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/products/christmas-gift-box",
+        "name": "Christmas Edition (12-count)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/snowflake-gift-box",
+        "name": "Christmas Charming Gift (Limited Edition)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/reunion-paper-gift-box",
+        "name": "Joyful Reunion",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 6,
+    "schema": []
+  },
+  {
+    "url": "http://127.0.0.1:3246/zh/collections/tea",
+    "width": 390,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/zh/products/christmas-gift-box",
+        "name": "聖誕禮盒（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/snowflake-gift-box",
+        "name": "聖誕心意禮（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/reunion-paper-gift-box",
+        "name": "團圓",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 10,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "聖誕禮盒（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "聖誕心意禮（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "團圓",
+          "url": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/zh/collections/all",
+    "width": 390,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/zh/products/christmas-gift-box",
+        "name": "聖誕禮盒（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/snowflake-gift-box",
+        "name": "聖誕心意禮（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/reunion-paper-gift-box",
+        "name": "團圓",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 14,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "聖誕禮盒（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "聖誕心意禮（限量版）",
+          "url": "https://www.charmvilla.com/zh/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "團圓",
+          "url": "https://www.charmvilla.com/zh/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/zh",
+    "width": 390,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/zh/products/christmas-gift-box",
+        "name": "聖誕禮盒（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/snowflake-gift-box",
+        "name": "聖誕心意禮（限量版）",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/zh/products/reunion-paper-gift-box",
+        "name": "團圓",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 6,
+    "schema": []
+  },
+  {
+    "url": "http://127.0.0.1:3246/collections/tea",
+    "width": 390,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/products/christmas-gift-box",
+        "name": "Christmas Edition (12-count)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/snowflake-gift-box",
+        "name": "Christmas Charming Gift (Limited Edition)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/reunion-paper-gift-box",
+        "name": "Joyful Reunion",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 10,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Christmas Edition (12-count)",
+          "url": "https://www.charmvilla.com/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Christmas Charming Gift (Limited Edition)",
+          "url": "https://www.charmvilla.com/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Joyful Reunion",
+          "url": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/collections/all",
+    "width": 390,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/products/christmas-gift-box",
+        "name": "Christmas Edition (12-count)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/snowflake-gift-box",
+        "name": "Christmas Charming Gift (Limited Edition)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/reunion-paper-gift-box",
+        "name": "Joyful Reunion",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 14,
+    "schema": [
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Christmas Edition (12-count)",
+          "url": "https://www.charmvilla.com/products/christmas-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Christmas Charming Gift (Limited Edition)",
+          "url": "https://www.charmvilla.com/products/snowflake-gift-box"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Joyful Reunion",
+          "url": "https://www.charmvilla.com/products/reunion-paper-gift-box"
+        }
+      ]
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:3246/",
+    "width": 390,
+    "overflow": false,
+    "first": [
+      {
+        "href": "/products/christmas-gift-box",
+        "name": "Christmas Edition (12-count)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-christmas-gift-box-orange-cover-v3.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/snowflake-gift-box",
+        "name": "Christmas Charming Gift (Limited Edition)",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-snowflake-gift-box-set-of-3-smooth-bg-v5.webp&w=3840&q=75"
+      },
+      {
+        "href": "/products/reunion-paper-gift-box",
+        "name": "Joyful Reunion",
+        "image": "/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=3840&q=75"
+      }
+    ],
+    "count": 6,
+    "schema": []
+  }
+]

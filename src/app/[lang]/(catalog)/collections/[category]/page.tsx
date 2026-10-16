@@ -8,6 +8,7 @@ import { categories, getCategories, getProducts, getCategory, getCategoryProduct
 import CollectionBrowser from "@/components/catalog/CollectionBrowser";
 import { defaultLocale, isLocale, localeHref, translator } from "@/i18n/config";
 import { getCommerceProducts } from "@/lib/shopify/catalog";
+import { prioritizeProducts } from "@/data/merchandising";
 
 type Props = { params: Promise<{ lang: string; category: string }> };
 // No `dynamicParams = false`: an unknown category must reach the page so notFound() can answer with the localized 404.
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = t(`${info?.name || "全部作品"}｜CHARM VILLA`, `${info?.name || "All Pieces"} | CHARM VILLA`);
   const description = info?.intro || t("走進 CHARM VILLA 的日常藝廊，欣賞小金魚茶包、香味是喜悅的記憶與柴燒鳥形筷架，從細節讀懂每件作品。",
     "Discover goldfish tea gifts, hinoki wood pieces and wood-fired chopstick rests. Look closely at their textures and forms, and find small ways to bring art into everyday life.");
-  return pageMetadata({ lang, path: categoryHref(category), title, description, image: getCategoryProducts(category, lang)[0]?.image });
+  return pageMetadata({ lang, path: categoryHref(category), title, description, image: prioritizeProducts(getCategoryProducts(category, lang))[0]?.image });
 }
 
 export default async function CollectionPage({ params }: Props) {
@@ -32,7 +33,7 @@ export default async function CollectionPage({ params }: Props) {
   const info = getCategory(category, lang);
   if (category !== "all" && !info) notFound();
   const live = await getCommerceProducts(lang);
-  const list = category === "all" ? live : live.filter(p => p.category === category);
+  const list = prioritizeProducts(category === "all" ? live : live.filter(p => p.category === category));
   const all = t("全部作品", "All Pieces");
   const path = categoryHref(category);
   const schemaList = itemList(lang, path, list.map(p => ({ path: `/products/${p.slug}`, name: p.name })));
