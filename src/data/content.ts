@@ -201,7 +201,7 @@ const buildContent = (lang: Locale) => {
     image: site("partners-male-dancer-c.webp", t("黑白男舞者側身俯首，一手提著白色編織提把皮革包", "Black-and-white photograph of a male dancer bowing in profile, the white Braided Leather Bag hanging from one hand"), 1869, 1952),
     statement: t("作品與人的相遇，需要一處空間。從台北晶華酒店麗晶精品、The Scholart Selection，到京都寺町，CHARM VILLA 與夥伴一同呈現作品，讓遠近的觀看，回到材質與細節。",
       "For a piece to meet a person, it needs a place. From Regent Galleria at Regent Taipei and The Scholart Selection to Teramachi in Kyoto, CHARM VILLA presents its work together with its partners, so that looking, from near or far, comes back to material and detail."),
-    cta: { label: "WORK WITH US", zh: t("合作洽詢", ""), href: "https://www.instagram.com/charmvilla/" },
+    cta: { label: "WORK WITH US", zh: t("合作洽詢", ""), href: "https://www.instagram.com/charmvilla.us" },
     // 2026-10-02 (user: 「這一屏改為這種形式…深色漸層的背景襯托出人物與包包，並導購」): a full-bleed banner after the
     // reference's "Explore the Collection" — the dancer and the white bag on a dark gradient, the bag's name, its line, a shop button.
     banner: {
@@ -286,7 +286,7 @@ const buildContent = (lang: Locale) => {
         { date: t("10 月 17 日", "Oct 17"), tag: t("活動快訊", "Events"), text: t("10 月 17 日至 12 月 31 日，CHARM VILLA 洛杉磯快閃展於 San Gabriel 的 The Scholart Selection 展出。", "From October 17 to December 31, the CHARM VILLA pop-up in Los Angeles at The Scholart Selection, San Gabriel.") },
       ],
     },
-    instagram: "https://www.instagram.com/charmvilla/",
+    instagram: "https://www.instagram.com/charmvilla.us",
   };
 
   return { hero, manifesto, bags, bagCampaign, jewelry, interlude, tea, teaware, shown, partners, showMore, officialStore, visit };
@@ -300,10 +300,11 @@ export const getContent = (lang: Locale) => (contents[lang] ??= buildContent(lan
 export const { hero, manifesto, bags, bagCampaign, jewelry, interlude, tea, teaware, shown, partners, showMore, officialStore, visit } = getContent("zh");
 
 // Social accounts as listed in the footer of https://www.charmvilla.com.tw/product.php?lang=tw&tb=1 (2026-09-30).
+// Instagram uses the US account requested by the user on 2026-10-16.
 export const social = [
   { id: "facebook", label: "Facebook", href: "https://www.facebook.com/CHARMVILLA8/" },
   { id: "twitter", label: "Twitter", href: "https://twitter.com/charmvilla8" },
-  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/charmvilla/" },
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/charmvilla.us" },
 ] as const;
 
 export const brand = {
