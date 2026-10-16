@@ -27,6 +27,7 @@ test('Option photos match by identity, independently of variant order', () => {
   const source = structuredClone(snapshot.products['spring-dawn-gift-box']); source.variants.reverse();
   const p = applyShopifyProduct({ ...local, giftBox: { ...local.giftBox, choices: [{ label: 'Oriental Beauty Tea / Pink', contents: [], views: pink }] } }, source, 'en');
   assert.equal(p.giftBox.choices.find(c => c.label === 'Third Prize Oriental Beauty Tea / Pink').views, pink);
+  assert.deepEqual(p.giftBox.choices.find(c => c.label === 'Third Prize Oriental Beauty Tea / Pink').selection, {tea: 'Third Prize Oriental Beauty Tea', lid: 'Pink'});
   assert.equal(p.giftBox.choices.find(c => c.label === 'Third Prize Oriental Beauty Tea / Blue').views, undefined);
 });
 test('Every mapped variant has one identity, without fabricated or shared GIDs', () => {
@@ -116,7 +117,7 @@ test('Approved preorder restoration preserves every Shopify price, variant and s
       assert.equal(p.preOrderPolicy.shipBy, '2026-11-30');
       assert.deepEqual(p.preOrderPolicy, { shipBy: preorder.policy.shipBy, ...preorder.policy.notice[lang] });
       assert.equal(p.price.amount, Math.min(...source.variants.map(v => Number(v.price))));
-      const shown = slug === "reunion-paper-gift-box" ? source.variants.filter(v => v.title === "Gold") : source.variants;
+      const shown = source.variants;
       assert.equal(p.soldOut, !source.availableForSale || !shown.some(v => v.availableForSale)); assert.equal(p.shopifyData.published, source.published);
       assert.deepEqual(p.shopifyData.variants, shown);
       assert.equal(p.preOrderRemaining, undefined); assert.equal(p.giftBox.mixBoxes, undefined); assert.equal(p.image, image);
@@ -138,26 +139,20 @@ test('An enabled preorder must provide approved terms in both languages', () => 
 });
 
 
-test('Reunion exposes only the verified Gold variant in both languages regardless of sort order and other stock', () => {
+test('Reunion follows current Gold/Yellow/Red identities in both languages without mutating source or assigning old-color photos', () => {
   const source = structuredClone(snapshot.products['reunion-paper-gift-box']);
-  const before = structuredClone(source);
   source.variants.reverse();
-  const gold = source.variants.find(v => v.id === 'gid://shopify/ProductVariant/67632284598636');
-  gold.availableForSale = false; gold.quantityAvailable = 0;
-  source.availableForSale = true; // Another color in stock cannot enable Gold.
+  source.variants[0].availableForSale = true; source.variants[0].quantityAvailable = 7;
+  const before = structuredClone(source);
+  const oldPhotos = [{label: 'Pink', contents: [], views: [{label: 'Old pink', image}]}, {label: 'Blue', contents: [], views: [{label: 'Old blue', image}]}];
   for (const lang of ['zh', 'en']) {
-    let p = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, lang);
-    assert.equal(p.giftBox.choices, undefined); assert.equal(p.shopify.variantId, gold.id);
-    assert.equal(p.soldOut, true); assert.deepEqual(p.shopifyData.variants, [gold]);
-    assert.equal(p.price.amount, Number(gold.price)); assert.equal(p.image, image);
-    gold.availableForSale = true; gold.quantityAvailable = 2; gold.price = '171.25';
-    p = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, lang);
-    assert.equal(p.soldOut, false); assert.equal(p.price.amount, 171.25); assert.equal(p.shopifyData.variants[0].quantityAvailable, 2);
-    gold.availableForSale = false; gold.quantityAvailable = 0;
+    const p = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, lang, oldPhotos);
+    assert.deepEqual(p.giftBox.choices.map(c => c.label), lang === 'zh' ? ['紅色', '黃色', '金色'] : ['Red', 'Yellow', 'Gold']);
+    assert.deepEqual(p.shopifyData.variants, source.variants);
+    assert.deepEqual(p.giftBox.choices.map(c => c.shopifyVariantId), source.variants.map(v => v.id));
+    assert.equal(p.giftBox.choices[0].quantityAvailable, 7);
+    assert.ok(p.giftBox.choices.every(c => c.views === undefined));
+    assert.equal(p.image, image);
   }
-  assert.equal(source.variants.length, 3);
-  for (const variant of source.variants.filter(v => v !== gold)) assert.deepEqual(variant, before.variants.find(v => v.id === variant.id));
-  source.variants = source.variants.filter(v => v !== gold);
-  const missing = applyShopifyProduct({ ...local, slug: 'reunion-paper-gift-box' }, source, 'en');
-  assert.equal(missing.shopify.variantId, ''); assert.equal(missing.soldOut, true); assert.equal(missing.price, undefined);
+  assert.deepEqual(source, before);
 });

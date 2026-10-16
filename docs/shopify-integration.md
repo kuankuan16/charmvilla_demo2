@@ -1,12 +1,24 @@
 # Shopify Headless 開發與資料來源
 
-更新：2026-10-15。本文件取代舊的「本機價格／預購額度優先」串接規則。
+更新：2026-10-16。本文件取代舊的「本機價格／預購額度優先」串接規則。
+
+## 2026-10-16 更新：聖誕心意禮三盒混搭
+
+依使用者最新指示，snowflake-gift-box 使用每盒一個下拉選單，可重複或混搭五種茶，選滿三盒才可加入。既有200組共用SKU保留；在原group新增 `Pre-order — Mix & Match (3 boxes)`（plan `694183395692`），全額US$60／組、ON_SALE、DENY，原5個單口味plans仍相容舊購物車。原商品、庫存、價格與CMS沒有寫入。
+
+`_mix_variants` 使用原variant GID與盒數。伺服器要求3盒整數合計、不重複ID、限本商品五款、原價與native plan一致，重建英文 **Teas** 包裝明細；客戶端價格及任意文字不能繞過檢查。數量2是兩組US$120；完成訂單才由Shopify扣2組，加入購物車不保留額度。更新測試與Preview狀態見 [混搭 QA](qa/2026-10-16-snowflake-mix/README.md)。
+
+## 2026-10-16 更新：團圓三色與選單統一
+
+客戶已將原團圓選項改成 Gold／Yellow／Red。只向既有預購 selling plan group 增加 Yellow／Red，保留原 Gold plan；三色共用既有預購 SKU 與剩餘額度，沒有庫存初始化、原商品／現貨／價格／CMS 寫入。原商品 variant → selling plan 的實際 GID 已更新在 `shopify-preorders.json`，本機不再限制 Gold only。
+
+網站本機已將單一選項與茶／盒色選項統一下拉選單，沿用聖誕禮盒的兩欄選擇。這是本機已驗證但尚未提交／部署的改動；Shopify 兩個新 plan 已實際建立。團圓中文 CMS 材質說明仍含舊粉紅／藍色，依「原商品不用動」保留，待內容維護者同步；未以舊圖片冒充新顏色。證據見 [本輪 QA](qa/2026-10-16-reunion-options/README.md)。
 
 ## 2026-10-15 更新：預購獨立批次
 
 使用者已確認按原表格啟用10款新預購額度，無現貨也可預購。每款增加1個獨立tracked/DENY SKU，各茶／盒蓋以原生PRE_ORDER selling plan共用它；ON_SALE在訂單成立時占用額度。原商品／variant／價格／文案／現貨保留，前台仍用原身分配圖與選項，cart轉換成預購SKU＋plan。`src/data/shopify-preorders.json`記錄實際GID；即時數量及價格來自Shopify，`/api/preorder`不快取。
 
-新批次只Headless02發布。團圓Gold only、聖誕心意禮200組×3盒。App新版`headless-preorder-batch-2026-10-15`補write_purchase_options/write_publications/read_shipping，保留既有secret；實際23 scopes。以下「18 scopes／未改庫存」段落是前階段連線歷史。
+新批次只Headless02發布。團圓初始Gold only已由上方10月16日三色規則取代；聖誕心意禮200組×3盒。App新版`headless-preorder-batch-2026-10-15`補write_purchase_options/write_publications/read_shipping，保留既有secret；實際23 scopes。以下「18 scopes／未改庫存」段落是前階段連線歷史。
 
 操作／取消回補／改價同步／停單與限制請見[預購後台管理](shopify/preorder-batch-2026-11.md)，驗證見[本輪 QA](qa/2026-10-15-preorder-batch/README.md)。此段優先於下方舊的商品現貨／未發布狀態表。
 
@@ -52,7 +64,7 @@
 
 | 專案 slug | Shopify handle／名稱 | 已對齊的重點 |
 | --- | --- | --- |
-| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入；前台依2026-10-15指示只販售Gold，Pink／Blue選單隱藏；原Shopify規格保留、價格庫存即時讀取 |
+| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入；2026-10-16 客戶改為Gold／Yellow／Red，預購共用原額度；本機映射已完成、網站尚未部署 |
 | year-of-plenty-gift-box | abundance-prosperity-lunar-new-year-gift / Abundance & Prosperity | 18 入、US$220、目前無庫存 |
 | blossoming-prosperity-gift-box | prosperity-in-bloom-lunar-new-year-gift / Prosperity in Bloom | 18 入、US$220 |
 | kyoto-gift-box | kyoto-artisanal-reserve-6-ct / Kyoto Artisanal Reserve | 6 入、US$60、4 茶款；東方美人目前無庫存 |

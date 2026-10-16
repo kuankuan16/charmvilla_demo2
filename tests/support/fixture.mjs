@@ -24,6 +24,7 @@ export async function makeFixture() {
     const p = snapshot.products[slug];
     const limit = JSON.parse(p.metafields.find(m => m.key === "preorder_details").value).allocation.limit;
     const plans = Object.fromEntries(Object.entries(batch.options).map(([id, option]) => [option.sellingPlanId, { ...option, price: Number(p.variants.find(v => v.id === id).price) }]));
+    if (batch.mix) plans[batch.mix.sellingPlanId] = { ...batch.mix, price: Number(p.variants[0].price) };
     batches[slug] = { ...batch, limit, plans };
     variants[batch.variantId] = { handle: `preorder-${slug}`, productTitle: p.title, title: "Default Title", price: String(Math.max(...p.variants.map(v => Number(v.price)))), currency: p.currency, published: true, image: null, plans };
   }

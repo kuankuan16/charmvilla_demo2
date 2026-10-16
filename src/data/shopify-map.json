@@ -90,8 +90,8 @@
     "variantId": "",
     "variants": {
       "Gold": "gid://shopify/ProductVariant/67632284598636",
-      "Pink": "gid://shopify/ProductVariant/67632284631404",
-      "Blue": "gid://shopify/ProductVariant/67632284664172"
+      "Yellow": "gid://shopify/ProductVariant/67730134532460",
+      "Red": "gid://shopify/ProductVariant/67730134729068"
     }
   },
   "snowflake-gift-box": {

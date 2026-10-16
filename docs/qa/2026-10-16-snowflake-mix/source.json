@@ -1,0 +1,25 @@
+{
+  "stage": "/Users/kuan/Documents/Codex/charmvilla-preview-snowflake-mix-20261016",
+  "head": "5439c02bf5d6e7cf6bee1b922aaa239624d5ada0",
+  "files": {
+    "src/app/api/products/route.ts": "470b5712a238a03d64706871806901d470f5f507189f2ac2026def10068226c9",
+    "src/components/cart/AddToCart.tsx": "39810ab41fbcd20b16f4f0ddb996ff1c35f3e3282d71170eb80b0427cbd4c711",
+    "src/components/cart/CartProvider.tsx": "db26811e3f57c90ef0663fdce2e92d497e926197275faf81991692cb762f9594",
+    "src/components/catalog/useLiveProduct.ts": "b98c95a7459ac0741acc03944ed0cd3ebde8661325c66c9b28e5bd210abaae72",
+    "src/data/catalog.ts": "7561f73f04ccce526691282be7a62402c7fbba3fd71a86cbb77161078cbf0279",
+    "src/data/images.json": "852b3e7c1e5fb998e554922fd4e8f7bc554688ba756d2c347d203452d8bdcb54",
+    "src/data/shopify-map.json": "19f977c0c046fc3e9fc188f9f83063961515838f453d3dab4b8446f0ec71c1a4",
+    "src/data/shopify-preorders.json": "3b58ecde4c3eb6fb2d5c86d84e45a8016c4ff8e4b8712a7664078bdbf68dc99b",
+    "src/data/shopify-products.json": "cce361ed40b6b113177671600f3c15718c8cef9a8d7d149c65b97c4986b447de",
+    "src/i18n/errors.ts": "5308a1aba99d6a021315266bca43a4faadba2da257d19dd11f65e169397ca1d5",
+    "src/lib/shopify/catalog-data.ts": "f174302802405f32827999f9ce61815b64b5827802d67aa4c3eff71f9d5f799a",
+    "src/lib/shopify/preorder-batch.ts": "52a8448c91bf72c12f0236addaeec716d4dffd875b9935c1069e1ba0cf0f56e4",
+    "src/lib/shopify/preorder-cart.ts": "30c38a814032b6273613f1b3a6fa934100e5265fa9dd8013a23fbc9b69f72aed",
+    "src/lib/shopify/preorder-mix.ts": "e9bf73287899495553a36108b2080e7c37a11a1a22c337ccaa15d41e8d3de67d",
+    "public/media/site/studio-reunion-gift-box-red-angle-v1.png": "abaddcda896c6ca5369c372e6377bdcb6546316c256d3f4d07d55bcca897cdf3",
+    "public/media/site/studio-reunion-gift-box-red-front-v1.png": "c3fc43503b2630babaa7257b43756f202a49165a8d58dc4b8b4afdd74602aee1",
+    "public/media/site/studio-reunion-gift-box-red-alternate-v1.png": "dec1f18227d2c2d60c5462bd31cf34b316fd5bbec25bb9455b1eead66d83e19c",
+    "src/app/[lang]/(catalog)/products/[slug]/page.tsx": "6c3d553f813ab283a86345eea523f2297a6c7fb655d6df72f1b0d56c36a79bb3",
+    "src/components/catalog/TeaPages.tsx": "d168ada621d20033a7afe71e6cbe9a0cae5b028a0d72748f71ca2eb569b01758"
+  }
+}

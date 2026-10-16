@@ -9,6 +9,7 @@ const english: Record<string, string> = {
   server_error: "Something went wrong. Please try again.",
   preorder_full: "Not enough pre-order boxes are left for this quantity.",
   preorder_unavailable: "This pre-order option is full or is not accepting orders at the moment.",
+  bad_tea_mix: "Choose a tea for all three boxes. You can choose the same tea more than once.",
   cart_gone: "Your bag had expired, so it has been emptied. Please add the pieces again.",
   bad_quantity: "Please choose a quantity from 1 to 99.",
   email_taken: "An account with this email already exists. Please sign in, or reset your password.",

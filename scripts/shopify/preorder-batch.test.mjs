@@ -8,6 +8,7 @@ function fixture(slug='spring-dawn-gift-box',left=1){
   const source=structuredClone(snapshot[slug]),batch=preorderBatches[slug];
   source.availableForSale=false;source.variants.forEach(v=>{v.quantityAvailable=0;v.availableForSale=false;});
   const allocations=Object.entries(batch.options).map(([id,o])=>{const price=source.variants.find(v=>v.id===id).price;return{sellingPlan:{id:o.sellingPlanId,recurringDeliveries:false},checkoutChargeAmount:{amount:price},remainingBalanceChargeAmount:{amount:'0'},priceAdjustments:[{price:{amount:price,currencyCode:'USD'}}]};});
+  if(batch.mix) allocations.push({...structuredClone(allocations[0]),sellingPlan:{id:batch.mix.sellingPlanId,recurringDeliveries:false}});
   const pool={id:batch.productId,requiresSellingPlan:true,availableForSale:left>0,variants:{nodes:[{id:batch.variantId,availableForSale:left>0,quantityAvailable:left,currentlyNotInStock:false,sellingPlanAllocations:{nodes:allocations,pageInfo:{hasNextPage:false}}}],pageInfo:{hasNextPage:false}}};
   const inventory={status:'ACTIVE',requiresSellingPlan:true,variants:{nodes:[{id:batch.variantId,inventoryPolicy:'DENY'}]}};
   return{source,batch,pool,inventory};
@@ -40,11 +41,29 @@ test('The three-box Christmas set shares 200 sets, never 600 or five times 200',
   const f=fixture('snowflake-gift-box',200),p=applyPreorderBatch(f.source,f.batch,f.pool,f.inventory);
   const product=applyShopifyProduct({slug:'snowflake-gift-box',facts:[],giftBox:{pieces:6,contents:[]}},p,'en');
   assert.equal(product.preOrderRemaining,200);assert.equal(product.preOrderUnit,'set');assert.equal(f.batch.boxesPerUnit,3);assert.equal(product.giftBox.pieces,6);assert.equal(product.price.amount,60);
+  assert.equal(product.giftBox.mixBoxes,3);assert.equal(product.shopifyData.mixAvailable,true);
 });
-test('Reunion maps only Gold; plan identity is required to recover a shared SKU choice',()=>{
-  const f=fixture('reunion-paper-gift-box',100),ids=Object.keys(f.batch.options);
-  assert.equal(ids.length,1);assert.equal(f.batch.options[ids[0]].title,'Gold');
+test('Mixed set fails closed for missing/wrong-price/deferred plans without disabling legacy plans',()=>{
+  for(const change of [a=>a.sellingPlan.id='missing',a=>a.priceAdjustments[0].price.amount='20',a=>a.checkoutChargeAmount.amount='20',a=>a.remainingBalanceChargeAmount.amount='40',a=>a.sellingPlan.recurringDeliveries=true]){
+    const f=fixture('snowflake-gift-box',200);change(f.pool.variants.nodes[0].sellingPlanAllocations.nodes.at(-1));
+    const p=applyPreorderBatch(f.source,f.batch,f.pool,f.inventory);
+    assert.equal(p.preorderBatch.mixBoxes,3);assert.equal(p.preorderBatch.mixAvailable,false);
+    assert.ok(p.variants.every(v=>v.availableForSale));
+  }
+  const f=fixture('snowflake-gift-box',200);f.source.variants[2].price='80';
+  assert.equal(applyPreorderBatch(f.source,f.batch,f.pool,f.inventory).preorderBatch.mixAvailable,false);
+});
+test('All three Reunion colors share the existing pool and retain plan identity for the cart',()=>{
+  const f=fixture('reunion-paper-gift-box',97),ids=Object.keys(f.batch.options);
+  assert.deepEqual(ids.map(id=>f.batch.options[id].title),['Gold','Yellow','Red']);
+  const before=structuredClone(f.source),p=applyPreorderBatch(f.source,f.batch,f.pool,f.inventory);
+  assert.equal(p.preorderBatch.remaining,97);
+  assert.ok(p.variants.every(v=>v.availableForSale&&v.quantityAvailable===97));
   assert.equal(preorderPurchase(f.batch.variantId),null);
-  assert.equal(preorderPurchase(f.batch.variantId,f.batch.options[ids[0]].sellingPlanId).sourceVariantId,ids[0]);
-  assert.equal(preorderPurchase(f.source.variants.find(v=>v.title==='Blue').id),null);
+  for(const id of ids){
+    assert.equal(preorderPurchase(id).batch.variantId,f.batch.variantId);
+    assert.equal(preorderPurchase(f.batch.variantId,f.batch.options[id].sellingPlanId).sourceVariantId,id);
+  }
+  assert.equal(new Set(ids.map(id=>f.batch.options[id].sellingPlanId)).size,3);
+  assert.deepEqual(f.source,before);
 });

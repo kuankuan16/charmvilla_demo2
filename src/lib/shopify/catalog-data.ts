@@ -1,7 +1,6 @@
 // Shared, credential-free adapter. Shopify owns facts; the local catalogue owns every image and layout.
 import type { Product } from "@/data/catalog";
 import type { Locale } from "@/i18n/config";
-import shopifyMap from "../../data/shopify-map.json" with { type: "json" };
 
 export type ShopifyVariant = {
   id: string; title: string; sku: string | null; price: string; inventoryQuantity: number;
@@ -13,7 +12,7 @@ export type ShopifyProduct = {
   currency: string; published: boolean; availableForSale: boolean; variants: ShopifyVariant[];
   metafields: { namespace: string; key: string; type: string; value: string }[];
   translations: { key: string; value: string }[];
-  preorderBatch?: { remaining: number; unit: "box" | "set" };
+  preorderBatch?: { remaining: number; unit: "box" | "set"; mixBoxes?: number; mixAvailable?: boolean };
 };
 export type ShopifyChineseCopy = {
   version: 1; locale: "zh-TW"; title: string; description: string;
@@ -57,22 +56,20 @@ const words: Record<string, string> = {
   "Second Prize Oriental Beauty Tea": "貳等獎東方美人茶", "Rose Oolong Tea": "玫瑰烏龍茶",
   "Rose & Honey-Scented Black Tea": "玫瑰蜜香紅茶", "Ruby Black Tea": "紅玉紅茶", "Oriental Beauty Tea": "東方美人茶",
   "Jin Xuan Tea": "金萱烏龍茶", "Jin Xuan Oolong Tea": "金萱烏龍茶", "Mixed Teas": "綜合茶款",
-  "Gold": "金色", "Pink": "粉紅色", "Blue": "藍色", "Orange": "橘色",
+  "Gold": "金色", "Yellow": "黃色", "Red": "紅色", "Pink": "粉紅色", "Blue": "藍色", "Orange": "橘色",
 };
 export const variantLabel = (title: string, lang: Locale) => lang === "en" ? title : title.split(" / ").map(s => words[s] ?? s).join("／");
 const normalize = (s: string) => {
-  for (const [en, zh] of Object.entries(words)) s = s.replaceAll(zh, en);
+  // Match 粉紅色 before 紅色 so adding Red never breaks existing Pink photos.
+  for (const [en, zh] of Object.entries(words).sort((a, b) => b[1].length - a[1].length)) s = s.replaceAll(zh, en);
   return s.replace(/\s*[／/]\s*/g, " / ").replace(/First[- ]Prize |Third[- ]Prize /g, "").replace("Tea Assortment", "Mixed Teas").replace(/Stocking|聖誕襪/g, "Blue").replace(/Candy Cane|拐杖糖/g, "Orange").replace("Jin Xuan Oolong Tea", "Jin Xuan Tea").toLowerCase();
 };
 
 export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang: Locale, visualChoices = local.giftBox?.choices): Product {
   const t = (zh: string, en: string) => lang === "zh" ? zh : en;
-  // User 2026-10-15: Joyful Reunion sells Gold only; hide Pink/Blue for now.
-  // Filter presentation by verified GID, never by position, stock or translated title.
-  // The Shopify product and all its original variants/inventory remain untouched.
-  const variants = local.slug === "reunion-paper-gift-box"
-    ? source.variants.filter(v => v.id === shopifyMap["reunion-paper-gift-box"].variants.Gold)
-    : source.variants;
+  // Client 2026-10-16: Reunion now offers Gold/Yellow/Red in Shopify.
+  // Use current source variants; the preorder adapter checks each plan separately.
+  const variants = source.variants;
   const translated = Object.fromEntries(source.translations.map(x => [x.key, x.value]));
   const copy = lang === "zh" ? chineseCopy(source) : undefined;
   const sections = sectionsOf((lang === "zh" && translated.body_html) || source.descriptionHtml);
@@ -89,7 +86,7 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
     const lid = local.slug === "christmas-gift-box" && lidValue
       ? /^(Blue|Teal|Stocking)$/i.test(lidValue) ? t("聖誕襪", "Stocking")
         : /^(Orange|Candy Cane)$/i.test(lidValue) ? t("拐杖糖", "Candy Cane") : undefined
-      : undefined;
+      : lidValue ? variantLabel(lidValue, lang) : undefined;
     const selection = tea && lid ? { tea: variantLabel(tea, lang), lid } : undefined;
     return {
       label: selection ? `${selection.tea}${t("／", " / ")}${selection.lid}` : variantLabel(v.title, lang),
@@ -145,8 +142,8 @@ export function applyShopifyProduct(local: Product, source: ShopifyProduct, lang
     price: variants.length && (source.currency === "USD" || source.currency === "TWD") ? { amount: Math.min(...variants.map(v => Number(v.price))), currency: source.currency } : undefined,
     soldOut: !source.availableForSale || !variants.some(v => v.availableForSale), preOrder, preOrderPolicy: preorder?.policy, preOrderRemaining: source.preorderBatch?.remaining, preOrderUnit: source.preorderBatch?.unit, priceTbd: false, teaTbd: false,
     shopify: { handle: source.handle, variantId: variants.length === 1 ? variants[0].id : "" },
-    shopifyData: { productId: source.id, published: source.published, status: source.status, scheduledPreOrder, variants },
-    giftBox: local.giftBox ? { ...local.giftBox, pieces, contents: [], choices, mixBoxes: undefined, choiceLabel: copy?.choiceLabel || (hasTea && hasColor ? t("選擇茶款與盒色", "Choose your tea and box color") : hasColor ? t("選擇包裝", "Choose your packaging") : t("選擇茶款", "Choose your tea")) } : undefined,
+    shopifyData: { productId: source.id, published: source.published, status: source.status, scheduledPreOrder, variants, mixAvailable: source.preorderBatch?.mixAvailable },
+    giftBox: local.giftBox ? { ...local.giftBox, pieces, contents: [], choices, mixBoxes: source.preorderBatch?.mixBoxes, choiceLabel: copy?.choiceLabel || (hasTea && hasColor ? t("選擇茶款與盒色", "Choose your tea and box color") : hasColor ? t("選擇包裝", "Choose your packaging") : t("選擇茶款", "Choose your tea")) } : undefined,
     // Editorial leaf photographs and general brewing guide remain; product-specific facts above come only from Shopify.
   };
 }

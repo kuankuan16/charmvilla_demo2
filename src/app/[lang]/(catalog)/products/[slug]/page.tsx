@@ -211,7 +211,7 @@ export default async function ProductPage({ params }: Props) {
           {lang === "zh" && <p className="product-english">{product.english}</p>}
           <h1 className="tc" id="product-name">{product.name}</h1>
           {/* a set sold only as a set: its unit under the name (client tea-names review 2026-10-13 §2) */}
-          {product.giftBox?.mixBoxes && <p className="product-setline tc">{t(`${product.giftBox.mixBoxes} 盒一組 · 每盒 ${product.giftBox.pieces} 包`, `Set of ${product.giftBox.mixBoxes} boxes · ${product.giftBox.pieces} tea bags per box`)}</p>}
+          {product.giftBox?.mixBoxes && <p className="product-setline tc">{t(`${product.giftBox.mixBoxes} 盒一組 · 每盒 ${product.giftBox.pieces / product.giftBox.mixBoxes} 包`, `Set of ${product.giftBox.mixBoxes} boxes · ${product.giftBox.pieces / product.giftBox.mixBoxes} tea bags per box`)}</p>}
           {/* the one-line descriptive copy under the name is gone site-wide (user 2026-10-05: 「刪除全站這層形容文案，並將重要的數字訊息整合到下面的 spec」) */}
           {!product.price && product.priceTbd && <p className="product-price">{t("價格待訂", "Price to be announced")}{product.preOrder && <PreOrderLeft product={product} />}</p>}
           {product.displayOnly && product.soldOut && <p className="product-price"><span className="product-preorder product-soldtag tc">{t("售完", "Sold out")}</span></p>}

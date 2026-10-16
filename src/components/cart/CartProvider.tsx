@@ -10,7 +10,8 @@ import { findProduct, getProducts, formatPrice, type Product } from "@/data/cata
 import { variantLabel } from "@/lib/shopify/catalog-data";
 import { MAX_LINE_QUANTITY, type Cart as ShopifyCart } from "@/lib/shopify/types";
 import { variantFor, productForVariant } from "@/lib/shopify/variants";
-import { preorderPurchase } from "@/lib/shopify/preorder-batch";
+import { preorderBatches, preorderPurchase } from "@/lib/shopify/preorder-batch";
+import { parseTeaMix } from "@/lib/shopify/preorder-mix";
 import { useT } from "@/i18n/LocaleProvider";
 import { apiMessage } from "@/i18n/errors";
 import type { Locale } from "@/i18n/config";
@@ -27,7 +28,6 @@ const CartContext = createContext<Ctx | null>(null);
 const lineKey = (l: { slug: string; option?: number; mix?: number[] }) => (l.mix ? `${l.slug}#m${l.mix.join("-")}` : l.option === undefined ? l.slug : `${l.slug}#${l.option}`);
 // Mix-and-match set (雪花三盒組): `mix` counts boxes per tea, in giftBox.choices order, e.g. [2,0,1,0,0] = two boxes of the first tea, one of the third.
 const mixText = (product: Product | undefined, mix: number[], sep: string, times: string) => mix.flatMap((n, i) => { const label = product?.giftBox?.choices?.[i]?.label; return n > 0 && label ? [`${label}${times}${n}`] : []; }).join(sep);
-const mixFromAttrs = (attrs?: { key: string; value: string }[]) => { const raw = attrs?.find((a) => a.key === "_mix")?.value; return raw ? raw.split(",").map(Number) : undefined; };
 const LOCAL_KEY = "cv-cart", ID_KEY = "cv-cart-id";
 /** Fired by the account page on sign-out: the bag tied to that customer is let go, so the next person on a shared computer starts clean. */
 export const SIGNED_OUT_EVENT = "cv-signed-out";
@@ -39,9 +39,15 @@ const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string
   const preorder = preorderPurchase(node.merchandise.id, node.sellingPlanAllocation?.sellingPlan.id);
   const hit = preorder ?? productForVariant(node.merchandise.id);
   const local = hit ? findProduct(hit.slug, lang) : getProducts(lang).find(p => p.shopify?.handle === node.merchandise.product.handle);
-  const mix = local?.giftBox?.mixBoxes ? mixFromAttrs(node.attributes) : undefined;
+  let mixedTeas: string | undefined;
+  if (preorder?.mixed) {
+    try {
+      const mix = parseTeaMix(node.attributes?.find(a => a.key === "_mix_variants")?.value, Object.keys(preorder.batch.options), preorder.batch.boxesPerUnit);
+      mixedTeas = mix.map(m => `${variantLabel(local?.shopifyData?.variants.find(v => v.id === m.variantId)?.title ?? preorder.batch.options[m.variantId].title, lang)} × ${m.quantity}`).join(t("、", ", "));
+    } catch { /* An external/legacy line without valid mix metadata keeps its native plan title. */ }
+  }
   const optionTitle = preorder?.option.title ?? node.merchandise.title;
-  const picked = mix ? mixText(local, mix, t("、", ", "), t(" × ", " × ")) : optionTitle === "Default Title" ? undefined : variantLabel(optionTitle, lang);
+  const picked = mixedTeas ?? (optionTitle === "Default Title" ? undefined : variantLabel(optionTitle, lang));
   const title = local && (lang === "zh" || preorder) ? local.name : node.merchandise.product.title;
   const name = picked ? `${title}${t(`（${picked}）`, ` (${picked})`)}` : title;
   // The live product marks the actual Shopify line. The image catalogue's old snapshot can
@@ -53,8 +59,8 @@ const linesFromShopify = (cart: ShopifyCart | null, lang: Locale, t: (zh: string
 // The option itself is the variant; the attribute only repeats it in words. Pre-order lines are marked so the warehouse can tell them apart.
 const lineAttributes = (product: Product, option?: number, mix?: number[]) => {
   const en = findProduct(product.slug, "en");
-  // a mix-and-match set: the teas in words for the warehouse, plus a hidden `_mix` (underscore keys stay out of checkout) to name the line again in the bag
-  if (mix) return { attributes: [{ key: "Teas", value: mixText(en, mix, ", ", " × ") }, { key: "_mix", value: mix.join(",") }, ...(product.preOrder ? [{ key: "Pre-order", value: "Yes" }] : [])] };
+  // The server validates stable IDs and writes the English packing summary.
+  if (mix) return { attributes: [{ key: "_mix_variants", value: JSON.stringify(mix.flatMap((quantity, i) => quantity > 0 ? [{ variantId: product.giftBox?.choices?.[i]?.shopifyVariantId, quantity }] : [])) }] };
   const id = option === undefined ? product.shopify?.variantId : product.giftBox?.choices?.[option]?.shopifyVariantId;
   const label = product.shopifyData?.variants.find(v => v.id === id)?.title ?? (option === undefined ? undefined : en?.giftBox?.choices?.[option]?.label);
   const legend = en?.giftBox?.choiceLabel?.toLowerCase() ?? "";
@@ -119,9 +125,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     if (MODE === "local" && product.soldOut) return;
     setOpen(true);
     if (MODE === "shopify") {
-      const merchandiseId = (option === undefined ? product.shopify?.variantId : product.giftBox?.choices?.[option]?.shopifyVariantId) || variantFor(product.slug, option);
+      const batch = mix ? preorderBatches[product.slug] : undefined;
+      const merchandiseId = batch?.mix ? batch.variantId : (option === undefined ? product.shopify?.variantId : product.giftBox?.choices?.[option]?.shopifyVariantId) || variantFor(product.slug, option);
       if (!merchandiseId) { setError(t("此商品尚未在 Shopify 建立對應，暫時無法加入購物車。", "This piece cannot be added to the bag for now.")); return; }
-      await call("POST", { lines: [{ merchandiseId, quantity, ...lineAttributes(product, option, mix) }] }); return;
+      await call("POST", { lines: [{ merchandiseId, quantity, ...(batch?.mix ? { sellingPlanId: batch.mix.sellingPlanId } : {}), ...lineAttributes(product, option, mix) }] }); return;
     }
     const key = lineKey({ slug: product.slug, option, mix });
     setLocalLines((ls) => { const i = ls.findIndex((l) => lineKey(l) === key); if (i < 0) return [...ls, { slug: product.slug, quantity, ...(option === undefined ? {} : { option }), ...(mix ? { mix } : {}) }]; const c = [...ls]; c[i] = { ...c[i], quantity: c[i].quantity + quantity }; return c; });

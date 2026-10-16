@@ -1,0 +1,16 @@
+{
+  "base": "5439c02bf5d6e7cf6bee1b922aaa239624d5ada0",
+  "stage": "/Users/kuan/Documents/Codex/charmvilla-preview-red-gallery-20261016",
+  "files": {
+    "src/components/cart/AddToCart.tsx": "245d6306d15ced19e31d878c55057c4a18de915763a48f10c7ea32b70f8de128",
+    "src/data/shopify-map.json": "19f977c0c046fc3e9fc188f9f83063961515838f453d3dab4b8446f0ec71c1a4",
+    "src/data/shopify-preorders.json": "4ab67e10933efdbbd97dfc09c3c90340c21b8434523b48c140d26dfc04ead1b5",
+    "src/data/shopify-products.json": "cce361ed40b6b113177671600f3c15718c8cef9a8d7d149c65b97c4986b447de",
+    "src/lib/shopify/catalog-data.ts": "ab5ac99abdabdf156a31b1beca012b1f6d92ff3ae2c1f0d5180efcd54446c428",
+    "src/data/catalog.ts": "abf0d6baf728faaab5086033c30add10329a5225901c41d1f8263ed6ecdc67ae",
+    "src/data/images.json": "852b3e7c1e5fb998e554922fd4e8f7bc554688ba756d2c347d203452d8bdcb54",
+    "public/media/site/studio-reunion-gift-box-red-angle-v1.png": "abaddcda896c6ca5369c372e6377bdcb6546316c256d3f4d07d55bcca897cdf3",
+    "public/media/site/studio-reunion-gift-box-red-front-v1.png": "c3fc43503b2630babaa7257b43756f202a49165a8d58dc4b8b4afdd74602aee1",
+    "public/media/site/studio-reunion-gift-box-red-alternate-v1.png": "dec1f18227d2c2d60c5462bd31cf34b316fd5bbec25bb9455b1eead66d83e19c"
+  }
+}

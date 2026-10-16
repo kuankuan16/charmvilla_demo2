@@ -41,10 +41,11 @@ const act = async (page, action, shopify = true) => {
   await action(); await answer; await settled(page);
 };
 const addFromPage = async (page, shopify = true) => {
-  const radios = page.locator('.product-choices input[type="radio"]');
-  if (await radios.count() && !await page.locator('.product-choices input:checked').count()) {
-    const labels = page.locator('.product-choices label').filter({ hasNotText: /售罄|Sold out/ });
-    await labels.first().click();
+  const selects = page.locator('.product-split-options select');
+  for (const select of await selects.all()) {
+    if (await select.inputValue() !== '') continue;
+    const value = await select.locator('option').evaluateAll(options => options.find(o => o.value !== '' && !/售罄|Sold out/.test(o.textContent))?.value);
+    if (value !== undefined) await select.selectOption(value);
   }
   await act(page, () => page.locator("button.product-buy").click(), shopify); await page.locator(".cart-root.is-open").waitFor(); };
 const tap = (page, locator) => act(page, () => locator.click());
@@ -52,6 +53,34 @@ const closeBag = async (page) => { await page.locator(".cart-panel .cart-close")
 const lines = (page) => page.locator(".cart-panel .cart-line");
 const subtotalText = (page) => page.locator(".cart-subtotal strong").innerText();
 const cartState = async () => (await mock.state()).carts;
+
+// Run the zero-network checks before Shopify pages start speculative RSC prefetches.
+// Closing their browser context does not cancel already-running server-side requests.
+for (const lang of ["en", "zh"]) test(`[${lang}] local mode: the bag lives in the browser, checkout stays closed`, async () => {
+  const { context, page, problems } = await open(390, 844);
+  await page.goto(`${LOCAL_BASE}${prefix(lang)}/products/${REUNION}`);
+  assert.equal(await page.locator('.product-choices input').count(), 0);
+  assert.equal(await page.locator('button.product-buy').isDisabled(), true, "physical Reunion stock cannot enable preorder in local snapshot mode");
+  // Exercise the local bag with a product that is actually available in the snapshot.
+  const slug = 'kyoto-gift-box';
+  const option = fixture.snapshot.products[slug].variants.findIndex(v => v.availableForSale);
+  await page.goto(`${LOCAL_BASE}${prefix(lang)}/products/${slug}`);
+  await addFromPage(page, false);
+  assert.equal(await lines(page).count(), 1);
+  assert.equal(await lines(page).first().locator(".cart-line-price").innerText(), usd(fixture.products[slug].options[option].price));
+  assert.equal(await page.locator(".cart-checkout").evaluate((el) => el.tagName), "BUTTON");
+  assert.equal(await page.locator(".cart-checkout").isDisabled(), true);
+  assert.ok((await page.locator(".cart-foot").innerText()).includes(T[lang].localNote));
+  const stored = JSON.parse(await page.evaluate(() => localStorage.getItem("cv-cart")));
+  assert.equal(stored.length, 1); assert.equal(stored[0].slug, slug); assert.equal(stored[0].quantity, 1); assert.equal(stored[0].option, option);
+  await noOverflow(page, "local bag 390");
+  await page.reload();
+  await page.locator(".header-cart-count").first().waitFor();
+  assert.equal(await page.locator(".header-cart-count").first().innerText(), "1");
+  assert.equal((await mock.state()).log.length, 0, "local mode never calls Shopify");
+  assert.deepEqual(problems, []);
+  await context.close();
+});
 
 for (const lang of ["en", "zh"]) {
   const t = T[lang];
@@ -62,7 +91,8 @@ for (const lang of ["en", "zh"]) {
     // 1. a published pre-order product; choose its first available option
     await page.goto(`${BASE}${prefix(lang)}/products/${REUNION}`);
     await noOverflow(page, "product page 1440");
-    assert.equal(await page.locator('.product-choices input').count(), 0, "Gold is selected implicitly; hidden colors have no chooser");
+    assert.equal(await page.locator(`#option-${REUNION} option`).count(), 4, "placeholder plus three current colors");
+    assert.equal(await page.locator('button.product-buy').isDisabled(), true, "a color must be chosen");
     await addFromPage(page);
     await assert.doesNotReject(lines(page).first().waitFor());
     assert.equal(await lines(page).count(), 1);
@@ -84,7 +114,9 @@ for (const lang of ["en", "zh"]) {
     // 2. tea × lid colour option
     await page.goto(`${BASE}${prefix(lang)}/products/${DAWN}`);
     const opt = fixture.products[DAWN].options[2];
-    await page.locator(`label:has(input[name="tea-${DAWN}"])`).nth(2).click();
+    await page.locator(`#tea-${DAWN}`).selectOption({ index: 2 });
+    assert.equal(await page.locator("button.product-buy").isDisabled(), true, "tea alone is incomplete");
+    await page.locator(`#lid-${DAWN}`).selectOption({ index: 1 });
     await addFromPage(page);
     assert.equal(await lines(page).count(), 2);
     const dawnLine = lines(page).nth(1);
@@ -168,7 +200,8 @@ for (const lang of ["en", "zh"]) {
     const { context, page } = await open();
     await mock.config({ stock: { [preorderVariant(DAWN)]: 1 } });
     await page.goto(`${BASE}${prefix(lang)}/products/${DAWN}`);
-    await page.locator(`label:has(input[name="tea-${DAWN}"])`).nth(0).click();
+    await page.locator(`#tea-${DAWN}`).selectOption({ index: 1 });
+    await page.locator(`#lid-${DAWN}`).selectOption({ index: 1 });
     await addFromPage(page);
     await tap(page, lines(page).first().locator(".cart-qty button").last());
     assert.ok((await page.locator(".cart-notice").innerText()).includes(t.stock));
@@ -226,20 +259,93 @@ for (const lang of ["en", "zh"]) test(`[${lang}] Christmas preorders share the a
       for (let teaIndex = 1; teaIndex <= 3; teaIndex++) for (let lidIndex = 1; lidIndex <= 2; lidIndex++) {
         await tea.selectOption({ index: teaIndex });
         await lid.selectOption({ index: lidIndex });
+        await page.waitForFunction(() => !document.querySelector('button.product-buy')?.disabled);
         assert.equal(await page.locator('button.product-buy').isDisabled(), false, "a complete choice uses the published preorder pool");
       }
     } else {
-      assert.equal(await page.locator('.product-choices input').count(), fixture.products[slug].options.length);
-      await page.locator(".product-choices label").first().click();
+      assert.equal(await page.locator('.product-mix select').count(),3);
+      for(let box=0;box<3;box++) await page.locator(`#mix-${slug}-${box}`).selectOption(variant(slug,box));
+      await page.waitForFunction(() => !document.querySelector('button.product-buy')?.disabled);
       assert.equal(await page.locator("button.product-buy").isDisabled(), false);
     }
-    assert.equal(await page.locator('.product-mix').count(), 0);
+    assert.equal(await page.locator('.product-mix').count(), slug===SNOW?1:0);
     if (slug === SNOW) {
       assert.ok((await page.locator('body').innerText()).includes('$60.00'));
       assert.match(await page.locator('body').innerText(), lang === 'zh' ? /3 盒一組/ : /Set of 3 boxes/);
     }
   }
   assert.deepEqual(problems, []); await context.close();
+});
+
+for (const lang of ['zh', 'en']) for (const width of [1440, 390]) test(`[${lang}] Reunion gallery ${width}: color-specific photos, keyboard and view reset`, async () => {
+  const { context, page, problems } = await open(width, 900);
+  if (width === 390) await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto(`${BASE}${prefix(lang)}/products/${REUNION}`);
+  const active = page.locator('.product-slide[data-active="true"]');
+  const photo = async (filename) => {
+    await page.waitForFunction((name) => {
+      const slide = document.querySelector('.product-slide[data-active="true"]');
+      const img = slide?.querySelector('img');
+      return img?.complete && img.naturalWidth > 0 &&
+        decodeURIComponent(img.currentSrc).includes(name) && getComputedStyle(slide).opacity === '1';
+    }, filename);
+    assert.equal(await page.locator('.product-thumbnails button').count(), 4);
+  };
+  await photo('studio-reunion-gift-box-gold-angle-v1.png');
+  const select = page.locator(`#option-${REUNION}`);
+  for (const [index, color, first] of [
+    [0, 'gold', 'studio-reunion-gift-box-gold-angle-v1.png'],
+    [1, 'yellow', 'listing-tea-reunion-gift-box-us-v2.webp'],
+    [2, 'red', 'studio-reunion-gift-box-red-angle-v1.png'],
+  ]) {
+    await select.selectOption(String(index));
+    await photo(first);
+    const second = page.locator('.product-thumbnails button').nth(1);
+    await second.focus(); await page.keyboard.press('Enter');
+    await photo(color === 'yellow' ? 'studio-reunion-gift-box-us-front-photo-v5.webp' : `studio-reunion-gift-box-${color}-front-v1.png`);
+    await page.locator('.product-thumbnails button').nth(2).click();
+    await photo(color === 'yellow' ? 'studio-reunion-gift-box-us-closed-angle-even2.webp' : `studio-reunion-gift-box-${color}-alternate-v1.png`);
+    await page.locator('.product-thumbnails button').nth(3).click();
+    await photo('studio-reunion-gift-box-us-unboxed-15-photo-v4.webp');
+    assert.equal(await active.count(), 1);
+    await noOverflow(page, `${color} gallery ${width}`);
+  }
+  await select.selectOption('0');
+  await photo('studio-reunion-gift-box-gold-angle-v1.png');
+  assert.deepEqual(problems, []);
+  await context.close();
+});
+
+for(const lang of ['zh','en']) for(const width of [1440,390]) test(`[${lang}] mixed Christmas set ${width}: three choices, repeats, cart restore and two-set price`,async()=>{
+  const {context,page,problems}=await open(width,900);
+  if(width===390) await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto(`${BASE}${prefix(lang)}/products/${SNOW}`);
+  const buy=page.locator('button.product-buy');
+  assert.equal(await page.locator('.product-mix select').count(),3);
+  assert.match(await page.locator('.product-mix-help').innerText(),lang==='zh'?/每盒 2 包/:/2 tea bags/);
+  assert.match(await page.locator('.product-setline').innerText(),lang==='zh'?/每盒 2 包/:/2 tea bags per box/);
+  assert.equal(await buy.isDisabled(),true);
+  for(let box=0;box<2;box++){
+    await page.locator(`#mix-${SNOW}-${box}`).selectOption(variant(SNOW,0));
+    assert.equal(await buy.isDisabled(),true);
+  }
+  await page.locator(`#mix-${SNOW}-2`).selectOption(variant(SNOW,2));
+  await page.waitForFunction(()=>!document.querySelector('button.product-buy').disabled);
+  await page.locator(`#mix-${SNOW}-2`).focus();await page.keyboard.press('Tab');
+  assert.notEqual(await page.evaluate(()=>document.activeElement.tagName),'BODY');
+  await noOverflow(page,`mixed product ${width}`);
+  await act(page,()=>buy.click());
+  assert.equal(await lines(page).count(),1);
+  const name=await lines(page).first().locator('.cart-line-name').innerText();
+  assert.match(name,/× 2/);assert.match(name,/× 1/);assert.equal(await subtotalText(page),'$60.00');
+  await page.reload();
+  await page.locator('.header-cart-count').first().waitFor();
+  await page.locator('.header-cart-btn').first().click();await settled(page);
+  assert.equal(await lines(page).first().locator('.cart-line-name').innerText(),name);
+  await tap(page,lines(page).first().locator('.cart-qty button').last());
+  assert.equal(await subtotalText(page),'$120.00');
+  await noOverflow(page,`mixed cart ${width}`);
+  assert.deepEqual(problems,[]);await context.close();
 });
 
 test("newsletter pop-up: opens by itself in shopify mode, never in local mode", async () => {
@@ -262,31 +368,5 @@ test("[en] the footer newsletter form subscribes through Shopify", async () => {
   assert.match(await page.locator(".footer-news-status").innerText(), /Thank you/);
   const c = (await mock.state()).customers.find((x) => x.email === "footer@example.com");
   assert.equal(c?.emailMarketingConsent?.marketingState, "SUBSCRIBED");
-  await context.close();
-});
-
-for (const lang of ["en", "zh"]) test(`[${lang}] local mode: the bag lives in the browser, checkout stays closed`, async () => {
-  const { context, page, problems } = await open(390, 844);
-  await page.goto(`${LOCAL_BASE}${prefix(lang)}/products/${REUNION}`);
-  assert.equal(await page.locator('.product-choices input').count(), 0);
-  assert.equal(await page.locator('button.product-buy').isDisabled(), true, "Gold has no stock in the local snapshot; Blue stock cannot enable it");
-  // Exercise the local bag with a product that is actually available in the snapshot.
-  const slug = 'kyoto-gift-box';
-  const option = fixture.snapshot.products[slug].variants.findIndex(v => v.availableForSale);
-  await page.goto(`${LOCAL_BASE}${prefix(lang)}/products/${slug}`);
-  await addFromPage(page, false);
-  assert.equal(await lines(page).count(), 1);
-  assert.equal(await lines(page).first().locator(".cart-line-price").innerText(), usd(fixture.products[slug].options[option].price));
-  assert.equal(await page.locator(".cart-checkout").evaluate((el) => el.tagName), "BUTTON");
-  assert.equal(await page.locator(".cart-checkout").isDisabled(), true);
-  assert.ok((await page.locator(".cart-foot").innerText()).includes(T[lang].localNote));
-  const stored = JSON.parse(await page.evaluate(() => localStorage.getItem("cv-cart")));
-  assert.equal(stored.length, 1); assert.equal(stored[0].slug, slug); assert.equal(stored[0].quantity, 1); assert.equal(stored[0].option, option);
-  await noOverflow(page, "local bag 390");
-  await page.reload();
-  await page.locator(".header-cart-count").first().waitFor();
-  assert.equal(await page.locator(".header-cart-count").first().innerText(), "1");
-  assert.equal((await mock.state()).log.length, 0, "local mode never calls Shopify");
-  assert.deepEqual(problems, []);
   await context.close();
 });

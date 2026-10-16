@@ -1,0 +1,110 @@
+[
+  {
+    "lang": "zh",
+    "width": 1440,
+    "color": "金色",
+    "src": "http://localhost:3241/media/site/studio-reunion-gift-box-gold-angle-v1.png",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "zh",
+    "width": 1440,
+    "color": "黃色",
+    "src": "http://localhost:3241/media/site/listing-tea-reunion-gift-box-us-v2.webp",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "zh",
+    "width": 1440,
+    "color": "紅色",
+    "src": "http://localhost:3241/media/site/studio-reunion-gift-box-red-angle-v1.png",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "color": "金色",
+    "src": "http://localhost:3241/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=640&q=90",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "color": "黃色",
+    "src": "http://localhost:3241/_next/image?url=%2Fmedia%2Fsite%2Flisting-tea-reunion-gift-box-us-v2.webp&w=640&q=90",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "color": "紅色",
+    "src": "http://localhost:3241/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-red-angle-v1.png&w=640&q=90",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "color": "Gold",
+    "src": "http://localhost:3241/media/site/studio-reunion-gift-box-gold-angle-v1.png",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "color": "Yellow",
+    "src": "http://localhost:3241/media/site/listing-tea-reunion-gift-box-us-v2.webp",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "color": "Red",
+    "src": "http://localhost:3241/media/site/studio-reunion-gift-box-red-angle-v1.png",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "color": "Gold",
+    "src": "http://localhost:3241/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-gold-angle-v1.png&w=640&q=90",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "color": "Yellow",
+    "src": "http://localhost:3241/_next/image?url=%2Fmedia%2Fsite%2Flisting-tea-reunion-gift-box-us-v2.webp&w=640&q=90",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "color": "Red",
+    "src": "http://localhost:3241/_next/image?url=%2Fmedia%2Fsite%2Fstudio-reunion-gift-box-red-angle-v1.png&w=640&q=90",
+    "thumbnails": 4,
+    "overflow": false,
+    "buyDisabled": false
+  }
+]

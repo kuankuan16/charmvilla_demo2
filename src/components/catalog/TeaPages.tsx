@@ -66,7 +66,7 @@ export default function TeaPages({ product, t }: { product: Product; t: (zh: str
   if (!notes && !brew) return null;
   const title = [notes?.title, brew?.title].filter(Boolean).join(t("與", " and "));
   const teaCount = new Set(product.shopifyData?.variants.flatMap(v => v.selectedOptions.filter(o => /tea|flavo/i.test(o.name)).map(o => o.value))).size;
-  const productName = product.shopifyData ? product.name + (teaCount > 1 ? t(`（${teaCount} 選 1）`, ` (choose 1 of ${teaCount})`) : "") : product.name;
+  const productName = product.shopifyData ? product.name + (teaCount > 1 ? product.giftBox?.mixBoxes ? t(`（每盒 ${teaCount} 選 1，可混搭）`, ` (choose 1 of ${teaCount} per box)`) : t(`（${teaCount} 選 1）`, ` (choose 1 of ${teaCount})`) : "") : product.name;
   return (
     <section className="tea-sheet" aria-label={title}>
       {/* 京都版 holds one tea chosen from four (user 2026-10-13: 「京都版後面備註 4 選 1」) */}

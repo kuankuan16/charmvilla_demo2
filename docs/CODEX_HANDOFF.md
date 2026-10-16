@@ -1,6 +1,44 @@
 # CHARM VILLA 開發交接
 
-更新：2026-10-15。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
+## 2026-10-16 核准圖庫與選單正式發布（進行中）
+
+- 使用者已確認四張金色圖庫，明確授權Production及Push GitHub。Gold為新香檳米金三角度＋原15包開盒，Yellow保留原黃款，Red沿用已確認三張＋原開盒。
+- 本批來源為先前19檔Preview加金色三張與映射、相關測試與文件；下方Preview-only敘述是歷史快照，發布結果以[本輪QA](qa/2026-10-16-reunion-release/README.md)為準。
+- Node24 check、20 unit、41 API、24 E2E通過；Ego60雙語1440/390三色切換及已載入圖片、無溢出／錯誤通過，桌機／手機截圖已檢視；真實Shopify cart CRUD通過並清空，未下單付款。
+- 本輪不寫Shopify原商品／價格／庫存、不重跑初始化。其他歷史QA與未核准生成圖仍在本機WIP；禁止git add全部。
+
+## 2026-10-16 團圓金色布面四張圖庫（僅本機圖片交付）
+
+- 最新實物色樣是淺香檳米金布面，與目前 Preview 金色選項仍用的亮黃主圖不同；使用者要求保留印刷與刺繡，只換布面底色。
+- 使用者已確認金色主圖並要求完成其他角度；補正面俯拍及另一側斜角，各原生1122×1402。第4張沿用原15包開盒實拍，hash相同。全圖與200%局部已檢視，圖片及prompt見 `output/imagegen/reunion-champagne-gold-20261016/README.md`。
+- 四張本機預覽為同目錄 `preview.html`；Ego58桌1440／手機390、點圖放大及Escape驗證通過，保留結果頁給使用者。
+- 沒有改網站圖片引用／Shopify／部署或push；新角度尚未套用網站。主圖來源比對Ego57已finish。現有混搭與紅色圖庫 Preview 仍以以下 fwasds9u4 為準。
+
+更新：2026-10-16。這是有日期的接手快照，不是新任務或發布授權。進行中任務與 FIFO queue 只看 [PLAN.md](agent/PLAN.md)，工作規則看 [AGENTS.md](../AGENTS.md)。
+
+## 2026-10-16 聖誕心意禮三盒混搭 Preview
+
+- 每盒各一個下拉，可重複或選3種茶；未選滿禁購。保留US$60／組，2組US$120；每盒2包／共6包，摘要及茶介紹同步。cart以原variant GID記錄盒數，server驗證總數與live購買資格，重建Teas供出貨；不讓client字串決定價格。
+- 既有200組pool只加mixed plan `694183395692`，保留原5plans。原商品、現貨、價格及pool庫存回讀不變；不重跑初始化。實單扣量尚未測，測試cart全部清空；後台讀寫及本機／Preview證據見[QA](qa/2026-10-16-snowflake-mix/README.md)。
+- [最新Preview](https://charmvilla-demo2-fwasds9u4-tentenco.vercel.app/zh/products/snowflake-gift-box) READY `dpl_6rEnnX34CAQfkuXJpZZFhnPi5jaA`，包含紅色團圓四張圖庫。check、20unit、41API、20E2E通過；摘要修正後相關6E2E重跑通過。Ego56雙語桌手機／真實Preview cart通過，紅色桌機淡入結束狀態補驗，截圖已檢視。
+- 尚未commit/push或Production；www仍`dpl_2yVuVGM8gTmuq7bha97yzQZKunAL`。隔離stage `charmvilla-preview-snowflake-mix-20261016`＝5439c02＋source.json列的19檔，勿以所有WIP批次發布。root3240為本輪已測本機production build，Ego56留中文Preview。
+
+## 2026-10-16 紅色團圓四張圖庫 Preview
+
+- 已補正面、反向斜角兩張紅色圖；第4張無盒蓋，共用原15包實拍；保留第1張與全部金色圖。原生兩張1122×1402，同角度占比差小於0.1百分點。
+- [新版Preview](https://charmvilla-demo2-ptpqhv4gs-tentenco.vercel.app/zh/products/reunion-paper-gift-box) READY dpl_BABWHhjQTi3LGUv4ePqoxSoKxq36；check與16例圖片切換通過，手機圖已檢視；桌機截圖在動畫中，後續混搭回歸補拍。詳見[QA](qa/2026-10-16-reunion-red-gallery/README.md)。未commit/push或正式部署。
+- 使用者追加聖誕心意禮三盒可混搭，目前單選不符需求；紅色圖庫網址已交付，接續處理混搭，不能只加UI而讓Shopify紀錄／額度錯誤。
+
+## 2026-10-16 團圓三色預購、下拉選單與紅色圖片（獨立 Preview）
+
+- 使用者追加要求直接提供預覽網址；本輪以基準5439c02加指定8個檔案建立隔離CLI Preview：<https://charmvilla-demo2-om1gzlfpw-tentenco.vercel.app/zh/products/reunion-paper-gift-box>，deployment `dpl_9o3k2GMTURVhTh1j1Hd9FH7pgmt1` READY／target preview。`www.charmvilla.com`前後仍指向`dpl_2yVuVGM8gTmuq7bha97yzQZKunAL`，未改正式站、未commit/push。
+- 紅色圖已以新檔名`studio-reunion-gift-box-red-angle-v1.png`接入紅色選項；保留金色4張及其他原圖。原生1122×1402，只有斜角一張，尚未正式核准HD資產。中英文1440/390、切換紅/金/空選項、手機reduced及圖片載入／無溢出通過；桌機、雙語手機截圖已檢視，無console/failed request。公開資產經瀏覽器下載SHA256與本機一致，直接Node fetch會遇到HTML保護頁。
+- 本輪Node24 check通過（0 errors、9個既有/暫存腳本warnings），商品13測試通過；上一輪API39、E2E16結果保留，不宣稱重跑。來源清單／hash／部署及瀏覽器證據在[本批QA](qa/2026-10-16-reunion-options/README.md)。Ego53保留紅色預覽頁供使用者檢視；不再重跑後台plan腳本。
+
+- 客戶已在原商品將團圓改為Gold／Yellow／Red；新增既有預購group的Yellow／Red plans，原Gold保留，三色共用原100盒額度。本輪未寫原商品、現貨、CMS或重設預購數量。三色真實cart、原商品與庫存深度回讀通過。
+- 本機移除Gold only篩選、同步團圓來源snapshot/map，新增實際plan GIDs；各商品選項統一下拉式，茶／盒色為兩欄。Node24 check、19商品測試、39 API、16 E2E通過，Ego12組雙語桌手機DOM與鍵盤／reduced通過。手機截圖工具逾時，未聲稱圖片驗收；詳見[QA](qa/2026-10-16-reunion-options/README.md)。
+- main/origin/main基準5439c02；本輪來源修改未commit/push，已依上段發布Preview。3147是先前本機production build預覽；Ego51已finish。舊QA／未核准資產WIP保留。
+- 原中文材質仍有舊粉紅／藍色，依客戶原商品不用動保留。紅色圖來源`output/imagegen/reunion-red-20261016/reunion-red-angle-v2.png`，並排preview.html保留。主體寬61.85%／金色62.88%、高45.58%／金色44.96%，背景採樣最大差4/255；目前僅上方獨立Preview已引用，不是Production核准。禁止恢復舊粉紅／藍色選項或初始化預購。
 
 ## 2026-10-15 預購整合（已正式發布）
 

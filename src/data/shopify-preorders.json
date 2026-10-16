@@ -143,6 +143,14 @@
         "gid://shopify/ProductVariant/67632284598636": {
           "sellingPlanId": "gid://shopify/SellingPlan/694175138156",
           "title": "Gold"
+        },
+        "gid://shopify/ProductVariant/67730134532460": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694183330156",
+          "title": "Yellow"
+        },
+        "gid://shopify/ProductVariant/67730134729068": {
+          "sellingPlanId": "gid://shopify/SellingPlan/694183362924",
+          "title": "Red"
         }
       }
     },
@@ -173,6 +181,10 @@
           "sellingPlanId": "gid://shopify/SellingPlan/694175301996",
           "title": "Jin Xuan Tea"
         }
+      },
+      "mix": {
+        "sellingPlanId": "gid://shopify/SellingPlan/694183395692",
+        "title": "Mix & Match (3 boxes)"
       }
     },
     "christmas-gift-box": {

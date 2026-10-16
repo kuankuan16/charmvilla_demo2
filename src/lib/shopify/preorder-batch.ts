@@ -4,7 +4,7 @@
 import mapping from "../../data/shopify-preorders.json" with { type: "json" };
 import type { ShopifyProduct } from "./catalog-data";
 
-export type PreorderBatch = { sourceProductId: string; productId: string; variantId: string; unit: string; boxesPerUnit: number; options: Record<string, { sellingPlanId: string; title: string }> };
+export type PreorderBatch = { sourceProductId: string; productId: string; variantId: string; unit: string; boxesPerUnit: number; options: Record<string, { sellingPlanId: string; title: string }>; mix?: { sellingPlanId: string; title: string } };
 export const preorderBatches = mapping.products as Record<string, PreorderBatch>;
 export type PreorderPool = {
   id: string; availableForSale: boolean; requiresSellingPlan: boolean;
@@ -20,20 +20,24 @@ export function applyPreorderBatch(source: ShopifyProduct, batch: PreorderBatch,
   if (pool?.variants.pageInfo.hasNextPage || variant?.sellingPlanAllocations.pageInfo.hasNextPage) throw new Error("Preorder pagination required");
   const ready = Boolean(mapping.enabled && policy?.enabled === true && inventory?.status === "ACTIVE" && inventory.requiresSellingPlan && pool?.requiresSellingPlan && inventory.variants.nodes.find(v => v.id === batch.variantId)?.inventoryPolicy === "DENY");
   const left = ready && Number.isInteger(variant?.quantityAvailable) ? Math.max(0, variant!.quantityAvailable!) : 0;
+  const validPlan = (id: string | undefined, amount: string) => {
+    const allocation = variant?.sellingPlanAllocations.nodes.find(a => a.sellingPlan.id === id);
+    const price = allocation ? allocation.priceAdjustments[0]?.price ?? variant?.price : undefined;
+    return Boolean(allocation && price?.currencyCode === source.currency && Number(price.amount) === Number(amount)
+      && Number(allocation.checkoutChargeAmount.amount) === Number(price?.amount)
+      && Number(allocation.remainingBalanceChargeAmount.amount) === 0 && !allocation.sellingPlan.recurringDeliveries);
+  };
+  const mixAvailable = Boolean(batch.mix && ready && left > 0 && variant?.availableForSale && !variant.currentlyNotInStock
+    && source.variants.length && source.variants.every(v => batch.options[v.id] && validPlan(batch.mix?.sellingPlanId, v.price)));
   return {
     ...source, published: Boolean(pool),
-    preorderBatch: { remaining: left, unit: batch.unit === "set" ? "set" : "box" },
+    preorderBatch: { remaining: left, unit: batch.unit === "set" ? "set" : "box", ...(batch.mix ? { mixBoxes: batch.boxesPerUnit, mixAvailable } : {}) },
     availableForSale: ready && Boolean(pool?.availableForSale && variant?.availableForSale && !variant.currentlyNotInStock) && left > 0,
     variants: source.variants.map(v => {
       const option = batch.options[v.id];
-      const allocation = variant?.sellingPlanAllocations.nodes.find(a => a.sellingPlan.id === option?.sellingPlanId);
-      const price = allocation ? allocation.priceAdjustments[0]?.price ?? variant?.price : undefined;
       // Merchant price edits must be reflected in the plan before accepting orders.
       // Never charge a stale price or accidentally fall back to physical inventory.
-      const validPlan = Boolean(allocation && price?.currencyCode === source.currency && Number(price.amount) === Number(v.price)
-        && Number(allocation.checkoutChargeAmount.amount) === Number(price?.amount)
-        && Number(allocation.remainingBalanceChargeAmount.amount) === 0 && !allocation.sellingPlan.recurringDeliveries);
-      return { ...v, availableForSale: ready && left > 0 && Boolean(variant?.availableForSale) && validPlan,
+      return { ...v, availableForSale: ready && left > 0 && Boolean(variant?.availableForSale) && validPlan(option?.sellingPlanId, v.price),
         quantityAvailable: option ? left : 0, currentlyNotInStock: false };
     }),
   };
@@ -41,10 +45,12 @@ export function applyPreorderBatch(source: ShopifyProduct, batch: PreorderBatch,
 
 export function preorderPurchase(variantId: string, sellingPlanId?: string) {
   for (const [slug, batch] of Object.entries(preorderBatches)) {
+    if (batch.mix && variantId === batch.variantId && sellingPlanId === batch.mix.sellingPlanId)
+      return { slug, batch, sourceVariantId: undefined, option: batch.mix, mixed: true };
     const pair = sellingPlanId && variantId === batch.variantId
       ? Object.entries(batch.options).find(([, option]) => option.sellingPlanId === sellingPlanId)
       : batch.options[variantId] ? [variantId, batch.options[variantId]] as const : undefined;
-    if (pair) return { slug, batch, sourceVariantId: pair[0], option: pair[1] };
+    if (pair) return { slug, batch, sourceVariantId: pair[0], option: pair[1], mixed: false };
   }
   return null;
 }

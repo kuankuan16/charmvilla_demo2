@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Link from "next/link";
 import { localeHref } from "@/i18n/config";
 import { useProductOption } from "@/components/catalog/ProductOption";
@@ -23,12 +23,11 @@ export default function AddToCart({ product }: { product: Product }) {
     const index = choices?.findIndex(c => c.selection?.tea === nextTea && c.selection?.lid === nextLid);
     setOption(index !== undefined && index >= 0 ? index : undefined);
   };
-  // Mix-and-match set (雪花三盒組, user 2026-10-14: 「可以自由混搭茶種（最多３種，每盒同一種口味）」): a stepper per tea, boxes counted
-  // against the set size; three boxes means at most three teas. The set is one line in the bag.
+  // Each box chooses one tea. Repeated flavors are allowed; the entire set is one cart line.
   const boxes = product.giftBox?.mixBoxes;
-  const [mix, setMix] = useState<number[]>(() => (choices ?? []).map(() => 0));
+  const [boxTeas, setBoxTeas] = useState<string[]>(() => Array.from({ length: boxes ?? 0 }, () => ""));
+  const mix = (choices ?? []).map(c => boxTeas.filter(id => id && id === c.shopifyVariantId).length);
   const picked = mix.reduce((a, b) => a + b, 0);
-  const step = (i: number, d: number) => setMix((m) => m.map((n, j) => (j === i ? n + d : n)));
   const missing = boxes ? picked !== boxes : Boolean(choices) && option === undefined;
   // No list price yet (the bird chopstick rest): the button waits instead of putting a priceless line in the bag (2026-10-13 commerce audit).
   const live = useLiveProduct(product);
@@ -36,41 +35,57 @@ export default function AddToCart({ product }: { product: Product }) {
   // Availability follows the selected Shopify variant, refreshed while the page stays open.
   const selectedId = option === undefined ? product.shopify?.variantId : choices?.[option]?.shopifyVariantId;
   const selected = live.variants?.find(v => v.id === selectedId);
-  const soldOut = live.soldOut || (selectedId ? !selected?.availableForSale : false);
+  const soldOut = live.soldOut || (boxes ? live.mixAvailable === false || boxTeas.some(id => id && !live.variants?.find(v => v.id === id)?.availableForSale) : selectedId ? !selected?.availableForSale : false);
+  const optionSuffix = (i: number) => {
+    const choice = choices?.[i];
+    const variant = live.variants?.find(v => v.id === choice?.shopifyVariantId);
+    const price = variant ? Number(variant.price) : choice?.price;
+    return `${price && price !== live.price?.amount ? `・${formatPrice(price, live.price?.currency)}` : ""}${variant && !variant.availableForSale ? t("（售罄）", " (Sold out)") : ""}`;
+  };
+  const unavailableCombination = (nextTea: string, nextLid: string) => {
+    const matching = choices?.filter(c => (!nextTea || c.selection?.tea === nextTea) && (!nextLid || c.selection?.lid === nextLid)) ?? [];
+    return live.checked && !live.error && !matching.some(c => live.variants?.find(v => v.id === c.shopifyVariantId)?.availableForSale);
+  };
+  const lidLabel = product.slug === "christmas-gift-box" ? t("選擇盒蓋", "Choose your lid") : t("選擇盒色", "Choose your box color");
+  const lidPlaceholder = product.slug === "christmas-gift-box" ? t("請選擇盒蓋", "Select a lid") : t("請選擇盒色", "Select a box color");
   // Display-only pieces (客戶答覆 B1–B4, 2026-10-12) have no options and no button at all — not a disabled one.
   if (product.displayOnly) return null;
   return <>
     {choices && boxes && <fieldset className="product-variants product-mix">
       <legend className="tc">{product.giftBox?.choiceLabel}</legend>
-      {/* client tea-names review 2026-10-13 §2 */}
-      <p className="product-mix-help tc">{t(`請選 ${boxes} 盒，每盒 ${product.giftBox?.pieces ?? 2} 包同一種茶。`, `Choose ${boxes} boxes. Each box contains ${product.giftBox?.pieces ?? 2} tea bags of one variety.`)}</p>
-      <ul>{choices.map((c, i) => <li key={c.label} className={mix[i] ? "is-picked" : undefined}>
-        <span className="tc">{c.label}</span>
-        <span className="product-mix-step" role="group" aria-label={t(`${c.label}的盒數`, `Boxes of ${c.label}`)}>
-          <button type="button" onClick={() => step(i, -1)} disabled={!mix[i]} aria-label={t(`減少一盒${c.label}`, `One box fewer of ${c.label}`)}>−</button>
-          <span aria-live="polite">{mix[i]}</span>
-          <button type="button" onClick={() => step(i, 1)} disabled={picked >= boxes} aria-label={t(`增加一盒${c.label}`, `One more box of ${c.label}`)}>+</button>
-        </span>
-      </li>)}</ul>
+      <p className="product-mix-help tc">{t(`每組 ${boxes} 盒，每盒 ${product.giftBox!.pieces / boxes} 包同一種茶。三盒可選不同口味，也可重複。`, `Each set has ${boxes} boxes, with ${product.giftBox!.pieces / boxes} tea bags of one variety per box. Mix different teas or repeat a favorite.`)}</p>
+      <div className="product-split-options">
+        {boxTeas.map((value, box) => <Fragment key={box}>
+          <label className="tc" htmlFor={`mix-${product.slug}-${box}`}>{t(`第 ${box + 1} 盒茶款`, `Tea for box ${box + 1}`)}</label>
+          <select id={`mix-${product.slug}-${box}`} value={value} onChange={e => setBoxTeas(current => current.map((id, index) => index === box ? e.target.value : id))}>
+            <option value="">{t("請選擇茶款", "Select a tea")}</option>
+            {choices.map((c, i) => <option key={c.shopifyVariantId} value={c.shopifyVariantId}>{c.label}{optionSuffix(i)}</option>)}
+          </select>
+        </Fragment>)}
+      </div>
       <p className="product-choice-note tc" aria-live="polite">{picked === boxes ? t(`已選好 ${boxes} 盒`, `All ${boxes} boxes chosen`) : t(`已選 ${picked}／${boxes} 盒`, `${picked} of ${boxes} boxes chosen`)}</p>
     </fieldset>}
     {choices && separateOptions && !boxes && <div className="product-split-options">
       <label className="tc" htmlFor={`tea-${product.slug}`}>{t("選擇茶款", "Choose your tea")}</label>
       <select id={`tea-${product.slug}`} value={tea} onChange={e => selectCombination(e.target.value, lid)}>
         <option value="">{t("請選擇茶款", "Select a tea")}</option>
-        {[...new Set(choices.map(c => c.selection!.tea))].map(value => <option key={value} value={value}>{value}</option>)}
+        {[...new Set(choices.map(c => c.selection!.tea))].map(value => <option key={value} value={value}>{value}{unavailableCombination(value, lid) && t("（售罄）", " (Sold out)")}</option>)}
       </select>
-      <label className="tc" htmlFor={`lid-${product.slug}`}>{t("選擇盒蓋", "Choose your lid")}</label>
+      <label className="tc" htmlFor={`lid-${product.slug}`}>{lidLabel}</label>
       <select id={`lid-${product.slug}`} value={lid} onChange={e => selectCombination(tea, e.target.value)}>
-        <option value="">{t("請選擇盒蓋", "Select a lid")}</option>
-        {[...new Set(choices.map(c => c.selection!.lid))].map(value => <option key={value} value={value}>{value}</option>)}
+        <option value="">{lidPlaceholder}</option>
+        {[...new Set(choices.map(c => c.selection!.lid))].map(value => <option key={value} value={value}>{value}{unavailableCombination(tea, value) && t("（售罄）", " (Sold out)")}</option>)}
       </select>
     </div>}
-    {choices && !separateOptions && !boxes && <fieldset className="product-variants product-choices"><legend className="tc">{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}{product.teaTbd && <span className="product-tbd tc"> {t("茶款待確認", "Teas to be confirmed")}</span>}</legend>
-      <div>{choices.map((c, i) => { const variant = live.variants?.find(v => v.id === c.shopifyVariantId); const price = variant ? Number(variant.price) : c.price; return <label key={c.shopifyVariantId ?? c.label} className="tc" title={c.note}><input type="radio" name={`tea-${product.slug}`} checked={option === i} onChange={() => setOption(i)} />{c.label}{price && price !== live.price?.amount ? `・${formatPrice(price, live.price?.currency)}` : ""}{variant && !variant.availableForSale && t("（售罄）", " (Sold out)")}</label>; })}</div>
+    {choices && !separateOptions && !boxes && <div className="product-split-options">
+      <label className="tc" htmlFor={`option-${product.slug}`}>{product.giftBox?.choiceLabel ?? t("選擇茶款（每盒擇一）", "Choose Your Tea")}{product.teaTbd && <span className="product-tbd tc"> {t("茶款待確認", "Teas to be confirmed")}</span>}</label>
+      <select id={`option-${product.slug}`} value={option ?? ""} onChange={e => setOption(e.target.value === "" ? undefined : Number(e.target.value))}>
+        <option value="">{t("請選擇商品選項", "Select an option")}</option>
+        {choices.map((c, i) => <option key={c.shopifyVariantId ?? c.label} value={i}>{c.label}{optionSuffix(i)}</option>)}
+      </select>
       {/* the chosen packaging in one line (user 2026-10-07: the 包裝選項 texts 「可以精簡呈現在這區」) */}
       {option !== undefined && choices[option]?.note && <p className="product-choice-note tc">{choices[option].note}</p>}
-    </fieldset>}
+    </div>}
     {product.preOrder && product.preOrderPolicy && <aside className="product-preorder-notice tc" aria-label={t("預購說明", "Pre-order information")}>
       <p>{product.preOrderPolicy.shipping}</p>
       <details><summary>{t("預購付款與取消", "Pre-order payment and cancellation")}</summary>

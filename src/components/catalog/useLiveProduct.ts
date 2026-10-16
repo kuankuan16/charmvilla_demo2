@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import type { Product } from "@/data/catalog";
-type Live = { price?: Product["price"]; soldOut?: boolean; published: boolean; preOrderRemaining?: number; variants: { id: string; price: string; availableForSale: boolean; quantityAvailable: number | null }[] };
+type Live = { price?: Product["price"]; soldOut?: boolean; published: boolean; preOrderRemaining?: number; mixAvailable?: boolean; variants: { id: string; price: string; availableForSale: boolean; quantityAvailable: number | null }[] };
 let request: { at: number; result: Promise<Record<string, Live>> } | undefined;
 function read() {
   if (!request || Date.now() - request.at > 10000) request = { at: Date.now(), result: fetch("/api/products", { cache: "no-store" }).then(async r => {
@@ -25,5 +25,5 @@ export function useLiveProduct(product: Product) {
     window.addEventListener("focus", update);
     return () => { on = false; window.clearInterval(timer); window.removeEventListener("focus", update); };
   }, [product.slug, liveMode]);
-  return { ...state, price: state.live?.price ?? product.price, variants: state.live?.variants ?? product.shopifyData?.variants, soldOut: state.live?.soldOut ?? product.soldOut, preOrderRemaining: state.live?.preOrderRemaining ?? product.preOrderRemaining };
+  return { ...state, price: state.live?.price ?? product.price, variants: state.live?.variants ?? product.shopifyData?.variants, soldOut: state.live?.soldOut ?? product.soldOut, preOrderRemaining: state.live?.preOrderRemaining ?? product.preOrderRemaining, mixAvailable: state.live?.mixAvailable ?? product.shopifyData?.mixAvailable };
 }

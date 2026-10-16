@@ -96,7 +96,7 @@ export type Product = {
   imageNote?: string;
   /** Shopify handle + variant GID from src/data/shopify-map.json; empty until the store is connected. */
   shopify?: { handle: string; variantId: string };
-  shopifyData?: { productId: string; published: boolean; status: string; scheduledPreOrder?: boolean; variants: ShopifyVariant[] };
+  shopifyData?: { productId: string; published: boolean; status: string; scheduledPreOrder?: boolean; variants: ShopifyVariant[]; mixAvailable?: boolean };
   /** How to brew (tea gift boxes, guide §4); `image` sits at the bottom left of the steps. */
   brew?: { title: string; steps: { title: string; text: string }[]; image?: Img };
   /** 茶款介紹: a note on each tea in the box (tea gift boxes, as on the official product pages). */
@@ -670,7 +670,41 @@ const buildCatalog = (lang: Locale) => {
     const source = (shopifyProducts.products as Record<string, ShopifyProduct>)[p.slug];
     if (!source) return p;
     // Match gallery choices against their English identities, independently of the page language.
-    return applyShopifyProduct(p, source, lang);
+    // Approved Reunion colors (2026-10-16): champagne Gold, original Yellow, and Red.
+    // This is a visual mapping only; Shopify still owns the options and stock.
+    const goldViews: ProductView[] | undefined = p.slug === "reunion-paper-gift-box" ? [{
+      label: t("金色・斜角", "Gold · Angled view"),
+      image: site("studio-reunion-gift-box-gold-angle-v1.png", t("團圓金色刺繡禮盒・斜角", "Joyful Reunion champagne-gold embroidered gift box, angled view")),
+    }, {
+      label: t("金色・正面", "Gold · Front view"),
+      image: site("studio-reunion-gift-box-gold-front-v1.png", t("團圓金色刺繡禮盒・正面", "Joyful Reunion champagne-gold embroidered gift box, front view")),
+    }, {
+      label: t("金色・另一側斜角", "Gold · Alternate angle"),
+      image: site("studio-reunion-gift-box-gold-alternate-v1.png", t("團圓金色刺繡禮盒・另一側斜角", "Joyful Reunion champagne-gold embroidered gift box, alternate angle")),
+    }, {
+      label: t("開箱・15 入", "Unboxed · 15 tea bags"),
+      image: site("studio-reunion-gift-box-us-unboxed-15-photo-v4.webp", t("團圓禮盒・開箱，15 包茶包", "Joyful Reunion gift box opened with 15 tea bags")),
+    }] : undefined;
+    const visualChoices = p.slug === "reunion-paper-gift-box" ? [
+      { label: "Gold", contents: [], views: goldViews },
+      // Keep the original yellow-lid photographs when choosing Yellow.
+      { label: "Yellow", contents: [], views: p.views },
+      { label: "Red", contents: [], views: [{
+        label: t("紅色・斜角", "Red · Angled view"),
+        image: site("studio-reunion-gift-box-red-angle-v1.png", t("團圓紅色刺繡禮盒・斜角", "Joyful Reunion red embroidered gift box, angled view")),
+      }, {
+        label: t("紅色・正面", "Red · Front view"),
+        image: site("studio-reunion-gift-box-red-front-v1.png", t("團圓紅色刺繡禮盒・正面", "Joyful Reunion red embroidered gift box, front view")),
+      }, {
+        label: t("紅色・另一側斜角", "Red · Alternate angle"),
+        image: site("studio-reunion-gift-box-red-alternate-v1.png", t("團圓紅色刺繡禮盒・另一側斜角", "Joyful Reunion red embroidered gift box, alternate angle")),
+      }, {
+        // All Reunion lids share this lid-free photograph: five rows of three tea bags.
+        label: t("開箱・15 入", "Unboxed · 15 tea bags"),
+        image: site("studio-reunion-gift-box-us-unboxed-15-photo-v4.webp", t("團圓禮盒・開箱，15 包茶包", "Joyful Reunion gift box opened with 15 tea bags")),
+      }] },
+    ] : p.giftBox?.choices;
+    return applyShopifyProduct(goldViews ? { ...p, image: goldViews[0].image, views: goldViews } : p, source, lang, visualChoices);
   });
   return { categories: categories.filter((c) => !hiddenCategories.has(c.id)), products: aligned.filter((p) => !hiddenCategories.has(p.category) && !p.hidden), bagProducts, jewelryProducts, teaProducts, teawareProducts };
 };
