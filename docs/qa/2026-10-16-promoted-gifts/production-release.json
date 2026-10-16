@@ -1,0 +1,20 @@
+{
+  "applicationCommit": "3578a0e6c635d1872addc9f82e7d5c71af455e2d",
+  "deployment": "dpl_ns4YKpbQ1NYmMVFjzKpdb1nq9FSG",
+  "source": "git",
+  "state": "READY",
+  "target": "production",
+  "project": "prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23",
+  "alias": "www.charmvilla.com",
+  "browserCases": 12,
+  "runtimeErrors": 0,
+  "nonCancelledFailedRequests": 0,
+  "screenshotsReviewed": [
+    "production-zh-1440-tea.png",
+    "production-en-390-tea.png",
+    "production-en-390-home.png",
+    "production-zh-1440-home.png"
+  ],
+  "shopifyWrites": false,
+  "orderOrPaymentCreated": false
+}

@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `in_progress`
+Status: `completed`
 Updated: 2026-10-16
 
 ## Active task
@@ -31,8 +31,8 @@ Updated: 2026-10-16
 | completed | 共用主打排序並調首頁前三位 | 單一slug清單，首頁6格維持、其他商品保留 |
 | completed | 本機驗證 | check、13商品測試、Ego12例、鍵盤與動畫結束截圖 |
 | completed | 交付本機預覽與文件 | 本機3246；500額度已線上 |
-| in_progress | Git commit/push與正式部署 | 精準暫存本輪檔案，等待來源SHA一致的READY部署 |
-| pending | 正式URL驗證 | 中英文桌手機排序及圖片、500額度與alias |
+| completed | Git commit/push與正式部署 | 3578a0e已push；Git部署ns4YKpbQ1NYmMVFjzKpdb1nq9FSG READY／www alias一致 |
+| completed | 正式URL驗證 | Ego65正式12例通過、4張截圖已看、無runtime／非取消failed request；API兩款500 |
 
 ## FIFO queue
 
@@ -52,4 +52,4 @@ Updated: 2026-10-16
 
 ## Resume
 
-下一步精準stage/commit/push本次三個應用檔與交接/QA文件，核對Git部署，再使用Ego本次新space驗證正式URL。保留本機3246與其他WIP。IG試稿不發布，兩款500額度已生效不可再增300，未測實際付款首單扣量。
+本次發布已完成：應用3578a0e已push，正式www的Git部署及12例瀏覽器通過，見docs/qa/2026-10-16-promoted-gifts/production-release.json。最後文件提交只記錄驗收，應用檔不再改。Ego65保留正式首頁；本機3246與其他WIP保留。IG首稿未發布，兩款500額度已生效不可再增加，真實付款首單扣量未測。FIFO無。

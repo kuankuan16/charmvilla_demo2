@@ -1,4 +1,4 @@
-# 三款主打商品展示（本機完成）
+# 三款主打商品展示（已正式發布）
 
 使用者轉貼客戶要求：聖誕兩款置頂，連同15入團圓更凸顯。
 
@@ -12,6 +12,12 @@
 
 前一任務兩款500額度已在Shopify及正式站生效，與這項本機展示排序分開。
 
-## 正式發布（進行中）
+## 正式發布（已完成）
 
 使用者已明確要求直接發布及更新GitHub。2026-10-16重新fetch後main/origin/main均db67cc7；Vercel www目前指向同SHA的dpl_EEZJDoT2vMfFeYMEAPqLcMwRNVoY。三個來源檔修改時間均早於本次check.log，之後無程式變動，沿用已通過結果。未重跑或變更Shopify額度。
+
+- 應用提交3578a0e已push至指定repo/main；Git Production部署dpl_ns4YKpbQ1NYmMVFjzKpdb1nq9FSG READY，來源SHA與www alias核對一致。
+- Ego65在正式www完成12例：雙語×1440/390×首頁/tea/all，前三款、圖片解碼、數量6/10/14、無水平溢出、ItemList/canonical皆確認。四張桌手機代表截圖已實際檢視。production-errors.json無Runtime例外、console error或非取消failed request。
+- QA腳本第一次錯把ItemList當頂層，讀不到@graph內容；檢視實際JSON-LD後修正解析，無應用程式更動，12例通過。
+- 正式API HTTP200，聖誕12入剩餘500／US$120，心意禮剩餘500組／US$60且mixAvailable=true。此輪沒有庫存寫入、測試cart或下單付款。
+- IG三張仍為本機試稿；沒有換入官網或發布社群。其他工作樹與既有WIP保留。
