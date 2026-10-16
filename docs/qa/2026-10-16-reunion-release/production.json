@@ -1,0 +1,21 @@
+{
+  "id": "dpl_Gy2jpUGvbXKmnLZertfET963At8y",
+  "url": "charmvilla-demo2-hbijn8oxq-tentenco.vercel.app",
+  "target": "production",
+  "readyState": "READY",
+  "source": "git",
+  "meta": {
+    "githubCommitSha": "39ade00b37772954bb508265bf9faa4d5c9b6474",
+    "githubCommitRef": "main",
+    "githubRepo": "charmvilla_shopify_official",
+    "githubOrg": "tentenco"
+  },
+  "alias": [
+    "www.charmvilla.com",
+    "charmvilla-demo2.vercel.app",
+    "charmvilla.com",
+    "charmvilla-demo2-tentenco.vercel.app",
+    "charmvilla-demo2-git-main-tentenco.vercel.app"
+  ],
+  "aliasError": null
+}

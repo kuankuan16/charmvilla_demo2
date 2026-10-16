@@ -12,7 +12,7 @@
 
 客戶已將原團圓選項改成 Gold／Yellow／Red。只向既有預購 selling plan group 增加 Yellow／Red，保留原 Gold plan；三色共用既有預購 SKU 與剩餘額度，沒有庫存初始化、原商品／現貨／價格／CMS 寫入。原商品 variant → selling plan 的實際 GID 已更新在 `shopify-preorders.json`，本機不再限制 Gold only。
 
-網站本機已將單一選項與茶／盒色選項統一下拉選單，沿用聖誕禮盒的兩欄選擇。這是本機已驗證但尚未提交／部署的改動；Shopify 兩個新 plan 已實際建立。團圓中文 CMS 材質說明仍含舊粉紅／藍色，依「原商品不用動」保留，待內容維護者同步；未以舊圖片冒充新顏色。證據見 [本輪 QA](qa/2026-10-16-reunion-options/README.md)。
+網站已將單一選項與茶／盒色選項統一下拉選單，沿用聖誕禮盒的兩欄選擇。已隨39ade00提交發布至www.charmvilla.com，見[正式QA](qa/2026-10-16-reunion-release/README.md)；Shopify兩個新plan為前輪已建立。團圓中文 CMS 材質說明仍含舊粉紅／藍色，依「原商品不用動」保留，待內容維護者同步；未以舊圖片冒充新顏色。證據見 [本輪 QA](qa/2026-10-16-reunion-options/README.md)。
 
 ## 2026-10-15 更新：預購獨立批次
 
@@ -64,7 +64,7 @@
 
 | 專案 slug | Shopify handle／名稱 | 已對齊的重點 |
 | --- | --- | --- |
-| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入；2026-10-16 客戶改為Gold／Yellow／Red，預購共用原額度；本機映射已完成、網站尚未部署 |
+| reunion-paper-gift-box | joyful-reunion / Joyful Reunion | 15 入；2026-10-16 客戶改為Gold／Yellow／Red，預購共用原額度；三色映射、核准圖庫與選單已正式發布 |
 | year-of-plenty-gift-box | abundance-prosperity-lunar-new-year-gift / Abundance & Prosperity | 18 入、US$220、目前無庫存 |
 | blossoming-prosperity-gift-box | prosperity-in-bloom-lunar-new-year-gift / Prosperity in Bloom | 18 入、US$220 |
 | kyoto-gift-box | kyoto-artisanal-reserve-6-ct / Kyoto Artisanal Reserve | 6 入、US$60、4 茶款；東方美人目前無庫存 |

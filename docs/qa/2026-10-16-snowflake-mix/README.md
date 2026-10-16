@@ -1,5 +1,7 @@
 # 聖誕心意禮三盒混搭
 
+以下保留當時的 Preview 驗證；已由[正式發布紀錄](../2026-10-16-reunion-release/README.md)接續。
+
 - 使用者指出原單選無法混搭；改為第1／2／3盒各選一款，可重複，未選齊禁購。每盒2包、整組6包；商品摘要與茶介紹一併修正。
 - [最新 Preview](https://charmvilla-demo2-fwasds9u4-tentenco.vercel.app/zh/products/snowflake-gift-box)，`dpl_6rEnnX34CAQfkuXJpZZFhnPi5jaA` READY／preview。基準5439c02＋限定19檔（含已交付紅色團圓圖庫），來源及SHA256見source.json。中途oabvt2ho6被本版本取代，不作交付。
 - 本機未commit/push。正式www仍為`dpl_2yVuVGM8gTmuq7bha97yzQZKunAL`，沒有Production部署／promote。

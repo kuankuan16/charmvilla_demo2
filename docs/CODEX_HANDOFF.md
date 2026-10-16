@@ -1,11 +1,12 @@
 # CHARM VILLA 開發交接
 
-## 2026-10-16 核准圖庫與選單正式發布（進行中）
+## 2026-10-16 核准圖庫與選單正式發布（已完成）
 
 - 使用者已確認四張金色圖庫，明確授權Production及Push GitHub。Gold為新香檳米金三角度＋原15包開盒，Yellow保留原黃款，Red沿用已確認三張＋原開盒。
 - 本批來源為先前19檔Preview加金色三張與映射、相關測試與文件；下方Preview-only敘述是歷史快照，發布結果以[本輪QA](qa/2026-10-16-reunion-release/README.md)為準。
 - Node24 check、20 unit、41 API、24 E2E通過；Ego60雙語1440/390三色切換及已載入圖片、無溢出／錯誤通過，桌機／手機截圖已檢視；真實Shopify cart CRUD通過並清空，未下單付款。
 - 本輪不寫Shopify原商品／價格／庫存、不重跑初始化。其他歷史QA與未核准生成圖仍在本機WIP；禁止git add全部。
+- 應用提交39ade00已push；正式Git部署dpl_Gy2jpUGvbXKmnLZertfET963At8y READY，www／apex／demo2 aliases相同。正式48例圖片、原檔hash、商品API與真實mixed cart60/120／清空通過；未下單付款。後續僅交接文件提交。
 
 ## 2026-10-16 團圓金色布面四張圖庫（僅本機圖片交付）
 

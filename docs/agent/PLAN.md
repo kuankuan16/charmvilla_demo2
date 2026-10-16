@@ -1,6 +1,6 @@
 # Active Agent Plan
 
-Status: `in_progress`
+Status: `completed`
 Updated: 2026-10-16
 
 ## Active task
@@ -18,7 +18,7 @@ Updated: 2026-10-16
 | completed | 同步及來源確認 | fetch、status、worktrees、remote與部署歸屬 | main5439c02；project prj_QWvvqmrK6UCFkDhY9DyPAQe2Cx23 |
 | completed | 接入核准金色圖庫 | Gold/Yellow/Red各四張、來源hash一致 | 僅新增三張圖片及視覺映射 |
 | completed | 完整驗證 | check、商品/API/E2E、本機雙語桌手機 | check通過、20 unit／41 API／24 E2E，Ego60雙語1440/390三色通過，真實cart已清空 |
-| in_progress | Push與正式發布 | origin/main SHA、Vercel READY/alias與正式頁面 | 未開始 |
+| completed | Push與正式發布 | origin/main SHA、Vercel READY/alias與正式頁面 | 39ade00已push；正式Git部署Gy2jp READY、www同SHA，48例圖片及真實cart通過 |
 
 ## FIFO queue
 
@@ -31,4 +31,4 @@ Updated: 2026-10-16
 
 ## Resume
 
-本機驗證已完成，提交限定來源、push main，再核對Git觸發的正式部署與www。Ego60持續用於正式驗證；其他歷史QA與未核准資產WIP保留。
+本任務完成：應用39ade00已推送、正式發布且驗證通過；交接文件另行提交，不改已測來源。其他歷史QA與未核准資產WIP留在本機，queue空。最後文件部署核對結果保留本輪QA的本機production-final.json；Ego60完成後只留正式商品頁供使用者檢視。

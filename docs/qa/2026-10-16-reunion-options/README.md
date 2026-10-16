@@ -1,5 +1,7 @@
 # 團圓三色預購與選單統一（2026-10-16）
 
+以下保留當時的 Preview 驗證；已由[正式發布紀錄](../2026-10-16-reunion-release/README.md)接續。
+
 網站本機完成；尚未 commit、push 或部署。Shopify 後台兩個新 plans 已建立。客戶原商品不寫入。
 
 - 團圓從客戶原商品讀取 Gold／Yellow／Red，各 US$170。預購原 Gold plan 保留，增加 Yellow `694183330156`、Red `694183362924`。
@@ -9,12 +11,12 @@
 
 ## 驗證
 
-- Node24 `npm run check` 通過（0 errors、8項既有 warnings）：[log](check.log)。
-- 商品／批次19測試通過：[log](unit-tests.log)。API39通過：[log](integration-recheck.log)。E2E16通過：[log](e2e-final-isolated.log)。
+- Node24 `npm run check` 通過（0 errors、8項既有 warnings）：log（本機紀錄：`check.log`）。
+- 商品／批次19測試通過：log（本機紀錄：`unit-tests.log`）。API39通過：log（本機紀錄：`integration-recheck.log`）。E2E16通過：log（本機紀錄：`e2e-final-isolated.log`）。
 - 首輪舊API測試仍禁止第三色，已更新為三色共用剩餘額度。E2E等待狀態更新後才判斷可購買，零network local案例移到Shopify案例前，避免已啟動的伺服器prefetch污染下一個案例；保留0次API斷言。
-- 真實 Shopify cart 三色各1盒、各170、共510，每條保留正確 plan 與 Option；測試購物車清空，未付款下單：[回讀證據](shopify-verification.json)。
-- Ego 51：zh/en × 1440/390 × 團圓/春曉/聖誕12組DOM檢查，含選項完整／缺選項、44px觸控高度、無水平溢出、手機reduced-motion；鍵盤選茶後Tab移到盒色。[矩陣](browser-matrix.json)、[摘要](browser-summary.json)。無console error／未取消的failed request；5次快速換頁的ERR_ABORTED不算載入失敗。
-- [桌機截圖](reunion-zh-1440.png)已人工檢視。手機截圖：Ego wrapper與raw CDP各一次逾時，停止重試，保留實際DOM及E2E證據；不宣稱手機截圖驗收完成。
+- 真實 Shopify cart 三色各1盒、各170、共510，每條保留正確 plan 與 Option；測試購物車清空，未付款下單：回讀證據（本機紀錄：`shopify-verification.json`）。
+- Ego 51：zh/en × 1440/390 × 團圓/春曉/聖誕12組DOM檢查，含選項完整／缺選項、44px觸控高度、無水平溢出、手機reduced-motion；鍵盤選茶後Tab移到盒色。矩陣（本機紀錄：`browser-matrix.json`）、摘要（本機紀錄：`browser-summary.json`）。無console error／未取消的failed request；5次快速換頁的ERR_ABORTED不算載入失敗。
+- 桌機截圖（本機紀錄：`reunion-zh-1440.png`）已人工檢視。手機截圖：Ego wrapper與raw CDP各一次逾時，停止重試，保留實際DOM及E2E證據；不宣稱手機截圖驗收完成。
 
 本機服務：`http://localhost:3147/zh/products/reunion-paper-gift-box`。原有3026／3027／3146服務及使用者購物車保留。
 

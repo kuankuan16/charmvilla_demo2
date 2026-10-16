@@ -1,0 +1,66 @@
+{
+  "before": {
+    "price": {
+      "amount": 60,
+      "currency": "USD"
+    },
+    "remaining": 200,
+    "mixAvailable": true
+  },
+  "steps": [
+    {
+      "action": "add-three-flavors",
+      "quantity": 1,
+      "subtotal": {
+        "amount": "60.0",
+        "currencyCode": "USD"
+      },
+      "plan": {
+        "id": "gid://shopify/SellingPlan/694183395692",
+        "name": "Pre-order — Mix & Match (3 boxes)"
+      },
+      "attributes": [
+        {
+          "key": "Pre-order",
+          "value": "Yes"
+        },
+        {
+          "key": "Pre-order batch",
+          "value": "November 2026"
+        },
+        {
+          "key": "Ships by",
+          "value": "2026-11-30"
+        },
+        {
+          "key": "Teas",
+          "value": "Rose Oolong Tea × 1, Rose & Honey-Scented Black Tea × 1, Oriental Beauty Tea × 1"
+        },
+        {
+          "key": "_mix_variants",
+          "value": "[{\"variantId\":\"gid://shopify/ProductVariant/67637433893228\",\"quantity\":1},{\"variantId\":\"gid://shopify/ProductVariant/67637433925996\",\"quantity\":1},{\"variantId\":\"gid://shopify/ProductVariant/67637433958764\",\"quantity\":1}]"
+        },
+        {
+          "key": "Selling unit",
+          "value": "3 boxes per set"
+        }
+      ]
+    },
+    {
+      "action": "two-sets",
+      "quantity": 2,
+      "subtotal": {
+        "amount": "120.0",
+        "currencyCode": "USD"
+      }
+    },
+    {
+      "action": "cleanup",
+      "quantity": 0
+    }
+  ],
+  "after": {
+    "remaining": 200
+  },
+  "orderPlaced": false
+}

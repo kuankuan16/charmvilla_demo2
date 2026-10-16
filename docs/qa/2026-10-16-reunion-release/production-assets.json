@@ -1,0 +1,17 @@
+[
+  {
+    "name": "studio-reunion-gift-box-gold-angle-v1.png",
+    "status": 200,
+    "sha256": "b37196c51c9e599570c3fd60105ea0b5df63f4b4fec4db29ba8a549832557eea"
+  },
+  {
+    "name": "studio-reunion-gift-box-gold-front-v1.png",
+    "status": 200,
+    "sha256": "dbed8e1870725b00ae9b02d277685960bc9a1562d1143e7eab0f2cf179224eed"
+  },
+  {
+    "name": "studio-reunion-gift-box-gold-alternate-v1.png",
+    "status": 200,
+    "sha256": "206fa3f06fbc493e95ff260e02f89f7158a13a76b28f4bb0f20708f0cff032a6"
+  }
+]

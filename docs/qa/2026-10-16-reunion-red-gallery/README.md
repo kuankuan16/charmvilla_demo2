@@ -1,5 +1,7 @@
 # 紅色團圓第2–4張圖庫
 
+以下保留當時的 Preview 驗證；已由[正式發布紀錄](../2026-10-16-reunion-release/README.md)接續。
+
 - Preview: https://charmvilla-demo2-ptpqhv4gs-tentenco.vercel.app/zh/products/reunion-paper-gift-box ，選紅色。
 - 內建imagegen生成正面及另一側斜角，各1稿，原生1122×1402。第4張共用既有無盒蓋15包實拍；金色4張保持。
 - `image-analysis.json`：同角度主體寬／高占比差低於0.1百分點，四角背景RGB最大差2/255。整體與3倍Logo／金魚細節已view。

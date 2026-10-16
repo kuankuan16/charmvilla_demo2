@@ -36,7 +36,7 @@
 - `src/data/shopify-preorders.json` 僅保存已驗證身分／選項對照；即時剩餘數量與價格由 Shopify 取得，沒有本機扣量或 webhook 事後補扣。
 - 每個選項是共用 SKU 上的原生 PRE_ORDER selling plan，100% checkout charge、NO_REMAINING_BALANCE、ON_SALE。不同茶的230/260、300/340價格維持原商品價格。
 - 新批次只發布至 **Charmvilla Headless02**，不新增至 Online Store／POS／Shop；`seo.hidden=1`。原10商品、原variants、文案與現貨數量保留。網站仍呈現14款已核准型錄。
-- 團圓對應客戶現行 Gold／Yellow／Red，三色共用同一預購 SKU，不是每色各100盒。兩個新 selling plans 已建立，網站已交付獨立Preview，尚未正式發布。聖誕心意禮依使用者10月16日指示恢復三盒混搭，新增1個專用plan，原5個單口味plans保留；不重設任何額度。其他商品沿用現行 Shopify 選項。
+- 團圓對應客戶現行 Gold／Yellow／Red，三色共用同一預購 SKU，不是每色各100盒。兩個新 selling plans 已建立，網站已於10月16日隨39ade00正式發布。聖誕心意禮依使用者10月16日指示恢復三盒混搭，新增1個專用plan，原5個單口味plans保留；不重設任何額度。其他商品沿用現行 Shopify 選項。
 - 訂單成立才占用原生庫存；加入購物車不保留額度，付款前 Shopify 會再次驗證。庫存數字最多有前台30秒更新間隔，最終以 Shopify checkout 為準。
 - 本輪已測真實購物車／原生結帳與超額邊界，**未實際付款、未建立訂單**。首筆真實訂單仍應對照其數量與預購 SKU 的 Available／Committed；此處不把未付款測試說成扣庫存實單證明。
 
